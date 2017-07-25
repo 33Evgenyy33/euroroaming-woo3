@@ -1,0 +1,218 @@
+Array
+(
+    [_customer_user] => Array
+        (
+            [0] => 0
+        )
+
+    [_billing_first_name] => Array
+        (
+            [0] => Evgeny
+        )
+
+    [_billing_last_name] => Array
+        (
+            [0] => Egorov
+        )
+
+    [_billing_email] => Array
+        (
+            [0] => test17@ya.ru
+        )
+
+    [_billing_phone] => Array
+        (
+            [0] => +79656314107
+        )
+
+    [_billing_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_city] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_billing_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_order_shipping_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping] => Array
+        (
+            [0] => 0
+        )
+
+    [_cart_discount] => Array
+        (
+            [0] => 700
+        )
+
+    [_cart_discount_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_total] => Array
+        (
+            [0] => 300.00
+        )
+
+    [_payment_method] => Array
+        (
+            [0] => cheque
+        )
+
+    [_payment_method_title] => Array
+        (
+            [0] => Чековые платежи
+        )
+
+    [wc_pos_amount_change] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_pay] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_id_register] => Array
+        (
+            [0] => 18
+        )
+
+    [wc_pos_order_tax_number] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_order_type] => Array
+        (
+            [0] => POS
+        )
+
+    [wc_pos_prefix_suffix_order_number] => Array
+        (
+            [0] => 22823 Оформлен в t17
+        )
+
+    [wc_pos_ta_id] => Array
+        (
+            [0] => 3348
+        )
+
+    [uploaded_files] => Array
+        (
+            [0] => http://euroroaming/wp-content/uploads/2017/04/XQSFvPEdFg.jpg
+        )
+
+    [number_simcard] => Array
+        (
+            [0] => 605010101,605040404,605070707
+        )
+
+    [tratata] => Array
+        (
+            [0] => tytyty
+        )
+
+    [client_phone] => Array
+        (
+            [0] => 9631031837
+        )
+
+    [client_email] => Array
+        (
+            [0] => 33evgensdfgsdfgyy33@gmail.com
+        )
+
+    [_order_key] => Array
+        (
+            [0] => wc_order_58e250a8010ef
+        )
+
+    [_order_currency] => Array
+        (
+            [0] => RUB
+        )
+
+    [_prices_include_tax] => Array
+        (
+            [0] => no
+        )
+
+    [_customer_ip_address] => Array
+        (
+            [0] => 127.0.0.1
+        )
+
+    [_customer_user_agent] => Array
+        (
+            [0] => Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36
+        )
+
+    [_created_via] => Array
+        (
+            [0] => POS
+        )
+
+    [_order_version] => Array
+        (
+            [0] => 2.6.14
+        )
+
+    [wc_pos_served_by_name] => Array
+        (
+            [0] => test17
+        )
+
+    [_recorded_sales] => Array
+        (
+            [0] => yes
+        )
+
+    [_recorded_coupon_usage_counts] => Array
+        (
+            [0] => yes
+        )
+
+    [_order_stock_reduced] => Array
+        (
+            [0] => 1
+        )
+
+    [_download_permissions_granted] => Array
+        (
+            [0] => 1
+        )
+
+)

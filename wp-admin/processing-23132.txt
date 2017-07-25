@@ -1,0 +1,17 @@
+Array
+(
+    [0] => WP_Term Object
+        (
+            [term_id] => 52
+            [name] => Сим-карты
+            [slug] => sim-karty
+            [term_group] => 0
+            [term_taxonomy_id] => 52
+            [taxonomy] => product_cat
+            [description] => 
+            [parent] => 0
+            [count] => 8
+            [filter] => raw
+        )
+
+)

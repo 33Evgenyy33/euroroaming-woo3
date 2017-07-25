@@ -1,0 +1,27 @@
+/**
+ * Load WooCommerce Local Pickup admin input fields styles.
+ *
+ * @since 2.0.0-dev.1
+ */
+
+
+@import "field_business_hours";
+@import "field_public_holidays";
+@import "field_schedule_adjustment";
+@import "field_price_adjustment";
+
+
+/** Address Fields
+ ---------------------------------------------------------*/
+
+.wc-local-pickup-plus-address-fields {
+
+	.city,
+	.country {
+		max-width: 300px;
+	}
+	.phone,
+	.postcode {
+		max-width: 200px;
+	}
+}

@@ -1,0 +1,578 @@
+Array
+(
+    [0] => Array
+        (
+            [id] => 5682209
+            [name] => Егоров Евгений
+            [last_modified] => 1499169142
+            [account_id] => 14805325
+            [date_create] => 1499169142
+            [created_user_id] => 1468333
+            [modified_user_id] => 1468333
+            [responsible_user_id] => 1468333
+            [group_id] => 0
+            [closest_task] => 0
+            [linked_company_id] => 
+            [company_name] => 
+            [tags] => Array
+                (
+                )
+
+            [type] => contact
+            [custom_fields] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => 57524
+                            [name] => Email
+                            [code] => EMAIL
+                            [values] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [value] => 33evgenyy33@gmail.com
+                                            [enum] => 131220
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [id] => 57522
+                            [name] => Телефон
+                            [code] => PHONE
+                            [values] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [value] => 79656314108
+                                            [enum] => 131210
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [linked_leads_id] => Array
+                (
+                )
+
+        )
+
+    [1] => Array
+        (
+            [id] => 5701561
+            [name] => Егоров Евгений
+            [last_modified] => 1499169547
+            [account_id] => 14805325
+            [date_create] => 1499169547
+            [created_user_id] => 1468333
+            [modified_user_id] => 1468333
+            [responsible_user_id] => 1468333
+            [group_id] => 0
+            [closest_task] => 0
+            [linked_company_id] => 
+            [company_name] => 
+            [tags] => Array
+                (
+                )
+
+            [type] => contact
+            [custom_fields] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => 57524
+                            [name] => Email
+                            [code] => EMAIL
+                            [values] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [value] => 33evgenyy33@gmail.com
+                                            [enum] => 131220
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [id] => 57522
+                            [name] => Телефон
+                            [code] => PHONE
+                            [values] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [value] => 79656314108
+                                            [enum] => 131210
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [linked_leads_id] => Array
+                (
+                    [0] => 3115039
+                )
+
+        )
+
+    [2] => Array
+        (
+            [id] => 5702079
+            [name] => Егоров Евгений
+            [last_modified] => 1499169751
+            [account_id] => 14805325
+            [date_create] => 1499169751
+            [created_user_id] => 1468333
+            [modified_user_id] => 1468333
+            [responsible_user_id] => 1468333
+            [group_id] => 0
+            [closest_task] => 0
+            [linked_company_id] => 
+            [company_name] => 
+            [tags] => Array
+                (
+                )
+
+            [type] => contact
+            [custom_fields] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => 57524
+                            [name] => Email
+                            [code] => EMAIL
+                            [values] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [value] => 33evgenyy33@gmail.com
+                                            [enum] => 131220
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [id] => 57522
+                            [name] => Телефон
+                            [code] => PHONE
+                            [values] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [value] => 79656314108
+                                            [enum] => 131210
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [linked_leads_id] => Array
+                (
+                    [0] => 3115111
+                )
+
+        )
+
+    [3] => Array
+        (
+            [id] => 5702151
+            [name] => Егоров Евгений
+            [last_modified] => 1499169886
+            [account_id] => 14805325
+            [date_create] => 1499169886
+            [created_user_id] => 1468333
+            [modified_user_id] => 1468333
+            [responsible_user_id] => 1468333
+            [group_id] => 0
+            [closest_task] => 0
+            [linked_company_id] => 
+            [company_name] => 
+            [tags] => Array
+                (
+                )
+
+            [type] => contact
+            [custom_fields] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => 57524
+                            [name] => Email
+                            [code] => EMAIL
+                            [values] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [value] => 33evgenyy33@gmail.com
+                                            [enum] => 131220
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [id] => 57522
+                            [name] => Телефон
+                            [code] => PHONE
+                            [values] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [value] => 79656314108
+                                            [enum] => 131210
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [linked_leads_id] => Array
+                (
+                )
+
+        )
+
+    [4] => Array
+        (
+            [id] => 5703113
+            [name] => Егоров Евгений
+            [last_modified] => 1499172038
+            [account_id] => 14805325
+            [date_create] => 1499171810
+            [created_user_id] => 1468333
+            [modified_user_id] => 1468333
+            [responsible_user_id] => 1468333
+            [group_id] => 0
+            [closest_task] => 0
+            [linked_company_id] => 
+            [company_name] => 
+            [tags] => Array
+                (
+                )
+
+            [type] => contact
+            [custom_fields] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => 57524
+                            [name] => Email
+                            [code] => EMAIL
+                            [values] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [value] => 33evgenyy33@gmail.com
+                                            [enum] => 131220
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [id] => 57522
+                            [name] => Телефон
+                            [code] => PHONE
+                            [values] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [value] => 79656314108
+                                            [enum] => 131210
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [linked_leads_id] => Array
+                (
+                    [0] => 3115823
+                    [1] => 3115901
+                )
+
+        )
+
+    [5] => Array
+        (
+            [id] => 5705453
+            [name] => Егоров Евгений
+            [last_modified] => 1499173740
+            [account_id] => 14805325
+            [date_create] => 1499173740
+            [created_user_id] => 1468333
+            [modified_user_id] => 1468333
+            [responsible_user_id] => 1468333
+            [group_id] => 0
+            [closest_task] => 0
+            [linked_company_id] => 
+            [company_name] => 
+            [tags] => Array
+                (
+                )
+
+            [type] => contact
+            [custom_fields] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => 57524
+                            [name] => Email
+                            [code] => EMAIL
+                            [values] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [value] => 33evgenyy33@gmail.com
+                                            [enum] => 131220
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [id] => 57522
+                            [name] => Телефон
+                            [code] => PHONE
+                            [values] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [value] => 79656314108
+                                            [enum] => 131210
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [linked_leads_id] => Array
+                (
+                    [0] => 3117409
+                )
+
+        )
+
+    [6] => Array
+        (
+            [id] => 5706597
+            [name] => Егоров Евгений
+            [last_modified] => 1499174256
+            [account_id] => 14805325
+            [date_create] => 1499174256
+            [created_user_id] => 1468333
+            [modified_user_id] => 1468333
+            [responsible_user_id] => 1468333
+            [group_id] => 0
+            [closest_task] => 0
+            [linked_company_id] => 
+            [company_name] => 
+            [tags] => Array
+                (
+                )
+
+            [type] => contact
+            [custom_fields] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => 57524
+                            [name] => Email
+                            [code] => EMAIL
+                            [values] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [value] => 33evgenyy33@gmail.com
+                                            [enum] => 131220
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [id] => 57522
+                            [name] => Телефон
+                            [code] => PHONE
+                            [values] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [value] => 79656314108
+                                            [enum] => 131210
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [linked_leads_id] => Array
+                (
+                    [0] => 3118467
+                )
+
+        )
+
+    [7] => Array
+        (
+            [id] => 5706663
+            [name] => Егоров Евгений
+            [last_modified] => 1499174367
+            [account_id] => 14805325
+            [date_create] => 1499174367
+            [created_user_id] => 1468333
+            [modified_user_id] => 1468333
+            [responsible_user_id] => 1468333
+            [group_id] => 0
+            [closest_task] => 0
+            [linked_company_id] => 
+            [company_name] => 
+            [tags] => Array
+                (
+                )
+
+            [type] => contact
+            [custom_fields] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => 57524
+                            [name] => Email
+                            [code] => EMAIL
+                            [values] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [value] => 33evgenyy33@gmail.com
+                                            [enum] => 131220
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [id] => 57522
+                            [name] => Телефон
+                            [code] => PHONE
+                            [values] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [value] => 79656314108
+                                            [enum] => 131210
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [linked_leads_id] => Array
+                (
+                    [0] => 3118505
+                )
+
+        )
+
+    [8] => Array
+        (
+            [id] => 5706685
+            [name] => Егоров Евгений
+            [last_modified] => 1499174407
+            [account_id] => 14805325
+            [date_create] => 1499174407
+            [created_user_id] => 1468333
+            [modified_user_id] => 1468333
+            [responsible_user_id] => 1468333
+            [group_id] => 0
+            [closest_task] => 0
+            [linked_company_id] => 
+            [company_name] => 
+            [tags] => Array
+                (
+                )
+
+            [type] => contact
+            [custom_fields] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => 57524
+                            [name] => Email
+                            [code] => EMAIL
+                            [values] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [value] => 33evgenyy33@gmail.com
+                                            [enum] => 131220
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [id] => 57522
+                            [name] => Телефон
+                            [code] => PHONE
+                            [values] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [value] => 79656314108
+                                            [enum] => 131210
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+            [linked_leads_id] => Array
+                (
+                    [0] => 3118525
+                )
+
+        )
+
+)

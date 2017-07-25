@@ -1,0 +1,233 @@
+Array
+(
+    [_order_key] => Array
+        (
+            [0] => wc_order_58dcce76abb9d
+        )
+
+    [_order_currency] => Array
+        (
+            [0] => RUB
+        )
+
+    [_prices_include_tax] => Array
+        (
+            [0] => no
+        )
+
+    [_customer_ip_address] => Array
+        (
+            [0] => 127.0.0.1
+        )
+
+    [_customer_user_agent] => Array
+        (
+            [0] => Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 YaBrowser/17.3.1.840 Yowser/2.5 Safari/537.36
+        )
+
+    [_customer_user] => Array
+        (
+            [0] => 1
+        )
+
+    [_created_via] => Array
+        (
+            [0] => checkout
+        )
+
+    [_cart_hash] => Array
+        (
+            [0] => f6b2602372fa23d1852dc4ac70120442
+        )
+
+    [_order_version] => Array
+        (
+            [0] => 2.6.14
+        )
+
+    [_billing_first_name] => Array
+        (
+            [0] => hfdghdfgh
+        )
+
+    [_billing_last_name] => Array
+        (
+            [0] => dfghdfgh
+        )
+
+    [_billing_company] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_email] => Array
+        (
+            [0] => 33evgensdfgsdfgyy33@gmail.com
+        )
+
+    [_billing_phone] => Array
+        (
+            [0] => +79656314107
+        )
+
+    [_billing_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_billing_address_1] => Array
+        (
+            [0] => dfghdfgh
+        )
+
+    [_billing_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_city] => Array
+        (
+            [0] => dfghdfgh
+        )
+
+    [_billing_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_billing_postcode] => Array
+        (
+            [0] => 442960
+        )
+
+    [_billing_number_simcard] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_client_phone] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_client_email] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_date_activ] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_checkb] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_first_name] => Array
+        (
+            [0] => hfdghdfgh
+        )
+
+    [_shipping_last_name] => Array
+        (
+            [0] => dfghdfgh
+        )
+
+    [_shipping_company] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_shipping_address_1] => Array
+        (
+            [0] => dfghdfgh
+        )
+
+    [_shipping_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_city] => Array
+        (
+            [0] => dfghdfgh
+        )
+
+    [_shipping_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_shipping_postcode] => Array
+        (
+            [0] => 442960
+        )
+
+    [_payment_method] => Array
+        (
+            [0] => cod
+        )
+
+    [_payment_method_title] => Array
+        (
+            [0] => Наложенный платеж
+        )
+
+    [_order_shipping] => Array
+        (
+            [0] => 
+        )
+
+    [_cart_discount] => Array
+        (
+            [0] => 0
+        )
+
+    [_cart_discount_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_total] => Array
+        (
+            [0] => 18.00
+        )
+
+    [number_simcard] => Array
+        (
+            [0] => 4915758500456
+        )
+
+    [client_phone] => Array
+        (
+            [0] => +79656314107
+        )
+
+    [client_email] => Array
+        (
+            [0] => 33evgensdfgsdfgyy33@gmail.com
+        )
+
+    [_download_permissions_granted] => Array
+        (
+            [0] => 1
+        )
+
+)

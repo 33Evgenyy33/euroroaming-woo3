@@ -1,0 +1,44 @@
+WC_Order Object
+(
+    [order_type] => simple
+    [id] => 22798
+    [post] => WP_Post Object
+        (
+            [ID] => 22798
+            [post_author] => 18
+            [post_date] => 2017-03-30 11:56:11
+            [post_date_gmt] => 2017-03-30 08:56:11
+            [post_content] => 
+            [post_title] => Order &ndash; Март 30, 2017 @ 11:56 ДП
+            [post_excerpt] => 
+            [post_status] => wc-on-hold
+            [comment_status] => closed
+            [ping_status] => closed
+            [post_password] => order_58dcc82b91954
+            [post_name] => pos-register-18-2-21
+            [to_ping] => 
+            [pinged] => 
+            [post_modified] => 2017-03-30 11:56:11
+            [post_modified_gmt] => 2017-03-30 08:56:11
+            [post_content_filtered] => 
+            [post_parent] => 0
+            [guid] => http://euroroaming/pos_temp_register_or/pos-register-18-2/
+            [menu_order] => 0
+            [post_type] => shop_order
+            [post_mime_type] => 
+            [comment_count] => 1
+            [filter] => raw
+        )
+
+    [order_date] => 2017-03-30 11:56:11
+    [modified_date] => 2017-03-30 11:56:11
+    [customer_message] => 
+    [customer_note] => 
+    [post_status] => wc-on-hold
+    [prices_include_tax] => 
+    [tax_display_cart] => excl
+    [display_totals_ex_tax] => 1
+    [display_cart_ex_tax] => 1
+    [formatted_billing_address:protected] => 
+    [formatted_shipping_address:protected] => 
+)

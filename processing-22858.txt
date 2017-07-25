@@ -1,0 +1,188 @@
+Array
+(
+    [_customer_user] => Array
+        (
+            [0] => 0
+        )
+
+    [_billing_first_name] => Array
+        (
+            [0] => Иван
+        )
+
+    [_billing_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_billing_email] => Array
+        (
+            [0] => test17@ya.ru
+        )
+
+    [_billing_phone] => Array
+        (
+            [0] => +79631031837
+        )
+
+    [_billing_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_city] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_billing_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_order_shipping_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping] => Array
+        (
+            [0] => 0
+        )
+
+    [_cart_discount] => Array
+        (
+            [0] => 700
+        )
+
+    [_cart_discount_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_total] => Array
+        (
+            [0] => 300.00
+        )
+
+    [_payment_method] => Array
+        (
+            [0] => cheque
+        )
+
+    [_payment_method_title] => Array
+        (
+            [0] => Чековые платежи
+        )
+
+    [wc_pos_amount_change] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_pay] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_id_register] => Array
+        (
+            [0] => 18
+        )
+
+    [wc_pos_order_tax_number] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_order_type] => Array
+        (
+            [0] => POS
+        )
+
+    [wc_pos_prefix_suffix_order_number] => Array
+        (
+            [0] => 22858 Оформлен в t17
+        )
+
+    [wc_pos_ta_id] => Array
+        (
+            [0] => 3348
+        )
+
+    [uploaded_files] => Array
+        (
+            [0] => http://euroroaming/wp-content/uploads/passports-from-tourist/media-share-0-02-04-44aa4155da2f52cb1b964ba5d5f3a71d423f5e644b5393f09351c6f6ab38d2bf-ecbc5a34-3424-40e1-b648-a2b9eceed4de.jpg,http://euroroaming/wp-content/uploads/passports-from-tourist/media-share-0-02-04-ea0a6f361401fe4824325ce5bc1607fa7d3e9b825dcf973ef2f735f3ca720b31-95318069-ddac-4289-a789-30e1a8bc651f.jpg,http://euroroaming/wp-content/uploads/passports-from-tourist/media-share-0-02-05-2f6a9d68087a012813331e0b3a99958bb623b153bd5119207727f238fc22cf06-1741f330-19f3-4564-a265-1b80931a1d9c.jpg
+        )
+
+    [number_simcard] => Array
+        (
+            [0] => 605030303
+        )
+
+    [client_phone] => Array
+        (
+            [0] => 9631031837
+        )
+
+    [client_email] => Array
+        (
+            [0] => 33evgenyy33@gmail.com
+        )
+
+    [_order_key] => Array
+        (
+            [0] => wc_order_58e41db7b68b3
+        )
+
+    [_order_currency] => Array
+        (
+            [0] => RUB
+        )
+
+    [_prices_include_tax] => Array
+        (
+            [0] => no
+        )
+
+    [_customer_ip_address] => Array
+        (
+            [0] => 127.0.0.1
+        )
+
+    [_customer_user_agent] => Array
+        (
+            [0] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36
+        )
+
+    [_created_via] => Array
+        (
+            [0] => POS
+        )
+
+    [_order_version] => Array
+        (
+            [0] => 2.6.14
+        )
+
+)

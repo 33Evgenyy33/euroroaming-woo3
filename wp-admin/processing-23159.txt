@@ -1,0 +1,501 @@
+Array
+(
+    [369] => Array
+        (
+            [name] => GLOBALSIM - самые дешевые тарифы для звонков из Европы в Россию
+            [type] => line_item
+            [item_meta] => Array
+                (
+                    [_qty] => Array
+                        (
+                            [0] => 1
+                        )
+
+                    [_tax_class] => Array
+                        (
+                            [0] => 
+                        )
+
+                    [_product_id] => Array
+                        (
+                            [0] => 23042
+                        )
+
+                    [_variation_id] => Array
+                        (
+                            [0] => 23045
+                        )
+
+                    [_line_subtotal] => Array
+                        (
+                            [0] => 750
+                        )
+
+                    [_line_total] => Array
+                        (
+                            [0] => 750
+                        )
+
+                    [_line_subtotal_tax] => Array
+                        (
+                            [0] => 0
+                        )
+
+                    [_line_tax] => Array
+                        (
+                            [0] => 0
+                        )
+
+                    [_line_tax_data] => Array
+                        (
+                            [0] => a:2:{s:5:"total";a:0:{}s:8:"subtotal";a:0:{}}
+                        )
+
+                    [format] => Array
+                        (
+                            [0] => Стандарт
+                        )
+
+                    [_shipping_item_id] => Array
+                        (
+                            [0] => 372
+                        )
+
+                    [Pickup Location] => Array
+                        (
+                            [0] => Пункт выдачи заказов на Каляева, Каляева 7В, офис 316, Пенза, Пензенская область
+                        )
+
+                )
+
+            [item_meta_array] => Array
+                (
+                    [2352] => stdClass Object
+                        (
+                            [key] => _qty
+                            [value] => 1
+                        )
+
+                    [2353] => stdClass Object
+                        (
+                            [key] => _tax_class
+                            [value] => 
+                        )
+
+                    [2354] => stdClass Object
+                        (
+                            [key] => _product_id
+                            [value] => 23042
+                        )
+
+                    [2355] => stdClass Object
+                        (
+                            [key] => _variation_id
+                            [value] => 23045
+                        )
+
+                    [2356] => stdClass Object
+                        (
+                            [key] => _line_subtotal
+                            [value] => 750
+                        )
+
+                    [2357] => stdClass Object
+                        (
+                            [key] => _line_total
+                            [value] => 750
+                        )
+
+                    [2358] => stdClass Object
+                        (
+                            [key] => _line_subtotal_tax
+                            [value] => 0
+                        )
+
+                    [2359] => stdClass Object
+                        (
+                            [key] => _line_tax
+                            [value] => 0
+                        )
+
+                    [2360] => stdClass Object
+                        (
+                            [key] => _line_tax_data
+                            [value] => a:2:{s:5:"total";a:0:{}s:8:"subtotal";a:0:{}}
+                        )
+
+                    [2361] => stdClass Object
+                        (
+                            [key] => format
+                            [value] => Стандарт
+                        )
+
+                    [2388] => stdClass Object
+                        (
+                            [key] => _shipping_item_id
+                            [value] => 372
+                        )
+
+                    [2389] => stdClass Object
+                        (
+                            [key] => Pickup Location
+                            [value] => Пункт выдачи заказов на Каляева, Каляева 7В, офис 316, Пенза, Пензенская область
+                        )
+
+                )
+
+            [qty] => 1
+            [tax_class] => 
+            [product_id] => 23042
+            [variation_id] => 23045
+            [line_subtotal] => 750
+            [line_total] => 750
+            [line_subtotal_tax] => 0
+            [line_tax] => 0
+            [line_tax_data] => a:2:{s:5:"total";a:0:{}s:8:"subtotal";a:0:{}}
+            [format] => Стандарт
+            [shipping_item_id] => 372
+            [Pickup Location] => Пункт выдачи заказов на Каляева, Каляева 7В, офис 316, Пенза, Пензенская область
+        )
+
+    [370] => Array
+        (
+            [name] => Ortel Mobile с тарифом «Cross»
+            [type] => line_item
+            [item_meta] => Array
+                (
+                    [_qty] => Array
+                        (
+                            [0] => 1
+                        )
+
+                    [_tax_class] => Array
+                        (
+                            [0] => 
+                        )
+
+                    [_product_id] => Array
+                        (
+                            [0] => 23090
+                        )
+
+                    [_variation_id] => Array
+                        (
+                            [0] => 23102
+                        )
+
+                    [_line_subtotal] => Array
+                        (
+                            [0] => 1675
+                        )
+
+                    [_line_total] => Array
+                        (
+                            [0] => 1675
+                        )
+
+                    [_line_subtotal_tax] => Array
+                        (
+                            [0] => 0
+                        )
+
+                    [_line_tax] => Array
+                        (
+                            [0] => 0
+                        )
+
+                    [_line_tax_data] => Array
+                        (
+                            [0] => a:2:{s:5:"total";a:0:{}s:8:"subtotal";a:0:{}}
+                        )
+
+                    [balans-sim-karty] => Array
+                        (
+                            [0] => €10
+                        )
+
+                    [format-sim-karty] => Array
+                        (
+                            [0] => Стандарт
+                        )
+
+                    [_shipping_item_id] => Array
+                        (
+                            [0] => 372
+                        )
+
+                    [Pickup Location] => Array
+                        (
+                            [0] => Пункт выдачи заказов на Каляева, Каляева 7В, офис 316, Пенза, Пензенская область
+                        )
+
+                )
+
+            [item_meta_array] => Array
+                (
+                    [2362] => stdClass Object
+                        (
+                            [key] => _qty
+                            [value] => 1
+                        )
+
+                    [2363] => stdClass Object
+                        (
+                            [key] => _tax_class
+                            [value] => 
+                        )
+
+                    [2364] => stdClass Object
+                        (
+                            [key] => _product_id
+                            [value] => 23090
+                        )
+
+                    [2365] => stdClass Object
+                        (
+                            [key] => _variation_id
+                            [value] => 23102
+                        )
+
+                    [2366] => stdClass Object
+                        (
+                            [key] => _line_subtotal
+                            [value] => 1675
+                        )
+
+                    [2367] => stdClass Object
+                        (
+                            [key] => _line_total
+                            [value] => 1675
+                        )
+
+                    [2368] => stdClass Object
+                        (
+                            [key] => _line_subtotal_tax
+                            [value] => 0
+                        )
+
+                    [2369] => stdClass Object
+                        (
+                            [key] => _line_tax
+                            [value] => 0
+                        )
+
+                    [2370] => stdClass Object
+                        (
+                            [key] => _line_tax_data
+                            [value] => a:2:{s:5:"total";a:0:{}s:8:"subtotal";a:0:{}}
+                        )
+
+                    [2371] => stdClass Object
+                        (
+                            [key] => balans-sim-karty
+                            [value] => €10
+                        )
+
+                    [2372] => stdClass Object
+                        (
+                            [key] => format-sim-karty
+                            [value] => Стандарт
+                        )
+
+                    [2390] => stdClass Object
+                        (
+                            [key] => _shipping_item_id
+                            [value] => 372
+                        )
+
+                    [2391] => stdClass Object
+                        (
+                            [key] => Pickup Location
+                            [value] => Пункт выдачи заказов на Каляева, Каляева 7В, офис 316, Пенза, Пензенская область
+                        )
+
+                )
+
+            [qty] => 1
+            [tax_class] => 
+            [product_id] => 23090
+            [variation_id] => 23102
+            [line_subtotal] => 1675
+            [line_total] => 1675
+            [line_subtotal_tax] => 0
+            [line_tax] => 0
+            [line_tax_data] => a:2:{s:5:"total";a:0:{}s:8:"subtotal";a:0:{}}
+            [balans-sim-karty] => €10
+            [format-sim-karty] => Стандарт
+            [shipping_item_id] => 372
+            [Pickup Location] => Пункт выдачи заказов на Каляева, Каляева 7В, офис 316, Пенза, Пензенская область
+        )
+
+    [371] => Array
+        (
+            [name] => Orange с тарифом «Go Europe» и тарифом «Mundo» в Испании
+            [type] => line_item
+            [item_meta] => Array
+                (
+                    [_qty] => Array
+                        (
+                            [0] => 1
+                        )
+
+                    [_tax_class] => Array
+                        (
+                            [0] => 
+                        )
+
+                    [_product_id] => Array
+                        (
+                            [0] => 23065
+                        )
+
+                    [_variation_id] => Array
+                        (
+                            [0] => 23083
+                        )
+
+                    [_line_subtotal] => Array
+                        (
+                            [0] => 2680
+                        )
+
+                    [_line_total] => Array
+                        (
+                            [0] => 2680
+                        )
+
+                    [_line_subtotal_tax] => Array
+                        (
+                            [0] => 0
+                        )
+
+                    [_line_tax] => Array
+                        (
+                            [0] => 0
+                        )
+
+                    [_line_tax_data] => Array
+                        (
+                            [0] => a:2:{s:5:"total";a:0:{}s:8:"subtotal";a:0:{}}
+                        )
+
+                    [balans] => Array
+                        (
+                            [0] => €20
+                        )
+
+                    [format] => Array
+                        (
+                            [0] => Стандарт
+                        )
+
+                    [_shipping_item_id] => Array
+                        (
+                            [0] => 372
+                        )
+
+                    [Pickup Location] => Array
+                        (
+                            [0] => Пункт выдачи заказов на Каляева, Каляева 7В, офис 316, Пенза, Пензенская область
+                        )
+
+                )
+
+            [item_meta_array] => Array
+                (
+                    [2373] => stdClass Object
+                        (
+                            [key] => _qty
+                            [value] => 1
+                        )
+
+                    [2374] => stdClass Object
+                        (
+                            [key] => _tax_class
+                            [value] => 
+                        )
+
+                    [2375] => stdClass Object
+                        (
+                            [key] => _product_id
+                            [value] => 23065
+                        )
+
+                    [2376] => stdClass Object
+                        (
+                            [key] => _variation_id
+                            [value] => 23083
+                        )
+
+                    [2377] => stdClass Object
+                        (
+                            [key] => _line_subtotal
+                            [value] => 2680
+                        )
+
+                    [2378] => stdClass Object
+                        (
+                            [key] => _line_total
+                            [value] => 2680
+                        )
+
+                    [2379] => stdClass Object
+                        (
+                            [key] => _line_subtotal_tax
+                            [value] => 0
+                        )
+
+                    [2380] => stdClass Object
+                        (
+                            [key] => _line_tax
+                            [value] => 0
+                        )
+
+                    [2381] => stdClass Object
+                        (
+                            [key] => _line_tax_data
+                            [value] => a:2:{s:5:"total";a:0:{}s:8:"subtotal";a:0:{}}
+                        )
+
+                    [2382] => stdClass Object
+                        (
+                            [key] => balans
+                            [value] => €20
+                        )
+
+                    [2383] => stdClass Object
+                        (
+                            [key] => format
+                            [value] => Стандарт
+                        )
+
+                    [2392] => stdClass Object
+                        (
+                            [key] => _shipping_item_id
+                            [value] => 372
+                        )
+
+                    [2393] => stdClass Object
+                        (
+                            [key] => Pickup Location
+                            [value] => Пункт выдачи заказов на Каляева, Каляева 7В, офис 316, Пенза, Пензенская область
+                        )
+
+                )
+
+            [qty] => 1
+            [tax_class] => 
+            [product_id] => 23065
+            [variation_id] => 23083
+            [line_subtotal] => 2680
+            [line_total] => 2680
+            [line_subtotal_tax] => 0
+            [line_tax] => 0
+            [line_tax_data] => a:2:{s:5:"total";a:0:{}s:8:"subtotal";a:0:{}}
+            [balans] => €20
+            [format] => Стандарт
+            [shipping_item_id] => 372
+            [Pickup Location] => Пункт выдачи заказов на Каляева, Каляева 7В, офис 316, Пенза, Пензенская область
+        )
+
+)

@@ -1,0 +1,159 @@
+/**
+ * WooCommerce Local Pickup Plus front end datepicker for setting a pickup appointment.
+ *
+ * @since 2.0.0-dev.1
+ */
+.ui-datepicker.pickup-location-appointment-datepicker {
+
+	background: #FFF;
+	margin: 5px 0 15px;
+	max-width: 376px;
+	padding: 0;
+	width: auto;
+
+	a {
+		box-shadow: none !important;
+		text-decoration: none !important;
+	}
+
+	.ui-datepicker-header {
+
+		background: #DDD;
+		font-size: .8em;
+		margin: 0;
+		padding: 6px;
+		position: relative;
+		text-align: center;
+
+		.ui-state-hover {
+			background: transparent;
+			border-color: transparent;
+			cursor: pointer;
+		}
+
+		.ui-datepicker-title {
+			cursor: default;
+			font-style: italic;
+		}
+
+		.ui-datepicker-prev,
+		.ui-datepicker-next {
+			border: none;
+			font-weight: bold;
+			margin: 4px 0 0 0;
+			padding: 0 4px;
+			position: absolute;
+			text-decoration: none;
+		}
+
+		.ui-datepicker-next:after,
+		.ui-datepicker-prev:before {
+			border-style: solid;
+			content: "";
+			display: block;
+			height: 0;
+			opacity: .55;
+			text-decoration: none;
+			width: 0;
+		}
+
+		.ui-datepicker-prev {
+			left: 0;
+			margin-left: 6px;
+			&:before {
+				border-color: transparent #000 transparent transparent;
+				border-width: 8px 16px 8px 0;
+			}
+		}
+
+		.ui-datepicker-next {
+			margin-right: 6px;
+			right: 0;
+			&:after {
+				border-color: transparent transparent transparent #000;
+				border-width: 8px 0 8px 16px;
+			}
+		}
+
+		.ui-datepicker-next.ui-state-disabled:after,
+		.ui-datepicker-prev.ui-state-disabled:before {
+			cursor: default;
+			opacity: .15;
+		}
+	}
+
+	table.ui-datepicker-calendar{
+
+		border: 1px solid #DDD;
+		margin: 0;
+		padding: 0;
+
+		th,
+		td {
+			background: #FFF;
+			cursor: default;
+			display: table-cell;
+			margin: 0;
+			padding: 0 !important;
+			position: relative;
+			text-align: center;
+		}
+
+		th {
+			border-top: 1px solid #E6E6E6;
+			color: #BBB;
+			font-weight: normal;
+			text-transform: uppercase;
+		}
+
+		td {
+
+			background: #FFF;
+			border: none;
+			border-top: 1px solid #E6E6E6;
+			border-right: 1px solid #E6E6E6;
+			color: #2B2B2B;
+			display: table-cell;
+
+			&:last-child {
+				border-right: 0;
+			}
+
+			&.ui-datepicker-unselectable {
+
+				background: #F8F8F8;
+				color: #BBB;
+
+				span {
+					opacity: .7;
+				}
+			}
+
+			a,
+			span {
+				background: #FFF;
+				border: none;
+				display: block;
+				font-weight: normal;
+				padding: 2px 4px;
+				width: 100%;
+			}
+
+			a {
+
+				opacity: .8;
+
+				&:hover,
+				&.ui-state-default.ui-state-active {
+					opacity: 1;
+				}
+			}
+
+			&.ui-datepicker-current-day a {
+				font-weight: bold !important;
+				padding: 2px 0 !important;
+				text-decoration: underline !important;
+			}
+		}
+	}
+}

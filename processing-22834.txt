@@ -1,0 +1,12 @@
+Array
+(
+    [ID] => 22834
+    [post_author] => 18
+    [post_type] => shop_order
+    [post_status] => wc-pending
+    [ping_status] => closed
+    [post_password] => order_58e397dda5ef9
+    [post_title] => Заказ &ndash; 04 Apr 2017 в 12:55
+    [post_parent] => 0
+    [post_excerpt] => 
+)
