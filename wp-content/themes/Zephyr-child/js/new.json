@@ -1,0 +1,1666 @@
+[
+    {
+      "CountryID": "Австралия",
+      "IncomingID": 0,
+      "OutgoingID": 0.65,
+      "CostID": 0.4,
+      "GprsID": "0,25-1,75",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Австрия",
+      "IncomingID": 0,
+      "OutgoingID": 0.39,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Азербайджан",
+      "IncomingID": 0,
+      "OutgoingID": 0.75,
+      "CostID": 0.59,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Албания",
+      "IncomingID": 0,
+      "OutgoingID": 0.85,
+      "CostID": 0.4,
+      "GprsID": "7-15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Алжир",
+      "IncomingID": 0.25,
+      "OutgoingID": 0.85,
+      "CostID": 0.95,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Американские Виргинские острова",
+      "IncomingID": 2.5,
+      "OutgoingID": 2.89,
+      "CostID": 0.59,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Ангилья",
+      "IncomingID": 0,
+      "OutgoingID": 1.15,
+      "CostID": 0.59,
+      "GprsID": "1.75",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Ангола",
+      "IncomingID": 0,
+      "OutgoingID": 0.69,
+      "CostID": 0.59,
+      "GprsID": "15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Андорра",
+      "IncomingID": 0,
+      "OutgoingID": 0.95,
+      "CostID": 0.4,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Антигуа и Барбуда",
+      "IncomingID": 0,
+      "OutgoingID": 1.15,
+      "CostID": 0.59,
+      "GprsID": "1.75",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Антильские острова (Нидерланды)",
+      "IncomingID": 0,
+      "OutgoingID": 0.59,
+      "CostID": 0.59,
+      "GprsID": "0.5",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Аргентина",
+      "IncomingID": 0,
+      "OutgoingID": 0.69,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Армения",
+      "IncomingID": 0,
+      "OutgoingID": 0.75,
+      "CostID": 0.59,
+      "GprsID": "0.5",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Аруба",
+      "IncomingID": 0,
+      "OutgoingID": 0.95,
+      "CostID": 0.95,
+      "GprsID": "15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Афганистан",
+      "IncomingID": 1.25,
+      "OutgoingID": 1.75,
+      "CostID": 0.95,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Багамские острова",
+      "IncomingID": 2,
+      "OutgoingID": 2.89,
+      "CostID": 0.4,
+      "GprsID": "15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Бангладеш",
+      "IncomingID": 0,
+      "OutgoingID": 0.59,
+      "CostID": 0.59,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Барбадос",
+      "IncomingID": 0,
+      "OutgoingID": 1.15,
+      "CostID": 0.59,
+      "GprsID": "1.75",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Бахрейн",
+      "IncomingID": 0,
+      "OutgoingID": 0.59,
+      "CostID": 0.95,
+      "GprsID": "3.5",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Беларусь",
+      "IncomingID": 0,
+      "OutgoingID": 0.85,
+      "CostID": 0.4,
+      "GprsID": "0.85",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Белиз",
+      "IncomingID": 2,
+      "OutgoingID": 2.5,
+      "CostID": 0.59,
+      "GprsID": "15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Бельгия",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Бенин",
+      "IncomingID": 0,
+      "OutgoingID": 0.75,
+      "CostID": 0.59,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Берег Слоновой Кости (Кот д'Ивуар)",
+      "IncomingID": 0.25,
+      "OutgoingID": 0.75,
+      "CostID": 0.59,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Болгария",
+      "IncomingID": 0,
+      "OutgoingID": 0.39,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Боливия",
+      "IncomingID": 2,
+      "OutgoingID": 2.5,
+      "CostID": 0.59,
+      "GprsID": "15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Босния и Герцеговина",
+      "IncomingID": 0,
+      "OutgoingID": 0.95,
+      "CostID": 0.4,
+      "GprsID": "2.5",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Бразилия",
+      "IncomingID": 0,
+      "OutgoingID": 0.59,
+      "CostID": 0.4,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Британские Виргинские острова",
+      "IncomingID": 0,
+      "OutgoingID": 1.15,
+      "CostID": 0.59,
+      "GprsID": "1.75",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Бруней",
+      "IncomingID": 0.5,
+      "OutgoingID": 1,
+      "CostID": 0.59,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Буркина-Фасо",
+      "IncomingID": 0.25,
+      "OutgoingID": 0.85,
+      "CostID": 0.59,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Бурунди",
+      "IncomingID": 0.5,
+      "OutgoingID": 1.15,
+      "CostID": 0.59,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Бутан",
+      "IncomingID": 2.5,
+      "OutgoingID": 3.5,
+      "CostID": 0.59,
+      "GprsID": "15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Ватикан",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Великобритания",
+      "IncomingID": 0,
+      "OutgoingID": 0.39,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Венгрия",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Венесуэла",
+      "IncomingID": 0,
+      "OutgoingID": 0.59,
+      "CostID": 0.59,
+      "GprsID": "15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Вьетнам",
+      "IncomingID": 0.25,
+      "OutgoingID": 0.69,
+      "CostID": 0.59,
+      "GprsID": "7",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Габон",
+      "IncomingID": 0.5,
+      "OutgoingID": 1.15,
+      "CostID": 0.95,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Гайана",
+      "IncomingID": 0,
+      "OutgoingID": 0.59,
+      "CostID": 0.59,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Гаити",
+      "IncomingID": 2,
+      "OutgoingID": 2.5,
+      "CostID": 0.59,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Гамбия",
+      "IncomingID": 0.35,
+      "OutgoingID": 1,
+      "CostID": 0.95,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Гана",
+      "IncomingID": 0,
+      "OutgoingID": 0.75,
+      "CostID": 0.59,
+      "GprsID": "15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Гваделупа",
+      "IncomingID": 0,
+      "OutgoingID": 0.59,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Гватемала",
+      "IncomingID": 0,
+      "OutgoingID": 0.59,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Гвинея",
+      "IncomingID": 0.35,
+      "OutgoingID": 1,
+      "CostID": 0.59,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Гвинея-Бисау",
+      "IncomingID": 0.65,
+      "OutgoingID": 1,
+      "CostID": 0.59,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Германия",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Гибралтар",
+      "IncomingID": 0,
+      "OutgoingID": 0.69,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Гондурас",
+      "IncomingID": 0,
+      "OutgoingID": 0.65,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Гонк Конг",
+      "IncomingID": 0,
+      "OutgoingID": 0.39,
+      "CostID": 0.4,
+      "GprsID": "0.25",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Гренада",
+      "IncomingID": 0,
+      "OutgoingID": 1.15,
+      "CostID": 0.59,
+      "GprsID": "1.75",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Гренландия",
+      "IncomingID": 0.65,
+      "OutgoingID": 1,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Греция",
+      "IncomingID": 0,
+      "OutgoingID": 0.39,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Грузия",
+      "IncomingID": 0,
+      "OutgoingID": 0.69,
+      "CostID": 0.4,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Дания",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Демократическая Республика Конго ",
+      "IncomingID": 0,
+      "OutgoingID": 1.5,
+      "CostID": 0.59,
+      "GprsID": "15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Джибути ",
+      "IncomingID": 1.25,
+      "OutgoingID": 1.75,
+      "CostID": 0.4,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Доминика",
+      "IncomingID": 0,
+      "OutgoingID": 1.15,
+      "CostID": 0.59,
+      "GprsID": "1.75",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Доминиканская республика",
+      "IncomingID": 0,
+      "OutgoingID": 0.55,
+      "CostID": 0.25,
+      "GprsID": "1.75",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Египет",
+      "IncomingID": 0,
+      "OutgoingID": 0.55,
+      "CostID": 0.4,
+      "GprsID": "1,25-2,5",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Замбия",
+      "IncomingID": 0.5,
+      "OutgoingID": 0.95,
+      "CostID": 0.59,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Западное Самоа",
+      "IncomingID": 2.5,
+      "OutgoingID": 3.5,
+      "CostID": 0.95,
+      "GprsID": "15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Зимбабве",
+      "IncomingID": 0.35,
+      "OutgoingID": 0.95,
+      "CostID": 0.59,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Йемен",
+      "IncomingID": 0,
+      "OutgoingID": 0.75,
+      "CostID": 0.4,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Израиль",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Индия",
+      "IncomingID": 0,
+      "OutgoingID": 0.55,
+      "CostID": 0.59,
+      "GprsID": "0,25-1,25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Индонезия",
+      "IncomingID": 0,
+      "OutgoingID": 0.85,
+      "CostID": 0.59,
+      "GprsID": "0.25",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Иордания",
+      "IncomingID": 0,
+      "OutgoingID": 0.69,
+      "CostID": 0.95,
+      "GprsID": "5",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Ирак",
+      "IncomingID": 0.5,
+      "OutgoingID": 1,
+      "CostID": 0.59,
+      "GprsID": "15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Иран",
+      "IncomingID": 0.5,
+      "OutgoingID": 1.15,
+      "CostID": 0.4,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Ирландия",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Исландия",
+      "IncomingID": 0,
+      "OutgoingID": 0.59,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Испания",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Италия",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Казахстан",
+      "IncomingID": 0,
+      "OutgoingID": 0.55,
+      "CostID": 0.4,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Каймановы острова",
+      "IncomingID": 0,
+      "OutgoingID": 1.15,
+      "CostID": 0.59,
+      "GprsID": "1.75",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Камбоджа",
+      "IncomingID": 0.65,
+      "OutgoingID": 1.5,
+      "CostID": 0.59,
+      "GprsID": "3.5",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Канада",
+      "IncomingID": 0,
+      "OutgoingID": 0.65,
+      "CostID": 0.4,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Канада (Тариф США)",
+      "IncomingID": 0,
+      "OutgoingID": 0.65,
+      "CostID": 0.4,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Катар",
+      "IncomingID": 0,
+      "OutgoingID": 0.75,
+      "CostID": 0.59,
+      "GprsID": "3.5",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Кения",
+      "IncomingID": 0,
+      "OutgoingID": 0.59,
+      "CostID": 0.59,
+      "GprsID": "15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Кипр",
+      "IncomingID": 0,
+      "OutgoingID": 0.29,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Китай",
+      "IncomingID": 0,
+      "OutgoingID": 0.75,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Китай (Тариф США)",
+      "IncomingID": 0,
+      "OutgoingID": 0.29,
+      "CostID": 0.4,
+      "GprsID": "0.25",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Колумбия",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Косово",
+      "IncomingID": 0,
+      "OutgoingID": 1,
+      "CostID": 0.59,
+      "GprsID": "1.75",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Коста Рика",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.59,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Куба",
+      "IncomingID": 0.75,
+      "OutgoingID": 1.5,
+      "CostID": 0.95,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Кувейт",
+      "IncomingID": 0,
+      "OutgoingID": 0.55,
+      "CostID": 0.95,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Кыргызская республика",
+      "IncomingID": 0,
+      "OutgoingID": 0.75,
+      "CostID": 0.4,
+      "GprsID": "1.75",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Лаос",
+      "IncomingID": 0.25,
+      "OutgoingID": 0.95,
+      "CostID": 0.95,
+      "GprsID": "15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Латвия",
+      "IncomingID": 0,
+      "OutgoingID": 0.39,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Лесото",
+      "IncomingID": 0,
+      "OutgoingID": 0.75,
+      "CostID": 0.4,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Либерия",
+      "IncomingID": 0.25,
+      "OutgoingID": 0.95,
+      "CostID": 0.59,
+      "GprsID": "15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Ливан",
+      "IncomingID": 0,
+      "OutgoingID": 0.69,
+      "CostID": 0.59,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Ливия",
+      "IncomingID": 0.35,
+      "OutgoingID": 1,
+      "CostID": 0.59,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Литва",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Лихтенштейн",
+      "IncomingID": 0,
+      "OutgoingID": 0.59,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Люксембург",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Маврикий",
+      "IncomingID": 2,
+      "OutgoingID": 2.5,
+      "CostID": 0.59,
+      "GprsID": "7",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Мадагаскар",
+      "IncomingID": 0.5,
+      "OutgoingID": 1.15,
+      "CostID": 0.59,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Майотта",
+      "IncomingID": 0,
+      "OutgoingID": 0.85,
+      "CostID": 0.4,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Макао",
+      "IncomingID": 0.95,
+      "OutgoingID": 1.25,
+      "CostID": 0.59,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Македония",
+      "IncomingID": 0,
+      "OutgoingID": 1,
+      "CostID": 0.59,
+      "GprsID": "0.5",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Малави",
+      "IncomingID": 0.25,
+      "OutgoingID": 0.85,
+      "CostID": 0.59,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Малайзия",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.59,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Мали",
+      "IncomingID": 0.25,
+      "OutgoingID": 0.95,
+      "CostID": 0.59,
+      "GprsID": "15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Мальдивы",
+      "IncomingID": 2,
+      "OutgoingID": 2.5,
+      "CostID": 0.95,
+      "GprsID": "15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Мальта",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Марокко",
+      "IncomingID": 0.35,
+      "OutgoingID": 0.75,
+      "CostID": 0.95,
+      "GprsID": "7",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Мартиника",
+      "IncomingID": 0,
+      "OutgoingID": 0.59,
+      "CostID": 0.25,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Мексика",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Мексика (Тариф США)",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Мозамбик",
+      "IncomingID": 0.25,
+      "OutgoingID": 0.75,
+      "CostID": 0.59,
+      "GprsID": "15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Молдова",
+      "IncomingID": 0,
+      "OutgoingID": 0.75,
+      "CostID": 0.4,
+      "GprsID": "0,85-3,5",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Монако",
+      "IncomingID": 0,
+      "OutgoingID": 0.95,
+      "CostID": 0.4,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Монголия",
+      "IncomingID": 0,
+      "OutgoingID": 0.55,
+      "CostID": 0.59,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Монтсеррат",
+      "IncomingID": 0,
+      "OutgoingID": 1.15,
+      "CostID": 0.59,
+      "GprsID": "1.75",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Мьянма",
+      "IncomingID": 0,
+      "OutgoingID": 0.65,
+      "CostID": 0.59,
+      "GprsID": "15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Намибия",
+      "IncomingID": 0,
+      "OutgoingID": 0.69,
+      "CostID": 0.59,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Науру",
+      "IncomingID": 0.75,
+      "OutgoingID": 1.75,
+      "CostID": 0.59,
+      "GprsID": "15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Непал",
+      "IncomingID": 0,
+      "OutgoingID": 0.65,
+      "CostID": 0.4,
+      "GprsID": "0.85",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Нигер",
+      "IncomingID": 0,
+      "OutgoingID": 0.95,
+      "CostID": 0.59,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Нигерия",
+      "IncomingID": 0,
+      "OutgoingID": 0.75,
+      "CostID": 0.59,
+      "GprsID": "15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Нидерланды",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Никарагуа",
+      "IncomingID": 0,
+      "OutgoingID": 0.69,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Новая Зеландия",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.59,
+      "GprsID": "0.25",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Новая Каледония",
+      "IncomingID": 0,
+      "OutgoingID": 0.75,
+      "CostID": 0.59,
+      "GprsID": "15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Норвегия",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "о.Кука",
+      "IncomingID": 1.25,
+      "OutgoingID": 1.5,
+      "CostID": 0.59,
+      "GprsID": "15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Объединённые Арабские Эмираты",
+      "IncomingID": 0,
+      "OutgoingID": 0.55,
+      "CostID": 0.4,
+      "GprsID": "0.5",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "о-ва Зеленого Мыса (о. Кабо-Верде)",
+      "IncomingID": 0,
+      "OutgoingID": 0.85,
+      "CostID": 0.59,
+      "GprsID": "2.5",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Оман",
+      "IncomingID": 0,
+      "OutgoingID": 0.75,
+      "CostID": 0.59,
+      "GprsID": "15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Пакистан",
+      "IncomingID": 0,
+      "OutgoingID": 0.55,
+      "CostID": 0.59,
+      "GprsID": "1.25",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Палестина",
+      "IncomingID": 0,
+      "OutgoingID": 0.59,
+      "CostID": 0.95,
+      "GprsID": "35",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Панама",
+      "IncomingID": 0,
+      "OutgoingID": 0.65,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Папуа-Новая Гвинея",
+      "IncomingID": 0.65,
+      "OutgoingID": 1.5,
+      "CostID": 0.59,
+      "GprsID": "15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Парагвай",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.4,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Перу",
+      "IncomingID": 0,
+      "OutgoingID": 0.55,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Польша",
+      "IncomingID": 0,
+      "OutgoingID": 0.39,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Португалия",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Пуэрто-Рико",
+      "IncomingID": 0.5,
+      "OutgoingID": 1.15,
+      "CostID": 0.59,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Пуэрто-Рико (Тариф США)",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.4,
+      "GprsID": "0.25",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Республика Вануату",
+      "IncomingID": 0.65,
+      "OutgoingID": 1.5,
+      "CostID": 0.59,
+      "GprsID": "15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Реюньон",
+      "IncomingID": 0,
+      "OutgoingID": 0.75,
+      "CostID": 0.25,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Россия",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.25,
+      "GprsID": "0,25-0,5",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Румыния",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Сальвадор",
+      "IncomingID": 0,
+      "OutgoingID": 0.69,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Сан-Марино",
+      "IncomingID": 0,
+      "OutgoingID": 0.75,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Саудовская Аравия",
+      "IncomingID": 0,
+      "OutgoingID": 0.59,
+      "CostID": 0.59,
+      "GprsID": "0.5",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Свазиленд",
+      "IncomingID": 0,
+      "OutgoingID": 0.65,
+      "CostID": 0.59,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Сейшеллы",
+      "IncomingID": 2,
+      "OutgoingID": 2.89,
+      "CostID": 0.59,
+      "GprsID": "3.5",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Сенегал",
+      "IncomingID": 0.25,
+      "OutgoingID": 0.85,
+      "CostID": 0.59,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Сент-Винсент и Гренадины",
+      "IncomingID": 0,
+      "OutgoingID": 1.15,
+      "CostID": 0.59,
+      "GprsID": "1.75",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Сент-Китс и Невис",
+      "IncomingID": 0,
+      "OutgoingID": 1.15,
+      "CostID": 0.59,
+      "GprsID": "1.75",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Сент-Люсия",
+      "IncomingID": 0,
+      "OutgoingID": 1.15,
+      "CostID": 0.59,
+      "GprsID": "1.75",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Сербия",
+      "IncomingID": 0,
+      "OutgoingID": 1,
+      "CostID": 0.4,
+      "GprsID": "0.5",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Сингапур",
+      "IncomingID": 0,
+      "OutgoingID": 0.75,
+      "CostID": 0.59,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Сирия",
+      "IncomingID": 0,
+      "OutgoingID": 0.85,
+      "CostID": 1.5,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Словакия",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Словения",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Судан",
+      "IncomingID": 0,
+      "OutgoingID": 0.69,
+      "CostID": 0.95,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "США",
+      "IncomingID": 0.5,
+      "OutgoingID": 1.15,
+      "CostID": 0.59,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "США (Тариф США)",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Сьерра-Леоне",
+      "IncomingID": 0.5,
+      "OutgoingID": 1,
+      "CostID": 0.59,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Таджикистан",
+      "IncomingID": 0,
+      "OutgoingID": 0.65,
+      "CostID": 0.59,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Тайвань",
+      "IncomingID": 0,
+      "OutgoingID": 0.75,
+      "CostID": 0.4,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Таиланд",
+      "IncomingID": 0,
+      "OutgoingID": 0.39,
+      "CostID": 0.4,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Танзания",
+      "IncomingID": 0,
+      "OutgoingID": 0.75,
+      "CostID": 0.95,
+      "GprsID": "15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Теркс и Кайкос",
+      "IncomingID": 0,
+      "OutgoingID": 1.15,
+      "CostID": 0.59,
+      "GprsID": "1.75",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Того",
+      "IncomingID": 0.5,
+      "OutgoingID": 1,
+      "CostID": 0.59,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Тонга",
+      "IncomingID": 0.5,
+      "OutgoingID": 1,
+      "CostID": 0.59,
+      "GprsID": "15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Тринидад и Тобаго",
+      "IncomingID": 2.5,
+      "OutgoingID": 2.89,
+      "CostID": 0.59,
+      "GprsID": "15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Тунис",
+      "IncomingID": 2.5,
+      "OutgoingID": 3.5,
+      "CostID": 0.95,
+      "GprsID": "15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Туркменистан",
+      "IncomingID": 0.65,
+      "OutgoingID": 1.25,
+      "CostID": 0.59,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Турция",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.4,
+      "GprsID": "0.5",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Уганда",
+      "IncomingID": 0,
+      "OutgoingID": 0.85,
+      "CostID": 0.59,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Узбекистан",
+      "IncomingID": 0,
+      "OutgoingID": 0.59,
+      "CostID": 0.4,
+      "GprsID": "0.85",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Украина",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.59,
+      "GprsID": "0.5",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Уругвай",
+      "IncomingID": 0,
+      "OutgoingID": 0.65,
+      "CostID": 0.4,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Фарерские острова",
+      "IncomingID": 0,
+      "OutgoingID": 0.75,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Фиджи",
+      "IncomingID": 0,
+      "OutgoingID": 0.69,
+      "CostID": 0.59,
+      "GprsID": "15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Филиппины",
+      "IncomingID": 0,
+      "OutgoingID": 0.65,
+      "CostID": 0.4,
+      "GprsID": "0.25",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Финляндия",
+      "IncomingID": 0,
+      "OutgoingID": 0.39,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Фолклендские острова",
+      "IncomingID": 4,
+      "OutgoingID": 4.5,
+      "CostID": 1.5,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Франция",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Французская Гвиана",
+      "IncomingID": 0,
+      "OutgoingID": 0.59,
+      "CostID": 0.25,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Хорватия",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Центральная Африка",
+      "IncomingID": 0,
+      "OutgoingID": 0.75,
+      "CostID": 0.59,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Чад",
+      "IncomingID": 0.25,
+      "OutgoingID": 0.95,
+      "CostID": 0.59,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Черногория",
+      "IncomingID": 0,
+      "OutgoingID": 0.85,
+      "CostID": 0.4,
+      "GprsID": "1.75",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Чехия",
+      "IncomingID": 0,
+      "OutgoingID": 0.49,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Чили",
+      "IncomingID": 0,
+      "OutgoingID": 0.65,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Швейцария",
+      "IncomingID": 0.25,
+      "OutgoingID": 0.85,
+      "CostID": 0.4,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Швеция",
+      "IncomingID": 0,
+      "OutgoingID": 0.39,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Шри-Ланка",
+      "IncomingID": 0,
+      "OutgoingID": 0.75,
+      "CostID": 0.4,
+      "GprsID": "0.5",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Эквадор",
+      "IncomingID": 0.35,
+      "OutgoingID": 1,
+      "CostID": 0.4,
+      "GprsID": "0.85",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Экваториальная Гвинея",
+      "IncomingID": 0.25,
+      "OutgoingID": 0.75,
+      "CostID": 0.59,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Эстония",
+      "IncomingID": 0,
+      "OutgoingID": 0.29,
+      "CostID": 0.25,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Эфиопия",
+      "IncomingID": 0.95,
+      "OutgoingID": 1.75,
+      "CostID": 0.95,
+      "GprsID": "15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Южная Африка",
+      "IncomingID": 0,
+      "OutgoingID": 0.59,
+      "CostID": 0.4,
+      "GprsID": "0.85",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Южная Корея",
+      "IncomingID": 0,
+      "OutgoingID": 0.39,
+      "CostID": 0.4,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Южный Судан",
+      "IncomingID": 0,
+      "OutgoingID": 0.65,
+      "CostID": 0.4,
+      "GprsID": "-",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Ямайка",
+      "IncomingID": 0,
+      "OutgoingID": 1.15,
+      "CostID": 0.59,
+      "GprsID": "1.75",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Япония",
+      "IncomingID": 0,
+      "OutgoingID": 0.55,
+      "CostID": 0.59,
+      "GprsID": "0.25",
+      "PackageID": "Да"
+    },
+    {
+      "CountryID": "Satellite Network WMS",
+      "IncomingID": 4,
+      "OutgoingID": 5,
+      "CostID": 0.95,
+      "GprsID": "7-15",
+      "PackageID": "-"
+    },
+    {
+      "CountryID": "Satellite Onwaves",
+      "IncomingID": 2,
+      "OutgoingID": 3,
+      "CostID": 0.59,
+      "GprsID": "-",
+      "PackageID": "-"
+    }
+  ]

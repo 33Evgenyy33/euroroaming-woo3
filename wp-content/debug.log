@@ -1,0 +1,460 @@
+[30-Mar-2017 08:50:27 UTC] PHP Catchable fatal error:  Object of class WC_Order could not be converted to string in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 20
+[30-Mar-2017 08:51:49 UTC] PHP Warning:  fwrite() expects parameter 2 to be string, object given in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 18
+[30-Mar-2017 09:01:21 UTC] PHP Notice:  Trying to get property of non-object in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 18
+[30-Mar-2017 09:01:21 UTC] PHP Notice:  Trying to get property of non-object in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 22
+[30-Mar-2017 09:04:57 UTC] PHP Notice:  Trying to get property of non-object in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 20
+[30-Mar-2017 09:04:57 UTC] PHP Notice:  Trying to get property of non-object in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 24
+[30-Mar-2017 09:06:55 UTC] PHP Notice:  Trying to get property of non-object in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 20
+[30-Mar-2017 09:06:55 UTC] PHP Notice:  Trying to get property of non-object in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 24
+[30-Mar-2017 09:07:48 UTC] PHP Notice:  Trying to get property of non-object in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 20
+[30-Mar-2017 09:07:48 UTC] PHP Warning:  fwrite() expects parameter 2 to be string, array given in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 22
+[30-Mar-2017 09:08:49 UTC] PHP Notice:  Trying to get property of non-object in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 20
+[31-Mar-2017 10:12:58 UTC] PHP Notice:  Undefined offset: 6 in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\admin\class-wc-pos-admin-menus.php on line 306
+[31-Mar-2017 10:12:58 UTC] PHP Notice:  Undefined offset: 7 in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\admin\class-wc-pos-admin-menus.php on line 309
+[31-Mar-2017 10:12:58 UTC] PHP Notice:  Undefined offset: 6 in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\admin\class-wc-pos-admin-menus.php on line 306
+[31-Mar-2017 10:12:58 UTC] PHP Notice:  Undefined offset: 7 in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\admin\class-wc-pos-admin-menus.php on line 309
+[31-Mar-2017 13:38:51 UTC] PHP Notice:  Undefined offset: 6 in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\admin\class-wc-pos-admin-menus.php on line 306
+[31-Mar-2017 13:38:51 UTC] PHP Notice:  Undefined offset: 7 in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\admin\class-wc-pos-admin-menus.php on line 309
+[03-Apr-2017 08:15:09 UTC] PHP Notice:  Undefined offset: 6 in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\admin\class-wc-pos-admin-menus.php on line 306
+[03-Apr-2017 08:15:09 UTC] PHP Notice:  Undefined offset: 7 in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\admin\class-wc-pos-admin-menus.php on line 309
+[03-Apr-2017 08:15:30 UTC] PHP Notice: This XML document is invalid, likely due to invalid characters. XML error: Undeclared entity error at line 11, column 24 in F:\OpenServer\domains\euroroaming\wp-includes\class-simplepie.php on line 1421
+[03-Apr-2017 08:15:59 UTC] PHP Fatal error:  Call to undefined function us_translate_with_external_domain() in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\templates\blog\single-post.php on line 125
+[03-Apr-2017 08:16:12 UTC] PHP Fatal error:  Call to undefined function us_translate_with_external_domain() in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\templates\blog\single-post.php on line 125
+[03-Apr-2017 08:28:07 UTC] PHP Notice:  Undefined offset: 6 in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\admin\class-wc-pos-admin-menus.php on line 306
+[03-Apr-2017 08:28:07 UTC] PHP Notice:  Undefined offset: 7 in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\admin\class-wc-pos-admin-menus.php on line 309
+[03-Apr-2017 08:28:56 UTC] PHP Notice:  Undefined offset: 6 in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\admin\class-wc-pos-admin-menus.php on line 306
+[03-Apr-2017 08:28:56 UTC] PHP Notice:  Undefined offset: 7 in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\admin\class-wc-pos-admin-menus.php on line 309
+[03-Apr-2017 08:33:40 UTC] PHP Parse error:  syntax error, unexpected '}' in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\html-registers.php on line 222
+[03-Apr-2017 08:33:43 UTC] PHP Parse error:  syntax error, unexpected '}' in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\html-registers.php on line 222
+[03-Apr-2017 12:10:12 UTC] PHP Parse error:  syntax error, unexpected end of file in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\woocommerce-point-of-sale.php on line 97
+[03-Apr-2017 12:10:15 UTC] PHP Parse error:  syntax error, unexpected end of file in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\woocommerce-point-of-sale.php on line 97
+[03-Apr-2017 15:49:33 UTC] PHP Parse error:  syntax error, unexpected ')' in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\woocommerce-point-of-sale.php on line 87
+[03-Apr-2017 15:49:34 UTC] PHP Parse error:  syntax error, unexpected ')' in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\woocommerce-point-of-sale.php on line 87
+[03-Apr-2017 15:49:38 UTC] PHP Parse error:  syntax error, unexpected ')' in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\woocommerce-point-of-sale.php on line 87
+[03-Apr-2017 15:49:48 UTC] PHP Parse error:  syntax error, unexpected ')' in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\woocommerce-point-of-sale.php on line 87
+[03-Apr-2017 15:49:49 UTC] PHP Parse error:  syntax error, unexpected ')' in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\woocommerce-point-of-sale.php on line 87
+[03-Apr-2017 15:49:50 UTC] PHP Parse error:  syntax error, unexpected ')' in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\woocommerce-point-of-sale.php on line 87
+[03-Apr-2017 15:52:31 UTC] PHP Parse error:  syntax error, unexpected ')' in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\woocommerce-point-of-sale.php on line 87
+[03-Apr-2017 15:52:55 UTC] PHP Parse error:  syntax error, unexpected ')' in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\woocommerce-point-of-sale.php on line 87
+[03-Apr-2017 15:53:10 UTC] PHP Parse error:  syntax error, unexpected ')' in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\woocommerce-point-of-sale.php on line 87
+[04-Apr-2017 09:02:47 UTC] PHP Notice: This XML document is invalid, likely due to invalid characters. XML error: Undeclared entity error at line 11, column 24 in F:\OpenServer\domains\euroroaming\wp-includes\class-simplepie.php on line 1421
+[04-Apr-2017 21:27:38 UTC] PHP Notice: This XML document is invalid, likely due to invalid characters. XML error: Undeclared entity error at line 11, column 24 in D:\OpenServer\domains\euroroaming\wp-includes\class-simplepie.php on line 1421
+[05-Apr-2017 09:47:02 UTC] PHP Notice: This XML document is invalid, likely due to invalid characters. XML error: Undeclared entity error at line 11, column 24 in F:\OpenServer\domains\euroroaming\wp-includes\class-simplepie.php on line 1421
+[05-Apr-2017 09:47:03 UTC] PHP Fatal error:  Call to undefined function members_current_user_has_role() in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\tables\class-wc-pos-table-registers.php on line 429
+[05-Apr-2017 09:47:06 UTC] PHP Fatal error:  Call to undefined function members_current_user_has_role() in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\tables\class-wc-pos-table-registers.php on line 429
+[05-Apr-2017 22:33:20 UTC] База данных WordPress возвратила ошибку Unknown column 'R' in 'where clause' в ответ на запрос SELECT * FROM wp_wc_poin_of_sale_registers WHERE ID = R, выполненный require('D:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('D:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_Pos_Sell->template_redirect, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\html-admin-pos.php'), include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\footer.php'), WC_Pos_Sell->footer, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\templates\modal.php'), pos_check_user_can_open_register
+[05-Apr-2017 22:33:20 UTC] База данных WordPress возвратила ошибку Unknown column 'R' in 'where clause' в ответ на запрос SELECT * FROM wp_wc_poin_of_sale_registers WHERE ID = R, выполненный require('D:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('D:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_Pos_Sell->template_redirect, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\html-admin-pos.php'), include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\footer.php'), WC_Pos_Sell->footer, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\templates\modal.php'), pos_check_user_can_open_register
+[05-Apr-2017 22:33:20 UTC] База данных WordPress возвратила ошибку Unknown column 'R' in 'where clause' в ответ на запрос SELECT * FROM wp_wc_poin_of_sale_registers WHERE ID = R, выполненный require('D:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('D:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_Pos_Sell->template_redirect, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\html-admin-pos.php'), include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\footer.php'), WC_Pos_Sell->footer, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\templates\modal.php'), pos_check_user_can_open_register
+[05-Apr-2017 22:33:20 UTC] База данных WordPress возвратила ошибку Unknown column 'R' in 'where clause' в ответ на запрос SELECT * FROM wp_wc_poin_of_sale_registers WHERE ID = R, выполненный require('D:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('D:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_Pos_Sell->template_redirect, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\html-admin-pos.php'), include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\footer.php'), WC_Pos_Sell->footer, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\templates\modal.php'), pos_check_user_can_open_register
+[05-Apr-2017 22:33:20 UTC] База данных WordPress возвратила ошибку Unknown column 'R' in 'where clause' в ответ на запрос SELECT * FROM wp_wc_poin_of_sale_registers WHERE ID = R, выполненный require('D:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('D:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_Pos_Sell->template_redirect, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\html-admin-pos.php'), include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\footer.php'), WC_Pos_Sell->footer, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\templates\modal.php'), pos_check_user_can_open_register
+[05-Apr-2017 22:33:20 UTC] База данных WordPress возвратила ошибку Unknown column 'R' in 'where clause' в ответ на запрос SELECT * FROM wp_wc_poin_of_sale_registers WHERE ID = R, выполненный require('D:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('D:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_Pos_Sell->template_redirect, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\html-admin-pos.php'), include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\footer.php'), WC_Pos_Sell->footer, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\templates\modal.php'), pos_check_user_can_open_register
+[05-Apr-2017 22:33:20 UTC] База данных WordPress возвратила ошибку Unknown column 'R' in 'where clause' в ответ на запрос SELECT * FROM wp_wc_poin_of_sale_registers WHERE ID = R, выполненный require('D:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('D:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_Pos_Sell->template_redirect, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\html-admin-pos.php'), include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\footer.php'), WC_Pos_Sell->footer, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\templates\modal.php'), pos_check_user_can_open_register
+[05-Apr-2017 22:33:20 UTC] База данных WordPress возвратила ошибку Unknown column 'R' in 'where clause' в ответ на запрос SELECT * FROM wp_wc_poin_of_sale_registers WHERE ID = R, выполненный require('D:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('D:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_Pos_Sell->template_redirect, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\html-admin-pos.php'), include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\footer.php'), WC_Pos_Sell->footer, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\templates\modal.php'), pos_check_user_can_open_register
+[05-Apr-2017 22:33:20 UTC] База данных WordPress возвратила ошибку Unknown column 'R' in 'where clause' в ответ на запрос SELECT * FROM wp_wc_poin_of_sale_registers WHERE ID = R, выполненный require('D:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('D:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_Pos_Sell->template_redirect, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\html-admin-pos.php'), include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\footer.php'), WC_Pos_Sell->footer, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\templates\modal.php'), pos_check_user_can_open_register
+[05-Apr-2017 22:33:20 UTC] База данных WordPress возвратила ошибку Unknown column 'R' in 'where clause' в ответ на запрос SELECT * FROM wp_wc_poin_of_sale_registers WHERE ID = R, выполненный require('D:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('D:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_Pos_Sell->template_redirect, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\html-admin-pos.php'), include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\footer.php'), WC_Pos_Sell->footer, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\templates\modal.php'), pos_check_user_can_open_register
+[05-Apr-2017 22:33:20 UTC] База данных WordPress возвратила ошибку Unknown column 'R' in 'where clause' в ответ на запрос SELECT * FROM wp_wc_poin_of_sale_registers WHERE ID = R, выполненный require('D:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('D:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_Pos_Sell->template_redirect, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\html-admin-pos.php'), include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\footer.php'), WC_Pos_Sell->footer, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\templates\modal.php'), pos_check_user_can_open_register
+[05-Apr-2017 22:33:20 UTC] База данных WordPress возвратила ошибку Unknown column 'R' in 'where clause' в ответ на запрос SELECT * FROM wp_wc_poin_of_sale_registers WHERE ID = R, выполненный require('D:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('D:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_Pos_Sell->template_redirect, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\html-admin-pos.php'), include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\footer.php'), WC_Pos_Sell->footer, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\templates\modal.php'), pos_check_user_can_open_register
+[05-Apr-2017 22:33:20 UTC] База данных WordPress возвратила ошибку Unknown column 'R' in 'where clause' в ответ на запрос SELECT * FROM wp_wc_poin_of_sale_registers WHERE ID = R, выполненный require('D:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('D:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_Pos_Sell->template_redirect, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\html-admin-pos.php'), include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\footer.php'), WC_Pos_Sell->footer, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\templates\modal.php'), pos_check_user_can_open_register
+[05-Apr-2017 22:33:20 UTC] База данных WordPress возвратила ошибку Unknown column 'R' in 'where clause' в ответ на запрос SELECT * FROM wp_wc_poin_of_sale_registers WHERE ID = R, выполненный require('D:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('D:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_Pos_Sell->template_redirect, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\html-admin-pos.php'), include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\footer.php'), WC_Pos_Sell->footer, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\templates\modal.php'), pos_check_user_can_open_register
+[05-Apr-2017 22:33:20 UTC] База данных WordPress возвратила ошибку Unknown column 'R' in 'where clause' в ответ на запрос SELECT * FROM wp_wc_poin_of_sale_registers WHERE ID = R, выполненный require('D:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('D:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_Pos_Sell->template_redirect, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\html-admin-pos.php'), include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\footer.php'), WC_Pos_Sell->footer, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\templates\modal.php'), pos_check_user_can_open_register
+[05-Apr-2017 22:33:20 UTC] База данных WordPress возвратила ошибку Unknown column 'R' in 'where clause' в ответ на запрос SELECT * FROM wp_wc_poin_of_sale_registers WHERE ID = R, выполненный require('D:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('D:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_Pos_Sell->template_redirect, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\html-admin-pos.php'), include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\footer.php'), WC_Pos_Sell->footer, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\templates\modal.php'), pos_check_user_can_open_register
+[05-Apr-2017 22:33:20 UTC] База данных WordPress возвратила ошибку Unknown column 'R' in 'where clause' в ответ на запрос SELECT * FROM wp_wc_poin_of_sale_registers WHERE ID = R, выполненный require('D:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('D:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_Pos_Sell->template_redirect, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\html-admin-pos.php'), include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\footer.php'), WC_Pos_Sell->footer, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\templates\modal.php'), pos_check_user_can_open_register
+[05-Apr-2017 22:33:20 UTC] База данных WordPress возвратила ошибку Unknown column 'R' in 'where clause' в ответ на запрос SELECT * FROM wp_wc_poin_of_sale_registers WHERE ID = R, выполненный require('D:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('D:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_Pos_Sell->template_redirect, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\html-admin-pos.php'), include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\footer.php'), WC_Pos_Sell->footer, include_once('D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\templates\modal.php'), pos_check_user_can_open_register
+[05-Apr-2017 22:44:53 UTC] PHP Fatal error:  Call to undefined method WC_Pos_Registers::wc_pos_get_register() in D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\templates\modal.php on line 269
+[05-Apr-2017 22:45:04 UTC] PHP Fatal error:  Call to undefined method WC_Pos_Registers::wc_pos_get_register() in D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\views\templates\modal.php on line 269
+[06-Apr-2017 08:32:30 UTC] PHP Notice: This XML document is invalid, likely due to invalid characters. XML error: Undeclared entity error at line 11, column 24 in F:\OpenServer\domains\euroroaming\wp-includes\class-simplepie.php on line 1421
+[07-Apr-2017 08:56:16 UTC] PHP Notice: This XML document is invalid, likely due to invalid characters. XML error: Undeclared entity error at line 11, column 24 in F:\OpenServer\domains\euroroaming\wp-includes\class-simplepie.php on line 1421
+[07-Apr-2017 14:25:49 UTC] PHP Fatal error:  Call to undefined function gravity_form() in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\templates\blog\single-post.php on line 254
+[07-Apr-2017 14:27:37 UTC] PHP Fatal error:  Call to undefined function gravity_form() in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\templates\blog\single-post.php on line 254
+[07-Apr-2017 14:27:41 UTC] PHP Fatal error:  Call to undefined function gravity_form() in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\templates\blog\single-post.php on line 254
+[07-Apr-2017 14:28:49 UTC] PHP Fatal error:  Call to undefined function gravity_form() in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\templates\blog\single-post.php on line 254
+[07-Apr-2017 14:29:04 UTC] PHP Fatal error:  Call to undefined function gravity_form() in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\templates\blog\single-post.php on line 254
+[07-Apr-2017 14:30:20 UTC] PHP Fatal error:  Call to undefined function gravity_form() in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\templates\blog\single-post.php on line 254
+[07-Apr-2017 14:32:34 UTC] PHP Fatal error:  Call to undefined function gravity_form() in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\templates\blog\single-post.php on line 254
+[11-Apr-2017 09:29:43 UTC] PHP Notice: This XML document is invalid, likely due to invalid characters. XML error: Undeclared entity error at line 11, column 24 in F:\OpenServer\domains\euroroaming\wp-includes\class-simplepie.php on line 1421
+[11-Apr-2017 11:50:13 UTC] PHP Fatal error:  Call to undefined function get_access_button() in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\class-wc-pos-registers.php on line 405
+[11-Apr-2017 11:50:57 UTC] PHP Fatal error:  Call to undefined function get_access_button() in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-point-of-sale\includes\class-wc-pos-registers.php on line 405
+[13-Apr-2017 10:53:52 UTC] PHP Fatal error:  Call to undefined function gravity_form() in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\templates\blog\single-post.php on line 254
+[13-Apr-2017 10:54:49 UTC] PHP Fatal error:  Call to undefined function gravity_form() in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\templates\blog\single-post.php on line 254
+[13-Apr-2017 10:55:20 UTC] PHP Fatal error:  Call to undefined function gravity_form() in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\templates\blog\single-post.php on line 254
+[13-Apr-2017 10:58:46 UTC] PHP Fatal error:  Call to undefined function gravity_form() in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\templates\blog\single-post.php on line 254
+[13-Apr-2017 10:58:50 UTC] PHP Fatal error:  Call to undefined function gravity_form() in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\templates\blog\single-post.php on line 254
+[14-Apr-2017 10:50:32 UTC] PHP Parse error:  syntax error, unexpected ')' in F:\OpenServer\domains\euroroaming\wp-content\plugins\wp-store-locator\frontend\class-frontend.php on line 782
+[14-Apr-2017 11:50:28 UTC] PHP Parse error:  syntax error, unexpected '[' in F:\OpenServer\domains\euroroaming\wp-content\plugins\wp-store-locator\frontend\class-frontend.php on line 766
+[14-Apr-2017 11:50:30 UTC] PHP Parse error:  syntax error, unexpected '[' in F:\OpenServer\domains\euroroaming\wp-content\plugins\wp-store-locator\frontend\class-frontend.php on line 766
+[03-May-2017 08:02:58 UTC] База данных WordPress возвратила ошибку Table 'euroroaming.wp_users' doesn't exist в ответ на запрос SELECT * FROM wp_users WHERE user_login = '33Evgenyy33', выполненный require_once('F:\OpenServer\domains\euroroaming\wp-load.php'), require_once('F:\OpenServer\domains\euroroaming\wp-config.php'), require_once('F:\OpenServer\domains\euroroaming\wp-settings.php'), do_action('plugins_loaded'), WP_Hook->do_action, WP_Hook->apply_filters, Vc_Manager->pluginsLoaded, load_plugin_textdomain, get_user_locale, wp_get_current_user, _wp_get_current_user, apply_filters('determine_current_user'), WP_Hook->apply_filters, wp_validate_auth_cookie, get_user_by, WP_User::get_data_by
+[03-May-2017 08:02:58 UTC] База данных WordPress возвратила ошибку Table 'euroroaming.wp_users' doesn't exist в ответ на запрос SELECT * FROM wp_users WHERE user_login = '33Evgenyy33', выполненный require_once('F:\OpenServer\domains\euroroaming\wp-load.php'), require_once('F:\OpenServer\domains\euroroaming\wp-config.php'), require_once('F:\OpenServer\domains\euroroaming\wp-settings.php'), do_action('plugins_loaded'), WP_Hook->do_action, WP_Hook->apply_filters, Vc_Manager->pluginsLoaded, load_plugin_textdomain, get_user_locale, wp_get_current_user, _wp_get_current_user, apply_filters('determine_current_user'), WP_Hook->apply_filters, wp_validate_logged_in_cookie, wp_validate_auth_cookie, get_user_by, WP_User::get_data_by
+[03-May-2017 08:02:58 UTC] База данных WordPress возвратила ошибку Table 'euroroaming.wp_woocommerce_sessions' doesn't exist в ответ на запрос SELECT session_value FROM wp_woocommerce_sessions WHERE session_key = '1', выполненный require_once('F:\OpenServer\domains\euroroaming\wp-load.php'), require_once('F:\OpenServer\domains\euroroaming\wp-config.php'), require_once('F:\OpenServer\domains\euroroaming\wp-settings.php'), do_action('init'), WP_Hook->do_action, WP_Hook->apply_filters, WooCommerce->init, WC_Session_Handler->__construct, WC_Session_Handler->get_session_data, WC_Session_Handler->get_session
+[03-May-2017 08:02:59 UTC] База данных WordPress возвратила ошибку Table 'euroroaming.wp_posts' doesn't exist в ответ на запрос SELECT * FROM wp_posts WHERE ID = 4756 LIMIT 1, выполненный require_once('F:\OpenServer\domains\euroroaming\wp-load.php'), require_once('F:\OpenServer\domains\euroroaming\wp-config.php'), require_once('F:\OpenServer\domains\euroroaming\wp-settings.php'), do_action('init'), WP_Hook->do_action, WP_Hook->apply_filters, WC_Post_types::register_post_types, get_post, WP_Post::get_instance
+[03-May-2017 08:02:59 UTC] База данных WordPress возвратила ошибку Table 'euroroaming.wp_terms' doesn't exist в ответ на запрос SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('us_portfolio_category') AND tt.count > 0 ORDER BY t.name ASC , выполненный require_once('F:\OpenServer\domains\euroroaming\wp-load.php'), require_once('F:\OpenServer\domains\euroroaming\wp-config.php'), require_once('F:\OpenServer\domains\euroroaming\wp-settings.php'), do_action('init'), WP_Hook->do_action, WP_Hook->apply_filters, Vc_Manager->init, do_action('vc_after_set_mode'), WP_Hook->do_action, WP_Hook->apply_filters, us_vc_after_set_mode, require('F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr\plugins-support\js_composer\map\us_portfolio.php'), require('F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr\framework\plugins-support\js_composer\map\us_portfolio.php'), get_categories, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[03-May-2017 08:02:59 UTC] База данных WordPress возвратила ошибку Table 'euroroaming.wp_terms' doesn't exist в ответ на запрос SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('category') AND tt.count > 0 ORDER BY t.name ASC , выполненный require_once('F:\OpenServer\domains\euroroaming\wp-load.php'), require_once('F:\OpenServer\domains\euroroaming\wp-config.php'), require_once('F:\OpenServer\domains\euroroaming\wp-settings.php'), do_action('init'), WP_Hook->do_action, WP_Hook->apply_filters, Vc_Manager->init, do_action('vc_after_set_mode'), WP_Hook->do_action, WP_Hook->apply_filters, us_vc_after_set_mode, require('F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr\plugins-support\js_composer\map\us_blog.php'), require('F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr\framework\plugins-support\js_composer\map\us_blog.php'), get_categories, get_terms, WP_Term_Query->query, WP_Term_Query->get_terms
+[03-May-2017 08:02:59 UTC] База данных WordPress возвратила ошибку Table 'euroroaming.wp_users' doesn't exist в ответ на запрос SELECT * FROM wp_users WHERE user_login = '33Evgenyy33', выполненный require_once('F:\OpenServer\domains\euroroaming\wp-load.php'), require_once('F:\OpenServer\domains\euroroaming\wp-config.php'), require_once('F:\OpenServer\domains\euroroaming\wp-settings.php'), do_action('plugins_loaded'), WP_Hook->do_action, WP_Hook->apply_filters, Vc_Manager->pluginsLoaded, load_plugin_textdomain, get_user_locale, wp_get_current_user, _wp_get_current_user, apply_filters('determine_current_user'), WP_Hook->apply_filters, wp_validate_auth_cookie, get_user_by, WP_User::get_data_by
+[03-May-2017 08:02:59 UTC] База данных WordPress возвратила ошибку Table 'euroroaming.wp_users' doesn't exist в ответ на запрос SELECT * FROM wp_users WHERE user_login = '33Evgenyy33', выполненный require_once('F:\OpenServer\domains\euroroaming\wp-load.php'), require_once('F:\OpenServer\domains\euroroaming\wp-config.php'), require_once('F:\OpenServer\domains\euroroaming\wp-settings.php'), do_action('plugins_loaded'), WP_Hook->do_action, WP_Hook->apply_filters, Vc_Manager->pluginsLoaded, load_plugin_textdomain, get_user_locale, wp_get_current_user, _wp_get_current_user, apply_filters('determine_current_user'), WP_Hook->apply_filters, wp_validate_logged_in_cookie, wp_validate_auth_cookie, get_user_by, WP_User::get_data_by
+[03-May-2017 08:02:59 UTC] База данных WordPress возвратила ошибку Table 'euroroaming.wp_users' doesn't exist в ответ на запрос SELECT * FROM wp_users WHERE user_login = '33Evgenyy33', выполненный require('F:\OpenServer\domains\euroroaming\wp-load.php'), require_once('F:\OpenServer\domains\euroroaming\wp-config.php'), require_once('F:\OpenServer\domains\euroroaming\wp-settings.php'), do_action('plugins_loaded'), WP_Hook->do_action, WP_Hook->apply_filters, Affiliate_WP->load_textdomain, get_user_locale, wp_get_current_user, _wp_get_current_user, apply_filters('determine_current_user'), WP_Hook->apply_filters, wp_validate_logged_in_cookie, wp_validate_auth_cookie, get_user_by, WP_User::get_data_by
+[03-May-2017 08:02:59 UTC] База данных WordPress возвратила ошибку Table 'euroroaming.wp_woocommerce_sessions' doesn't exist в ответ на запрос SELECT session_value FROM wp_woocommerce_sessions WHERE session_key = '1', выполненный require('F:\OpenServer\domains\euroroaming\wp-load.php'), require_once('F:\OpenServer\domains\euroroaming\wp-config.php'), require_once('F:\OpenServer\domains\euroroaming\wp-settings.php'), do_action('init'), WP_Hook->do_action, WP_Hook->apply_filters, WooCommerce->init, WC_Session_Handler->__construct, WC_Session_Handler->get_session_data, WC_Session_Handler->get_session
+[03-May-2017 08:02:59 UTC] База данных WordPress возвратила ошибку Table 'euroroaming.wp_posts' doesn't exist в ответ на запрос SELECT * FROM wp_posts WHERE ID = 4756 LIMIT 1, выполненный require('F:\OpenServer\domains\euroroaming\wp-load.php'), require_once('F:\OpenServer\domains\euroroaming\wp-config.php'), require_once('F:\OpenServer\domains\euroroaming\wp-settings.php'), do_action('init'), WP_Hook->do_action, WP_Hook->apply_filters, WC_Post_types::register_post_types, get_post, WP_Post::get_instance
+[03-May-2017 08:03:00 UTC] База данных WordPress возвратила ошибку Table 'euroroaming.wp_users' doesn't exist в ответ на запрос SELECT * FROM wp_users WHERE user_login = '33Evgenyy33', выполненный require('F:\OpenServer\domains\euroroaming\wp-load.php'), require_once('F:\OpenServer\domains\euroroaming\wp-config.php'), require_once('F:\OpenServer\domains\euroroaming\wp-settings.php'), do_action('plugins_loaded'), WP_Hook->do_action, WP_Hook->apply_filters, Affiliate_WP->load_textdomain, get_user_locale, wp_get_current_user, _wp_get_current_user, apply_filters('determine_current_user'), WP_Hook->apply_filters, wp_validate_logged_in_cookie, wp_validate_auth_cookie, get_user_by, WP_User::get_data_by
+[03-May-2017 08:48:37 UTC] PHP Fatal error:  Allowed memory size of 1610612736 bytes exhausted (tried to allocate 1751475042 bytes) in F:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 226
+[03-May-2017 10:40:03 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://lk-test.cse.ru/1c/ws/web1c.1cws?wsdl' : failed to load external entity "http://lk-test.cse.ru/1c/ws/web1c.1cws?wsdl"
+ in F:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 228
+[03-May-2017 10:40:07 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://lk-test.cse.ru/1c/ws/web1c.1cws?wsdl' : failed to load external entity "http://lk-test.cse.ru/1c/ws/web1c.1cws?wsdl"
+ in F:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 228
+[03-May-2017 10:40:16 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://lk-test.cse.ru/1c/ws/web1c.1cws?wsdl' : failed to load external entity "http://lk-test.cse.ru/1c/ws/web1c.1cws?wsdl"
+ in F:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 228
+[03-May-2017 10:40:38 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://lk-test.cse.ru/1c/ws/web1c.1cws?wsdl' : failed to load external entity "http://lk-test.cse.ru/1c/ws/web1c.1cws?wsdl"
+ in F:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 228
+[03-May-2017 10:40:42 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://lk-test.cse.ru/1c/ws/web1c.1cws?wsdl' : failed to load external entity "http://lk-test.cse.ru/1c/ws/web1c.1cws?wsdl"
+ in F:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 228
+[03-May-2017 10:41:05 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://lk-test.cse.ru/1c/ws/web1c.1cws?wsdl' : failed to load external entity "http://lk-test.cse.ru/1c/ws/web1c.1cws?wsdl"
+ in F:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 228
+[03-May-2017 10:41:09 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://lk-test.cse.ru/1c/ws/web1c.1cws?wsdl' : failed to load external entity "http://lk-test.cse.ru/1c/ws/web1c.1cws?wsdl"
+ in F:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 228
+[03-May-2017 12:02:19 UTC] PHP Fatal error:  Cannot use try without catch or finally in F:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 296
+[03-May-2017 12:19:20 UTC] Oracle database not available!
+[03-May-2017 12:19:32 UTC] Oracle database not available!
+[03-May-2017 12:20:23 UTC] Oracle database not available!
+[03-May-2017 12:20:25 UTC] Oracle database not available!
+[03-May-2017 12:20:36 UTC] Oracle database not available!
+[03-May-2017 12:20:38 UTC] Oracle database not available!
+[03-May-2017 12:20:43 UTC] Oracle database not available!
+[03-May-2017 12:22:04 UTC] cost = 1110
+[03-May-2017 12:22:19 UTC] cost = 975
+[03-May-2017 12:23:01 UTC] cost = 975
+[03-May-2017 12:24:23 UTC] cost = 975
+[03-May-2017 12:24:48 UTC] cost = 1170
+[03-May-2017 12:25:23 UTC] cost = 1230
+[03-May-2017 12:25:37 UTC] cost = 550
+[03-May-2017 13:06:20 UTC] cost = 650
+[03-May-2017 13:06:34 UTC] cost = 975
+[03-May-2017 13:06:50 UTC] cost = 975
+[03-May-2017 13:10:01 UTC] cost = 975
+[03-May-2017 13:10:17 UTC] cost = 650
+[03-May-2017 13:10:29 UTC] cost = 975
+[03-May-2017 13:10:39 UTC] cost = 650
+[03-May-2017 13:10:50 UTC] cost = 880
+[03-May-2017 13:11:08 UTC] cost = 780
+[03-May-2017 13:12:38 UTC] cost = 550
+[03-May-2017 13:13:23 UTC] cost = 550
+[03-May-2017 13:13:41 UTC] cost = 1350
+[03-May-2017 13:15:59 UTC] cost = 740
+[03-May-2017 13:16:27 UTC] cost = 880
+[03-May-2017 13:18:05 UTC] cost = 650
+[03-May-2017 13:20:15 UTC] cost = 650
+[04-May-2017 07:24:23 UTC] cost = 650
+[04-May-2017 07:28:07 UTC] cost = 650
+[04-May-2017 07:28:19 UTC] cost = 650
+[04-May-2017 07:28:33 UTC] cost = 650
+[04-May-2017 09:49:18 UTC] cost = 975
+[04-May-2017 09:49:33 UTC] cost = 650
+[04-May-2017 11:52:47 UTC] cost = 975
+[04-May-2017 12:50:24 UTC] cost = 650
+[04-May-2017 13:04:32 UTC] cost = 650
+[04-May-2017 13:04:36 UTC] cost = 650
+[04-May-2017 13:06:25 UTC] cost = 650
+[04-May-2017 13:06:29 UTC] cost = 650
+[04-May-2017 13:06:39 UTC] cost = 650
+[04-May-2017 13:06:43 UTC] cost = 650
+[04-May-2017 13:07:51 UTC] cost = 650
+[04-May-2017 13:07:55 UTC] cost = 650
+[04-May-2017 13:08:15 UTC] cost = 650
+[04-May-2017 13:08:19 UTC] cost = 650
+[04-May-2017 13:09:45 UTC] cost = 650
+[04-May-2017 13:09:48 UTC] cost = 650
+[04-May-2017 13:11:00 UTC] База данных WordPress возвратила ошибку Duplicate key name 'location_type_code' в ответ на запрос ALTER TABLE wp_woocommerce_tax_rate_locations ADD KEY `location_type_code` (`location_type`(40),`location_code`(90)), выполненный activate_plugin, do_action('activate_woocommerce/woocommerce.php'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_Install::install, WC_Install::create_tables, dbDelta
+[04-May-2017 13:11:00 UTC] База данных WordPress возвратила ошибку Duplicate key name 'location_type_code' в ответ на запрос ALTER TABLE wp_woocommerce_shipping_zone_locations ADD KEY `location_type_code` (`location_type`(40),`location_code`(90)), выполненный activate_plugin, do_action('activate_woocommerce/woocommerce.php'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_Install::install, WC_Install::create_tables, dbDelta
+[04-May-2017 13:58:38 UTC] cost = 650
+[04-May-2017 14:03:45 UTC] cost = 650
+[04-May-2017 14:03:45 UTC] PHP Fatal error:  Call to undefined function setTest1() in F:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 249
+[04-May-2017 14:04:10 UTC] cost = 650
+[04-May-2017 14:04:14 UTC] cost = 650
+[04-May-2017 14:04:22 UTC] cost = 650
+[04-May-2017 14:04:25 UTC] cost = 650
+[04-May-2017 14:04:46 UTC] cost = 650
+[04-May-2017 14:04:50 UTC] cost = 650
+[04-May-2017 14:04:54 UTC] cost = 650
+[04-May-2017 14:04:58 UTC] cost = 650
+[04-May-2017 14:05:03 UTC] cost = 650
+[04-May-2017 14:05:11 UTC] cost = 975
+[04-May-2017 15:00:15 UTC] cost = 975
+[04-May-2017 15:00:19 UTC] cost = 650
+[04-May-2017 15:00:24 UTC] cost = 650
+[04-May-2017 15:00:27 UTC] cost = 650
+[04-May-2017 15:01:09 UTC] cost = 650
+[04-May-2017 15:01:09 UTC] PHP Fatal error:  Call to undefined method cse_Shipping_Method::setTest1() in F:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 251
+[04-May-2017 15:01:23 UTC] cost = 650
+[04-May-2017 15:01:23 UTC] PHP Fatal error:  Call to undefined method cse_Shipping_Method::setTest1() in F:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 251
+[04-May-2017 15:01:25 UTC] cost = 650
+[04-May-2017 15:01:25 UTC] PHP Fatal error:  Call to undefined method cse_Shipping_Method::setTest1() in F:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 251
+[04-May-2017 15:01:31 UTC] cost = 650
+[04-May-2017 15:01:34 UTC] cost = 650
+[05-May-2017 07:42:00 UTC] cost = 650
+[05-May-2017 07:42:03 UTC] cost = 650
+[05-May-2017 07:42:11 UTC] cost = 650
+[05-May-2017 07:42:14 UTC] cost = 650
+[05-May-2017 07:47:57 UTC] cost = 650
+[05-May-2017 07:56:54 UTC] cost = 650
+[05-May-2017 07:56:59 UTC] cost = 650
+[05-May-2017 07:58:54 UTC] cost = 975
+[05-May-2017 08:06:45 UTC] cost = 650
+[05-May-2017 08:07:05 UTC] cost = 975
+[05-May-2017 08:08:23 UTC] cost = 975
+[05-May-2017 08:08:30 UTC] cost = 975
+[05-May-2017 08:08:44 UTC] cost = 650
+[05-May-2017 08:09:35 UTC] cost = 650
+[05-May-2017 08:47:31 UTC] cost = 1110
+[05-May-2017 09:08:11 UTC] cost = 1110
+[05-May-2017 09:08:18 UTC] cost = 650
+[05-May-2017 09:09:22 UTC] cost = 975
+[05-May-2017 09:12:54 UTC] cost = 975
+[05-May-2017 09:12:58 UTC] cost = 975
+[05-May-2017 09:19:27 UTC] cost = 650
+[05-May-2017 09:23:18 UTC] cost = 650
+[05-May-2017 09:23:33 UTC] cost = 975
+[05-May-2017 09:23:41 UTC] cost = 650
+[05-May-2017 09:23:53 UTC] cost = 975
+[05-May-2017 09:24:01 UTC] cost = 975
+[05-May-2017 09:31:06 UTC] PHP Fatal error:  Interface 'Phpro\SoapClient\ClientInterface' not found in F:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\SoapClient\Client.php on line 23
+[05-May-2017 09:31:11 UTC] PHP Fatal error:  Interface 'Phpro\SoapClient\ClientInterface' not found in F:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\SoapClient\Client.php on line 23
+[05-May-2017 09:31:13 UTC] PHP Fatal error:  Interface 'Phpro\SoapClient\ClientInterface' not found in F:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\SoapClient\Client.php on line 23
+[05-May-2017 09:31:25 UTC] PHP Fatal error:  Interface 'Phpro\SoapClient\ClientInterface' not found in F:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\SoapClient\Client.php on line 23
+[05-May-2017 09:31:27 UTC] PHP Fatal error:  Interface 'Phpro\SoapClient\ClientInterface' not found in F:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\SoapClient\Client.php on line 23
+[05-May-2017 09:31:29 UTC] PHP Fatal error:  Interface 'Phpro\SoapClient\ClientInterface' not found in F:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\SoapClient\Client.php on line 23
+[05-May-2017 09:31:53 UTC] cost = 975
+[05-May-2017 09:31:57 UTC] cost = 975
+[05-May-2017 09:31:58 UTC] PHP Fatal error:  Interface 'Phpro\SoapClient\ClientInterface' not found in F:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\SoapClient\Client.php on line 23
+[05-May-2017 09:31:59 UTC] PHP Fatal error:  Interface 'Phpro\SoapClient\ClientInterface' not found in F:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\SoapClient\Client.php on line 23
+[05-May-2017 09:32:08 UTC] PHP Fatal error:  Interface 'Phpro\SoapClient\ClientInterface' not found in F:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\SoapClient\Client.php on line 23
+[05-May-2017 09:32:13 UTC] PHP Fatal error:  Interface 'Phpro\SoapClient\ClientInterface' not found in F:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\SoapClient\Client.php on line 23
+[05-May-2017 09:32:55 UTC] PHP Fatal error:  Interface 'Phpro\SoapClient\ClientInterface' not found in F:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\Phpro\SoapClient\Client.php on line 23
+[05-May-2017 09:32:57 UTC] PHP Fatal error:  Interface 'Phpro\SoapClient\ClientInterface' not found in F:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\Phpro\SoapClient\Client.php on line 23
+[05-May-2017 09:34:10 UTC] cost = 975
+[05-May-2017 09:34:14 UTC] cost = 975
+[05-May-2017 09:34:17 UTC] cost = 975
+[05-May-2017 09:34:20 UTC] cost = 975
+[05-May-2017 09:38:23 UTC] cost = 975
+[05-May-2017 09:38:26 UTC] cost = 975
+[05-May-2017 09:38:31 UTC] cost = 975
+[05-May-2017 09:38:35 UTC] cost = 975
+[05-May-2017 09:38:46 UTC] cost = 975
+[05-May-2017 09:38:50 UTC] cost = 975
+[05-May-2017 09:39:05 UTC] cost = 975
+[05-May-2017 09:39:08 UTC] cost = 975
+[05-May-2017 09:39:16 UTC] cost = 975
+[05-May-2017 09:40:13 UTC] Расчитано: 975
+[05-May-2017 09:40:16 UTC] Расчитано: 975
+[05-May-2017 09:40:20 UTC] Расчитано: 975
+[05-May-2017 09:40:38 UTC] Расчитано: 650
+[05-May-2017 09:40:56 UTC] Расчитано: 780
+[05-May-2017 09:41:11 UTC] Расчитано: 650
+[05-May-2017 09:46:00 UTC] Расчитано: 975
+[05-May-2017 09:46:18 UTC] Расчитано: 650
+[05-May-2017 09:47:08 UTC] Расчитано: 975
+[05-May-2017 09:47:29 UTC] Расчитано: 975
+[05-May-2017 09:47:40 UTC] Расчитано: 1230
+[05-May-2017 10:19:08 UTC] Расчитано: 650
+[05-May-2017 10:19:20 UTC] Расчитано: 975
+[05-May-2017 10:19:29 UTC] Расчитано: 0
+[05-May-2017 10:20:57 UTC] Расчитано: 650
+[05-May-2017 10:21:11 UTC] Расчитано: 1320
+[05-May-2017 10:21:27 UTC] Расчитано: 1320
+[05-May-2017 10:21:37 UTC] Расчитано: 880
+[05-May-2017 10:21:48 UTC] Расчитано: 975
+[05-May-2017 10:21:59 UTC] Расчитано: 975
+[05-May-2017 10:22:04 UTC] Расчитано: 975
+[05-May-2017 10:22:34 UTC] Расчитано: 650
+[05-May-2017 10:22:52 UTC] Расчитано: 0
+[05-May-2017 10:23:14 UTC] Расчитано: 550
+[05-May-2017 10:23:32 UTC] Расчитано: 650
+[05-May-2017 10:23:37 UTC] Расчитано: 650
+[05-May-2017 10:23:42 UTC] Расчитано: 975
+[05-May-2017 10:23:47 UTC] Расчитано: 975
+[05-May-2017 10:23:52 UTC] Расчитано: 975
+[05-May-2017 10:24:02 UTC] Расчитано: 650
+[05-May-2017 10:24:12 UTC] Расчитано: 975
+[05-May-2017 10:24:20 UTC] Расчитано: 880
+[05-May-2017 10:24:27 UTC] Расчитано: 650
+[05-May-2017 10:24:35 UTC] Расчитано: 975
+[05-May-2017 10:24:39 UTC] Расчитано: 975
+[05-May-2017 10:24:43 UTC] Расчитано: 975
+[05-May-2017 10:24:47 UTC] Расчитано: 975
+[05-May-2017 10:24:50 UTC] Расчитано: 975
+[05-May-2017 10:25:44 UTC] Расчитано: 975
+[05-May-2017 10:25:51 UTC] Расчитано: 975
+[05-May-2017 10:26:00 UTC] Расчитано: 780
+[05-May-2017 10:32:16 UTC] Расчитано: 650
+[05-May-2017 10:32:25 UTC] Расчитано: 975
+[05-May-2017 10:32:34 UTC] Расчитано: 880
+[05-May-2017 10:32:43 UTC] Расчитано: 975
+[05-May-2017 10:34:05 UTC] Расчитано: 650
+[05-May-2017 10:34:13 UTC] Расчитано: 740
+[05-May-2017 10:34:17 UTC] Расчитано: 740
+[05-May-2017 10:34:21 UTC] Расчитано: 975
+[05-May-2017 10:34:59 UTC] Расчитано: 650
+[05-May-2017 10:35:07 UTC] Расчитано: 780
+[07-May-2017 13:06:19 UTC] Расчитано: 650
+[07-May-2017 13:06:23 UTC] Расчитано: 650
+[07-May-2017 13:06:34 UTC] Расчитано: 975
+[07-May-2017 13:06:41 UTC] Расчитано: 650
+[07-May-2017 20:46:33 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://web.cse.ru/1c/ws/Web1C.1cws?wsdl' : failed to load external entity "http://web.cse.ru/1c/ws/Web1C.1cws?wsdl"
+ in D:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 125
+[07-May-2017 20:46:48 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://web.cse.ru/1c/ws/Web1C.1cws?wsdl' : failed to load external entity "http://web.cse.ru/1c/ws/Web1C.1cws?wsdl"
+ in D:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 125
+[07-May-2017 20:50:03 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://web.cse.ru/1c/ws/Web1C.1cws?wsdl' : failed to load external entity "http://web.cse.ru/1c/ws/Web1C.1cws?wsdl"
+ in D:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 125
+[07-May-2017 20:50:16 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://web.cse.ru/1c/ws/Web1C.1cws?wsdl' : failed to load external entity "http://web.cse.ru/1c/ws/Web1C.1cws?wsdl"
+ in D:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 125
+[07-May-2017 20:51:28 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://web.cse.ru/1c/ws/Web1C.1cws?wsdl' : failed to load external entity "http://web.cse.ru/1c/ws/Web1C.1cws?wsdl"
+ in D:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 125
+[07-May-2017 20:52:48 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://web.cse.ru/1c/ws/Web1C.1cws?wsdl' : failed to load external entity "http://web.cse.ru/1c/ws/Web1C.1cws?wsdl"
+ in D:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 125
+[07-May-2017 20:53:20 UTC] Расчитано: 0
+[07-May-2017 20:53:22 UTC] Расчитано: 0
+[07-May-2017 20:53:47 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://web.cse.ru/1c/ws/Web1C.1cws?wsdl' : failed to load external entity "http://web.cse.ru/1c/ws/Web1C.1cws?wsdl"
+ in D:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 125
+[07-May-2017 20:54:21 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://web.cse.ru/1c/ws/Web1C.1cws?wsdl' : failed to load external entity "http://web.cse.ru/1c/ws/Web1C.1cws?wsdl"
+ in D:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 125
+[07-May-2017 20:55:19 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://web.cse.ru/1c/ws/Web1C.1cws?wsdl' : failed to load external entity "http://web.cse.ru/1c/ws/Web1C.1cws?wsdl"
+ in D:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 125
+[07-May-2017 20:58:06 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://web.cse.ru/1c/ws/Web1C.1cws?wsdl' : failed to load external entity "http://web.cse.ru/1c/ws/Web1C.1cws?wsdl"
+ in D:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 126
+[07-May-2017 20:59:28 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://web.cse.ru/1c/ws/Web1C.1cws?wsdl' : failed to load external entity "http://web.cse.ru/1c/ws/Web1C.1cws?wsdl"
+ in D:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 126
+[07-May-2017 21:04:13 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://web.cse.ru/1c/ws/Web1C.1cws?wsdl' : failed to load external entity "http://web.cse.ru/1c/ws/Web1C.1cws?wsdl"
+ in D:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 126
+[07-May-2017 21:05:16 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://web.cse.ru/1c/ws/Web1C.1cws?wsdl' : failed to load external entity "http://web.cse.ru/1c/ws/Web1C.1cws?wsdl"
+ in D:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 126
+[07-May-2017 21:05:26 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://web.cse.ru/1c/ws/Web1C.1cws?wsdl' : failed to load external entity "http://web.cse.ru/1c/ws/Web1C.1cws?wsdl"
+ in D:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 180
+[07-May-2017 21:05:26 UTC] Расчитано: 0
+[07-May-2017 21:05:37 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://web.cse.ru/1c/ws/Web1C.1cws?wsdl' : failed to load external entity "http://web.cse.ru/1c/ws/Web1C.1cws?wsdl"
+ in D:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 126
+[07-May-2017 21:05:46 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://web.cse.ru/1c/ws/Web1C.1cws?wsdl' : failed to load external entity "http://web.cse.ru/1c/ws/Web1C.1cws?wsdl"
+ in D:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 180
+[07-May-2017 21:05:46 UTC] Расчитано: 0
+[07-May-2017 21:07:56 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://web.cse.ru/1c/ws/Web1C.1cws?wsdl' : failed to load external entity "http://web.cse.ru/1c/ws/Web1C.1cws?wsdl"
+ in D:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 126
+[07-May-2017 21:08:08 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://web.cse.ru/1c/ws/Web1C.1cws?wsdl' : failed to load external entity "http://web.cse.ru/1c/ws/Web1C.1cws?wsdl"
+ in D:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 126
+[07-May-2017 21:08:21 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://web.cse.ru/1c/ws/Web1C.1cws?wsdl' : failed to load external entity "http://web.cse.ru/1c/ws/Web1C.1cws?wsdl"
+ in D:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 126
+[07-May-2017 21:08:32 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://web.cse.ru/1c/ws/Web1C.1cws?wsdl' : failed to load external entity "http://web.cse.ru/1c/ws/Web1C.1cws?wsdl"
+ in D:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 126
+[07-May-2017 21:09:51 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://web.cse.ru/1c/ws/Web1C.1cws?wsdl' : failed to load external entity "http://web.cse.ru/1c/ws/Web1C.1cws?wsdl"
+ in D:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 126
+[07-May-2017 21:10:02 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://web.cse.ru/1c/ws/Web1C.1cws?wsdl' : failed to load external entity "http://web.cse.ru/1c/ws/Web1C.1cws?wsdl"
+ in D:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 126
+[07-May-2017 21:26:45 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://web.cse.ru/1c/ws/Web1C.1cws?wsdl' : failed to load external entity "http://web.cse.ru/1c/ws/Web1C.1cws?wsdl"
+ in D:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 127
+[07-May-2017 21:27:13 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://web.cse.ru/1c/ws/Web1C.1cws?wsdl' : failed to load external entity "http://web.cse.ru/1c/ws/Web1C.1cws?wsdl"
+ in D:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 127
+[07-May-2017 21:29:30 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://web.cse.ru/1c/ws/Web1C.1cws?wsdl' : failed to load external entity "http://web.cse.ru/1c/ws/Web1C.1cws?wsdl"
+ in D:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 127
+[07-May-2017 21:29:41 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://web.cse.ru/1c/ws/Web1C.1cws?wsdl' : failed to load external entity "http://web.cse.ru/1c/ws/Web1C.1cws?wsdl"
+ in D:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 127
+[07-May-2017 23:55:35 UTC] Расчитано: 650
+[07-May-2017 23:55:39 UTC] Расчитано: 650
+[07-May-2017 23:55:48 UTC] Расчитано: 975
+[07-May-2017 23:56:37 UTC] Расчитано: 975
+[07-May-2017 23:56:40 UTC] Расчитано: 975
+[07-May-2017 23:57:02 UTC] Расчитано: 975
+[07-May-2017 23:57:05 UTC] Расчитано: 975
+[07-May-2017 23:57:32 UTC] Расчитано: 650
+[07-May-2017 23:58:01 UTC] Расчитано: 650
+[07-May-2017 23:58:04 UTC] Расчитано: 650
+[07-May-2017 23:59:22 UTC] Расчитано: 650
+[07-May-2017 23:59:26 UTC] Расчитано: 650
+[07-May-2017 23:59:50 UTC] Расчитано: 650
+[07-May-2017 23:59:53 UTC] Расчитано: 650
+[08-May-2017 00:00:21 UTC] Расчитано: 650
+[08-May-2017 00:00:25 UTC] Расчитано: 650
+[08-May-2017 00:01:07 UTC] Расчитано: 650
+[08-May-2017 00:01:10 UTC] Расчитано: 650
+[08-May-2017 00:03:26 UTC] Расчитано: 650
+[08-May-2017 00:03:29 UTC] Расчитано: 650
+[08-May-2017 00:05:48 UTC] Расчитано: 650
+[08-May-2017 00:05:52 UTC] Расчитано: 650
+[08-May-2017 00:06:09 UTC] Расчитано: 650
+[08-May-2017 00:06:38 UTC] Расчитано: 650
+[08-May-2017 00:25:47 UTC] Расчитано: 650
+[10-May-2017 14:17:26 UTC] PHP Fatal error:  Call to undefined function check_orange_format() in F:\OpenServer\domains\euroroaming\wp-content\plugins\wp-store-locator\frontend\class-frontend.php on line 811
+[12-May-2017 09:23:57 UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 15
+[12-May-2017 09:23:58 UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 15
+[12-May-2017 09:24:01 UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 15
+[14-May-2017 19:20:12 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://web.cse.ru/1c/ws/Web1C.1cws?wsdl' : failed to load external entity "http://web.cse.ru/1c/ws/Web1C.1cws?wsdl"
+ in D:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 126
+[14-May-2017 19:21:47 UTC] PHP Fatal error:  SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://web.cse.ru/1c/ws/Web1C.1cws?wsdl' : failed to load external entity "http://web.cse.ru/1c/ws/Web1C.1cws?wsdl"
+ in D:\OpenServer\domains\euroroaming\wp-content\plugins\cse-delivery-for-woocommerce\cse-delivery-for-woocommerce.php on line 126
+[15-May-2017 20:09:27 UTC] Расчитано: 650
+[15-May-2017 20:10:56 UTC] Расчитано: 650
+[15-May-2017 20:11:17 UTC] Расчитано: 650
+[15-May-2017 20:11:43 UTC] Расчитано: 650
+[15-May-2017 21:16:41 UTC] База данных WordPress возвратила ошибку You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1 в ответ на запрос DELETE FROM wp_wc_point_of_sale_sale_reports WHERE `id` IN (), выполненный require_once('D:\OpenServer\domains\euroroaming\wp-admin\admin.php'), do_action('admin_init'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_POS_Admin_Post_Actions->actions_session_reports, WC_Pos_Session_Reports->delete_session_report
+[16-May-2017 08:06:00 UTC] PHP Parse error:  syntax error, unexpected '}' in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-shipping-local-pickup-plus\classes\class-wc-shipping-local-pickup-plus.php on line 1259
+[16-May-2017 08:50:27 UTC] PHP Parse error:  syntax error, unexpected '}' in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-shipping-local-pickup-plus\classes\class-wc-shipping-local-pickup-plus.php on line 1302
+[16-May-2017 08:50:42 UTC] PHP Parse error:  syntax error, unexpected '}' in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-shipping-local-pickup-plus\classes\class-wc-shipping-local-pickup-plus.php on line 1302
+[16-May-2017 08:50:56 UTC] PHP Parse error:  syntax error, unexpected '}' in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-shipping-local-pickup-plus\classes\class-wc-shipping-local-pickup-plus.php on line 1302
+[16-May-2017 08:51:07 UTC] PHP Parse error:  syntax error, unexpected '}' in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-shipping-local-pickup-plus\classes\class-wc-shipping-local-pickup-plus.php on line 1302
+[16-May-2017 08:51:20 UTC] PHP Parse error:  syntax error, unexpected '}' in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-shipping-local-pickup-plus\classes\class-wc-shipping-local-pickup-plus.php on line 1302
+[16-May-2017 08:51:22 UTC] PHP Parse error:  syntax error, unexpected '}' in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-shipping-local-pickup-plus\classes\class-wc-shipping-local-pickup-plus.php on line 1302
+[16-May-2017 08:51:29 UTC] PHP Parse error:  syntax error, unexpected '}' in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-shipping-local-pickup-plus\classes\class-wc-shipping-local-pickup-plus.php on line 1302
+[16-May-2017 08:51:53 UTC] PHP Parse error:  syntax error, unexpected '}' in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-shipping-local-pickup-plus\classes\class-wc-shipping-local-pickup-plus.php on line 1302
+[16-May-2017 09:20:41 UTC] PHP Fatal error:  Cannot break/continue 3 levels in F:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-shipping-local-pickup-plus\classes\class-wc-shipping-local-pickup-plus.php on line 1327
+[01-Jun-2017 11:46:29 UTC] База данных WordPress возвратила ошибку Table 'euroroaming.wp_rg_form' doesn't exist в ответ на запрос SELECT f.id, f.title, f.date_created, f.is_active, 0 as lead_count, 0 view_count
+                FROM wp_rg_form f
+                WHERE is_trash=0 AND is_active=1
+                ORDER BY title ASC, выполненный require_once('F:\OpenServer\domains\euroroaming\wp-admin\admin.php'), require_once('F:\OpenServer\domains\euroroaming\wp-load.php'), require_once('F:\OpenServer\domains\euroroaming\wp-config.php'), require_once('F:\OpenServer\domains\euroroaming\wp-settings.php'), do_action('init'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, Vc_Manager->init, do_action('vc_after_init'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, vc_vendor_gravityforms_load, GFFormsModel::get_forms
+[01-Jun-2017 11:46:29 UTC] База данных WordPress возвратила ошибку Table 'euroroaming.wp_rg_lead' doesn't exist в ответ на запрос SELECT form_id, count(id) as lead_count FROM wp_rg_lead l WHERE status='active' GROUP BY form_id, выполненный require_once('F:\OpenServer\domains\euroroaming\wp-admin\admin.php'), require_once('F:\OpenServer\domains\euroroaming\wp-load.php'), require_once('F:\OpenServer\domains\euroroaming\wp-config.php'), require_once('F:\OpenServer\domains\euroroaming\wp-settings.php'), do_action('init'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, Vc_Manager->init, do_action('vc_after_init'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, vc_vendor_gravityforms_load, GFFormsModel::get_forms, GFFormsModel::get_entry_count_per_form
+[01-Jun-2017 11:46:29 UTC] База данных WordPress возвратила ошибку Table 'euroroaming.wp_rg_form_view' doesn't exist в ответ на запрос SELECT form_id, sum(count) as view_count FROM wp_rg_form_view GROUP BY form_id, выполненный require_once('F:\OpenServer\domains\euroroaming\wp-admin\admin.php'), require_once('F:\OpenServer\domains\euroroaming\wp-load.php'), require_once('F:\OpenServer\domains\euroroaming\wp-config.php'), require_once('F:\OpenServer\domains\euroroaming\wp-settings.php'), do_action('init'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, Vc_Manager->init, do_action('vc_after_init'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, vc_vendor_gravityforms_load, GFFormsModel::get_forms, GFFormsModel::get_view_count_per_form
+[01-Jun-2017 13:43:31 UTC] База данных WordPress возвратила ошибку Table 'euroroaming.wp_em_themes' doesn't exist в ответ на запрос SELECT * FROM  wp_em_themes WHERE 1 = 1, выполненный require_once('F:\OpenServer\domains\euroroaming\wp-admin\admin.php'), do_action('admin_init'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, popmake_emodal_admin_init, popmake_emodal_v2_import, get_all_modal_themes, EModal_Model->load
+[01-Jun-2017 13:43:31 UTC] База данных WordPress возвратила ошибку Table 'euroroaming.wp_em_modals' doesn't exist в ответ на запрос SELECT * FROM wp_em_modals WHERE 1 = 1, выполненный require_once('F:\OpenServer\domains\euroroaming\wp-admin\admin.php'), do_action('admin_init'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, popmake_emodal_admin_init, popmake_emodal_v2_import, get_all_modals, EModal_Model->load
+[30-Jun-2017 08:06:48 UTC] Payment has been received for order 23129
+[30-Jun-2017 08:54:53 UTC] Payment has been received for order1
+[30-Jun-2017 09:05:50 UTC] PHP Parse error:  syntax error, unexpected ',', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in F:\OpenServer\domains\euroroaming\wp-content\plugins\amocrm-integration\cse-delivery-for-woocommerce.php on line 31
+[30-Jun-2017 10:49:34 UTC] PHP Fatal error:  Call to undefined method WC_Order::get_order_total() in F:\OpenServer\domains\euroroaming\wp-content\plugins\amocrm-integration\cse-delivery-for-woocommerce.php on line 60
+[30-Jun-2017 10:55:07 UTC] PHP Fatal error:  Call to undefined method WC_Order::get_order_total() in F:\OpenServer\domains\euroroaming\wp-content\plugins\amocrm-integration\cse-delivery-for-woocommerce.php on line 32
+[03-Jul-2017 09:41:20 UTC] PHP Fatal error:  Cannot use [] for reading in F:\OpenServer\domains\euroroaming\wp-content\plugins\amocrm-integration\cse-delivery-for-woocommerce.php on line 36
+[03-Jul-2017 09:41:35 UTC] PHP Fatal error:  Cannot use [] for reading in F:\OpenServer\domains\euroroaming\wp-content\plugins\amocrm-integration\cse-delivery-for-woocommerce.php on line 36
+[03-Jul-2017 09:42:10 UTC] PHP Fatal error:  Cannot use [] for reading in F:\OpenServer\domains\euroroaming\wp-content\plugins\amocrm-integration\cse-delivery-for-woocommerce.php on line 36
+[03-Jul-2017 09:42:52 UTC] PHP Fatal error:  Cannot use [] for reading in F:\OpenServer\domains\euroroaming\wp-content\plugins\amocrm-integration\cse-delivery-for-woocommerce.php on line 36
+[03-Jul-2017 09:42:55 UTC] PHP Fatal error:  Cannot use [] for reading in F:\OpenServer\domains\euroroaming\wp-content\plugins\amocrm-integration\cse-delivery-for-woocommerce.php on line 36
+[03-Jul-2017 09:42:55 UTC] PHP Fatal error:  Cannot use [] for reading in F:\OpenServer\domains\euroroaming\wp-content\plugins\amocrm-integration\cse-delivery-for-woocommerce.php on line 36
+[03-Jul-2017 09:42:57 UTC] PHP Fatal error:  Cannot use [] for reading in F:\OpenServer\domains\euroroaming\wp-content\plugins\amocrm-integration\cse-delivery-for-woocommerce.php on line 36
+[03-Jul-2017 09:42:58 UTC] PHP Fatal error:  Cannot use [] for reading in F:\OpenServer\domains\euroroaming\wp-content\plugins\amocrm-integration\cse-delivery-for-woocommerce.php on line 36
+[03-Jul-2017 09:43:01 UTC] PHP Fatal error:  Cannot use [] for reading in F:\OpenServer\domains\euroroaming\wp-content\plugins\amocrm-integration\cse-delivery-for-woocommerce.php on line 36
+[03-Jul-2017 09:43:02 UTC] PHP Fatal error:  Cannot use [] for reading in F:\OpenServer\domains\euroroaming\wp-content\plugins\amocrm-integration\cse-delivery-for-woocommerce.php on line 36
+[03-Jul-2017 09:43:03 UTC] PHP Fatal error:  Cannot use [] for reading in F:\OpenServer\domains\euroroaming\wp-content\plugins\amocrm-integration\cse-delivery-for-woocommerce.php on line 36
+[03-Jul-2017 09:43:21 UTC] PHP Fatal error:  Cannot use [] for reading in F:\OpenServer\domains\euroroaming\wp-content\plugins\amocrm-integration\cse-delivery-for-woocommerce.php on line 36
+[03-Jul-2017 14:44:44 UTC] PHP Parse error:  syntax error, unexpected ')' in F:\OpenServer\domains\euroroaming\wp-content\plugins\amocrm-integration\cse-delivery-for-woocommerce.php on line 35
+[04-Jul-2017 10:45:13 UTC] PHP Parse error:  syntax error, unexpected ')' in F:\OpenServer\domains\euroroaming\wp-content\plugins\amocrm-integration\cse-delivery-for-woocommerce.php on line 78
+[04-Jul-2017 10:45:28 UTC] PHP Parse error:  syntax error, unexpected ')' in F:\OpenServer\domains\euroroaming\wp-content\plugins\amocrm-integration\cse-delivery-for-woocommerce.php on line 78
+[04-Jul-2017 10:45:49 UTC] PHP Parse error:  syntax error, unexpected ':' in F:\OpenServer\domains\euroroaming\wp-content\plugins\amocrm-integration\cse-delivery-for-woocommerce.php on line 79
+[04-Jul-2017 10:45:55 UTC] PHP Parse error:  syntax error, unexpected ':' in F:\OpenServer\domains\euroroaming\wp-content\plugins\amocrm-integration\cse-delivery-for-woocommerce.php on line 79
+[04-Jul-2017 10:46:10 UTC] PHP Parse error:  syntax error, unexpected ':' in F:\OpenServer\domains\euroroaming\wp-content\plugins\amocrm-integration\cse-delivery-for-woocommerce.php on line 79
+[05-Jul-2017 13:42:52 UTC] WP_Community_Events::maybe_log_events_response: Valid response received. Details: {"api_url":"https:\/\/api.wordpress.org\/events\/1.0\/","request_args":{"body":{"number":5,"ip":"127.0.0.0","locale":"ru_RU","timezone":"Europe\/Moscow"}},"response_code":200,"response_body":{"location":{"ip":"94.181.179.216"},"events":"0 events trimmed."}}
+[06-Jul-2017 12:51:00 UTC] WP_Community_Events::maybe_log_events_response: Valid response received. Details: {"api_url":"https:\/\/api.wordpress.org\/events\/1.0\/","request_args":{"body":{"number":5,"ip":"127.0.0.0","locale":"ru_RU","timezone":"Europe\/Moscow"}},"response_code":200,"response_body":{"location":{"ip":"94.181.179.216"},"events":"0 events trimmed."}}
+[06-Jul-2017 14:14:30 UTC] PHP Fatal error:  Call to undefined function geoip_country_name_by_name() in F:\OpenServer\domains\euroroaming\wp-content\plugins\amocrm-integration\cse-delivery-for-woocommerce.php on line 372
+[06-Jul-2017 14:15:00 UTC] PHP Fatal error:  Call to undefined function geoip_country_name_by_name() in F:\OpenServer\domains\euroroaming\wp-content\plugins\amocrm-integration\cse-delivery-for-woocommerce.php on line 372
+[10-Jul-2017 08:58:58 UTC] WP_Community_Events::maybe_log_events_response: Valid response received. Details: {"api_url":"https:\/\/api.wordpress.org\/events\/1.0\/","request_args":{"body":{"number":5,"ip":"127.0.0.0","locale":"ru_RU","timezone":"Europe\/Moscow"}},"response_code":200,"response_body":{"location":{"ip":"94.181.179.216"},"events":"0 events trimmed."}}
+[13-Jul-2017 08:31:57 UTC] WP_Community_Events::maybe_log_events_response: Valid response received. Details: {"api_url":"https:\/\/api.wordpress.org\/events\/1.0\/","request_args":{"body":{"number":5,"ip":"127.0.0.0","locale":"ru_RU","timezone":"Europe\/Moscow"}},"response_code":200,"response_body":{"location":{"ip":"94.181.179.216"},"events":"0 events trimmed."}}
+[18-Jul-2017 11:06:59 UTC] Error (%d): %s
+[19-Jul-2017 09:11:10 UTC] Error (%d): %s
+[19-Jul-2017 09:13:58 UTC] Error (%d): %s
+[24-Jul-2017 07:30:30 UTC] WP_Community_Events::maybe_log_events_response: Valid response received. Details: {"api_url":"https:\/\/api.wordpress.org\/events\/1.0\/","request_args":{"body":{"number":5,"ip":"127.0.0.0","locale":"ru_RU","timezone":"Europe\/Moscow"}},"response_code":200,"response_body":{"location":{"ip":"94.181.179.216"},"events":"0 events trimmed."}}
+[24-Jul-2017 07:54:21 UTC] PHP Warning:  mysqli_query(): MySQL server has gone away in F:\OpenServer\domains\euroroaming\wp-includes\wp-db.php on line 1877
+[24-Jul-2017 07:54:21 UTC] PHP Warning:  mysqli_query(): Error reading result set's header in F:\OpenServer\domains\euroroaming\wp-includes\wp-db.php on line 1877
+[24-Jul-2017 07:54:21 UTC] PHP Warning:  mysqli_query(): MySQL server has gone away in F:\OpenServer\domains\euroroaming\wp-includes\wp-db.php on line 1877
+[24-Jul-2017 07:54:21 UTC] PHP Warning:  mysqli_query(): Error reading result set's header in F:\OpenServer\domains\euroroaming\wp-includes\wp-db.php on line 1877
+[25-Jul-2017 08:58:34 UTC] PHP Fatal error:  Call to undefined function members_current_user_has_role() in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 587
+[25-Jul-2017 08:58:36 UTC] PHP Fatal error:  Call to undefined function members_current_user_has_role() in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 587
+[25-Jul-2017 09:59:41 UTC] post was called incorrectly. Product properties should not be accessed directly. Backtrace: require('F:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('F:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_AJAX::do_wc_ajax, do_action('wc_ajax_update_order_review'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_AJAX::update_order_review, WC_Cart->calculate_totals, WC_Cart->calculate_shipping, WC_Shipping->calculate_shipping, WC_Shipping->calculate_shipping_for_package, apply_filters('woocommerce_package_rates'), WP_Hook->apply_filters, call_user_func_array, my_hide_shipping_when_free_is_available, WC_Abstract_Legacy_Product->__get, wc_doing_it_wrong. This message was added in version 3.0.
+[25-Jul-2017 09:59:44 UTC] post was called incorrectly. Product properties should not be accessed directly. Backtrace: require('F:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('F:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_AJAX::do_wc_ajax, do_action('wc_ajax_update_order_review'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_AJAX::update_order_review, WC_Cart->calculate_totals, WC_Cart->calculate_shipping, WC_Shipping->calculate_shipping, WC_Shipping->calculate_shipping_for_package, apply_filters('woocommerce_package_rates'), WP_Hook->apply_filters, call_user_func_array, my_hide_shipping_when_free_is_available, WC_Abstract_Legacy_Product->__get, wc_doing_it_wrong. This message was added in version 3.0.
+[25-Jul-2017 10:02:10 UTC] post was called incorrectly. Product properties should not be accessed directly. Backtrace: require('F:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('F:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_AJAX::do_wc_ajax, do_action('wc_ajax_update_order_review'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_AJAX::update_order_review, WC_Cart->calculate_totals, WC_Cart->calculate_shipping, WC_Shipping->calculate_shipping, WC_Shipping->calculate_shipping_for_package, apply_filters('woocommerce_package_rates'), WP_Hook->apply_filters, call_user_func_array, my_hide_shipping_when_free_is_available, WC_Abstract_Legacy_Product->__get, wc_doing_it_wrong. This message was added in version 3.0.
+[25-Jul-2017 13:46:50 UTC] post was called incorrectly. Product properties should not be accessed directly. Backtrace: require('F:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('F:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_AJAX::do_wc_ajax, do_action('wc_ajax_update_order_review'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_AJAX::update_order_review, WC_Cart->calculate_totals, WC_Cart->calculate_shipping, WC_Shipping->calculate_shipping, WC_Shipping->calculate_shipping_for_package, apply_filters('woocommerce_package_rates'), WP_Hook->apply_filters, call_user_func_array, my_hide_shipping_when_free_is_available, WC_Abstract_Legacy_Product->__get, wc_doing_it_wrong. This message was added in version 3.0.
+[25-Jul-2017 13:46:52 UTC] post was called incorrectly. Product properties should not be accessed directly. Backtrace: require('F:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('F:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_AJAX::do_wc_ajax, do_action('wc_ajax_update_order_review'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_AJAX::update_order_review, WC_Cart->calculate_totals, WC_Cart->calculate_shipping, WC_Shipping->calculate_shipping, WC_Shipping->calculate_shipping_for_package, apply_filters('woocommerce_package_rates'), WP_Hook->apply_filters, call_user_func_array, my_hide_shipping_when_free_is_available, WC_Abstract_Legacy_Product->__get, wc_doing_it_wrong. This message was added in version 3.0.
+[25-Jul-2017 13:47:08 UTC] post was called incorrectly. Product properties should not be accessed directly. Backtrace: require('F:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('F:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_AJAX::do_wc_ajax, do_action('wc_ajax_update_order_review'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_AJAX::update_order_review, WC_Cart->calculate_totals, WC_Cart->calculate_shipping, WC_Shipping->calculate_shipping, WC_Shipping->calculate_shipping_for_package, apply_filters('woocommerce_package_rates'), WP_Hook->apply_filters, call_user_func_array, my_hide_shipping_when_free_is_available, WC_Abstract_Legacy_Product->__get, wc_doing_it_wrong. This message was added in version 3.0.
+[25-Jul-2017 13:47:10 UTC] post was called incorrectly. Product properties should not be accessed directly. Backtrace: require('F:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('F:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_AJAX::do_wc_ajax, do_action('wc_ajax_update_order_review'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_AJAX::update_order_review, WC_Cart->calculate_totals, WC_Cart->calculate_shipping, WC_Shipping->calculate_shipping, WC_Shipping->calculate_shipping_for_package, apply_filters('woocommerce_package_rates'), WP_Hook->apply_filters, call_user_func_array, my_hide_shipping_when_free_is_available, WC_Abstract_Legacy_Product->__get, wc_doing_it_wrong. This message was added in version 3.0.
+[25-Jul-2017 14:39:42 UTC] post was called incorrectly. Свойства продукта не должны быть доступны непосредственно. Backtrace: require('F:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('F:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_AJAX::do_wc_ajax, do_action('wc_ajax_update_order_review'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_AJAX::update_order_review, WC_Cart->calculate_totals, WC_Cart->calculate_shipping, WC_Shipping->calculate_shipping, WC_Shipping->calculate_shipping_for_package, apply_filters('woocommerce_package_rates'), WP_Hook->apply_filters, call_user_func_array, my_hide_shipping_when_free_is_available, WC_Abstract_Legacy_Product->__get, wc_doing_it_wrong. This message was added in version 3.0.
+[25-Jul-2017 14:39:43 UTC] post was called incorrectly. Свойства продукта не должны быть доступны непосредственно. Backtrace: require('F:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('F:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_AJAX::do_wc_ajax, do_action('wc_ajax_update_order_review'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_AJAX::update_order_review, WC_Cart->calculate_totals, WC_Cart->calculate_shipping, WC_Shipping->calculate_shipping, WC_Shipping->calculate_shipping_for_package, apply_filters('woocommerce_package_rates'), WP_Hook->apply_filters, call_user_func_array, my_hide_shipping_when_free_is_available, WC_Abstract_Legacy_Product->__get, wc_doing_it_wrong. This message was added in version 3.0.
+[25-Jul-2017 14:39:51 UTC] post was called incorrectly. Свойства продукта не должны быть доступны непосредственно. Backtrace: require('F:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('F:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_AJAX::do_wc_ajax, do_action('wc_ajax_update_order_review'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_AJAX::update_order_review, WC_Cart->calculate_totals, WC_Cart->calculate_shipping, WC_Shipping->calculate_shipping, WC_Shipping->calculate_shipping_for_package, apply_filters('woocommerce_package_rates'), WP_Hook->apply_filters, call_user_func_array, my_hide_shipping_when_free_is_available, WC_Abstract_Legacy_Product->__get, wc_doing_it_wrong. This message was added in version 3.0.
+[25-Jul-2017 15:26:25 UTC] post was called incorrectly. Свойства продукта не должны быть доступны непосредственно. Backtrace: require('F:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('F:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_AJAX::do_wc_ajax, do_action('wc_ajax_update_order_review'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_AJAX::update_order_review, WC_Cart->calculate_totals, WC_Cart->calculate_shipping, WC_Shipping->calculate_shipping, WC_Shipping->calculate_shipping_for_package, apply_filters('woocommerce_package_rates'), WP_Hook->apply_filters, call_user_func_array, my_hide_shipping_when_free_is_available, WC_Abstract_Legacy_Product->__get, wc_doing_it_wrong. This message was added in version 3.0.
+[25-Jul-2017 15:26:30 UTC] post was called incorrectly. Свойства продукта не должны быть доступны непосредственно. Backtrace: require('F:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('F:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_AJAX::do_wc_ajax, do_action('wc_ajax_update_order_review'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_AJAX::update_order_review, WC_Cart->calculate_totals, WC_Cart->calculate_shipping, WC_Shipping->calculate_shipping, WC_Shipping->calculate_shipping_for_package, apply_filters('woocommerce_package_rates'), WP_Hook->apply_filters, call_user_func_array, my_hide_shipping_when_free_is_available, WC_Abstract_Legacy_Product->__get, wc_doing_it_wrong. This message was added in version 3.0.

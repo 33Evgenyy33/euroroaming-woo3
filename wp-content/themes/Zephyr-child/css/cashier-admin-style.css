@@ -1,0 +1,21 @@
+li#menu-dashboard {
+    display: none!important;
+}
+li#wp-admin-bar-wp-logo {
+    display: none !important;
+}
+.updated.fade {
+    display: none;
+}
+div#dashboard-widgets-wrap {
+    display: none;
+}
+p#footer-upgrade {
+    display: none;
+}
+div#contextual-help-link-wrap {
+    display: none;
+}
+div#screen-options-link-wrap {
+    display: none;
+}

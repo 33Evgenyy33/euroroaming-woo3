@@ -1,0 +1,1159 @@
+07-13-2017 @ 11:43:19 - Begin upgrade to version 2.0.0...
+07-13-2017 @ 11:43:19 - Upgraded settings options.
+07-13-2017 @ 11:43:19 - Upgraded 11 pickup locations
+07-13-2017 @ 11:43:19 - Upgrade to version 2.0.0 complete.
+07-13-2017 @ 11:46:16 - New geocoding request...
+07-13-2017 @ 11:46:16 - Arguments:
+07-13-2017 @ 11:46:16 - Array
+(
+    [address] => м. Китай-Город (1 минута от метро), БЦ Лубянский, Лубянский проезд, дом 15, стр 2, подъезд 4, 2 этаж (для входа нужен любой документ, удостоверяющий личность)
+    [components] => locality:Москва|administrative_area:г Москва|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:46:16 - Processed request:
+07-13-2017 @ 11:46:16 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => м. Китай-Город (1 минута от метро), БЦ Лубянский, Лубянский проезд, дом 15, стр 2, подъезд 4, 2 этаж (для входа нужен любой документ, удостоверяющий личность)
+            [components] => locality:Москва|administrative_area:г Москва|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:46:16 - Awaiting response...
+07-13-2017 @ 11:46:17 - Coordinates:
+07-13-2017 @ 11:46:17 - Array
+(
+    [lat] => 55.755826
+    [lon] => 37.6173
+)
+
+07-13-2017 @ 11:46:17 - New geocoding request...
+07-13-2017 @ 11:46:17 - Arguments:
+07-13-2017 @ 11:46:17 - Array
+(
+    [address] => м. Китай-Город (1 минута от метро), БЦ Лубянский, Лубянский проезд, дом 15, стр 2, подъезд 4, 2 этаж (для входа нужен любой документ, удостоверяющий личность)
+    [components] => locality:Москва|administrative_area:г Москва|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:46:17 - Processed request:
+07-13-2017 @ 11:46:17 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => м. Китай-Город (1 минута от метро), БЦ Лубянский, Лубянский проезд, дом 15, стр 2, подъезд 4, 2 этаж (для входа нужен любой документ, удостоверяющий личность)
+            [components] => locality:Москва|administrative_area:г Москва|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:46:17 - Awaiting response...
+07-13-2017 @ 11:46:17 - Coordinates:
+07-13-2017 @ 11:46:17 - Array
+(
+    [lat] => 55.755826
+    [lon] => 37.6173
+)
+
+07-13-2017 @ 11:46:44 - New geocoding request...
+07-13-2017 @ 11:46:44 - Arguments:
+07-13-2017 @ 11:46:44 - Array
+(
+    [address] => Лубянский проезд, дом 15, стр 2
+    [components] => locality:Москва|administrative_area:г Москва|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:46:44 - Processed request:
+07-13-2017 @ 11:46:44 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => Лубянский проезд, дом 15, стр 2
+            [components] => locality:Москва|administrative_area:г Москва|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:46:44 - Awaiting response...
+07-13-2017 @ 11:46:45 - Coordinates:
+07-13-2017 @ 11:46:45 - Array
+(
+    [lat] => 55.756706
+    [lon] => 37.6323888
+)
+
+07-13-2017 @ 11:46:45 - New geocoding request...
+07-13-2017 @ 11:46:45 - Arguments:
+07-13-2017 @ 11:46:45 - Array
+(
+    [address] => Лубянский проезд, дом 15, стр 2
+    [components] => locality:Москва|administrative_area:г Москва|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:46:45 - Processed request:
+07-13-2017 @ 11:46:45 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => Лубянский проезд, дом 15, стр 2
+            [components] => locality:Москва|administrative_area:г Москва|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:46:45 - Awaiting response...
+07-13-2017 @ 11:46:45 - Coordinates:
+07-13-2017 @ 11:46:45 - Array
+(
+    [lat] => 55.756706
+    [lon] => 37.6323888
+)
+
+07-13-2017 @ 11:52:16 - New geocoding request...
+07-13-2017 @ 11:52:16 - Arguments:
+07-13-2017 @ 11:52:16 - Array
+(
+    [address] => ул. Митинская д. 46, к.1
+    [components] => locality:Москва|administrative_area:г Москва|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:52:16 - Processed request:
+07-13-2017 @ 11:52:16 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => ул. Митинская д. 46, к.1
+            [components] => locality:Москва|administrative_area:г Москва|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:52:16 - Awaiting response...
+07-13-2017 @ 11:52:16 - Coordinates:
+07-13-2017 @ 11:52:16 - Array
+(
+    [lat] => 55.849223
+    [lon] => 37.358212
+)
+
+07-13-2017 @ 11:52:16 - New geocoding request...
+07-13-2017 @ 11:52:16 - Arguments:
+07-13-2017 @ 11:52:16 - Array
+(
+    [address] => ул. Митинская д. 46, к.1
+    [components] => locality:Москва|administrative_area:г Москва|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:52:16 - Processed request:
+07-13-2017 @ 11:52:16 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => ул. Митинская д. 46, к.1
+            [components] => locality:Москва|administrative_area:г Москва|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:52:16 - Awaiting response...
+07-13-2017 @ 11:52:17 - Coordinates:
+07-13-2017 @ 11:52:17 - Array
+(
+    [lat] => 55.849223
+    [lon] => 37.358212
+)
+
+07-13-2017 @ 11:52:21 - New geocoding request...
+07-13-2017 @ 11:52:21 - Arguments:
+07-13-2017 @ 11:52:21 - Array
+(
+    [address] => Спасский переулок, д. 9
+    [components] => locality:Санкт-Петербург|administrative_area:г Санкт-Петербург|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:52:21 - Processed request:
+07-13-2017 @ 11:52:21 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => Спасский переулок, д. 9
+            [components] => locality:Санкт-Петербург|administrative_area:г Санкт-Петербург|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:52:21 - Awaiting response...
+07-13-2017 @ 11:52:21 - Coordinates:
+07-13-2017 @ 11:52:21 - Array
+(
+    [lat] => 59.928433
+    [lon] => 30.318146
+)
+
+07-13-2017 @ 11:52:21 - New geocoding request...
+07-13-2017 @ 11:52:21 - Arguments:
+07-13-2017 @ 11:52:21 - Array
+(
+    [address] => Спасский переулок, д. 9
+    [components] => locality:Санкт-Петербург|administrative_area:г Санкт-Петербург|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:52:21 - Processed request:
+07-13-2017 @ 11:52:21 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => Спасский переулок, д. 9
+            [components] => locality:Санкт-Петербург|administrative_area:г Санкт-Петербург|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:52:21 - Awaiting response...
+07-13-2017 @ 11:52:21 - Coordinates:
+07-13-2017 @ 11:52:21 - Array
+(
+    [lat] => 59.928433
+    [lon] => 30.318146
+)
+
+07-13-2017 @ 11:52:26 - New geocoding request...
+07-13-2017 @ 11:52:26 - Arguments:
+07-13-2017 @ 11:52:26 - Array
+(
+    [address] => ул. Алтайская д. 12
+    [components] => locality:Санкт-Петербург|administrative_area:г Санкт-Петербург|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:52:26 - Processed request:
+07-13-2017 @ 11:52:26 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => ул. Алтайская д. 12
+            [components] => locality:Санкт-Петербург|administrative_area:г Санкт-Петербург|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:52:26 - Awaiting response...
+07-13-2017 @ 11:52:26 - Coordinates:
+07-13-2017 @ 11:52:26 - Array
+(
+    [lat] => 59.8500993
+    [lon] => 30.3250107
+)
+
+07-13-2017 @ 11:52:26 - New geocoding request...
+07-13-2017 @ 11:52:26 - Arguments:
+07-13-2017 @ 11:52:26 - Array
+(
+    [address] => ул. Алтайская д. 12
+    [components] => locality:Санкт-Петербург|administrative_area:г Санкт-Петербург|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:52:26 - Processed request:
+07-13-2017 @ 11:52:26 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => ул. Алтайская д. 12
+            [components] => locality:Санкт-Петербург|administrative_area:г Санкт-Петербург|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:52:26 - Awaiting response...
+07-13-2017 @ 11:52:26 - Coordinates:
+07-13-2017 @ 11:52:26 - Array
+(
+    [lat] => 59.8500993
+    [lon] => 30.3250107
+)
+
+07-13-2017 @ 11:52:28 - New geocoding request...
+07-13-2017 @ 11:52:28 - Arguments:
+07-13-2017 @ 11:52:28 - Array
+(
+    [address] => ул. Коммуническая 23
+    [components] => locality:Волгоград|administrative_area:Волгоградская обл|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:52:28 - Processed request:
+07-13-2017 @ 11:52:28 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => ул. Коммуническая 23
+            [components] => locality:Волгоград|administrative_area:Волгоградская обл|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:52:28 - Awaiting response...
+07-13-2017 @ 11:52:29 - Coordinates:
+07-13-2017 @ 11:52:29 - Array
+(
+    [lat] => 48.708048
+    [lon] => 44.5133034
+)
+
+07-13-2017 @ 11:52:29 - New geocoding request...
+07-13-2017 @ 11:52:29 - Arguments:
+07-13-2017 @ 11:52:29 - Array
+(
+    [address] => ул. Коммуническая 23
+    [components] => locality:Волгоград|administrative_area:Волгоградская обл|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:52:29 - Processed request:
+07-13-2017 @ 11:52:29 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => ул. Коммуническая 23
+            [components] => locality:Волгоград|administrative_area:Волгоградская обл|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:52:29 - Awaiting response...
+07-13-2017 @ 11:52:30 - Coordinates:
+07-13-2017 @ 11:52:30 - Array
+(
+    [lat] => 48.708048
+    [lon] => 44.5133034
+)
+
+07-13-2017 @ 11:52:32 - New geocoding request...
+07-13-2017 @ 11:52:32 - Arguments:
+07-13-2017 @ 11:52:32 - Array
+(
+    [address] => Фридриха Энгельса, 12
+    [components] => locality:Воронеж|administrative_area:Воронежская обл|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:52:32 - Processed request:
+07-13-2017 @ 11:52:32 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => Фридриха Энгельса, 12
+            [components] => locality:Воронеж|administrative_area:Воронежская обл|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:52:32 - Awaiting response...
+07-13-2017 @ 11:52:32 - Coordinates:
+07-13-2017 @ 11:52:32 - Array
+(
+    [lat] => 51.676652
+    [lon] => 39.2095259
+)
+
+07-13-2017 @ 11:52:32 - New geocoding request...
+07-13-2017 @ 11:52:32 - Arguments:
+07-13-2017 @ 11:52:32 - Array
+(
+    [address] => Фридриха Энгельса, 12
+    [components] => locality:Воронеж|administrative_area:Воронежская обл|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:52:32 - Processed request:
+07-13-2017 @ 11:52:32 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => Фридриха Энгельса, 12
+            [components] => locality:Воронеж|administrative_area:Воронежская обл|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:52:32 - Awaiting response...
+07-13-2017 @ 11:52:32 - Coordinates:
+07-13-2017 @ 11:52:32 - Array
+(
+    [lat] => 51.676652
+    [lon] => 39.2095259
+)
+
+07-13-2017 @ 11:52:34 - New geocoding request...
+07-13-2017 @ 11:52:34 - Arguments:
+07-13-2017 @ 11:52:34 - Array
+(
+    [address] => ул. Сергеева, д. 49
+    [components] => locality:Калининград|administrative_area:Калининградская обл|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:52:34 - Processed request:
+07-13-2017 @ 11:52:34 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => ул. Сергеева, д. 49
+            [components] => locality:Калининград|administrative_area:Калининградская обл|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:52:34 - Awaiting response...
+07-13-2017 @ 11:52:34 - Coordinates:
+07-13-2017 @ 11:52:34 - Array
+(
+    [lat] => 54.719088
+    [lon] => 20.517018
+)
+
+07-13-2017 @ 11:52:34 - New geocoding request...
+07-13-2017 @ 11:52:34 - Arguments:
+07-13-2017 @ 11:52:34 - Array
+(
+    [address] => ул. Сергеева, д. 49
+    [components] => locality:Калининград|administrative_area:Калининградская обл|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:52:34 - Processed request:
+07-13-2017 @ 11:52:34 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => ул. Сергеева, д. 49
+            [components] => locality:Калининград|administrative_area:Калининградская обл|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:52:34 - Awaiting response...
+07-13-2017 @ 11:52:35 - Coordinates:
+07-13-2017 @ 11:52:35 - Array
+(
+    [lat] => 54.719088
+    [lon] => 20.517018
+)
+
+07-13-2017 @ 11:52:39 - New geocoding request...
+07-13-2017 @ 11:52:39 - Arguments:
+07-13-2017 @ 11:52:39 - Array
+(
+    [address] => Капитал, Молокова, 37А
+    [components] => locality:Красноярск|administrative_area:Красноярский край|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:52:39 - Processed request:
+07-13-2017 @ 11:52:39 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => Капитал, Молокова, 37А
+            [components] => locality:Красноярск|administrative_area:Красноярский край|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:52:39 - Awaiting response...
+07-13-2017 @ 11:52:39 - Coordinates:
+07-13-2017 @ 11:52:39 - Array
+(
+    [lat] => 56.0152834
+    [lon] => 92.8932476
+)
+
+07-13-2017 @ 11:52:39 - New geocoding request...
+07-13-2017 @ 11:52:39 - Arguments:
+07-13-2017 @ 11:52:39 - Array
+(
+    [address] => Капитал, Молокова, 37А
+    [components] => locality:Красноярск|administrative_area:Красноярский край|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:52:39 - Processed request:
+07-13-2017 @ 11:52:39 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => Капитал, Молокова, 37А
+            [components] => locality:Красноярск|administrative_area:Красноярский край|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:52:39 - Awaiting response...
+07-13-2017 @ 11:52:39 - Coordinates:
+07-13-2017 @ 11:52:39 - Array
+(
+    [lat] => 56.0152834
+    [lon] => 92.8932476
+)
+
+07-13-2017 @ 11:52:45 - New geocoding request...
+07-13-2017 @ 11:52:45 - Arguments:
+07-13-2017 @ 11:52:45 - Array
+(
+    [address] => Каляева 7В
+    [components] => locality:Пенза|administrative_area:Пензенская обл|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:52:45 - Processed request:
+07-13-2017 @ 11:52:45 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => Каляева 7В
+            [components] => locality:Пенза|administrative_area:Пензенская обл|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:52:45 - Awaiting response...
+07-13-2017 @ 11:52:45 - Coordinates:
+07-13-2017 @ 11:52:45 - Array
+(
+    [lat] => 53.201587
+    [lon] => 45.026729
+)
+
+07-13-2017 @ 11:52:45 - New geocoding request...
+07-13-2017 @ 11:52:45 - Arguments:
+07-13-2017 @ 11:52:45 - Array
+(
+    [address] => Каляева 7В
+    [components] => locality:Пенза|administrative_area:Пензенская обл|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:52:45 - Processed request:
+07-13-2017 @ 11:52:45 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => Каляева 7В
+            [components] => locality:Пенза|administrative_area:Пензенская обл|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:52:45 - Awaiting response...
+07-13-2017 @ 11:52:45 - Coordinates:
+07-13-2017 @ 11:52:45 - Array
+(
+    [lat] => 53.201587
+    [lon] => 45.026729
+)
+
+07-13-2017 @ 11:53:15 - New geocoding request...
+07-13-2017 @ 11:53:15 - Arguments:
+07-13-2017 @ 11:53:15 - Array
+(
+    [address] => улица Кедрова, дом 14, корпус 1
+    [components] => locality:Москва|administrative_area:г Москва|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:53:15 - Processed request:
+07-13-2017 @ 11:53:15 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => улица Кедрова, дом 14, корпус 1
+            [components] => locality:Москва|administrative_area:г Москва|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:53:15 - Awaiting response...
+07-13-2017 @ 11:53:15 - Coordinates:
+07-13-2017 @ 11:53:15 - Array
+(
+    [lat] => 55.6834856
+    [lon] => 37.571913
+)
+
+07-13-2017 @ 11:53:15 - New geocoding request...
+07-13-2017 @ 11:53:15 - Arguments:
+07-13-2017 @ 11:53:15 - Array
+(
+    [address] => улица Кедрова, дом 14, корпус 1
+    [components] => locality:Москва|administrative_area:г Москва|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:53:15 - Processed request:
+07-13-2017 @ 11:53:15 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => улица Кедрова, дом 14, корпус 1
+            [components] => locality:Москва|administrative_area:г Москва|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:53:15 - Awaiting response...
+07-13-2017 @ 11:53:16 - Coordinates:
+07-13-2017 @ 11:53:16 - Array
+(
+    [lat] => 55.6834856
+    [lon] => 37.571913
+)
+
+07-13-2017 @ 11:53:18 - New geocoding request...
+07-13-2017 @ 11:53:18 - Arguments:
+07-13-2017 @ 11:53:18 - Array
+(
+    [address] => ул. Машиностроителей, д. 20
+    [components] => locality:Воронеж|administrative_area:Воронежская обл|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:53:18 - Processed request:
+07-13-2017 @ 11:53:18 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => ул. Машиностроителей, д. 20
+            [components] => locality:Воронеж|administrative_area:Воронежская обл|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:53:18 - Awaiting response...
+07-13-2017 @ 11:53:18 - Coordinates:
+07-13-2017 @ 11:53:18 - Array
+(
+    [lat] => 51.6814082
+    [lon] => 39.1627988
+)
+
+07-13-2017 @ 11:53:18 - New geocoding request...
+07-13-2017 @ 11:53:18 - Arguments:
+07-13-2017 @ 11:53:18 - Array
+(
+    [address] => ул. Машиностроителей, д. 20
+    [components] => locality:Воронеж|administrative_area:Воронежская обл|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:53:18 - Processed request:
+07-13-2017 @ 11:53:18 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => ул. Машиностроителей, д. 20
+            [components] => locality:Воронеж|administrative_area:Воронежская обл|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:53:18 - Awaiting response...
+07-13-2017 @ 11:53:18 - Coordinates:
+07-13-2017 @ 11:53:18 - Array
+(
+    [lat] => 51.6814082
+    [lon] => 39.1627988
+)
+
+07-13-2017 @ 11:53:27 - New geocoding request...
+07-13-2017 @ 11:53:27 - Arguments:
+07-13-2017 @ 11:53:27 - Array
+(
+    [address] => г Москва
+    [components] => administrative_area:г Москва|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:53:27 - Processed request:
+07-13-2017 @ 11:53:27 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => г Москва
+            [components] => administrative_area:г Москва|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:53:27 - Awaiting response...
+07-13-2017 @ 11:53:27 - Coordinates:
+07-13-2017 @ 11:53:27 - Array
+(
+    [lat] => 55.755826
+    [lon] => 37.6173
+)
+
+07-13-2017 @ 11:53:29 - New geocoding request...
+07-13-2017 @ 11:53:29 - Arguments:
+07-13-2017 @ 11:53:29 - Array
+(
+    [address] => г Москва
+    [components] => administrative_area:г Москва|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:53:29 - Processed request:
+07-13-2017 @ 11:53:29 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => г Москва
+            [components] => administrative_area:г Москва|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:53:29 - Awaiting response...
+07-13-2017 @ 11:53:30 - Coordinates:
+07-13-2017 @ 11:53:30 - Array
+(
+    [lat] => 55.755826
+    [lon] => 37.6173
+)
+
+07-13-2017 @ 11:53:34 - New geocoding request...
+07-13-2017 @ 11:53:34 - Arguments:
+07-13-2017 @ 11:53:34 - Array
+(
+    [address] => г Москва
+    [components] => administrative_area:г Москва|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:53:34 - Processed request:
+07-13-2017 @ 11:53:34 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => г Москва
+            [components] => administrative_area:г Москва|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:53:34 - Awaiting response...
+07-13-2017 @ 11:53:34 - Coordinates:
+07-13-2017 @ 11:53:34 - Array
+(
+    [lat] => 55.755826
+    [lon] => 37.6173
+)
+
+07-13-2017 @ 11:53:37 - New geocoding request...
+07-13-2017 @ 11:53:37 - Arguments:
+07-13-2017 @ 11:53:37 - Array
+(
+    [address] => г Москва
+    [components] => administrative_area:г Москва|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:53:37 - Processed request:
+07-13-2017 @ 11:53:37 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => г Москва
+            [components] => administrative_area:г Москва|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:53:37 - Awaiting response...
+07-13-2017 @ 11:53:37 - Coordinates:
+07-13-2017 @ 11:53:37 - Array
+(
+    [lat] => 55.755826
+    [lon] => 37.6173
+)
+
+07-13-2017 @ 11:53:38 - New geocoding request...
+07-13-2017 @ 11:53:38 - Arguments:
+07-13-2017 @ 11:53:38 - Array
+(
+    [address] => г Москва
+    [components] => administrative_area:г Москва|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:53:38 - Processed request:
+07-13-2017 @ 11:53:38 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => г Москва
+            [components] => administrative_area:г Москва|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:53:38 - Awaiting response...
+07-13-2017 @ 11:53:38 - Coordinates:
+07-13-2017 @ 11:53:38 - Array
+(
+    [lat] => 55.755826
+    [lon] => 37.6173
+)
+
+07-13-2017 @ 11:53:38 - New geocoding request...
+07-13-2017 @ 11:53:38 - Arguments:
+07-13-2017 @ 11:53:38 - Array
+(
+    [address] => г Москва
+    [components] => administrative_area:г Москва|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:53:38 - Processed request:
+07-13-2017 @ 11:53:38 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => г Москва
+            [components] => administrative_area:г Москва|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:53:38 - Awaiting response...
+07-13-2017 @ 11:53:38 - Coordinates:
+07-13-2017 @ 11:53:38 - Array
+(
+    [lat] => 55.755826
+    [lon] => 37.6173
+)
+
+07-13-2017 @ 11:53:50 - New geocoding request...
+07-13-2017 @ 11:53:50 - Arguments:
+07-13-2017 @ 11:53:50 - Array
+(
+    [address] => г Москва
+    [components] => administrative_area:г Москва|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:53:50 - Processed request:
+07-13-2017 @ 11:53:50 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => г Москва
+            [components] => administrative_area:г Москва|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:53:50 - Awaiting response...
+07-13-2017 @ 11:53:50 - Coordinates:
+07-13-2017 @ 11:53:50 - Array
+(
+    [lat] => 55.755826
+    [lon] => 37.6173
+)
+
+07-13-2017 @ 11:53:58 - New geocoding request...
+07-13-2017 @ 11:53:58 - Arguments:
+07-13-2017 @ 11:53:58 - Array
+(
+    [address] => г Москва
+    [components] => administrative_area:г Москва|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:53:58 - Processed request:
+07-13-2017 @ 11:53:58 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => г Москва
+            [components] => administrative_area:г Москва|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:53:58 - Awaiting response...
+07-13-2017 @ 11:53:58 - Coordinates:
+07-13-2017 @ 11:53:58 - Array
+(
+    [lat] => 55.755826
+    [lon] => 37.6173
+)
+
+07-13-2017 @ 11:54:01 - New geocoding request...
+07-13-2017 @ 11:54:01 - Arguments:
+07-13-2017 @ 11:54:01 - Array
+(
+    [address] => г Москва
+    [components] => administrative_area:г Москва|country:RU
+    [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+)
+
+07-13-2017 @ 11:54:01 - Processed request:
+07-13-2017 @ 11:54:01 - WC_Local_Pickup_Plus_Geocoding_API_Request Object
+(
+    [method:protected] => GET
+    [path:protected] => /json
+    [params:protected] => Array
+        (
+            [address] => г Москва
+            [components] => administrative_area:г Москва|country:RU
+            [key] => AIzaSyCVPJD2sb_cR6fPnVsbDChqQ19XeguJ-aU
+        )
+
+    [data:protected] => Array
+        (
+        )
+
+)
+
+07-13-2017 @ 11:54:01 - Awaiting response...
+07-13-2017 @ 11:54:02 - Coordinates:
+07-13-2017 @ 11:54:02 - Array
+(
+    [lat] => 55.755826
+    [lon] => 37.6173
+)
+

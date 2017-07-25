@@ -1,0 +1,155 @@
+07-24-2017 @ 10:37:48 - ---[ New Import ] PHP Memory: 2 GB, WP Memory: 40 MB
+07-24-2017 @ 10:37:48 - Parsing products CSV.
+07-24-2017 @ 10:37:49 - Finished parsing products CSV.
+07-24-2017 @ 10:37:49 - ---
+07-24-2017 @ 10:37:49 - Processing products.
+07-24-2017 @ 10:37:49 - > Row 1 - preparing for import.
+07-24-2017 @ 10:37:49 - > &#8220;Orange с тарифом «Mundo» для Европы&#8221;Product already exists.
+07-24-2017 @ 10:37:49 - > Row 2 - preparing for import.
+07-24-2017 @ 10:37:49 - > &#8220;Сим-карта Vodafone для Европы&#8221;Product already exists.
+07-24-2017 @ 10:37:49 - > Row 3 - preparing for import.
+07-24-2017 @ 10:37:49 - > Inserting Vodafone UA «Red»
+07-24-2017 @ 10:37:49 - > Inserted - post ID is 18443.
+07-24-2017 @ 10:37:49 - > > Importing image "https://euroroaming.ru/wp-content/uploads/2015/03/Vodafon-UA-iso-min.png"
+07-24-2017 @ 10:37:49 - > > Inserted image attachment "https://euroroaming.ru/wp-content/uploads/2015/03/Vodafon-UA-iso-min.png"
+07-24-2017 @ 10:37:49 - > > Imported image "https://euroroaming.ru/wp-content/uploads/2015/03/Vodafon-UA-iso-min.png"
+07-24-2017 @ 10:37:49 - > > Importing image "https://euroroaming.ru/wp-content/uploads/2016/03/vodafon_ukraina_1.jpg"
+07-24-2017 @ 10:37:49 - > > Inserted image attachment "https://euroroaming.ru/wp-content/uploads/2016/03/vodafon_ukraina_1.jpg"
+07-24-2017 @ 10:37:49 - > > Imported image "https://euroroaming.ru/wp-content/uploads/2016/03/vodafon_ukraina_1.jpg"
+07-24-2017 @ 10:37:49 - > > Importing image "https://euroroaming.ru/wp-content/uploads/2016/03/vodafon_ukraina_4.jpg"
+07-24-2017 @ 10:37:50 - > > Inserted image attachment "https://euroroaming.ru/wp-content/uploads/2016/03/vodafon_ukraina_4.jpg"
+07-24-2017 @ 10:37:50 - > > Imported image "https://euroroaming.ru/wp-content/uploads/2016/03/vodafon_ukraina_4.jpg"
+07-24-2017 @ 10:37:50 - > > Importing image "https://euroroaming.ru/wp-content/uploads/2016/03/vodafon_ukraina_2.jpg"
+07-24-2017 @ 10:37:50 - > > Inserted image attachment "https://euroroaming.ru/wp-content/uploads/2016/03/vodafon_ukraina_2.jpg"
+07-24-2017 @ 10:37:50 - > > Imported image "https://euroroaming.ru/wp-content/uploads/2016/03/vodafon_ukraina_2.jpg"
+07-24-2017 @ 10:37:50 - > > Images set
+07-24-2017 @ 10:37:50 - > Finished importing post ID 18443.
+07-24-2017 @ 10:37:50 - > Row 4 - preparing for import.
+07-24-2017 @ 10:37:50 - > &#8220;Ortel Mobile&#8221;Product already exists.
+07-24-2017 @ 10:37:50 - > Row 5 - preparing for import.
+07-24-2017 @ 10:37:50 - > &#8220;GLOBALSIM «Internet»&#8221;Product already exists.
+07-24-2017 @ 10:37:50 - > Row 6 - preparing for import.
+07-24-2017 @ 10:37:50 - > &#8220;GLOBALSIM - самые дешевые тарифы для звонков из Европы в Россию&#8221;Product already exists.
+07-24-2017 @ 10:37:50 - > Row 7 - preparing for import.
+07-24-2017 @ 10:37:50 - > Inserting Баланс Vodafone (Италия)
+07-24-2017 @ 10:37:50 - > Inserted - post ID is 18941.
+07-24-2017 @ 10:37:50 - > > Importing image "https://euroroaming.ru/wp-content/uploads/2016/03/Vodafon-balans.png"
+07-24-2017 @ 10:37:50 - > > Inserted image attachment "https://euroroaming.ru/wp-content/uploads/2016/03/Vodafon-balans.png"
+07-24-2017 @ 10:37:50 - > > Imported image "https://euroroaming.ru/wp-content/uploads/2016/03/Vodafon-balans.png"
+07-24-2017 @ 10:37:50 - > > Images set
+07-24-2017 @ 10:37:50 - > Finished importing post ID 18941.
+07-24-2017 @ 10:37:50 - > Row 8 - preparing for import.
+07-24-2017 @ 10:37:50 - > Inserting Баланс Orange
+07-24-2017 @ 10:37:51 - > Inserted - post ID is 18959.
+07-24-2017 @ 10:37:51 - > > Importing image "https://euroroaming.ru/wp-content/uploads/2016/03/orange-balans.png"
+07-24-2017 @ 10:37:51 - > > Inserted image attachment "https://euroroaming.ru/wp-content/uploads/2016/03/orange-balans.png"
+07-24-2017 @ 10:37:51 - > > Imported image "https://euroroaming.ru/wp-content/uploads/2016/03/orange-balans.png"
+07-24-2017 @ 10:37:51 - > > Images set
+07-24-2017 @ 10:37:51 - > Finished importing post ID 18959.
+07-24-2017 @ 10:37:51 - > Row 9 - preparing for import.
+07-24-2017 @ 10:37:51 - > Inserting Баланс Ortel Mobile
+07-24-2017 @ 10:37:51 - > Inserted - post ID is 18961.
+07-24-2017 @ 10:37:51 - > > Importing image "https://euroroaming.ru/wp-content/uploads/2016/03/ortel-balans.png"
+07-24-2017 @ 10:37:51 - > > Inserted image attachment "https://euroroaming.ru/wp-content/uploads/2016/03/ortel-balans.png"
+07-24-2017 @ 10:37:51 - > > Imported image "https://euroroaming.ru/wp-content/uploads/2016/03/ortel-balans.png"
+07-24-2017 @ 10:37:51 - > > Images set
+07-24-2017 @ 10:37:51 - > Finished importing post ID 18961.
+07-24-2017 @ 10:37:51 - Finished processing products.
+07-24-2017 @ 10:37:54 - ---[ New Import ] PHP Memory: 2 GB, WP Memory: 40 MB
+07-24-2017 @ 10:37:54 - Parsing products CSV.
+07-24-2017 @ 10:37:54 - Finished parsing products CSV.
+07-24-2017 @ 10:37:54 - ---
+07-24-2017 @ 10:37:54 - Processing products.
+07-24-2017 @ 10:37:54 - > Row 1 - preparing for import.
+07-24-2017 @ 10:37:54 - > Inserting Баланс Vodafone (Украина)
+07-24-2017 @ 10:37:54 - > Inserted - post ID is 18962.
+07-24-2017 @ 10:37:54 - > > Importing image "https://euroroaming.ru/wp-content/uploads/2016/03/Vodafon-red-balans.png"
+07-24-2017 @ 10:37:55 - > > Inserted image attachment "https://euroroaming.ru/wp-content/uploads/2016/03/Vodafon-red-balans.png"
+07-24-2017 @ 10:37:55 - > > Imported image "https://euroroaming.ru/wp-content/uploads/2016/03/Vodafon-red-balans.png"
+07-24-2017 @ 10:37:55 - > > Images set
+07-24-2017 @ 10:37:55 - > Finished importing post ID 18962.
+07-24-2017 @ 10:37:55 - > Row 2 - preparing for import.
+07-24-2017 @ 10:37:55 - > Inserting Баланс GlobalSim
+07-24-2017 @ 10:37:55 - > Inserted - post ID is 19399.
+07-24-2017 @ 10:37:55 - > > Importing image "https://euroroaming.ru/wp-content/uploads/2016/04/globalsim-balans.png"
+07-24-2017 @ 10:37:55 - > > Inserted image attachment "https://euroroaming.ru/wp-content/uploads/2016/04/globalsim-balans.png"
+07-24-2017 @ 10:37:55 - > > Imported image "https://euroroaming.ru/wp-content/uploads/2016/04/globalsim-balans.png"
+07-24-2017 @ 10:37:55 - > > Images set
+07-24-2017 @ 10:37:55 - > Finished importing post ID 19399.
+07-24-2017 @ 10:37:55 - > Row 3 - preparing for import.
+07-24-2017 @ 10:37:55 - > Inserting Подключение Vodafone Internet Passport
+07-24-2017 @ 10:37:55 - > Inserted - post ID is 22325.
+07-24-2017 @ 10:37:55 - > > Importing image "https://euroroaming.ru/wp-content/uploads/revslider/main/Vodafon-internet-passport.png"
+07-24-2017 @ 10:37:55 - > > Inserted image attachment "https://euroroaming.ru/wp-content/uploads/revslider/main/Vodafon-internet-passport.png"
+07-24-2017 @ 10:37:55 - > > Imported image "https://euroroaming.ru/wp-content/uploads/revslider/main/Vodafon-internet-passport.png"
+07-24-2017 @ 10:37:55 - > > Images set
+07-24-2017 @ 10:37:55 - > Finished importing post ID 22325.
+07-24-2017 @ 10:37:55 - > Row 4 - preparing for import.
+07-24-2017 @ 10:37:56 - > Inserting Активация сим-карты Orange (визовые центры)
+07-24-2017 @ 10:37:56 - > Inserted - post ID is 23575.
+07-24-2017 @ 10:37:56 - > > Importing image "https://euroroaming.ru/wp-content/uploads/2016/05/orange-min-2.png"
+07-24-2017 @ 10:37:56 - > > Inserted image attachment "https://euroroaming.ru/wp-content/uploads/2016/05/orange-min-2.png"
+07-24-2017 @ 10:37:56 - > > Imported image "https://euroroaming.ru/wp-content/uploads/2016/05/orange-min-2.png"
+07-24-2017 @ 10:37:56 - > > Images set
+07-24-2017 @ 10:37:56 - > Finished importing post ID 23575.
+07-24-2017 @ 10:37:56 - > Row 5 - preparing for import.
+07-24-2017 @ 10:37:56 - > Inserting Восстановление Vodafone Италия
+07-24-2017 @ 10:37:56 - > Inserted - post ID is 25841.
+07-24-2017 @ 10:37:56 - > > Importing image "https://euroroaming.ru/wp-content/uploads/2016/06/vodafone-sim-karta-dlya-vosstanovleniya-nomera-1-min.png"
+07-24-2017 @ 10:37:56 - > > Inserted image attachment "https://euroroaming.ru/wp-content/uploads/2016/06/vodafone-sim-karta-dlya-vosstanovleniya-nomera-1-min.png"
+07-24-2017 @ 10:37:56 - > > Imported image "https://euroroaming.ru/wp-content/uploads/2016/06/vodafone-sim-karta-dlya-vosstanovleniya-nomera-1-min.png"
+07-24-2017 @ 10:37:56 - > > Images set
+07-24-2017 @ 10:37:56 - > Finished importing post ID 25841.
+07-24-2017 @ 10:37:56 - > Row 6 - preparing for import.
+07-24-2017 @ 10:37:56 - > &#8220;EuropaSim – интернет за границей в Европе. Безлимитные тарифы&#8221;Product already exists.
+07-24-2017 @ 10:37:56 - > Row 7 - preparing for import.
+07-24-2017 @ 10:37:56 - > Inserting test
+07-24-2017 @ 10:37:56 - > Inserted - post ID is 28576.
+07-24-2017 @ 10:37:56 - > Finished importing post ID 28576.
+07-24-2017 @ 10:37:56 - > Row 8 - preparing for import.
+07-24-2017 @ 10:37:56 - > &#8220;TravelChat&#8221;Product already exists.
+07-24-2017 @ 10:37:56 - > Row 9 - preparing for import.
+07-24-2017 @ 10:37:56 - > &#8220;GLOBALSIM с тарифом «США»&#8221;Product already exists.
+07-24-2017 @ 10:37:56 - > Row 10 - preparing for import.
+07-24-2017 @ 10:37:56 - > Inserting Восстановление PIN-кода Orange
+07-24-2017 @ 10:37:56 - > Inserted - post ID is 53483.
+07-24-2017 @ 10:37:56 - > > Importing image "https://euroroaming.ru/wp-content/uploads/2017/06/visual-sim-card-min.png"
+07-24-2017 @ 10:37:57 - > > Inserted image attachment "https://euroroaming.ru/wp-content/uploads/2017/06/visual-sim-card-min.png"
+07-24-2017 @ 10:37:57 - > > Imported image "https://euroroaming.ru/wp-content/uploads/2017/06/visual-sim-card-min.png"
+07-24-2017 @ 10:37:57 - > > Images set
+07-24-2017 @ 10:37:57 - > Finished importing post ID 53483.
+07-24-2017 @ 10:37:57 - Finished processing products.
+07-24-2017 @ 10:37:59 - ---[ New Import ] PHP Memory: 2 GB, WP Memory: 40 MB
+07-24-2017 @ 10:37:59 - Parsing products CSV.
+07-24-2017 @ 10:37:59 - Finished parsing products CSV.
+07-24-2017 @ 10:37:59 - ---
+07-24-2017 @ 10:37:59 - Processing products.
+07-24-2017 @ 10:37:59 - > Row 1 - preparing for import.
+07-24-2017 @ 10:37:59 - > Inserting Сим-карта Three
+07-24-2017 @ 10:37:59 - > Inserted - post ID is 55050.
+07-24-2017 @ 10:38:00 - > > Importing image "https://euroroaming.ru/wp-content/uploads/2017/06/Three-min.png"
+07-24-2017 @ 10:38:00 - > > Inserted image attachment "https://euroroaming.ru/wp-content/uploads/2017/06/Three-min.png"
+07-24-2017 @ 10:38:00 - > > Imported image "https://euroroaming.ru/wp-content/uploads/2017/06/Three-min.png"
+07-24-2017 @ 10:38:00 - > > Images set
+07-24-2017 @ 10:38:00 - > Finished importing post ID 55050.
+07-24-2017 @ 10:38:00 - > Row 2 - preparing for import.
+07-24-2017 @ 10:38:00 - > Inserting EuropaSim – интернет за границей в Европе. Безлимитные тарифы (Копия)
+07-24-2017 @ 10:38:00 - > Inserted - post ID is 58955.
+07-24-2017 @ 10:38:00 - > > Importing image "https://euroroaming.ru/wp-content/uploads/2015/03/EuropaSim-new-min.png"
+07-24-2017 @ 10:38:01 - > > Inserted image attachment "https://euroroaming.ru/wp-content/uploads/2015/03/EuropaSim-new-min.png"
+07-24-2017 @ 10:38:01 - > > Imported image "https://euroroaming.ru/wp-content/uploads/2015/03/EuropaSim-new-min.png"
+07-24-2017 @ 10:38:01 - > > Importing image "https://euroroaming.ru/wp-content/uploads/2016/08/Bez-imeni-1-min.jpg"
+07-24-2017 @ 10:38:01 - > > Inserted image attachment "https://euroroaming.ru/wp-content/uploads/2016/08/Bez-imeni-1-min.jpg"
+07-24-2017 @ 10:38:01 - > > Imported image "https://euroroaming.ru/wp-content/uploads/2016/08/Bez-imeni-1-min.jpg"
+07-24-2017 @ 10:38:01 - > > Importing image "https://euroroaming.ru/wp-content/uploads/2016/08/Bez-imeni-2-min.jpg"
+07-24-2017 @ 10:38:01 - > > Inserted image attachment "https://euroroaming.ru/wp-content/uploads/2016/08/Bez-imeni-2-min.jpg"
+07-24-2017 @ 10:38:01 - > > Imported image "https://euroroaming.ru/wp-content/uploads/2016/08/Bez-imeni-2-min.jpg"
+07-24-2017 @ 10:38:01 - > > Importing image "https://euroroaming.ru/wp-content/uploads/2016/08/Evropasim-vnutr-1-1280-min.jpg"
+07-24-2017 @ 10:38:02 - > > Inserted image attachment "https://euroroaming.ru/wp-content/uploads/2016/08/Evropasim-vnutr-1-1280-min.jpg"
+07-24-2017 @ 10:38:02 - > > Imported image "https://euroroaming.ru/wp-content/uploads/2016/08/Evropasim-vnutr-1-1280-min.jpg"
+07-24-2017 @ 10:38:02 - > > Importing image "https://euroroaming.ru/wp-content/uploads/2016/08/Sim-2-prosmotr-min.jpg"
+07-24-2017 @ 10:38:02 - > > Inserted image attachment "https://euroroaming.ru/wp-content/uploads/2016/08/Sim-2-prosmotr-min.jpg"
+07-24-2017 @ 10:38:02 - > > Imported image "https://euroroaming.ru/wp-content/uploads/2016/08/Sim-2-prosmotr-min.jpg"
+07-24-2017 @ 10:38:02 - > > Images set
+07-24-2017 @ 10:38:02 - > Finished importing post ID 58955.
+07-24-2017 @ 10:38:02 - Finished processing products.

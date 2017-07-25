@@ -1,0 +1,119 @@
+<wpml-config>
+	<custom-types>
+		<custom-type translate="1">us_portfolio</custom-type>
+		<custom-type translate="1">us_testimonial</custom-type>
+		<custom-type translate="1">us_header</custom-type>
+		<custom-type translate="1">us_footer</custom-type>
+	</custom-types>
+	<taxonomies>
+		<taxonomy translate="1">us_portfolio_category</taxonomy>
+		<taxonomy translate="1">us_testimonial_category</taxonomy>
+	</taxonomies>
+	<custom-fields>
+		<custom-field action="copy">us_header</custom-field>
+		<custom-field action="copy">us_header_sticky_override</custom-field>
+		<custom-field action="copy">us_header_sticky</custom-field>
+		<custom-field action="copy">us_header_transparent_override</custom-field>
+		<custom-field action="copy">us_header_transparent</custom-field>
+		<custom-field action="copy">us_header_sticky_pos</custom-field>
+		<custom-field action="copy">us_header_shadow</custom-field>
+		<custom-field action="copy">us_titlebar</custom-field>
+		<custom-field action="translate">us_titlebar_subtitle</custom-field>
+		<custom-field action="copy">us_titlebar_size</custom-field>
+		<custom-field action="copy">us_titlebar_color</custom-field>
+		<custom-field action="copy">us_titlebar_breadcrumbs</custom-field>
+		<custom-field action="copy">us_titlebar_image</custom-field>
+		<custom-field action="copy">us_titlebar_bg_size</custom-field>
+		<custom-field action="copy">us_titlebar_bg_repeat</custom-field>
+		<custom-field action="copy">us_titlebar_bg_position</custom-field>
+		<custom-field action="copy">us_titlebar_bg_parallax</custom-field>
+		<custom-field action="copy">us_titlebar_overlay_color</custom-field>
+		<custom-field action="copy">us_sidebar</custom-field>
+		<custom-field action="copy">us_sidebar_id</custom-field>
+		<custom-field action="copy">us_sidebar_pos</custom-field>
+		<custom-field action="copy">us_footer</custom-field>
+		<custom-field action="copy">us_footer_id</custom-field>
+		<custom-field action="translate">us_tile_link</custom-field>
+		<custom-field action="translate">us_tile_description</custom-field>
+		<custom-field action="copy">us_tile_size</custom-field>
+		<custom-field action="copy">us_tile_bg_color</custom-field>
+		<custom-field action="copy">us_tile_text_color</custom-field>
+		<custom-field action="copy">us_tile_additional_image</custom-field>
+		<custom-field action="copy">us_post_preview_layout</custom-field>
+		<custom-field action="translate">us_testimonial_author</custom-field>
+		<custom-field action="translate">us_testimonial_role</custom-field>
+		<custom-field action="copy">us_testimonial_link</custom-field>
+	</custom-fields>
+	<shortcodes>
+		<shortcode>
+			<tag>us_btn</tag>
+			<attributes>
+				<attribute>text</attribute>
+			</attributes>
+		</shortcode>
+		<shortcode>
+			<tag>us_cform</tag>
+			<attributes>
+				<attribute>receiver_email</attribute>
+				<attribute>button_text</attribute>
+			</attributes>
+		</shortcode>
+		<shortcode>
+			<tag>us_counter</tag>
+			<attributes>
+				<attribute>prefix</attribute>
+				<attribute>suffix</attribute>
+				<attribute>title</attribute>
+			</attributes>
+		</shortcode>
+		<shortcode>
+			<tag>us_cta</tag>
+			<attributes>
+				<attribute>title</attribute>
+				<attribute>content</attribute>
+				<attribute>btn_label</attribute>
+				<attribute>btn2_label</attribute>
+			</attributes>
+		</shortcode>
+		<shortcode>
+			<tag>us_iconbox</tag>
+			<attributes>
+				<attribute>title</attribute>
+				<attribute>content</attribute>
+			</attributes>
+		</shortcode>
+		<shortcode>
+			<tag>us_message</tag>
+			<attributes>
+				<attribute>content</attribute>
+			</attributes>
+		</shortcode>
+		<shortcode>
+			<tag>us_person</tag>
+			<attributes>
+				<attribute>name</attribute>
+				<attribute>role</attribute>
+				<attribute>content</attribute>
+			</attributes>
+		</shortcode>
+		<shortcode>
+			<tag>us_progbar</tag>
+			<attributes>
+				<attribute>title</attribute>
+			</attributes>
+		</shortcode>
+		<shortcode>
+			<tag>us_separator</tag>
+			<attributes>
+				<attribute>text</attribute>
+			</attributes>
+		</shortcode>
+		<shortcode>
+			<tag>us_social_links</tag>
+			<attributes>
+				<attribute>custom_link</attribute>
+				<attribute>custom_title</attribute>
+			</attributes>
+		</shortcode>
+	</shortcodes>
+</wpml-config>
