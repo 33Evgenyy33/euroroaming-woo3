@@ -429,9 +429,14 @@ $tax_display_mode = get_option('woocommerce_tax_display_shop');
 </script>
 <script type="text/template" id="tmpl-custom-shipping-shippingaddress">
     <?php
+    $countries = WC()->countries->get_allowed_countries();
     foreach ($checkout->checkout_fields['shipping'] as $key => $field) :
-        $value = str_replace('shipping_', 'shipping_address.', $key);
-        woocommerce_form_field('custom_' . $key, $field, '{{' . $value . '}}');
+	    $value = str_replace('shipping_', 'shipping_address.', $key);
+	    if ($field['type'] == 'state' && 1 === sizeof($countries)) {
+		    get_single_country_states('custom_' . $key, $field, $countries);
+	    } else {
+		    woocommerce_form_field('custom_' . $key, $field, '{{' . $value . '}}');
+	    }
     endforeach; ?>
 </script>
 

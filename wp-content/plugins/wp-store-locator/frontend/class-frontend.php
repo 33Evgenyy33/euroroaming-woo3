@@ -258,7 +258,7 @@ if (!class_exists('WPSL_Frontend')) {
 
                 $sql_sort = 'ORDER BY distance ' . $limit;
             } else {
-                array_push($placeholder_values, $this->check_store_filter('radius'), $this->check_store_filter('max_results'));
+                array_push($placeholder_values, $this->check_store_filter('search_radius'), $this->check_store_filter('max_results'));
                 $sql_sort = 'HAVING distance < %d ORDER BY distance LIMIT 0, %d';
             }
 
@@ -736,7 +736,7 @@ if (!class_exists('WPSL_Frontend')) {
         public function check_orange_format($num = '', $format_type = '')
         {
             $orange_combo_check = array("6050", "6051", "6052");
-            $orange_nano_check = array("615", "625", "635", "692", "6053", "6054", "6055", "6056", "6057", "6058", "6059");
+            $orange_nano_check = array("615", "625", "6351", "692", "6053", "6054", "6055", "6056", "6057", "6058", "6059");
             $format_array = array();
 
             if ($format_type == 'combo') {
@@ -792,7 +792,7 @@ if (!class_exists('WPSL_Frontend')) {
 
                 $ta_id = intval(str_replace(" ", "", get_post_meta($atts['id'], 'wpsl_ta_id', true)));
 
-                $url = "http://seller.sgsim.ru/euroroaming_order_submit?operation=get_simcards&ta=$ta_id";
+                $url = "http://seller.sgsim.ru/euroroaming_order_submit?operation=get_simcards_new&ta=$ta_id";
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_HEADER, 0);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //Устанавливаем параметр, чтобы curl возвращал данные, вместо того, чтобы выводить их в браузер.
@@ -800,7 +800,7 @@ if (!class_exists('WPSL_Frontend')) {
                 $data = curl_exec($ch);
                 curl_close($ch);
                 $array_of_simcard = (array)json_decode($data);
-                krsort($array_of_simcard);
+	            $sort_array_of_simcard = array();
 
                 //$content .= '<pre>' . print_r($array_of_simcard, true) . '</pre>';
 
@@ -810,8 +810,10 @@ if (!class_exists('WPSL_Frontend')) {
                 $ortel_img = '<div class="pricing-deco" style="background:url(data:image/png;base64,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) no-repeat center;height: 90px;"></div>';
                 $vodafone_img = '<div class="pricing-deco" style="background:url(data:image/png;base64,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) no-repeat center;height: 90px;"></div>';
                 $travelchat_img = '<div class="pricing-deco" style="background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAAjCAYAAAA9riDJAAABS2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxMzggNzkuMTU5ODI0LCAyMDE2LzA5LzE0LTAxOjA5OjAxICAgICAgICAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIi8+CiA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgo8P3hwYWNrZXQgZW5kPSJyIj8+IEmuOgAABPdJREFUeJztnDFy6zYURY8yKTOZ4V+CvQRpCfIKTLnIAqBJRXfWEqzOrDJi/xuLbtLGS7CXYFUpUkVLcArgmRAE0rT1LVAIzgxnLAokYPLy4b5H2CMC8/r6GrT/6/nD78CvQQfx4/n7bnX5PVTno9EoVNf8HKzn4fBH6AEcwt3qMvQQBsVPoQeQSPxIkqATUZEEnYiKJOhEVCRBJ6IieJUjZIkHoFD1sbs8A17Mz+fA5pCTyfUrVO3WP8/LKj/o3H0IXXZ1CS7oQtUv6Jv8ETZllZ9/xXgGQgYos9nX5hlYAxWwDTCuwZMsx/CYoSP4LfsP+tjs/9e0SzgEj9C+SFuoegr8ZT4eZeocCDPgvmfbe+AKHbGPSqHqN9t0PX8A4G51GdY7GlKEHg4ZsHL2rYGR2b6xL95VoersCGM7GZKgh4NCi1rYoCOwsDWf7dkqI1mPHYJbjs9i2ZINcIH2lnJz32xKoeqx2X9jHb4BqrLKl9a+G3OODbr64OMJ7WMXwNL57obdJG6DTt7cdm24wqxa2q3Z/V2mbW0LVcvvZJ9z6bNwpu3UbMLedWpL4q/nD1LuOLhycwgnK2iLDC3svYtcqFqxP41j2t4Wqp4BE7OvoknExuiKgs3YbNLW7X/stD+jecgmvI97fJsoHtmtcLRVO+4951TArFD1xHrgz1raQnOdFHBxCrlMDJZDpumLsspHZtuYGyViroBv8j0wN/vHNNFuS+NRfdO4RC5XUCKGZ/RMIZ73yrSTykQXvrJlm1Af0VF/iY62bZHcJ1BoSoLCqqOtPT5fYBgcMQgatJgfnX0Z2hosyiqfl1X+JhAjAplG7ZvZJeiZ0waaKXqLFrM9hjWNB7YFdCwW1gPsin4KYBLKqfPdxBxz5R5TqDozVak9S3a3uhyZLWgUj8Fy4JsKyyp/Zt822IjA7URsbfa7tkM+21EcGjG0veiQaJ7htzFfiT3Oit2HagxgHnJvua2s8rXnLWrGwF/oRCHoLkzyOGU3keqiMm1nNAK0o7N9Q0XQNz3Of8ZxBW3TKUKTOMs1OukyYCyWw0uh6lt0wtZXzOC3HT67AR+7+V1tfdP0UYRlEr4ntM8/aTFDxII2kVmEXGG8oeUrFy2HilURm2HbDdenCwuaZLBta0ve7H5t2ta33AKvshWq7vtmcQ8ncY6CmC3HW1Qtq3ze2XKfNVrEM5rp2idIW/iHIn0KM/w1bDdhPcTGuAnhBqs851nBN3iijdA96FrhJ9ZC0W43oInYM9pF3VfsbmI5Zjd6ZugSoT3uLe9H/i5ci7G1xPyhN5DX84ePrpj8EmKO0OJLZ4WqldRrTQIkSV/XsY/oCCbVCV8klOrBGO3VpT4s2G8fJ3QnZ1t0fdy2ELKEtI2lXY78BK6FGveMyr4+X8xCJbd8eVSijdDmda2IcFWo+tXcrCd2KxhtkWXd8rOLrK/IcPwtzQuVJf3KXXbt+j2u6P9a3YspbXadw01W7XLfQX1/FdEKGqCs8gk6YbPF9IiOInJDzvCL2i7RdU3rsvZjwb4AlujI/BFbsEavrPOd79ns9628+xRllS/QD4c9A8k1cvuYOse51xYCruOAlqL6MQn9JzyynvdUGeI/mgn5Z3VRR+jE/48k6ERUJEEnoiIJOhEVSdCJqEiCTkRFEnQiKmJ+9d2X34BfQg/is7TU0f+5W13+eeyxDIH/ANMafmBj9pF6AAAAAElFTkSuQmCC) no-repeat center;height: 90px;"></div>';
+	            $three = '<div class="pricing-deco" style="background:url(data:image/png;base64,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) no-repeat center;height: 90px;"></div>';
 
-                $store_phone = get_post_meta($atts['id'], 'wpsl_phone', true);
+
+	            $store_phone = get_post_meta($atts['id'], 'wpsl_phone', true);
 
                 $in_stock = "wpsl-sim-card-in_stock";
                 $out_of_stock = "wpsl-sim-card-out_of_stock";
@@ -819,52 +821,43 @@ if (!class_exists('WPSL_Frontend')) {
                 // Если массив сим-карт не пуст, то выводим
                 if (!empty($array_of_simcard)) {
 
+	                foreach ($array_of_simcard as $key => $operator) {
+		                switch ($key) {
+			                case 'orange':
+				                $sort_array_of_simcard['orange'] = 1;
+				                break;
+			                case 'ortel':
+				                $sort_array_of_simcard['ortel'] = 2;
+				                break;
+			                case 'vodafone':
+				                $sort_array_of_simcard['vodafone'] = 3;
+				                break;
+			                case 'three':
+				                $sort_array_of_simcard['three'] = 4;
+				                break;
+			                case 'globalsim--classic':
+				                $sort_array_of_simcard['globalsim--classic'] = 5;
+				                break;
+			                case 'globalsim--tariff_usa':
+				                $sort_array_of_simcard['globalsim--tariff_usa'] = 6;
+				                break;
+			                case 'globalsim--gsim_internet':
+				                $sort_array_of_simcard['globalsim--gsim_internet'] = 7;
+				                break;
+			                case 'globalsim--europasim':
+				                $sort_array_of_simcard['globalsim--europasim'] = 8;
+				                break;
+			                case 'globalsim--travelchat':
+				                $sort_array_of_simcard['globalsim--travelchat'] = 9;
+				                break;
+			                case 'vodafone_r':
+				                $sort_array_of_simcard['vodafone_r'] = 10;
+				                break;
+		                }
+	                }
+	                asort($sort_array_of_simcard);
 
-
-                    foreach ($array_of_simcard as $key => $oper) {
-
-                        //Если Vodafone Red или TravelChat пропускаем
-                        if ($key == 'unknown' || $key == 'globalsim--travelchat') continue;
-
-                        //Если Globalsim Internet то делаем клон для TravelChat
-                        if ($key == 'globalsim--gsim_internet') {
-
-                            $content .= '<div class="wpsl-page-ta-simcard">';
-                            $content .= $globalsim_img;
-                            $content .= '<h4 class="wpsl-operator-header">Globalsim «Internet»</h4>';
-                            $content .= '<div class="wpsl-operator-format_grid">';
-                            $content .= '<div class="wpsl-operator-format-type">';
-                            $content .= '<p class="wpsl-operator-format-type_label">Кол-во:</p>';
-                            $content .= '</div>';
-                            $content .= '<div class="wpsl-operator-format-count">';
-                            $content .= '<p class="'.(count($oper) > 0 ? $in_stock: $out_of_stock).'">' . count($oper) . ' шт.</p>';
-                            $content .= '</div>';
-                            $content .= '</div>';
-                            $content .= '<div class="wpsl-operator-format_contact">';
-                            $content .= '<p style="margin-bottom: 4px;font-weight: 300;color: #000;">Размер уточняйте по телефону:</p>';
-                            $content .= '<p style="color: #000;">' . $store_phone . '</p>';
-                            $content .= '</div>';
-                            $content .= '</div>';
-
-                            $content .= '<div class="wpsl-page-ta-simcard">';
-                            $content .= $travelchat_img;
-                            $content .= '<h4 class="wpsl-operator-header">TravelChat</h4>';
-                            $content .= '<div class="wpsl-operator-format_grid">';
-                            $content .= '<div class="wpsl-operator-format-type">';
-                            $content .= '<p class="wpsl-operator-format-type_label">Кол-во:</p>';
-                            $content .= '</div>';
-                            $content .= '<div class="wpsl-operator-format-count">';
-                            $content .= '<p class="'.(count($oper) > 0 ? $in_stock: $out_of_stock).'">' . count($oper) . ' шт.</p>';
-                            $content .= '</div>';
-                            $content .= '</div>';
-                            $content .= '<div class="wpsl-operator-format_contact">';
-                            $content .= '<p style="margin-bottom: 4px;font-weight: 300;color: #000;">Размер уточняйте по телефону:</p>';
-                            $content .= '<p style="color: #000;">' . $store_phone . '</p>';
-                            $content .= '</div>';
-                            $content .= '</div>';
-
-                            continue;
-                        }
+                    foreach ($sort_array_of_simcard as $key => $operator) {
 
                         $content .= '<div class="wpsl-page-ta-simcard">';
 
@@ -874,30 +867,52 @@ if (!class_exists('WPSL_Frontend')) {
                             case 'orange':
                                 $content .= $orange_img;
                                 $simcard = "Orange";
+                                $oper = $array_of_simcard['orange'];
                                 break;
                             case 'globalsim--classic':
                                 $content .= $globalsim_img;
                                 $simcard = "Globalsim";
+	                            $oper = $array_of_simcard['globalsim--classic'];
                                 break;
                             case 'globalsim--tariff_usa':
                                 $content .= $globalsim_img;
                                 $simcard = "Globalsim «США»";
+	                            $oper = $array_of_simcard['globalsim--tariff_usa'];
                                 break;
+	                        case 'globalsim--gsim_internet':
+		                        $content .= $globalsim_img;
+		                        $simcard = "Globalsim «Internet»";
+		                        $oper = $array_of_simcard['globalsim--gsim_internet'];
+		                        break;
                             case 'globalsim--europasim':
                                 $content .= $europasim_img;
                                 $simcard = "Europasim";
+	                            $oper = $array_of_simcard['globalsim--europasim'];
                                 break;
+	                        case 'globalsim--travelchat':
+		                        $content .= $travelchat_img;
+		                        $simcard = "TravelChat";
+		                        $oper = $array_of_simcard['globalsim--travelchat'];
+		                        break;
                             case 'ortel':
                                 $content .= $ortel_img;
                                 $simcard = "Ortel Mobile";
+	                            $oper = $array_of_simcard['ortel'];
                                 break;
                             case 'vodafone':
                                 $content .= $vodafone_img;
                                 $simcard = "Vodafone";
+	                            $oper = $array_of_simcard['vodafone'];
                                 break;
-                            case 'unknown':
+	                        case 'three':
+		                        $content .= $three;
+		                        $simcard = "Three";
+		                        $oper = $array_of_simcard['three'];
+		                        break;
+                            case 'vodafone_r':
                                 $content .= $vodafone_img;
                                 $simcard = "Vodafone «Red»";
+	                            $oper = $array_of_simcard['vodafone_r'];
                                 break;
                         }
 
@@ -937,7 +952,7 @@ if (!class_exists('WPSL_Frontend')) {
                             continue;
                         }
 
-                        if ($key == 'vodafone' || $key == 'ortel') {
+                        if ($key == 'vodafone' || $key == 'ortel' || $key == 'three') {
                             $content .= '<div class="wpsl-operator-format_grid">';
                             $content .= '<div class="wpsl-operator-format-type">';
                             $content .= '<p class="wpsl-operator-format-type_label">3 в 1</p>';
@@ -968,7 +983,7 @@ if (!class_exists('WPSL_Frontend')) {
                         $content .= '</div>';
                     }
                 } else {
-                    $content .= '<h4>Сим-карт нет в наличие</h4>';
+                    $content .= '<h4>Сим-карт нет в наличии</h4>';
                 }
 
             } else {
@@ -1363,18 +1378,43 @@ if (!class_exists('WPSL_Frontend')) {
          * Make sure the filter contains a valid value, otherwise use the default value.
          *
          * @since 2.0.0
+         * @param  string $filter The name of the filter
          * @return string $filter_value The filter value
          */
         public function check_store_filter($filter)
         {
 
-            if (isset($_GET[$filter]) && absint($_GET[$filter])) {
+            if (isset($_GET[$filter]) && absint($_GET[$filter]) && $this->check_allowed_filter_value($filter)) {
                 $filter_value = $_GET[$filter];
             } else {
                 $filter_value = $this->get_default_filter_value($filter);
             }
 
             return $filter_value;
+        }
+
+        /**
+         * Make sure the used filter value isn't bigger
+         * then the value that's set on the settings page.
+         *
+         * @since 2.2.9
+         * @param  string $filter The name of the filter
+         * @return bool   $allowed True if the value is equal or smaller then the value from the settings page
+         */
+        public function check_allowed_filter_value($filter)
+        {
+
+            global $wpsl_settings;
+
+            $allowed = false;
+
+            $max_filter_val = max(explode(',', str_replace(array('[', ']'), '', $wpsl_settings[$filter])));
+
+            if ((int)$_GET[$filter] <= (int)$max_filter_val) {
+                $allowed = true;
+            }
+
+            return $allowed;
         }
 
         /**
@@ -1912,7 +1952,8 @@ if (!class_exists('WPSL_Frontend')) {
                 'mapTabAnchor' => apply_filters('wpsl_map_tab_anchor', 'wpsl-map-tab'),
                 'mapTabAnchorReturn' => apply_filters('wpsl_map_tab_anchor_return', false),
                 'gestureHandling' => apply_filters('wpsl_gesture_handling', 'auto'),
-                'directionsTravelMode' => $this->get_directions_travel_mode()
+                'directionsTravelMode' => $this->get_directions_travel_mode(),
+                'runFitBounds' => $wpsl_settings['run_fitbounds']
             );
 
             $locator_map_settings = array(
@@ -1964,10 +2005,11 @@ if (!class_exists('WPSL_Frontend')) {
 
             // If the marker clusters are enabled, include the js file and marker settings.
             if ($wpsl_settings['marker_clusters']) {
-                wp_enqueue_script('wpsl-cluster', WPSL_URL . 'js/markerclusterer' . $min . '.js', '', WPSL_VERSION_NUM, true); //not minified version is in the /js folder
+                wp_enqueue_script('wpsl-cluster', WPSL_URL . 'js/markerclusterer' . $min . '.js', array('wpsl-js'), WPSL_VERSION_NUM, true); //not minified version is in the /js folder
 
                 $base_settings['clusterZoom'] = $wpsl_settings['cluster_zoom'];
                 $base_settings['clusterSize'] = $wpsl_settings['cluster_size'];
+                $base_settings['clusterImagePath'] = 'https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/images/m';
             }
 
             // Check if we need to include the infobox script and settings.

@@ -254,11 +254,11 @@
                                     });
                                 }
                             }
-                            /*if (typeof val != 'undefined') {
+                            if (typeof val != 'undefined') {
                                 if (online_only.indexOf(val.id) != -1) {
                                     return true;
                                 }
-                            }*/
+                            }
                             ul.append($li);
                         }
                     });
@@ -296,11 +296,11 @@
                                     'background-image': 'url(' + wc_pos_params.def_img + ')'
                                 });
                             }
-                            /*if (typeof val != 'undefined') {
+                            if (typeof val != 'undefined') {
                                 if (online_only.indexOf(val.id) != -1) {
                                     return true;
                                 }
-                            }*/
+                            }
                             ul.append($li);
                         });
                     } catch (e) {
@@ -419,9 +419,9 @@
                                 val.featured_src = val.thumbnail_src;
                             }
                             if (typeof val != 'undefined') {
-                                /*if (online_only.indexOf(val.id) != -1) {
+                                if (online_only.indexOf(val.id) != -1) {
                                     return true;
-                                }*/
+                                }
 
                                 if (val.type == 'variable' && val.variations.length > 0 && pos_grid.tile_variables == 'tiles') {
                                     var $li = $('<li id="product_' + val.id + '" class="title_product open_variantion category_cycle" data-id="' + val.id + '"><span></span><span class="price"></span></li>');

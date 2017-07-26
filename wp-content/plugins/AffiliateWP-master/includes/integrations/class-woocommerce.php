@@ -407,7 +407,7 @@ class Affiliate_WP_WooCommerce extends Affiliate_WP_Base {
 		foreach ( $coupons as $code ) {
 
 			$coupon       = new WC_Coupon( $code );
-			$affiliate_id = get_post_meta( $coupon->id, 'affwp_discount_affiliate', true );
+			$affiliate_id = get_post_meta( $coupon->get_id(), 'affwp_discount_affiliate', true );
 
 			if ( $affiliate_id ) {
 

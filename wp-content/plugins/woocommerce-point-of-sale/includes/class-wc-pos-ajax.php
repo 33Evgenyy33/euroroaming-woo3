@@ -363,7 +363,8 @@ class WC_POS_AJAX
 
         $order_items = $order->get_items(apply_filters('woocommerce_admin_order_item_types', array('line_item', 'fee')));
 
-        $_product = $order->wc_get_product($order_items[$item_order_id]);
+        //$_product = $order->wc_get_product($order_items[$item_order_id]);
+	    $_product = wc_get_product($order_items['product_id']);
 
         $_tax = new WC_Tax();
         $price = $_product->get_price();

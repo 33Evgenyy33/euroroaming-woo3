@@ -1076,7 +1076,8 @@ class WC_Pos_Sell
         $prices_precision = wc_get_price_decimals();
         $product_data = array(
             'title' => $product->get_title(),
-            'id' => (int)$product->is_type('variation') ? $product->get_id() : $product->get_id(),
+            //'id' => (int)$product->is_type('variation') ? $product->get_id() : $product->get_id(),
+            'id' => (int)$product->is_type('variation') ? $product->get_variation_id() : $product->get_id(),
             'created_at' => '',
             'updated_at' => '',
             'type' => $product->get_type(),

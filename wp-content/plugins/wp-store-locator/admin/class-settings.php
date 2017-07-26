@@ -38,11 +38,11 @@ if ( !class_exists( 'WPSL_Settings' ) ) {
                 $msg = __( 'WP Store Locator Transients Cleared', 'wpsl' );
                 $wpsl_admin->notices->save( 'update', $msg );
 
-                /* 
+                /*
                  * Make sure the &action=clear_wpsl_transients param is removed from the url.
-                 * 
-                 * Otherwise if the user later clicks the 'Save Changes' button, 
-                 * and the &action=clear_wpsl_transients param is still there it 
+                 *
+                 * Otherwise if the user later clicks the 'Save Changes' button,
+                 * and the &action=clear_wpsl_transients param is still there it
                  * will show two notices 'WP Store Locator Transients Cleared' and 'Settings Saved'.
                  */
                 wp_redirect( admin_url( 'edit.php?post_type=wpsl_stores&page=wpsl_settings' ) );
@@ -156,9 +156,9 @@ if ( !class_exists( 'WPSL_Settings' ) ) {
             } else {
 
                 /*
-                 * If the start latlng is empty, but a start location name is provided, 
+                 * If the start latlng is empty, but a start location name is provided,
                  * then make a request to the Geocode API to get it.
-                 * 
+                 *
                  * This can only happen if there is a JS error in the admin area that breaks the
                  * Google Maps Autocomplete. So this code is only used as fallback to make sure
                  * the provided start location is always geocoded.
@@ -173,6 +173,9 @@ if ( !class_exists( 'WPSL_Settings' ) ) {
 
                 $output['start_latlng'] = $start_latlng;
             }
+
+            // Do we need to run the fitBounds function make the markers fit in the viewport?
+            $output['run_fitbounds'] = isset( $_POST['wpsl_map']['run_fitbounds'] ) ? 1 : 0;
 
             // Check if we have a valid map type.
             $output['map_type']    = wpsl_valid_map_type( $_POST['wpsl_map']['type'] );
@@ -216,9 +219,9 @@ if ( !class_exists( 'WPSL_Settings' ) ) {
                 $output['cluster_size'] = wpsl_get_default_setting( 'cluster_size' );
             }
 
-            /* 
+            /*
              * Make sure all the ux related fields that should contain an int, actually are an int.
-             * Otherwise we use the default value. 
+             * Otherwise we use the default value.
              */
             foreach ( $ux_absints as $ux_key ) {
                 if ( absint( $_POST['wpsl_ux'][$ux_key] ) ) {
@@ -240,7 +243,7 @@ if ( !class_exists( 'WPSL_Settings' ) ) {
                 $output['marker_effect'] = wpsl_get_default_setting( 'marker_effect' );
             }
 
-            // Check if we have a valid address format.  
+            // Check if we have a valid address format.
             if ( array_key_exists( $_POST['wpsl_ux']['address_format'], wpsl_get_address_formats() ) ) {
                 $output['address_format'] = $_POST['wpsl_ux']['address_format'];
             } else {

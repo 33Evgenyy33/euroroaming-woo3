@@ -105,6 +105,7 @@
     <?php require_once('modal/html-modal-permission-denied.php'); ?>
     <?php require_once('modal/html-modal-redirect.php'); ?>
     <?php require_once('modal/html-modal-opening-cash-amount.php'); ?>
+	<?php require_once('modal/html-modal-process-offline-orders.php'); ?>
     <div class="md-overlay"></div>
     <div class="md-overlay-prompt"></div>
     <script type="text/javascript">if (typeof wpOnload == 'function') wpOnload();</script>

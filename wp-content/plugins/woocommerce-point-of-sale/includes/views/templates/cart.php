@@ -59,9 +59,11 @@
             <a href="#" class="customer-loaded-name show_customer_popup" >{{fullname}}</a> – 
             <a href="#" class="customer-loaded-email show_customer_popup" >{{email}}</a>
         </td>
-        <?php if( isset( $GLOBALS['wc_points_rewards'] ) ){ ?>
-            <td class="customer_points" >{{points_balance}}</td>
-        <?php } ?>
+		<?php if( isset( $GLOBALS['wc_points_rewards'] ) ) {
+			global $wc_points_rewards;
+			$points_label = $wc_points_rewards->get_points_label(2);?>
+            <td class="customer_points" ><span class="customer_points_label"><b>{{points_balance}}</b> <?php echo $points_label ?></span></td>
+		<?php } ?>
 
         <td class="remove_customer">
             <a data-tip="<?php _e('Remove', 'wc_point_of_sale'); ?>" class="remove_customer_row tips" href="#"></a>
@@ -89,11 +91,13 @@ if ( $user_to_add > 0) {
             <input type="hidden" id="pos_c_billing_addr" value='<?php echo esc_attr(json_encode($b_addr)); ?>' />
             <input type="hidden" id="pos_c_shipping_addr" value='<?php echo esc_attr(json_encode($s_addr)); ?>' />
         </td>
-        <?php if( isset( $GLOBALS['wc_points_rewards'] ) ){
-            $points_balance = WC_Points_Rewards_Manager::get_users_points( $user_to_add );
-            ?>
-            <td class="customer_points" ><?php echo $points_balance; ?></td>
-        <?php } ?>
+	    <?php if( isset( $GLOBALS['wc_points_rewards'] ) ) {
+		    global $wc_points_rewards;
+		    $points_label = $wc_points_rewards->get_points_label(2);
+		    $points_balance = WC_Points_Rewards_Manager::get_users_points( $user_to_add );
+		    ?>
+            <td class="customer_points" ><span class="customer_points_label"><b><?php echo $points_balance; ?></b> <?php echo $points_label; ?></span></td>
+	    <?php } ?>
         
         <td class="remove_customer">
             <a href="#" class="remove_customer_row tips" data-tip="<?php _e('Remove', 'wc_point_of_sale'); ?>"></a>
@@ -106,7 +110,7 @@ if ( $user_to_add > 0) {
             <?php echo get_avatar( 0, 64); ?>
         <td class="name"><?php _e('Guest', 'wc_point_of_sale'); ?></td>
         <?php if( isset( $GLOBALS['wc_points_rewards'] ) ){ ?>
-            <td class="customer_points" >0</td>
+            <td class="customer_points" ></td>
         <?php } ?>
         <td class="remove_customer">
             <a data-tip="<?php _e('Remove', 'wc_point_of_sale'); ?>" class="remove_customer_row tips" href="#"></a>
@@ -121,7 +125,7 @@ if ( $user_to_add > 0) {
             <?php echo get_avatar( 0, 64); ?>
         <td class="name"><?php _e('Guest', 'wc_point_of_sale'); ?></td>
         <?php if( isset( $GLOBALS['wc_points_rewards'] ) ){ ?>
-            <td class="customer_points" >0</td>
+            <td class="customer_points" ></td>
         <?php } ?>
         <td class="remove_customer">
             <a data-tip="<?php _e('Remove', 'wc_point_of_sale'); ?>" class="remove_customer_row tips" href="#"></a>

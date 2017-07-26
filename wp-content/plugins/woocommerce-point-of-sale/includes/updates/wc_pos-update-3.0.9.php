@@ -19,10 +19,10 @@ $orders = $wpdb->get_results("SELECT posts.ID FROM {$wpdb->posts} as posts
  ");
 if( $orders ){
 	foreach ($orders as $order) {
-		$tax = get_post_meta($order->ID, '_order_tax', true);
+		$tax = get_post_meta($order->get_id(), '_order_tax', true);
 		if( empty($tax) && $tax == '' ){
-			update_post_meta($order->ID, '_order_tax', 0);			
-			update_post_meta($order->ID, '_order_shipping_tax', 0);			
+			update_post_meta($order->get_id(), '_order_tax', 0);
+			update_post_meta($order->get_id(), '_order_shipping_tax', 0);
 		}
 	}
 }

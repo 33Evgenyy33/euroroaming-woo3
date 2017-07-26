@@ -32,6 +32,7 @@ if ( ! class_exists( 'WC_POS_Admin_Settings' ) ) :
 				include_once( WC()->plugin_path().'/includes/admin/settings/class-wc-settings-page.php' );
 
 				$settings[] = include( WC_POS()->plugin_path().'/includes/admin/settings/wc-pos-settings-general.php' );
+				$settings[] = include( WC_POS()->plugin_path().'/includes/admin/settings/wc-pos-settings-register.php' );
 				$settings[] = include( WC_POS()->plugin_path().'/includes/admin/settings/wc-pos-settings-checkout.php' );
 				$settings[] = include( WC_POS()->plugin_path().'/includes/admin/settings/wc-pos-settings-tiles.php' );
 				$settings[] = include( WC_POS()->plugin_path().'/includes/admin/settings/wc-pos-settings-scanning.php' );
@@ -39,8 +40,8 @@ if ( ! class_exists( 'WC_POS_Admin_Settings' ) ) :
 				$settings[] = include( WC_POS()->plugin_path().'/includes/admin/settings/wc-pos-settings-payment_methods.php' );
 				$settings[] = include( WC_POS()->plugin_path().'/includes/admin/settings/wc-pos-settings-layout.php' );
 				$settings[] = include( WC_POS()->plugin_path().'/includes/admin/settings/wc-pos-settings-css.php' );
-                $settings[] = include( WC_POS()->plugin_path().'/includes/admin/settings/wc-pos-settings-nominal.php' );
-                $settings[] = include( WC_POS()->plugin_path().'/includes/admin/settings/wc-pos-settings-system-status.php' );
+				$settings[] = include( WC_POS()->plugin_path().'/includes/admin/settings/wc-pos-settings-nominal.php' );
+				$settings[] = include( WC_POS()->plugin_path().'/includes/admin/settings/wc-pos-settings-system-status.php' );
 
 				self::$settings = apply_filters( 'wc_pos_get_settings_pages', $settings );
 			}
@@ -49,17 +50,17 @@ if ( ! class_exists( 'WC_POS_Admin_Settings' ) ) :
 
 		/**
 		 * Save the settings
-		*/
+		 */
 		public static function save() {
 			global $current_section, $current_tab;
 
 			if ( empty( $_REQUEST['_wpnonce'] ) || ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'wc-pos-settings' ) )
-		    		die( __( 'Action failed. Please refresh the page and retry.', 'woocommerce' ) );
+				die( __( 'Action failed. Please refresh the page and retry.', 'woocommerce' ) );
 
-		    // Trigger actions
-		   	do_action( 'wc_pos_settings_save_' . $current_tab );
-		    do_action( 'wc_pos_update_options_' . $current_tab );
-		    do_action( 'wc_pos_update_options' );
+			// Trigger actions
+			do_action( 'wc_pos_settings_save_' . $current_tab );
+			do_action( 'wc_pos_update_options_' . $current_tab );
+			do_action( 'wc_pos_update_options' );
 
 			self::add_message( __( 'Your settings have been saved.', 'woocommerce' ) );
 			WC_Admin_Settings::check_download_folder_protection();
@@ -109,7 +110,7 @@ if ( ! class_exists( 'WC_POS_Admin_Settings' ) ) :
 		 * @return void
 		 */
 		public static function output() {
-		    global $current_section, $current_tab;
+			global $current_section, $current_tab;
 
 			// Include settings pages
 			self::get_settings_pages();
@@ -118,32 +119,32 @@ if ( ! class_exists( 'WC_POS_Admin_Settings' ) ) :
 			$current_tab     = empty( $_GET['tab'] ) ? 'general_pos' : sanitize_title( $_GET['tab'] );
 			$current_section = empty( $_REQUEST['section'] ) ? '' : sanitize_title( $_REQUEST['section'] );
 
-		    // Save settings if data has been posted
-		    if ( ! empty( $_POST ) )
-		    	self::save();
+			// Save settings if data has been posted
+			if ( ! empty( $_POST ) )
+				self::save();
 
-		    // Add any posted messages
-		    if ( ! empty( $_GET['wc_error'] ) )
-		    	self::add_error( stripslashes( $_GET['wc_error'] ) );
+			// Add any posted messages
+			if ( ! empty( $_GET['wc_error'] ) )
+				self::add_error( stripslashes( $_GET['wc_error'] ) );
 
-	      if ( ! empty( $_GET['wc_message'] ) )
-		    	self::add_message( stripslashes( $_GET['wc_message'] ) );
+			if ( ! empty( $_GET['wc_message'] ) )
+				self::add_message( stripslashes( $_GET['wc_message'] ) );
 
-		    if($current_tab == 'tax_pos'){
-		    	$enable_taxes = get_option('woocommerce_calc_taxes', 'no');
-		    	if($enable_taxes == 'yes')
-		    		self::add_message( __('Good news, the tax configuration of WooCommerce is set up, you can use automated tax calculation for the POS system.', 'wc_point_of_sale') );	
-		    	else
-		    		self::add_error( __('Unfortunately, the tax configuration of WooCommerce is not set up/enabled, tax calculation features are limited.', 'wc_point_of_sale') );	
-		    }
-		    
+			if($current_tab == 'tax_pos'){
+				$enable_taxes = get_option('woocommerce_calc_taxes', 'no');
+				if($enable_taxes == 'yes')
+					self::add_message( __('Good news, the tax configuration of WooCommerce is set up, you can use automated tax calculation for the POS system.', 'wc_point_of_sale') );
+				else
+					self::add_error( __('Unfortunately, the tax configuration of WooCommerce is not set up/enabled, tax calculation features are limited.', 'wc_point_of_sale') );
+			}
 
-		    self::show_messages();
 
-		    // Get tabs for the settings page
-		    $tabs = apply_filters( 'wc_pos_settings_tabs_array', array() );
+			self::show_messages();
 
-		    include_once( WC_POS()->plugin_path().'/includes/admin/views/html-admin-settings.php' );
+			// Get tabs for the settings page
+			$tabs = apply_filters( 'wc_pos_settings_tabs_array', array() );
+
+			include_once( WC_POS()->plugin_path().'/includes/admin/views/html-admin-settings.php' );
 
 		}
 	}

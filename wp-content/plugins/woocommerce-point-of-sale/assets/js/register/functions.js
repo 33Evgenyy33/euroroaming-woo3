@@ -118,8 +118,8 @@ function get_price_excluding_tax(product, qty) {
     return price;
 }
 
-function posPrintReceipt(url, gift_receipt = false) {
-
+function posPrintReceipt(url, gift_receipt) {
+    gift_receipt = gift_receipt || false;
     var find = '&amp;';
     var re = new RegExp(find, 'g');
 

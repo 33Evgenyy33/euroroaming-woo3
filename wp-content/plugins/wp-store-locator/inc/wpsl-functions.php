@@ -17,8 +17,8 @@ function wpsl_get_gmap_api_params( $api_key_type, $geocode_params = false ) {
     $param_keys = array( 'language', 'region', 'key' );
 
     /*
-     * The geocode params are included after the address so we need to 
-     * use a '&' as the first char, but when the maps script is included on 
+     * The geocode params are included after the address so we need to
+     * use a '&' as the first char, but when the maps script is included on
      * the front-end it does need to start with a '?'.
      */
     $first_sep = ( $geocode_params ) ? '&' : '?';
@@ -27,7 +27,7 @@ function wpsl_get_gmap_api_params( $api_key_type, $geocode_params = false ) {
         $option_key = ( $param_key == 'key' ) ? $api_key_type : $param_key;
 
         /*
-         * Get the current language code if WPML or qTranslate-X is active. 
+         * Get the current language code if WPML or qTranslate-X is active.
          * Otherwise get the param value from the settings var.
          */
         if ( $option_key == 'language' && ( $wpsl->i18n->wpml_exists() || $wpsl->i18n->qtrans_exists() ) ) {
@@ -79,6 +79,7 @@ function wpsl_get_default_settings() {
         'autocomplete'            => 0,
         'autoload'                => 1,
         'autoload_limit'          => 50,
+        'run_fitbounds'           => 1,
         'zoom_level'              => 3,
         'auto_zoom_level'         => 15,
         'start_name'              => '',

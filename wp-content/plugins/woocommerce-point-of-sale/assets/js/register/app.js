@@ -1527,7 +1527,7 @@ jQuery(document).ready(function ($) {
                     var success = true;
                     if (paid) {
 
-                        if (typeof data['payment_result'] != 'undefined' && typeof data['payment_result']['result'] != 'undefined') {
+                        if (typeof data != 'undefined' && typeof data['payment_result'] != 'undefined' && typeof data['payment_result']['result'] != 'undefined') {
 
                             if (data['payment_result']['result'] == 'error') {
                                 APP.showNotice(data['payment_result']['messages'], 'error');
@@ -3315,6 +3315,7 @@ jQuery(document).ready(function ($) {
                         $('#pos_chip_pin_order_id').text(chip_pin_order_id);
                     }
 
+                    $('#amount_pay_cod, #amount_change_cod').val('');
                     var round_total = CART.total;
                     var h = CART.total % wc_pos_params.wc_pos_rounding_value;
                     if (wc_pos_params.wc_pos_rounding) {
@@ -3685,7 +3686,7 @@ jQuery(document).ready(function ($) {
 
     $(window).resize(function () {
         resizeCart();
-        resizeGrid();
+        //resizeGrid();
     });
     resizeCart();
 
