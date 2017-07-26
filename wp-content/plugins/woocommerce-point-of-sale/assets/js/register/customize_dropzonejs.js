@@ -8,7 +8,7 @@ Dropzone.options.dropzoneWordpressForm = {
     acceptedFiles: ".jpg, .png, .pdf, .doc, .docx", // only .jpg files
     // maxFiles: 1,
     uploadMultiple: true,
-    maxFilesize: 3, // 5 MB
+    maxFilesize: 30, // 30 MB
     parallelUploads: 1,
     addRemoveLinks: true,
     dictRemoveFile: 'Удалить файл',

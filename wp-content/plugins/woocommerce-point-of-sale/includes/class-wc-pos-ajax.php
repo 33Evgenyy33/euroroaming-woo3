@@ -67,7 +67,8 @@ class WC_POS_AJAX
             'add_cash_management_action' => false,
             'get_user_avatars' => false,
             'set_register_actual_cash' => false,
-            'refresh_bill_screen' => true
+            'refresh_bill_screen' => true,
+            'get_default_variations' => true
         );
 
         foreach ($ajax_events as $ajax_event => $nopriv) {
@@ -362,7 +363,7 @@ class WC_POS_AJAX
 
         $order_items = $order->get_items(apply_filters('woocommerce_admin_order_item_types', array('line_item', 'fee')));
 
-        $_product = $order->get_product_from_item($order_items[$item_order_id]);
+        $_product = $order->wc_get_product($order_items[$item_order_id]);
 
         $_tax = new WC_Tax();
         $price = $_product->get_price();
@@ -432,7 +433,7 @@ class WC_POS_AJAX
 // Set values
         $item = array();
 
-        $item['product_id'] = $_product->id;
+        $item['product_id'] = $_product->get_id();
         $item['variation_id'] = isset($_product->variation_id) ? $_product->variation_id : '';
         $item['variation_data'] = isset($_product->variation_data) ? $_product->variation_data : '';
         $item['name'] = $_product->get_title();
@@ -671,7 +672,7 @@ class WC_POS_AJAX
 
         if ($posts) {
             foreach ($posts as $post) {
-                $product = get_product($post->ID);
+                $product = wc_get_product($post->ID);
                 $variation[$post->ID] = array(
                     'name' => $product->get_formatted_name(),
                     'sku' => $product->get_sku(),
@@ -950,7 +951,7 @@ class WC_POS_AJAX
             foreach ($posts as $post) {
                 $product = get_product($post->ID);
 
-                $id = $product->id;
+                $id = $product->get_id();
 
                 if ($product->product_type == 'variable') {
                     $variations = $product->get_available_variations();
@@ -1619,21 +1620,38 @@ class WC_POS_AJAX
     {
         $product_data = array();
         if ($product_id) {
-            $product = new WC_Product($product_id);
-            $product_data['id'] = $product_id;
-            $product_data['name'] = $product->get_title();
-            $product_data['sku'] = $product->get_sku();
-            $product_data['image'] = $product->get_image(array(85, 85));
-            $product_data['price'] = $product->get_price_html();
-            $product_data['stock'] = wc_stock_amount($product->stock);
-            $product_data['stock_status'] = '';
-            if ($product->is_in_stock()) {
-                $product_data['stock_status'] = '<mark class="instock">' . __('In stock', 'woocommerce') . '</mark>';
-            } else {
-                $product_data['stock_status'] = '<mark class="outofstock">' . __('Out of stock', 'woocommerce') . '</mark>';
+            $post = get_post($product_id);
+            if ($post->post_type == 'product') {
+                $product = new WC_Product($product_id);
+                $product_data['id'] = $product_id;
+                $product_data['name'] = $product->get_title();
+                $product_data['sku'] = $product->get_sku();
+                $product_data['image'] = $product->get_image(array(85, 85));
+                $product_data['price'] = $product->get_price_html();
+                $product_data['stock'] = wc_stock_amount($product->stock);
+                $product_data['stock_status'] = '';
+                if ($product->is_in_stock()) {
+                    $product_data['stock_status'] = '<mark class="instock">' . __('In stock', 'woocommerce') . '</mark>';
+                } else {
+                    $product_data['stock_status'] = '<mark class="outofstock">' . __('Out of stock', 'woocommerce') . '</mark>';
+                }
+                $product_data['stock_status'] .= ' &times; ' . wc_stock_amount($product->stock);
+            } elseif ($post->post_type = 'product_variation') {
+                $product = new WC_Product_Variation($product_id);
+                $product_data['id'] = $product_id;
+                $product_data['name'] = $post->post_title;
+                $product_data['sku'] = $product->get_name();
+                $product_data['image'] = $product->get_image(array(85, 85));
+                $product_data['price'] = $product->get_price();
+                $product_data['stock'] = $product->get_stock_quantity();
+                $product_data['stock_status'] = '';
+                if ($product_data['stock']) {
+                    $product_data['stock_status'] = '<mark class="instock">' . __('In stock', 'woocommerce') . '</mark>';
+                } else {
+                    $product_data['stock_status'] = '<mark class="outofstock">' . __('Out of stock', 'woocommerce') . '</mark>';
+                }
+                $product_data['stock_status'] .= ' &times; ' . number_format($product_data['stock'], 2);
             }
-            $product_data['stock_status'] .= ' &times; ' . wc_stock_amount($product->stock);
-
         }
         return $product_data;
     }
@@ -1814,7 +1832,6 @@ class WC_POS_AJAX
         }
 
         wp_send_json($products);
-
     }
 
     public function set_register_opening_cash()
@@ -1882,6 +1899,11 @@ class WC_POS_AJAX
             echo "</span>";
         }
         die();
+    }
+
+    public function get_default_variations()
+    {
+        wp_die(json_encode(get_post_meta($_GET['product_id'], '_default_attributes', true)));
     }
 }
 

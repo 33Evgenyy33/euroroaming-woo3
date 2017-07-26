@@ -1255,6 +1255,9 @@ jQuery(document).ready(function ($) {
                 $.each(CART.coupons, function (code, coupon) {
 
                     if (coupon.is_valid() && ( coupon.is_valid_for_product(values['data'], values) || coupon.is_valid_for_cart() )) {
+                        /*if (in_array(values['product_id'], coupon.exclude_product_ids) || in_array(values['variation_id'], coupon.exclude_product_ids)) {
+                            return false;
+                        }*/
                         var discount_amount = coupon.get_discount_amount(( 'yes' === pos_wc.calc_discounts_seq ? price : undiscounted_price ), values, true);
 
 

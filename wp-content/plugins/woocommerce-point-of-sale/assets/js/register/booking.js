@@ -73,7 +73,7 @@ jQuery(document).ready(function ($) {
         },
         add_to_cart_handler_booking: function () {
             BOOKING.init_fields();
-
+            console.log(BOOKING);
             var source = $('#tmpl-booking-data').html();
             var template = Handlebars.compile(source);
 
@@ -93,6 +93,8 @@ jQuery(document).ready(function ($) {
         },
 
         add_field: function (field) {
+            console.log('add_field====');
+            console.log(field);
             if (typeof field != 'object') return;
 
             var defaults = {
@@ -210,28 +212,25 @@ jQuery(document).ready(function ($) {
          */
         persons_field: function () {
             var product = BOOKING.data.adding_to_cart;
-
             // Persons field
             if (product.booking.has_persons) {
                 if (product.booking.has_person_types) {
                     var person_types = product.booking.person_types;
-
-                    for (var i = 0; i < person_types.length; i++) {
-                        var person_type = person_types[i];
+                    var person_keys = Object.keys(person_types);
+                    for (var i = 0; i < person_keys.length; i++) {
+                        var person_type = person_types[person_keys[i]];
                         var min_person_type_persons = person_type['min_person_type_persons'];
                         var max_person_type_persons = person_type['max_person_type_persons'];
-
                         BOOKING.add_field({
                             'type': 'number',
                             'step': 1,
                             'min': is_numeric(min_person_type_persons) ? min_person_type_persons : 0,
-                            'max': max_person_type_persons != '' ? parseInt(max_person_type_persons) : product.booking.max_persons_group,
-                            'name': 'persons_' + person_type['ID'],
+                            'max': max_person_type_persons != "" ? parseInt(max_person_type_persons) : product.booking.max_persons_group,
+                            'name': 'persons_' + person_keys[i],
                             'label': person_type['post_title'],
                             'after': person_type['post_excerpt']
                         });
                     }
-
                 } else {
                     BOOKING.add_field({
                         'type': 'number',
@@ -398,7 +397,7 @@ jQuery(document).ready(function ($) {
         toggle_calendar: function () {
             $picker = $(this).closest('.wc-bookings-date-picker').find('.picker:eq(0)');
             BOOKING.date_picker($picker);
-            $picker.slideToggle();
+            $picker.slideToggle(0);
         },
         input_date_keypress: function () {
             var $fieldset = $(this).closest('.wc-bookings-date-picker'),

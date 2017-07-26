@@ -71,7 +71,7 @@ class WC_POS_Admin_Orders_Page {
                 $the_order = new WC_Order( $post->ID );
 
             if ( $column == 'wc_pos_order_type' ) {
-	            $order_id = $the_order->id;
+	            $order_id = $the_order->get_id();
 	            $created_via = get_post_meta($order_id, '_created_via', true);
 				if($created_via == 'checkout'){
                 $order_type = __( '<span class="order-type-web tips" data-tip="Website Order">web<span>', 'wc_point_of_sale' );

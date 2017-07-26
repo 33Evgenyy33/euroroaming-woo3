@@ -1,9 +1,9 @@
 <!-- Add New Customer Popup box -->
 <?php
 $checkout = new WC_Checkout();
-if( isset($checkout->checkout_fields['order']) ){
+/*if( isset($checkout->checkout_fields['order']) ){
     unset($checkout->checkout_fields['order']['order_comments']);    
-}
+}*/
 
 $a = isset($checkout->checkout_fields['order']) ? count($checkout->checkout_fields['order']) : 0;
 $o = isset($checkout->checkout_fields['pos_custom_order']) ? count($checkout->checkout_fields['pos_custom_order']) : 0;

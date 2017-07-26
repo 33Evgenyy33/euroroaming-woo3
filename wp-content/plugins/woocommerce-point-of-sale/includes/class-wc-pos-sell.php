@@ -22,7 +22,7 @@ class WC_Pos_Sell
     protected static $_instance = null;
 
     public $data = null;
-    public $script_ver = '0.1.10';
+    public $script_ver = '0.1.70';
     public $id = null;
     public $active_plugins = array();
 
@@ -325,7 +325,7 @@ class WC_Pos_Sell
 
         if (is_pos() || $this->is_pos_api()) {
 
-            if ($order && $reg_id = get_post_meta($order->id, 'wc_pos_id_register', true)) {
+            if ($order && $reg_id = get_post_meta($order->get_id(), 'wc_pos_id_register', true)) {
                 $data = WC_POS()->register()->get_data($reg_id);
                 if ($data) {
                     $data = $data[0];
@@ -629,6 +629,7 @@ class WC_Pos_Sell
             'wc-pos-owlcarousel' => WC_POS()->plugin_url() . '/assets/plugins/owlcarousel/owl.carousel.css',
             'wc-pos-fonts' => WC_POS()->plugin_url() . '/assets/css/fonts.css',
             'wc-pos-modal' => WC_POS()->plugin_url() . '/assets/css/register/modal-component.css',
+            'wc-pos-jquery-ui-css' => 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css',
             'wc-pos-admin' => WC_POS()->plugin_url() . '/assets/css/admin.css',
             'wc-pos-main' => WC_POS()->plugin_url() . '/assets/css/register/main.css',
             'wc-pos-print' => WC_POS()->plugin_url() . '/assets/css/print.css',
@@ -636,6 +637,7 @@ class WC_Pos_Sell
             'sweetalert2css' => 'https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.5.5/sweetalert2.min.css',
             'intro1css' => 'https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.5.0/introjs.min.css',
             'materialicons' => 'https://fonts.googleapis.com/icon?family=Material+Icons',
+            //'jquery-inputmask-bundle' => WC_POS()->plugin_url() . '/assets/js/jquery.inputmask.bundle.min.js' //'https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js',
 
         );
         $styles = apply_filters('wc_pos_enqueue_styles', $styles);
@@ -676,8 +678,11 @@ class WC_Pos_Sell
             /********/
             'wc-address-i18n' => $wc_frontend_script_path . 'address-i18n' . $suffix . '.js',
             'wc-jquery-blockui' => $assets_path . 'js/jquery-blockui/jquery.blockUI' . $suffix . '.js',
+            'wc-jquery-payment' => $assets_path . 'js/jquery-payment/jquery.payment' . $suffix . '.js',
+            'wc-credit-card' => $assets_path . 'js/frontend/credit-card-form' . $suffix . '.js',
             'wc-jquery-tipTip' => $assets_path . 'js/jquery-tiptip/jquery.tipTip' . $suffix . '.js',
-            'wc-select2' => $assets_path . 'js/select2/select2' . $suffix . '.js',
+            'wc-pos-jquery-ui' => 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js',
+            //'wc-select2' => $assets_path . 'js/select2/select2.full' . $suffix . '.js',
             'wc-enhanced-select' => $assets_path . 'js/admin/wc-enhanced-select' . $suffix . '.js',
             'wc-accounting' => $assets_path . 'js/accounting/accounting' . $suffix . '.js',
             'wc-round' => $assets_path . 'js/round/round' . $suffix . '.js',
@@ -726,6 +731,12 @@ class WC_Pos_Sell
             /********/
         );
 
+        if (WC_VERSION >= 3) {
+            $scripts['wc-select2'] = $assets_path . 'js/select2/select2.full' . $suffix . '.js';
+        } else {
+            $scripts['wc-select2'] = $assets_path . 'js/select2/select2' . $suffix . '.js';
+        }
+
 
         if (!wc_pos_woocommerce_version_check('2.5')) {
             $scripts['wc-accounting'] = $assets_path . 'js/admin/accounting' . $suffix . '.js';
@@ -747,6 +758,8 @@ class WC_Pos_Sell
         $scripts['dropzonejs'] = 'https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/min/dropzone.min.js';
         $scripts['customdropzonejs'] = WC_POS()->plugin_url() . '/assets/js/register/customize_dropzonejs.js';
         $scripts['sweetalert2js'] = 'https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.5.5/sweetalert2.min.js';
+        $scripts['jquery-inputmask-bundle'] = WC_POS()->plugin_url() . '/assets/js/jquery.inputmask.bundle.min.js';
+        //'https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js'
 
 
 
@@ -763,18 +776,23 @@ class WC_Pos_Sell
         $wc_country_params = self::getJsWCSelectCountryParams();
         $wc_select_params = self::getJsWCSelectParams();
         $wc_points_and_rewards = self::getJsWCPointsRewards();
+        $online_only = self::get_online_only_products();
+        $dafault_variations = self::get_default_product_variations();
 
         $inline = array(
-            'pos_register_id' => '<script type="text/javascript" class="wc_pos_register_id" >    var wc_pos_register_id = ' . $this->id . '; </script>',
-            'pos_default_customer' => '<script type="text/javascript" class="pos_default_customer">   var pos_default_customer = ' . $default_customer_id . '; </script>',
-            'pos_custom_product' => '<script type="text/javascript" class="pos_custom_product">     var pos_custom_product = ' . $custom_product . '; </script>',
-            'pos_params' => '<script type="text/javascript" class="wc_pos_params" >         var wc_pos_params = ' . $params . '; </script>',
-            'pos_grid' => '<script type="text/javascript" class="pos_grid" >              var pos_grid = ' . $grid . '; </script>',
-            'pos_cart' => '<script type="text/javascript" class="pos_cart" >              var pos_cart = ' . $cart_param . '; </script>',
-            'pos_wc' => '<script type="text/javascript" class="pos_wc" >                var pos_wc = ' . $wc . '; </script>',
-            'wc_country_select_params' => '<script type="text/javascript" class="wc_country_select" >     var wc_country_select_params = ' . $wc_country_params . '; </script>',
-            'wc_enhanced_select_params' => '<script type="text/javascript" class="wc_country_select" >     var wc_enhanced_select_params = ' . $wc_select_params . '; </script>',
-            'wc_points_and_rewards' => '<script type="text/javascript" class="wc_points_and_rewards" > var wc_points_and_rewards = ' . $wc_points_and_rewards . '; </script>',
+            'pos_register_id' => '<script data-cfasync="false" type="text/javascript" class="wc_pos_register_id" >    var wc_pos_register_id = ' . $this->id . '; </script>',
+            'pos_default_customer' => '<script data-cfasync="false" type="text/javascript" class="pos_default_customer">   var pos_default_customer = ' . $default_customer_id . '; </script>',
+            'pos_custom_product' => '<script data-cfasync="false" type="text/javascript" class="pos_custom_product">     var pos_custom_product = ' . $custom_product . '; </script>',
+            'pos_params' => '<script data-cfasync="false" type="text/javascript" class="wc_pos_params" >         var wc_pos_params = ' . $params . '; </script>',
+            'pos_grid' => '<script data-cfasync="false" type="text/javascript" class="pos_grid" >              var pos_grid = ' . $grid . '; </script>',
+            'online_only' => '<script data-cfasync="false" type="text/javascript" class="online_only" >              var online_only = ' . $online_only . '; </script>',
+            'default_variations' => '<script data-cfasync="false" type="text/javascript" class="default_variations" >              var default_variations = ' . $dafault_variations . '; </script>',
+            'pos_cart' => '<script data-cfasync="false" type="text/javascript" class="pos_cart" >              var pos_cart = ' . $cart_param . '; </script>',
+            'pos_wc' => '<script data-cfasync="false" type="text/javascript" class="pos_wc" >                var pos_wc = ' . $wc . '; </script>',
+            'wc_country_select_params' => '<script data-cfasync="false" type="text/javascript" class="wc_country_select" >     var wc_country_select_params = ' . $wc_country_params . '; </script>',
+            'wc_enhanced_select_params' => '<script data-cfasync="false" type="text/javascript" class="wc_country_select" >     var wc_enhanced_select_params = ' . $wc_select_params . '; </script>',
+            'wc_points_and_rewards' => '<script data-cfasync="false" type="text/javascript" class="wc_points_and_rewards" > var wc_points_and_rewards = ' . $wc_points_and_rewards . '; </script>',
+
 
         );
 
@@ -820,8 +838,8 @@ class WC_Pos_Sell
                 $manifest .= site_url() . str_replace(' ', '%20', $style->src) . "\n";
             }
         }
-        #$file = WC_POS()->plugin_path() . '/assets/cache.manifest';
-        #file_put_contents($file, $manifest);
+        $file = WC_POS()->plugin_path() . '/assets/cache.manifest';
+        file_put_contents($file, $manifest);
 
     }
 
@@ -922,6 +940,8 @@ class WC_Pos_Sell
             'currency_format_decimal_sep' => esc_attr(stripslashes(get_option('woocommerce_price_decimal_sep'))),
             'currency_format_thousand_sep' => esc_attr(stripslashes(get_option('woocommerce_price_thousand_sep'))),
             'guest_checkout' => (get_option('wc_pos_guest_checkout', 'no') == 'yes' ? true : false),
+            'wc_pos_rounding' => (get_option('wc_pos_rounding', 'no') == 'yes' ? true : false),
+            'wc_pos_rounding_value' => get_option('wc_pos_rounding_value'),
 
             'pos_calc_taxes' => wc_pos_tax_enabled(),
             'currency_format' => esc_attr(str_replace(array('%1$s', '%2$s'), array('%s', '%v'), get_woocommerce_price_format())), // For accounting JS
@@ -1056,11 +1076,11 @@ class WC_Pos_Sell
         $prices_precision = wc_get_price_decimals();
         $product_data = array(
             'title' => $product->get_title(),
-            'id' => (int)$product->is_type('variation') ? $product->get_variation_id() : $product->id,
+            'id' => (int)$product->is_type('variation') ? $product->get_id() : $product->get_id(),
             'created_at' => '',
             'updated_at' => '',
-            'type' => $product->product_type,
-            'status' => $product->get_post_data()->post_status,
+            'type' => $product->get_type(),
+            'status' => $product->get_status(),
             'downloadable' => $product->is_downloadable(),
             'virtual' => $product->is_virtual(),
             'permalink' => $product->get_permalink(),
@@ -1081,40 +1101,40 @@ class WC_Pos_Sell
             'purchaseable' => $product->is_purchasable(),
             'featured' => $product->is_featured(),
             'visible' => $product->is_visible(),
-            'catalog_visibility' => $product->visibility,
+            'catalog_visibility' => $product->get_catalog_visibility(),
             'on_sale' => $product->is_on_sale(),
             'product_url' => $product->is_type('external') ? $product->get_product_url() : '',
             'button_text' => $product->is_type('external') ? $product->get_button_text() : '',
             'weight' => $product->get_weight() ? wc_format_decimal($product->get_weight(), 2) : null,
             'dimensions' => array(
-                'length' => $product->length,
-                'width' => $product->width,
-                'height' => $product->height,
+                'length' => $product->get_length(),
+                'width' => $product->get_width(),
+                'height' => $product->get_height(),
                 'unit' => get_option('woocommerce_dimension_unit'),
             ),
             'shipping_required' => $product->needs_shipping(),
             'shipping_taxable' => $product->is_shipping_taxable(),
             'shipping_class' => $product->get_shipping_class(),
             'shipping_class_id' => (0 !== $product->get_shipping_class_id()) ? $product->get_shipping_class_id() : null,
-            'description' => wpautop(do_shortcode($product->get_post_data()->post_content)),
-            'short_description' => apply_filters('woocommerce_short_description', $product->get_post_data()->post_excerpt),
-            'reviews_allowed' => ('open' === $product->get_post_data()->comment_status),
+            'description' => wpautop(do_shortcode(get_post($product->get_id())->post_content)),
+            'short_description' => apply_filters('woocommerce_short_description', get_post($product->get_id())->post_excerpt),
+            'reviews_allowed' => ('open' === get_post($product->get_id())->comment_status),
             'average_rating' => wc_format_decimal($product->get_average_rating(), 2),
             'rating_count' => (int)$product->get_rating_count(),
-            'related_ids' => array_map('absint', array_values($product->get_related())),
-            'upsell_ids' => array_map('absint', $product->get_upsells()),
-            'cross_sell_ids' => array_map('absint', $product->get_cross_sells()),
-            'parent_id' => $product->post->post_parent,
-            'categories' => wp_get_post_terms($product->id, 'product_cat', array('fields' => 'names')),
-            'tags' => wp_get_post_terms($product->id, 'product_tag', array('fields' => 'names')),
-            'featured_src' => wp_get_attachment_url(get_post_thumbnail_id($product->is_type('variation') ? $product->variation_id : $product->id)),
+            'related_ids' => array_map('absint', array_values(wc_get_related_products($product->get_id()))),
+            'upsell_ids' => array_map('absint', $product->get_upsell_ids()),
+            'cross_sell_ids' => array_map('absint', $product->get_cross_sell_ids()),
+            'parent_id' => get_post($product->get_id())->post_parent,
+            'categories' => wp_get_post_terms($product->get_id(), 'product_cat', array('fields' => 'names')),
+            'tags' => wp_get_post_terms($product->get_id(), 'product_tag', array('fields' => 'names')),
+            'featured_src' => wp_get_attachment_url(get_post_thumbnail_id($product->is_type('variation') ? $product->variation_id : $product->get_id())),
             'attributes' => array(),
             'downloads' => array(),
-            'download_limit' => (int)$product->download_limit,
-            'download_expiry' => (int)$product->download_expiry,
-            'download_type' => $product->download_type,
-            'purchase_note' => wpautop(do_shortcode(wp_kses_post($product->purchase_note))),
-            'total_sales' => metadata_exists('post', $product->id, 'total_sales') ? (int)get_post_meta($product->id, 'total_sales', true) : 0,
+            'download_limit' => (int)$product->get_download_limit(),
+            'download_expiry' => (int)$product->get_download_expiry(),
+            'download_type' => @$product->download_type,//TODO: get_download_type() exists
+            'purchase_note' => wpautop(do_shortcode(wp_kses_post($product->get_purchase_note()))),
+            'total_sales' => metadata_exists('post', $product->get_id(), 'total_sales') ? (int)get_post_meta($product->get_id(), 'total_sales', true) : 0,
             'variations' => array(),
             'parent' => array(),
         );
@@ -1296,7 +1316,12 @@ class WC_Pos_Sell
                     $add = true;
                     if ($out_of_stock != 'yes') {
                         $product = wc_get_product($_id);
-                        if (!$product->is_in_stock()) {
+                        if ($product && !$product->is_in_stock()) {
+                            $add = false;
+                        }
+                    }
+                    if (get_option('wc_pos_visibility', 'no') == 'yes') {
+                        if (get_post_meta($_id, '_pos_visibility', true) == 'online') {
                             $add = false;
                         }
                     }
@@ -1309,11 +1334,16 @@ class WC_Pos_Sell
         } else {
             $products = the_grid_layout_cycle($grid_id, true);
             foreach ($products as $key => $value) {
-                $_id = absint(isset($value->ID) ? $value->ID : $value);
+                $_id = absint(isset($value->ID) ? $value->get_id() : $value);
                 $add = true;
                 if ($out_of_stock != 'yes') {
                     $product = wc_get_product($_id);
                     if (!$product->is_in_stock()) {
+                        $add = false;
+                    }
+                }
+                if (get_option('wc_pos_visibility', 'no') == 'yes') {
+                    if (get_post_meta($_id, '_pos_visibility', true) == 'online') {
                         $add = false;
                     }
                 }
@@ -1327,12 +1357,11 @@ class WC_Pos_Sell
         $args = array('orderby' => 'name', 'order' => 'ASC', 'fields' => 'all');
         $terms = get_terms('product_cat', $args);
 
-
         $categories = array();
         if ($terms) {
             $size = array(90, 90);
             foreach ($terms as $term) {
-                $thumbnail_id = absint(get_woocommerce_term_meta($term->term_id, 'thumbnail_id', true));
+                $thumbnail_id = absint(get_term_meta($term->term_id, 'thumbnail_id', true));
                 if ($thumbnail_id) {
                     $thumbnail = wp_get_attachment_image_src($thumbnail_id, $size);
                     $image = $thumbnail[0];
@@ -1342,7 +1371,7 @@ class WC_Pos_Sell
                 if (!$image || $image == NULL) $image = wc_placeholder_img_src();
 
                 $term->image = $image;
-                $display_type = get_woocommerce_term_meta($term->term_id, 'display_type', true);
+                $display_type = get_term_meta($term->term_id, 'display_type', true);
                 $term->display_type = $display_type;
 
                 $categories['_' . $term->term_id] = $term;
@@ -1418,6 +1447,29 @@ class WC_Pos_Sell
         return $inline_js;
     }
 
+    function get_default_product_variations()
+    {
+        global $wpdb;
+        $sql = "SELECT p.`ID`, pm.`meta_value` AS 'default_value'
+                FROM $wpdb->posts p
+                INNER JOIN
+                $wpdb->postmeta pm
+                ON 
+                p.`ID` = pm.`post_id`
+                AND 
+                pm.`meta_key` = '_default_attributes'
+                WHERE p.`post_type` = 'product'
+                AND p.`post_status` = 'publish'";
+
+        $result = $wpdb->get_results($sql, ARRAY_A);
+        $default_attributes = array();
+        foreach ($result as $key => $res) {
+            $default_attributes[$res['ID']] = unserialize($result[$key]['default_value']);
+        }
+
+        return json_encode($default_attributes);
+    }
+
 
     /**
      * Main WC_Pos_Registers Instance
@@ -1456,6 +1508,19 @@ class WC_Pos_Sell
         _doing_it_wrong(__FUNCTION__, __('Cheatin&#8217; huh?', 'wc_point_of_sale'), '1.9');
     }
 
+    protected function get_online_only_products()
+    {
+        global $wpdb;
+
+        $sql = "SELECT ID FROM $wpdb->posts p 
+                INNER JOIN $wpdb->postmeta pm
+                ON p.`ID` = pm.`post_id`
+                AND pm.`meta_key` = '_pos_visibility'
+                AND pm.`meta_value` = 'online'
+                WHERE p.`post_type` = 'product'
+                ";
+        return json_encode(array_map('intval', $wpdb->get_col($sql)));
+    }
 }
 
 return new WC_Pos_Sell();

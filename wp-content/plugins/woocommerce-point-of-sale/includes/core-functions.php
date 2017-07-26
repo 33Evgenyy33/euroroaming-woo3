@@ -1112,3 +1112,62 @@ function isMobilePOS()
         $is_mobile = true;
     return $is_mobile;
 }
+
+//TODO: States array bug with no customer in POS
+function get_single_country_states($key, $args, $current_cc, $value = null)
+{
+    $field = '';
+    $field_container = '<p class="form-row %1$s" id="%2$s">%3$s</p>';
+    if ($args['required']) {
+        $args['class'][] = 'validate-required';
+        $required = ' <abbr class="required" title="' . esc_attr__('required', 'woocommerce') . '">*</abbr>';
+    } else {
+        $required = '';
+    }
+    foreach ($current_cc as $code => $value) {
+        $states = WC()->countries->get_states($code);
+    }
+
+    if (is_array($states) && empty($states)) {
+
+        $field_container = '<p class="form-row %1$s" id="%2$s" style="display: none">%3$s</p>';
+
+        $field .= '<input type="hidden" class="hidden" name="' . esc_attr($key) . '" id="custom_shipping_state" placeholder="' . esc_attr($args['placeholder']) . '" />';
+
+    } elseif (is_array($states)) {
+
+        $field .= '<select name="' . esc_attr($key) . '" id="custom_shipping_state" class="state_select" data-placeholder="' . esc_attr($args['placeholder']) . '">
+						<option value="">' . esc_html__('Select a state&hellip;', 'woocommerce') . '</option>';
+
+        foreach ($states as $ckey => $cvalue) {
+            $field .= '<option value="' . esc_attr($ckey) . '" ' . selected($value, $ckey, false) . '>' . $cvalue . '</option>';
+        }
+
+        $field .= '</select>';
+
+    } else {
+
+        $field .= '<input type="text" class="input-text value="' . esc_attr($value) . '"  placeholder="' . esc_attr($args['placeholder']) . '" name="' . esc_attr($key) . '" id="custom_shipping_state" />';
+
+    }
+
+    if (!empty($field)) {
+        $field_html = '';
+
+        if ($args['label'] && 'checkbox' != $args['type']) {
+            $field_html .= '<label for="custom_shipping_state" class="shipping_state">' . $args['label'] . $required . '</label>';
+        }
+
+        $field_html .= $field;
+
+        if ($args['description']) {
+            $field_html .= '<span class="description">' . esc_html($args['description']) . '</span>';
+        }
+
+        $container_class = esc_attr(implode(' ', $args['class']));
+        $container_id = esc_attr($args['id']) . '_field';
+        $field = sprintf($field_container, $container_class, $container_id, $field_html);
+    }
+
+    echo $field;
+}

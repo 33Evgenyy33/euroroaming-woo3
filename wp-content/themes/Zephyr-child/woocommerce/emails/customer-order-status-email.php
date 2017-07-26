@@ -83,9 +83,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 																	<div style="color:#555555;line-height:120%;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif;">
 																		<div style="font-size:16px;line-height:19px;color:#555555;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif;text-align:left;">
 																			<?php
-																			$some_field = get_post_meta( $order->id, 'tel', true );
+																			$some_field = get_post_meta( $order->get_id(), 'tel', true );
 																			if($some_field != '') {
-																				$billing_first = get_post_meta( $order->id, 'billing_first_name', true );
+																				$billing_first = get_post_meta( $order->get_id(), 'billing_first_name', true );
 																				echo '<p>Уважаемый(-ая) ' . $order->billing_first_name . ',' . '</p>' . '<p>' . 'Ваша сим-карта Vodafone активирована, присвоен номер ' . $some_field . '</p>';
 																			}
 																			echo $email_body_text;

@@ -25,6 +25,7 @@ if (!class_exists('WC_POS_Admin_System_Status')) :
         );
         private $force_updates = array(
             '3.2.1' => 'wp-content/plugins/woocommerce-point-of-sale/includes/updates/wc_pos-update-3.2.1.php',
+            '4.0.0' => 'wp-content/plugins/woocommerce-point-of-sale/includes/updates/wc_pos-update-4.0.0.php',
         );
 
         /**
@@ -201,8 +202,8 @@ if (!class_exists('WC_POS_Admin_System_Status')) :
                     </td>
                     <td>
                         <input name="save" class="button" type="submit"
-                               value="<?php _e('Force Update', 'woocommerce'); ?>"/><br><span class="description"
-                                                                                              style="margin-top: .5em; display: inline-block;"><?php echo __('This tool will update the database to the latest version - useful when settings are not being applied as per configured in settings, registers, receipts and outlets.', 'wc_point_of_sale') ?></span>
+                               value="<?php _e('Force Update', 'wc_point_of_sale'); ?>"/><br><span class="description"
+                                                                                                   style="margin-top: .5em; display: inline-block;"><?php echo __('This tool will update the database to the latest version - useful when settings are not being applied as per configured in settings, registers, receipts and outlets.', 'wc_point_of_sale') ?></span>
                     </td>
                 </tr>
             </table>
@@ -221,6 +222,25 @@ if (!class_exists('WC_POS_Admin_System_Status')) :
                     </td>
                     <td>
                         <?php echo 'yes' === get_option('woocommerce_api_enabled') ? '<mark class="yes"><span class="dashicons dashicons-yes"></span></mark>' : '<mark class="no">&ndash;</mark>'; ?>
+                    </td>
+                </tr>
+            </table>
+            <table class="widefat striped api_settings" style="margin-bottom: 1em;">
+                <thead>
+                <tr>
+                    <th colspan="2">
+                        <b><?php _e('Setup', 'wc_point_of_sale') ?></b>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td style="width: 30%;">
+                        <?php _e('Setup Wizard:', 'wc_point_of_sale') ?>
+                    </td>
+                    <td>
+                        <a class="button" href="<?php echo $admin_url; ?>admin.php?page=wc_pos-setup"><?php _e('Run Setup Wizard', 'wc_point_of_sale'); ?></a></<br><span class="description"
+                                                                                                                                                                          style="margin-top: .5em; display: inline-block;"></<?php echo __('This tool will update the database to the latest version - useful when settings are not being applied as per configured in settings, registers, receipts and outlets.', 'wc_point_of_sale') ?></span>
                     </td>
                 </tr>
             </table>

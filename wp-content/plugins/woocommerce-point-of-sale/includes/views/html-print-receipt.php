@@ -210,7 +210,7 @@ $rc++) { ?>
     <?php if ($receipt_options['print_tax_number'] == 'yes') { ?>
         <span id="print-tax_number_label"><?php echo $receipt_options['tax_number_label'] . ': '; ?></span>
         <?php
-        $tax_number = get_post_meta($order->id, 'wc_pos_order_tax_number', true);
+        $tax_number = get_post_meta($order->get_id(), 'wc_pos_order_tax_number', true);
         if ($tax_number == '')
             echo isset($register['detail']['tax_number']) ? $register['detail']['tax_number'] : '[tax-number]';
         else
@@ -282,7 +282,7 @@ $rc++) { ?>
                         break;
                 }
             } else {
-                $served_by_name = get_post_meta($order->id, 'wc_pos_served_by_name', true);
+                $served_by_name = get_post_meta($order->get_id(), 'wc_pos_served_by_name', true);
             }
             ?>
             <tr>
@@ -511,7 +511,7 @@ $rc++) { ?>
                 </th>
                 <td>
                     <?php
-                    $amount_pay = get_post_meta($order->id, 'wc_pos_amount_pay', true);
+                    $amount_pay = get_post_meta($order->get_id(), 'wc_pos_amount_pay', true);
                     if ($amount_pay) {
                         echo wc_price($amount_pay, array('currency' => $order->get_order_currency()));
                     } else {
@@ -530,7 +530,7 @@ $rc++) { ?>
                     </th>
                     <td>
                         <?php
-                        $amount_change = get_post_meta($order->id, 'wc_pos_amount_change', true);
+                        $amount_change = get_post_meta($order->get_id(), 'wc_pos_amount_change', true);
                         if ($amount_change) {
                             echo wc_price($amount_change, array('currency' => $order->get_order_currency()));
                         } else {

@@ -51,49 +51,7 @@ if (!class_exists('WC_POS_Admin_Settings_General')) :
             }
             return apply_filters('woocommerce_point_of_sale_general_settings_fields', array(
 
-
                 array('title' => __('General Options', 'wc_point_of_sale'), 'type' => 'title', 'desc' => '', 'id' => 'general_pos_options'),
-
-                array(
-                    'name' => __('Auto Update Stock', 'wc_point_of_sale'),
-                    'id' => 'wc_pos_autoupdate_stock',
-                    'type' => 'checkbox',
-                    'desc' => __('Enable update stock automatically ', 'wc_point_of_sale'),
-                    'desc_tip' => __('Updates the stock inventories for products automatically whilst running the register. Enabling this may hinder server performance. ', 'wc_point_of_sale'),
-                    'default' => 'no',
-                    'autoload' => true
-                ),
-                array(
-                    'name' => __('Update Interval', 'wc_point_of_sale'),
-                    'id' => 'wc_pos_autoupdate_interval',
-                    'type' => 'number',
-                    'desc_tip' => __('Enter the interval for auto-update in seconds.', 'wc_point_of_sale'),
-                    'desc' => __('seconds', 'wc_point_of_sale'),
-                    'default' => 240,
-                    'autoload' => true,
-                    'css' => 'width: 50px;'
-                ),
-                array(
-                    'name' => __('Stock Quantity', 'wc_point_of_sale'),
-                    'id' => 'wc_pos_show_stock',
-                    'type' => 'checkbox',
-                    'desc' => __('Enable stock quantity identifier', 'wc_point_of_sale'),
-                    'desc_tip' => __('Shows the remaining stock when adding products to the basket.', 'wc_point_of_sale'),
-                    'default' => 'yes',
-                    'autoload' => true
-                ),
-
-                array(
-                    'name' => __('Out of Stock', 'wc_point_of_sale'),
-                    'id' => 'wc_pos_show_out_of_stock_products',
-                    'type' => 'checkbox',
-                    'desc' => __('Enable out of stock products', 'wc_point_of_sale'),
-                    'desc_tip' => __('Shows out of stock products in the product grid.', 'wc_point_of_sale'),
-                    'default' => 'yes',
-                    'autoload' => true
-                ),
-
-
                 array(
                     'name' => __('Discount Presets', 'wc_point_of_sale'),
                     'desc_tip' => __('Define the preset discount buttons when applying discount to the order.', 'wc_point_of_sale'),
@@ -124,29 +82,18 @@ if (!class_exists('WC_POS_Admin_Settings_General')) :
                     )),
                     'default' => array(5, 10, 15, 20),
                 ),
-
-
                 array(
-                    'name' => __('Filters', 'wc_point_of_sale'),
+                    'name' => __('Order Filters', 'wc_point_of_sale'),
                     'desc_tip' => __('Select which filters appear on the Orders page.', 'wc_point_of_sale'),
                     'id' => 'woocommerce_pos_order_filters',
                     'class' => 'wc-enhanced-select',
                     'type' => 'multiselect',
+                    'default' => 'register',
                     'options' => array(
                         'register' => __('Registers', 'wc_point_of_sale'),
                         'outlet' => __('Outlets', 'wc_point_of_sale'),
                     ),
                     'autoload' => true
-                ),
-
-                array(
-                    'title' => __('SSL Options', 'wc_point_of_sale'),
-                    'desc' => __('Force secure checkout', 'wc_point_of_sale'),
-                    'id' => 'woocommerce_pos_force_ssl_checkout',
-                    'default' => 'no',
-                    'type' => 'checkbox',
-                    'checkboxgroup' => 'start',
-                    'desc_tip' => __('Force SSL (HTTPS) on the POS page (an SSL Certificate is required).', 'wc_point_of_sale'),
                 ),
                 array(
                     'title' => __('Sound Notifications', 'wc_point_of_sale'),
@@ -167,16 +114,6 @@ if (!class_exists('WC_POS_Admin_Settings_General')) :
                     'checkboxgroup' => 'start',
                 ),
                 array(
-                    'title' => __('Closing Reports', 'wc_point_of_sale'),
-                    'desc' => __('Display end of day report when closing register.', 'wc_point_of_sale'),
-                    'desc_tip' => __('End of day report displayed with total sales when register closes.', 'wc_point_of_sale'),
-                    'id' => 'wc_pos_display_reports',
-                    'default' => 'no',
-                    'type' => 'checkbox',
-                    'checkboxgroup' => 'start',
-                ),
-
-                array(
                     'title' => __('Keyboard Shortcuts', 'wc_point_of_sale'),
                     'desc' => __('Enable keyboard shortcuts', 'wc_point_of_sale'),
                     'desc_tip' => sprintf(__('Allows you to use keyboard shortcuts to execute popular and frequent actions. Click %shere%s for the list of keyboard shortcuts.', 'wc_point_of_sale'),
@@ -186,18 +123,65 @@ if (!class_exists('WC_POS_Admin_Settings_General')) :
                     'type' => 'checkbox',
                     'checkboxgroup' => 'start',
                 ),
-
                 array(
-                    'title' => __('Bill Screen', 'wc_point_of_sale'),
-                    'desc' => __('Display bill screen', 'wc_point_of_sale'),
-                    'desc_tip' => __('Allows you to display the order on a separate display i.e. pole display.', 'wc_point_of_sale'),
-                    'id' => 'wc_pos_bill_screen',
+                    'title' => __('Currency Rounding', 'wc_point_of_sale'),
+                    'desc' => __('Enable currency rounding', 'wc_point_of_sale'),
+                    'desc_tip' => __('Rounds the total to the nearest value defined below. Used by some countries where not all denominations are available.', 'wc_point_of_sale'),
+                    'id' => 'wc_pos_rounding',
                     'default' => 'no',
                     'type' => 'checkbox',
                     'checkboxgroup' => 'start',
                 ),
 
+                array(
+                    'title' => __('Rounding Value', 'wc_point_of_sale'),
+                    'desc_tip' => __('Select the rounding value which you want the register to round nearest to.', 'wc_point_of_sale'),
+                    'id' => 'wc_pos_rounding_value',
+                    'default' => 'no',
+                    'type' => 'select',
+                    'class' => 'wc-enhanced-select',
+                    'options' => apply_filters('woocommerce_pos_register_rounding_values', array(
+                        '0.01' => __('0.01', 'wc_point_of_sale'),
+                        '0.05' => __('0.05', 'wc_point_of_sale'),
+                        '0.10' => __('0.10', 'wc_point_of_sale'),
+                        '0.50' => __('0.50', 'wc_point_of_sale'),
+                        '1.00' => __('1.00', 'wc_point_of_sale'),
+                        '5.00' => __('5.00', 'wc_point_of_sale'),
+                    )),
+                ),
+
                 array('type' => 'sectionend', 'id' => 'general_pos_options'),
+
+                array('title' => __('Report Options', 'woocommerce'), 'desc' => __('The following options affect the reports that are displayed when closing the register.', 'woocommerce'), 'type' => 'title', 'id' => 'report_options'),
+
+
+                array(
+                    'title' => __('Closing Reports', 'wc_point_of_sale'),
+                    'desc' => __('Display end of day report when closing register', 'wc_point_of_sale'),
+                    'desc_tip' => __('End of day report displayed with total sales when register closes.', 'wc_point_of_sale'),
+                    'id' => 'wc_pos_display_reports',
+                    'default' => 'no',
+                    'type' => 'checkbox',
+                    'checkboxgroup' => 'start',
+                ),
+                array(
+                    'title' => __('Email Closing Reports', 'wc_point_of_sale'),
+                    'desc' => __('Email the closing reports to recipients', 'wc_point_of_sale'),
+                    'desc_tip' => __('The end of day report displaying total sales will be sent to email recipients below.', 'wc_point_of_sale'),
+                    'id' => 'wc_pos_day_end_report',
+                    'default' => 'no',
+                    'type' => 'checkbox',
+                    'checkboxgroup' => 'start',
+                ),
+                array(
+                    'title' => __('Report Recipients', 'wc_point_of_sale'),
+                    'desc_tip' => __('Enter each email address per line.', 'wc_point_of_sale'),
+                    'id' => 'wc_pos_day_end_emails',
+                    'type' => 'textarea',
+                    'css' => 'width:400px;',
+                ),
+
+                array('type' => 'sectionend', 'id' => 'report_options'),
 
                 array('title' => __('Status Options', 'woocommerce'), 'desc' => __('The following options affect the status of the orders when using the register.', 'woocommerce'), 'type' => 'title', 'id' => 'status_options'),
 
@@ -212,7 +196,6 @@ if (!class_exists('WC_POS_Admin_Settings_General')) :
                     'options' => apply_filters('woocommerce_pos_end_of_sale_order_status', $statuses),
                     'default' => 'processing'
                 ),
-
 
                 array(
                     'name' => __('Save Order', 'wc_point_of_sale'),

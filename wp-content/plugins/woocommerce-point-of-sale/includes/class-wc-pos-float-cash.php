@@ -31,7 +31,7 @@ if (!class_exists('WC_Pos_Float_Cash')) :
             $this->register->detail = json_decode($this->register->detail);
             $this->register->settings = json_decode($this->register->settings);
             $this->cash_balance = $this->get_cash_balance();
-            $this->outlet_name =  WC_POS()->outlet()->get_data_names($this->register->outlet);
+            $this->outlet_name = WC_POS()->outlet()->get_data_names($this->register->outlet);
         }
 
         private function register_scripts()
@@ -57,7 +57,9 @@ if (!class_exists('WC_Pos_Float_Cash')) :
         private function get_cash_balance()
         {
             global $wpdb;
-            $statuses = "'" . implode("','",get_option('wc_pos_cash_management_order_status')) . "'";
+            if ($cash_statuses = get_option('wc_pos_cash_management_order_status')) {
+                $statuses = "'" . implode("','", $cash_statuses) . "'";
+            }
             $balance = 0;
             if (isset ($this->register->detail->opening_cash_amount) && $this->register->detail->opening_cash_amount && $this->register->detail->opening_cash_amount->status) {
                 $balance = $balance + $this->register->detail->opening_cash_amount->amount;
@@ -130,7 +132,8 @@ if (!class_exists('WC_Pos_Float_Cash')) :
         }
 
         //TODO: Need optimization this in one query
-        public static function set_actual_cash($register_id, $sum){
+        public static function set_actual_cash($register_id, $sum)
+        {
             global $wpdb;
             $sql = $wpdb->prepare("SELECT `detail` FROM {$wpdb->prefix}wc_poin_of_sale_registers WHERE `ID` = %d", $register_id);
             $register_details['detail'] = json_decode($wpdb->get_var($sql));

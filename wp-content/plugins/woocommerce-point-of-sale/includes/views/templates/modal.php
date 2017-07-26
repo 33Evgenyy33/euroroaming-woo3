@@ -212,7 +212,7 @@ $tax_display_mode = get_option('woocommerce_tax_display_shop');
             $checkout = WC()->checkout();
             $wc_reg_generate_username_opt = get_option('woocommerce_registration_generate_username');
             $wc_reg_generate_pass_opt = get_option('woocommerce_registration_generate_password');
-            unset($checkout->checkout_fields['order']['order_comments']);
+            //unset($checkout->checkout_fields['order']['order_comments']);
             if (isset($checkout->checkout_fields['account'])) {
                 foreach ($checkout->checkout_fields['account'] as $key => $field) :
                     if ($key == 'account_username') {
@@ -265,6 +265,8 @@ $tax_display_mode = get_option('woocommerce_tax_display_shop');
                 foreach ($data1 as $datum) {
                     if (pos_check_user_can_open_register($datum['ID'])) { // Проверка. Привязан ли id кабинета(outlet) к user id
                         //print_r($datum['ID']);
+                        $myfile = fopen("processing-regis.txt", "w") or die("Unable to open file!");
+                        file_put_contents("processing-regis.txt", print_r( wc_pos_get_register($datum['ID']), true));
                         $regis = wc_pos_get_register($datum['ID']);
                         $ta_id = json_decode($regis->detail)->ta_id;
                         //print_r(json_decode($regis->detail)->ta_id);
@@ -294,6 +296,8 @@ $tax_display_mode = get_option('woocommerce_tax_display_shop');
                 $field_number_simcard['options'] = $simcard_options;
 
                 $field_date_activ = $checkout->checkout_fields['billing']['date_activ'];
+                $field_date_activ['label'] = 'Дата активации (обязательно)';
+                $field_date_activ['required'] = true;
 
                 woocommerce_form_field('billing_first_name', $field_client_first_name, '{{' . 'billing_address.first_name' . '}}');
                 woocommerce_form_field('billing_last_name', $field_client_last_name, '{{' . 'billing_address.first_name' . '}}');

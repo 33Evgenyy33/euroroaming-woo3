@@ -3705,7 +3705,7 @@ body.point-of-sale_page_wc_pos_settings table.api_settings mark.yes {
     transition: box-shadow 280ms ease;
     box-sizing: border-box;
     line-height: 31px;
-    
+
     height: auto;
     -webkit-appearance: none;
     display: inline-block;

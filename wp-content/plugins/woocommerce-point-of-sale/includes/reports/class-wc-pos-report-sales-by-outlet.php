@@ -102,8 +102,8 @@ class WC_POS_Report_Sales_By_Outlet extends WC_Admin_Report {
 			'query_type'          => 'get_results',
 			'filter_range'        => true,
 			'order_types'         => array_merge( array( 'shop_order_refund' ), wc_get_order_types( 'sales-reports' ) ),
-			'order_status'        => array( 'completed', 'processing', 'on-hold' ),
-			'parent_order_status' => array( 'completed', 'processing', 'on-hold' ),
+			'order_status'        => array( 'completed', 'processing', 'on-hold', 'vodafone-complete', 'ortel-completed', 'activating-by-dat', 'point-of-sale', 'pending-activatio', 'orange-completed', 'internet-passport', 'waiting-for-passp', 'instructions-comp', 'instructions-comp' ),
+			'parent_order_status' => array( 'completed', 'processing', 'on-hold', 'vodafone-complete', 'ortel-completed', 'activating-by-dat', 'point-of-sale', 'pending-activatio', 'orange-completed', 'internet-passport', 'waiting-for-passp', 'instructions-comp', 'instructions-comp' ),
 		) );
 
 		$this->report_data->order_counts = (array) $this->get_order_report_data( array(
@@ -138,7 +138,7 @@ class WC_POS_Report_Sales_By_Outlet extends WC_Admin_Report {
 			'query_type'          => 'get_results',
 			'filter_range'        => true,
 			'order_types'         => wc_get_order_types( 'order-count' ),
-			'order_status'        => array( 'completed', 'processing', 'on-hold' )
+			'order_status'        => array( 'completed', 'processing', 'on-hold', 'vodafone-complete', 'ortel-completed', 'activating-by-dat', 'point-of-sale', 'pending-activatio', 'orange-completed', 'internet-passport', 'waiting-for-passp', 'instructions-comp', 'instructions-comp' )
 		) );
 
 		$this->report_data->saved_orders = (array) $this->get_order_report_data( array(
@@ -235,7 +235,7 @@ class WC_POS_Report_Sales_By_Outlet extends WC_Admin_Report {
 			'query_type'   => 'get_results',
 			'filter_range' => true,
 			'order_types'  => wc_get_order_types( 'order-count' ),
-			'order_status' => array( 'completed', 'processing', 'on-hold' ),
+			'order_status' => array( 'completed', 'processing', 'on-hold', 'vodafone-complete', 'ortel-completed', 'activating-by-dat', 'point-of-sale', 'pending-activatio', 'orange-completed', 'internet-passport', 'waiting-for-passp', 'instructions-comp', 'instructions-comp' ),
 		) );
 
 		$this->report_data->order_items = (array) $this->get_order_report_data( array(
@@ -277,7 +277,7 @@ class WC_POS_Report_Sales_By_Outlet extends WC_Admin_Report {
 			'query_type'          => 'get_results',
 			'filter_range'        => true,
 			'order_types'         => wc_get_order_types( 'order-count' ),
-			'order_status'        => array( 'completed', 'processing', 'on-hold' ),
+			'order_status'        => array( 'completed', 'processing', 'on-hold', 'vodafone-complete', 'ortel-completed', 'activating-by-dat', 'point-of-sale', 'pending-activatio', 'orange-completed', 'internet-passport', 'waiting-for-passp', 'instructions-comp', 'instructions-comp' ),
 		) );
 
 		$this->report_data->refunded_order_items = (array) $this->get_order_report_data( array(
@@ -359,7 +359,7 @@ class WC_POS_Report_Sales_By_Outlet extends WC_Admin_Report {
 			'query_type'          => 'get_results',
 			'filter_range'        => true,
 			'order_status'        => false,
-			'parent_order_status' => array( 'completed', 'processing', 'on-hold' ),
+			'parent_order_status' => array( 'completed', 'processing', 'on-hold', 'vodafone-complete', 'ortel-completed', 'activating-by-dat', 'point-of-sale', 'pending-activatio', 'orange-completed', 'internet-passport', 'waiting-for-passp', 'instructions-comp', 'instructions-comp' ),
 		) );
 
 		foreach( $this->report_data->partial_refunds as $key => $value ) {
@@ -621,7 +621,7 @@ class WC_POS_Report_Sales_By_Outlet extends WC_Admin_Report {
 				$order_types     = wc_get_order_types( 'order-count' );
 				$order_types     = implode( "','", $order_types );
 				$status = '';
-				$order_status = apply_filters( 'woocommerce_reports_order_statuses', array( 'completed', 'processing', 'on-hold' ) );
+				$order_status = apply_filters( 'woocommerce_reports_order_statuses', array( 'completed', 'processing', 'on-hold', 'vodafone-complete', 'ortel-completed', 'activating-by-dat', 'point-of-sale', 'pending-activatio', 'orange-completed', 'internet-passport', 'waiting-for-passp', 'instructions-comp', 'instructions-comp' ) );
 				if ( ! empty( $order_status ) ) {
 					$status = "
 						AND 	posts.post_status 	IN ( 'wc-" . implode( "','wc-", $order_status ) . "')
@@ -675,7 +675,7 @@ class WC_POS_Report_Sales_By_Outlet extends WC_Admin_Report {
 				$order_types     = wc_get_order_types( 'order-count' );
 				$order_types     = implode( "','", $order_types );
 				$status = '';
-				$order_status = apply_filters( 'woocommerce_reports_order_statuses', array( 'completed', 'processing', 'on-hold' ) );
+				$order_status = apply_filters( 'woocommerce_reports_order_statuses', array( 'completed', 'processing', 'on-hold', 'vodafone-complete', 'ortel-completed', 'activating-by-dat', 'point-of-sale', 'pending-activatio', 'orange-completed', 'internet-passport', 'waiting-for-passp', 'instructions-comp', 'instructions-comp' ) );
 				if ( ! empty( $order_status ) ) {
 					$status = "
 						AND 	posts.post_status 	IN ( 'wc-" . implode( "','wc-", $order_status ) . "')
@@ -808,7 +808,7 @@ class WC_POS_Report_Sales_By_Outlet extends WC_Admin_Report {
 					'query_type'   => 'get_results',
 					'filter_range' => false,
 					'order_types'         => wc_get_order_types( 'order-count' ),
-					'order_status'        => array( 'completed', 'processing', 'on-hold' )
+					'order_status'        => array( 'completed', 'processing', 'on-hold', 'vodafone-complete', 'ortel-completed', 'activating-by-dat', 'point-of-sale', 'pending-activatio', 'orange-completed', 'internet-passport', 'waiting-for-passp', 'instructions-comp', 'instructions-comp' )
 				) );
 			} else {
 
@@ -843,7 +843,7 @@ class WC_POS_Report_Sales_By_Outlet extends WC_Admin_Report {
 					'query_type'   => 'get_results',
 					'filter_range' => false,
 					'order_types'         => wc_get_order_types( 'order-count' ),
-					'order_status'        => array( 'completed', 'processing', 'on-hold' )
+					'order_status'        => array( 'completed', 'processing', 'on-hold', 'vodafone-complete', 'ortel-completed', 'activating-by-dat', 'point-of-sale', 'pending-activatio', 'orange-completed', 'internet-passport', 'waiting-for-passp', 'instructions-comp', 'instructions-comp' )
 				) );
 			}
 

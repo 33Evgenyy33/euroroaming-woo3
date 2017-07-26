@@ -365,6 +365,7 @@ class WC_Pos_Registers
     public function display_register_table()
     {
         ?>
+<!--        <div><h2 style="text-align: center;font-size: 1.3rem;line-height: 27px;">Внимание! Оплата заказов временно невозможна.<br> Пожалуйста, свяжитесь с Вашим курирующим менеджером для уточнения.</h2><p style="text-align: center;font-size: 1.3rem;">Тел. 8-800-555-2834</p></div>-->
         <div class="col-wrap">
             <form id="wc_pos_registers_table" action="" method="post">
                 <?php

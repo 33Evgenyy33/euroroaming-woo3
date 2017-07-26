@@ -45,8 +45,8 @@ if (!class_exists('WC_Pos_Bill_Screen')) :
         private function print_inline_scripts()
         {
             echo "<script>
-                        var reg_id = {$this->register_id}
-                        var ajaxurl = '" . admin_url('admin-ajax.php') . "'
+                        var reg_id = {$this->register_id};
+                        var ajaxurl = '" . admin_url('admin-ajax.php') . "';
                   </script>";
         }
 

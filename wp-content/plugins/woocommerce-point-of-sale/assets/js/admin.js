@@ -1,4 +1,64 @@
 jQuery(document).ready(function ($) {
+    $( 'input#wc_pos_autoupdate_stock' ).change(function() {
+        if ( $( this ).is( ':checked' ) ) {
+            $( '#wc_pos_autoupdate_interval' ).closest( 'tr' ).show();
+        } else {
+            $( '#wc_pos_autoupdate_interval' ).closest( 'tr' ).hide();
+        }
+    }).change();
+    $( 'input#wc_pos_day_end_report' ).change(function() {
+        if ( $( this ).is( ':checked' ) ) {
+            $( '#wc_pos_day_end_emails' ).closest( 'tr' ).show();
+        } else {
+            $( '#wc_pos_day_end_emails' ).closest( 'tr' ).hide();
+        }
+    }).change();
+    $( 'input#wc_pos_rounding' ).change(function() {
+        if ( $( this ).is( ':checked' ) ) {
+            $( '#wc_pos_rounding_value' ).closest( 'tr' ).show();
+        } else {
+            $( '#wc_pos_rounding_value' ).closest( 'tr' ).hide();
+        }
+    }).change();
+    $( 'input#woocommerce_pos_register_instant_quantity' ).change(function() {
+        if ( $( this ).is( ':checked' ) ) {
+            $( '#woocommerce_pos_register_instant_quantity_keypad' ).closest( 'tr' ).show();
+        } else {
+            $( '#woocommerce_pos_register_instant_quantity_keypad' ).closest( 'tr' ).hide();
+        }
+    }).change();
+    $( 'input#wc_pos_decimal_quantity' ).change(function() {
+        if ( $( this ).is( ':checked' ) ) {
+            $( '#wc_pos_decimal_quantity_value' ).closest( 'tr' ).show();
+        } else {
+            $( '#wc_pos_decimal_quantity_value' ).closest( 'tr' ).hide();
+        }
+    }).change();
+    $( 'input#woocommerce_pos_register_ready_to_scan' ).change(function() {
+        if ( $( this ).is( ':checked' ) ) {
+            $( '#woocommerce_pos_register_scan_field' ).closest( 'tr' ).show();
+        } else {
+            $( '#woocommerce_pos_register_scan_field' ).closest( 'tr' ).hide();
+        }
+    }).change();
+    $( 'input#wc_pos_lock_screen' ).change(function() {
+        if ( $( this ).is( ':checked' ) ) {
+            $( '#wc_pos_unlock_pass' ).closest( 'tr' ).show();
+        } else {
+            $( '#wc_pos_unlock_pass' ).closest( 'tr' ).hide();
+        }
+    }).change();
+
+    $( 'input:radio[value=company_image_text]' ).change(function() {
+        if ( $( this ).is( ':checked' ) ) {
+            $( '#woocommerce_pos_company_logo_hidden' ).closest( 'tr' ).show();
+        } else {
+            $( '#woocommerce_pos_company_logo_hidden' ).closest( 'tr' ).hide();
+        }
+    }).change();
+
+
+
 
     // Sorting
     if (jQuery('table.wc_gateways tbody').length) {
@@ -24,7 +84,6 @@ jQuery(document).ready(function ($) {
         });
 
     }
-
 // Tooltips
     var tiptip_args = {
         'attribute': 'data-tip',
@@ -55,7 +114,17 @@ jQuery(document).ready(function ($) {
         $('.overlay_order_popup').hide();
     });
     if ($().select2) {
-        $('#woocommerce_pos_register_discount_presets').select2({maximumSelectionSize: 4});
+        console.log(wc_version);
+        if (wc_version >= 3) {
+            $('#woocommerce_pos_register_discount_presets').select2({
+                multiple: true,
+                maximumSelectionLength: 4
+            });
+        } else {
+            $('#woocommerce_pos_register_discount_presets').select2({
+                maximumSelectionSize: 4
+            });
+        }
         jQuery('select#billing_country').select2();
         jQuery('select#shipping_country').select2();
         if (jQuery('select#billing_state').length > 0) {
@@ -64,53 +133,46 @@ jQuery(document).ready(function ($) {
         if (jQuery('select#shipping_state').length > 0) {
             jQuery('select#shipping_state').select2();
         }
-        jQuery('select.ajax_chosen_select_customer, #_register_default_customer').each(function () {
-            var v, t;
-            $(this).find('option:selected').each(function (index, el) {
-                v = $(el).val();
-                t = $(el).text();
-            });
-            var _id = $(this).attr('id');
-            var _class = $(this).attr('class');
-            var _name = $(this).attr('name');
-            $(this).replaceWith('<input type="text" id="' + _id + '" class="' + _class + '" name="' + _name + '" />');
-            $('input#' + _id).select2({
-                allowClear: $(this).data('allow_clear') ? true : false,
-                placeholder: $(this).data('placeholder') ? $(this).data('placeholder') : 'Search a customer',
-                minimumInputLength: $(this).data('minimum_input_length') ? $(this).data('minimum_input_length') : '3',
-                escapeMarkup: function (m) {
-                    return m;
-                },
-                ajax: {
-                    url: wc_pos_params.ajax_url,
-                    dataType: 'json',
-                    quietMillis: 250,
-                    data: function (term, page) {
-                        return {
-                            term: term,
-                            action: 'wc_pos_json_search_customers',
-                            security: wc_pos_params.search_customers
-                        };
-                    },
-                    results: function (data, page) {
-                        var terms = [];
-                        if (data) {
-                            $.each(data, function (id, text) {
-                                terms.push({id: id, text: text});
-                            });
-                        }
-                        return {results: terms};
-                    },
-                    cache: true
-                },
-            });
-            if (typeof v != 'undefined') {
-                var preselect = {id: v, text: t};
-                $('input#' + _id).select2('data', preselect);
+
+        $.fn.select2.amd.require([
+            'select2/data/array',
+            'select2/utils'
+        ], function (ArrayData, Utils) {
+            function CustomData($element, options) {
+                CustomData.__super__.constructor.call(this, $element, options);
             }
 
-        });
+            Utils.Extend(CustomData, ArrayData);
 
+            CustomData.prototype.query = function (params, callback) {
+                $.ajax({
+                    url: wc_pos_params.ajax_url,
+                    dataType: 'json',
+                    data: {
+                        term: params.term,
+                        action: 'wc_pos_json_search_customers',
+                        security: wc_pos_params.search_customers
+                    },
+                    success: function (results) {
+                        var data = {
+                            results: []
+                        };
+                        for (var k in results) {
+                            data.results.push({
+                                id: k,
+                                text: jQuery.parseHTML(results[k])
+                            });
+                        }
+                        callback(data);
+                    }
+                });
+            };
+
+            $("#_register_default_customer").select2({
+                dataAdapter: CustomData,
+                minimumInputLength: 3
+            });
+        })
     } else {
         jQuery('select#billing_country').chosen();
         jQuery('select#shipping_country').chosen();
@@ -359,7 +421,6 @@ jQuery(document).ready(function ($) {
 
     }
 
-
     var product_data = {};
     if ($('.tile_style').length > 0) {
         $('.tile_style').change(function () {
@@ -478,7 +539,7 @@ jQuery(document).ready(function ($) {
                 security: wc_pos_params.search_variations_for_product,
             };
             $.post(wc_pos_params.ajax_url, data, function (response) {
-                option = '<option value="0" selected>' + wc_pos_params.no_default_selection + '</option>';
+                option = '<option value="0" selected>No default selection</option>';//wc_pos_params.no_default_selection
                 response = response.trim();
                 if (response != '') {
                     var obj = $.parseJSON(response);
@@ -490,6 +551,8 @@ jQuery(document).ready(function ($) {
                     $('.dafault_selection').hide();
                 }
                 $('#dafault_selection').html(option);
+                console.log("=====");
+                console.log(option);
                 if ($().select2) {
                     $('#dafault_selection').select2();
                 }
@@ -627,6 +690,18 @@ jQuery(document).ready(function ($) {
         jQuery('.actual-cash').html(currency_symbol + sum.toFixed(2));
         jQuery('.cash-difference').html(difference_html);
         jQuery('#cash-popup').hide();
+    });
+
+    jQuery('#pos-visibility .edit-pos-visibility').on('click', function (e) {
+        e.preventDefault();
+        jQuery('#pos-visibility #pos-visibility-select').slideDown('fast');
+    });
+
+    jQuery('#pos-visibility .save-post-visibility').on('click', function (e) {
+        e.preventDefault();
+        var option = jQuery('[name="_pos_visibility"]:checked');
+        jQuery('#pos-visibility-display').text(option.data('label'));
+        jQuery('#pos-visibility #pos-visibility-select').slideUp('fast');
     });
 });
 

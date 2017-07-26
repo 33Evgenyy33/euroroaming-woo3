@@ -252,9 +252,98 @@ class WC_POS
         if (in_array('woocommerce-subscriptions/woocommerce-subscriptions.php', get_option('active_plugins'))) {
             add_filter('woocommerce_subscription_payment_method_to_display', array($this, 'get_subscription_payment_method'), 10, 2);
         }
+        //Pos custom product
+        add_action('pre_get_posts', array($this, 'hide_pos_custom_product'), 15, 1);
+        //Pos only products
+        add_action('init', array($this, 'wc_pos_visibility_action'));
+
         // Load admin JS & CSS
         add_action('admin_enqueue_scripts', array($this, 'admin_enqueue_scripts'), 10, 1);
         add_action('admin_enqueue_scripts', array($this, 'admin_enqueue_styles'), 10, 1);
+        add_action('admin_print_scripts', array($this, 'admin_inline_js'));
+    }
+
+    function wc_pos_visibility_action()
+    {
+        if (get_option('wc_pos_visibility', 'no') == 'yes') {
+            add_action('pre_get_posts', array($this, 'pos_only_products'), 15, 1);
+            add_filter('views_edit-product', array($this, 'add_pos_only_filter'));
+        }
+    }
+
+    function admin_inline_js()
+    {
+        echo "<script type='text/javascript'>\n";
+        echo 'var wc_version = ' . intval(WC_VERSION) . ';';
+        echo "\n</script>";
+    }
+
+    public function hide_pos_custom_product($query)
+    {
+        $query->set('post__not_in', array((int)get_option('wc_pos_custom_product_id')));
+    }
+
+    public function pos_only_products($query)
+    {
+        if (!isset($_GET['filter']['updated_at_min']) && !is_admin() && (isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'product') || is_product_category()) {
+            $meta_query = array(
+                'relation' => 'OR',
+                array(
+                    'key' => '_pos_visibility',
+                    'value' => 'pos',
+                    'compare' => '!=',
+                ),
+                array(
+                    'key' => '_pos_visibility',
+                    'compare' => 'NOT EXISTS',
+                ),
+            );
+            $query->set('meta_query', $meta_query);
+        }
+        if (isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'product' && isset($_GET['pos_only'])) {
+            $meta_query = array(
+                'relation' => 'OR',
+                array(
+                    'key' => '_pos_visibility',
+                    'value' => 'pos',
+                    'compare' => '=',
+                ),
+            );
+            $query->set('meta_query', $meta_query);
+        }
+        if (isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'product' && isset($_GET['online_only'])) {
+            $meta_query = array(
+                'relation' => 'OR',
+                array(
+                    'key' => '_pos_visibility',
+                    'value' => 'online',
+                    'compare' => '=',
+                ),
+            );
+            $query->set('meta_query', $meta_query);
+        }
+    }
+
+    function add_pos_only_filter($views)
+    {
+        global $post_type_object;
+        $post_type = $post_type_object->name;
+        global $wpdb;
+        //Pos only count
+        $sql = "SELECT COUNT(post_id) FROM $wpdb->postmeta WHERE meta_key = '_pos_visibility' AND meta_value = 'pos'";
+        $count = ($count = $wpdb->get_var($sql)) ? $count : 0;
+        if ($count) {
+            $class = (isset($_GET['pos_only'])) ? 'current' : '';
+            $views['pos_only'] = "<a href='edit.php?post_type=$post_type&pos_only=1' class='$class'>" . __('POS Only', 'wc_point_of_sale') . " ({$count}) " . "</a>";
+        }
+        //Online only count
+        $sql = "SELECT COUNT(post_id) FROM $wpdb->postmeta WHERE meta_key = '_pos_visibility' AND meta_value = 'online'";
+        $count = ($count = $wpdb->get_var($sql)) ? $count : 0;
+        if ($count) {
+            $class = (isset($_GET['online_only'])) ? 'current' : '';
+            $views['online_only'] = "<a href='edit.php?post_type=$post_type&online_only=1' class='$class'>" . __('Online Only', 'wc_point_of_sale') . " ({$count}) " . "</a>";
+        }
+        return $views;
     }
 
     /**
@@ -302,7 +391,6 @@ class WC_POS
         $wc_pos_version = $this->_version;
         $scripts = array('jquery', 'wc-enhanced-select', 'jquery-blockui', 'jquery-tiptip', 'woocommerce_admin');
         if (pos_admin_page()) {
-
             wp_enqueue_script(array('jquery', 'editor', 'thickbox', 'jquery-ui-core', 'jquery-ui-datepicker'));
 
             wp_enqueue_script('postbox_', admin_url() . '/js/postbox.min.js', array(), '2.66');
@@ -356,7 +444,7 @@ class WC_POS
                 wp_enqueue_script('jquery');
 
             wp_enqueue_script('jquery_barcodelistener', $this->plugin_url() . '/assets/plugins/anysearch.js', array('jquery'), $wc_pos_version);
-            wp_enqueue_script('wc-pos-script-admin', $this->plugin_url() . '/assets/js/admin.js', $scripts, $wc_pos_version); // R1 Software - Scan Orders Fix 
+            wp_enqueue_script('wc-pos-script-admin', $this->plugin_url() . '/assets/js/admin.js', $scripts, $wc_pos_version); // R1 Software - Scan Orders Fix
             pos_localize_script('wc-pos-script-admin');
             wp_enqueue_script('wc-pos-shop-order-page-script', $this->plugin_url() . '/assets/js/shop-order-page-script.js', array('jquery'), $wc_pos_version);
         }
@@ -619,14 +707,14 @@ class WC_POS
 
     function order_actions_reprint_receipts($actions, $the_order)
     {
-        $amount_change = get_post_meta($the_order->id, 'wc_pos_order_type', true);
-        $id_register = get_post_meta($the_order->id, 'wc_pos_id_register', true);
+        $amount_change = get_post_meta($the_order->get_id(), 'wc_pos_order_type', true);
+        $id_register = get_post_meta($the_order->get_id(), 'wc_pos_id_register', true);
         if ($amount_change && $id_register) {
             $data = $this->register()->get_data($id_register);
             if (!empty($data) && !empty($data[0])) {
                 $data = $data[0];
                 $actions['reprint_receipts'] = array(
-                    'url' => wp_nonce_url(admin_url('admin.php?print_pos_receipt=true&order_id=' . $the_order->id), 'print_pos_receipt'),
+                    'url' => wp_nonce_url(admin_url('admin.php?print_pos_receipt=true&order_id=' . $the_order->get_id()), 'print_pos_receipt'),
                     'name' => __('Reprint receipts', 'wc_point_of_sale'),
                     'action' => "reprint_receipts"
                 );
@@ -642,18 +730,18 @@ class WC_POS
         if (!$order instanceof WC_Order) {
             return $order_id;
         }
-        $redister_id = get_post_meta($order->id, 'wc_pos_id_register', true);
+        $redister_id = get_post_meta($order->get_id(), 'wc_pos_id_register', true);
 
         if ($redister_id) {
 
-            $_order_id = get_post_meta($order->id, 'wc_pos_prefix_suffix_order_number', true);
+            $_order_id = get_post_meta($order->get_id(), 'wc_pos_prefix_suffix_order_number', true);
             if ($_order_id == '') {
                 $reg = $this->register()->get_data($redister_id);
                 if ($reg) {
                     $reg = $reg[0];
-                    $_order_id = $reg['detail']['prefix'] . $order->id . $reg['detail']['suffix'];
-                    add_post_meta($order->id, 'wc_pos_prefix_suffix_order_number', $_order_id, true);
-                    add_post_meta($order->id, 'wc_pos_order_tax_number', $reg['detail']['tax_number'], true);
+                    $_order_id = $reg['detail']['prefix'] . $order->get_id() . $reg['detail']['suffix'];
+                    add_post_meta($order->get_id(), 'wc_pos_prefix_suffix_order_number', $_order_id, true);
+                    add_post_meta($order->get_id(), 'wc_pos_order_tax_number', $reg['detail']['tax_number'], true);
                 }
             }
             $order_id = str_replace('#', '', $_order_id);

@@ -24,6 +24,7 @@ class WC_POS_Install
         '3.2.1' => 'updates/wc_pos-update-3.2.1.php',
         '3.2.2.0' => 'updates/wc_pos-update-3.2.2.0.php',
         '3.2.6.4' => 'updates/wc_pos-update-3.2.6.4.php',
+        '4.0.0' => 'updates/wc_pos-update-4.0.0.php',
     );
 
     /**
@@ -100,9 +101,11 @@ class WC_POS_Install
         if (is_null($current_version) && apply_filters('wc_pos_enable_setup_wizard', true)) {
             WC_POS_Admin_Notices::add_notice('pos_install');
             set_transient('_wc_pos_activation_redirect', 1, 30);
+            delete_transient('_wc_pos_activation_redirect');
         }
 
-        if (!is_null($current_version) && version_compare($current_version, max(array_keys(self::$db_updates)), '<')) {
+        if (!is_null($current_version) && version_compare($current_version, max(array_keys(self::$db_updates)), '>')) {
+            set_transient('_wc_pos_activation_redirect', 1, 30);
             WC_POS_Admin_Notices::add_notice('pos_update');
         } else {
             self::update_pos_version();
@@ -402,7 +405,7 @@ class WC_POS_Install
         $need_create = false;
 
         if ($pr_id = (int)get_option($option_name)) {
-            $result = $wpdb->get_results("SELECT * FROM {$wpdb->posts} WHERE post_type = 'pos_custom_product' AND post_status = 'publish' AND ID={$pr_id}");
+            $result = $wpdb->get_results("SELECT * FROM {$wpdb->posts} WHERE post_type = 'product' AND post_status = 'publish' AND ID={$pr_id}");
             if (!$result)
                 $need_create = true;
         } else {
@@ -412,7 +415,7 @@ class WC_POS_Install
             $new_product = array(
                 'post_title' => 'POS custom product',
                 'post_status' => 'publish',
-                'post_type' => 'pos_custom_product',
+                'post_type' => 'product', //pos_custom_product
                 'post_excerpt' => '',
                 'post_content' => '',
                 'post_author' => get_current_user_id(),

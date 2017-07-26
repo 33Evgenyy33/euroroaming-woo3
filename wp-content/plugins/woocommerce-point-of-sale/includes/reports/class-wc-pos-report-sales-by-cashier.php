@@ -93,8 +93,8 @@ public $chart_colours      = array();
 			'query_type'          => 'get_results',
 			'filter_range'        => true,
 			'order_types'         => array_merge( array( 'shop_order_refund' ), wc_get_order_types( 'sales-reports' ) ),
-			'order_status'        => array( 'completed', 'processing', 'on-hold' ),
-			'parent_order_status' => array( 'completed', 'processing', 'on-hold' ),
+			'order_status'        => array( 'completed', 'processing', 'on-hold', 'vodafone-complete', 'ortel-completed', 'activating-by-dat', 'point-of-sale', 'pending-activatio', 'orange-completed', 'internet-passport', 'waiting-for-passp', 'instructions-comp', 'instructions-comp' ),
+			'parent_order_status' => array( 'completed', 'processing', 'on-hold', 'vodafone-complete', 'ortel-completed', 'activating-by-dat', 'point-of-sale', 'pending-activatio', 'orange-completed', 'internet-passport', 'waiting-for-passp', 'instructions-comp', 'instructions-comp' ),
 		) );
 
 		$this->report_data->order_counts = (array) $this->get_order_report_data( array(
@@ -130,7 +130,7 @@ public $chart_colours      = array();
 			'query_type'          => 'get_results',
 			'filter_range'        => true,
 			'order_types'         => wc_get_order_types( 'order-count' ),
-			'order_status'        => array( 'completed', 'processing', 'on-hold' )
+			'order_status'        => array( 'completed', 'processing', 'on-hold', 'vodafone-complete', 'ortel-completed', 'activating-by-dat', 'point-of-sale', 'pending-activatio', 'orange-completed', 'internet-passport', 'waiting-for-passp', 'instructions-comp', 'instructions-comp' )
 		) );
 
 		$this->report_data->saved_orders = (array) $this->get_order_report_data( array(
@@ -229,7 +229,7 @@ public $chart_colours      = array();
 			'query_type'   => 'get_results',
 			'filter_range' => true,
 			'order_types'  => wc_get_order_types( 'order-count' ),
-			'order_status' => array( 'completed', 'processing', 'on-hold' ),
+			'order_status' => array( 'completed', 'processing', 'on-hold', 'vodafone-complete', 'ortel-completed', 'activating-by-dat', 'point-of-sale', 'pending-activatio', 'orange-completed', 'internet-passport', 'waiting-for-passp', 'instructions-comp', 'instructions-comp' ),
 		) );
 
 		$this->report_data->order_items = (array) $this->get_order_report_data( array(
@@ -270,7 +270,7 @@ public $chart_colours      = array();
 			'query_type'          => 'get_results',
 			'filter_range'        => true,
 			'order_types'         => wc_get_order_types( 'order-count' ),
-			'order_status'        => array( 'completed', 'processing', 'on-hold' ),
+			'order_status'        => array( 'completed', 'processing', 'on-hold', 'vodafone-complete', 'ortel-completed', 'activating-by-dat', 'point-of-sale', 'pending-activatio', 'orange-completed', 'internet-passport', 'waiting-for-passp', 'instructions-comp', 'instructions-comp' ),
 		) );
 
 		$this->report_data->refunded_order_items = (array) $this->get_order_report_data( array(
@@ -352,7 +352,7 @@ public $chart_colours      = array();
 			'query_type'          => 'get_results',
 			'filter_range'        => true,
 			'order_status'        => false,
-			'parent_order_status' => array( 'completed', 'processing', 'on-hold' ),
+			'parent_order_status' => array( 'completed', 'processing', 'on-hold', 'vodafone-complete', 'ortel-completed', 'activating-by-dat', 'point-of-sale', 'pending-activatio', 'orange-completed', 'internet-passport', 'waiting-for-passp', 'instructions-comp', 'instructions-comp' ),
 		) );
 
 		foreach( $this->report_data->partial_refunds as $key => $value ) {
@@ -657,7 +657,7 @@ public $chart_colours      = array();
 					'limit'               => 12,
 					'filter_range'        => true,
 					'order_types'         => wc_get_order_types( 'order-count' ),
-					'order_status'        => array( 'completed', 'processing', 'on-hold' ),
+					'order_status'        => array( 'completed', 'processing', 'on-hold', 'vodafone-complete', 'ortel-completed', 'activating-by-dat', 'point-of-sale', 'pending-activatio', 'orange-completed', 'internet-passport', 'waiting-for-passp', 'instructions-comp', 'instructions-comp' ),
 				) );
 
 				if ( $top_sellers ) {
@@ -717,7 +717,7 @@ public $chart_colours      = array();
 					'limit'        => 12,
 					'query_type'   => 'get_results',
 					'order_types'         => wc_get_order_types( 'order-count' ),
-					'order_status'        => array( 'completed', 'processing', 'on-hold' ),
+					'order_status'        => array( 'completed', 'processing', 'on-hold', 'vodafone-complete', 'ortel-completed', 'activating-by-dat', 'point-of-sale', 'pending-activatio', 'orange-completed', 'internet-passport', 'waiting-for-passp', 'instructions-comp', 'instructions-comp' ),
 					'filter_range' => false
 				) );
 
@@ -832,7 +832,7 @@ public $chart_colours      = array();
 					'query_type'   => 'get_results',
 					'filter_range' => false,
 					'order_types'         => wc_get_order_types( 'order-count' ),
-					'order_status'        => array( 'completed', 'processing', 'on-hold' )
+					'order_status'        => array( 'completed', 'processing', 'on-hold', 'vodafone-complete', 'ortel-completed', 'activating-by-dat', 'point-of-sale', 'pending-activatio', 'orange-completed', 'internet-passport', 'waiting-for-passp', 'instructions-comp', 'instructions-comp' )
 				) );
 			} else {
 
@@ -872,7 +872,7 @@ public $chart_colours      = array();
 					'query_type'   => 'get_results',
 					'filter_range' => false,
 					'order_types'         => wc_get_order_types( 'order-count' ),
-					'order_status'        => array( 'completed', 'processing', 'on-hold' )
+					'order_status'        => array( 'completed', 'processing', 'on-hold', 'vodafone-complete', 'ortel-completed', 'activating-by-dat', 'point-of-sale', 'pending-activatio', 'orange-completed', 'internet-passport', 'waiting-for-passp', 'instructions-comp', 'instructions-comp' )
 				) );
 			}
 
