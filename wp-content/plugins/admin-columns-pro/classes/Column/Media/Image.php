@@ -14,6 +14,10 @@ class ACP_Column_Media_Image extends AC_Column {
 		$this->set_label( __( 'Image', 'codepress-admin-columns' ) );
 	}
 
+	public function get_raw_value( $id ) {
+		return $id;
+	}
+
 	public function register_settings() {
 		$this->add_setting( new AC_Settings_Column_Image( $this ) );
 	}

@@ -92,6 +92,7 @@ class ACP_Filtering_Model_Post_Date extends ACP_Filtering_Model {
 		}
 
 		return array(
+			'order'   => false,
 			'options' => $options,
 		);
 	}
@@ -118,7 +119,7 @@ class ACP_Filtering_Model_Post_Date extends ACP_Filtering_Model {
 		return $wpdb->get_col( $sql );
 	}
 
-	private function get_filter_format() {
+	protected function get_filter_format() {
 		return $this->column->get_setting( 'filter' )->get_value( 'filter_format' );
 	}
 

@@ -85,7 +85,7 @@ final class ACA_WC {
 	}
 
 	/**
-	 * @since NEWVERSION
+	 * @since 2.0
 	 */
 	public function get_url() {
 		return plugin_dir_url( __FILE__ );

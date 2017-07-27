@@ -60,7 +60,7 @@ class ACA_WC_Column_Product_Variation extends AC_Column
 	 *
 	 * @return string
 	 */
-	private function get_variation_label( WC_Product_Variation $variation ) {
+	protected function get_variation_label( WC_Product_Variation $variation ) {
 		$label = $variation->get_id();
 
 		if ( $attributes = $variation->get_variation_attributes() ) {
@@ -75,7 +75,7 @@ class ACA_WC_Column_Product_Variation extends AC_Column
 	 *
 	 * @return string
 	 */
-	private function get_variation_stock_status( WC_Product_Variation $variation ) {
+	protected function get_variation_stock_status( WC_Product_Variation $variation ) {
 		if ( ! $variation->is_in_stock() ) {
 			return '<span class="stock outofstock">' . __( 'Out of stock', 'woocommerce' ) . '</span>';
 		}
@@ -94,7 +94,7 @@ class ACA_WC_Column_Product_Variation extends AC_Column
 	 *
 	 * @return bool|string
 	 */
-	private function get_variation_price( WC_Product_Variation $variation ) {
+	protected function get_variation_price( WC_Product_Variation $variation ) {
 		$price = $variation->get_price_html();
 
 		if ( ! $price ) {
@@ -109,7 +109,7 @@ class ACA_WC_Column_Product_Variation extends AC_Column
 	 *
 	 * @return string
 	 */
-	private function get_tooltip_variation( $variation ) {
+	protected function get_tooltip_variation( $variation ) {
 		$tooltip = array();
 
 		if ( $sku = $variation->get_sku() ) {
@@ -134,7 +134,7 @@ class ACA_WC_Column_Product_Variation extends AC_Column
 	 *
 	 * @return bool|string
 	 */
-	private function get_dimensions( $variation ) {
+	protected function get_dimensions( $variation ) {
 		$dimensions = array(
 			'length' => $variation->get_length(),
 			'width'  => $variation->get_width(),
@@ -168,7 +168,7 @@ class ACA_WC_Column_Product_Variation extends AC_Column
 	 *
 	 * @return WC_Product_Variation[]
 	 */
-	private function get_variations( $product_id ) {
+	protected function get_variations( $product_id ) {
 		$variations = array();
 
 		foreach ( $this->get_variation_ids( $product_id ) as $variation_id ) {

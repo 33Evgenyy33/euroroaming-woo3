@@ -23,8 +23,7 @@ class ACP_Column_Post_ChildPages extends AC_Column  {
 			}
 		}
 
-		return implode( $titles );
-
+		return ac_helper()->string->enumeration_list( $titles, 'and' );
 	}
 
 	public function get_raw_value( $post_id ) {

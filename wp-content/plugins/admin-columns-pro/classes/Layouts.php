@@ -95,7 +95,10 @@ final class ACP_Layouts {
 	}
 
 	/**
-	 * @return ACP_Layout|WP_Error Layout
+	 * @param int   $layout_id
+	 * @param array $args
+	 *
+	 * @return ACP_Layout|WP_Error
 	 */
 	public function update( $layout_id, $args ) {
 
@@ -224,7 +227,8 @@ final class ACP_Layouts {
 		$storage_key = $this->get_storage_key();
 
 		// Load from DB
-		if ( $results = $wpdb->get_results( $wpdb->prepare( "SELECT {$wpdb->options}.option_name, {$wpdb->options}.option_value FROM {$wpdb->options} WHERE option_name LIKE %s ORDER BY option_id DESC", $storage_key . '%' ) ) ) {
+		if ( $results = $wpdb->get_results( $wpdb->prepare( "SELECT {$wpdb->options}.option_name, {$wpdb->options}.option_value FROM {$wpdb->options} WHERE option_name LIKE %s ORDER BY option_id DESC", $wpdb->esc_like( $storage_key ) . '%' ) ) ) {
+
 			foreach ( $results as $result ) {
 
 				// Removes incorrect layouts.

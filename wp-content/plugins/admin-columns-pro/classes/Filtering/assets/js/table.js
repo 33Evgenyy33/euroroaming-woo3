@@ -8,7 +8,7 @@ jQuery( document ).ready( function( $ ) {
 		if ( $( this ).val() !== '' ) {
 			$( this ).addClass( 'active' );
 		}
-		if ( $( this ).val() === 0 ) {
+		if ( parseInt( $( this ).val() ) === 0 ) {
 			$( this ).removeClass( 'active' );
 		}
 	} );
@@ -61,6 +61,17 @@ jQuery( document ).ready( function( $ ) {
 		}
 
 	} );
+
+	// Trigger the user filter button when hitting enter on a filter text field to submit the form
+	$user_filter_button = $( 'input[name=acp_filter_action]' );
+	if ( $user_filter_button.length ) {
+		$( '.acp-range' ).keypress( function( e ) {
+			if ( e.which === 13 ) {
+				$user_filter_button.trigger( 'click' );
+				return false;
+			}
+		} );
+	}
 
 	// Multisite Users
 	if ( $( 'body.ac-wp-ms_users' ).length ) {

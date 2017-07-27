@@ -14,7 +14,7 @@ final class ACP_Filtering_Strategy_User extends ACP_Filtering_Strategy {
 	 * @param WP_User_Query $user_query
 	 */
 	public function handle_filter_requests( $user_query ) {
-		if ( ! isset( $_GET['acp_filter'] ) ) {
+		if ( ! isset( $_GET['acp_filter_action'] ) ) {
 			return;
 		}
 

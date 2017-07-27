@@ -710,3 +710,128 @@
 [26-Jul-2017 12:02:27 UTC] post was called incorrectly. Свойства продукта не должны быть доступны непосредственно. Backtrace: require('F:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('F:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_AJAX::do_wc_ajax, do_action('wc_ajax_update_order_review'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_AJAX::update_order_review, WC_Cart->calculate_totals, WC_Cart->calculate_shipping, WC_Shipping->calculate_shipping, WC_Shipping->calculate_shipping_for_package, apply_filters('woocommerce_package_rates'), WP_Hook->apply_filters, call_user_func_array, my_hide_shipping_when_free_is_available, WC_Abstract_Legacy_Product->__get, wc_doing_it_wrong. This message was added in version 3.0.
 [26-Jul-2017 12:03:25 UTC] post was called incorrectly. Свойства продукта не должны быть доступны непосредственно. Backtrace: require('F:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('F:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_AJAX::do_wc_ajax, do_action('wc_ajax_update_order_review'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_AJAX::update_order_review, WC_Cart->calculate_totals, WC_Cart->calculate_shipping, WC_Shipping->calculate_shipping, WC_Shipping->calculate_shipping_for_package, apply_filters('woocommerce_package_rates'), WP_Hook->apply_filters, call_user_func_array, my_hide_shipping_when_free_is_available, WC_Abstract_Legacy_Product->__get, wc_doing_it_wrong. This message was added in version 3.0.
 [26-Jul-2017 12:03:27 UTC] post was called incorrectly. Свойства продукта не должны быть доступны непосредственно. Backtrace: require('F:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('F:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_AJAX::do_wc_ajax, do_action('wc_ajax_update_order_review'), WP_Hook->do_action, WP_Hook->apply_filters, call_user_func_array, WC_AJAX::update_order_review, WC_Cart->calculate_totals, WC_Cart->calculate_shipping, WC_Shipping->calculate_shipping, WC_Shipping->calculate_shipping_for_package, apply_filters('woocommerce_package_rates'), WP_Hook->apply_filters, call_user_func_array, my_hide_shipping_when_free_is_available, WC_Abstract_Legacy_Product->__get, wc_doing_it_wrong. This message was added in version 3.0.
+[27-Jul-2017 09:11:07 UTC] WP_Community_Events::maybe_log_events_response: Valid response received. Details: {"api_url":"https:\/\/api.wordpress.org\/events\/1.0\/","request_args":{"body":{"number":5,"ip":"127.0.0.0","locale":"ru_RU","timezone":"Europe\/Moscow"}},"response_code":200,"response_body":{"location":{"ip":"94.181.179.216"},"events":"0 events trimmed."}}
+[27-Jul-2017 10:02:21 UTC] Error (%d): %s
+[27-Jul-2017 10:02:21 UTC] Error (%d): %s
+[27-Jul-2017 10:03:15 UTC] Error (%d): %s
+[27-Jul-2017 10:03:16 UTC] Error (%d): %s
+[27-Jul-2017 10:24:30 UTC] Error (%d): %s
+[27-Jul-2017 10:24:30 UTC] Error (%d): %s
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 10:27:30 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:04:22 UTC] Error (%d): %s
+[27-Jul-2017 12:04:22 UTC] Error (%d): %s
+[27-Jul-2017 12:07:49 UTC] Error (%d): %s
+[27-Jul-2017 12:07:49 UTC] Error (%d): %s
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:12:54 UTC] The get_product function is deprecated since version 3.0. Replace with wc_get_product.
+[27-Jul-2017 12:29:38 UTC] Error (%d): %s
+[27-Jul-2017 12:29:38 UTC] Error (%d): %s
+[27-Jul-2017 15:06:19 UTC] post was called incorrectly. Свойства продукта не должны быть доступны непосредственно. Backtrace: require('F:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('F:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, WC_AJAX::do_wc_ajax, do_action('wc_ajax_apply_coupon'), WP_Hook->do_action, WP_Hook->apply_filters, WC_AJAX::apply_coupon, WC_Cart->add_discount, do_action('woocommerce_applied_coupon'), WP_Hook->do_action, WP_Hook->apply_filters, WC_Cart->calculate_totals, WC_Cart->calculate_shipping, WC_Shipping->calculate_shipping, WC_Shipping->calculate_shipping_for_package, apply_filters('woocommerce_package_rates'), WP_Hook->apply_filters, my_hide_shipping_when_free_is_available, WC_Abstract_Legacy_Product->__get, wc_doing_it_wrong. This message was added in version 3.0.
+[27-Jul-2017 15:06:19 UTC] post was called incorrectly. Свойства продукта не должны быть доступны непосредственно. Backtrace: require('F:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('F:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, WC_AJAX::do_wc_ajax, do_action('wc_ajax_apply_coupon'), WP_Hook->do_action, WP_Hook->apply_filters, WC_AJAX::apply_coupon, WC_Cart->add_discount, do_action('woocommerce_applied_coupon'), WP_Hook->do_action, WP_Hook->apply_filters, WC_Cart->calculate_totals, WC_Cart->calculate_shipping, WC_Shipping->calculate_shipping, WC_Shipping->calculate_shipping_for_package, apply_filters('woocommerce_package_rates'), WP_Hook->apply_filters, my_hide_shipping_when_free_is_available, WC_Abstract_Legacy_Product->__get, wc_doing_it_wrong. This message was added in version 3.0.
+[27-Jul-2017 15:06:26 UTC] post was called incorrectly. Свойства продукта не должны быть доступны непосредственно. Backtrace: require('F:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('F:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, WC_AJAX::do_wc_ajax, do_action('wc_ajax_update_order_review'), WP_Hook->do_action, WP_Hook->apply_filters, WC_AJAX::update_order_review, WC_Cart->calculate_totals, WC_Cart->calculate_shipping, WC_Shipping->calculate_shipping, WC_Shipping->calculate_shipping_for_package, apply_filters('woocommerce_package_rates'), WP_Hook->apply_filters, my_hide_shipping_when_free_is_available, WC_Abstract_Legacy_Product->__get, wc_doing_it_wrong. This message was added in version 3.0.
+[27-Jul-2017 15:06:26 UTC] post was called incorrectly. Свойства продукта не должны быть доступны непосредственно. Backtrace: require('F:\OpenServer\domains\euroroaming\wp-blog-header.php'), require_once('F:\OpenServer\domains\euroroaming\wp-includes\template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, WC_AJAX::do_wc_ajax, do_action('wc_ajax_update_order_review'), WP_Hook->do_action, WP_Hook->apply_filters, WC_AJAX::update_order_review, WC_Cart->calculate_totals, WC_Cart->calculate_shipping, WC_Shipping->calculate_shipping, WC_Shipping->calculate_shipping_for_package, apply_filters('woocommerce_package_rates'), WP_Hook->apply_filters, my_hide_shipping_when_free_is_available, WC_Abstract_Legacy_Product->__get, wc_doing_it_wrong. This message was added in version 3.0.

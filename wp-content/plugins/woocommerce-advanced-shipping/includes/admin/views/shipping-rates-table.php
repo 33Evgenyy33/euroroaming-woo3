@@ -1,17 +1,8 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-/**
- * Conditions table.
- *
- * Display table with all the user configured shipping conditions.
- *
- * @author		Jeroen Sormani
- * @package 	WooCommerce Advanced Shipping
- * @version		1.0.0
- */
-
-$methods = get_posts( array( 'posts_per_page' => '-1', 'post_type' => 'was', 'post_status' => array( 'draft', 'publish' ), 'orderby' => 'menu_order', 'order' => 'ASC' ) );
+$methods           = get_posts( array( 'posts_per_page' => '-1', 'post_type' => 'was', 'post_status' => array( 'draft', 'publish' ), 'orderby' => 'menu_order', 'order' => 'ASC' ) );
+$wc_status_options = wp_parse_args( get_option( 'woocommerce_status_options', array() ), array( 'shipping_debug_mode' => 0 ) );
 
 ?><tr valign="top">
 	<th scope="row" class="titledesc"><?php
@@ -19,7 +10,8 @@ $methods = get_posts( array( 'posts_per_page' => '-1', 'post_type' => 'was', 'po
 	</th>
 	<td class="forminp" id="<?php echo esc_attr( $this->id ); ?>_shipping_methods">
 
-		<table class='wp-list-table was-table widefat'>
+		<table class='wp-list-table wpc-conditions-post-table widefat'>
+
 			<thead>
 				<tr>
 					<th scope="col" style='width: 17px;' class="column-sort"></th>
@@ -50,6 +42,9 @@ $methods = get_posts( array( 'posts_per_page' => '-1', 'post_type' => 'was', 'po
 						<td class="column-primary">
 							<strong>
 								<a href='<?php echo get_edit_post_link( $method->ID ); ?>' class='row-title' title='<?php _e( 'Edit Method', 'woocommerce-advanced-shipping' ); ?>'><?php
+									if ( $wc_status_options['shipping_debug_mode'] ) {
+										echo '<small>#' . absint( $method->ID ) . '</small> - ';
+									}
 									echo _draft_or_post_title( $method->ID );
 								?></a><?php
 								echo _post_states( $method );
@@ -91,11 +86,9 @@ $methods = get_posts( array( 'posts_per_page' => '-1', 'post_type' => 'was', 'po
 				endforeach;
 
 				if ( empty( $method ) ) :
-
 					?><tr>
 						<td colspan='6'><?php _e( 'There are no Advanced Shipping conditions. Yet...', 'woocommerce-advanced-shipping' ); ?></td>
 					</tr><?php
-
 				endif;
 
 			?></tbody>

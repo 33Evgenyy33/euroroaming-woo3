@@ -972,9 +972,9 @@ jQuery( document ).ready( function( $ ) {
 		el.attr( 'data-date', value );
 		el.attr( 'data-date-format', 'yyyy-mm-dd' );
 
-		el.bdatepicker({
-			weekStart: column.editable.weekstart // default starts on sunday, 1 for monday
-		}).on( 'changeDate', function( ev ) {
+		el.bdatepicker( {
+			weekStart : column.editable.weekstart // default starts on sunday, 1 for monday
+		} ).on( 'changeDate', function( ev ) {
 			var new_date = new Date( ev.date );
 			var yyyymmdd = new_date.yyyymmdd();
 
@@ -1345,7 +1345,6 @@ jQuery( document ).ready( function( $ ) {
 			return function( e ) {
 				e.preventDefault();
 				e.stopPropagation();
-
 				el.cacie_restore_revision( column, item, item.columndata[ column.column_name ].current_revision - 1 );
 			};
 		}( column, item ) ) );
@@ -1363,6 +1362,7 @@ jQuery( document ).ready( function( $ ) {
 		// Clear: Click Event
 		el_clear.on( 'click', ( function( column, item ) {
 			return function( e ) {
+				e.preventDefault();
 				el.cacie_savecolumn( column, item, '' );
 				e.stopPropagation();
 			};

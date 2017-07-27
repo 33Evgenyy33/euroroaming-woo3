@@ -426,11 +426,11 @@ class ACP_LayoutScreen_Columns {
 	public function ajax_update_layout() {
 		$this->ajax_validate_request();
 
-		if ( ! $list_screen = AC()->get_list_screen( filter_input( INPUT_POST, 'list_screen' ) ) ) {
+		if ( ! ( $list_screen = AC()->get_list_screen( filter_input( INPUT_POST, 'list_screen' ) ) ) ) {
 			wp_die();
 		}
 
-		if ( ! $formdata = filter_input( INPUT_POST, 'data' ) ) {
+		if ( ! ( $formdata = filter_input( INPUT_POST, 'data' ) ) ) {
 			wp_die();
 		}
 

@@ -17,14 +17,14 @@ class ACA_WC_Filtering_ShopOrder_Product extends ACA_WC_Filtering_ShopOrder {
 		switch ( $this->column->get_product_property() ) {
 
 			case 'title' :
-				add_filter( 'posts_join', array( $this, 'join_by_order_itemmeta' ) );
-				add_filter( 'posts_where', array( $this, 'filter_by_wc_product_title' ) );
+				add_filter( 'posts_join', array( $this, 'join_by_order_itemmeta' ), 10, 2 );
+				add_filter( 'posts_where', array( $this, 'filter_by_wc_product_title' ), 10, 2 );
 
 				break;
 			case 'sku' :
-				add_filter( 'posts_join', array( $this, 'join_by_order_itemmeta' ) );
-				add_filter( 'posts_join', array( $this, 'join_by_postmeta' ) );
-				add_filter( 'posts_where', array( $this, 'filter_by_wc_product_sku' ) );
+				add_filter( 'posts_join', array( $this, 'join_by_order_itemmeta' ), 10, 2 );
+				add_filter( 'posts_join', array( $this, 'join_by_postmeta' ), 10, 2 );
+				add_filter( 'posts_where', array( $this, 'filter_by_wc_product_sku' ), 10, 2 );
 
 				break;
 		}
@@ -32,16 +32,24 @@ class ACA_WC_Filtering_ShopOrder_Product extends ACA_WC_Filtering_ShopOrder {
 		return $vars;
 	}
 
-	public function filter_by_wc_product_title( $where ) {
+	public function filter_by_wc_product_title( $where, WP_Query $query ) {
 		global $wpdb;
 
-		return $where . $wpdb->prepare( "AND om.meta_value = %d AND om.meta_key = '_product_id'", $this->get_filter_value() );
+		if ( $query->is_main_query() ) {
+			$where .= $wpdb->prepare( "AND om.meta_value = %d AND om.meta_key = '_product_id'", $this->get_filter_value() );
+		}
+
+		return $where;
 	}
 
-	public function filter_by_wc_product_sku( $where ) {
+	public function filter_by_wc_product_sku( $where, WP_Query $query ) {
 		global $wpdb;
 
-		return $where . $wpdb->prepare( "AND pm.meta_value = %s AND pm.meta_key = '_sku'", get_post_meta( $this->get_filter_value(), '_sku', true ) );
+		if ( $query->is_main_query() ) {
+			$where .= $wpdb->prepare( "AND pm.meta_value = %s AND pm.meta_key = '_sku'", get_post_meta( $this->get_filter_value(), '_sku', true ) );
+		}
+
+		return $where;
 	}
 
 	public function get_filtering_data() {

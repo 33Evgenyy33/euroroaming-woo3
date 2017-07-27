@@ -33,7 +33,7 @@ $settings = get_post_meta( $post->ID, '_was_shipping_method', true );
 
 	<p class='was-option'>
 		<label for='cost'><?php _e( 'Shipping cost', 'woocommerce-advanced-shipping' ); ?></label>
-		<span class='was-currency'><?php echo get_woocommerce_currency_symbol(); ?></span>
+		<span class='wpc-currency'><?php echo get_woocommerce_currency_symbol(); ?></span>
 		<input
 			type='text'
 			step='any'
@@ -47,13 +47,13 @@ $settings = get_post_meta( $post->ID, '_was_shipping_method', true );
 
 	<p class='was-option'>
 		<label for='handling_fee'><?php _e( 'Handling fee', 'woocommerce-advanced-shipping' ); ?></label>
-		<span class='was-currency'><?php echo get_woocommerce_currency_symbol(); ?></span>
+		<span class='wpc-currency'><?php echo get_woocommerce_currency_symbol(); ?></span>
 		<input
 			type='text'
 			class='wc_input_price'
 			id='handling_fee'
 			name='_was_shipping_method[handling_fee]'
-			value='<?php echo esc_attr(  wc_format_localized_price( @$settings['handling_fee'] ) ); ?>'
+			value='<?php echo esc_attr( wc_format_localized_price( @$settings['handling_fee'] ) ); ?>'
 			placeholder='<?php _e( 'Fixed or percentage', 'woocommerce-advanced-shipping' ); ?>'
 		><img class='help_tip' src='<?php echo WC()->plugin_url(); ?>/assets/images/help.png' height='16' width='16' data-tip="<?php _e( 'A fixed amount (e.g. 5) or percentage (e.g. 5%) which will always be charged.', 'woocommerce-advanced-shipping' ); ?>">
 	</p>
@@ -61,7 +61,7 @@ $settings = get_post_meta( $post->ID, '_was_shipping_method', true );
 
 	<p class='was-option'>
 		<label for='cost-per-item'><?php _e( 'Cost per item', 'woocommerce-advanced-shipping' ); ?></label>
-		<span class='was-currency'><?php echo get_woocommerce_currency_symbol(); ?></span>
+		<span class='wpc-currency'><?php echo get_woocommerce_currency_symbol(); ?></span>
 		<input
 			type='text'
 			class='wc_input_price'
@@ -75,7 +75,7 @@ $settings = get_post_meta( $post->ID, '_was_shipping_method', true );
 
 	<p class='was-option'>
 		<label for='cost-per-weight'><?php _e( 'Cost per weight', 'woocommerce-advanced-shipping' ); ?> (<?php echo get_option( 'woocommerce_weight_unit' ); ?>)</label>
-		<span class='was-currency'><?php echo get_woocommerce_currency_symbol(); ?></span>
+		<span class='wpc-currency'><?php echo get_woocommerce_currency_symbol(); ?></span>
 		<input
 			type='text'
 			class='wc_input_price'

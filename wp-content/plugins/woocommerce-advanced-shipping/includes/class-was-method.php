@@ -78,8 +78,8 @@ class WAS_Advanced_Shipping_Method extends WC_Shipping_Method {
 	 */
 	public function was_match_methods( $package ) {
 
-		$matched_methods = '';
-		$methods         = get_posts( array( 'posts_per_page' => '-1', 'post_type' => 'was', 'orderby' => 'menu_order', 'order' => 'ASC' ) );
+		$matched_methods = array();
+		$methods         = get_posts( array( 'posts_per_page' => '-1', 'post_type' => 'was', 'orderby' => 'menu_order', 'order' => 'ASC', 'suppress_filters' => false ) );
 
 		foreach ( $methods as $method ) :
 
@@ -153,7 +153,7 @@ class WAS_Advanced_Shipping_Method extends WC_Shipping_Method {
 	public function init_form_fields() {
 
 		$this->form_fields = array(
-			'enabled' => array(
+			'enabled'                            => array(
 				'title'   => __( 'Enable/Disable', 'woocommerce' ),
 				'type'    => 'checkbox',
 				'label'   => __( 'Enable Advanced Shipping', 'woocommerce-advanced-shipping' ),
@@ -209,7 +209,7 @@ class WAS_Advanced_Shipping_Method extends WC_Shipping_Method {
 			/**
 			 * Load conditions table file
 			 */
-			require plugin_dir_path( __FILE__ ) . 'admin/views/was-shipping-rates-table.php';
+			require plugin_dir_path( __FILE__ ) . 'admin/views/shipping-rates-table.php';
 
 		return ob_get_clean();
 
@@ -228,7 +228,7 @@ class WAS_Advanced_Shipping_Method extends WC_Shipping_Method {
 	 */
 	public function calculate_cost_per_item( $package ) {
 
-		$cost = '';
+		$cost = 0;
 
 		// Shipping per item
 		foreach ( $package['contents'] as $item_id => $values ) :
@@ -238,9 +238,9 @@ class WAS_Advanced_Shipping_Method extends WC_Shipping_Method {
 			if ( $values['quantity'] > 0 && $_product->needs_shipping() ) :
 
 				if ( strstr( $this->cost_per_item, '%' ) ) :
-					$cost += ( $values['line_total'] / 100 ) * str_replace( '%', '', $this->cost_per_item );
+					$cost += ( $values['line_total'] / 100 ) * (float) str_replace( '%', '', $this->cost_per_item );
 				else :
-					$cost += $values['quantity'] * $this->cost_per_item;
+					$cost += $values['quantity'] * (float) $this->cost_per_item;
 				endif;
 
 			endif;
@@ -264,7 +264,7 @@ class WAS_Advanced_Shipping_Method extends WC_Shipping_Method {
 	 */
 	public function calculate_cost_per_weight( $package ) {
 
-		$cost = '';
+		$cost = 0;
 
 		// Weight per item
 		foreach ( $package['contents'] as $item_id => $values ) :
@@ -272,7 +272,7 @@ class WAS_Advanced_Shipping_Method extends WC_Shipping_Method {
 			$_product = $values['data'];
 
 			if ( $values['quantity'] > 0 && $_product->needs_shipping() && $_product->get_weight() ) :
-				$cost += ( ( $values['quantity'] * $_product->get_weight() ) * $this->cost_per_weight );
+				$cost += ( ( $values['quantity'] * $_product->get_weight() ) * (float) $this->cost_per_weight );
 			endif;
 
 		endforeach;
@@ -289,15 +289,16 @@ class WAS_Advanced_Shipping_Method extends WC_Shipping_Method {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param  mixed $package List containing all products for this method.
-	 * @return float          Shipping costs.
+	 * @param  mixed  $package List containing all products for this method.
+	 * @param  string $method_id Shipping method ID.
+	 * @return float           Shipping costs.
 	 */
 	public function calculate_shipping_cost( $package, $method_id ) {
 
-		$cost  = $this->cost;
-		$cost += $this->get_fee( $this->fee, $package['contents_cost'] );
-		$cost += $this->calculate_cost_per_item( $package );
-		$cost += $this->calculate_cost_per_weight( $package );
+		$cost  = (float) $this->cost;
+		$cost += (float) $this->get_fee( $this->fee, $package['contents_cost'] );
+		$cost += (float) $this->calculate_cost_per_item( $package );
+		$cost += (float) $this->calculate_cost_per_weight( $package );
 
 		return apply_filters( 'was_calculate_shipping_costs', $cost, $package, $method_id, $this );
 
@@ -328,14 +329,15 @@ class WAS_Advanced_Shipping_Method extends WC_Shipping_Method {
 			@$this->cost_per_item	= $match_details['cost_per_item'];
 			@$this->cost_per_weight	= $match_details['cost_per_weight'];
 			@$this->taxable			= $match_details['tax'];
-			$this->shipping_costs = $this->calculate_shipping_cost( $package, $method_id );
+			$this->shipping_costs   = $this->calculate_shipping_cost( $package, $method_id );
 
 			$rate = apply_filters( 'was_shipping_rate', array(
 				'id'       => $method_id,
-				'label'    => ( 'Почта России (сроки доставки уточняйте на сайте Почты России)' == $label ) ? WC()->customer->get_shipping_city().", ".$label : WC()->customer->get_shipping_city().", ".$label.' (Курьерская служба доставки)',
+				'label'    => ( null == $label ) ? __( 'Shipping', 'woocommerce-advanced-shipping' ) : $label,
 				'cost'     => $this->shipping_costs,
 				'taxes'    => ( 'taxable' == $this->taxable ) ? '' : false,
 				'calc_tax' => 'per_order',
+				'package'  => $package,
 			), $package, $this );
 
 			$this->add_rate( $rate );

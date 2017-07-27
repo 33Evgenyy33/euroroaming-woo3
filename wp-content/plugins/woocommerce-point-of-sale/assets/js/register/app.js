@@ -1301,9 +1301,11 @@ jQuery(document).ready(function ($) {
                 }
                 $('#grid_layout_cycle').html(ul);
                 $('#grid_layout_cycle').unblock();
+                //CART.add_discount('tacom'); //Скидка
                 resizeGrid();
             } else {
                 $('#grid_layout_cycle').unblock();
+                //CART.add_discount('tacom'); //Скидка
             }
             CART.add_discount('tacom'); //Скидка Рабочая
         },
@@ -3293,7 +3295,6 @@ jQuery(document).ready(function ($) {
                 return false;
             });*/
             $('.wc_pos_register_pay').on('click', function () {
-                //CART.add_discount('tacom'); //Скидка
                 if (CART.is_empty()) {
                     APP.showNotice(pos_i18n[9], 'error');
                     return false;
@@ -3314,6 +3315,7 @@ jQuery(document).ready(function ($) {
                         }
                         $('#pos_chip_pin_order_id').text(chip_pin_order_id);
                     }
+                    //console.log(CART.add_discount('tacom')); //Скидка
 
                     $('#amount_pay_cod, #amount_change_cod').val('');
                     var round_total = CART.total;

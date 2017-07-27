@@ -1,5 +1,27 @@
 == Changelog ==
 
+= 4.0.7 =
+Release Date: July 25th, 2017
+
+* [Added] Ranged filtering for User registered date adde
+* [Added] Profile Picture (Gravatar) column for Users
+* [Fixed] Clickin the clear button with inline edit does not jump to the top of the page
+* [Fixed] Filtering for Taxonomy column on the media overview is enabled
+* [Fixed] Image column for media overviews works again
+* [Fixed] Category filter dropdown does not always have active state anymore
+* [Fixed] Renaming a post type name (from a dash to underscore) could cause the wrong layouts to be loaded
+* [Fixed] Child Pages are now correctly separated by a comma
+* [Improved] Styling issues for sorting on Media overview
+* [Updated] Admin Columns core to v3.0.3
+    * [Fixed] Show the type instead of an empty label in the edit columns screen
+    * [Fixed] Image URLs are supported again for the Custom Field column
+    * [Fixed] Column with a date setting did not always store it's value date format correctly
+    * [Improved] Post Status column can now also be displayed as an icon
+    * [Improved] Use multibyte function to trim strings for showing a maximum character count
+    * [Improved] Excerpt column now displays a text icon when the excerpt is generated from it's content
+    * [Added] Added a helper to display star ratings
+
+
 = 4.0.6 =
 Release Date: July 3rd, 2017
 

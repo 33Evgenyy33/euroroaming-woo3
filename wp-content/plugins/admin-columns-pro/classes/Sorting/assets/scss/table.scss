@@ -13,4 +13,8 @@ a.reset-sorting {
 	vertical-align: middle;
 	float: left;
 	margin-bottom: 4px;
+
+	&:last-child {
+		margin-right: 5px;
+	}
 }

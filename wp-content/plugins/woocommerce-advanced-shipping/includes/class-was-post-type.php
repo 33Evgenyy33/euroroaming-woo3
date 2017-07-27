@@ -93,30 +93,30 @@ class WAS_Post_Type {
 		$post_type_object = get_post_type_object( $post_type );
 
 		$messages['was'] = array(
-			0 => '',
-			1 => __( 'Advanced shipping method updated.', 'woocommerce-advanced-shipping' ),
-			2 => __( 'Custom field updated.', 'woocommerce-advanced-shipping' ),
-			3 => __( 'Custom field deleted.', 'woocommerce-advanced-shipping' ),
-			4 => __( 'Advanced shipping method updated.', 'woocommerce-advanced-shipping' ),
-			5 => isset( $_GET['revision'] ) ?
+			0  => '',
+			1  => __( 'Advanced shipping method updated.', 'woocommerce-advanced-shipping' ),
+			2  => __( 'Custom field updated.', 'woocommerce-advanced-shipping' ),
+			3  => __( 'Custom field deleted.', 'woocommerce-advanced-shipping' ),
+			4  => __( 'Advanced shipping method updated.', 'woocommerce-advanced-shipping' ),
+			5  => isset( $_GET['revision'] ) ?
 				sprintf( __( 'Advanced shipping method restored to revision from %s', 'woocommerce-advanced-shipping' ), wp_post_revision_title( (int) $_GET['revision'], false ) )
 				: false,
-			6 => __( 'Advanced shipping method published.', 'woocommerce-advanced-shipping' ),
-			7 => __( 'Advanced shipping method saved.', 'woocommerce-advanced-shipping' ),
-			8 => __( 'Advanced shipping method submitted.', 'woocommerce-advanced-shipping' ),
-			9 => sprintf(
+			6  => __( 'Advanced shipping method published.', 'woocommerce-advanced-shipping' ),
+			7  => __( 'Advanced shipping method saved.', 'woocommerce-advanced-shipping' ),
+			8  => __( 'Advanced shipping method submitted.', 'woocommerce-advanced-shipping' ),
+			9  => sprintf(
 				__( 'Advanced shipping method scheduled for: <strong>%1$s</strong>.', 'woocommerce-advanced-shipping' ),
 				date_i18n( __( 'M j, Y @ G:i', 'woocommerce-advanced-shipping' ), strtotime( $post->post_date ) )
 			),
 			10 => __( 'Advanced shipping method draft updated.', 'woocommerce-advanced-shipping' ),
 		);
 
-		$permalink     = admin_url( '/admin.php?page=wc-settings&tab=shipping&section=was_advanced_shipping_method' );
-		$overview_link = sprintf( ' <a href="%s">%s</a>', esc_url( $permalink ), __( 'Return to overview.', 'woocommerce-advanced-shipping' ) );
-		$messages['was'][1] .= $overview_link;
-		$messages['was'][6] .= $overview_link;
-		$messages['was'][9] .= $overview_link;
-		$messages['was'][8] .= $overview_link;
+		$permalink            = admin_url( '/admin.php?page=wc-settings&tab=shipping&section=was_advanced_shipping_method' );
+		$overview_link        = sprintf( ' <a href="%s">%s</a>', esc_url( $permalink ), __( 'Return to overview.', 'woocommerce-advanced-shipping' ) );
+		$messages['was'][1]  .= $overview_link;
+		$messages['was'][6]  .= $overview_link;
+		$messages['was'][9]  .= $overview_link;
+		$messages['was'][8]  .= $overview_link;
 		$messages['was'][10] .= $overview_link;
 
 		return $messages;
@@ -151,7 +151,7 @@ class WAS_Post_Type {
 		/**
 		 * Load meta box conditions view
 		 */
-		require_once plugin_dir_path( __FILE__ ) . 'admin/settings/meta-box-conditions.php';
+		require_once plugin_dir_path( __FILE__ ) . 'admin/views/meta-box-conditions.php';
 
 	}
 
@@ -168,7 +168,7 @@ class WAS_Post_Type {
 		/**
 		 * Load meta box settings view
 		 */
-		require_once plugin_dir_path( __FILE__ ) . 'admin/settings/meta-box-settings.php';
+		require_once plugin_dir_path( __FILE__ ) . 'admin/views/meta-box-settings.php';
 
 	}
 
@@ -203,13 +203,13 @@ class WAS_Post_Type {
 			return $post_id;
 		}
 
-		$shipping_method = $_POST['_was_shipping_method'];
-		$shipping_method['shipping_title'] 	= sanitize_text_field( $shipping_method['shipping_title'] );
-		$shipping_method['shipping_cost'] 	= wc_format_decimal( $shipping_method['shipping_cost'] );
-		$shipping_method['handling_fee'] 	= wc_format_decimal( $shipping_method['handling_fee'] );
+		$shipping_method                    = $_POST['_was_shipping_method'];
+		$shipping_method['shipping_title']  = sanitize_text_field( $shipping_method['shipping_title'] );
+		$shipping_method['shipping_cost']   = wc_format_decimal( $shipping_method['shipping_cost'] );
+		$shipping_method['handling_fee']    = preg_replace( '/[^0-9\%\.\,\-]/', '', $shipping_method['handling_fee'] );
 		$shipping_method['cost_per_weight'] = wc_format_decimal( $shipping_method['cost_per_weight'] );
-		$shipping_method['cost_per_item'] 	= wc_format_decimal( $shipping_method['cost_per_item'] );
-		$shipping_method['tax'] 			= 'taxable' == $shipping_method['tax'] ? 'taxable' : 'not_taxable';
+		$shipping_method['cost_per_item']   = preg_replace( '/[^0-9\%\.\,\-]/', '', $shipping_method['cost_per_item'] );
+		$shipping_method['tax']             = 'taxable' == $shipping_method['tax'] ? 'taxable' : 'not_taxable';
 
 		update_post_meta( $post_id, '_was_shipping_method', $shipping_method );
 
@@ -248,7 +248,7 @@ class WAS_Post_Type {
 			return $post_id;
 		endif;
 
-		$shipping_method_conditions = $_POST['_was_shipping_method_conditions'];
+		$shipping_method_conditions = $_POST['conditions'];
 
 		update_post_meta( $post_id, '_was_shipping_method_conditions', $shipping_method_conditions );
 
@@ -288,4 +288,4 @@ class WAS_Post_Type {
 /**
  * Load condition object
  */
-require_once plugin_dir_path( __FILE__ ) . 'admin/settings/conditions/class-was-condition.php';
+require_once plugin_dir_path( __FILE__ ) . 'admin/class-was-condition.php';

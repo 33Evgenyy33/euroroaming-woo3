@@ -10,7 +10,11 @@ class ACP_Editing_Model_Post_Date extends ACP_Editing_Model {
 		$post = get_post( $id );
 
 		if ( ! $post ) {
-			return false;
+			return null;
+		}
+
+		if ( in_array( $post->post_status, array( 'draft', 'inherit' ) ) ) {
+			return null;
 		}
 
 		return date( 'Ymd', strtotime( $post->post_date ) );

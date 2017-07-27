@@ -1,11 +1,36 @@
 == Changelog ==
 
+= 1.0.13 - 12/03/2017 =
+
+* [Add] - Full WC 2.7 compatibility (earlier versions are also compatible, but can show (harmless) notices)
+* [Add] - PHP 7.1 compatibility
+* [Improvement] - Ensure the products within a shipping package are shown in the admin order screen
+* [Fix] - 'Not equal to' operator not working properly with continents
+* [Fix] - Zipcode range character (-) was filtered from zipcodes when it shouldn't
+
+= 1.0.12 - 19/10/2016 =
+
+* [Add] - Continent support inside the 'country' condition
+* [Improvement] - Restructure conditional logic parts
+* [Improvement] - Use autocomplete select (select2) for conditions with many options
+* [Improvement] - Improved 'product' condition value fields (allow searching) and supports huge amounts of products
+* [Improvement] - Allow variations to be searched / set in the 'contains product' condition
+
+= 1.0.11 - 01/06/2016 =
+
+* [Fix] - Make sure WPML translated rates only show for the right language
+* [Add] - Show the shipping rate ID in the admin table when on shipping debug mode
+* [Improvement] - Comma separated cities can now have a space after the comma (previously this didn't work as expected)
+* [i18n] - Add Hungarian translation
+* WooCommerce 2.6 ready since 1.0.10!
+
 = 1.0.10 - 11/04/2016 =
 
 * [Add] - Shipping rate translation compatibility for WPML
 * [Add] - Condition descriptions for all conditions
 * [Improvement] - Mobile optimization for the overview table
 * [Improvement] - Allow 'coupon' condition to have a percentage of flat amount to match against given discount
+* [Add] -WooCommerce 2.6 compatibility.
 
 = 1.0.9 - 01/03/2016 =
 

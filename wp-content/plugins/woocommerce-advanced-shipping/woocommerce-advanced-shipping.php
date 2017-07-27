@@ -1,10 +1,9 @@
 <?php
 /**
- * Plugin Name: 	Woocommerce Advanced Shipping
+ * Plugin Name: 	WooCommerce Advanced Shipping
  * Plugin URI: 		http://jeroensormani.com/
- * Donate link: 	http://jeroensormani.com/donate/
  * Description: 	WooCommerce Advanced Shipping allows you to configure advanced shipping conditions with <strong>conditional logic!</strong>
- * Version: 		1.0.10
+ * Version: 		1.0.13
  * Author: 			Jeroen Sormani
  * Author URI: 		http://jeroensormani.com/
  * Text Domain: 	woocommerce-advanced-shipping
@@ -14,11 +13,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /**
  * Copyright Jeroen Sormani
- * Class Woocommerce_Advanced_Shipping
+ * Class WooCommerce_Advanced_Shipping
  *
  * Main WAS class, add filters and handling all other files
  *
- * @class		Woocommerce_Advanced_Shipping
+ * @class		WooCommerce_Advanced_Shipping
  * @version		1.0.0
  * @author		Jeroen Sormani
  */
@@ -31,7 +30,7 @@ class WooCommerce_Advanced_Shipping {
 	 * @since 1.0.1
 	 * @var string $version Plugin version number.
 	 */
-	public $version = '1.0.10';
+	public $version = '1.0.13';
 
 
 	/**
@@ -109,8 +108,11 @@ class WooCommerce_Advanced_Shipping {
 	 */
 	public function init() {
 
-		// Add hooks/filters
-		$this->was_hooks();
+		// Initialize shipping method class
+		add_action( 'woocommerce_shipping_init', array( $this, 'was_shipping_method' ) );
+
+		// Add shipping method
+		add_action( 'woocommerce_shipping_methods', array( $this, 'add_shipping_method_class' ) );
 
 		// Load textdomain
 		$this->load_textdomain();
@@ -145,25 +147,9 @@ class WooCommerce_Advanced_Shipping {
 			require_once plugin_dir_path( __FILE__ ) . '/includes/admin/class-was-admin.php';
 			$this->admin = new WAS_Admin();
 
+			require_once plugin_dir_path( __FILE__ ) . '/includes/admin/admin-functions.php';
+
 		endif;
-
-	}
-
-
-	/**
-	 * Hooks.
-	 *
-	 * Initialize plugin hooks like actions and filters.
-	 *
-	 * @since 1.0.0
-	 */
-	public function was_hooks() {
-
-		// Initialize shipping method class
-		add_action( 'woocommerce_shipping_init', array( $this, 'was_shipping_method' ) );
-
-		// Add shipping method
-		add_action( 'woocommerce_shipping_methods', array( $this, 'was_add_shipping_method' ) );
 
 	}
 
@@ -208,7 +194,7 @@ class WooCommerce_Advanced_Shipping {
 	 *
 	 * @since 1.0.0
 	 */
-	public function was_add_shipping_method( $methods ) {
+	public function add_shipping_method_class( $methods ) {
 
 		if ( class_exists( 'WAS_Advanced_Shipping_Method' ) ) :
 			$methods[] = 'WAS_Advanced_Shipping_Method';

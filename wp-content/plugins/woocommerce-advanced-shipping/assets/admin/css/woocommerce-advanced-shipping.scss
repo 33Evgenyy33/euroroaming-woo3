@@ -1,0 +1,30 @@
+@import 'parts/wp-conditions';
+
+/* Hide visibility from admin */
+.post-type-was .misc-pub-visibility#visibility {
+	display: none;
+}
+
+/**************************************************************
+ * Meta box
+ *************************************************************/
+.was-option label {
+	display: inline-block;
+	width: 150px;
+}
+//.was-option input {
+//	line-height: 19px;
+//}
+
+/* WooCommerce Add icon */
+.add.button:before {
+	font-family: WooCommerce;
+	speak: none;
+	font-weight: 400;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	margin-right: 7px;
+	content: "\e007";
+}

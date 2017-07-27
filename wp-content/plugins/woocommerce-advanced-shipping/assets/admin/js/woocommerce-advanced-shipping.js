@@ -1,20 +1,25 @@
 jQuery( function( $ ) {
 
-	// Add condition
-	$( '#was_conditions' ).on( 'click', '.condition-add', function() {
+	/**************************************************************
+	 * WPC - 1.0.2 - Resolves issue with duplicate group IDs
+	 *************************************************************/
 
+		// Add condition
+	$( document.body ).on( 'click', '.wpc-condition-add', function() {
+
+		var $this = $( this );
 		var data = {
-			action: 'was_add_condition',
+			action: wpc.action_prefix + 'add_condition',
 			group: $( this ).attr( 'data-group' ),
-			nonce: was.nonce
+			nonce: wpc.nonce
 		};
+		var condition_group = $this.parents( '.wpc-conditions' ).find( '.wpc-condition-group-' + data.group );
 
-		// Loading icon
-		var loading_icon = '<div class="was-condition-wrap loading"></div>';
-		$( '.condition-group-' + data.group ).append( loading_icon ).children( ':last' ).block({ message: null, overlayCSS: { background: '', opacity: 0.6 } });
+		var loading_icon = '<div class="wpc-condition-wrap loading"></div>';
+		condition_group.append( loading_icon ).children( ':last' ).block({ message: null, overlayCSS: { background: '', opacity: 0.6 } });
 
 		$.post( ajaxurl, data, function( response ) {
-			$( '.condition-group-' + data.group + ' .was-condition-wrap.loading' ).first().replaceWith( function() {
+			condition_group.find( ' .wpc-condition-wrap.loading' ).first().replaceWith( function() {
 				return $( response ).hide().fadeIn( 'normal' );
 			});
 		});
@@ -22,33 +27,37 @@ jQuery( function( $ ) {
 	});
 
 	// Delete condition
-	$( '#was_conditions' ).on( 'click', '.condition-delete', function() {
+	$( document.body ).on( 'click', '.wpc-condition-delete', function() {
 
-		if ( $( this ).closest( '.condition-group' ).children( '.was-condition-wrap' ).length == 1 ) {
-			$( this ).closest( '.condition-group' ).fadeOut( 'normal', function() { $( this ).remove();	});
+		if ( $( this ).closest( '.wpc-condition-group' ).children( '.wpc-condition-wrap' ).length == 1 ) {
+			$( this ).closest( '.wpc-condition-group' ).fadeOut( 'normal', function() {
+				$( this ).next( '.or-text' ).remove();
+				$( this ).remove();
+			});
 		} else {
-			$( this ).closest( '.was-condition-wrap' ).fadeOut( 'normal', function() { $( this ).remove(); });
+			$( this ).closest( '.wpc-condition-wrap' ).slideUp( 'fast', function() { $( this ).remove(); });
 		}
 
 	});
 
 	// Add condition group
-	$( '#was_conditions' ).on( 'click', '.condition-group-add', function() {
+	$( document.body ).on( 'click', '.wpc-condition-group-add', function() {
 
-		var condition_group_loading = '<div class="condition-group loading"></div>';
+		var new_group_id = parseInt( $( '.wpc-condition-group' ).last().attr( 'data-group' ) ) + 1;
+		var condition_group_loading = '<div class="wpc-condition-group loading" data-group="' + new_group_id + '"></div>';
+		var conditions = $( this ).prev( '.wpc-conditions' );
+		var data = {
+			action: wpc.action_prefix + 'add_condition_group',
+			group: 	new_group_id,
+			nonce: 	wpc.nonce
+		};
 
 		// Display loading icon
-		$( '.was_conditions' ).append( condition_group_loading ).children( ':last').block({ message: null, overlayCSS: { background: '', opacity: 0.6 } });
-
-		var data = {
-			action: 'was_add_condition_group',
-			group: 	parseInt( $( '.condition-group' ).length ),
-			nonce: 	was.nonce
-		};
+		conditions.append( condition_group_loading ).children( ':last' ).block({ message: null, overlayCSS: { background: '', opacity: 0.6 } });
 
 		// Insert condition group
 		$.post( ajaxurl, data, function( response ) {
-			$( '.condition-group ~ .loading' ).first().replaceWith( function() {
+			conditions.find( '.wpc-condition-group.loading' ).first().replaceWith( function() {
 				return $( response ).hide().fadeIn( 'normal' );
 			});
 		});
@@ -56,48 +65,45 @@ jQuery( function( $ ) {
 	});
 
 	// Update condition values
-	$( '#was_conditions' ).on( 'change', '.was-condition', function () {
+	$( document.body ).on( 'change', '.wpc-condition', function () {
 
 		var loading_wrap = '<span style="width: 30%; border: 1px solid transparent; display: inline-block;">&nbsp;</span>';
 		var data = {
-			action: 		'was_update_condition_value',
-			id:				$( this ).attr( 'data-id' ),
-			group:			$( this ).attr( 'data-group' ),
-			condition: 		$( this ).val(),
-			nonce: 			was.nonce
+			action: 	wpc.action_prefix + 'update_condition_value',
+			id:			$( this ).attr( 'data-id' ),
+			group:		$( this ).attr( 'data-group' ),
+			condition: 	$( this ).val(),
+			nonce: 		wpc.nonce
 		};
+		var condition_group = $( this ).parents( '.wpc-conditions' ).find( '.wpc-condition-group-' + data.group );
+		var replace = '.wpc-value-wrap-' + data.id;
 
-		var replace = '.was-value-wrap-' + data.id;
+		// Loading icon
+		condition_group.find( replace ).html( loading_wrap ).block({ message: null, overlayCSS: { background: '', opacity: 0.6 } });
 
-		$( replace ).html( loading_wrap )
-			.block({ message: null, overlayCSS: { background: '', opacity: 0.6 } });
-
+		// Replace value field
 		$.post( ajaxurl, data, function( response ) {
-			$( replace ).replaceWith( response );
+			condition_group.find( replace ).replaceWith( response );
+			$( document.body ).trigger( 'wc-enhanced-select-init' );
 		});
 
 		// Update condition description
 		var description = {
-			action:		'was_update_condition_description',
+			action:		wpc.action_prefix + 'update_condition_description',
 			condition: 	data.condition,
-			nonce: 		was.nonce
+			nonce: 		wpc.nonce
 		};
 
 		$.post( ajaxurl, description, function( description_response ) {
-			$( replace + ' ~ .was-description' ).replaceWith( description_response );
-
+			condition_group.find( replace + ' ~ .wpc-description' ).replaceWith( description_response );
 			// Tooltip
 			$( '.tips, .help_tip, .woocommerce-help-tip' ).tipTip({ 'attribute': 'data-tip', 'fadeIn': 50, 'fadeOut': 50, 'delay': 200 });
 		})
 
 	});
 
-	/**************************************************************
-	 * Overview
-	 *************************************************************/
-
 	// Sortable
-	$( '.was-table tbody' ).sortable({
+	$( '.wpc-conditions-post-table tbody' ).sortable({
 		items:					'tr',
 		handle:					'.sort',
 		cursor:					'move',
@@ -117,20 +123,21 @@ jQuery( function( $ ) {
 
 			$table 	= $( this ).closest( 'table' );
 			$table.block({ message: null, overlayCSS: { background: '#fff', opacity: 0.6 } });
-			// Update shipping method order
+			// Update fee order
 			var data = {
-				action:	'was_save_shipping_rates_table',
+				action:	wpc.action_prefix + 'save_post_order',
 				form: 	$( this ).closest( 'form' ).serialize(),
-				nonce: was.nonce
+				nonce: 	wpc.nonce
 			};
 
 			$.post( ajaxurl, data, function( response ) {
-				$( '.was-table tbody tr:even' ).addClass( 'alternate' );
-				$( '.was-table tbody tr:odd' ).removeClass( 'alternate' );
+				$( '.wpc-conditions-post-table tbody tr:even' ).addClass( 'alternate' );
+				$( '.wpc-conditions-post-table tbody tr:odd' ).removeClass( 'alternate' );
 				$table.unblock();
 			});
 		}
 	});
+
 
 	// Toggle list table rows on small screens
 	$( '#advanced_shipping_shipping_methods' ).on( 'click', '.toggle-row', function() {

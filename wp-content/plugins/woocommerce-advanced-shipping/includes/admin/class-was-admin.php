@@ -2,14 +2,12 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /**
- * Class WAS_Admin.
+ * Admin class.
  *
- * WAS_Admin class handles stuff for admin.
+ * Handle all admin related functions.
  *
- * @class       WAS_Admin
  * @author     	Jeroen Sormani
- * @package		WooCommerce Advanced Shipping
- * @version		1.0.5
+ * @version		1.0.0
  */
 class WAS_Admin {
 
@@ -37,7 +35,7 @@ class WAS_Admin {
 		global $pagenow;
 
 		// Add to WC Screen IDs to load scripts.
-		add_filter( 'woocommerce_screen_ids', array( $this, 'add_was_screen_ids' ) );
+		add_filter( 'woocommerce_screen_ids', array( $this, 'add_screen_ids' ) );
 
 		// Enqueue scripts
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
@@ -63,7 +61,7 @@ class WAS_Admin {
 	 * @param  array $screen_ids List of existing screen IDs.
 	 * @return array             List of modified screen IDs.
 	 */
-	public function add_was_screen_ids( $screen_ids ) {
+	public function add_screen_ids( $screen_ids ) {
 
 		$screen_ids[] = 'was';
 
@@ -89,13 +87,16 @@ class WAS_Admin {
 		) :
 
 			// Style script
-			wp_enqueue_style( 'woocommerce-advanced-shipping-css', plugins_url( 'assets/admin/css/woocommerce-advanced-shipping.css', WooCommerce_Advanced_Shipping()->file ), array(), WooCommerce_Advanced_Shipping()->version );
+			wp_enqueue_style( 'woocommerce-advanced-shipping', plugins_url( 'assets/admin/css/woocommerce-advanced-shipping.min.css', WooCommerce_Advanced_Shipping()->file ), array(), WooCommerce_Advanced_Shipping()->version );
 
 			// Javascript
-			wp_enqueue_script( 'woocommerce-advanced-shipping-js', plugins_url( 'assets/admin/js/woocommerce-advanced-shipping.js', WooCommerce_Advanced_Shipping()->file ), array( 'jquery', 'jquery-ui-sortable', 'jquery-blockui', 'jquery-tiptip' ), WooCommerce_Advanced_Shipping()->version, true );
+			wp_enqueue_script( 'woocommerce-advanced-shipping', plugins_url( 'assets/admin/js/woocommerce-advanced-shipping.min.js', WooCommerce_Advanced_Shipping()->file ), array( 'jquery', 'jquery-ui-sortable', 'jquery-blockui', 'jquery-tiptip' ), WooCommerce_Advanced_Shipping()->version, true );
+			wp_enqueue_script( 'select2' );
 
-			wp_localize_script( 'woocommerce-advanced-shipping-js', 'was', array(
-				'nonce' => wp_create_nonce( 'was-ajax-nonce' ),
+			wp_localize_script( 'woocommerce-advanced-shipping', 'wpc', array(
+				'nonce'         => wp_create_nonce( 'wpc-ajax-nonce' ),
+				'action_prefix' => 'was_',
+				'asset_url'     => plugins_url( 'assets/', WooCommerce_Advanced_Shipping()->file ),
 			) );
 
 		endif;

@@ -1,10 +1,11 @@
 <?php
 /*
-Plugin Name: 		Admin Columns - WooCommerce add-on
-Version: 			2.1.3
-Description: 		Enhance your product and order overviews with new columns, and edit products directly from the overview page. WooCommerce integration Add-on for Admin Columns Pro.
-Author: 			Codepress
-Author URI: 		https://admincolumns.com
+Plugin Name: 		Admin Columns Pro - WooCommerce
+Version: 			2.1.4
+Description: 		Supercharges Admin Columns Pro with powerful WooCommerce columns.
+Author: 			Admin Columns
+Author URI: 		https://www.admincolumns.com
+Plugin URI: 		https://www.admincolumns.com
 Text Domain: 		codepress-admin-columns
 */
 

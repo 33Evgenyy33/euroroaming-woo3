@@ -10,3 +10,5 @@ a.reset-sorting.disabled {
   vertical-align: middle;
   float: left;
   margin-bottom: 4px; }
+  .wrap .tablenav.top a.reset-sorting:last-child {
+    margin-right: 5px; }

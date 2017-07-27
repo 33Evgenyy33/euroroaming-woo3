@@ -1,0 +1,64 @@
+.div_checkout_fields label {cursor: pointer;
+    padding: 15px 20px;
+    display: block;
+    background-color: rgba(221, 221, 221, 0.35);
+    margin-bottom: 3px;
+    }
+    
+
+    
+ .div_checkout_fields{ width: 470px;}
+ input.button.button-primary.btnsave {
+    margin-top: 15px;
+}
+	#wcf_dialog {width:500px; font-size:15px; font-weight:bold;}
+#wcf_dialog p {font-size:15px; font-weight:bold;}
+.free_plugin {
+    margin-bottom: 20px;
+}
+
+.paid_plugin {
+    margin-bottom: 20px;
+}
+
+.paid_plugin h3 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+
+.free_plugin h3 {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.plug-containter {
+    width: 100%;
+    display: inline-block;
+    margin-left: 20px;
+}
+.plug-containter .contain-section {
+    width: 25%;
+    display: inline-block;
+    margin-top: 30px;
+}
+.plug-containter .contain-section .contain-img {
+    width: 30%;
+    display: inline-block;
+}
+.plug-containter .contain-section .contain-title {
+    width: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+.plug-containter .contain-section .contain-title a {
+    text-decoration: none;
+    line-height: 20px;
+    font-weight: bold;
+}
+.version_logo_img {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+    

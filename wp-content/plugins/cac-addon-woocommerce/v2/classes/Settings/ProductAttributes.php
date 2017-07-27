@@ -151,7 +151,7 @@ class ACA_WC_Settings_ProductAttributes extends AC_Settings_Column
 			// Taxonomy
 			if ( $attribute['is_taxonomy'] ) {
 				$label = $this->get_attribute_taxonomy_label( $name );
-				$product = wc_get_product( $value );
+				$product = wc_get_product( $original_value );
 				$values = $product->get_attribute( $name );
 			}
 

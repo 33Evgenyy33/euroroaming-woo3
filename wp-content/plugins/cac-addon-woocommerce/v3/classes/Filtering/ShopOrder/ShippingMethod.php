@@ -13,15 +13,19 @@ class ACA_WC_Filtering_ShopOrder_ShippingMethod extends ACA_WC_Filtering_ShopOrd
 		parent::__construct( $column );
 	}
 
-	public function filter_by_wc_shipping_method( $where ) {
+	public function filter_by_wc_shipping_method( $where, WP_Query $query ) {
 		global $wpdb;
 
-		return $where . $wpdb->prepare( "AND om.meta_value = %s AND om.meta_key = 'method_id'", $this->get_filter_value() );
+		if( $query->is_main_query() ){
+			$where .= $wpdb->prepare( "AND om.meta_value = %s AND om.meta_key = 'method_id'", $this->get_filter_value() );
+		}
+
+		return $where;
 	}
 
 	public function get_filtering_vars( $vars ) {
-		add_filter( 'posts_join', array( $this, 'join_by_order_itemmeta' ) );
-		add_filter( 'posts_where', array( $this, 'filter_by_wc_shipping_method' ) );
+		add_filter( 'posts_join', array( $this, 'join_by_order_itemmeta' ), 10, 2 );
+		add_filter( 'posts_where', array( $this, 'filter_by_wc_shipping_method' ), 10, 2 );
 
 		return $vars;
 	}

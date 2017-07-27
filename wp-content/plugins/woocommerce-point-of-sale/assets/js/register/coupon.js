@@ -525,6 +525,7 @@ var WC_POS_DISCOUNT_UPDATED                    = 203;
                 discount         = ( instance.amount * discount_percent ) / cart_item_qty;
 
             } else if ( instance.is_type( 'fixed_product' ) ) {
+                //console.log('fixed_product!');
                 discount = Math.min( instance.amount, discounting_amount );
                 discount = single ? discount : discount * cart_item_qty;
             }
@@ -536,12 +537,14 @@ var WC_POS_DISCOUNT_UPDATED                    = 203;
             if ( instance.is_type( [ 'percent_product', 'fixed_product' ] ) ) {
                 if ( discounting_amount ) {
 
-                    if ( '' === instance.limit_usage_to_x_items ) {//|| 0 === instance.limit_usage_to_x_items
+                    if ( '' === instance.limit_usage_to_x_items) {//|| 0 === instance.limit_usage_to_x_items
                         var limit_usage_qty = cart_item_qty;
                     } else {
-                        var limit_usage_qty              = Math.min( instance.limit_usage_to_x_items, cart_item_qty );
+                        var limit_usage_qty              = Math.max( instance.limit_usage_to_x_items, cart_item_qty );
+                        console.log(limit_usage_qty);
                         instance.limit_usage_to_x_items  = Math.max( 0, instance.limit_usage_to_x_items - limit_usage_qty );
                     }
+
                     if ( single ) {
                         discount = ( discount * limit_usage_qty ) / cart_item_qty;
                     } else {

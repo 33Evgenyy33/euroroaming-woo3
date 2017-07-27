@@ -59,6 +59,7 @@ final class ACP_Sorting_Strategy_Post extends ACP_Sorting_Strategy {
 		$query_vars['posts_per_page'] = -1;
 		$query_vars['order'] = 'ASC';
 		$query_vars['posts_per_archive_page'] = '';
+		$query_vars['nopaging'] = true;
 
 		return get_posts( array_merge( $query_vars, $args ) );
 	}
