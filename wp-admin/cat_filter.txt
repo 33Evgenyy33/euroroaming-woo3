@@ -1,0 +1,4 @@
+INNER JOIN wp_term_relationships AS term_rel ON posts.ID = term_rel.object_id
+                               INNER JOIN wp_term_taxonomy AS term_tax ON term_rel.term_taxonomy_id = term_tax.term_taxonomy_id
+                                      AND term_tax.taxonomy = 'wpsl_store_category'
+                                      AND term_tax.term_id IN (49)

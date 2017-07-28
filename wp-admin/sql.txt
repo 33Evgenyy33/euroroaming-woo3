@@ -1,0 +1,14 @@
+SELECT post_lat.meta_value AS lat,
+                           post_lng.meta_value AS lng,
+                           posts.ID, 
+                           ( %d * acos( cos( radians( %s ) ) * cos( radians( post_lat.meta_value ) ) * cos( radians( post_lng.meta_value ) - radians( %s ) ) + sin( radians( %s ) ) * sin( radians( post_lat.meta_value ) ) ) ) 
+                        AS distance
+                      FROM wp_posts AS posts
+                INNER JOIN wp_postmeta AS post_lat ON post_lat.post_id = posts.ID AND post_lat.meta_key = 'wpsl_lat'
+                INNER JOIN wp_postmeta AS post_lng ON post_lng.post_id = posts.ID AND post_lng.meta_key = 'wpsl_lng'
+                    INNER JOIN wp_term_relationships AS term_rel ON posts.ID = term_rel.object_id
+                               INNER JOIN wp_term_taxonomy AS term_tax ON term_rel.term_taxonomy_id = term_tax.term_taxonomy_id
+                                      AND term_tax.taxonomy = 'wpsl_store_category'
+                                      AND term_tax.term_id IN (49)
+                     WHERE posts.post_type = 'wpsl_stores' 
+                       AND posts.post_status = 'publish' GROUP BY posts.ID HAVING distance < %d ORDER BY distance LIMIT 0, %d

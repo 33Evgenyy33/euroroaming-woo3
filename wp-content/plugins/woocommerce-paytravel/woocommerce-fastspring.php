@@ -13,8 +13,16 @@ add_action('plugins_loaded', 'init_paytravel_gateway', 0);
 function init_paytravel_gateway() {
 	
 	if ( ! class_exists( 'WC_Payment_Gateway' )) { return; }
-	
-	
+
+
+	/**
+	 * @property string id
+	 * @property string method_title
+	 * @property string method_description
+	 * @property string icon
+	 * @property bool has_fields
+	 * @property array supports
+	 */
 	class PayTravel extends WC_Payment_Gateway
 	{
 		public static $_instance = NULL;	
@@ -99,7 +107,7 @@ function init_paytravel_gateway() {
 			$order->update_status('on-hold', 'Ожидание оплаты через PayTravel');
 
 			// Reduce stock levels
-			$order->reduce_order_stock();
+			wc_reduce_stock_levels($order->get_id());
 
 			// Remove cart
 			$woocommerce->cart->empty_cart();

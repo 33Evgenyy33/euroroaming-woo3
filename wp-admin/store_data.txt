@@ -1,0 +1,487 @@
+Array
+(
+    [0] => Array
+        (
+            [ta_id] => 3267
+            [store] => Агентство ГУРУ Travel (пункт выдачи заказов и продажа сим-карт)
+            [thumb] => <img width="45" height="45" src="http://euroroaming/wp-content/uploads/2017/04/72-min-150x150.jpg" class="wpsl-store-thumb wp-post-image" alt="Агентство ГУРУ Travel (пункт выдачи заказов и продажа сим-карт)" srcset="http://euroroaming/wp-content/uploads/2017/04/72-min-150x150.jpg 150w, http://euroroaming/wp-content/uploads/2017/04/72-min-180x180.jpg 180w, http://euroroaming/wp-content/uploads/2017/04/72-min-300x300.jpg 300w, http://euroroaming/wp-content/uploads/2017/04/72-min-600x600.jpg 600w, http://euroroaming/wp-content/uploads/2017/04/72-min-350x350.jpg 350w" sizes="(max-width: 45px) 100vw, 45px" />
+            [id] => 22918
+            [permalink] => http://euroroaming/stores-by-operator/test1/
+            [address] => м. Китай-Город (1 минута от метро), БЦ Лубянский, Лубянский проезд, дом 15, стр 2, подъезд 4, 2 этаж (для входа нужен любой документ, удостоверяющий личность)
+            [address2] => 
+            [city] => г. Москва
+            [state] => 
+            [zip] => 
+            [country] => Россия
+            [lat] => 55.763612
+            [lng] => 37.62372
+            [phone] => 8 (967) 134-30-03
+            [fax] => +7(499)322-10-28
+            [email] => info@guru-travel.ru
+            [hours] => <table class="wpsl-opening-hours"><span class="wpsl-location-address-label" >Режим работы:</span><tr><td>Понедельник</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Вторник</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Среда</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Четверг</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Пятница</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Суббота</td><td>Выходной</td></tr><tr><td>Воскресенье</td><td>Выходной</td></tr></table>
+            [url] => 
+        )
+
+    [1] => Array
+        (
+            [ta_id] => 3267
+            [store] => Агентство ГУРУ Travel (пункт выдачи заказов и продажа сим-карт)
+            [thumb] => 
+            [id] => 16266
+            [permalink] => http://euroroaming/stores-by-operator/ooo-guru-trevel/
+            [address] => м. Китай-Город (1 минута от метро), ул. Маросейка, 9/2 стр. 1, подъезд 2, эт 3, каб 7, домофон 8 (вход справа от Макдональдс)
+            [address2] => Сим-карты в наличии: Orange, Globalsim с тарифом США, GLOBALSIM-Internet, EuropaSim
+            [city] => г. Москва
+            [state] => 
+            [zip] => 
+            [country] => Россия
+            [lat] => 55.757786
+            [lng] => 37.634088
+            [phone] => 8 (967) 134-30-03
+            [fax] => +7(499)322-10-28
+            [email] => info@guru-travel.ru
+            [hours] => <table class="wpsl-opening-hours"><span class="wpsl-location-address-label" >Режим работы:</span><tr><td>Понедельник</td><td><time>10:30 - 20:00</time></td></tr><tr><td>Вторник</td><td><time>10:30 - 20:00</time></td></tr><tr><td>Среда</td><td><time>10:30 - 20:00</time></td></tr><tr><td>Четверг</td><td><time>10:30 - 20:00</time></td></tr><tr><td>Пятница</td><td><time>10:30 - 20:00</time></td></tr><tr><td>Суббота</td><td>Выходной</td></tr><tr><td>Воскресенье</td><td>Выходной</td></tr></table>
+            [url] => 
+        )
+
+    [2] => Array
+        (
+            [ta_id] => 3073
+            [store] => Турагентство Меркурий (пункт выдачи заказов и продажа сим-карт)
+            [thumb] => 
+            [id] => 8714
+            [permalink] => http://euroroaming/stores-by-operator/sim-karty-v-moskve-metro-kitaj-gorod/
+            [address] => ст.м Китай город, ул. Маросейка д. 13, стр. 2, под. 2, офис 25 (наберите на домофоне 25)
+            [address2] => 
+            [city] => Москва
+            [state] => 
+            [zip] => 
+            [country] => Россия
+            [lat] => 55.758211
+            [lng] => 37.636495
+            [phone] => 8-905-700-02-23, (495)623-29-90, 628-21-60
+            [fax] => +7(499)322-10-28
+            [email] => 
+            [hours] => <table class="wpsl-opening-hours"><span class="wpsl-location-address-label" >Режим работы:</span><tr><td>Понедельник</td><td><time>10:00 - 18:00</time></td></tr><tr><td>Вторник</td><td><time>10:00 - 18:00</time></td></tr><tr><td>Среда</td><td><time>10:00 - 18:00</time></td></tr><tr><td>Четверг</td><td><time>10:00 - 18:00</time></td></tr><tr><td>Пятница</td><td><time>10:00 - 18:00</time></td></tr><tr><td>Суббота</td><td>Выходной</td></tr><tr><td>Воскресенье</td><td>Выходной</td></tr></table>
+            [url] => http://www.mercury-tour.ru
+        )
+
+    [3] => Array
+        (
+            [ta_id] => 3299
+            [store] => ТА &#8220;Anex Tour&#8221; (пункт выдачи заказов и продажа сим-карт)
+            [thumb] => 
+            [id] => 34136
+            [permalink] => http://euroroaming/stores-by-operator/ta-anex-tour-punkt-vydachi-zakazov-i-prodazha-sim-kart/
+            [address] => ул. Мясницкая, д. 22/2, эт. 3 оф. 215 (м. Чистые пруды / м. Лубянка)
+            [address2] => Карты в наличии: GlobalSim, EuropaSim, Orange
+            [city] => г. Москва
+            [state] => 
+            [zip] => 
+            [country] => Россия
+            [lat] => 55.761907
+            [lng] => 37.634709
+            [phone] => 8 (495) 623-26-70, 8 (495) 725-85-99
+            [fax] => 8-800-555-2834
+            [email] => 
+            [hours] => <table class="wpsl-opening-hours"><span class="wpsl-location-address-label" >Режим работы:</span><tr><td>Понедельник</td><td><time>11:00 - 19:00</time></td></tr><tr><td>Вторник</td><td><time>11:00 - 19:00</time></td></tr><tr><td>Среда</td><td><time>11:00 - 19:00</time></td></tr><tr><td>Четверг</td><td><time>11:00 - 19:00</time></td></tr><tr><td>Пятница</td><td><time>11:00 - 19:00</time></td></tr><tr><td>Суббота</td><td>Выходной</td></tr><tr><td>Воскресенье</td><td>Выходной</td></tr></table>
+            [url] => 
+        )
+
+    [4] => Array
+        (
+            [ta_id] => 3380
+            [store] => ТА &#8220;Vacanta Travel&#8221; (пункт выдачи заказов и продажа сим-карт)
+            [thumb] => 
+            [id] => 50832
+            [permalink] => http://euroroaming/stores-by-operator/ta-vacanta-travel/
+            [address] => м. Смоленская, ул. Арбат, д.54/2, стр.1, оф. 460
+            [address2] => 
+            [city] => г. Москва
+            [state] => 
+            [zip] => 
+            [country] => Россия
+            [lat] => 55.747112
+            [lng] => 37.583064
+            [phone] => +7(495) 971 39 43
+            [fax] => 
+            [email] => 
+            [hours] => <table class="wpsl-opening-hours"><span class="wpsl-location-address-label" >Режим работы:</span><tr><td>Понедельник</td><td><time>11:00 - 20:00</time></td></tr><tr><td>Вторник</td><td><time>11:00 - 20:00</time></td></tr><tr><td>Среда</td><td><time>11:00 - 20:00</time></td></tr><tr><td>Четверг</td><td><time>11:00 - 20:00</time></td></tr><tr><td>Пятница</td><td><time>11:00 - 20:00</time></td></tr><tr><td>Суббота</td><td>Выходной</td></tr><tr><td>Воскресенье</td><td>Выходной</td></tr></table>
+            [url] => 
+        )
+
+    [5] => Array
+        (
+            [ta_id] => 167
+            [store] => ТА &#8220;Travel Depot&#8221; (пункт выдачи заказов и продажа сим-карт)
+            [thumb] => 
+            [id] => 34995
+            [permalink] => http://euroroaming/stores-by-operator/ta-travel-depot/
+            [address] => м. Павелецкая, ул. Кожевническая, д. 3, стр. 1, офис 203
+            [address2] => 
+            [city] => г. Москва
+            [state] => 
+            [zip] => 
+            [country] => Россия
+            [lat] => 55.730595
+            [lng] => 37.642396
+            [phone] => +79057364431
+            [fax] => 
+            [email] => 
+            [hours] => <table class="wpsl-opening-hours"><span class="wpsl-location-address-label" >Режим работы:</span><tr><td>Понедельник</td><td><time>10:00 - 18:00</time></td></tr><tr><td>Вторник</td><td><time>10:00 - 18:00</time></td></tr><tr><td>Среда</td><td><time>10:00 - 18:00</time></td></tr><tr><td>Четверг</td><td><time>10:00 - 18:00</time></td></tr><tr><td>Пятница</td><td><time>10:00 - 18:00</time></td></tr><tr><td>Суббота</td><td>Выходной</td></tr><tr><td>Воскресенье</td><td>Выходной</td></tr></table>
+            [url] => 
+        )
+
+    [6] => Array
+        (
+            [ta_id] => 879
+            [store] => ТА &#8220;Турово&#8221; (продажа сим-карт)
+            [thumb] => 
+            [id] => 49732
+            [permalink] => http://euroroaming/stores-by-operator/ta-turovo-punkt-vydachi-zakazov-i-prodazha-sim-kart/
+            [address] => ул. Ямского поля 3-я, 9 к3, офис G109 (бизнесцентр АртРезидентс)
+            [address2] => 
+            [city] => г. Москва
+            [state] => 
+            [zip] => 
+            [country] => Россия
+            [lat] => 55.780956
+            [lng] => 37.580274
+            [phone] => +7 (495) 229-13-37
+            [fax] => 
+            [email] => 
+            [hours] => <table class="wpsl-opening-hours"><span class="wpsl-location-address-label" >Режим работы:</span><tr><td>Понедельник</td><td><time>09:00 - 19:00</time></td></tr><tr><td>Вторник</td><td><time>09:00 - 19:00</time></td></tr><tr><td>Среда</td><td><time>09:00 - 19:00</time></td></tr><tr><td>Четверг</td><td><time>09:00 - 19:00</time></td></tr><tr><td>Пятница</td><td><time>09:00 - 18:00</time></td></tr><tr><td>Суббота</td><td><time>10:00 - 13:00</time></td></tr><tr><td>Воскресенье</td><td>Выходной</td></tr></table>
+            [url] => 
+        )
+
+    [7] => Array
+        (
+            [ta_id] => 3331
+            [store] => ТА &#8220;МГП Бауманская&#8221; (продажа сим-карт)
+            [thumb] => 
+            [id] => 53105
+            [permalink] => http://euroroaming/stores-by-operator/ta-megatur/
+            [address] => м. Бауманская, ул. Спартаковская, 16, корп. 2
+            [address2] => 
+            [city] => г. Москва
+            [state] => 
+            [zip] => 
+            [country] => Россия
+            [lat] => 55.771761
+            [lng] => 37.675882
+            [phone] => 8(495)7754150
+            [fax] => 
+            [email] => 
+            [hours] => <table class="wpsl-opening-hours"><span class="wpsl-location-address-label" >Режим работы:</span><tr><td>Понедельник</td><td><time>11:00 - 19:00</time></td></tr><tr><td>Вторник</td><td><time>11:00 - 19:00</time></td></tr><tr><td>Среда</td><td><time>11:00 - 19:00</time></td></tr><tr><td>Четверг</td><td><time>11:00 - 19:00</time></td></tr><tr><td>Пятница</td><td><time>11:00 - 19:00</time></td></tr><tr><td>Суббота</td><td>Выходной</td></tr><tr><td>Воскресенье</td><td>Выходной</td></tr></table>
+            [url] => 
+        )
+
+    [8] => Array
+        (
+            [ta_id] => 3379
+            [store] => ТА отдыха с детьми &#8220;WayWay&#8221; (пункт продажи сим-карт)
+            [thumb] => 
+            [id] => 45478
+            [permalink] => http://euroroaming/stores-by-operator/ta-otdyha-s-detmi-wayway/
+            [address] => м. Улица 1905 года, ул. 2-я Звенигородская, д.13, стр. 43, оф. 330
+            [address2] => 
+            [city] => Москва
+            [state] => 
+            [zip] => 
+            [country] => Россия
+            [lat] => 55.761641
+            [lng] => 37.551618
+            [phone] => 8(495)966-21-33
+            [fax] => 
+            [email] => 
+            [hours] => <table class="wpsl-opening-hours"><span class="wpsl-location-address-label" >Режим работы:</span><tr><td>Понедельник</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Вторник</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Среда</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Четверг</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Пятница</td><td><time>10:00 - 18:00</time></td></tr><tr><td>Суббота</td><td>Выходной</td></tr><tr><td>Воскресенье</td><td>Выходной</td></tr></table>
+            [url] => 
+        )
+
+    [9] => Array
+        (
+            [ta_id] => 2192
+            [store] => Конаки (пункт продажи сим-карт)
+            [thumb] => 
+            [id] => 44402
+            [permalink] => http://euroroaming/stores-by-operator/konaki-punkt-vydachi-zakazov-i-prodazha-sim-kart/
+            [address] => Звенигородское шоссе, д.12, стр 3
+            [address2] => Карты в наличии: Orange, Globalsim, Europasim
+            [city] => г. Москва
+            [state] => 
+            [zip] => 
+            [country] => Россия
+            [lat] => 55.764715
+            [lng] => 37.549449
+            [phone] => 7 (499) 393-39-42, (499) 3933947, 89250900383
+            [fax] => 
+            [email] => 
+            [hours] => <table class="wpsl-opening-hours"><span class="wpsl-location-address-label" >Режим работы:</span><tr><td>Понедельник</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Вторник</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Среда</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Четверг</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Пятница</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Суббота</td><td>Выходной</td></tr><tr><td>Воскресенье</td><td>Выходной</td></tr></table>
+            [url] => 
+        )
+
+    [10] => Array
+        (
+            [ta_id] => 
+            [store] => ТА &#8220;Global Education Group&#8221; (пункт продажи и выдачи сим-карт)
+            [thumb] => 
+            [id] => 55264
+            [permalink] => http://euroroaming/stores-by-operator/ta-global-education-group-punkt-prodazhi-i-vydachi-sim-kart/
+            [address] => ул. Энергетическая д. 6, оф. 502
+            [address2] => 
+            [city] => Москва
+            [state] => 
+            [zip] => 
+            [country] => Россия
+            [lat] => 55.760658
+            [lng] => 37.704005
+            [phone] => 89653888071
+            [fax] => 
+            [email] => 
+            [hours] => 
+            [url] => 
+        )
+
+    [11] => Array
+        (
+            [ta_id] => 3284
+            [store] => ТА &#8220;Кронос Тур&#8221; (пункт выдачи заказов и продажа сим-карт)
+            [thumb] => 
+            [id] => 32625
+            [permalink] => http://euroroaming/stores-by-operator/ta-kronos-tur/
+            [address] => Звездный бульвар, 10 строение 1, офис 4, м. ВДНХ
+            [address2] => 
+            [city] => г. Москва
+            [state] => 
+            [zip] => 
+            [country] => Россия
+            [lat] => 55.81698
+            [lng] => 37.63334
+            [phone] => 8(903)555-74-42
+            [fax] => 
+            [email] => info@kronostour.ru
+            [hours] => <table class="wpsl-opening-hours"><span class="wpsl-location-address-label" >Режим работы:</span><tr><td>Понедельник</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Вторник</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Среда</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Четверг</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Пятница</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Суббота</td><td><time>11:00 - 16:00</time></td></tr><tr><td>Воскресенье</td><td><time>11:00 - 16:00</time></td></tr></table>
+            [url] => 
+        )
+
+    [12] => Array
+        (
+            [ta_id] => 3262
+            [store] => Агентство ТурЦентр (пункт выдачи заказов и продажа сим-карт)
+            [thumb] => 
+            [id] => 13835
+            [permalink] => http://euroroaming/stores-by-operator/agentstvo-turtsentr/
+            [address] => ст.м. Академическая, улица Кедрова, дом 14, корпус 1, офис на первом этаже (в торце здания).
+            [address2] => 
+            [city] => Москва
+            [state] => 
+            [zip] => 
+            [country] => Россия
+            [lat] => 55.683486
+            [lng] => 37.571913
+            [phone] => 8(903)5856000
+            [fax] => +7(499)322-10-28
+            [email] => tourc@yandex.ru
+            [hours] => <table class="wpsl-opening-hours"><span class="wpsl-location-address-label" >Режим работы:</span><tr><td>Понедельник</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Вторник</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Среда</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Четверг</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Пятница</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Суббота</td><td><time>12:00 - 17:00</time></td></tr><tr><td>Воскресенье</td><td>Выходной</td></tr></table>
+            [url] => 
+        )
+
+    [13] => Array
+        (
+            [ta_id] => 3383
+            [store] => Anex Tour (пункт выдачи заказов и продажа сим-карт)
+            [thumb] => 
+            [id] => 49641
+            [permalink] => http://euroroaming/stores-by-operator/anex-tour-punkt-vydachi-zakazov-i-prodazha-sim-kart/
+            [address] => метро Отрадное, кинотеатр Байконур, ул. Декабристов, д. 17, офис 13 (2й этаж)
+            [address2] => 
+            [city] => г. Москва
+            [state] => 
+            [zip] => 
+            [country] => Россия
+            [lat] => 55.86498
+            [lng] => 37.604923
+            [phone] => +7495 255-33-93
+            [fax] => 
+            [email] => 
+            [hours] => <table class="wpsl-opening-hours"><span class="wpsl-location-address-label" >Режим работы:</span><tr><td>Понедельник</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Вторник</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Среда</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Четверг</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Пятница</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Суббота</td><td>Выходной</td></tr><tr><td>Воскресенье</td><td>Выходной</td></tr></table>
+            [url] => 
+        )
+
+    [14] => Array
+        (
+            [ta_id] => 
+            [store] => Пункт выдачи заказов на Флотской
+            [thumb] => 
+            [id] => 8405
+            [permalink] => http://euroroaming/stores-by-operator/sim-karty-v-moskve-flotskaya/
+            [address] => ст. м Речной вокзал, ул. Флотская д.5 к.2
+            [address2] => (Только по предварительному звонку!)
+            [city] => Москва
+            [state] => 
+            [zip] => 
+            [country] => Россия
+            [lat] => 55.85258
+            [lng] => 37.494671
+            [phone] => +7(499)322-10-28
+            [fax] => +7(499)322-10-28
+            [email] => info@euroroaming.ru
+            [hours] => 
+            [url] => https://euroroaming.ru/
+        )
+
+    [15] => Array
+        (
+            [ta_id] => 3329
+            [store] => ТА &#8220;Онлайн-тур&#8221; (пункт выдачи сим-карт)
+            [thumb] => 
+            [id] => 53547
+            [permalink] => http://euroroaming/stores-by-operator/ta-onlajn-tur-punkt-prodazhi-i-vydachi-sim-kart/
+            [address] => м. Юго-Западная, проспект Вернандского, д. 86Б, стр. 1
+            [address2] => 
+            [city] => Москва
+            [state] => 
+            [zip] => 
+            [country] => Россия
+            [lat] => 55.662175
+            [lng] => 37.48037
+            [phone] => 7 (495)788-68-92
+            [fax] => 8-800-555-2834, +7(499)322-10-28
+            [email] => 
+            [hours] => <table class="wpsl-opening-hours"><span class="wpsl-location-address-label" >Режим работы:</span><tr><td>Понедельник</td><td><time>10:00 - 20:00</time></td></tr><tr><td>Вторник</td><td><time>10:00 - 20:00</time></td></tr><tr><td>Среда</td><td><time>10:00 - 20:00</time></td></tr><tr><td>Четверг</td><td><time>10:00 - 20:00</time></td></tr><tr><td>Пятница</td><td><time>10:00 - 20:00</time></td></tr><tr><td>Суббота</td><td><time>11:00 - 19:00</time></td></tr><tr><td>Воскресенье</td><td>Выходной</td></tr></table>
+            [url] => http://www.onlinetur.ru
+        )
+
+    [16] => Array
+        (
+            [ta_id] => 984
+            [store] => ТА Дорадо Тревел (пункт выдачи заказов и продажа сим-карт)
+            [thumb] => 
+            [id] => 32148
+            [permalink] => http://euroroaming/stores-by-operator/ta-dorado-trevel-punkt-vydachi-zakazov-i-prodazha-sim-kart/
+            [address] => м. Новокосино, ул. Новокосинская д. 17 корпус 7
+            [address2] => 
+            [city] => г. Москва
+            [state] => 
+            [zip] => 
+            [country] => Россия
+            [lat] => 55.740107
+            [lng] => 37.853539
+            [phone] => +7(499)504-82-14
+            [fax] => 
+            [email] => dorado-travel@yandex.ru
+            [hours] => <table class="wpsl-opening-hours"><span class="wpsl-location-address-label" >Режим работы:</span><tr><td>Понедельник</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Вторник</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Среда</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Четверг</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Пятница</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Суббота</td><td>Выходной</td></tr><tr><td>Воскресенье</td><td>Выходной</td></tr></table>
+            [url] => 
+        )
+
+    [17] => Array
+        (
+            [ta_id] => 2233
+            [store] => Митинское бюро путешествий (пункт выдачи заказов и продажа сим-карт)
+            [thumb] => 
+            [id] => 8704
+            [permalink] => http://euroroaming/stores-by-operator/sim-karty-v-moskve-na-mitinskoj/
+            [address] => ст.м. Митино, ул. Митинская д. 46, к.1
+            [address2] => 
+            [city] => Москва
+            [state] => 
+            [zip] => 
+            [country] => Россия
+            [lat] => 55.849223
+            [lng] => 37.358212
+            [phone] => 84957530107, 84957597440
+            [fax] => +7(499)322-10-28
+            [email] => 
+            [hours] => <table class="wpsl-opening-hours"><span class="wpsl-location-address-label" >Режим работы:</span><tr><td>Понедельник</td><td><time>10:30 - 19:30</time></td></tr><tr><td>Вторник</td><td><time>10:30 - 19:30</time></td></tr><tr><td>Среда</td><td><time>10:30 - 19:30</time></td></tr><tr><td>Четверг</td><td><time>10:30 - 19:30</time></td></tr><tr><td>Пятница</td><td><time>10:30 - 19:30</time></td></tr><tr><td>Суббота</td><td><time>11:00 - 17:00</time></td></tr><tr><td>Воскресенье</td><td>Выходной</td></tr></table>
+            [url] => 
+        )
+
+    [18] => Array
+        (
+            [ta_id] => 3298
+            [store] => Турагентство &#8220;Coral Travel&#8221; (пункт выдачи заказов и продажа сим-карт)
+            [thumb] => 
+            [id] => 35755
+            [permalink] => http://euroroaming/stores-by-operator/turagentstvo-coral-travel/
+            [address] => мкр. Куркино, м. Планерная, ул. Соколово-Мещерская, д.14, офис 8
+            [address2] => 
+            [city] => г. Москва
+            [state] => 
+            [zip] => 
+            [country] => Россия
+            [lat] => 55.896467
+            [lng] => 37.389071
+            [phone] => +7(499)643-31-41
+            [fax] => 
+            [email] => 
+            [hours] => <table class="wpsl-opening-hours"><span class="wpsl-location-address-label" >Режим работы:</span><tr><td>Понедельник</td><td><time>10:00 - 20:00</time></td></tr><tr><td>Вторник</td><td><time>10:00 - 20:00</time></td></tr><tr><td>Среда</td><td><time>10:00 - 20:00</time></td></tr><tr><td>Четверг</td><td><time>10:00 - 20:00</time></td></tr><tr><td>Пятница</td><td><time>10:00 - 20:00</time></td></tr><tr><td>Суббота</td><td><time>11:00 - 17:00</time></td></tr><tr><td>Воскресенье</td><td><time>11:00 - 17:00</time></td></tr></table>
+            [url] => 
+        )
+
+    [19] => Array
+        (
+            [ta_id] => 929
+            [store] => ТА &#8220;Солнечный отдых&#8221; (пункт выдачи заказов и продажа сим-карт)
+            [thumb] => 
+            [id] => 32594
+            [permalink] => http://euroroaming/stores-by-operator/ta-solnechnyj-otdyh-punkt-vydachi-zakazov-i-prodazha-sim-kart/
+            [address] => ул. Вокзальная, 4 ст1
+            [address2] => 
+            [city] => г. Одинцово
+            [state] => 
+            [zip] => 
+            [country] => Россия
+            [lat] => 55.673017
+            [lng] => 37.282243
+            [phone] => +7(495)6435334; +7(495)6460856
+            [fax] => 
+            [email] => sunny_holidays@mail.ru
+            [hours] => <table class="wpsl-opening-hours"><span class="wpsl-location-address-label" >Режим работы:</span><tr><td>Понедельник</td><td><time>10:00 - 20:00</time></td></tr><tr><td>Вторник</td><td><time>10:00 - 20:00</time></td></tr><tr><td>Среда</td><td><time>10:00 - 20:00</time></td></tr><tr><td>Четверг</td><td><time>10:00 - 20:00</time></td></tr><tr><td>Пятница</td><td><time>10:00 - 20:00</time></td></tr><tr><td>Суббота</td><td><time>11:00 - 17:00</time></td></tr><tr><td>Воскресенье</td><td>Выходной</td></tr></table>
+            [url] => 
+        )
+
+    [20] => Array
+        (
+            [ta_id] => 3041
+            [store] => ТА ООО «МАРИНА-ТРЕВЕЛ» (пункт выдачи заказов и продажа сим-карт)
+            [thumb] => 
+            [id] => 33745
+            [permalink] => http://euroroaming/stores-by-operator/ta-ooo-marina-trevel-punkt-vydachi-zakazov-i-prodazha-sim-kart/
+            [address] => ул. Полевая, д. 27-Б, оф . 6-А
+            [address2] => 
+            [city] => г. Фрязино
+            [state] => 
+            [zip] => 
+            [country] => Россия
+            [lat] => 55.945988
+            [lng] => 38.070089
+            [phone] => 8(903) 236-63-75
+            [fax] => 
+            [email] => 
+            [hours] => <table class="wpsl-opening-hours"><span class="wpsl-location-address-label" >Режим работы:</span><tr><td>Понедельник</td><td><time>10:00 - 18:00</time></td></tr><tr><td>Вторник</td><td><time>10:00 - 18:00</time></td></tr><tr><td>Среда</td><td><time>10:00 - 18:00</time></td></tr><tr><td>Четверг</td><td><time>10:00 - 18:00</time></td></tr><tr><td>Пятница</td><td><time>10:00 - 18:00</time></td></tr><tr><td>Суббота</td><td>Выходной</td></tr><tr><td>Воскресенье</td><td>Выходной</td></tr></table>
+            [url] => 
+        )
+
+    [21] => Array
+        (
+            [ta_id] => 180
+            [store] => Твой Тур (пункт выдачи заказов и продажа сим-карт)
+            [thumb] => 
+            [id] => 45452
+            [permalink] => http://euroroaming/stores-by-operator/tvoj-tur-punkt-vydachi-zakazov-i-prodazha-sim-kart/
+            [address] => ул. Рабочая, д. 44А
+            [address2] => 
+            [city] => г. Домодедово
+            [state] => 
+            [zip] => 
+            [country] => Россия
+            [lat] => 55.426348
+            [lng] => 37.762752
+            [phone] => 7 (49679) 5-49-60, 7 (495) 580-50-88
+            [fax] => 
+            [email] => 
+            [hours] => <table class="wpsl-opening-hours"><span class="wpsl-location-address-label" >Режим работы:</span><tr><td>Понедельник</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Вторник</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Среда</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Четверг</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Пятница</td><td><time>10:00 - 19:00</time></td></tr><tr><td>Суббота</td><td>Выходной</td></tr><tr><td>Воскресенье</td><td>Выходной</td></tr></table>
+            [url] => 
+        )
+
+)

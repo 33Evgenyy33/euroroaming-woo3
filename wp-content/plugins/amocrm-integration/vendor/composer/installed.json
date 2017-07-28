@@ -1,0 +1,48 @@
+[
+    {
+        "name": "dotzero/amocrm",
+        "version": "v0.3.19",
+        "version_normalized": "0.3.19.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/dotzero/amocrm-php.git",
+            "reference": "17d7548521c3b230d4a8caa26c2890a76fdeb1c7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/dotzero/amocrm-php/zipball/17d7548521c3b230d4a8caa26c2890a76fdeb1c7",
+            "reference": "17d7548521c3b230d4a8caa26c2890a76fdeb1c7",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "4.0.*"
+        },
+        "time": "2017-07-21T18:51:22+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "AmoCRM\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "dotzero",
+                "email": "mail@dotzero.ru"
+            }
+        ],
+        "description": "Удобный и быстрый клиент для работы с API amoCRM",
+        "keywords": [
+            "amoCRM",
+            "api",
+            "crm"
+        ]
+    }
+]

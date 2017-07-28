@@ -153,12 +153,14 @@ if ( $us_layout->header_show != 'never' ) {
     $us.ajaxLoadJs = <?php echo us_get_option( 'ajax_load_js', 0 ) ? 'true' : 'false' ?>;
     $us.templateDirectoryUri = '<?php global $us_template_directory_uri; echo $us_template_directory_uri; ?>';
 </script>
-<?php gravity_form_enqueue_scripts(2, true);?>
-<?php wp_footer(); ?>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script>
 <div style="display: none;" id="callback_request">
-    <?php gravity_form(2, true, false, false, '', true); ?>
+	<?php gravity_form(2, true, false, false, '', true, 12); ?>
 </div>
 
+
+<?php wp_footer(); ?>
 <div class="log-in">
     <a data-fancybox="" data-src="#callback_request" href="javascript:;" data-width="700" class="callback-modal" id="popup__toggle">
         <div class="circlephone" style="transform-origin: center;"></div>

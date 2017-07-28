@@ -290,6 +290,154 @@ if (!class_exists('WPSL_Frontend')) {
                 $store_data = apply_filters('wpsl_no_results_sql', '');
             }
 
+	        $filter_ids_for_search = $filter_ids;
+
+
+
+            $filtered_store_data = array();
+
+	        $urls = array();
+
+	        foreach ($store_data as $store){
+		        $ta_id = $store['ta_id'];
+
+		        if (!$ta_id) continue;
+
+		        array_push($urls, "http://seller.sgsim.ru/euroroaming_order_submit?operation=get_simcards_new&ta=$ta_id");
+	        }
+
+	        $mh = curl_multi_init();
+	        foreach ($urls as $i => $url) {
+		        $conn[$i]=curl_init($url);
+		        curl_setopt($conn[$i],CURLOPT_RETURNTRANSFER,1);  //ничего в браузер не давать
+		        curl_setopt($conn[$i],CURLOPT_CONNECTTIMEOUT,10); //таймаут соединения
+		        curl_multi_add_handle ($mh,$conn[$i]);
+	        }//Пока все соединения не отработают
+	        do { curl_multi_exec($mh,$active); } while ($active); //разбор полетов
+	        for ($i = 0; $i < count($urls); $i++) {
+		        //ответ сервера в переменную
+		        $res[$i] = curl_multi_getcontent($conn[$i]);
+		        curl_multi_remove_handle($mh, $conn[$i]);
+		        curl_close($conn[$i]);
+	        }
+	        curl_multi_close($mh);
+	        //print_r($res);
+
+
+	        file_put_contents("store1.txt", print_r($res,  true), FILE_APPEND | LOCK_EX);
+
+
+
+            //foreach ($store_data as $store){
+
+
+
+	            /*$ta_id = $store['ta_id'];
+
+	            if (!$ta_id) continue;
+
+	            $url = "http://seller.sgsim.ru/euroroaming_order_submit?operation=get_simcards_new&ta=$ta_id";
+	            curl_setopt($ch, CURLOPT_HEADER, 0);
+	            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //Устанавливаем параметр, чтобы curl возвращал данные, вместо того, чтобы выводить их в браузер.
+	            curl_setopt($ch, CURLOPT_URL, $url);
+	            $data = curl_exec($ch);
+
+	            $array_of_simcard = (array)json_decode($data);*/
+
+	            //file_put_contents("store1.txt", print_r($array_of_simcard,  true), FILE_APPEND | LOCK_EX);
+
+	            /*$sort_array_of_simcard = array();*/
+
+	            /*if (array_key_exists('orange', $array_of_simcard) && $filter_ids_for_search[0] == 49){
+		            array_push($filtered_store_data, $store);
+	            }
+	            if (array_key_exists('globalsim--classic', $array_of_simcard) && $filter_ids_for_search[0] == 67){
+		            array_push($filtered_store_data, $store);
+	            }
+	            if (array_key_exists('globalsim--tariff_usa', $array_of_simcard) && $filter_ids_for_search[0] == 68){
+		            array_push($filtered_store_data, $store);
+	            }
+	            if (array_key_exists('globalsim--gsim_internet', $array_of_simcard) && $filter_ids_for_search[0] == 69){
+		            array_push($filtered_store_data, $store);
+	            }
+	            if (array_key_exists('globalsim--europasim', $array_of_simcard) && $filter_ids_for_search[0] == 66){
+		            array_push($filtered_store_data, $store);
+	            }
+	            if (array_key_exists('globalsim--travelchat', $array_of_simcard) && $filter_ids_for_search[0] == 71){
+		            array_push($filtered_store_data, $store);
+	            }
+	            if (array_key_exists('ortel', $array_of_simcard) && $filter_ids_for_search[0] == 51){
+		            array_push($filtered_store_data, $store);
+	            }
+	            if (array_key_exists('vodafone', $array_of_simcard) && $filter_ids_for_search[0] == 50){
+		            array_push($filtered_store_data, $store);
+	            }
+	            if (array_key_exists('three', $array_of_simcard) && $filter_ids_for_search[0] == 70){
+		            array_push($filtered_store_data, $store);
+	            }
+	            if (array_key_exists('vodafone_r', $array_of_simcard) && $filter_ids_for_search[0] == 72){
+		            array_push($filtered_store_data, $store);
+	            }*/
+
+	            /*switch ($key) {
+		            case 'orange':
+			            $content .= $orange_img;
+			            $simcard = "Orange";
+			            $oper = $array_of_simcard['orange'];
+			            break;
+		            case 'globalsim--classic':
+			            $content .= $globalsim_img;
+			            $simcard = "Globalsim";
+			            $oper = $array_of_simcard['globalsim--classic'];
+			            break;
+		            case 'globalsim--tariff_usa':
+			            $content .= $globalsim_img;
+			            $simcard = "Globalsim «США»";
+			            $oper = $array_of_simcard['globalsim--tariff_usa'];
+			            break;
+		            case 'globalsim--gsim_internet':
+			            $content .= $globalsim_img;
+			            $simcard = "Globalsim «Internet»";
+			            $oper = $array_of_simcard['globalsim--gsim_internet'];
+			            break;
+		            case 'globalsim--europasim':
+			            $content .= $europasim_img;
+			            $simcard = "Europasim";
+			            $oper = $array_of_simcard['globalsim--europasim'];
+			            break;
+		            case 'globalsim--travelchat':
+			            $content .= $travelchat_img;
+			            $simcard = "TravelChat";
+			            $oper = $array_of_simcard['globalsim--travelchat'];
+			            break;
+		            case 'ortel':
+			            $content .= $ortel_img;
+			            $simcard = "Ortel Mobile";
+			            $oper = $array_of_simcard['ortel'];
+			            break;
+		            case 'vodafone':
+			            $content .= $vodafone_img;
+			            $simcard = "Vodafone";
+			            $oper = $array_of_simcard['vodafone'];
+			            break;
+		            case 'three':
+			            $content .= $three;
+			            $simcard = "Three";
+			            $oper = $array_of_simcard['three'];
+			            break;
+		            case 'vodafone_r':
+			            $content .= $vodafone_img;
+			            $simcard = "Vodafone «Red»";
+			            $oper = $array_of_simcard['vodafone_r'];
+			            break;
+	            }*/
+
+            //}
+
+	        //curl_close($ch);
+
+
+
             return $store_data;
         }
 
@@ -387,6 +535,8 @@ if (!class_exists('WPSL_Frontend')) {
                     if ($wpsl_settings['permalinks']) {
                         $store_meta['permalink'] = get_permalink($store->ID);
                     }
+
+
                 }
 
                 $all_stores[] = apply_filters('wpsl_store_meta', $store_meta, $store->ID);
@@ -412,6 +562,9 @@ if (!class_exists('WPSL_Frontend')) {
         {
 
             $store_fields = array(
+	            'wpsl_ta_id' => array(
+		            'name' => 'ta_id'
+	            ),
                 'wpsl_address' => array(
                     'name' => 'address'
                 ),
