@@ -1,0 +1,1 @@
+{&quot;customerContact&quot;:&quot;33evgenyy33@gmail.com&quot;,&quot;items&quot;:[{&quot;quantity&quot;:1,&quot;price&quot;:{&quot;amount&quot;:2760,&quot;currency&quot;:&quot;RUB&quot;},&quot;text&quot;:&quot;Orange с тарифом «Mundo» для Европы&quot;,&quot;tax&quot;:1}]}

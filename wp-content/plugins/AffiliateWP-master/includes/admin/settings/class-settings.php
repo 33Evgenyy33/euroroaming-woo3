@@ -424,6 +424,19 @@ class Affiliate_WP_Settings {
 
 		$emails_tags_list = affwp_get_emails_tags_list();
 
+		$referral_pretty_urls_desc = sprintf( __( 'Show pretty affiliate referral URLs to affiliates. For example: <strong>%s or %s</strong>', 'affiliate-wp' ),
+			home_url( '/' ) . affiliate_wp()->tracking->get_referral_var() . '/1',
+			home_url( '/' ) . trailingslashit( affiliate_wp()->tracking->get_referral_var() ) . $username
+		);
+
+		/*
+		 * If both WooCommerce and Polylang are active, show a modified
+		 * description for the pretty affiliate URLs setting.
+		 */
+		if ( function_exists( 'WC' ) && class_exists( 'Polylang' ) ) {
+			$referral_pretty_urls_desc .= '<p>' . __( 'Note: Pretty affiliate URLs may not always work as expected when using AffiliateWP in combination with WooCommerce and Polylang.', 'affiliate-wp' ) . '</p>';
+		}
+
 		$settings = array(
 			/**
 			 * Filters the default "General" settings.
@@ -492,7 +505,7 @@ class Affiliate_WP_Settings {
 					),
 					'referral_pretty_urls' => array(
 						'name' => __( 'Pretty Affiliate URLs', 'affiliate-wp' ),
-						'desc' => sprintf( __( 'Show pretty affiliate referral URLs to affiliates. For example: <strong>%s or %s</strong>', 'affiliate-wp' ), home_url( '/' ) . affiliate_wp()->tracking->get_referral_var() . '/1', home_url( '/' ) . trailingslashit( affiliate_wp()->tracking->get_referral_var() ) . $username ),
+						'desc' => $referral_pretty_urls_desc,
 						'type' => 'checkbox'
 					),
 					'referral_credit_last' => array(

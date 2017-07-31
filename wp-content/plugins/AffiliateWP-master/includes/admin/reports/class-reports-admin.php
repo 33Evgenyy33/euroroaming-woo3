@@ -13,9 +13,12 @@ namespace AffWP\Admin;
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+require_once AFFILIATEWP_PLUGIN_DIR . 'includes/admin/reports/class-reports-tab-registry.php';
+
 include AFFILIATEWP_PLUGIN_DIR . 'includes/abstracts/class-affwp-reports-tab.php';
 include AFFILIATEWP_PLUGIN_DIR . 'includes/admin/reports/tabs/class-affiliates-reports-tab.php';
 include AFFILIATEWP_PLUGIN_DIR . 'includes/admin/reports/tabs/class-referrals-reports-tab.php';
+include AFFILIATEWP_PLUGIN_DIR . 'includes/admin/reports/tabs/class-payouts-reports-tab.php';
 include AFFILIATEWP_PLUGIN_DIR . 'includes/admin/reports/tabs/class-visits-reports-tab.php';
 include AFFILIATEWP_PLUGIN_DIR . 'includes/admin/reports/tabs/class-campaigns-reports-tab.php';
 
@@ -64,8 +67,10 @@ class Reports {
 					esc_url( affwp_admin_url( 'affiliates' ) ),
 					__( 'Manage Affiliates', 'affiliate-wp' )
 				);
+				break;
 
-				$manage_button .= sprintf( $manage_button_template,
+			case 'payouts':
+				$manage_button = sprintf( $manage_button_template,
 					esc_url( affwp_admin_url( 'payouts' ) ),
 					__( 'View Payouts', 'affiliate-wp' )
 				);
@@ -171,6 +176,7 @@ class Reports {
 	public function register_core_tabs() {
 		new \AffWP\Referral\Admin\Reports\Tab;
 		new \AffWP\Affiliate\Admin\Reports\Tab;
+		new \AffWP\Affiliate\Payout\Admin\Reports\Tab;
 		new \AffWP\Visit\Admin\Reports\Tab;
 		new \AffWP\Campaign\Admin\Reports\Tab;
 	}

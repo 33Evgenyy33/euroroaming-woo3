@@ -32,9 +32,7 @@ class Affiliate_WP_Shopp extends Affiliate_WP_Base {
 
 			if ( $this->is_affiliate_email( $customer_email ) ) {
 			
-				if( $this->debug ) {
-					$this->log( 'Referral not created because affiliate\'s own account was used.' );
-				}
+				$this->log( 'Referral not created because affiliate\'s own account was used.' );
 
 				return; // Customers cannot refer themselves
 			}
@@ -121,4 +119,7 @@ class Affiliate_WP_Shopp extends Affiliate_WP_Base {
 		return '<a href="' . esc_url( $url ) . '">' . $reference . '</a>';
 	}	
 }
-new Affiliate_WP_Shopp;
+
+if ( function_exists( 'shopp_order' ) ) {
+	new Affiliate_WP_Shopp;
+}

@@ -24,6 +24,8 @@ class Tab extends Reports\Tab {
 		$this->priority = 0;
 		$this->graph    = new \Affiliate_WP_Visits_Graph;
 
+		$this->set_up_additional_filters();
+
 		parent::__construct();
 	}
 
@@ -34,14 +36,23 @@ class Tab extends Reports\Tab {
 	 * @since  1.9
 	 */
 	public function best_converting_campaign_tile() {
+		$affiliate_id = $this->affiliate_id ? $this->affiliate_id : 0;
+
 		$top_campaign = affiliate_wp()->campaigns->get_campaigns( array(
 			'orderby'          => 'conversion_rate',
 			'campaign_compare' => 'NOT EMPTY',
+			'affiliate_id'     => $affiliate_id,
 			'number'           => 1,
 		) );
 
 		if ( ! empty( $top_campaign[0] ) ) {
 			$campaign = $top_campaign[0];
+
+			$affiliate_name = affwp_get_affiliate_name( $campaign->affiliate_id );
+
+			if ( empty( $affiliate_name ) ) {
+				$affiliate_name = affwp_get_affiliate_username( $campaign->affiliate_id );
+			}
 
 			$affiliate_link = affwp_admin_url( 'referrals', array(
 				'affiliate_id' => $campaign->affiliate_id,
@@ -54,14 +65,42 @@ class Tab extends Reports\Tab {
 				'data'            => empty( $campaign->campaign ) ? __( 'n/a', 'affiliate-wp' ) : $campaign->campaign,
 				'comparison_data' => sprintf( __( 'Affiliate: <a href="%1$s">%2$s</a> | Visits: %3$d', 'affiliate-wp' ),
 					esc_url( $affiliate_link ),
-					affwp_get_affiliate_name( $campaign->affiliate_id ),
+					$affiliate_name,
 					$campaign->visits
 				)
 			) );
 		} else {
+
+			if ( $this->affiliate_id ) {
+
+				$affiliate_name = affwp_get_affiliate_name( $this->affiliate_id );
+
+				if ( empty( $affiliate_name ) ) {
+					$affiliate_name = affwp_get_affiliate_username( $this->affiliate_id );
+				}
+
+				$affiliate_link = affwp_admin_url( 'referrals', array(
+					'affiliate_id' => $this->affiliate_id,
+					'orderby'      => 'status',
+					'order'        => 'ASC',
+				) );
+
+				$comparison_data = sprintf( __( 'Affiliate: <a href="%1$s">%2$s</a>', 'affiliate-wp' ),
+					esc_url( $affiliate_link ),
+					$affiliate_name
+				);
+
+			} else {
+
+				$comparison_data = '';
+
+			}
+
+
 			$this->register_tile( 'best_converting_campaign', array(
 				'label'           => __( 'Best Converting Campaign (All Time)', 'affiliate-wp' ),
 				'data'            => '',
+				'comparison_data' => $comparison_data
 			) );
 		}
 	}
@@ -73,18 +112,29 @@ class Tab extends Reports\Tab {
 	 * @since  1.9
 	 */
 	public function best_converting_campaign_date_tile() {
+
+		$affiliate_id = $this->affiliate_id ? $this->affiliate_id : 0;
+
 		$top_campaign_visits = affiliate_wp()->visits->get_visits( array(
 			'date'             => $this->date_query,
 			'referral_status'  => 'converted',
 			'campaign_compare' => 'NOT EMPTY',
+			'affiliate_id'     => $affiliate_id,
 			'number'           => -1,
 			'orderby'          => 'date',
 		) );
 
 		$top_campaign_date = $this->get_campaign_by_highest_visits( $top_campaign_visits );
 
+
 		if ( ! empty( $top_campaign_date ) ) {
 			$campaign = $top_campaign_date;
+
+			$affiliate_name = affwp_get_affiliate_name( $campaign->affiliate_id );
+
+			if ( empty( $affiliate_name ) ) {
+				$affiliate_name = affwp_get_affiliate_username( $campaign->affiliate_id );
+			}
 
 			$affiliate_link = affwp_admin_url( 'referrals', array(
 				'affiliate_id' => $campaign->affiliate_id,
@@ -100,17 +150,44 @@ class Tab extends Reports\Tab {
 				'data'            => empty( $campaign->campaign ) ? __( 'n/a', 'affiliate-wp' ) : $campaign->campaign,
 				'comparison_data' => sprintf( __( 'Affiliate: <a href="%1$s">%2$s</a> | Visits: %3$d', 'affiliate-wp' ),
 					esc_url( $affiliate_link ),
-					affwp_get_affiliate_name( $campaign->affiliate_id ),
+					$affiliate_name,
 					$campaign->visits
 				)
 			) );
 		} else {
+
+			if ( $this->affiliate_id ) {
+
+				$affiliate_name = affwp_get_affiliate_name( $this->affiliate_id );
+
+				if ( empty( $affiliate_name ) ) {
+					$affiliate_name = affwp_get_affiliate_username( $this->affiliate_id );
+				}
+
+				$affiliate_link = affwp_admin_url( 'referrals', array(
+					'affiliate_id' => $this->affiliate_id,
+					'orderby'      => 'status',
+					'order'        => 'ASC',
+				) );
+
+				$comparison_data = sprintf( __( 'Affiliate: <a href="%1$s">%2$s</a>', 'affiliate-wp' ),
+					esc_url( $affiliate_link ),
+					$affiliate_name
+				);
+
+			} else {
+
+				$comparison_data = '';
+
+			}
+
 			$this->register_tile( 'best_converting_campaign_date', array(
 				'label'           => sprintf( __( 'Best Converting Campaign (%s)', 'affiliate-wp' ),
 					$this->get_date_comparison_label( __( 'Custom', 'affiliate-wp' ) )
 				),
 				'context'         => 'tertiary',
 				'data'            => '',
+				'comparison_data' => $comparison_data,
 			) );
 		}
 	}
@@ -122,9 +199,13 @@ class Tab extends Reports\Tab {
 	 * @since  1.9
 	 */
 	public function most_active_campaign_tile() {
+
+		$affiliate_id = $this->affiliate_id ? $this->affiliate_id : 0;
+
 		$active_campaign_visits = affiliate_wp()->visits->get_visits( array(
 			'date'             => $this->date_query,
 			'campaign_compare' => 'NOT EMPTY',
+			'affiliate_id'     => $affiliate_id,
 			'number'           => -1,
 			'orderby'          => 'date',
 		) );
@@ -133,6 +214,12 @@ class Tab extends Reports\Tab {
 
 		if ( ! empty( $most_active_campaign_date ) ) {
 			$campaign = $most_active_campaign_date;
+
+			$affiliate_name = affwp_get_affiliate_name( $campaign->affiliate_id );
+
+			if ( empty( $affiliate_name ) ) {
+				$affiliate_name = affwp_get_affiliate_username( $campaign->affiliate_id );
+			}
 
 			$affiliate_link = affwp_admin_url( 'referrals', array(
 				'affiliate_id' => $campaign->affiliate_id,
@@ -148,17 +235,45 @@ class Tab extends Reports\Tab {
 				'data'            => empty( $campaign->campaign ) ? __( 'n/a', 'affiliate-wp' ) : $campaign->campaign,
 				'comparison_data' => sprintf( __( 'Affiliate: <a href="%1$s">%2$s</a> | Visits: %3$d', 'affiliate-wp' ),
 					esc_url( $affiliate_link ),
-					affwp_get_affiliate_name( $campaign->affiliate_id ),
+					$affiliate_name,
 					$campaign->visits
 				),
 			) );
 		} else {
+
+			if ( $this->affiliate_id ) {
+
+				$affiliate_name = affwp_get_affiliate_name( $this->affiliate_id );
+
+				if ( empty( $affiliate_name ) ) {
+					$affiliate_name = affwp_get_affiliate_username( $this->affiliate_id );
+				}
+
+				$affiliate_link = affwp_admin_url( 'referrals', array(
+					'affiliate_id' => $this->affiliate_id,
+					'orderby'      => 'status',
+					'order'        => 'ASC',
+				) );
+
+				$comparison_data = sprintf( __( 'Affiliate: <a href="%1$s">%2$s</a>', 'affiliate-wp' ),
+					esc_url( $affiliate_link ),
+					$affiliate_name
+				);
+
+			} else {
+
+				$comparison_data = '';
+
+			}
+
+
 			$this->register_tile( 'most_active_campaign', array(
 				'label'           => sprintf( __( 'Most Active Campaign (%s)', 'affiliate-wp' ),
 					$this->get_date_comparison_label( __( 'Custom', 'affiliate-wp' ) )
 				),
 				'context'         => 'secondary',
 				'data'            => '',
+				'comparison_data' => $comparison_data
 			) );
 		}
 

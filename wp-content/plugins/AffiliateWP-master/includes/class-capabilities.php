@@ -49,6 +49,7 @@ class Affiliate_WP_Capabilities {
 			$wp_roles->add_cap( 'administrator', 'view_affiliate_reports' );
 			$wp_roles->add_cap( 'administrator', 'export_affiliate_data' );
 			$wp_roles->add_cap( 'administrator', 'export_referral_data' );
+			$wp_roles->add_cap( 'administrator', 'export_visit_data' );
 			$wp_roles->add_cap( 'administrator', 'export_payout_data' );
 			$wp_roles->add_cap( 'administrator', 'manage_affiliate_options' );
 			$wp_roles->add_cap( 'administrator', 'manage_affiliates' );
@@ -82,6 +83,7 @@ class Affiliate_WP_Capabilities {
 			$wp_roles->remove_cap( 'administrator', 'view_affiliate_reports' );
 			$wp_roles->remove_cap( 'administrator', 'export_affiliate_data' );
 			$wp_roles->remove_cap( 'administrator', 'export_referral_data' );
+			$wp_roles->remove_cap( 'administrator', 'export_visit_data' );
 			$wp_roles->remove_cap( 'administrator', 'export_payout_data' );
 			$wp_roles->remove_cap( 'administrator', 'manage_affiliate_options' );
 			$wp_roles->remove_cap( 'administrator', 'manage_affiliates' );

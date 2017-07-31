@@ -235,4 +235,6 @@ class Affiliate_WP_Jigoshop extends Affiliate_WP_Base {
 	}
 }
 
-new Affiliate_WP_Jigoshop;
+if ( function_exists( 'jigoshop_init') ) {
+	new Affiliate_WP_Jigoshop;
+}

@@ -45,9 +45,6 @@ class Affiliate_WP_Gravity_Forms extends Affiliate_WP_Base {
 	 */
 	public function add_pending_referral( $entry, $form ) {
 
-		// Get affiliate ID
-		$affiliate_id = $this->affiliate_id;
-
 		// Block referral if form does not allow them
 		if ( ! rgar( $form, 'affwp_allow_referrals' ) ) {
 			return;
@@ -57,7 +54,7 @@ class Affiliate_WP_Gravity_Forms extends Affiliate_WP_Base {
 		$this->maybe_check_coupons( $form, $entry );
 
 		// Block referral if not referred or affiliate ID is empty
-		if ( ! $this->was_referred() && empty( $affiliate_id ) ) {
+		if ( ! $this->was_referred() && empty( $this->affiliate_id ) ) {
 			return;
 		}
 
@@ -67,11 +64,9 @@ class Affiliate_WP_Gravity_Forms extends Affiliate_WP_Base {
 		// Block referral if any of the affiliate's emails have been submitted
 		if ( $emails ) {
 			foreach ( $emails as $customer_email ) {
-				if ( $this->is_affiliate_email( $customer_email, $affiliate_id ) ) {
+				if ( $this->is_affiliate_email( $customer_email, $this->affiliate_id ) ) {
 
-					if ( $this->debug ) {
-						$this->log( 'Referral not created because affiliate\'s own account was used.' );
-					}
+					$this->log( 'Referral not created because affiliate\'s own account was used.' );
 
 					return false;
 
@@ -381,4 +376,6 @@ class Affiliate_WP_Gravity_Forms extends Affiliate_WP_Base {
 
 }
 
-new Affiliate_WP_Gravity_Forms;
+if ( class_exists( 'GFCommon' ) ) {
+	new Affiliate_WP_Gravity_Forms;
+}

@@ -59,7 +59,7 @@ class Affiliate_WP_Contact_Form_7 extends Affiliate_WP_Base {
 		// Add PayPal meta to the contact form submision object.
 		add_action( 'wpcf7_submit', array( $this, 'add_paypal_meta' ), 1, 2 );
 
-		$this->maybe_unhook_cf7pp();
+		add_action( 'wpcf7_mail_sent', array( $this, 'maybe_unhook_cf7pp' ), -999 );
 
 		// Mark referral complete.
 		add_action( 'wp_footer', array( $this, 'mark_referral_complete' ), 9999 );
@@ -168,19 +168,15 @@ class Affiliate_WP_Contact_Form_7 extends Affiliate_WP_Base {
 			'post_status' => array( 'publish' )
 		);
 
-		$query = new WP_Query( $args );
+		$forms = get_posts( $args );
 
 		// The Loop
-		if ( $query->have_posts() ) {
-			while ( $query->have_posts() ) {
-				$query->the_post();
-				$post_id               = get_the_ID();
+		if ( $forms ) {
+			foreach( $forms as $form ) {
 
-				$all_forms[ $post_id ] = get_the_title();
+				$all_forms[ $form->ID ] = get_the_title( $form->ID );
 			}
 		}
-
-		wp_reset_postdata();
 
 		return $all_forms;
 	}
@@ -461,9 +457,8 @@ class Affiliate_WP_Contact_Form_7 extends Affiliate_WP_Base {
 		$txn_id          = ! empty( $_GET['tx'] )          ? sanitize_text_field( $_GET['tx'] ) : false;
 
 		if ( ! $form_id || ! $referral_id ) {
-			if( $this->debug ) {
-				$this->log( 'CF7 integration: The form ID or referral ID could not be determined.' );
-			}
+			$this->log( 'CF7 integration: The form ID or referral ID could not be determined.' );
+
 			return false;
 		}
 
@@ -472,9 +467,8 @@ class Affiliate_WP_Contact_Form_7 extends Affiliate_WP_Base {
 
 		// Bail if not on the return page.
 		if ( (int) $return_page_id !== (int) $current_page_id ) {
-			if( $this->debug ) {
-				$this->log( 'CF7 integration: The specified success page ID does not match the current page ID.' );
-			}
+			$this->log( 'CF7 integration: The specified success page ID does not match the current page ID.' );
+
 			return false;
 		}
 
@@ -489,7 +483,7 @@ class Affiliate_WP_Contact_Form_7 extends Affiliate_WP_Base {
 			$this->complete_referral( $referral );
 
 
-		} else if( $this->debug ) {
+		} else {
 
 			$this->log( sprintf( 'CF7 integration: Referral could not be retrieved during mark_referral_complete(). ID given: %d.' ), $referral_id );
 
@@ -513,9 +507,8 @@ class Affiliate_WP_Contact_Form_7 extends Affiliate_WP_Base {
 		$referral_id     = ! empty( $_GET['referral_id'] ) ? absint( $_GET['referral_id'] ) : false;
 
 		if ( ! $form_id || ! $referral_id ) {
-			if( $this->debug ) {
-				$this->log( 'CF7 integration: The form ID or referral ID could not be determined.' );
-			}
+			$this->log( 'CF7 integration: The form ID or referral ID could not be determined.' );
+
 			return false;
 		}
 
@@ -524,9 +517,7 @@ class Affiliate_WP_Contact_Form_7 extends Affiliate_WP_Base {
 
 		// Bail if not on the cancel page
 		if ( (int) $cancel_page_id !== (int) $current_page_id ) {
-			if( $this->debug ) {
-				$this->log( 'CF7 integration: The specified cancel page ID does not match the current page ID.' );
-			}
+			$this->log( 'CF7 integration: The specified cancel page ID does not match the current page ID.' );
 
 			return false;
 
@@ -538,7 +529,7 @@ class Affiliate_WP_Contact_Form_7 extends Affiliate_WP_Base {
 
 			$this->reject_referral( $referral );
 
-		} else if( $this->debug ) {
+		} else {
 
 			$this->log( sprintf( 'CF7 integration: Referral could not be retrieved during revoke(). ID given: %d.' ), $referral_id );
 
@@ -559,9 +550,7 @@ class Affiliate_WP_Contact_Form_7 extends Affiliate_WP_Base {
 
 		if ( ! $referral ) {
 
-			if( $this->debug ) {
-				$this->log( 'CF7 integration: No referral data found when attempting to add a referral reference.' );
-			}
+			$this->log( 'CF7 integration: No referral data found when attempting to add a referral reference.' );
 
 			return false;
 		}
@@ -586,4 +575,7 @@ class Affiliate_WP_Contact_Form_7 extends Affiliate_WP_Base {
 	}
 
 }
-new Affiliate_WP_Contact_Form_7;
+
+if ( class_exists( 'WPCF7_ContactForm' ) ) {
+	new Affiliate_WP_Contact_Form_7;
+}

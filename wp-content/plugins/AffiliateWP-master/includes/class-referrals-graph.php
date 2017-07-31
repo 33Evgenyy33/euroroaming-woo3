@@ -31,6 +31,7 @@ class Affiliate_WP_Referrals_Graph extends Affiliate_WP_Graph {
 			'points'          => true,
 			'affiliate_id'    => false,
 			'show_controls'   => true,
+			'form_wrapper'    => true,
 		);
 
 	}

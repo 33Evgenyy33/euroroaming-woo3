@@ -146,6 +146,10 @@ class WC_yamoney_Gateway extends WC_Payment_Gateway
         $result .= 'jQuery(document).ready(function ($){ jQuery("#submit_' . $this->id . '_payment_form").submit(); });';
         $result .= '</script></form>';
         $woocommerce->cart->empty_cart();
+
+	    /*$myfile = fopen("processing-" . $order_id . ".txt", "w") or die("Unable to open file!");
+	    file_put_contents("processing-" . $order_id . ".txt", print_r($result, true), FILE_APPEND | LOCK_EX);*/
+
         return $result;
     }
 
@@ -224,227 +228,260 @@ class WC_yamoney_Gateway extends WC_Payment_Gateway
         $receiptWrapper->items = array();
 
         if (version_compare($woocommerce->version, "3.0", ">=")) {
-            $data = $order->get_data();
+//            $data = $order->get_data();
+//
+//            $currency = $data['currency'];
+//            $items = $order->get_items();
+//            $shipping = $data['shipping_lines'];
+//
+//            foreach ($items as $item) {
+//                $taxes = $item->get_taxes();
+//                /** @var WC_Order_Item_Product $item */
+//	            //$order->wc_get_order_item_meta($item->get_id(), 'balans', true);
+//                $test1 = $item->get_id();
+//                $amount = $item->get_total() / $item->get_quantity() + $item->get_total_tax() / $item->get_quantity();
+//                $itemWrapper = new stdClass();
+//                $itemWrapper->quantity = $item->get_quantity();
+//                $itemWrapper->price = new stdClass();
+//                $itemWrapper->price->amount = round($amount, 2);
+//                $itemWrapper->price->currency = $currency;
+//                $itemWrapper->text = $item['name'];
+//                $itemWrapper->tax = $this->getYmTaxRate($taxes);
+//                $receiptWrapper->items[] = $itemWrapper;
+//            }
+//
+//            if (count($shipping)) {
+//                $shippingData = array_shift($shipping);
+//                $amount = $shippingData['total'] + $shippingData['total_tax'];
+//                $taxes = $shippingData->get_taxes();
+//                $itemWrapper = new stdClass();
+//                $itemWrapper->quantity = 1;
+//                $itemWrapper->price = new stdClass();
+//                $itemWrapper->price->amount = round($amount, 2);
+//                $itemWrapper->price->currency = $currency;
+//                $itemWrapper->text = 'Доставка';
+//                $itemWrapper->tax = $this->getYmTaxRate($taxes);
+//                $receiptWrapper->items[] = $itemWrapper;
+//            }
 
-            $currency = $data['currency'];
-            $items = $order->get_items();
-            $shipping = $data['shipping_lines'];
+	        $data = $order->get_data();
 
-            foreach ($items as $item) {
-                $taxes = $item->get_taxes();
-                /** @var WC_Order_Item_Product $item */
-                $amount = $item->get_total() / $item->get_quantity() + $item->get_total_tax() / $item->get_quantity();
-                $itemWrapper = new stdClass();
-                $itemWrapper->quantity = $item->get_quantity();
-                $itemWrapper->price = new stdClass();
-                $itemWrapper->price->amount = round($amount, 2);
-                $itemWrapper->price->currency = $currency;
-                $itemWrapper->text = $item['name'];
-                $itemWrapper->tax = $this->getYmTaxRate($taxes);
-                $receiptWrapper->items[] = $itemWrapper;
-            }
+	        $currency = $data['currency'];
+	        $items = $order->get_items();
+	        $shipping = $data['shipping_lines'];
 
-            if (count($shipping)) {
-                $shippingData = array_shift($shipping);
-                $amount = $shippingData['total'] + $shippingData['total_tax'];
-                $taxes = $shippingData->get_taxes();
-                $itemWrapper = new stdClass();
-                $itemWrapper->quantity = 1;
-                $itemWrapper->price = new stdClass();
-                $itemWrapper->price->amount = round($amount, 2);
-                $itemWrapper->price->currency = $currency;
-                $itemWrapper->text = 'Доставка';
-                $itemWrapper->tax = $this->getYmTaxRate($taxes);
-                $receiptWrapper->items[] = $itemWrapper;
-            }
+	        $euro_rate = 69; // Курс евро
+
+	        //$myfile = fopen("processing-" . $order->get_id() . ".txt", "w") or die("Unable to open file!");
+	        //file_put_contents("processing-" . $order->get_id() . ".txt", print_r($items, true), FILE_APPEND | LOCK_EX);
+
+	        foreach ($items as $item) {
+		        $itemId = $item->get_id();
+		        $initial_price = $item->get_subtotal();
+		        $discount_price = $item->get_total();;
+		        $sim_card = $item->get_product_id();
+		        $balance_name = $item->get_meta('balans');
+		        $balance_in_euro = 0;
+		        $balance_in_rub = 0;
+
+		        //$myfile = fopen("processing-" . $order->get_id() . ".txt", "w") or die("Unable to open file!");
+		        //file_put_contents("processing-" . $order->get_id() . ".txt", print_r($sim_card, true), FILE_APPEND | LOCK_EX);
+
+		        if ($sim_card == 58961 || $sim_card == 18402) { //Orange
+			        $taxes = $item->get_taxes();
+			        $quantity = $item->get_quantity();
+
+			        //======================================================
+			        // Позиция "Сим-карта"
+			        //======================================================
+			        $itemWrapper = new stdClass();
+			        $itemWrapper->quantity = $quantity;
+			        $itemWrapper->price = new stdClass();
+			        $itemWrapper->price->amount = 0; //Стоимость
+			        $itemWrapper->price->currency = $currency; //Валюта
+			        $itemWrapper->text = 'Сим-карта'; //Название
+			        $itemWrapper->tax = $this->getYmTaxRate($taxes);
+			        $receiptWrapper->items[] = $itemWrapper;
+
+			        //$myfile = fopen("processing-" . $order->get_id() . ".txt", "w") or die("Unable to open file!");
+			        //file_put_contents("processing-" . $order->get_id() . ".txt", print_r($receiptWrapper, true), FILE_APPEND | LOCK_EX);
+
+			        //======================================================
+			        // Позиция "Тариф"
+			        //======================================================
+			        $taxes = $item->get_taxes();
+			        $quantity = $item->get_quantity();
+			        $tax = $item->get_total_tax();
+			        $tariff_name = '';
+			        $tariff_in_rub = 0;
+			        switch ($balance_name) {
+				        case '€20' :
+					        $balance_in_euro = 20;
+					        $balance_in_rub = 20 * $euro_rate;
+					        $tariff_name = '20 EUR';
+					        $tariff_in_rub = 20 * $euro_rate;
+					        break;
+				        case '€35' :
+					        $balance_in_euro = 35;
+					        $balance_in_rub = 35 * $euro_rate;
+					        $tariff_name = '15 EUR';
+					        $tariff_in_rub = 15 * $euro_rate;
+					        break;
+				        case '€50' :
+					        $balance_in_euro = 50;
+					        $balance_in_rub = 50 * $euro_rate;
+					        $tariff_name = '10 EUR';
+					        $tariff_in_rub = 10 * $euro_rate;
+					        break;
+				        case '€75' :
+					        $balance_in_euro = 75;
+					        $balance_in_rub = 75 * $euro_rate;
+					        $tariff_name = '5 EUR';
+					        $tariff_in_rub = 5 * $euro_rate;
+					        break;
+				        case '€100' :
+					        $balance_in_euro = 100;
+					        $balance_in_rub = 100 * $euro_rate;
+					        $tariff_name = '0 EUR';
+					        $tariff_in_rub = 0 * $euro_rate;
+					        break;
+				        case '€150' :
+					        $balance_in_euro = 150;
+					        $balance_in_rub = 150 * $euro_rate;
+					        $tariff_name = '0 EUR';
+					        $tariff_in_rub = 0 * $euro_rate;
+					        break;
+			        }
+			        $itemTotal = $tariff_in_rub * $quantity;
+			        if ($initial_price == $discount_price) {
+				        $amount = $itemTotal / $quantity + $tax / $quantity;
+			        } else {
+				        $discount = $initial_price - $discount_price;
+				        $discount_one_pos = $discount / $quantity;
+				        $amount = ($itemTotal / $quantity + $tax / $quantity) - $discount_one_pos;
+			        }
+			        $itemWrapper = new stdClass();
+			        $itemWrapper->quantity = $quantity;
+			        $itemWrapper->price = new stdClass();
+			        $itemWrapper->price->amount = round($amount, 2); //Стоимость
+			        $itemWrapper->price->currency = $currency; //Валюта
+			        $itemWrapper->text = 'Тариф Orange Mundo - регистрация, активация в сети оператора ' . $tariff_name; //Название
+			        $itemWrapper->tax = $this->getYmTaxRate($taxes);
+			        $receiptWrapper->items[] = $itemWrapper;
+
+			        //$myfile = fopen("processing-" . $order->get_id() . ".txt", "w") or die("Unable to open file!");
+			        //file_put_contents("processing-" . $order->get_id() . ".txt", print_r($receiptWrapper, true), FILE_APPEND | LOCK_EX);
+
+			        //======================================================
+			        // Позиция "Интернет-пакет"
+			        //======================================================
+			        $taxes = $item->get_taxes();
+			        $quantity = $item->get_quantity();
+			        $tax = $item->get_total_tax();
+			        $package_name = $item->get_meta('paket-podklyuchennyj-za-schet-balansa');
+
+			        //$myfile = fopen("processing-" . $order->get_id() . ".txt", "w") or die("Unable to open file!");
+			        //file_put_contents("processing-" . $order->get_id() . ".txt", print_r($package_name, true), FILE_APPEND | LOCK_EX);
+
+			        $package_in_euro = 0;
+			        $package_in_rub = 0;
+			        switch ($package_name) {
+				        case '1ГБ (7€)' :
+					        $package_in_rub = 7 * $euro_rate;
+					        $package_in_euro = 7;
+					        break;
+				        case '2ГБ (10€)' :
+					        $package_in_rub = 10 * $euro_rate;
+					        $package_in_euro = 10;
+					        break;
+				        case '3ГБ (15€)' :
+					        $package_in_rub = 15 * $euro_rate;
+					        $package_in_euro = 15;
+					        break;
+			        }
+			        $itemTotal = $package_in_rub * $quantity;
+			        $amount = $itemTotal / $quantity + $tax / $quantity;
+			        $itemWrapper = new stdClass();
+			        $itemWrapper->quantity = $quantity;
+			        $itemWrapper->price = new stdClass();
+			        $itemWrapper->price->amount = round($amount, 2); //Стоимость
+			        $itemWrapper->price->currency = $currency; //Валюта
+			        $itemWrapper->text = 'Подкюченный интернет-пакет ' . str_replace('€', 'EUR', $package_name); //Название
+			        $itemWrapper->tax = $this->getYmTaxRate($taxes);
+			        $receiptWrapper->items[] = $itemWrapper;
+
+			        //$myfile = fopen("processing-" . $order->get_id() . ".txt", "w") or die("Unable to open file!");
+			        //file_put_contents("processing-" . $order->get_id() . ".txt", print_r($receiptWrapper, true), FILE_APPEND | LOCK_EX);
+
+			        //======================================================
+			        // Позиция "Баланс"
+			        //======================================================
+			        $taxes = $item->get_taxes();
+			        $quantity = $item->get_quantity();
+			        $tax = $item->get_total_tax();
+
+			        $balance_with_pack_in_euro = $balance_in_euro - $package_in_euro;
+			        $balance_with_pack_in_rub = $balance_in_rub - $package_in_rub;
+
+			        $itemTotal = $balance_with_pack_in_rub * $quantity;
+			        $amount = $itemTotal / $quantity + $tax / $quantity;
+			        $itemWrapper = new stdClass();
+			        $itemWrapper->quantity = $quantity;
+			        $itemWrapper->price = new stdClass();
+			        $itemWrapper->price->amount = round($amount, 2); //Стоимость
+			        $itemWrapper->price->currency = $currency; //Валюта
+			        $itemWrapper->text = 'Баланс с учетом подключенного пакета ' . $balance_with_pack_in_euro . ' EUR'; //Название
+			        $itemWrapper->tax = $this->getYmTaxRate($taxes);
+			        $receiptWrapper->items[] = $itemWrapper;
+
+			        //$myfile = fopen("processing-" . $order->get_id() . ".txt", "w") or die("Unable to open file!");
+			        //file_put_contents("processing-" . $order->get_id() . ".txt", print_r($receiptWrapper, true), FILE_APPEND | LOCK_EX);
+
+		        } else {
+
+			        $taxes = $item->get_taxes();
+			        $quantity = $item->get_quantity();
+			        $itemTotal = $item->get_total();
+			        $tax = $item->get_total_tax();
+			        $amount = $itemTotal / $quantity + $tax / $quantity;
+			        $itemWrapper = new stdClass();
+			        $itemWrapper->quantity = $quantity;
+			        $itemWrapper->price = new stdClass();
+			        $itemWrapper->price->amount = round($amount, 2);
+			        $itemWrapper->price->currency = $currency;
+			        $itemWrapper->text = $item['name'];
+			        $itemWrapper->tax = $this->getYmTaxRate($taxes);
+			        $receiptWrapper->items[] = $itemWrapper;
+		        }
+	        }
+
+	        $shippingData = array_shift($shipping);
+	        $amount = $shippingData['total'] + $shippingData['total_tax'];
+
+	        $myfile = fopen("processing-" . $order->get_id() . ".txt", "w") or die("Unable to open file!");
+	        file_put_contents("processing-" . $order->get_id() . ".txt", print_r(count($shippingData), true), FILE_APPEND | LOCK_EX);
+
+	        if (count($shippingData) && ($amount != 0)) {
+		        $taxes = $shippingData->get_taxes();
+		        $itemWrapper = new stdClass();
+		        $itemWrapper->quantity = 1;
+		        $itemWrapper->price = new stdClass();
+		        $itemWrapper->price->amount = round($amount, 2);
+		        $itemWrapper->price->currency = $currency;
+		        $itemWrapper->text = 'Доставка';
+		        $itemWrapper->tax = $this->getYmTaxRate($taxes);
+		        $receiptWrapper->items[] = $itemWrapper;
+
+		        $myfile = fopen("processing-" . $order->get_id() . ".txt", "w") or die("Unable to open file!");
+		        file_put_contents("processing-" . $order->get_id() . ".txt", print_r($receiptWrapper, true), FILE_APPEND | LOCK_EX);
+	        }
+
         } else {
-            $currency = $order->get_order_currency();
-            $items = $order->get_items();
-            $shipping = $order->get_items('shipping');
-
-            $euro_rate = 69; // Курс евро
-
-            //$myfile = fopen("processing-" . $order->id . ".txt", "w") or die("Unable to open file!");
-            //file_put_contents("processing-" . $order->id . ".txt", print_r($items, true));
-
-            foreach ($items as $itemId => $item) {
-                $initial_price = $order->get_item_meta($itemId, '_line_subtotal', true);
-                $discount_price = $order->get_item_meta($itemId, '_line_total', true);
-                $sim_card = $order->get_item_meta($itemId, '_product_id', true);
-                $balance_name = $order->get_item_meta($itemId, 'balans', true);
-                $balance_in_euro = 0;
-                $balance_in_rub = 0;
-
-                if ($sim_card == 58961 || $sim_card == '18402') { //Orange
-                    $taxes = $order->get_item_meta($itemId, '_line_tax_data', true);
-                    $quantity = $order->get_item_meta($itemId, '_qty', true);
-
-                    //======================================================
-                    // Позиция "Сим-карта"
-                    //======================================================
-                    $itemWrapper = new stdClass();
-                    $itemWrapper->quantity = $quantity;
-                    $itemWrapper->price = new stdClass();
-                    $itemWrapper->price->amount = 0; //Стоимость
-                    $itemWrapper->price->currency = $currency; //Валюта
-                    $itemWrapper->text = 'Сим-карта'; //Название
-                    $itemWrapper->tax = $this->getYmTaxRate($taxes);
-                    $receiptWrapper->items[] = $itemWrapper;
-
-                    //======================================================
-                    // Позиция "Тариф"
-                    //======================================================
-                    $taxes = $order->get_item_meta($itemId, '_line_tax_data', true);
-                    $quantity = $order->get_item_meta($itemId, '_qty', true);
-                    $tax = $order->get_item_meta($itemId, '_line_tax', true);
-                    $tariff_name = '';
-                    $tariff_in_rub = 0;
-                    switch ($balance_name) {
-                        case '€20' :
-                            $balance_in_euro = 20;
-                            $balance_in_rub = 20 * $euro_rate;
-                            $tariff_name = '20 EUR';
-                            $tariff_in_rub = 20 * $euro_rate;
-                            break;
-                        case '€35' :
-                            $balance_in_euro = 35;
-                            $balance_in_rub = 35 * $euro_rate;
-                            $tariff_name = '15 EUR';
-                            $tariff_in_rub = 15 * $euro_rate;
-                            break;
-                        case '€50' :
-                            $balance_in_euro = 50;
-                            $balance_in_rub = 50 * $euro_rate;
-                            $tariff_name = '10 EUR';
-                            $tariff_in_rub = 10 * $euro_rate;
-                            break;
-                        case '€75' :
-                            $balance_in_euro = 75;
-                            $balance_in_rub = 75 * $euro_rate;
-                            $tariff_name = '5 EUR';
-                            $tariff_in_rub = 5 * $euro_rate;
-                            break;
-                        case '€100' :
-                            $balance_in_euro = 100;
-                            $balance_in_rub = 100 * $euro_rate;
-                            $tariff_name = '0 EUR';
-                            $tariff_in_rub = 0 * $euro_rate;
-                            break;
-                        case '€150' :
-                            $balance_in_euro = 150;
-                            $balance_in_rub = 150 * $euro_rate;
-                            $tariff_name = '0 EUR';
-                            $tariff_in_rub = 0 * $euro_rate;
-                            break;
-                    }
-                    $itemTotal = $tariff_in_rub * $quantity;
-                    if ($initial_price == $discount_price) {
-                        $amount = $itemTotal / $quantity + $tax / $quantity;
-                    } else {
-                        $discount = $initial_price - $discount_price;
-                        $discount_one_pos = $discount / $quantity;
-                        $amount = ($itemTotal / $quantity + $tax / $quantity) - $discount_one_pos;
-                    }
-                    $itemWrapper = new stdClass();
-                    $itemWrapper->quantity = $quantity;
-                    $itemWrapper->price = new stdClass();
-                    $itemWrapper->price->amount = round($amount, 2); //Стоимость
-                    $itemWrapper->price->currency = $currency; //Валюта
-                    $itemWrapper->text = 'Тариф Orange Mundo - регистрация, активация в сети оператора ' . $tariff_name; //Название
-                    $itemWrapper->tax = $this->getYmTaxRate($taxes);
-                    $receiptWrapper->items[] = $itemWrapper;
-
-                    //======================================================
-                    // Позиция "Интернет-пакет"
-                    //======================================================
-                    $taxes = $order->get_item_meta($itemId, '_line_tax_data', true);
-                    $quantity = $order->get_item_meta($itemId, '_qty', true);
-                    $tax = $order->get_item_meta($itemId, '_line_tax', true);
-                    $package_name = $order->get_item_meta($itemId, 'paket-podklyuchennyj-za-schet-balansa', true);
-                    $package_in_euro = 0;
-                    $package_in_rub = 0;
-                    switch ($package_name) {
-                        case '1ГБ (7€)' :
-                            $package_in_rub = 7 * $euro_rate;
-                            $package_in_euro = 7;
-                            break;
-                        case '2ГБ (10€)' :
-                            $package_in_rub = 10 * $euro_rate;
-                            $package_in_euro = 10;
-                            break;
-                        case '3ГБ (15€)' :
-                            $package_in_rub = 15 * $euro_rate;
-                            $package_in_euro = 15;
-                            break;
-                    }
-                    $itemTotal = $package_in_rub * $quantity;
-                    $amount = $itemTotal / $quantity + $tax / $quantity;
-                    $itemWrapper = new stdClass();
-                    $itemWrapper->quantity = $quantity;
-                    $itemWrapper->price = new stdClass();
-                    $itemWrapper->price->amount = round($amount, 2); //Стоимость
-                    $itemWrapper->price->currency = $currency; //Валюта
-                    $itemWrapper->text = 'Подкюченный интернет-пакет ' . str_replace('€', 'EUR', $package_name); //Название
-                    $itemWrapper->tax = $this->getYmTaxRate($taxes);
-                    $receiptWrapper->items[] = $itemWrapper;
-
-                    //======================================================
-                    // Позиция "Баланс"
-                    //======================================================
-                    $taxes = $order->get_item_meta($itemId, '_line_tax_data', true);
-                    $quantity = $order->get_item_meta($itemId, '_qty', true);
-                    $tax = $order->get_item_meta($itemId, '_line_tax', true);
-
-                    $balance_with_pack_in_euro = $balance_in_euro - $package_in_euro;
-                    $balance_with_pack_in_rub = $balance_in_rub - $package_in_rub;
-
-                    $itemTotal = $balance_with_pack_in_rub * $quantity;
-                    $amount = $itemTotal / $quantity + $tax / $quantity;
-                    $itemWrapper = new stdClass();
-                    $itemWrapper->quantity = $quantity;
-                    $itemWrapper->price = new stdClass();
-                    $itemWrapper->price->amount = round($amount, 2); //Стоимость
-                    $itemWrapper->price->currency = $currency; //Валюта
-                    $itemWrapper->text = 'Баланс с учетом подключенного пакета ' . $balance_with_pack_in_euro . ' EUR'; //Название
-                    $itemWrapper->tax = $this->getYmTaxRate($taxes);
-                    $receiptWrapper->items[] = $itemWrapper;
-
-                } else {
-
-                    $taxes = $order->get_item_meta($itemId, '_line_tax_data', true);
-                    $quantity = $order->get_item_meta($itemId, '_qty', true);
-                    $itemTotal = $order->get_item_meta($itemId, '_line_total', true);
-                    $tax = $order->get_item_meta($itemId, '_line_tax', true);
-                    $amount = $itemTotal / $quantity + $tax / $quantity;
-                    $itemWrapper = new stdClass();
-                    $itemWrapper->quantity = $quantity;
-                    $itemWrapper->price = new stdClass();
-                    $itemWrapper->price->amount = round($amount, 2);
-                    $itemWrapper->price->currency = $currency;
-                    $itemWrapper->text = $item['name'];
-                    $itemWrapper->tax = $this->getYmTaxRate($taxes);
-                    $receiptWrapper->items[] = $itemWrapper;
-                }
-            }
-
-            $order_shipping_amount = $order->get_total_shipping() + $order->get_shipping_tax();
-
-            if (count($shipping) && ($order_shipping_amount != 0)) {
-                $itemId = key($shipping);
-                $taxes = $order->get_item_meta($itemId, 'taxes', true);
-                $amount = $order->get_total_shipping() + $order->get_shipping_tax();
-                $itemWrapper = new stdClass();
-                $itemWrapper->quantity = 1;
-                $itemWrapper->price = new stdClass();
-                $itemWrapper->price->amount = round($amount, 2);
-                $itemWrapper->price->currency = $currency;
-                $itemWrapper->text = 'Доставка';
-                $itemWrapper->tax = $this->getYmTaxRate(array('total' => $taxes));
-                $receiptWrapper->items[] = $itemWrapper;
-            }
+	        echo '';
         }
 
         $result = htmlspecialchars(json_encode($receiptWrapper, JSON_UNESCAPED_UNICODE));
+
         return $result;
     }
 

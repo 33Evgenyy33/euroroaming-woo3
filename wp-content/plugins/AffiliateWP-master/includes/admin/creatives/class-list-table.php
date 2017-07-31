@@ -376,6 +376,10 @@ class AffWP_Creatives_Table extends List_Table {
 
 		$creatives = affiliate_wp()->creatives->get_creatives( $args );
 
+		// Retrieve the "current" total count for pagination purposes.
+		$args['number']      = -1;
+		$this->current_count = affiliate_wp()->creatives->count( $args );
+
 		return $creatives;
 
 	}
@@ -414,18 +418,17 @@ class AffWP_Creatives_Table extends List_Table {
 				$total_items = $this->inactive_count;
 				break;
 			case 'any':
-				$total_items = $this->total_count;
+				$total_items = $this->current_count;
 				break;
 		}
 
 		$this->items = $data;
 
 		$this->set_pagination_args( array(
-				'total_items' => $total_items,
-				'per_page'    => $per_page,
-				'total_pages' => ceil( $total_items / $per_page )
-			)
-		);
+			'total_items' => $total_items,
+			'per_page'    => $per_page,
+			'total_pages' => ceil( $total_items / $per_page )
+		) );
 
 	}
 }

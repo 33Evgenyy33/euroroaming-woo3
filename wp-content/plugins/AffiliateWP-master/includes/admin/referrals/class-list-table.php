@@ -571,8 +571,8 @@ class AffWP_Referrals_Table extends List_Table {
 			$from = ! empty( $_REQUEST['filter_from'] ) ? $_REQUEST['filter_from'] : '';
 			$to   = ! empty( $_REQUEST['filter_to'] )   ? $_REQUEST['filter_to']   : '';
 
-			echo "<input type='text' class='affwp-datepicker' autocomplete='off' name='filter_from' placeholder='" . __( 'From - mm/dd/yyyy', 'affiliate-wp' ) . "' value='" . $from . "'/>";
-			echo "<input type='text' class='affwp-datepicker' autocomplete='off' name='filter_to' placeholder='" . __( 'To - mm/dd/yyyy', 'affiliate-wp' ) . "' value='" . $to . "'/>&nbsp;";
+			echo "<input type='text' class='affwp-datepicker' autocomplete='off' name='filter_from' placeholder='" . __( 'From - mm/dd/yyyy', 'affiliate-wp' ) . "' value='" . esc_attr( $from ) . "'/>";
+			echo "<input type='text' class='affwp-datepicker' autocomplete='off' name='filter_to' placeholder='" . __( 'To - mm/dd/yyyy', 'affiliate-wp' ) . "' value='" . esc_attr( $to ) . "'/>&nbsp;";
 
 			/**
 			 * Fires in the admin referrals screen, inside the search filters form area, prior to the submit button.
@@ -735,18 +735,21 @@ class AffWP_Referrals_Table extends List_Table {
 	 */
 	public function referrals_data() {
 
-		$page      = isset( $_GET['paged'] )        ? absint( $_GET['paged'] ) : 1;
-		$status    = isset( $_GET['status'] )       ? $_GET['status']          : '';
-		$affiliate = isset( $_GET['affiliate_id'] ) ? $_GET['affiliate_id']    : '';
-		$reference = isset( $_GET['reference'] )    ? $_GET['reference']       : '';
-		$context   = isset( $_GET['context'] )      ? $_GET['context']         : '';
-		$campaign  = isset( $_GET['campaign'] )     ? $_GET['campaign']        : '';
-		$from      = isset( $_GET['filter_from'] )  ? $_GET['filter_from']     : '';
-		$to        = isset( $_GET['filter_to'] )    ? $_GET['filter_to']       : '';
-		$order     = isset( $_GET['order'] )        ? $_GET['order']           : 'DESC';
-		$orderby   = isset( $_GET['orderby'] )      ? $_GET['orderby']         : 'referral_id';
-		$referral  = '';
-		$is_search = false;
+		$page        = isset( $_GET['paged'] )        ? absint( $_GET['paged'] ) : 1;
+		$status      = isset( $_GET['status'] )       ? $_GET['status']          : '';
+		$affiliate   = isset( $_GET['affiliate_id'] ) ? $_GET['affiliate_id']    : '';
+		$reference   = isset( $_GET['reference'] )    ? $_GET['reference']       : '';
+		$context     = isset( $_GET['context'] )      ? $_GET['context']         : '';
+		$campaign    = isset( $_GET['campaign'] )     ? $_GET['campaign']        : '';
+		$from        = isset( $_GET['filter_from'] )  ? $_GET['filter_from']     : '';
+		$to          = isset( $_GET['filter_to'] )    ? $_GET['filter_to']       : '';
+		$order       = isset( $_GET['order'] )        ? $_GET['order']           : 'DESC';
+		$orderby     = isset( $_GET['orderby'] )      ? $_GET['orderby']         : 'referral_id';
+		$referral    = '';
+		$description = '';
+		$is_search   = false;
+
+		$amount = isset( $_GET['amount'] ) ? sanitize_text_field( $_GET['amount'] ) : 0;
 
 		if ( $affiliate && $affiliate = affwp_get_affiliate( $affiliate ) ) {
 			$affiliate = $affiliate->ID;
@@ -780,6 +783,10 @@ class AffWP_Referrals_Table extends List_Table {
 				$affiliate = absint( trim( str_replace( 'affiliate:', '', $search ) ) );
 			} elseif ( strpos( $search, 'campaign:' ) !== false ) {
 				$campaign = trim( str_replace( 'campaign:', '', $search ) );
+			} elseif ( strpos( $search, 'amount:' ) !== false ) {
+				$amount = trim( str_replace( 'amount:', '', $search ) );
+			} elseif ( strpos( $search, 'desc:' ) !== false ) {
+				$description = trim( str_replace( 'desc:', '', $search ) );
 			}
 
 		}
@@ -795,6 +802,8 @@ class AffWP_Referrals_Table extends List_Table {
 			'reference'    => $reference,
 			'context'      => $context,
 			'campaign'     => $campaign,
+			'amount'       => $amount,
+			'description'  => $description,
 			'date'         => $date,
 			'search'       => $is_search,
 			'orderby'      => sanitize_text_field( $orderby ),
@@ -802,6 +811,11 @@ class AffWP_Referrals_Table extends List_Table {
 		) );
 
 		$referrals = affiliate_wp()->referrals->get_referrals( $args );
+
+		// Retrieve the "current" total count for pagination purposes.
+		$args['number']      = -1;
+		$this->current_count = affiliate_wp()->referrals->count( $args );
+
 		return $referrals;
 	}
 
@@ -845,7 +859,7 @@ class AffWP_Referrals_Table extends List_Table {
 				$total_items = $this->rejected_count;
 				break;
 			case 'any':
-				$total_items = $this->total_count;
+				$total_items = $this->current_count;
 				break;
 		}
 

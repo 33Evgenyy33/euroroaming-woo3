@@ -232,30 +232,32 @@ echo '<div style="padding: 20px 0px 3px 0;margin-bottom: 12px;background: #4c75a
     ?>
 
     <div class="owl-carousel owl-theme">
-        <div class="item"><img src="https://euroroaming.ru/wp-content/uploads/2017/03/orange-min.png" alt=""></div>
-        <div class="item"><img src="https://euroroaming.ru/wp-content/uploads/2017/03/Globalsim-min.png" alt=""></div>
-        <div class="item"><img src="https://euroroaming.ru/wp-content/uploads/2017/03/EuropaSim-min.png" alt=""></div>
-        <div class="item"><img src="https://euroroaming.ru/wp-content/uploads/2017/03/Ortel-min.png" alt=""></div>
-        <div class="item"><img src="https://euroroaming.ru/wp-content/uploads/2017/03/vodafone-min.png" alt=""></div>
-        <div class="item"><img src="https://euroroaming.ru/wp-content/uploads/2017/03/vodafone-internet-min.png" alt=""></div>
+        <div class="item"><img src="https://euroroaming.ru/wp-content/uploads/2017/07/Orange-blog.png" alt=""></div>
+        <div class="item"><img src="https://euroroaming.ru/wp-content/uploads/2017/07/Ortel-Mobile-blog.png" alt=""></div>
+        <div class="item"><img src="https://euroroaming.ru/wp-content/uploads/2017/07/Three-blog.png" alt=""></div>
+        <div class="item"><img src="https://euroroaming.ru/wp-content/uploads/2017/07/Globalsim-classic-blog.png" alt=""></div>
+        <div class="item"><img src="https://euroroaming.ru/wp-content/uploads/2017/07/EuropaSim-blog.png" alt=""></div>
+        <div class="item"><img src="https://euroroaming.ru/wp-content/uploads/2017/07/TravelChat-blog.png" alt=""></div>
+        <div class="item"><img src="https://euroroaming.ru/wp-content/uploads/2017/07/Vodafone-blog.png" alt=""></div>
     </div>
 
-    <script>jQuery(document).ready(function(a){a(".owl-carousel").owlCarousel({items:8,lazyLoad:!0,loop:!0,margin:0,stagePadding:6,autoplay:!0,smartSpeed:1200,slideSpeed:1200,autoplayHoverPause:!0,responsiveClass:!0,responsive:{0:{items:1,nav:!0},600:{items:2,nav:!0},1e3:{items:2,nav:!0,loop:!0}}})});</script>
+    <script>jQuery(document).ready(function(a){a(".owl-carousel").owlCarousel({items:8,lazyLoad:!0,loop:!0,margin:10,stagePadding:6,autoplay:!0,smartSpeed:1200,slideSpeed:1200,autoplayHoverPause:!0,responsiveClass:!0,responsive:{0:{items:1,nav:!0},600:{items:2,nav:!0},1e3:{items:2,nav:!0,loop:!0}}})});</script>
     <style>.owl-carousel{background:rgba(255,255,255,.8);padding:12px 0 12px 0}</style>
-    <?php
-    echo do_shortcode('[vc_row height="auto" css=".vc_custom_1477837569113{padding-bottom: 20px !important;}"][vc_column el_class="buy-btn"][us_btn text="подробнее" link="url:https%3A%2F%2Feuroroaming.ru||target:%20_blank|"][us_btn text="купить" link="url:https%3A%2F%2Feuroroaming.ru%2Fshop||target:%20_blank|" color="secondary"][/vc_column][/vc_row]');
-    echo '<style>div#gform_wrapper_5{max-width:700px;margin:0 auto;margin-bottom:20px}form#gform_5{background-image:url(https://euroroaming.ru/wp-content/uploads/2016/10/img-0-min.png);background-repeat:no-repeat;box-shadow:0 1px 3px rgba(0,0,0,.1),0 3px 8px rgba(0,0,0,.1);background-color: #fff;background-size: contain;}#gform_5 h3.gform_title{font-weight:500;padding-top: 10px;}#gform_5 label.gfield_label{font-weight:400}#gform_5 .gform_footer.top_label{background:#fec947}#gform_5 .ginput_container input{background:rgba(242,242,242,.52)!important}.buy-btn{text-align: center;}.slick-slider{background: rgba(255, 255, 255, 0.8);padding: 15px 0 12px 0;}.ult-carousel-wrapper{ margin-bottom: 0!important;}</style>';
-    gravity_form(5, true, false, false, '', true);
-    echo '</div>';
-    }
-    if (is_singular('wpsl_stores')) {
-        // Код, который будет работать только на отдельных страницах с типом записи wpsl_stores
-        echo '<style>div#gform_wrapper_5{max-width:700px;margin:0 auto;margin-bottom:20px}form#gform_5{background-image:url(https://euroroaming.ru/wp-content/uploads/2016/10/img-0-min.png);background-repeat:no-repeat;box-shadow:0 1px 3px rgba(0,0,0,.1),0 3px 8px rgba(0,0,0,.1);background-color: #fff;background-size: contain;}#gform_5 h3.gform_title{font-weight:500;padding-top: 10px;}#gform_5 label.gfield_label{font-weight:400}#gform_5 .gform_footer.top_label{background:#fec947}#gform_5 .ginput_container input{background:rgba(242,242,242,.52)!important}    ul#gform_fields_5 {display: flex;/* display: block; */margin: 0 auto!important;width: 100%;padding-left: 5%;}#gform_fields_5 input{width: 100%;}@media only screen and (max-width: 641px){ul#gform_fields_5 {display: block;padding-left: 0;padding-right: 16px;}.gform_validation_error ul#gform_fields_5 {padding-right: 12px!important;} }.gform_validation_error ul#gform_fields_5 {padding-right: 33px;}</style>';
-        gravity_form(5, true, false, false, '', true);
-    }
+	<?php
+	echo do_shortcode('[vc_row height="auto" css=".vc_custom_1477837569113{padding-bottom: 20px !important;}"][vc_column el_class="buy-btn"][us_btn text="подробнее" link="url:https%3A%2F%2Feuroroaming.ru||target:%20_blank|"][us_btn text="купить" link="url:https%3A%2F%2Feuroroaming.ru%2Fshop||target:%20_blank|" color="secondary"][/vc_column][/vc_row]');
+	echo '<style>#gform_5 h3.gform_title{font-weight:500;padding-top: 10px;}#gform_5 label.gfield_label{font-weight:400}#gform_5 .gform_footer.top_label{background:#fec947}#gform_5 .ginput_container input{background:rgba(242,242,242,.52)!important}.buy-btn{text-align: center;}.slick-slider{background: rgba(255, 255, 255, 0.8);padding: 15px 0 12px 0;}.ult-carousel-wrapper{ margin-bottom: 0!important;}</style>';
+	gravity_form(5, true, false, false, '', true);
+	echo '</div>';
+}
+if (is_singular('wpsl_stores')) {
+	// Код, который будет работать только на отдельных страницах с типом записи wpsl_stores
+	echo '<style>#gform_5 h3.gform_title{font-weight:500;padding-top: 10px;}#gform_5 label.gfield_label{font-weight:400}#gform_5 .gform_footer.top_label{background:#fec947}#gform_5 .ginput_container input{background:rgba(242,242,242,.52)!important}@media only screen and (max-width: 641px){input#gform_submit_button_5{max-width:176px;line-height:3}ul#gform_fields_5{padding:16px}.gform_validation_error ul#gform_fields_5 {padding-right: 12px!important;} }.gform_validation_error ul#gform_fields_5 {padding-right: 33px;}</style>';
+	gravity_form(5, true, false, false, '', true);
+}
 
-    /*$shorti = '[ultimate_carousel slide_to_scroll="single" title_text_typography="" slides_on_desk="2" speed="1000" autoplay_speed="1200" arrow_style="circle-bg" arrow_bg_color="#ffffff" dots="off"][us_single_image image="33920" link="||target:%20_blank|"][us_single_image image="34144" link="||target:%20_blank|"][us_single_image image="33919" link="||target:%20_blank|"][us_single_image image="34143" link="||target:%20_blank|"][us_single_image image="33921" link="||target:%20_blank|"][us_single_image image="34145" link="||target:%20_blank|"][/ultimate_carousel]';
-    echo do_shortcode($shorti);*/
+
+/*$shorti = '[ultimate_carousel slide_to_scroll="single" title_text_typography="" slides_on_desk="2" speed="1000" autoplay_speed="1200" arrow_style="circle-bg" arrow_bg_color="#ffffff" dots="off"][us_single_image image="33920" link="||target:%20_blank|"][us_single_image image="34144" link="||target:%20_blank|"][us_single_image image="33919" link="||target:%20_blank|"][us_single_image image="34143" link="||target:%20_blank|"][us_single_image image="33921" link="||target:%20_blank|"][us_single_image image="34145" link="||target:%20_blank|"][/ultimate_carousel]';
+echo do_shortcode($shorti);*/
 
     ?>
     <style>

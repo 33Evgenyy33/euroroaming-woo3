@@ -107,3 +107,15 @@ function affwp_encyclopedia_pro_creatives_affiliate_area_compat( $affiliate_id, 
 	}
 }
 add_action( 'affwp_affiliate_dashboard_top', 'affwp_encyclopedia_pro_creatives_affiliate_area_compat', 10, 2 );
+
+/**
+ * Removes the RCP Prevent Account Sharing check when logging in or registering thhrough Affiliate Area
+ *
+ * @since 2.1
+ *
+ */
+function affwp_remove_rcp_can_be_logged_in_check() {
+	remove_action( 'init', 'rcp_can_user_be_logged_in', 10 );
+}
+add_action( 'affwp_pre_process_login_form', 'affwp_remove_rcp_can_be_logged_in_check' );
+add_action( 'affwp_pre_process_register_form', 'affwp_remove_rcp_can_be_logged_in_check' );

@@ -174,33 +174,34 @@ abstract class Affiliate_WP_DB {
 
 			$results = absint( $results );
 
-		} elseif ( '*' !== $clauses['fields'] ) {
+		} else {
 
-			$results = $wpdb->get_col(
-				$wpdb->prepare(
-					"SELECT {$clauses['fields']} FROM {$this->table_name} {$clauses['join']} {$clauses['where']} ORDER BY {$clauses['orderby']} {$clauses['order']} LIMIT %d, %d;",
-					absint( $args['offset'] ),
-					absint( $args['number'] )
-				)
-			);
+			$fields = $clauses['fields'];
 
-			if ( 'ids' === $args['fields'] ) {
-				$results = array_map( 'intval', $results );
-			}
-
- 		} else {
-
+			// Run the query.
 			$results = $wpdb->get_results(
 				$wpdb->prepare(
-					"SELECT * FROM {$this->table_name} {$clauses['join']} {$clauses['where']} ORDER BY {$clauses['orderby']} {$clauses['order']} LIMIT %d, %d;",
+					"SELECT {$fields} FROM {$this->table_name} {$clauses['join']} {$clauses['where']} ORDER BY {$clauses['orderby']} {$clauses['order']} LIMIT %d, %d;",
 					absint( $args['offset'] ),
 					absint( $args['number'] )
 				)
 			);
 
+			/*
+			 * If the query is for a single field, pluck the field into an array.
+			 *
+			 * Note that only the single field was selected in the query, but get_results()
+			 * returns an array of objects, thus the pluck.
+			 */
+			if ( '*' !== $fields && false === strpos( $fields, ',' ) ) {
+				$results = wp_list_pluck( $results, $fields );
+			}
+
+			// Run the results through the fields-dictated callback.
 			if ( ! empty( $callback ) && is_callable( $callback ) ) {
 				$results = array_map( $callback, $results );
 			}
+
 		}
 
 		return $results;
@@ -425,4 +426,40 @@ abstract class Affiliate_WP_DB {
 
 		return $_object;
 	}
+
+	/**
+	 * Parses a string of one or more valid object fields into a SQL-friendly format.
+	 *
+	 * @access public
+	 * @since  2.1
+	 *
+	 * @param string|array $fields Object fields.
+	 * @return string SQL-ready fields list. If empty, default is '*'.
+	 */
+	public function parse_fields( $fields ) {
+
+		$fields_sql = '';
+
+		if ( ! is_array( $fields ) ) {
+			$fields = array( $fields );
+		}
+
+		$count     = count( $fields );
+		$whitelist = array_keys( $this->get_columns() );
+
+		foreach ( $fields as $index => $field ) {
+			if ( ! in_array( $field, $whitelist, true ) ) {
+				unset( $fields[ $index ] );
+			}
+		}
+
+		$fields_sql = implode( ', ', $fields );
+
+		if ( empty ( $fields_sql ) ) {
+			$fields_sql = '*';
+		}
+
+		return $fields_sql;
+	}
+
 }

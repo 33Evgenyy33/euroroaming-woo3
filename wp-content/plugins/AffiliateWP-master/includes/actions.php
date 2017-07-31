@@ -23,7 +23,7 @@ function affwp_do_actions() {
 		do_action( "affwp_{$action}", $_REQUEST );
 	}
 }
-add_action( 'init', 'affwp_do_actions' );
+add_action( 'init', 'affwp_do_actions', 9 );
 
 // Process affiliate notification settings
 add_action( 'affwp_update_profile_settings', 'affwp_update_profile_settings' );
@@ -62,3 +62,34 @@ function affwp_remove_query_args( $query_args ) {
 	return $query_args;
 }
 add_filter( 'removable_query_args', 'affwp_remove_query_args' );
+
+
+/**
+ * Updates the website URL associated with a given affiliate's user account.
+ *
+ * @since 2.1
+ *
+ * @param int   $affiliate_id Affiliate ID.
+ * @param array $args         Arguments passed to {@see Affiliate_WP_DB_Affiliates::add()}.
+ * @return int|\WP_Error|false The updated user's ID if successful, WP_Error object on error, otherwise false.
+ */
+function affwp_process_add_affiliate_website( $affiliate_id, $args ) {
+	$updated = false;
+
+	if ( ! empty( $args['website_url'] ) ) {
+
+		$website_url = esc_url( $args['website_url'] );
+
+		$user_id = affwp_get_affiliate_user_id( $affiliate_id );
+
+		$updated = wp_update_user( array(
+			'ID'       => $user_id,
+			'user_url' => $website_url
+		) );
+
+	}
+
+	return $updated;
+
+}
+add_action( 'affwp_insert_affiliate', 'affwp_process_add_affiliate_website', 11, 2 );

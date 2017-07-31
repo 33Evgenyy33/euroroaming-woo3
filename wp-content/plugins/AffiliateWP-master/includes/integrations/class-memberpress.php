@@ -63,9 +63,7 @@ class Affiliate_WP_MemberPress extends Affiliate_WP_Base {
 			// Customers cannot refer themselves
 			if ( ! empty( $user->user_email ) && $this->is_affiliate_email( $user->user_email ) ) {
 
-				if( $this->debug ) {
-					$this->log( 'Referral not created because affiliate\'s own account was used.' );
-				}
+				$this->log( 'Referral not created because affiliate\'s own account was used.' );
 
 				return;
 			}
@@ -374,4 +372,7 @@ class Affiliate_WP_MemberPress extends Affiliate_WP_Base {
 		return false;
 	}
 }
-new Affiliate_WP_MemberPress;
+
+if ( class_exists( 'MeprAppCtrl' ) ) {
+	new Affiliate_WP_MemberPress;
+}

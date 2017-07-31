@@ -220,6 +220,45 @@ $notes            = affwp_get_affiliate_meta( $affiliate->affiliate_id, 'notes',
 
 			</tr>
 
+            <tr class="form-row">
+
+                <th scope="row">
+                    <label for="actual_address">Фактический адрес</label>
+                </th>
+
+                <td>
+                    <textarea type="text" style="width: 500px;margin-bottom: 6px;background: white;"
+                              readonly><?php echo esc_attr($user_info->actual_address); ?></textarea>
+                </td>
+
+            </tr>
+
+            <tr class="form-row">
+
+                <th scope="row">
+                    <label for="billing_partner">Форма оплаты</label>
+                </th>
+
+                <td>
+                    <textarea type="text" style="width: 500px;margin-bottom: 6px;background: white;"
+                              readonly><?php echo esc_attr($user_info->billing_partner); ?></textarea>
+                </td>
+
+            </tr>
+
+            <tr class="form-row">
+
+                <th scope="row">
+                    <label for="promocod_partner">Форма оплаты</label>
+                </th>
+
+                <td>
+                    <textarea type="text" style="width: 500px;margin-bottom: 6px;background: white;"
+                              readonly><?php echo esc_attr($user_info->promocod_partner); ?></textarea>
+                </td>
+
+            </tr>
+
 			<tr class="form-row">
 
 				<th scope="row">

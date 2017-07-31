@@ -11,7 +11,7 @@
 		do_action( 'affwp_new_creative_top' );
 		?>
 
-		<p><?php printf( __( 'Use this screen to add a new creative, such as a text link or image banner.', 'affiliate-wp' ), admin_url( 'user-new.php' ) ); ?></p>
+		<p><?php esc_html_e( 'Use this screen to add a new creative, such as a text link or image banner.', 'affiliate-wp' ); ?></p>
 
 		<table class="form-table">
 
@@ -62,7 +62,7 @@
 
 				<td>
 					<input type="text" name="text" id="text" class="regular-text" maxlength="255" />
-					<p class="description"><?php _e( 'Text for this creative.', 'affiliate-wp' ); ?></p>
+					<p class="description"><?php _e( 'Text for this creative. To make this a text-only creative, do not add an image below.', 'affiliate-wp' ); ?></p>
 				</td>
 
 			</tr>
@@ -76,7 +76,7 @@
 				<td>
 					<input id="image" name="image" type="text" class="upload_field regular-text" />
 					<input class="upload_image_button button-secondary" type="button" value="Choose Image" />
-					<p class="description"><?php _e( 'Select an image if you would like an image banner. You can also enter an image URL if your image is hosted elsewhere.', 'affiliate-wp' ); ?></p>
+					<p class="description"><?php _e( 'Select an image if you would like an image banner. You can also enter an image URL if your image is hosted elsewhere. Leave blank if you wish to create a text-only creative.', 'affiliate-wp' ); ?></p>
 
 					<div id="preview_image"></div>
 				</td>

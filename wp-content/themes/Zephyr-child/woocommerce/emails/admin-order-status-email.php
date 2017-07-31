@@ -83,7 +83,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 																	<div style="color:#555555;line-height:120%;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif;">
 																		<div style="font-size:16px;line-height:17px;color:#555555;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif;text-align:left;">
 																			<?php
-																			$some_field = get_post_meta( $order->id, 'tel', true );
+																			$some_field = get_post_meta( $order->get_id(), 'tel', true );
 																			if($some_field != '') {
 																				echo '<p>'.'Присвоенный номер: '.$some_field.'</p>';
 																			}
@@ -173,7 +173,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 																<div style="color:#555555;line-height:120%;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif;">
 																	<div style="font-size:16px;line-height:17px;color:#555555;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif;text-align:left;">
 																		<h2>
-																			<a href="<?php echo admin_url( 'post.php?post=' . $order->id . '&action=edit' ); ?>">
+																			<a href="<?php echo admin_url( 'post.php?post=' . $order->get_id() . '&action=edit' ); ?>">
 																				<?php printf( /* translators: Placeholders: %s - order number */
 																					__( 'Заказ: #%s', 'woocommerce-order-status-manager' ), $order->get_order_number() ); ?>
 																			</a> (<?php printf( '<time datetime="%s">%s</time>', date_i18n( 'c', strtotime( $order->order_date ) ), date_i18n( wc_date_format(), strtotime( $order->order_date ) ) ); ?>)
@@ -190,11 +190,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 																			<tbody>
 																			<?php
 																			if ( SV_WC_Plugin_Compatibility::is_wc_version_gte_2_5() ) {
-																				echo $order->email_order_items_table( array(
+																				echo $order->wc_get_email_order_items( array(
 																					'show_sku' => true,
 																				) );
 																			} else {
-																				echo $order->email_order_items_table( false, true, true );
+																				echo $order->wc_get_email_order_items( false, true, true );
 																			}
 																			?>
 																			</tbody>

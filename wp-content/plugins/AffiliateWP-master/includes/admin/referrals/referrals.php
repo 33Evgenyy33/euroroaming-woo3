@@ -61,7 +61,7 @@ function affwp_referrals_admin() {
 					<h2><?php _e( 'Generate Payout File', 'affiliate-wp' ); ?></h2>
 					<p>
 						<span class="affwp-ajax-search-wrap">
-							<input type="text" name="user_name" id="user_name" class="affwp-user-search" autocomplete="off" placeholder="<?php _e( 'Affiliate name', 'affiliate-wp' ); ?>" />
+							<input type="text" name="user_name" id="user_name" class="affwp-user-search" data-affwp-status="any" autocomplete="off" placeholder="<?php _e( 'Affiliate name', 'affiliate-wp' ); ?>" />
 						</span>
 
 						<input type="text" class="affwp-datepicker" autocomplete="off" name="from" placeholder="<?php _e( 'From - mm/dd/yyyy', 'affiliate-wp' ); ?>"/>

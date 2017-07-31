@@ -3,6 +3,20 @@
 class Affiliate_WP_Registrations_Graph extends Affiliate_WP_Graph {
 
 	/**
+	 * Runs during instantiation of the affiliate registrations graph.
+	 *
+	 * @access public
+	 * @since  2.1
+	 *
+	 * @param array $_data Data for initializing the graph instance.
+	 */
+	public function __construct( $_data = array() ) {
+		parent::__construct( $_data );
+
+		$this->options['form_wrapper'] = false;
+	}
+
+	/**
 	 * Retrieve referral data
 	 *
 	 * @since 1.1

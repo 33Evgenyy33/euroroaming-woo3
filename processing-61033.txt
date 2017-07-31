@@ -1,0 +1,34 @@
+stdClass Object
+(
+    [customerContact] => 33evgenyy33@gmail.com
+    [items] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [quantity] => 2
+                    [price] => stdClass Object
+                        (
+                            [amount] => 2760
+                            [currency] => RUB
+                        )
+
+                    [text] => Orange с тарифом «Mundo» для Европы
+                    [tax] => 1
+                )
+
+            [1] => stdClass Object
+                (
+                    [quantity] => 1
+                    [price] => stdClass Object
+                        (
+                            [amount] => 100
+                            [currency] => RUB
+                        )
+
+                    [text] => Доставка
+                    [tax] => 1
+                )
+
+        )
+
+)

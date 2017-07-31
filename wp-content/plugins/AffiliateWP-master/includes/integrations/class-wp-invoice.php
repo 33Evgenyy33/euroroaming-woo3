@@ -62,4 +62,7 @@ class Affiliate_WP_Invoice extends Affiliate_WP_Base {
 	}
 
 }
-new Affiliate_WP_Invoice;
+
+if ( class_exists( 'WPI_Invoice' ) ) {
+	new Affiliate_WP_Invoice;
+}

@@ -174,9 +174,7 @@ class Affiliate_WP_PMS extends Affiliate_WP_Base {
 
                     if ( ! affiliate_wp()->tracking->is_valid_affiliate( $affiliate_id ) ) {
 
-                        if ( $this->debug ) {
-                            $this->log( 'Referral not created because affiliate is invalid.' );
-                        }
+						$this->log( 'Referral not created because affiliate is invalid.' );
 
                     } else {
 
@@ -206,9 +204,7 @@ class Affiliate_WP_PMS extends Affiliate_WP_Base {
              */
             if ( $this->is_affiliate_email( $payment_data['user_data']['user_id'] ) ) {
 
-                if ( $this->debug ) {
-                    $this->log( 'Referral not created because affiliate\'s own account was used.' );
-                }
+				$this->log( 'Referral not created because affiliate\'s own account was used.' );
 
                 return;
             }
@@ -223,9 +219,7 @@ class Affiliate_WP_PMS extends Affiliate_WP_Base {
         // If the base amount is zero and it's set to ignore zero amounts, exit
         if ( 0 == $base_amount && affiliate_wp()->settings->get( 'ignore_zero_referrals' ) ) {
 
-            if ( $this->debug ) {
-                $this->log( 'Referral not created due to 0.00 amount.' );
-            }
+			$this->log( 'Referral not created due to 0.00 amount.' );
 
             return;
         }
@@ -334,4 +328,7 @@ class Affiliate_WP_PMS extends Affiliate_WP_Base {
     }
 
 }
-new Affiliate_WP_PMS;
+
+if ( function_exists( 'pms_get_discount_by_code' ) ) {
+	new Affiliate_WP_PMS;
+}

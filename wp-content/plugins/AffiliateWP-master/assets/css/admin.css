@@ -23,6 +23,11 @@
 	top: 1px;
 }
 
+select.affwp-graphs-date-options {
+	vertical-align: top;
+	height: 26px;
+}
+
 table.affwp_table {
 	text-align: left;
 	width: 100%;
@@ -146,6 +151,10 @@ table.affiliates #unpaid {
 
 #affwp-referrals-export-wrap h2 {
 	margin-top: 0em;
+}
+
+.affwp-required-import-field {
+	background-color: #fadedc !important;
 }
 
 .affwp-status.pending i,
@@ -299,6 +308,11 @@ table.affiliates #unpaid {
 	background-color: #fff;
 	margin-bottom: 10px;
 	box-sizing: content-box;
+}
+
+.affwp-inline-button {
+	position: relative;
+	left: 8px;
 }
 
 /* WooCommerce Admin Tweaks */

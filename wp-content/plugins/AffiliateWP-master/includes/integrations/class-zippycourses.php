@@ -164,9 +164,7 @@ class Affiliate_WP_ZippyCourses extends Affiliate_WP_Base {
 
 				if ( $customer === null || $this->is_affiliate_email( $customer->getEmail() ) ) {
    
-					if( $this->debug ) {
-						$this->log( 'Referral not created because affiliate\'s own account was used.' );
-					}
+					$this->log( 'Referral not created because affiliate\'s own account was used.' );
 
 					return; // Customers cannot refer themselves
 				}
@@ -323,4 +321,6 @@ class Affiliate_WP_ZippyCourses extends Affiliate_WP_Base {
 
 }
 
-new Affiliate_WP_ZippyCourses;
+if ( class_exists( 'Zippy_Event' ) ) {
+	new Affiliate_WP_ZippyCourses;
+}

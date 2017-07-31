@@ -44,7 +44,7 @@ do_action( 'woocommerce_email_before_order_table', $order, $sent_to_admin, $plai
 /* translators: Placeholders: %s - order number */
 echo sprintf( __( 'Order number: %s', 'woocommerce-order-status-manager' ), $order->get_order_number() ) . "\n";
 /* translators: Placeholders: %s - order link */
-echo sprintf( __( 'Order link: %s', 'woocommerce-order-status-manager' ), esc_url( admin_url( 'post.php?post=' . $order->id . '&action=edit' ) ) ) . "\n";
+echo sprintf( __( 'Order link: %s', 'woocommerce-order-status-manager' ), esc_url( admin_url( 'post.php?post=' . $order->get_id() . '&action=edit' ) ) ) . "\n";
 /* translators: Placeholders: %s - order date */
 echo sprintf( __( 'Order date: %s', 'woocommerce-order-status-manager' ), date_i18n( __( 'jS F Y', 'woocommerce-order-status-manager' ), strtotime( $order->order_date ) ) ) . "\n";
 
@@ -53,12 +53,12 @@ do_action( 'woocommerce_email_order_meta', $order, $sent_to_admin, $plain_text )
 echo "\n";
 
 if ( SV_WC_Plugin_Compatibility::is_wc_version_gte_2_5() ) {
-	echo $order->email_order_items_table( array(
+	echo $order->wc_get_email_order_items( array(
 		'show_sku'   => true,
 		'plain_text' => true,
 	) );
 } else {
-	echo $order->email_order_items_table( false, true, '', '', '', true );
+	echo $order->wc_get_email_order_items( false, true, '', '', '', true );
 }
 
 echo "----------\n\n";

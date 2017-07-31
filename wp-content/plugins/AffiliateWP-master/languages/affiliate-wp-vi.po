@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AffiliateWP\n"
 "Report-Msgid-Bugs-To: https://affiliatewp.com/support/\n"
-"POT-Creation-Date: 2017-02-17 03:04:25+00:00\n"
-"PO-Revision-Date: 2016-05-21 12:34+1200\n"
+"POT-Creation-Date: 2017-06-28 16:58:31+00:00\n"
+"PO-Revision-Date: 2017-06-01 00:46-0600\n"
 "Last-Translator: AffiliateWP Support <support@affiliatewp.com>\n"
 "Language-Team: AffiliateWP <support@affiliatewp.com>\n"
 "Language: vi_VN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Poedit 2.0.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -34,7 +34,8 @@ msgstr ""
 "AffiliateWP Plugin yêu cầu. Bạn cần liên hệ nhà cung cấp Host hổ trợ nâng "
 "cấp lên phiên bản PHP 5.3 hoặc cao hơn. "
 
-#: includes/REST/class-rest.php:62 includes/admin/tools/tools.php:523
+#: includes/REST/class-rest.php:62 includes/admin/ajax-actions.php:224
+#: includes/admin/tools/tools.php:667
 msgid "Nonce verification failed"
 msgstr ""
 
@@ -42,36 +43,38 @@ msgstr ""
 #: includes/REST/class-rest.php:81 includes/REST/class-rest.php:84
 #: includes/admin/AFFWP_Plugin_Updater.php:402
 #: includes/admin/affiliates/actions.php:20
-#: includes/admin/affiliates/actions.php:69
-#: includes/admin/affiliates/actions.php:73
-#: includes/admin/affiliates/actions.php:77
-#: includes/admin/affiliates/actions.php:124
-#: includes/admin/affiliates/actions.php:155
-#: includes/admin/affiliates/actions.php:159
+#: includes/admin/affiliates/actions.php:99
+#: includes/admin/affiliates/actions.php:103
+#: includes/admin/affiliates/actions.php:107
+#: includes/admin/affiliates/actions.php:154
+#: includes/admin/affiliates/actions.php:185
+#: includes/admin/affiliates/actions.php:189
 #: includes/admin/class-addon-updater.php:283
-#: includes/admin/class-notices.php:463 includes/admin/creatives/actions.php:16
+#: includes/admin/class-notices.php:564
+#: includes/admin/creatives/actions.php:16
 #: includes/admin/creatives/actions.php:44
 #: includes/admin/creatives/actions.php:48
 #: includes/admin/creatives/actions.php:52
 #: includes/admin/creatives/actions.php:80
 #: includes/admin/referrals/actions.php:16
-#: includes/admin/tools/export/class-batch-export.php:198
-#: includes/admin/tools/export/class-export-settings.php:90
-#: includes/admin/tools/export/class-export.php:226
+#: includes/admin/tools/export/class-batch-export.php:199
+#: includes/admin/tools/export/class-export-settings.php:91
+#: includes/admin/tools/export/class-export.php:227
+#: includes/admin/tools/import/class-batch-import-affiliates.php:102
+#: includes/admin/tools/import/class-batch-import-referrals.php:94
 #: includes/admin/tools/import/import.php:24
-#: includes/admin/tools/import/import.php:30 includes/admin/tools/tools.php:524
-#: includes/admin/tools/tools.php:532 includes/admin/tools/tools.php:542
+#: includes/admin/tools/import/import.php:30
+#: includes/admin/tools/tools.php:668 includes/admin/tools/tools.php:676
+#: includes/admin/tools/tools.php:686
 msgid "Error"
 msgstr "Lỗi"
 
 #: includes/REST/class-rest.php:68
-#, fuzzy
 msgid "User ID Required"
 msgstr "ID người dùng"
 
 #. translators: 1: Generate, regenerate, or revoke
 #: includes/REST/class-rest.php:81 includes/REST/class-rest.php:84
-#, fuzzy
 msgid "You do not have permission to %s API keys for this user."
 msgstr "Bạn không có quyền xuất dữ liệu"
 
@@ -80,7 +83,6 @@ msgid "Whether to include a modified user object in the response."
 msgstr ""
 
 #: includes/REST/v1/class-affiliates-endpoints.php:67
-#, fuzzy
 msgid "Whether to include the affiliate meta in the response."
 msgstr "Tên đăng nhập của cộng tác viên trên website"
 
@@ -107,14 +109,12 @@ msgid ""
 msgstr ""
 
 #: includes/REST/v1/class-affiliates-endpoints.php:256
-#, fuzzy
 msgid "Affiliates table column to order by."
 msgstr ""
 "Affiliate Plugin for WordPress ( Plugin tạo chương trình cộng tác viên cho "
 "Wordpress )"
 
 #: includes/REST/v1/class-affiliates-endpoints.php:263
-#, fuzzy
 msgid "The date array or string to query affiliate registrations within."
 msgstr "Cám ơn bạn đã đăng ký cộng tác viên trên {site_name}."
 
@@ -123,7 +123,6 @@ msgid "Use any get_affiliates() arguments to modify the response."
 msgstr ""
 
 #: includes/REST/v1/class-affiliates-endpoints.php:297
-#, fuzzy
 msgid "The unique affiliate ID."
 msgstr "ID của cộng tác viên"
 
@@ -132,7 +131,6 @@ msgid "ID for the user account associated with the affiliate."
 msgstr ""
 
 #: includes/REST/v1/class-affiliates-endpoints.php:305
-#, fuzzy
 msgid "The affiliate rate."
 msgstr "Tỷ lệ cộng tác viên"
 
@@ -141,12 +139,10 @@ msgid "The affiliate rate, as it exists in the database"
 msgstr ""
 
 #: includes/REST/v1/class-affiliates-endpoints.php:313
-#, fuzzy
 msgid "The affiliate rate, as inherited from global settings."
 msgstr "URL giới thiệu của cộng tác viên"
 
 #: includes/REST/v1/class-affiliates-endpoints.php:319
-#, fuzzy
 msgid "The affiliate rate type"
 msgstr "Kiểu tỷ lệ giới thiệu của các cộng tác viên"
 
@@ -155,19 +151,16 @@ msgid "The affiliate rate type, as it exists in the database"
 msgstr ""
 
 #: includes/REST/v1/class-affiliates-endpoints.php:327
-#, fuzzy
 msgid "The affiliate rate type, as inherited from global settings."
 msgstr "URL giới thiệu của cộng tác viên"
 
 #: includes/REST/v1/class-affiliates-endpoints.php:333
-#, fuzzy
 msgid "The affiliate account email. Synced with the associated user account."
 msgstr ""
 "Bắt đầu gõ tên của cộng tác viên để thực hiện tìm kiếm tài khoản người dùng "
 "của họ."
 
 #: includes/REST/v1/class-affiliates-endpoints.php:338
-#, fuzzy
 msgid "The affiliate payment email address."
 msgstr "Tài khoản cộng tác viên của bạn không hoạt động"
 
@@ -182,17 +175,14 @@ msgid ""
 msgstr ""
 
 #: includes/REST/v1/class-affiliates-endpoints.php:352
-#, fuzzy
 msgid "The affiliate status."
 msgstr "Trạng thái cộng tác viên"
 
 #: includes/REST/v1/class-affiliates-endpoints.php:356
-#, fuzzy
 msgid "Unpaid affiliate earnings."
 msgstr "Cài đặt cộng tác viên"
 
 #: includes/REST/v1/class-affiliates-endpoints.php:360
-#, fuzzy
 msgid "Affiliate earnings."
 msgstr "Cài đặt cộng tác viên"
 
@@ -201,12 +191,10 @@ msgid "The number of paid referrals associated with the affiliate."
 msgstr ""
 
 #: includes/REST/v1/class-affiliates-endpoints.php:368
-#, fuzzy
 msgid "The number of visits associated with the affiliate."
 msgstr "Website của cộng tác viên"
 
 #: includes/REST/v1/class-affiliates-endpoints.php:372
-#, fuzzy
 msgid "The date the affiliate was registered."
 msgstr "Lý do một khu vực cộng tác viên đã bị từ chối"
 
@@ -227,17 +215,14 @@ msgid "Use any get_creatives() arguments to modify the response."
 msgstr ""
 
 #: includes/REST/v1/class-creatives-endpoints.php:215
-#, fuzzy
 msgid "The unique creative ID."
 msgstr "Văn bản cho mẫu quảng cáo này"
 
 #: includes/REST/v1/class-creatives-endpoints.php:219
-#, fuzzy
 msgid "Name of the creative."
 msgstr "Văn bản cho mẫu quảng cáo này"
 
 #: includes/REST/v1/class-creatives-endpoints.php:223
-#, fuzzy
 msgid "Description for the creative."
 msgstr "Văn bản cho mẫu quảng cáo này"
 
@@ -246,7 +231,6 @@ msgid "URL the creative points to."
 msgstr ""
 
 #: includes/REST/v1/class-creatives-endpoints.php:231
-#, fuzzy
 msgid "Text for the creative."
 msgstr "Văn bản cho mẫu quảng cáo này"
 
@@ -255,12 +239,10 @@ msgid "ID of the media library image associated with the creative"
 msgstr ""
 
 #: includes/REST/v1/class-creatives-endpoints.php:239
-#, fuzzy
 msgid "The creative status."
 msgstr "(Người dùng hiện tại sẽ không bị xóa)"
 
 #: includes/REST/v1/class-creatives-endpoints.php:243
-#, fuzzy
 msgid "The date the creative was created."
 msgstr "Mẫu quảng cáo được thêm thành công"
 
@@ -311,7 +293,6 @@ msgid "The unique payout ID."
 msgstr ""
 
 #: includes/REST/v1/class-payouts-endpoints.php:274
-#, fuzzy
 msgid "The affiliate ID associated with the payout."
 msgstr "Bạn có chắc muốn xóa mẫu quảng cáo này?"
 
@@ -324,7 +305,6 @@ msgid "The number of referrals associated with the affiliate."
 msgstr ""
 
 #: includes/REST/v1/class-payouts-endpoints.php:289
-#, fuzzy
 msgid "Total referrals amount for the payout."
 msgstr "Vô hiệu giới thiệu trên sản phẩm này"
 
@@ -378,42 +358,34 @@ msgid "Use any get_referrals() arguments to modify the response."
 msgstr ""
 
 #: includes/REST/v1/class-referrals-endpoints.php:270
-#, fuzzy
 msgid "The unique referral ID."
 msgstr "Số tiền của một giới thiệu đã cho"
 
 #: includes/REST/v1/class-referrals-endpoints.php:274
-#, fuzzy
 msgid "ID for the affiliate account associated with the referral."
 msgstr "Yêu cầu tài khoản cộng tác viên của bạn bị từ chối"
 
 #: includes/REST/v1/class-referrals-endpoints.php:278
-#, fuzzy
 msgid "ID for the visit associated with the referral."
 msgstr "Chọn trạng thái của giới thiệu."
 
 #: includes/REST/v1/class-referrals-endpoints.php:282
-#, fuzzy
 msgid "Referral description."
 msgstr "Mô tả giới thiệu"
 
 #: includes/REST/v1/class-referrals-endpoints.php:286
-#, fuzzy
 msgid "The referral status."
 msgstr "Các trạng thái giới thiệu:"
 
 #: includes/REST/v1/class-referrals-endpoints.php:290
-#, fuzzy
 msgid "Referral amount."
 msgstr "Tỷ lệ Giới thiệu"
 
 #: includes/REST/v1/class-referrals-endpoints.php:294
-#, fuzzy
 msgid "Currency for the referral amount."
 msgstr "Tỷ lệ Giới thiệu"
 
 #: includes/REST/v1/class-referrals-endpoints.php:298
-#, fuzzy
 msgid "Custom referral data."
 msgstr "Không tìm thấy giới thiệu nào"
 
@@ -435,7 +407,6 @@ msgid "Products associated with the referral."
 msgstr ""
 
 #: includes/REST/v1/class-referrals-endpoints.php:318
-#, fuzzy
 msgid "The date the referral was generated."
 msgstr "Số lượng của giới thiệu, chẳng hạn 15."
 
@@ -481,7 +452,6 @@ msgid "The referral status or array of statuses to retrieve visits for."
 msgstr ""
 
 #: includes/REST/v1/class-visits-endpoints.php:207
-#, fuzzy
 msgid "The context under which the visit was created."
 msgstr "Cài đặt đã nhập thành công"
 
@@ -498,7 +468,6 @@ msgid "The unique visit ID."
 msgstr ""
 
 #: includes/REST/v1/class-visits-endpoints.php:263
-#, fuzzy
 msgid "ID for the affiliate account associated with the visit."
 msgstr "Tài khoản cộng tác viên của bạn không hoạt động"
 
@@ -507,12 +476,10 @@ msgid "ID for the referral associated with the visit."
 msgstr ""
 
 #: includes/REST/v1/class-visits-endpoints.php:271
-#, fuzzy
 msgid "The visit URL."
 msgstr "Địa chỉ website"
 
 #: includes/REST/v1/class-visits-endpoints.php:275
-#, fuzzy
 msgid "Visit referrer."
 msgstr "Tín dụng giới thiệu sau cùng"
 
@@ -521,7 +488,6 @@ msgid "Campaign associated with the visit."
 msgstr ""
 
 #: includes/REST/v1/class-visits-endpoints.php:283
-#, fuzzy
 msgid "Context under which the visit was generated."
 msgstr "Cài đặt đã nhập thành công"
 
@@ -530,81 +496,95 @@ msgid "Visitor IP address."
 msgstr ""
 
 #: includes/REST/v1/class-visits-endpoints.php:291
-#, fuzzy
 msgid "The date the visit was generated."
 msgstr "Cài đặt đã nhập thành công"
 
-#: includes/abstracts/class-affwp-reports-tab.php:115
+#: includes/abstracts/class-affwp-reports-tab.php:135
 #, fuzzy
-msgid "Date Filters"
+msgid "Filters"
 msgstr "Lọc"
 
-#: includes/abstracts/class-affwp-reports-tab.php:130
+#: includes/abstracts/class-affwp-reports-tab.php:151
+#: includes/admin/referrals/class-list-table.php:582
+#: includes/admin/visits/visits.php:67 includes/class-graph.php:428
+msgid "Filter"
+msgstr "Lọc"
+
+#: includes/abstracts/class-affwp-reports-tab.php:172
 msgid "Quick Stats"
 msgstr ""
 
-#: includes/abstracts/class-affwp-reports-tab.php:163
+#: includes/abstracts/class-affwp-reports-tab.php:207
 msgid "Trends"
 msgstr ""
 
-#: includes/abstracts/class-affwp-reports-tab.php:325
+#: includes/abstracts/class-affwp-reports-tab.php:381
 msgid "No data for the current date range."
 msgstr ""
 
-#: includes/abstracts/class-affwp-reports-tab.php:370
-#: includes/class-graph.php:365
+#: includes/abstracts/class-affwp-reports-tab.php:433
+#: includes/class-graph.php:361
 msgid "Today"
 msgstr "Hôm nay"
 
-#: includes/abstracts/class-affwp-reports-tab.php:371
-#: includes/class-graph.php:366
+#: includes/abstracts/class-affwp-reports-tab.php:434
+#: includes/class-graph.php:362
 msgid "Yesterday"
 msgstr "Hôm qua"
 
-#: includes/abstracts/class-affwp-reports-tab.php:372
-#: includes/class-graph.php:367
+#: includes/abstracts/class-affwp-reports-tab.php:435
+#: includes/class-graph.php:363
 msgid "This Week"
 msgstr "Tuần này"
 
-#: includes/abstracts/class-affwp-reports-tab.php:373
-#: includes/class-graph.php:368
+#: includes/abstracts/class-affwp-reports-tab.php:436
+#: includes/class-graph.php:364
 msgid "Last Week"
 msgstr "Tuần vừa qua"
 
-#: includes/abstracts/class-affwp-reports-tab.php:374
-#: includes/class-graph.php:369
+#: includes/abstracts/class-affwp-reports-tab.php:437
+#: includes/class-graph.php:365
 msgid "This Month"
 msgstr "Tháng này"
 
-#: includes/abstracts/class-affwp-reports-tab.php:375
-#: includes/class-graph.php:370
+#: includes/abstracts/class-affwp-reports-tab.php:438
+#: includes/class-graph.php:366
 msgid "Last Month"
 msgstr "Tháng vừa qua"
 
-#: includes/abstracts/class-affwp-reports-tab.php:376
-#: includes/class-graph.php:371
+#: includes/abstracts/class-affwp-reports-tab.php:439
+#: includes/class-graph.php:367
 msgid "This Quarter"
 msgstr "Quý này"
 
-#: includes/abstracts/class-affwp-reports-tab.php:377
-#: includes/class-graph.php:372
+#: includes/abstracts/class-affwp-reports-tab.php:440
+#: includes/class-graph.php:368
 msgid "Last Quarter"
 msgstr "Quý vừa qua"
 
-#: includes/abstracts/class-affwp-reports-tab.php:378
-#: includes/class-graph.php:373
+#: includes/abstracts/class-affwp-reports-tab.php:441
+#: includes/class-graph.php:369
 msgid "This Year"
 msgstr "Năm nay"
 
-#: includes/abstracts/class-affwp-reports-tab.php:379
-#: includes/class-graph.php:374
+#: includes/abstracts/class-affwp-reports-tab.php:442
+#: includes/class-graph.php:370
 msgid "Last Year"
 msgstr "Năm vừa qua"
 
 #. translators: 1: Starting date, 2: Ending date
-#: includes/abstracts/class-affwp-reports-tab.php:389
+#: includes/abstracts/class-affwp-reports-tab.php:452
 msgid "%1$s to %2$s"
 msgstr ""
+
+#: includes/abstracts/class-affwp-reports-tab.php:499
+#: includes/admin/referrals/class-list-table.php:568
+#: includes/admin/referrals/referrals.php:64
+#: includes/admin/tools/tools.php:152 includes/admin/tools/tools.php:308
+#: includes/admin/tools/tools.php:335 includes/admin/tools/tools.php:359
+#: includes/admin/visits/visits.php:55
+msgid "Affiliate name"
+msgstr "Tên cộng tác viên"
 
 #: includes/admin/AFFWP_Plugin_Updater.php:201
 msgid ""
@@ -675,42 +655,43 @@ msgstr ""
 "Có một lỗi khi truy xuất danh sách add-ons từ máy chủ. Vui lòng thử lại sau."
 
 #: includes/admin/affiliates/actions.php:20
-#: includes/admin/affiliates/actions.php:124
-#: includes/admin/affiliates/actions.php:155
+#: includes/admin/affiliates/actions.php:154
+#: includes/admin/affiliates/actions.php:185
 msgid "You do not have permission to manage affiliates"
 msgstr "Bạn không có quyền để quản lý các cộng tác viên"
 
-#: includes/admin/affiliates/actions.php:69
+#: includes/admin/affiliates/actions.php:99
 msgid "You do not have permission to delete affiliate accounts"
 msgstr "Bạn không có quyền xóa các tài khoản cộng tác viên"
 
-#: includes/admin/affiliates/actions.php:73
-#: includes/admin/affiliates/actions.php:159
-#: includes/admin/class-notices.php:463 includes/admin/creatives/actions.php:48
+#: includes/admin/affiliates/actions.php:103
+#: includes/admin/affiliates/actions.php:189
+#: includes/admin/class-notices.php:564
+#: includes/admin/creatives/actions.php:48
 #: includes/admin/referrals/actions.php:20
 #: includes/admin/referrals/actions.php:51
 #: includes/admin/referrals/actions.php:82
 msgid "Security check failed"
 msgstr "Kiểm tra an ninh thất bại"
 
-#: includes/admin/affiliates/actions.php:77
+#: includes/admin/affiliates/actions.php:107
 msgid "No affiliate IDs specified for deletion"
 msgstr "Không có ID cộng tác viên được chỉ định xóa"
 
-#: includes/admin/affiliates/affiliates.php:56 includes/admin/class-menu.php:11
-#: includes/admin/class-menu.php:14
+#: includes/admin/affiliates/affiliates.php:59
+#: includes/admin/class-menu.php:11 includes/admin/class-menu.php:14
 #: includes/admin/reports/tabs/class-affiliates-reports-tab.php:23
 msgid "Affiliates"
 msgstr "Cộng tác viên"
 
-#: includes/admin/affiliates/affiliates.php:57
+#: includes/admin/affiliates/affiliates.php:60
 #: includes/admin/creatives/creatives.php:44
 #: includes/admin/referrals/referrals.php:38
 msgid "Add New"
 msgstr "Thêm mới"
 
-#: includes/admin/affiliates/affiliates.php:71
-#: includes/admin/payouts/payouts.php:50
+#: includes/admin/affiliates/affiliates.php:74
+#: includes/admin/payouts/payouts.php:52
 #: includes/admin/referrals/referrals.php:89
 #: includes/admin/visits/visits.php:53
 msgid "Search"
@@ -719,7 +700,7 @@ msgstr "Tìm kiếm"
 #: includes/admin/affiliates/class-list-table.php:146
 #: includes/admin/creatives/class-list-table.php:98
 #: includes/admin/referrals/class-list-table.php:148
-#: includes/admin/visits/visits.php:63
+#: includes/admin/tools/tools.php:364 includes/admin/visits/visits.php:63
 msgid "All"
 msgstr "Tất cả"
 
@@ -727,7 +708,7 @@ msgstr "Tất cả"
 #: includes/admin/affiliates/edit.php:127 includes/admin/affiliates/new.php:45
 #: includes/admin/creatives/class-list-table.php:99
 #: includes/admin/creatives/edit.php:105 includes/admin/creatives/new.php:94
-#: includes/admin/tools/tools.php:287 includes/affiliate-functions.php:279
+#: includes/admin/tools/tools.php:289 includes/affiliate-functions.php:283
 msgid "Active"
 msgstr "Hoạt động"
 
@@ -735,25 +716,25 @@ msgstr "Hoạt động"
 #: includes/admin/affiliates/edit.php:128 includes/admin/affiliates/new.php:46
 #: includes/admin/creatives/class-list-table.php:100
 #: includes/admin/creatives/edit.php:106 includes/admin/creatives/new.php:95
-#: includes/affiliate-functions.php:282
+#: includes/affiliate-functions.php:286
 msgid "Inactive"
 msgstr "Không hoạt động"
 
 #: includes/admin/affiliates/class-list-table.php:149
 #: includes/admin/affiliates/edit.php:129 includes/admin/affiliates/new.php:47
 #: includes/admin/referrals/class-list-table.php:151
-#: includes/admin/referrals/edit.php:249 includes/admin/referrals/new.php:107
-#: includes/admin/tools/tools.php:288 includes/admin/tools/tools.php:314
-#: includes/affiliate-functions.php:285 includes/referral-functions.php:65
+#: includes/admin/referrals/edit.php:262 includes/admin/referrals/new.php:120
+#: includes/admin/tools/tools.php:290 includes/admin/tools/tools.php:316
+#: includes/affiliate-functions.php:289 includes/referral-functions.php:69
 msgid "Pending"
 msgstr "Đang chờ"
 
 #: includes/admin/affiliates/class-list-table.php:150
 #: includes/admin/affiliates/edit.php:124
 #: includes/admin/referrals/class-list-table.php:152
-#: includes/admin/referrals/edit.php:250 includes/admin/referrals/new.php:108
-#: includes/admin/tools/tools.php:289 includes/admin/tools/tools.php:315
-#: includes/affiliate-functions.php:288 includes/referral-functions.php:64
+#: includes/admin/referrals/edit.php:263 includes/admin/referrals/new.php:121
+#: includes/admin/tools/tools.php:291 includes/admin/tools/tools.php:317
+#: includes/affiliate-functions.php:292 includes/referral-functions.php:68
 msgid "Rejected"
 msgstr "Đã bị từ chối"
 
@@ -780,39 +761,42 @@ msgstr "ID cộng tác viên"
 #: includes/admin/affiliates/class-list-table.php:168
 #: includes/admin/affiliates/edit.php:91
 #: includes/admin/affiliates/review.php:41
-#: includes/admin/settings/class-settings.php:488
+#: includes/admin/settings/class-settings.php:501
 #: includes/admin/tools/class-rest-consumers-table.php:200
 #: includes/admin/tools/export/class-batch-export-affiliates.php:96
 #: includes/admin/tools/export/class-batch-export-referrals.php:147
 #: includes/admin/tools/export/class-export-affiliates.php:53
 #: includes/admin/tools/export/class-export-referrals.php:67
-#: templates/login.php:25 templates/login.php:26 templates/register.php:69
-#: templates/register.php:70
+#: includes/misc-functions.php:1092 templates/login.php:25
+#: templates/login.php:26 templates/register.php:69 templates/register.php:70
+#: tests/misc/test-misc-functions.php:361
 msgid "Username"
 msgstr "Tên người dùng"
 
 #: includes/admin/affiliates/class-list-table.php:169
-#: includes/admin/reports/tabs/class-referrals-reports-tab.php:38
-#: includes/admin/reports/tabs/class-referrals-reports-tab.php:49
-#: includes/admin/tools/tools.php:153 templates/dashboard-tab-stats.php:44
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:149
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:160
+#: includes/admin/tools/tools.php:155 templates/dashboard-tab-stats.php:44
 msgid "Paid Earnings"
 msgstr "Thu nhập đã thanh toán"
 
 #: includes/admin/affiliates/class-list-table.php:170
-#: includes/admin/reports/tabs/class-referrals-reports-tab.php:57
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:168
 #: includes/admin/tools/export/class-batch-export-affiliates.php:100
-#: templates/dashboard-tab-stats.php:43
+#: includes/admin/tools/tools.php:156 includes/misc-functions.php:1099
+#: templates/dashboard-tab-stats.php:43 tests/misc/test-misc-functions.php:368
 msgid "Unpaid Earnings"
 msgstr "Thu nhập chưa thanh toán"
 
 #: includes/admin/affiliates/class-list-table.php:171
 #: includes/admin/tools/export/class-batch-export-affiliates.php:97
 #: includes/admin/tools/export/class-export-affiliates.php:54
+#: includes/misc-functions.php:1096 tests/misc/test-misc-functions.php:365
 msgid "Rate"
 msgstr "Tỷ lệ"
 
 #: includes/admin/affiliates/class-list-table.php:172
-#: includes/admin/reports/tabs/class-referrals-reports-tab.php:65
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:176
 #: templates/dashboard-tab-stats.php:11
 msgid "Unpaid Referrals"
 msgstr "Những giới thiệu chưa thanh toán"
@@ -827,7 +811,7 @@ msgstr "Các Giới thiệu đã thanh toán"
 #: includes/admin/reports/tabs/class-visits-reports-tab.php:23
 #: includes/admin/tools/export/class-batch-export-affiliates.php:102
 #: includes/admin/tools/export/class-export-affiliates.php:58
-#: includes/admin/tools/tools.php:155 includes/admin/visits/visits.php:41
+#: includes/admin/tools/tools.php:158 includes/admin/visits/visits.php:41
 #: templates/dashboard-tab-stats.php:13 templates/dashboard-tab-stats.php:74
 #: templates/dashboard.php:86
 msgid "Visits"
@@ -838,76 +822,78 @@ msgstr "Lượt truy cập"
 #: includes/admin/creatives/edit.php:100 includes/admin/creatives/new.php:89
 #: includes/admin/payouts/view.php:115
 #: includes/admin/referrals/class-list-table.php:174
-#: includes/admin/referrals/edit.php:242 includes/admin/referrals/new.php:100
+#: includes/admin/referrals/edit.php:255 includes/admin/referrals/new.php:113
 #: includes/admin/tools/export/class-batch-export-affiliates.php:104
 #: includes/admin/tools/export/class-batch-export-referrals.php:154
 #: includes/admin/tools/export/class-export-affiliates.php:60
 #: includes/admin/tools/export/class-export-referrals.php:74
+#: includes/misc-functions.php:1102 includes/misc-functions.php:1144
 #: templates/dashboard-tab-payouts.php:37
 #: templates/dashboard-tab-referrals.php:37
+#: tests/misc/test-misc-functions.php:371
+#: tests/misc/test-misc-functions.php:407
 msgid "Status"
 msgstr "Trạng thái"
 
-#: includes/admin/affiliates/class-list-table.php:261
-#: includes/admin/affiliates/class-list-table.php:396
+#: includes/admin/affiliates/class-list-table.php:262
+#: includes/admin/affiliates/class-list-table.php:399
 #: includes/admin/payouts/class-list-table.php:272
 #: includes/admin/payouts/class-list-table.php:341
 #: includes/admin/payouts/view.php:92 includes/admin/referrals/edit.php:62
 msgid "(user deleted)"
 msgstr "(người dùng đã bị xóa)"
 
-#: includes/admin/affiliates/class-list-table.php:278
+#: includes/admin/affiliates/class-list-table.php:279
 #: includes/admin/class-menu.php:19
-#: includes/admin/reports/class-reports-admin.php:89
+#: includes/admin/reports/class-reports-admin.php:94
 #: includes/admin/user-profile.php:51
 msgid "Reports"
 msgstr "Báo cáo"
 
-#: includes/admin/affiliates/class-list-table.php:288
-#, fuzzy
+#: includes/admin/affiliates/class-list-table.php:291
 msgid "Edit User"
 msgstr "Chỉnh sửa giới thiệu"
 
-#: includes/admin/affiliates/class-list-table.php:298
-#: includes/admin/affiliates/class-list-table.php:578
+#: includes/admin/affiliates/class-list-table.php:301
+#: includes/admin/affiliates/class-list-table.php:581
 #: includes/admin/creatives/class-list-table.php:236
 msgid "Deactivate"
 msgstr "Ngừng kích hoạt"
 
-#: includes/admin/affiliates/class-list-table.php:310
+#: includes/admin/affiliates/class-list-table.php:313
 #: includes/admin/overview/metaboxes/class-metabox-overview-registrations.php:83
 msgid "Review"
 msgstr "Xem lại"
 
-#: includes/admin/affiliates/class-list-table.php:320
-#: includes/admin/affiliates/class-list-table.php:575
+#: includes/admin/affiliates/class-list-table.php:323
+#: includes/admin/affiliates/class-list-table.php:578
 #: includes/admin/referrals/class-list-table.php:425
 #: includes/admin/referrals/class-list-table.php:598
 msgid "Accept"
 msgstr "Chấp nhận"
 
-#: includes/admin/affiliates/class-list-table.php:330
-#: includes/admin/affiliates/class-list-table.php:576
+#: includes/admin/affiliates/class-list-table.php:333
+#: includes/admin/affiliates/class-list-table.php:579
 #: includes/admin/referrals/class-list-table.php:441
 #: includes/admin/referrals/class-list-table.php:599
 msgid "Reject"
 msgstr "Từ chối"
 
-#: includes/admin/affiliates/class-list-table.php:342
-#: includes/admin/affiliates/class-list-table.php:577
+#: includes/admin/affiliates/class-list-table.php:345
+#: includes/admin/affiliates/class-list-table.php:580
 #: includes/admin/creatives/class-list-table.php:248
 msgid "Activate"
 msgstr "Kích hoạt"
 
-#: includes/admin/affiliates/class-list-table.php:354
-#: includes/admin/affiliates/class-list-table.php:579
+#: includes/admin/affiliates/class-list-table.php:357
+#: includes/admin/affiliates/class-list-table.php:582
 #: includes/admin/creatives/class-list-table.php:260
 #: includes/admin/referrals/class-list-table.php:465
 #: includes/admin/referrals/class-list-table.php:602
 msgid "Delete"
 msgstr "Xóa"
 
-#: includes/admin/affiliates/class-list-table.php:563
+#: includes/admin/affiliates/class-list-table.php:566
 msgid "No affiliates found."
 msgstr "Không tìm thấy cộng tác viên"
 
@@ -948,7 +934,6 @@ msgid "Affiliate Name"
 msgstr "Tên Cộng tác viên"
 
 #: includes/admin/affiliates/edit.php:40
-#, fuzzy
 msgid ""
 "The affiliate&#8217;s first and/or last name. Will be empty if no name is "
 "specified. This can be changed on the <a href=\"%1$s\" alt=\"%2$s\">user "
@@ -958,22 +943,20 @@ msgstr ""
 "này có thể thay đổi trên <a href=\"%1$s\" alt=\"%2$s\">màn hình chỉnh sửa "
 "người dùng</a>."
 
-#: includes/admin/affiliates/edit.php:42 includes/admin/affiliates/edit.php:147
+#: includes/admin/affiliates/edit.php:42
+#: includes/admin/affiliates/edit.php:147
 msgid "A link to the user edit screen for this user."
 msgstr "Một liên kết để người dùng chỉnh sửa hiển thị cho người dùng này."
 
 #: includes/admin/affiliates/edit.php:57
-#, fuzzy
 msgid "The affiliate&#8217;s ID. This cannot be changed."
 msgstr "ID của cộng tác viên. Không thể bị thay đổi"
 
 #: includes/admin/affiliates/edit.php:65
-#, fuzzy
 msgid "Affiliate URL"
 msgstr "URL cộng tác viên"
 
 #: includes/admin/affiliates/edit.php:70
-#, fuzzy
 msgid "The affiliate&#8217;s referral URL. This is based on global settings."
 msgstr "URL giới thiệu của cộng tác viên"
 
@@ -982,21 +965,19 @@ msgid "User ID"
 msgstr "ID người dùng"
 
 #: includes/admin/affiliates/edit.php:83
-#, fuzzy
 msgid "The affiliate&#8217;s user ID. This cannot be changed."
 msgstr "ID cộng tác viên của người dùng. Không thể bị thay đổi"
 
 #: includes/admin/affiliates/edit.php:96
-#, fuzzy
 msgid "The affiliate&#8217;s username. This cannot be changed."
 msgstr "Tên người dùng của các cộng tác viên. Không thể bị thay đổi"
 
-#: includes/admin/affiliates/edit.php:104
+#: includes/admin/affiliates/edit.php:104 includes/misc-functions.php:1104
+#: tests/misc/test-misc-functions.php:373
 msgid "Registration Date"
 msgstr "Ngày Đăng Ký"
 
 #: includes/admin/affiliates/edit.php:109
-#, fuzzy
 msgid "The affiliate&#8217;s registration date. This cannot be changed."
 msgstr "Ngày đăng ký các cộng tác viên. Điều này không thể bị thay đổi."
 
@@ -1010,13 +991,12 @@ msgid ""
 "could trigger account related events, such as email notifications."
 msgstr ""
 
-#: includes/admin/affiliates/edit.php:139
-#, fuzzy
+#: includes/admin/affiliates/edit.php:139 includes/misc-functions.php:1103
+#: tests/misc/test-misc-functions.php:372
 msgid "Website"
 msgstr "Địa chỉ website"
 
 #: includes/admin/affiliates/edit.php:145
-#, fuzzy
 msgid ""
 "The affiliate&#8217;s website. Will be empty if no website is specified. "
 "This can be changed on the <a href=\"%1$s\" alt=\"%2$s\">user edit screen</"
@@ -1027,7 +1007,7 @@ msgstr ""
 "người dùng</a>."
 
 #: includes/admin/affiliates/edit.php:156 includes/admin/affiliates/new.php:57
-#: includes/admin/settings/class-settings.php:504
+#: includes/admin/settings/class-settings.php:517
 msgid "Referral Rate Type"
 msgstr "Kiểu tỷ lệ giới thiệu"
 
@@ -1036,24 +1016,22 @@ msgid "Site Default"
 msgstr "Trang web mặc định"
 
 #: includes/admin/affiliates/edit.php:166 includes/admin/affiliates/new.php:67
-#, fuzzy
 msgid "The affiliate&#8217;s referral rate type."
 msgstr "Kiểu tỷ lệ giới thiệu của các cộng tác viên"
 
 #: includes/admin/affiliates/edit.php:174 includes/admin/affiliates/new.php:75
-#: includes/admin/settings/class-settings.php:510
-#: includes/integrations/class-edd.php:648
-#: includes/integrations/class-memberpress.php:179
-#: includes/integrations/class-pmp.php:353
+#: includes/admin/settings/class-settings.php:523
+#: includes/integrations/class-edd.php:624
+#: includes/integrations/class-memberpress.php:177
+#: includes/integrations/class-pmp.php:351
 #: includes/integrations/class-pms.php:49
-#: includes/integrations/class-woocommerce.php:533
+#: includes/integrations/class-woocommerce.php:559
 #: includes/integrations/class-zippycourses.php:76
 #: includes/integrations/extras/class-exchange-feature.php:31
 msgid "Referral Rate"
 msgstr "Tỷ lệ Giới thiệu"
 
 #: includes/admin/affiliates/edit.php:179 includes/admin/affiliates/new.php:80
-#, fuzzy
 msgid ""
 "The affiliate&#8217;s referral rate, such as 20 for 20%. If left blank, the "
 "site default will be used."
@@ -1066,7 +1044,6 @@ msgid "Account Email"
 msgstr "Tài khoản Email"
 
 #: includes/admin/affiliates/edit.php:192
-#, fuzzy
 msgid ""
 "The affiliate&#8217;s account email. Updating this will change the email "
 "address shown on the user&#8217;s profile page."
@@ -1075,17 +1052,18 @@ msgstr ""
 "email hiển thị trên trang hồ sơ của người dùng."
 
 #: includes/admin/affiliates/edit.php:200 includes/admin/affiliates/new.php:88
-#: includes/admin/settings/class-settings.php:801
+#: includes/admin/settings/class-settings.php:814
 #: includes/admin/tools/export/class-batch-export-affiliates.php:95
 #: includes/admin/tools/export/class-batch-export-referrals.php:146
 #: includes/admin/tools/export/class-export-affiliates.php:52
 #: includes/admin/tools/export/class-export-referrals.php:66
-#: templates/register.php:79
+#: includes/misc-functions.php:1095 includes/misc-functions.php:1138
+#: templates/register.php:79 tests/misc/test-misc-functions.php:364
+#: tests/misc/test-misc-functions.php:401
 msgid "Payment Email"
 msgstr "Email thanh toán"
 
 #: includes/admin/affiliates/edit.php:205 includes/admin/affiliates/new.php:93
-#, fuzzy
 msgid ""
 "Affiliate&#8217;s payment email for systems such as PayPal, Moneybookers, or "
 "others. Leave blank to use the affiliate&#8217;s user email."
@@ -1095,21 +1073,20 @@ msgstr ""
 "các cộng tác viên."
 
 #: includes/admin/affiliates/edit.php:213
-#, fuzzy
 msgid "Promotion Methods"
 msgstr "Phương pháp quảng bá"
 
 #: includes/admin/affiliates/edit.php:218
-#, fuzzy
 msgid "Promotion methods entered by the affiliate during registration."
 msgstr "Phương pháp quảng bá được cộng tác viên sử dụng"
 
-#: includes/admin/affiliates/edit.php:226 includes/admin/affiliates/new.php:101
-#, fuzzy
+#: includes/admin/affiliates/edit.php:226
+#: includes/admin/affiliates/new.php:101
 msgid "Affiliate Notes"
 msgstr "Các tỷ lệ cộng tác viên:"
 
-#: includes/admin/affiliates/edit.php:231 includes/admin/affiliates/new.php:106
+#: includes/admin/affiliates/edit.php:231
+#: includes/admin/affiliates/new.php:106
 msgid ""
 "Enter any notes for this affiliate. Notes are only visible to the admin."
 msgstr ""
@@ -1128,7 +1105,6 @@ msgid "New Affiliate"
 msgstr "Cộng tác viên mới"
 
 #: includes/admin/affiliates/new.php:18
-#, fuzzy
 msgid ""
 "Use this form to register a new affiliate. Each affiliate is tied directly "
 "to a user account, so if the user account for the affiliate does not yet "
@@ -1152,7 +1128,6 @@ msgstr ""
 "của họ."
 
 #: includes/admin/affiliates/new.php:49
-#, fuzzy
 msgid "The status assigned to the affiliate&#8217;s account."
 msgstr "Tình trạng đã chuyển giao tới các tài khoản cộng tác viên."
 
@@ -1181,14 +1156,13 @@ msgid "Email Address"
 msgstr "Địa chỉ email"
 
 #: includes/admin/affiliates/review.php:66
-#: includes/admin/class-upgrades.php:508
-#: includes/admin/settings/class-settings.php:800 includes/install.php:46
+#: includes/admin/class-upgrades.php:607
+#: includes/admin/settings/class-settings.php:813 includes/install.php:55
 #: templates/register.php:84 templates/register.php:85
 msgid "Website URL"
 msgstr "Địa chỉ website"
 
 #: includes/admin/affiliates/review.php:70
-#, fuzzy
 msgid "Affiliate&#8217;s Website URL"
 msgstr "URL Website của Cộng tác viên"
 
@@ -1197,7 +1171,6 @@ msgid "Promotion Method"
 msgstr "Phương pháp quảng bá"
 
 #: includes/admin/affiliates/review.php:98
-#, fuzzy
 msgid "Leave blank if approving this affiliate."
 msgstr "Để trống nếu phê duyệt cộng tác viên này"
 
@@ -1209,51 +1182,11 @@ msgstr "Số cộng tác viên trên mỗi trang:"
 msgid "Affiliate: #%d %s"
 msgstr "Cộng tác viên: #%d %s"
 
-#: includes/admin/affiliates/view.php:16
-#: includes/admin/tools/export/class-batch-export-affiliates.php:99
-#: includes/admin/tools/export/class-export-affiliates.php:56
-msgid "Earnings"
-msgstr "Thu nhập"
-
-#: includes/admin/affiliates/view.php:23
-msgid "Total earnings"
-msgstr "Tổng thu nhập"
-
-#: includes/admin/affiliates/view.php:24
-msgid "Total unpaid earnings"
-msgstr "Tổng thu nhập chưa thanh toán"
-
-#: includes/admin/affiliates/view.php:25
-msgid "Total paid referrals"
-msgstr "Tổng thanh toán cho các giới thiệu"
-
-#: includes/admin/affiliates/view.php:26
-msgid "Total unpaid referrals"
-msgstr "Tổng số tiền chưa thanh toán cho các giới thiệu"
-
-#: includes/admin/affiliates/view.php:27
-msgid "Total pending referrals"
-msgstr "Tổng các giới thiệu đang chờ"
-
-#: includes/admin/affiliates/view.php:28
-msgid "Total rejected referrals"
-msgstr "Tổng các giới thiệu bị từ chối"
-
-#: includes/admin/affiliates/view.php:29
-msgid "Total visits"
-msgstr "Tổng lượt truy cập"
-
 #: includes/admin/affiliates/view.php:30
-#, fuzzy
-msgid "Conversion rate"
-msgstr "Tỷ lệ chuyển đổi"
-
-#: includes/admin/affiliates/view.php:86
-#, fuzzy
 msgid "Recent Payouts"
 msgstr "Các giới thiệu gần đây"
 
-#: includes/admin/ajax-actions.php:93
+#: includes/admin/ajax-actions.php:93 includes/admin/ajax-actions.php:262
 msgid "A batch process ID must be present to continue."
 msgstr ""
 
@@ -1263,18 +1196,35 @@ msgid ""
 "administrator for more information."
 msgstr ""
 
-#: includes/admin/ajax-actions.php:111
+#: includes/admin/ajax-actions.php:111 includes/admin/ajax-actions.php:271
 msgid "%s is an invalid batch process ID."
 msgstr ""
 
-#: includes/admin/ajax-actions.php:120
+#: includes/admin/ajax-actions.php:120 includes/admin/ajax-actions.php:280
 msgid "An invalid file path is registered for the %1$s batch process handler."
 msgstr ""
 
-#: includes/admin/ajax-actions.php:128
+#: includes/admin/ajax-actions.php:128 includes/admin/ajax-actions.php:288
 msgid ""
 "%1$s is an invalid handler for the %2$s batch process. Please try again."
 msgstr ""
+
+#: includes/admin/ajax-actions.php:228
+msgid "Missing import file. Please provide an import file."
+msgstr ""
+
+#: includes/admin/ajax-actions.php:247
+msgid "The file you uploaded does not appear to be a CSV file."
+msgstr ""
+
+#: includes/admin/ajax-actions.php:251
+msgid "Something went wrong during the upload process, please try again."
+msgstr ""
+
+#: includes/admin/ajax-actions.php:300
+#, fuzzy
+msgid "You do not have permission to import data"
+msgstr "Bạn không có quyền xuất dữ liệu"
 
 #: includes/admin/class-addon-updater.php:189
 msgid ""
@@ -1307,12 +1257,13 @@ msgstr "Tổng quan"
 #: includes/admin/tools/export/class-batch-export-affiliates.php:101
 #: includes/admin/tools/export/class-batch-export-payouts.php:146
 #: includes/admin/tools/export/class-export-affiliates.php:57
-#: includes/admin/tools/tools.php:154 templates/dashboard-tab-referrals.php:7
+#: includes/admin/tools/tools.php:157 templates/dashboard-tab-referrals.php:7
 #: templates/dashboard.php:74
 msgid "Referrals"
 msgstr "Các Giới thiệu"
 
 #: includes/admin/class-menu.php:16 includes/admin/payouts/payouts.php:37
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:45
 #: templates/dashboard.php:80
 msgid "Payouts"
 msgstr ""
@@ -1338,7 +1289,190 @@ msgstr "Di chuyển AffiliateWP"
 msgid "Add-ons"
 msgstr "Add-ons ( Các Tiện Ích )"
 
-#: includes/admin/class-notices.php:49
+#: includes/admin/class-notices.php:78
+#: includes/admin/settings/class-settings.php:311
+msgid "Settings updated."
+msgstr "Cài đặt đã cập nhật"
+
+#: includes/admin/class-notices.php:103
+msgid "%d affiliate was added successfully."
+msgid_plural "%d affiliates were added successfully"
+msgstr[0] "Cộng tác viên được cập nhật thành công"
+msgstr[1] "Cộng tác viên được cập nhật thành công"
+
+#: includes/admin/class-notices.php:116
+msgid "Affiliate wasn&#8217;t added, please try again."
+msgstr "Thất bại trong việc thêm cộng tác viên, vui lòng thử lại."
+
+#: includes/admin/class-notices.php:123
+msgid "Affiliate updated successfully"
+msgstr "Cộng tác viên được cập nhật thành công"
+
+#: includes/admin/class-notices.php:125
+msgid "<a href=\"%s\">Back to Affiliates</a>"
+msgstr "<a href=\"%s\">Trở về cộng tác viên</a>"
+
+#: includes/admin/class-notices.php:131
+msgid "Affiliate update failed, please try again"
+msgstr "Cập nhật cộng tác viên không thành công, vui lòng thử lại"
+
+#: includes/admin/class-notices.php:138
+msgid "Affiliate account(s) deleted successfully"
+msgstr "Tài khoản cộng tác viên đã được xóa thành công"
+
+#: includes/admin/class-notices.php:144
+msgid "Affiliate deletion failed, please try again"
+msgstr "Xóa tài khoản cộng tác viên thất bại, vui lòng thử lại"
+
+#: includes/admin/class-notices.php:151
+msgid "Affiliate account activated"
+msgstr "Tài khoản cộng tác viên đã được kích hoạt"
+
+#: includes/admin/class-notices.php:157
+msgid "Affiliate account deactivated"
+msgstr "Tài khoản cộng tác viên ngừng hoạt động"
+
+#: includes/admin/class-notices.php:163
+msgid "Affiliate request was accepted"
+msgstr "Yêu cầu cộng tác viên đã được chấp nhận"
+
+#: includes/admin/class-notices.php:169
+msgid "Affiliate request was rejected"
+msgstr "Yêu cầu cộng tác viên đã bị từ chối"
+
+#: includes/admin/class-notices.php:183
+msgid "%d affiliate from WP Affiliate was added successfully."
+msgid_plural "%d affiliates from WP Affiliate were added successfully"
+msgstr[0] "Cộng tác viên được cập nhật thành công"
+msgstr[1] "Cộng tác viên được cập nhật thành công"
+
+#: includes/admin/class-notices.php:204
+msgid "%d affiliate from Affiliates Pro was added successfully."
+msgid_plural "%d affiliates from Affiliates Pro were added successfully"
+msgstr[0] "Cộng tác viên được cập nhật thành công"
+msgstr[1] "Cộng tác viên được cập nhật thành công"
+
+#: includes/admin/class-notices.php:217
+msgid "Affiliate stats have been recounted!"
+msgstr "Số liệu cộng tác viên đã được tính toán lại"
+
+#: includes/admin/class-notices.php:224
+msgid "Referral added successfully"
+msgstr "Giới thiệu được thêm thành công"
+
+#: includes/admin/class-notices.php:230
+msgid "Referral updated successfully"
+msgstr "Giới thiệu được cập nhật thành công"
+
+#: includes/admin/class-notices.php:236
+msgid "Referral update failed, please try again"
+msgstr "Cập nhật giới thiệu không thành công, vui lòng thử lại"
+
+#: includes/admin/class-notices.php:242
+msgid "Referral deleted successfully"
+msgstr "Giới thiệu đã được xóa thành công"
+
+#: includes/admin/class-notices.php:248
+msgid "Referral deletion failed, please try again"
+msgstr "Xóa giới thiệu không thành công, vui lòng thử lại"
+
+#: includes/admin/class-notices.php:255
+msgid "A payout has been created."
+msgstr "Tiêu đề email giới thiệu mới"
+
+#: includes/admin/class-notices.php:262
+msgid "Creative updated successfully"
+msgstr "Cập nhật mẫu quảng cáo thành công"
+
+#: includes/admin/class-notices.php:264
+msgid "<a href=\"%s\">Back to Creatives</a>"
+msgstr "<a href=\"%s\">Trở về Mẫu quảng cáo</a>"
+
+#: includes/admin/class-notices.php:270
+msgid "Creative added successfully"
+msgstr "Mẫu quảng cáo được thêm thành công"
+
+#: includes/admin/class-notices.php:276
+msgid "Creative deleted successfully"
+msgstr "Mẫu quảng cáo được xóa thành công"
+
+#: includes/admin/class-notices.php:282
+msgid "Creative activated"
+msgstr "Mẫu quảng cáo đã được kích hoạt"
+
+#: includes/admin/class-notices.php:288
+msgid "Creative deactivated"
+msgstr "Mẫu quảng cáo đã ngưng kích hoạt"
+
+#: includes/admin/class-notices.php:295
+msgid "Settings successfully imported"
+msgstr "Cài đặt đã nhập thành công"
+
+#: includes/admin/class-notices.php:303
+msgid ""
+"Your license key expired on %s. Please <a href=\"%s\" target=\"_blank"
+"\">renew your license key</a>."
+msgstr ""
+"Đồng ý với <a href=\"%s\" target=\"_blank\">Điều khoản sử dụng</a> của chúng "
+"tôi"
+
+#: includes/admin/class-notices.php:315
+msgid ""
+"Your license key has been disabled. Please <a href=\"%s\" target=\"_blank"
+"\">contact support</a> for more information."
+msgstr ""
+
+#: includes/admin/class-notices.php:326
+msgid ""
+"Invalid license. Please <a href=\"%s\" target=\"_blank\">visit your account "
+"page</a> and verify it."
+msgstr ""
+
+#: includes/admin/class-notices.php:338
+#, fuzzy
+msgid ""
+"Your license key is not active for this URL. Please <a href=\"%s\" target="
+"\"_blank\">visit your account page</a> to manage your license key URLs."
+msgstr ""
+"Đồng ý với <a href=\"%s\" target=\"_blank\">Điều khoản sử dụng</a> của chúng "
+"tôi"
+
+#: includes/admin/class-notices.php:348
+msgid "This appears to be an invalid license key."
+msgstr ""
+
+#: includes/admin/class-notices.php:357
+msgid ""
+"Your license key has reached its activation limit. <a href=\"%s\">View "
+"possible upgrades</a> now."
+msgstr ""
+
+#: includes/admin/class-notices.php:366
+msgid "The API keys were successfully generated."
+msgstr ""
+
+#: includes/admin/class-notices.php:372
+msgid "The API keys could not be generated."
+msgstr ""
+
+#: includes/admin/class-notices.php:379
+msgid "The API keys were successfully regenerated."
+msgstr ""
+
+#: includes/admin/class-notices.php:385
+msgid "The API keys were successfully revoked."
+msgstr ""
+
+#: includes/admin/class-notices.php:427
+msgid ""
+"Your database needs to be upgraded following the latest AffiliateWP update."
+msgstr ""
+
+#: includes/admin/class-notices.php:430
+msgid "Upgrade Database"
+msgstr ""
+
+#: includes/admin/class-notices.php:453 tests/admin/test-notices.php:579
 msgid ""
 "There are currently no AffiliateWP <a href=\"%s\">integrations</a> enabled. "
 "If you are using AffiliateWP without any integrations, you may disregard "
@@ -1348,184 +1482,7 @@ msgstr ""
 "sử dụng AffiliateWP không cần bất kỳ tích hợp, bạn có thể bỏ qua thông báo "
 "này."
 
-#: includes/admin/class-notices.php:57
-#: includes/admin/settings/class-settings.php:311
-msgid "Settings updated."
-msgstr "Cài đặt đã cập nhật"
-
-#: includes/admin/class-notices.php:82
-#, fuzzy
-msgid "%d affiliate was added successfully."
-msgid_plural "%d affiliates were added successfully"
-msgstr[0] "Cộng tác viên được cập nhật thành công"
-msgstr[1] "Cộng tác viên được cập nhật thành công"
-
-#: includes/admin/class-notices.php:95
-#, fuzzy
-msgid "Affiliate wasn&#8217;t added, please try again."
-msgstr "Thất bại trong việc thêm cộng tác viên, vui lòng thử lại."
-
-#: includes/admin/class-notices.php:102
-msgid "Affiliate updated successfully"
-msgstr "Cộng tác viên được cập nhật thành công"
-
-#: includes/admin/class-notices.php:104
-msgid "<a href=\"%s\">Back to Affiliates</a>"
-msgstr "<a href=\"%s\">Trở về cộng tác viên</a>"
-
-#: includes/admin/class-notices.php:110
-msgid "Affiliate update failed, please try again"
-msgstr "Cập nhật cộng tác viên không thành công, vui lòng thử lại"
-
-#: includes/admin/class-notices.php:117
-msgid "Affiliate account(s) deleted successfully"
-msgstr "Tài khoản cộng tác viên đã được xóa thành công"
-
-#: includes/admin/class-notices.php:123
-msgid "Affiliate deletion failed, please try again"
-msgstr "Xóa tài khoản cộng tác viên thất bại, vui lòng thử lại"
-
-#: includes/admin/class-notices.php:130
-msgid "Affiliate account activated"
-msgstr "Tài khoản cộng tác viên đã được kích hoạt"
-
-#: includes/admin/class-notices.php:136
-msgid "Affiliate account deactivated"
-msgstr "Tài khoản cộng tác viên ngừng hoạt động"
-
-#: includes/admin/class-notices.php:142
-msgid "Affiliate request was accepted"
-msgstr "Yêu cầu cộng tác viên đã được chấp nhận"
-
-#: includes/admin/class-notices.php:148
-msgid "Affiliate request was rejected"
-msgstr "Yêu cầu cộng tác viên đã bị từ chối"
-
-#: includes/admin/class-notices.php:162
-#, fuzzy
-msgid "%d affiliate from WP Affiliate was added successfully."
-msgid_plural "%d affiliates from WP Affiliate were added successfully"
-msgstr[0] "Cộng tác viên được cập nhật thành công"
-msgstr[1] "Cộng tác viên được cập nhật thành công"
-
-#: includes/admin/class-notices.php:183
-#, fuzzy
-msgid "%d affiliate from Affiliates Pro was added successfully."
-msgid_plural "%d affiliates from Affiliates Pro were added successfully"
-msgstr[0] "Cộng tác viên được cập nhật thành công"
-msgstr[1] "Cộng tác viên được cập nhật thành công"
-
-#: includes/admin/class-notices.php:196
-msgid "Affiliate stats have been recounted!"
-msgstr "Số liệu cộng tác viên đã được tính toán lại"
-
-#: includes/admin/class-notices.php:203
-msgid "Referral added successfully"
-msgstr "Giới thiệu được thêm thành công"
-
-#: includes/admin/class-notices.php:209
-msgid "Referral updated successfully"
-msgstr "Giới thiệu được cập nhật thành công"
-
-#: includes/admin/class-notices.php:215
-msgid "Referral update failed, please try again"
-msgstr "Cập nhật giới thiệu không thành công, vui lòng thử lại"
-
-#: includes/admin/class-notices.php:221
-msgid "Referral deleted successfully"
-msgstr "Giới thiệu đã được xóa thành công"
-
-#: includes/admin/class-notices.php:227
-msgid "Referral deletion failed, please try again"
-msgstr "Xóa giới thiệu không thành công, vui lòng thử lại"
-
-#: includes/admin/class-notices.php:234
-#, fuzzy
-msgid "A payout has been created."
-msgstr "Tiêu đề email giới thiệu mới"
-
-#: includes/admin/class-notices.php:241
-msgid "Creative updated successfully"
-msgstr "Cập nhật mẫu quảng cáo thành công"
-
-#: includes/admin/class-notices.php:243
-msgid "<a href=\"%s\">Back to Creatives</a>"
-msgstr "<a href=\"%s\">Trở về Mẫu quảng cáo</a>"
-
-#: includes/admin/class-notices.php:249
-msgid "Creative added successfully"
-msgstr "Mẫu quảng cáo được thêm thành công"
-
-#: includes/admin/class-notices.php:255
-msgid "Creative deleted successfully"
-msgstr "Mẫu quảng cáo được xóa thành công"
-
-#: includes/admin/class-notices.php:261
-msgid "Creative activated"
-msgstr "Mẫu quảng cáo đã được kích hoạt"
-
-#: includes/admin/class-notices.php:267
-msgid "Creative deactivated"
-msgstr "Mẫu quảng cáo đã ngưng kích hoạt"
-
-#: includes/admin/class-notices.php:274
-msgid "Settings successfully imported"
-msgstr "Cài đặt đã nhập thành công"
-
-#: includes/admin/class-notices.php:282
-#, fuzzy
-msgid ""
-"Your license key expired on %s. Please <a href=\"%s\" target=\"_blank"
-"\">renew your license key</a>."
-msgstr ""
-"Đồng ý với <a href=\"%s\" target=\"_blank\">Điều khoản sử dụng</a> của chúng "
-"tôi"
-
-#: includes/admin/class-notices.php:294
-msgid ""
-"Your license key has been disabled. Please <a href=\"%s\" target=\"_blank"
-"\">contact support</a> for more information."
-msgstr ""
-
-#: includes/admin/class-notices.php:305
-msgid ""
-"Invalid license. Please <a href=\"%s\" target=\"_blank\">visit your account "
-"page</a> and verify it."
-msgstr ""
-
-#: includes/admin/class-notices.php:317
-msgid ""
-"Your %s is not active for this URL. Please <a href=\"%s\" target=\"_blank"
-"\">visit your account page</a> to manage your license key URLs."
-msgstr ""
-
-#: includes/admin/class-notices.php:328
-msgid "This appears to be an invalid license key for %s."
-msgstr ""
-
-#: includes/admin/class-notices.php:337
-msgid ""
-"Your license key has reached its activation limit. <a href=\"%s\">View "
-"possible upgrades</a> now."
-msgstr ""
-
-#: includes/admin/class-notices.php:346
-msgid "The API keys were successfully generated."
-msgstr ""
-
-#: includes/admin/class-notices.php:352
-msgid "The API keys could not be generated."
-msgstr ""
-
-#: includes/admin/class-notices.php:359
-msgid "The API keys were successfully regenerated."
-msgstr ""
-
-#: includes/admin/class-notices.php:365
-msgid "The API keys were successfully revoked."
-msgstr ""
-
-#: includes/admin/class-notices.php:411
+#: includes/admin/class-notices.php:503
 msgid ""
 "Your license key for AffiliateWP has expired. Please renew your license to "
 "re-enable automatic updates."
@@ -1533,7 +1490,7 @@ msgstr ""
 "Khóa bản quyền cho AffiliateWP đã hết hạn. Hãy mua lại một giấy phép mới để "
 "được kích hoạt cập nhật tự động."
 
-#: includes/admin/class-notices.php:420
+#: includes/admin/class-notices.php:512
 msgid ""
 "Please <a href=\"%s\">enter and activate</a> your license key for "
 "AffiliateWP to enable automatic updates."
@@ -1541,18 +1498,10 @@ msgstr ""
 "Xin vui lòng <a href=\"%s\">nhập và kích hoạt</a> khóa bản quyền cho "
 "AffiliateWP để cho phép cập nhật tự động."
 
-#: includes/admin/class-notices.php:444
-msgid ""
-"Your database needs to be upgraded following the latest AffiliateWP update."
-msgstr ""
-
-#: includes/admin/class-notices.php:447
-msgid "Upgrade Database"
-msgstr ""
-
-#: includes/admin/class-upgrades.php:507
-#: includes/admin/settings/class-settings.php:799 includes/install.php:45
+#: includes/admin/class-upgrades.php:606
+#: includes/admin/settings/class-settings.php:812 includes/install.php:54
 #: templates/register.php:64 templates/register.php:65
+#: tests/misc/test-misc-functions.php:478
 msgid "Your Name"
 msgstr "Tên của bạn"
 
@@ -1571,7 +1520,8 @@ msgstr "Không có ID mẫu quảng cáo nào được chỉ định xóa"
 
 #: includes/admin/creatives/class-list-table.php:116
 #: includes/admin/creatives/edit.php:49 includes/admin/creatives/new.php:47
-#: templates/dashboard-tab-visits.php:29
+#: includes/admin/tools/export/class-batch-export-visits.php:149
+#: templates/dashboard-tab-visits.php:27
 msgid "URL"
 msgstr "URL"
 
@@ -1622,12 +1572,12 @@ msgstr "Tên của mẫu quảng cáo này. Chỉ dùng cho việc nhận dạng
 #: includes/admin/tools/export/class-batch-export-referrals.php:150
 #: includes/admin/tools/export/class-export-referrals.php:70
 #: includes/integrations/extras/class-ninja-forms-action-add-referral.php:77
-#: templates/dashboard-tab-referrals.php:36
+#: includes/misc-functions.php:1140 templates/dashboard-tab-referrals.php:36
+#: tests/misc/test-misc-functions.php:403
 msgid "Description"
 msgstr "Mô tả"
 
 #: includes/admin/creatives/edit.php:41 includes/admin/creatives/new.php:39
-#, fuzzy
 msgid ""
 "An optional description for this creative. This is visible to affiliates and "
 "is displayed below the creative."
@@ -1636,7 +1586,6 @@ msgstr ""
 "cho cộng tác viên."
 
 #: includes/admin/creatives/edit.php:54 includes/admin/creatives/new.php:52
-#, fuzzy
 msgid ""
 "The URL this creative should link to. Based on your Referral Settings, the "
 "affiliate&#8217;s ID or username will be automatically appended."
@@ -1648,7 +1597,7 @@ msgstr ""
 msgid "Text"
 msgstr "Văn bản"
 
-#: includes/admin/creatives/edit.php:67 includes/admin/creatives/new.php:65
+#: includes/admin/creatives/edit.php:67
 msgid "Text for this creative."
 msgstr "Văn bản cho mẫu quảng cáo này"
 
@@ -1683,10 +1632,18 @@ msgstr ""
 "Sử dụng màn hình này để thêm một mẫu quảng cáo mới, như một link văn bản "
 "hoặc một banner hình ảnh."
 
+#: includes/admin/creatives/new.php:65
+msgid ""
+"Text for this creative. To make this a text-only creative, do not add an "
+"image below."
+msgstr ""
+
 #: includes/admin/creatives/new.php:79
+#, fuzzy
 msgid ""
 "Select an image if you would like an image banner. You can also enter an "
-"image URL if your image is hosted elsewhere."
+"image URL if your image is hosted elsewhere. Leave blank if you wish to "
+"create a text-only creative."
 msgstr ""
 "Chọn một hình ảnh nếu bạn muốn có một banner hình ảnh. Bạn cũng có thể nhập "
 "một URL hình ảnh, nếu hình ảnh của bạn được lưu trữ ở nơi khác."
@@ -1712,7 +1669,7 @@ msgid "Recent Referral Visits"
 msgstr "Các lượt truy cập từ giới thiệu gần đây"
 
 #: includes/admin/overview/metaboxes/class-metabox-overview-recent-referral-visits.php:81
-#: templates/dashboard-tab-visits.php:49
+#: templates/dashboard-tab-visits.php:47
 msgid "Visit converted: %s"
 msgstr "Truy cập chuyển đổi: %s"
 
@@ -1746,14 +1703,14 @@ msgstr "Tổng số"
 
 #: includes/admin/payouts/class-list-table.php:130
 #: includes/admin/referrals/class-list-table.php:149
-#: includes/admin/referrals/edit.php:248 includes/admin/referrals/new.php:106
-#: includes/admin/tools/tools.php:312 includes/admin/tools/tools.php:338
-#: includes/referral-functions.php:62
+#: includes/admin/referrals/edit.php:261 includes/admin/referrals/new.php:119
+#: includes/admin/tools/tools.php:314 includes/admin/tools/tools.php:340
+#: includes/referral-functions.php:66
 msgid "Paid"
 msgstr "Đã thanh toán"
 
 #: includes/admin/payouts/class-list-table.php:131
-#: includes/admin/tools/tools.php:339 includes/payout-functions.php:134
+#: includes/admin/tools/tools.php:341 includes/payout-functions.php:134
 msgid "Failed"
 msgstr ""
 
@@ -1767,17 +1724,17 @@ msgstr ""
 #: includes/admin/referrals/class-list-table.php:169
 #: includes/admin/referrals/edit.php:44 includes/admin/referrals/new.php:21
 #: includes/admin/tools/export/class-batch-export-payouts.php:145
+#: includes/admin/tools/export/class-batch-export-visits.php:146
 #: includes/admin/visits/class-list-table.php:105
-#: includes/integrations/class-lifterlms.php:672
-#: includes/integrations/class-lifterlms.php:698
-#: includes/integrations/class-memberpress.php:259
+#: includes/integrations/class-lifterlms.php:649
+#: includes/integrations/class-lifterlms.php:675
+#: includes/integrations/class-memberpress.php:257
 msgid "Affiliate"
 msgstr "Cộng tác viên"
 
 #: includes/admin/payouts/class-list-table.php:152
 #: includes/admin/payouts/view.php:72
 #: includes/admin/tools/export/class-batch-export-payouts.php:148
-#, fuzzy
 msgid "Generated By"
 msgstr "Tạo URL"
 
@@ -1785,7 +1742,6 @@ msgstr "Tạo URL"
 #: includes/admin/payouts/view.php:103
 #: includes/admin/tools/export/class-batch-export-payouts.php:149
 #: templates/dashboard-tab-payouts.php:36
-#, fuzzy
 msgid "Payout Method"
 msgstr "Phương pháp quảng bá"
 
@@ -1795,7 +1751,6 @@ msgid "(none)"
 msgstr ""
 
 #: includes/admin/payouts/class-list-table.php:422
-#, fuzzy
 msgid "View"
 msgstr "Xem %s"
 
@@ -1805,18 +1760,15 @@ msgid "Retry Payment"
 msgstr ""
 
 #: includes/admin/payouts/class-list-table.php:513
-#, fuzzy
 msgid "No payouts found."
 msgstr "Không có lượt truy cập nào được tìm thấy."
 
-#: includes/admin/payouts/payouts.php:39
-#: includes/admin/reports/class-reports-admin.php:58
-#, fuzzy
+#: includes/admin/payouts/payouts.php:40
+#: includes/admin/reports/class-reports-admin.php:61
 msgid "Manage Referrals"
 msgstr "Những giới thiệu chưa thanh toán"
 
 #: includes/admin/payouts/screen-options.php:32
-#, fuzzy
 msgid "Number of payouts per page:"
 msgstr "Số của lượt truy cập trên mỗi trang:"
 
@@ -1831,8 +1783,8 @@ msgstr ""
 #: includes/admin/tools/export/class-batch-generate-payouts.php:216
 #: includes/admin/tools/export/class-export-referrals-payout.php:73
 #: includes/admin/tools/export/class-export-referrals.php:68
-#: includes/integrations/class-lifterlms.php:667
-#: includes/integrations/class-lifterlms.php:694
+#: includes/integrations/class-lifterlms.php:644
+#: includes/integrations/class-lifterlms.php:671
 #: templates/dashboard-tab-payouts.php:35
 #: templates/dashboard-tab-referrals.php:35
 msgid "Amount"
@@ -1843,7 +1795,6 @@ msgid "Payout Date"
 msgstr ""
 
 #: includes/admin/payouts/view.php:167
-#, fuzzy
 msgid "Referrals Paid"
 msgstr "Các Giới thiệu"
 
@@ -1862,8 +1813,8 @@ msgid "You do not have permission to manage referrals"
 msgstr "Bạn không có quyền để quản lý các giới thiệu"
 
 #: includes/admin/referrals/class-list-table.php:150
-#: includes/admin/referrals/edit.php:247 includes/admin/referrals/new.php:105
-#: includes/admin/tools/tools.php:313 includes/referral-functions.php:63
+#: includes/admin/referrals/edit.php:260 includes/admin/referrals/new.php:118
+#: includes/admin/tools/tools.php:315 includes/referral-functions.php:67
 msgid "Unpaid"
 msgstr "Chưa thanh toán"
 
@@ -1871,8 +1822,9 @@ msgstr "Chưa thanh toán"
 #: includes/admin/referrals/edit.php:216 includes/admin/referrals/new.php:74
 #: includes/admin/tools/export/class-batch-export-referrals.php:152
 #: includes/admin/tools/export/class-export-referrals.php:72
-#: includes/integrations/class-lifterlms.php:677
-#: includes/integrations/class-lifterlms.php:702
+#: includes/integrations/class-lifterlms.php:654
+#: includes/integrations/class-lifterlms.php:679
+#: includes/misc-functions.php:1142 tests/misc/test-misc-functions.php:405
 msgid "Reference"
 msgstr "Tham chiếu"
 
@@ -1880,11 +1832,12 @@ msgstr "Tham chiếu"
 #: includes/admin/referrals/edit.php:147 includes/admin/referrals/new.php:49
 #: includes/admin/tools/export/class-batch-export-referrals.php:155
 #: includes/admin/tools/export/class-export-referrals.php:75
-#: includes/admin/tools/export/class-export.php:84
+#: includes/admin/tools/export/class-export.php:85
 #: includes/admin/visits/class-list-table.php:110
-#: templates/dashboard-tab-payouts.php:34
+#: includes/misc-functions.php:1145 templates/dashboard-tab-payouts.php:34
 #: templates/dashboard-tab-referrals.php:38
-#: templates/dashboard-tab-visits.php:32
+#: templates/dashboard-tab-visits.php:30
+#: tests/misc/test-misc-functions.php:408
 msgid "Date"
 msgstr "Ngày"
 
@@ -1910,31 +1863,21 @@ msgstr "Hành động hàng loạt"
 msgid "Apply"
 msgstr "Áp dụng"
 
-#: includes/admin/referrals/class-list-table.php:568
-#: includes/admin/referrals/referrals.php:64 includes/admin/tools/tools.php:150
-#: includes/admin/tools/tools.php:306 includes/admin/tools/tools.php:333
-#: includes/admin/visits/visits.php:55
-msgid "Affiliate name"
-msgstr "Tên cộng tác viên"
-
 #: includes/admin/referrals/class-list-table.php:574
-#: includes/admin/referrals/referrals.php:67 includes/admin/tools/tools.php:308
-#: includes/admin/tools/tools.php:335 includes/admin/visits/visits.php:58
-#: includes/class-graph.php:420
+#: includes/admin/referrals/referrals.php:67
+#: includes/admin/tools/tools.php:310 includes/admin/tools/tools.php:337
+#: includes/admin/tools/tools.php:361 includes/admin/visits/visits.php:58
+#: includes/class-graph.php:419
 msgid "From - mm/dd/yyyy"
 msgstr "Từ - mm/dd/yyyy"
 
 #: includes/admin/referrals/class-list-table.php:575
-#: includes/admin/referrals/referrals.php:68 includes/admin/tools/tools.php:309
-#: includes/admin/tools/tools.php:336 includes/admin/visits/visits.php:59
-#: includes/class-graph.php:422
+#: includes/admin/referrals/referrals.php:68
+#: includes/admin/tools/tools.php:311 includes/admin/tools/tools.php:338
+#: includes/admin/tools/tools.php:362 includes/admin/visits/visits.php:59
+#: includes/class-graph.php:421
 msgid "To - mm/dd/yyyy"
 msgstr "Đến - mm/dd/yyyy"
-
-#: includes/admin/referrals/class-list-table.php:582
-#: includes/admin/visits/visits.php:67 includes/class-graph.php:427
-msgid "Filter"
-msgstr "Lọc"
 
 #: includes/admin/referrals/contextual-help.php:29
 #: includes/admin/visits/contextual-help.php:29
@@ -1952,7 +1895,6 @@ msgid "<a href=\"%s\">Post an issue</a> on <a href=\"%s\">GitHub</a>."
 msgstr "<a href=\"%s\">Gửi một vấn đề</a> trên <a href=\"%s\">GitHub</a>."
 
 #: includes/admin/referrals/contextual-help.php:39
-#, fuzzy
 msgid "This screen provides access to your site&#8217;s referral history."
 msgstr "Màn hình này dùng truy cập đến lịch sử giới thiệu của website bạn."
 
@@ -2008,23 +1950,19 @@ msgid "Referrals can be searched in several different ways:"
 msgstr "Giới thiệu có thể được tìm kiếm theo nhiều cách khác nhau:"
 
 #: includes/admin/referrals/contextual-help.php:56
-#, fuzzy
 msgid "You can enter the referral&#8217;s ID number"
 msgstr "Bạn có thể nhập số ID của giới thiệu"
 
 #: includes/admin/referrals/contextual-help.php:57
-#, fuzzy
 msgid "You can enter the referral reference prefixed by &#8220;ref:&#8221;"
 msgstr "Bạn có thể nhập tài liệu tham khảo giới thiệu bắt đầu bằng 'ref:'"
 
 #: includes/admin/referrals/contextual-help.php:58
-#, fuzzy
 msgid "You can enter the referral context prefixed by &#8220;context:&#8221;"
 msgstr "Bạn có thể nhập vào bối cảnh giới thiệu bắt đầu bằng 'context:'"
 
 #: includes/admin/referrals/contextual-help.php:59
 #: includes/admin/visits/contextual-help.php:60
-#, fuzzy
 msgid ""
 "You can enter the affiliate&#8217;s ID number prefixed by &#8220;affiliate:"
 "&#8221;"
@@ -2032,16 +1970,21 @@ msgstr "Bạn có thể nhập số ID của cộng tác viên bắt đầu bằ
 
 #: includes/admin/referrals/contextual-help.php:60
 #: includes/admin/visits/contextual-help.php:61
-#, fuzzy
 msgid "You can enter a URL campaign prefixed by &#8220;campaign:&#8221;"
 msgstr "Bạn có thể nhập một chiến dịch URL bắt đầu bằng 'campaign:'"
 
-#: includes/admin/referrals/contextual-help.php:66
+#: includes/admin/referrals/contextual-help.php:61
+#, fuzzy
+msgid ""
+"You can enter a word or phrase in the referral&#8217;s description prefixed "
+"by &#8220;desc:&#8221;"
+msgstr "Bạn có thể nhập số ID của giới thiệu bắt đầu bằng 'referral:'"
+
+#: includes/admin/referrals/contextual-help.php:67
 msgid "Exporting Referrals"
 msgstr "Đang xuất Giới thiệu"
 
-#: includes/admin/referrals/contextual-help.php:68
-#, fuzzy
+#: includes/admin/referrals/contextual-help.php:69
 msgid ""
 "Referrals can be exported directly to a CSV file in order to make it easier "
 "for your own accounting needs and for you to payout your affiliates&#8217;s "
@@ -2051,8 +1994,7 @@ msgstr ""
 "cho nhu cầu kế toán của riêng bạn cũng như việc thanh toán các khoản thu "
 "nhập của cộng tác viên."
 
-#: includes/admin/referrals/contextual-help.php:69
-#, fuzzy
+#: includes/admin/referrals/contextual-help.php:70
 msgid ""
 "The CSV file generated is structured properly for PayPal&#8217;s Mass "
 "Payment system so you can easily payout all of your affiliates at once via "
@@ -2072,7 +2014,6 @@ msgid "Referral ID"
 msgstr "ID giới thiệu"
 
 #: includes/admin/referrals/edit.php:36
-#, fuzzy
 msgid "The referral ID. This cannot be changed."
 msgstr "ID của cộng tác viên. Không thể bị thay đổi"
 
@@ -2083,7 +2024,6 @@ msgid "%1$s (ID: #%2$s)"
 msgstr ""
 
 #: includes/admin/referrals/edit.php:67
-#, fuzzy
 msgid ""
 "The name and ID of the affiliate who generated this referral. This "
 "association cannot be changed."
@@ -2091,19 +2031,16 @@ msgstr ""
 " ID của cộng tác viên tạo ra giới thiệu này. Giá trị này không thể thay đổi."
 
 #: includes/admin/referrals/edit.php:75
-#, fuzzy
 msgid "Payout"
 msgstr "Các giới thiệu gần đây"
 
 #. translators: 1: Payout total amount with view link
 #: includes/admin/referrals/edit.php:84
-#, fuzzy
 msgid "Total: %1$s"
 msgstr "Tổng số"
 
 #. translators: 1: Pay Out action link
 #: includes/admin/referrals/edit.php:106
-#, fuzzy
 msgid "None | %1$s"
 msgstr "Không cài"
 
@@ -2112,8 +2049,8 @@ msgid "Pay Out"
 msgstr ""
 
 #: includes/admin/referrals/edit.php:116 includes/admin/referrals/edit.php:168
-#: includes/admin/settings/class-settings.php:580
-#, fuzzy
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:71
+#: includes/admin/settings/class-settings.php:593
 msgid "None"
 msgstr "Không cài"
 
@@ -2127,7 +2064,6 @@ msgid "The amount of the referral, such as 15."
 msgstr "Số lượng của giới thiệu, chẳng hạn 15."
 
 #: includes/admin/referrals/edit.php:159
-#, fuzzy
 msgid "Visit"
 msgstr "Lượt truy cập"
 
@@ -2150,13 +2086,14 @@ msgstr ""
 
 #: includes/admin/referrals/edit.php:229 includes/admin/referrals/new.php:87
 #: includes/admin/tools/export/class-batch-export-referrals.php:153
+#: includes/admin/tools/export/class-batch-export-visits.php:151
 #: includes/admin/tools/export/class-export-referrals.php:73
 #: includes/admin/visits/class-list-table.php:107
+#: includes/misc-functions.php:1143 tests/misc/test-misc-functions.php:406
 msgid "Context"
 msgstr "Bối cảnh"
 
 #: includes/admin/referrals/edit.php:234
-#, fuzzy
 msgid ""
 "Context for this referral (optional). Usually this is used to identify the "
 "payment system or integration that was used for the transaction."
@@ -2165,16 +2102,30 @@ msgstr ""
 "sử dụng để giúp xác định các hệ thống thanh toán đã được sử dụng cho các "
 "giao dịch."
 
-#: includes/admin/referrals/edit.php:253
+#: includes/admin/referrals/edit.php:242 includes/admin/referrals/new.php:100
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:147
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:186
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:232
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:272
+#: includes/class-graph.php:371
+msgid "Custom"
+msgstr "Khách hàng"
+
+#: includes/admin/referrals/edit.php:247
+#, fuzzy
+msgid "Custom data stored for this referral (optional)."
+msgstr "Nhập mô tả cho giới thiệu này."
+
+#: includes/admin/referrals/edit.php:266
 msgid ""
 "The referral status cannot be changed once it has been included in a payout."
 msgstr ""
 
-#: includes/admin/referrals/edit.php:255 includes/admin/referrals/new.php:110
+#: includes/admin/referrals/edit.php:268 includes/admin/referrals/new.php:123
 msgid "Select the status of the referral."
 msgstr "Chọn trạng thái của giới thiệu."
 
-#: includes/admin/referrals/edit.php:276
+#: includes/admin/referrals/edit.php:289
 msgid "Update Referral"
 msgstr "Cập nhật giới thiệu"
 
@@ -2206,7 +2157,11 @@ msgstr ""
 "sử dụng để giúp xác định các hệ thống thanh toán đã được sử dụng cho các "
 "giao dịch."
 
-#: includes/admin/referrals/new.php:127
+#: includes/admin/referrals/new.php:105
+msgid "Any custom data that should be stored with the referral (optional)."
+msgstr ""
+
+#: includes/admin/referrals/new.php:140
 #: includes/integrations/extras/class-ninja-forms-action-add-referral.php:43
 msgid "Add Referral"
 msgstr "Thêm giới thiệu"
@@ -2244,7 +2199,6 @@ msgstr ""
 "Xuất ra</a>."
 
 #: includes/admin/referrals/referrals.php:72
-#, fuzzy
 msgid ""
 "To generate a payout for a specific affiliate, enter the affiliate&#8217;s "
 "login name, first name, or last name. Leave blank to generate a payout for "
@@ -2261,150 +2215,271 @@ msgstr "Tạo tập tin CSV"
 msgid "Number of referrals per page:"
 msgstr "Số giới thiệu trên mỗi trang"
 
-#: includes/admin/reports/class-registrations-graph.php:69
+#: includes/admin/reports/class-payouts-graph.php:179
+#, fuzzy
+msgid "Earnings Generated"
+msgstr "Thu nhập"
+
+#: includes/admin/reports/class-payouts-graph.php:180
+#, fuzzy
+msgid "Earnings Paid"
+msgstr "Thu nhập"
+
+#: includes/admin/reports/class-registrations-graph.php:83
 msgid "Affiliate Registrations"
 msgstr "Đăng ký Cộng tác viên"
 
-#: includes/admin/reports/class-reports-admin.php:65
-#, fuzzy
+#: includes/admin/reports/class-reports-admin.php:68
 msgid "Manage Affiliates"
 msgstr "Thêm Cộng tác viên"
 
-#: includes/admin/reports/class-reports-admin.php:70
-#, fuzzy
+#: includes/admin/reports/class-reports-admin.php:75
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:89
 msgid "View Payouts"
 msgstr "Các giới thiệu gần đây"
 
-#: includes/admin/reports/class-reports-admin.php:77
-#, fuzzy
+#: includes/admin/reports/class-reports-admin.php:82
 msgid "Manage Visits"
 msgstr "Đang tìm lượt truy cập"
 
-#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:38
-#, fuzzy
+#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:40
 msgid "Total Affiliates"
 msgstr "Xuất cộng tác viên"
 
-#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:41
-#: includes/admin/reports/tabs/class-referrals-reports-tab.php:45
-#: includes/admin/reports/tabs/class-visits-reports-tab.php:41
+#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:43
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:92
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:217
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:318
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:156
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:142
 msgid "All Time"
 msgstr ""
 
-#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:71
-#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:135
-#, fuzzy
+#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:73
+#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:137
 msgid "Affiliate #%d"
 msgstr "Cộng tác viên: #%d %s"
 
-#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:75
-#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:84
-#, fuzzy
+#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:77
+#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:86
 msgid "Top Earning Affiliate"
 msgstr "Sửa Cộng tác viên"
 
-#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:99
-#, fuzzy
+#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:101
 msgid "New Affiliates"
 msgstr "Cộng tác viên mới"
 
-#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:139
-#, fuzzy
+#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:141
 msgid "%d referral"
 msgid_plural "%d referrals"
 msgstr[0] "Thêm giới thiệu"
 msgstr[1] "Thêm giới thiệu"
 
-#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:153
+#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:155
 msgid "Highest Converting Affiliate"
 msgstr ""
 
-#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:178
-#, fuzzy
-msgid "Average Payout"
-msgstr "Tỷ lệ Giới thiệu"
-
 #: includes/admin/reports/tabs/class-campaigns-reports-tab.php:23
-#, fuzzy
 msgid "Campaigns"
 msgstr "Chiến dịch"
 
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:53
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:63
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:64
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:101
 msgid "Best Converting Campaign (All Time)"
 msgstr ""
 
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:54
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:100
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:148
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:65
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:150
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:235
 msgid "n/a"
 msgstr ""
 
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:55
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:101
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:149
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:66
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:151
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:236
 msgid "Affiliate: <a href=\"%1$s\">%2$s</a> | Visits: %3$d"
 msgstr ""
 
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:96
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:109
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:88
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:173
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:258
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:79
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:204
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:305
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:59
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:72
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:108
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:56
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:116
+msgid "Affiliate: <a href=\"%1$s\">%2$s</a>"
+msgstr ""
+
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:146
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:185
 msgid "Best Converting Campaign (%s)"
 msgstr ""
 
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:97
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:110
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:145
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:158
-#: includes/class-graph.php:375
-msgid "Custom"
-msgstr "Khách hàng"
-
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:144
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:157
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:231
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:271
 msgid "Most Active Campaign (%s)"
 msgstr ""
 
-#: includes/admin/reports/tabs/class-referrals-reports-tab.php:81
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:75
+msgid "Total Earnings Paid (All Time)"
+msgstr ""
+
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:88
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:119
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:133
 #, fuzzy
+msgid "Total Earnings Paid"
+msgstr "Tổng thu nhập"
+
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:123
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:169
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:253
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:123
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:138
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:70
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:95
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:127
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:232
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:256
+msgid "Affiliate: <a href=\"%1$s\">%2$s</a> | %3$s"
+msgstr ""
+
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:165
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:179
+#, fuzzy
+msgid "Total Earnings Generated"
+msgstr "Tổng thu nhập"
+
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:200
+msgid "Total Payouts Count (All Time)"
+msgstr ""
+
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:213
+#, fuzzy
+msgid "Total Payouts Count"
+msgstr "Tổng lượt truy cập"
+
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:249
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:264
+msgid "Average Payout"
+msgstr "Tỷ lệ Giới thiệu"
+
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:301
+#, fuzzy
+msgid "Average Referrals Per Payout (All Time)"
+msgstr "Tỷ lệ Giới thiệu"
+
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:314
+#, fuzzy
+msgid "Average Referrals Per Payout"
+msgstr "Tỷ lệ Giới thiệu"
+
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:55
+#, fuzzy
+msgid "Total Earnings (All Time)"
+msgstr "Tổng thu nhập"
+
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:68
+#, fuzzy
+msgid "Total Unpaid Earnings"
+msgstr "Tổng thu nhập chưa thanh toán"
+
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:79
+msgid "Payouts (All Time)"
+msgstr ""
+
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:85
+#, fuzzy
+msgid "Affiliate: <a href=\"%1$s\">%2$s</a> | <a href=\"%3$s\">%4$s</a>"
+msgstr "<a href=\"%s\">Gửi một vấn đề</a> trên <a href=\"%s\">GitHub</a>."
+
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:104
+#, fuzzy
+msgid "Average Referral Amount (All Time)"
+msgstr "Tỷ lệ Giới thiệu"
+
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:116
+#, fuzzy
+msgid "Paid / Unpaid Referrals"
+msgstr "Những giới thiệu chưa thanh toán"
+
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:131
+#, fuzzy
+msgid "Pending / Rejected Referrals"
+msgstr "Thu nhập giới thiệu bị từ chối"
+
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:192
 msgid "Average Referral Amount"
 msgstr "Tỷ lệ Giới thiệu"
 
-#: includes/admin/reports/tabs/class-visits-reports-tab.php:38
-#: includes/admin/reports/tabs/class-visits-reports-tab.php:45
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:53
 #, fuzzy
-msgid "Total Visits"
+msgid "Total Visits (All Time)"
 msgstr "Tổng lượt truy cập"
 
-#: includes/admin/reports/tabs/class-visits-reports-tab.php:61
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:63
+msgid "Total visits"
+msgstr "Tổng lượt truy cập"
+
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:91
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:162
 msgid "Successful Conversions"
 msgstr "Chuyển đổi thành công"
 
-#: includes/admin/reports/tabs/class-visits-reports-tab.php:73
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:112
+#, fuzzy
+msgid "Conversion Rate (All Time)"
+msgstr "Tỷ lệ chuyển đổi"
+
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:123
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:174
 #: includes/admin/tools/export/class-batch-export-affiliates.php:103
 #: includes/admin/tools/export/class-export-affiliates.php:59
 #: templates/dashboard-tab-stats.php:14 templates/dashboard-tab-stats.php:77
 msgid "Conversion Rate"
 msgstr "Tỷ lệ chuyển đổi"
 
-#: includes/admin/reports/tabs/class-visits-reports-tab.php:110
-#: includes/admin/reports/tabs/class-visits-reports-tab.php:118
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:139
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:146
+msgid "Total Visits"
+msgstr "Tổng lượt truy cập"
+
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:245
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:269
 msgid "Top Referrer"
 msgstr ""
 
-#: includes/admin/reports/tabs/class-visits-reports-tab.php:113
-#, fuzzy
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:248
 msgid "Direct Traffic"
 msgstr "Lưu lượng truy cập trực tiếp"
 
-#: includes/admin/settings/class-settings.php:436
+#: includes/admin/settings/class-settings.php:427
+msgid ""
+"Show pretty affiliate referral URLs to affiliates. For example: <strong>%s "
+"or %s</strong>"
+msgstr ""
+"Hiển thị pretty affiliate referrals cho các cộng tác viên. Ví dụ: <strong>%s "
+"or %s</strong>"
+
+#: includes/admin/settings/class-settings.php:437
+msgid ""
+"Note: Pretty affiliate URLs may not always work as expected when using "
+"AffiliateWP in combination with WooCommerce and Polylang."
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:449
 msgid "License Settings"
 msgstr "Cài đặt License"
 
-#: includes/admin/settings/class-settings.php:441
+#: includes/admin/settings/class-settings.php:454
 msgid "License Key"
 msgstr "License Key ( Khóa bản quyền )"
 
-#: includes/admin/settings/class-settings.php:442
+#: includes/admin/settings/class-settings.php:455
 msgid ""
 "Please enter your license key. An active license key is needed for automatic "
 "plugin updates and <a href=\"%s\" target=\"_blank\">support</a>."
@@ -2413,44 +2488,44 @@ msgstr ""
 "cho việc cập nhập tự động plugin và <a href=\"%s\" target=\"_blank\">hổ trợ</"
 "a>."
 
-#: includes/admin/settings/class-settings.php:447
+#: includes/admin/settings/class-settings.php:460
 msgid "Pages"
 msgstr "Trang"
 
-#: includes/admin/settings/class-settings.php:452 includes/install.php:32
+#: includes/admin/settings/class-settings.php:465 includes/install.php:41
 msgid "Affiliate Area"
 msgstr "Khu vực Cộng tác viên"
 
-#: includes/admin/settings/class-settings.php:453
+#: includes/admin/settings/class-settings.php:466
 msgid "This is the page where affiliates will manage their affiliate account."
 msgstr ""
 "Đây là trang mà các cộng tác viên sẽ quản lý tài khoản cộng tác viên của họ."
 
-#: includes/admin/settings/class-settings.php:459
+#: includes/admin/settings/class-settings.php:472
 msgid "Terms of Use"
 msgstr "Điều khoản sử dụng"
 
-#: includes/admin/settings/class-settings.php:460
+#: includes/admin/settings/class-settings.php:473
 msgid "Select the page that shows the terms of use for Affiliate Registration"
 msgstr "Chọn trang hiển thị các điều khoản sử dụng cho cộng tác viên đăng ký"
 
-#: includes/admin/settings/class-settings.php:466
+#: includes/admin/settings/class-settings.php:479
 msgid "Referral Settings"
 msgstr "Cài  đặt giới thiệu"
 
-#: includes/admin/settings/class-settings.php:471
+#: includes/admin/settings/class-settings.php:484
 msgid "Referral Variable"
 msgstr "Biến đổi giới thiệu"
 
-#: includes/admin/settings/class-settings.php:472
+#: includes/admin/settings/class-settings.php:485
 msgid "The URL variable for referral URLs. For example: <strong>%s</strong>."
 msgstr "Biến cho các URL giới thiệu. Ví dụ: <strong>%s</strong>."
 
-#: includes/admin/settings/class-settings.php:477
+#: includes/admin/settings/class-settings.php:490
 msgid "Default Referral Format"
 msgstr "Định dạng giới thiệu mặc định"
 
-#: includes/admin/settings/class-settings.php:478
+#: includes/admin/settings/class-settings.php:491
 msgid ""
 "Show referral URLs to affiliates with either their affiliate ID or Username "
 "appended.<br/> For example: <strong>%s or %s</strong>."
@@ -2459,41 +2534,30 @@ msgstr ""
 "viên của họ, hoặc là Tên người dùng của cộng tác viên. . Ví dụ: <strong>%s "
 "hoặc %s</strong>."
 
-#: includes/admin/settings/class-settings.php:487
-#: includes/admin/tools/export/class-export.php:83
+#: includes/admin/settings/class-settings.php:500
+#: includes/admin/tools/export/class-export.php:84
 msgid "ID"
 msgstr "ID"
 
-#: includes/admin/settings/class-settings.php:494
+#: includes/admin/settings/class-settings.php:507
 msgid "Pretty Affiliate URLs"
 msgstr "Pretty Affiliate URLs"
 
-#: includes/admin/settings/class-settings.php:495
-#, fuzzy
-msgid ""
-"Show pretty affiliate referral URLs to affiliates. For example: <strong>%s "
-"or %s</strong>"
-msgstr ""
-"Hiển thị pretty affiliate referrals cho các cộng tác viên. Ví dụ: <strong>%s "
-"or %s</strong>"
-
-#: includes/admin/settings/class-settings.php:499
+#: includes/admin/settings/class-settings.php:512
 msgid "Credit Last Referrer"
 msgstr "Tín dụng giới thiệu sau cùng"
 
-#: includes/admin/settings/class-settings.php:500
+#: includes/admin/settings/class-settings.php:513
 msgid "Credit the last affiliate who referred the customer."
 msgstr "Tín dụng các cộng tác viên cuối cùng người giới thiệu khách hàng."
 
-#: includes/admin/settings/class-settings.php:505
-#, fuzzy
+#: includes/admin/settings/class-settings.php:518
 msgid ""
 "Choose a referral rate type. Referrals can be based on either a percentage "
 "or a flat rate amount."
 msgstr "Giới thiệu sẽ được dựa trên tỷ lệ phần trăm hay một khoản cố định?"
 
-#: includes/admin/settings/class-settings.php:511
-#, fuzzy
+#: includes/admin/settings/class-settings.php:524
 msgid ""
 "The default referral rate. A percentage if the Referral Rate Type is set to "
 "Percentage, a flat amount otherwise. Referral rates can also be set for each "
@@ -2503,130 +2567,121 @@ msgstr ""
 "là tỷ lệ phần trăm, ngược lại sẽ là một số cố định. Các tỷ lệ có thể được "
 "thiết lập cho mỗi cộng tác viên riêng biệt."
 
-#: includes/admin/settings/class-settings.php:518
+#: includes/admin/settings/class-settings.php:531
 msgid "Exclude Shipping"
 msgstr "Loại trừ vận chuyển"
 
-#: includes/admin/settings/class-settings.php:519
-#, fuzzy
+#: includes/admin/settings/class-settings.php:532
 msgid "Exclude shipping costs from referral calculations."
 msgstr ""
 "Chi phí vận chuyển có được loại trừ khỏi việc tính toán giới thiệu hay không?"
 
-#: includes/admin/settings/class-settings.php:523
+#: includes/admin/settings/class-settings.php:536
 msgid "Exclude Tax"
 msgstr "Loại trừ thuế"
 
-#: includes/admin/settings/class-settings.php:524
-#, fuzzy
+#: includes/admin/settings/class-settings.php:537
 msgid "Exclude taxes from referral calculations."
 msgstr ""
 "Các khoản thuế có được loại trừ khỏi việc tính toán giới thiệu hay không?"
 
-#: includes/admin/settings/class-settings.php:528
+#: includes/admin/settings/class-settings.php:541
 msgid "Cookie Expiration"
 msgstr "Hết hạn cookie"
 
-#: includes/admin/settings/class-settings.php:529
-#, fuzzy
+#: includes/admin/settings/class-settings.php:542
 msgid "Enter how many days the referral tracking cookie should be valid for."
 msgstr "Các cookie giới thiệu có giá trị trong bao nhiêu ngày?"
 
-#: includes/admin/settings/class-settings.php:535
+#: includes/admin/settings/class-settings.php:548
 msgid "Currency Settings"
 msgstr "Cài đặt tiền tệ"
 
-#: includes/admin/settings/class-settings.php:536
+#: includes/admin/settings/class-settings.php:549
 msgid "Configure the currency options"
 msgstr "Cấu hình các lựa chọn tiền tệ"
 
-#: includes/admin/settings/class-settings.php:540
+#: includes/admin/settings/class-settings.php:553
 #: includes/admin/tools/export/class-batch-export-referrals.php:149
 #: includes/admin/tools/export/class-batch-generate-payouts.php:217
 #: includes/admin/tools/export/class-export-referrals-payout.php:74
 #: includes/admin/tools/export/class-export-referrals.php:69
+#: includes/misc-functions.php:1139 tests/misc/test-misc-functions.php:402
 msgid "Currency"
 msgstr "Tiền tệ"
 
-#: includes/admin/settings/class-settings.php:541
+#: includes/admin/settings/class-settings.php:554
 msgid ""
 "Choose your currency. Note that some payment gateways have currency "
 "restrictions."
 msgstr ""
 "Chọn tiền tệ của bạn. Lưu ý rằng một số cổng thanh toán có hạn chế tiền tệ."
 
-#: includes/admin/settings/class-settings.php:546
-#, fuzzy
+#: includes/admin/settings/class-settings.php:559
 msgid "Currency Symbol Position"
 msgstr "Địa vị tiền tệ"
 
-#: includes/admin/settings/class-settings.php:547
-#, fuzzy
+#: includes/admin/settings/class-settings.php:560
 msgid "Choose the location of the currency symbol."
 msgstr "Chọn vị trí của các ký hiệu tiền tệ."
 
-#: includes/admin/settings/class-settings.php:550
+#: includes/admin/settings/class-settings.php:563
 msgid "Before - $10"
 msgstr "Trước - $ 10"
 
-#: includes/admin/settings/class-settings.php:551
+#: includes/admin/settings/class-settings.php:564
 msgid "After - 10$"
 msgstr "Sau - 10$"
 
-#: includes/admin/settings/class-settings.php:555
+#: includes/admin/settings/class-settings.php:568
 msgid "Thousands Separator"
 msgstr "Dấu phân cách phần ngàn"
 
-#: includes/admin/settings/class-settings.php:556
+#: includes/admin/settings/class-settings.php:569
 msgid "The symbol (usually , or .) to separate thousands"
 msgstr "Các biểu tượng (thường, hoặc.) để phân cách phần ngàn"
 
-#: includes/admin/settings/class-settings.php:562
+#: includes/admin/settings/class-settings.php:575
 msgid "Decimal Separator"
 msgstr "Dấu thập phân"
 
-#: includes/admin/settings/class-settings.php:563
+#: includes/admin/settings/class-settings.php:576
 msgid "The symbol (usually , or .) to separate decimal points"
 msgstr "Các biểu tượng (thường, hoặc.) để tách phần thập phân"
 
-#: includes/admin/settings/class-settings.php:569
-#, fuzzy
+#: includes/admin/settings/class-settings.php:582
 msgid "Affiliate Form Settings"
 msgstr "Cài đặt cộng tác viên"
 
-#: includes/admin/settings/class-settings.php:573
-#, fuzzy
+#: includes/admin/settings/class-settings.php:586
 msgid "Affiliate Area Forms"
 msgstr "Khu vực Cộng tác viên"
 
-#: includes/admin/settings/class-settings.php:574
+#: includes/admin/settings/class-settings.php:587
 msgid ""
 "Select which form(s) to show on the Affiliate Area page. The affiliate "
 "registration form will only show if <a href=\"%s\">Allow Affiliate "
 "Registration</a> is enabled."
 msgstr ""
 
-#: includes/admin/settings/class-settings.php:577
-#, fuzzy
+#: includes/admin/settings/class-settings.php:590
 msgid "Affiliate Registration Form and Affiliate Login Form"
 msgstr "Tình trạng cộng tác viên đăng lý"
 
-#: includes/admin/settings/class-settings.php:578
-#, fuzzy
+#: includes/admin/settings/class-settings.php:591
 msgid "Affiliate Registration Form Only"
 msgstr "Đăng ký Cộng tác viên"
 
-#: includes/admin/settings/class-settings.php:579
-#, fuzzy
+#: includes/admin/settings/class-settings.php:592
 msgid "Affiliate Login Form Only"
 msgstr "Coupon  cộng tác viên?"
 
-#: includes/admin/settings/class-settings.php:596
+#: includes/admin/settings/class-settings.php:609
 #: includes/admin/settings/display-settings.php:61
 msgid "Integrations"
 msgstr "Tích hợp"
 
-#: includes/admin/settings/class-settings.php:597
+#: includes/admin/settings/class-settings.php:610
 msgid ""
 "Choose the integrations to enable. If you are not using any of these, you "
 "may use the <strong>[affiliate_conversion_script]</strong> shortcode to "
@@ -2638,68 +2693,63 @@ msgstr ""
 "để theo dõi và tạo ra các giới thiệu. Tham khảo them <a href=\"%s\" target="
 "\"_blank\">Tài Liệu</a> để nhận được trợ giúp làm thế nào."
 
-#: includes/admin/settings/class-settings.php:613
+#: includes/admin/settings/class-settings.php:626
 msgid "Disable All Emails"
 msgstr "Vô hiệu hóa tất cả Email"
 
-#: includes/admin/settings/class-settings.php:614
-#, fuzzy
+#: includes/admin/settings/class-settings.php:627
 msgid "Disable all email notifications."
 msgstr "Bật thông báo Giới thiệu mới"
 
-#: includes/admin/settings/class-settings.php:618
+#: includes/admin/settings/class-settings.php:631
 msgid "Logo"
 msgstr "Logo"
 
-#: includes/admin/settings/class-settings.php:619
+#: includes/admin/settings/class-settings.php:632
 msgid "Upload or choose a logo to be displayed at the top of emails."
 msgstr "Tải lên hoặc chọn một logo được hiển thị ở phía trên cùng của email."
 
-#: includes/admin/settings/class-settings.php:623
+#: includes/admin/settings/class-settings.php:636
 msgid "Email Template"
 msgstr "Email mẫu"
 
-#: includes/admin/settings/class-settings.php:624
+#: includes/admin/settings/class-settings.php:637
 msgid "Choose a template to use for email messages."
 msgstr "Chọn một mẫu để sử dụng cho các tin nhắn email."
 
-#: includes/admin/settings/class-settings.php:629
+#: includes/admin/settings/class-settings.php:642
 msgid "From Name"
 msgstr "Từ Tên"
 
-#: includes/admin/settings/class-settings.php:630
-#, fuzzy
+#: includes/admin/settings/class-settings.php:643
 msgid "The name that emails come from. This is usually your site name."
 msgstr "Tên hiển thị phần Người gửi trên email. Nên lấy tên website của bạn."
 
-#: includes/admin/settings/class-settings.php:635
+#: includes/admin/settings/class-settings.php:648
 msgid "From Email"
 msgstr "Từ Email"
 
-#: includes/admin/settings/class-settings.php:636
-#, fuzzy
+#: includes/admin/settings/class-settings.php:649
 msgid ""
 "The email address to send emails from. This will act as the \"from\" and "
 "\"reply-to\" address."
 msgstr ""
 "Email được gửi từ. Nó đóng vai trò là địa chỉ  \"from\"  và  \"reply-to\""
 
-#: includes/admin/settings/class-settings.php:641
-#, fuzzy
+#: includes/admin/settings/class-settings.php:654
 msgid "Notify Admin"
 msgstr "Thông báo cho quản trị viên"
 
-#: includes/admin/settings/class-settings.php:642
-#, fuzzy
+#: includes/admin/settings/class-settings.php:655
 msgid "Notify site admin of new affiliate registrations."
 msgstr ""
 "Thông báo cho quản trị viên trang web khi có đăng ký cộng tác viên mới?"
 
-#: includes/admin/settings/class-settings.php:646
+#: includes/admin/settings/class-settings.php:659
 msgid "Registration Email Subject"
 msgstr "Tiêu đề email đăng ký"
 
-#: includes/admin/settings/class-settings.php:647
+#: includes/admin/settings/class-settings.php:660
 msgid ""
 "Enter the subject line for the registration email sent to admins when new "
 "affiliates register."
@@ -2707,16 +2757,16 @@ msgstr ""
 "Nhập vào dòng tiêu đề cho email đăng ký gửi đến quản trị viên khi cộng tác "
 "viên mới đăng ký."
 
-#: includes/admin/settings/class-settings.php:649
+#: includes/admin/settings/class-settings.php:662
 #: includes/emails/actions.php:41
 msgid "New Affiliate Registration"
 msgstr "Đăng ký cộng tác viên mới"
 
-#: includes/admin/settings/class-settings.php:652
+#: includes/admin/settings/class-settings.php:665
 msgid "Registration Email Content"
 msgstr "Nội dung email đăng ký"
 
-#: includes/admin/settings/class-settings.php:653
+#: includes/admin/settings/class-settings.php:666
 msgid ""
 "Enter the email to send when a new affiliate registers. HTML is accepted. "
 "Available template tags:"
@@ -2724,19 +2774,19 @@ msgstr ""
 "Nhập email để gửi khi một cộng tác viên mới đăng ký. HTML được chấp nhận. "
 "Các thẻ mẫu có sẵn:"
 
-#: includes/admin/settings/class-settings.php:655
+#: includes/admin/settings/class-settings.php:668
 msgid "A new affiliate has registered on your site, %s"
 msgstr "Một cộng tác viên mới đã đăng ký trên trang của bạn, %s"
 
-#: includes/admin/settings/class-settings.php:655
+#: includes/admin/settings/class-settings.php:668
 msgid "Name: "
 msgstr "Tên:"
 
-#: includes/admin/settings/class-settings.php:658
+#: includes/admin/settings/class-settings.php:671
 msgid "Application Accepted Email Subject"
 msgstr "Tiêu đề email chập thuận đơn"
 
-#: includes/admin/settings/class-settings.php:659
+#: includes/admin/settings/class-settings.php:672
 msgid ""
 "Enter the subject line for accepted application emails sent to affiliates "
 "when their account is approved."
@@ -2744,16 +2794,16 @@ msgstr ""
 "Nhập dòng tiêu đề cho email chấp thuận đơn gửi đến các cộng tác viên khi tài "
 "khoản của họ được chấp thuận."
 
-#: includes/admin/settings/class-settings.php:661
+#: includes/admin/settings/class-settings.php:674
 #: includes/emails/actions.php:114
 msgid "Affiliate Application Accepted"
 msgstr "Chấp thuận đơn làm cộng tác viên"
 
-#: includes/admin/settings/class-settings.php:664
+#: includes/admin/settings/class-settings.php:677
 msgid "Application Accepted Email Content"
 msgstr "Nội dung email chấp thuận đơn"
 
-#: includes/admin/settings/class-settings.php:665
+#: includes/admin/settings/class-settings.php:678
 msgid ""
 "Enter the email to send when an application is accepted. HTML is accepted. "
 "Available template tags:"
@@ -2761,25 +2811,25 @@ msgstr ""
 "Nhập email để gửi khi một đơn được chấp nhận. HTML được chấp nhận. Các thẻ "
 "mẫu có sẵn:"
 
-#: includes/admin/settings/class-settings.php:667
-#: includes/admin/settings/class-settings.php:679
+#: includes/admin/settings/class-settings.php:680
+#: includes/admin/settings/class-settings.php:692
 msgid "Congratulations {name}!"
 msgstr "Xin chúc mừng {name}!"
 
-#: includes/admin/settings/class-settings.php:667
+#: includes/admin/settings/class-settings.php:680
 #: includes/emails/actions.php:119
 msgid "Your affiliate application on %s has been accepted!"
 msgstr "Yêu cầu làm cộng tác viên của bạn trên %s đã được chấp nhận!"
 
-#: includes/admin/settings/class-settings.php:667
+#: includes/admin/settings/class-settings.php:680
 msgid "Log into your affiliate area at"
 msgstr "Đăng nhập vào Khu vực cộng tác viên của bạn tại"
 
-#: includes/admin/settings/class-settings.php:670
+#: includes/admin/settings/class-settings.php:683
 msgid "New Referral Email Subject"
 msgstr "Tiêu đề email giới thiệu mới"
 
-#: includes/admin/settings/class-settings.php:671
+#: includes/admin/settings/class-settings.php:684
 msgid ""
 "Enter the subject line for new referral emails sent when affiliates earn "
 "referrals."
@@ -2787,31 +2837,31 @@ msgstr ""
 "Nhập dòng tiêu đề cho email giới thiệu mới được gửi khi các cộng tác viên "
 "kiếm được các giới thiệu."
 
-#: includes/admin/settings/class-settings.php:673
+#: includes/admin/settings/class-settings.php:686
 #: includes/emails/actions.php:247
 msgid "Referral Awarded!"
 msgstr "Trao tặng giới thiệu!"
 
-#: includes/admin/settings/class-settings.php:676
+#: includes/admin/settings/class-settings.php:689
 msgid "New Referral Email Content"
 msgstr "Nội dung email giới thiệu mới"
 
-#: includes/admin/settings/class-settings.php:677
+#: includes/admin/settings/class-settings.php:690
 msgid ""
 "Enter the email to send on new referrals. HTML is accepted. Available "
 "template tags:"
 msgstr ""
 "Nhập email để gửi về giới thiệu mới. HTML được chấp nhận. Các thẻ mẫu có sẵn:"
 
-#: includes/admin/settings/class-settings.php:679
+#: includes/admin/settings/class-settings.php:692
 msgid "You have been awarded a new referral of"
 msgstr "Bạn đã được tặng thưởng một giới thiệu mới của"
 
-#: includes/admin/settings/class-settings.php:679
+#: includes/admin/settings/class-settings.php:692
 msgid "on %s!"
 msgstr "trên %s!"
 
-#: includes/admin/settings/class-settings.php:679
+#: includes/admin/settings/class-settings.php:692
 msgid ""
 "Log into your affiliate area to view your earnings or disable these "
 "notifications:"
@@ -2819,23 +2869,19 @@ msgstr ""
 "Đăng nhập vào Khu vực cộng tác viên của bạn để xem thu nhập hoặc tắt thông "
 "báo này:"
 
-#: includes/admin/settings/class-settings.php:693
-#, fuzzy
+#: includes/admin/settings/class-settings.php:706
 msgid "Allow Affiliate Registration"
 msgstr "Cho phép cộng tác viên đăng ký"
 
-#: includes/admin/settings/class-settings.php:694
-#, fuzzy
+#: includes/admin/settings/class-settings.php:707
 msgid "Allow users to register affiliate accounts for themselves."
 msgstr "Các cộng tác viên sẽ có thể đăng ký tài khoản cho mình?"
 
-#: includes/admin/settings/class-settings.php:698
-#, fuzzy
+#: includes/admin/settings/class-settings.php:711
 msgid "Require Approval"
 msgstr "Xác nhận yêu cầu"
 
-#: includes/admin/settings/class-settings.php:699
-#, fuzzy
+#: includes/admin/settings/class-settings.php:712
 msgid ""
 "Require that Pending affiliate accounts must be approved before they can "
 "begin earning referrals."
@@ -2843,29 +2889,27 @@ msgstr ""
 "Yêu cầu quản trị web phê duyệt các cộng tác viên trước khi họ có thể kiếm "
 "các giới thiệu?"
 
-#: includes/admin/settings/class-settings.php:703
+#: includes/admin/settings/class-settings.php:716
 msgid "Auto Register New Users"
 msgstr "Tự động đăng ký người dùng mới?"
 
-#: includes/admin/settings/class-settings.php:704
-#, fuzzy
+#: includes/admin/settings/class-settings.php:717
 msgid "Automatically register new users as affiliates."
 msgstr "Tự động đăng ký người dùng mới là các cộng tác viên?"
 
-#: includes/admin/settings/class-settings.php:708
+#: includes/admin/settings/class-settings.php:721
 msgid "Logout Link"
 msgstr ""
 
-#: includes/admin/settings/class-settings.php:709
+#: includes/admin/settings/class-settings.php:722
 msgid "Add a logout link to the Affiliate Area."
 msgstr ""
 
-#: includes/admin/settings/class-settings.php:713
+#: includes/admin/settings/class-settings.php:726
 msgid "Default Referral URL"
 msgstr "URL Giới Thiệu Mặc Định"
 
-#: includes/admin/settings/class-settings.php:714
-#, fuzzy
+#: includes/admin/settings/class-settings.php:727
 msgid ""
 "The default referral URL shown in the Affiliate Area. Also changes the URL "
 "shown in the Referral URL Generator and the {referral_url} email tag."
@@ -2876,31 +2920,30 @@ msgstr ""
 "area. Also changes the URL shown in the referral URL generator and "
 "{referral_url} email tag."
 
-#: includes/admin/settings/class-settings.php:718
+#: includes/admin/settings/class-settings.php:731
 msgid "Enable reCAPTCHA"
 msgstr "Bật reCAPTCHA"
 
-#: includes/admin/settings/class-settings.php:719
-#, fuzzy
+#: includes/admin/settings/class-settings.php:732
 msgid ""
 "Prevent bots from registering affiliate accounts using Google reCAPTCHA."
 msgstr ""
 "Bạn có muốn ngăn chặn bots từ đăng ký tài khoản cộng tác viên sử dụng Google "
 "reCAPTCHA?"
 
-#: includes/admin/settings/class-settings.php:723
+#: includes/admin/settings/class-settings.php:736
 msgid "reCAPTCHA Site Key"
 msgstr "reCAPTCHA Site Key"
 
-#: includes/admin/settings/class-settings.php:724
+#: includes/admin/settings/class-settings.php:737
 msgid "This is used to identify your site to Google reCAPTCHA."
 msgstr "Đây là để xác minh website của bạn tới Google reCAPTCHA."
 
-#: includes/admin/settings/class-settings.php:728
+#: includes/admin/settings/class-settings.php:741
 msgid "reCAPTCHA Secret Key"
 msgstr "reCAPTCHA Secret Key"
 
-#: includes/admin/settings/class-settings.php:729
+#: includes/admin/settings/class-settings.php:742
 msgid ""
 "This is used for communication between your site and Google reCAPTCHA. Be "
 "sure to keep it a secret."
@@ -2908,13 +2951,11 @@ msgstr ""
 "Đây được sử dụng để kết nối giữa website của bạn và Google reCAPTCHA. Hãy "
 "chắc chắn giữ bí mật nó"
 
-#: includes/admin/settings/class-settings.php:733
-#, fuzzy
+#: includes/admin/settings/class-settings.php:746
 msgid "Reject Unpaid Referrals on Refund"
 msgstr "Từ chối các giới thiệu chưa thanh toán khi trả hàng?"
 
-#: includes/admin/settings/class-settings.php:734
-#, fuzzy
+#: includes/admin/settings/class-settings.php:747
 msgid ""
 "Automatically reject Unpaid referrals when the originating purchase is "
 "refunded or revoked."
@@ -2922,13 +2963,11 @@ msgstr ""
 "Các giới thiệu chưa thanh toán sẽ tự động bị từ chối khi bị trả hàng hoặc "
 "thu hồi lại hàng từ người mua?"
 
-#: includes/admin/settings/class-settings.php:738
-#, fuzzy
+#: includes/admin/settings/class-settings.php:751
 msgid "Use Fallback Referral Tracking Method"
 msgstr "Sử dụng phương pháp giám sát giới thiệu dự phòng?"
 
-#: includes/admin/settings/class-settings.php:739
-#, fuzzy
+#: includes/admin/settings/class-settings.php:752
 msgid ""
 "The method used to track referral links can fail on sites that have jQuery "
 "errors. Enable Fallback Tracking if referrals are not being tracked properly."
@@ -2937,13 +2976,11 @@ msgstr ""
 "động sai trên các trang web có lỗi jQuery. Kiểm tra điều này nếu không theo "
 "dõi được các giới thiệu một cách đúng đắn."
 
-#: includes/admin/settings/class-settings.php:743
-#, fuzzy
+#: includes/admin/settings/class-settings.php:756
 msgid "Ignore Referrals with Zero Amount"
 msgstr "Tỷ lệ Giới thiệu"
 
-#: includes/admin/settings/class-settings.php:744
-#, fuzzy
+#: includes/admin/settings/class-settings.php:757
 msgid ""
 "Ignore referrals with a zero amount. This can be useful for multi-price "
 "products that start at zero, or if a discount was used which resulted in a "
@@ -2957,13 +2994,11 @@ msgstr ""
 "truy cập vào một giới thiệu không đồng, thì số lượt truy cập sẽ được coi là "
 "không đổi."
 
-#: includes/admin/settings/class-settings.php:748
-#, fuzzy
+#: includes/admin/settings/class-settings.php:761
 msgid "Enable Debug Mode"
 msgstr "Kích hoạt chế độ gỡ lỗi?"
 
-#: includes/admin/settings/class-settings.php:749
-#, fuzzy
+#: includes/admin/settings/class-settings.php:762
 msgid ""
 "Enable debug mode. This will turn on error logging for the referral process "
 "to help identify issues."
@@ -2971,72 +3006,69 @@ msgstr ""
 "Chọn vào hộp này để kích hoạt chế độ gỡ lỗi. Điều này giúp xác định vấn đề "
 "để trợ giúp sữa lỗi."
 
-#: includes/admin/settings/class-settings.php:753
-#, fuzzy
+#: includes/admin/settings/class-settings.php:766
 msgid "Referral URL Blacklist"
 msgstr "Các lượt truy cập URL giới thiệu"
 
-#: includes/admin/settings/class-settings.php:754
+#: includes/admin/settings/class-settings.php:767
 msgid ""
 "URLs placed here will be blocked from generating referrals. Enter one URL "
 "per line. NOTE: This will only apply to new visits after the URL has been "
 "saved."
 msgstr ""
 
-#: includes/admin/settings/class-settings.php:758
+#: includes/admin/settings/class-settings.php:771
 msgid "Opt into Beta Versions"
 msgstr ""
 
-#: includes/admin/settings/class-settings.php:759
+#: includes/admin/settings/class-settings.php:772
 msgid ""
 "Receive update notifications for beta releases. When beta versions are "
 "available, an update notification will be shown on your Plugins page.\n"
 msgstr ""
 
-#: includes/admin/settings/class-settings.php:764
-#, fuzzy
+#: includes/admin/settings/class-settings.php:777
 msgid "Remove Data on Uninstall"
 msgstr "Xóa dữ liệu trong quá trình gỡ cài đặt?"
 
-#: includes/admin/settings/class-settings.php:765
+#: includes/admin/settings/class-settings.php:778
 msgid "Remove all saved data for AffiliateWP when the plugin is deleted."
 msgstr ""
 
-#: includes/admin/settings/class-settings.php:795
-#, fuzzy
+#: includes/admin/settings/class-settings.php:808
 msgid "Required Registration Fields"
 msgstr "Kiểm duyệt những đăng ký"
 
-#: includes/admin/settings/class-settings.php:796
+#: includes/admin/settings/class-settings.php:809
 msgid ""
 "Select which fields should be required for affiliate registration. The "
 "<strong>Username</strong>, <strong>Account Email</strong> and "
 "<strong>Password</strong> form fields are always required."
 msgstr ""
 
-#: includes/admin/settings/class-settings.php:802 templates/register.php:89
+#: includes/admin/settings/class-settings.php:815 templates/register.php:89
 msgid "How will you promote us?"
 msgstr "Bạn sẽ quảng bá chúng tôi như thế nào?"
 
-#: includes/admin/settings/class-settings.php:830
+#: includes/admin/settings/class-settings.php:843
 msgid "Application Pending Email Subject"
 msgstr "Tiêu đề email chờ xét duyệt đơn"
 
-#: includes/admin/settings/class-settings.php:831
+#: includes/admin/settings/class-settings.php:844
 msgid "Enter the subject line for pending affiliate application emails."
 msgstr ""
 "Nhập vào dòng tiêu đề cho email chờ xét duyệt đơn xin làm cộng tác viên."
 
-#: includes/admin/settings/class-settings.php:833
+#: includes/admin/settings/class-settings.php:846
 #: includes/emails/actions.php:165
 msgid "Your Affiliate Application Is Being Reviewed"
 msgstr "Yêu cầu xin làm cộng tác viên của bạn đang được xem xét"
 
-#: includes/admin/settings/class-settings.php:836
+#: includes/admin/settings/class-settings.php:849
 msgid "Application Pending Email Content"
 msgstr "Nội dung email chờ xét duyệt đơn"
 
-#: includes/admin/settings/class-settings.php:837
+#: includes/admin/settings/class-settings.php:850
 msgid ""
 "Enter the email to send when an application is pending. HTML is accepted. "
 "Available template tags:"
@@ -3044,18 +3076,17 @@ msgstr ""
 "Nhập email để gởi khi một đơn yêu cầu đang chờ xét duyệt. HTML được chấp "
 "nhận. Các thẻ mẫu có sẵn:"
 
-#: includes/admin/settings/class-settings.php:839
+#: includes/admin/settings/class-settings.php:852
 msgid "Hi {name}!"
 msgstr "Xin chào {name}!"
 
-#: includes/admin/settings/class-settings.php:839
+#: includes/admin/settings/class-settings.php:852
 #: includes/emails/actions.php:170
 msgid "Thanks for your recent affiliate registration on {site_name}."
 msgstr "Cám ơn bạn đã đăng ký cộng tác viên trên {site_name}."
 
-#: includes/admin/settings/class-settings.php:839
+#: includes/admin/settings/class-settings.php:852
 #: includes/emails/actions.php:171
-#, fuzzy
 msgid ""
 "We&#8217;re currently reviewing your affiliate application and will be in "
 "touch soon!"
@@ -3063,24 +3094,24 @@ msgstr ""
 "Chúng tôi hiện đang xem xét yêu cầu làm cộng tác viên của bạn và sẽ sớm liên "
 "lạc với bạn"
 
-#: includes/admin/settings/class-settings.php:842
+#: includes/admin/settings/class-settings.php:855
 msgid "Application Rejection Email Subject"
 msgstr "Tiêu đề email từ chối đơn"
 
-#: includes/admin/settings/class-settings.php:843
+#: includes/admin/settings/class-settings.php:856
 msgid "Enter the subject line for rejected affiliate application emails."
 msgstr "Nhập dòng tiêu đề cho email từ chối đơn yêu cầu làm cộng tác viên."
 
-#: includes/admin/settings/class-settings.php:845
+#: includes/admin/settings/class-settings.php:858
 #: includes/emails/actions.php:204
 msgid "Your Affiliate Application Has Been Rejected"
 msgstr "Đơn yêu cầu làm cộng tác viên của bạn đã bị từ chối"
 
-#: includes/admin/settings/class-settings.php:848
+#: includes/admin/settings/class-settings.php:861
 msgid "Application Rejection Email Content"
 msgstr "Nội dung email từ chối đơn"
 
-#: includes/admin/settings/class-settings.php:849
+#: includes/admin/settings/class-settings.php:862
 msgid ""
 "Enter the email to send when an application is rejected. HTML is accepted. "
 "Available template tags:"
@@ -3088,11 +3119,11 @@ msgstr ""
 "Nhập email để gởi khi một đơn yêu cầu bị từ chối. HTML được chấp nhận. Các "
 "thẻ mẫu có sẵn:"
 
-#: includes/admin/settings/class-settings.php:851
+#: includes/admin/settings/class-settings.php:864
 msgid "Hi {name},"
 msgstr "Xin chào {name},"
 
-#: includes/admin/settings/class-settings.php:851
+#: includes/admin/settings/class-settings.php:864
 #: includes/emails/actions.php:209
 msgid ""
 "We regret to inform you that your recent affiliate registration on "
@@ -3101,8 +3132,7 @@ msgstr ""
 "Chúng tôi rất tiếc phải thông báo cho bạn rằng việc đăng ký làm cộng tác "
 "viên của bạn gần đây trên {site_name} đã bị từ chối."
 
-#: includes/admin/settings/class-settings.php:1021
-#, fuzzy
+#: includes/admin/settings/class-settings.php:1034
 msgid ""
 "Your license key is globally defined via <code>AFFILIATEWP_LICENSE_KEY</"
 "code> set in <code>wp-config.php</code>.<br />It cannot be modified from "
@@ -3112,23 +3142,23 @@ msgstr ""
 "cho việc cập nhập tự động plugin và <a href=\"%s\" target=\"_blank\">hổ trợ</"
 "a>."
 
-#: includes/admin/settings/class-settings.php:1023
+#: includes/admin/settings/class-settings.php:1036
 msgid "Deactivate your license key to make changes to this setting."
 msgstr ""
 
-#: includes/admin/settings/class-settings.php:1034
+#: includes/admin/settings/class-settings.php:1047
 msgid "Deactivate License"
 msgstr "Ngưng kích hoạt License"
 
-#: includes/admin/settings/class-settings.php:1035
+#: includes/admin/settings/class-settings.php:1048
 msgid "Your license is valid!"
 msgstr "License của bạn hợp lệ!"
 
-#: includes/admin/settings/class-settings.php:1038
+#: includes/admin/settings/class-settings.php:1051
 msgid "Renew Your License"
 msgstr "Gia hạn License của bạn"
 
-#: includes/admin/settings/class-settings.php:1039
+#: includes/admin/settings/class-settings.php:1052
 msgid ""
 "Your license has expired, renew today to continue getting updates and "
 "support!"
@@ -3136,21 +3166,20 @@ msgstr ""
 "License của bạn đã hết hạn, gia hạn ngày hôm nay để tiếp tục nhận được thông "
 "tin cập nhật và hỗ trợ!"
 
-#: includes/admin/settings/class-settings.php:1041
+#: includes/admin/settings/class-settings.php:1054
 msgid "Activate License"
 msgstr "Kích hoạt License"
 
-#: includes/admin/settings/class-settings.php:1140
+#: includes/admin/settings/class-settings.php:1153
 msgid ""
 "The callback function used for the <strong>%s</strong> setting is missing."
 msgstr "Chức năng gọi lại được sử dụng cho cài đặt <strong>%s</strong> bị lỗi."
 
-#: includes/admin/settings/class-settings.php:1215
+#: includes/admin/settings/class-settings.php:1228
 msgid "Upload File"
 msgstr "Tải file lên"
 
-#: includes/admin/settings/class-settings.php:1233
-#, fuzzy
+#: includes/admin/settings/class-settings.php:1246
 msgid ""
 "Your license key is globally defined via <code>AFFILIATEWP_LICENSE_KEY</"
 "code> set in <code>wp-config.php</code>.<br />It cannot be modified from "
@@ -3161,7 +3190,7 @@ msgstr ""
 "cho việc cập nhập tự động plugin và <a href=\"%s\" target=\"_blank\">hổ trợ</"
 "a>."
 
-#: includes/admin/settings/class-settings.php:1253
+#: includes/admin/settings/class-settings.php:1266
 msgid ""
 "Debug mode is globally enabled via <code>AFFILIATE_WP_DEBUG</code> set in "
 "<code>wp-config.php</code>. This setting cannot be modified from this screen."
@@ -3179,24 +3208,57 @@ msgstr "Các email"
 msgid "Misc"
 msgstr "Misc"
 
-#: includes/admin/tools/class-batch-recount-affiliate-stats.php:156
+#: includes/admin/tools/class-batch-recount-affiliate-stats.php:285
+msgid "No affiliates were found to be recounted for the current filters."
+msgstr ""
+
+#: includes/admin/tools/class-batch-recount-affiliate-stats.php:295
 #, fuzzy
-msgid "%s affiliate&#8217;s was successfully processed."
-msgid_plural "%s affiliates&#8217; were successfully processed."
-msgstr[0] "Cộng tác viên được cập nhật thành công"
-msgstr[1] "Cộng tác viên được cập nhật thành công"
+msgid "Earnings have been successfully recounted for %s."
+msgstr "Giới thiệu được thêm thành công"
+
+#: includes/admin/tools/class-batch-recount-affiliate-stats.php:297
+msgid "Earnings have been successfully recounted for all matching affiliates."
+msgstr ""
+
+#: includes/admin/tools/class-batch-recount-affiliate-stats.php:303
+#, fuzzy
+msgid "Unpaid earnings have been successfully recounted for %s."
+msgstr "Giới thiệu được thêm thành công"
+
+#: includes/admin/tools/class-batch-recount-affiliate-stats.php:305
+msgid ""
+"Unpaid earnings have been successfully recounted for all matching affiliates."
+msgstr ""
+
+#: includes/admin/tools/class-batch-recount-affiliate-stats.php:311
+#, fuzzy
+msgid "Referrals have been successfully recounted for %s."
+msgstr "Giới thiệu được thêm thành công"
+
+#: includes/admin/tools/class-batch-recount-affiliate-stats.php:313
+msgid "Referrals have been successfully recounted for all matching affiliates."
+msgstr ""
+
+#: includes/admin/tools/class-batch-recount-affiliate-stats.php:319
+#, fuzzy
+msgid "Visits have been successfully recounted for %s."
+msgstr "Cài đặt đã nhập thành công"
+
+#: includes/admin/tools/class-batch-recount-affiliate-stats.php:321
+msgid "Visits have been successfully recounted for all matching affiliates."
+msgstr ""
 
 #: includes/admin/tools/class-rest-consumers-table.php:42
 msgid "API Key"
 msgstr ""
 
 #: includes/admin/tools/class-rest-consumers-table.php:43
-#: includes/admin/tools/tools.php:85
+#: includes/admin/tools/tools.php:87
 msgid "API Keys"
 msgstr ""
 
 #: includes/admin/tools/class-rest-consumers-table.php:61
-#, fuzzy
 msgid "No API consumers found."
 msgstr "Không tìm thấy người dùng"
 
@@ -3217,12 +3279,10 @@ msgid "Token"
 msgstr ""
 
 #: includes/admin/tools/class-rest-consumers-table.php:203
-#, fuzzy
 msgid "Secret Key"
 msgstr "reCAPTCHA Secret Key"
 
 #: includes/admin/tools/class-rest-consumers-table.php:228
-#, fuzzy
 msgid "Enter username"
 msgstr "Tên đăng nhập không hợp lệ"
 
@@ -3241,8 +3301,15 @@ msgstr "Email"
 
 #: includes/admin/tools/export/class-batch-export-affiliates.php:98
 #: includes/admin/tools/export/class-export-affiliates.php:55
+#: includes/misc-functions.php:1097 tests/misc/test-misc-functions.php:366
 msgid "Rate Type"
 msgstr "Kiểu tỷ lệ"
+
+#: includes/admin/tools/export/class-batch-export-affiliates.php:99
+#: includes/admin/tools/export/class-export-affiliates.php:56
+#: includes/misc-functions.php:1098 tests/misc/test-misc-functions.php:367
+msgid "Earnings"
+msgstr "Thu nhập"
 
 #: includes/admin/tools/export/class-batch-export-affiliates.php:105
 #: includes/admin/tools/export/class-export-affiliates.php:61
@@ -3250,12 +3317,10 @@ msgid "Date Registered"
 msgstr "Dữ liệu đã đăng ký"
 
 #: includes/admin/tools/export/class-batch-export-affiliates.php:117
-#, fuzzy
 msgid "No valid affiliate status was selected for export."
 msgstr "Không có ID cộng tác viên được chỉ định xóa"
 
 #: includes/admin/tools/export/class-batch-export-affiliates.php:187
-#, fuzzy
 msgid "%s affiliate was successfully exported."
 msgid_plural "%s affiliates were successfully exported."
 msgstr[0] "Cộng tác viên được cập nhật thành công"
@@ -3266,15 +3331,16 @@ msgid "No valid payout status was selected for export."
 msgstr ""
 
 #: includes/admin/tools/export/class-batch-export-payouts.php:274
-#, fuzzy
 msgid "%s payout log was successfully exported."
 msgid_plural "%s payout logs were successfully exported."
 msgstr[0] "Mẫu quảng cáo được thêm thành công"
 msgstr[1] "Mẫu quảng cáo được thêm thành công"
 
 #: includes/admin/tools/export/class-batch-export-referrals.php:151
+#: includes/admin/tools/export/class-batch-export-visits.php:148
 #: includes/admin/tools/export/class-export-referrals.php:71
-#: templates/dashboard-tab-stats.php:73
+#: includes/misc-functions.php:1141 templates/dashboard-tab-stats.php:73
+#: tests/misc/test-misc-functions.php:404
 msgid "Campaign"
 msgstr "Chiến dịch"
 
@@ -3283,15 +3349,43 @@ msgid "No valid referral status was selected for export."
 msgstr ""
 
 #: includes/admin/tools/export/class-batch-export-referrals.php:247
-#, fuzzy
 msgid "%s referral was successfully exported."
 msgid_plural "%s referrals were successfully exported."
 msgstr[0] "Giới thiệu được thêm thành công"
 msgstr[1] "Giới thiệu được thêm thành công"
 
-#: includes/admin/tools/export/class-batch-export.php:197
-#: includes/admin/tools/export/class-export-settings.php:90
-#: includes/admin/tools/export/class-export.php:226
+#: includes/admin/tools/export/class-batch-export-visits.php:145
+#, fuzzy
+msgid "Visit ID"
+msgstr "Lượt truy cập"
+
+#: includes/admin/tools/export/class-batch-export-visits.php:147
+#: includes/admin/tools/tools.php:365
+#: includes/admin/visits/class-list-table.php:109
+#: includes/admin/visits/visits.php:64 templates/dashboard-tab-stats.php:76
+#: templates/dashboard-tab-visits.php:29
+msgid "Converted"
+msgstr "Đã chuyển đổi"
+
+#: includes/admin/tools/export/class-batch-export-visits.php:150
+#, fuzzy
+msgid "Referrer"
+msgstr "Các Giới thiệu"
+
+#: includes/admin/tools/export/class-batch-export-visits.php:190
+msgid "Yes (Ref: #%s)"
+msgstr ""
+
+#: includes/admin/tools/export/class-batch-export-visits.php:256
+#, fuzzy
+msgid "%s visit was successfully exported."
+msgid_plural "%s visits were successfully exported."
+msgstr[0] "Cộng tác viên được cập nhật thành công"
+msgstr[1] "Cộng tác viên được cập nhật thành công"
+
+#: includes/admin/tools/export/class-batch-export.php:198
+#: includes/admin/tools/export/class-export-settings.php:91
+#: includes/admin/tools/export/class-export.php:227
 msgid "You do not have permission to export data."
 msgstr "Bạn không có quyền xuất dữ liệu"
 
@@ -3300,11 +3394,62 @@ msgid "No unpaid referrals were found matching your criteria."
 msgstr ""
 
 #: includes/admin/tools/export/class-batch-generate-payouts.php:299
-#, fuzzy
 msgid "A payout log for %s affiliate was successfully generated."
 msgid_plural "A payout log for %s affiliates was successfully generated."
 msgstr[0] "Cộng tác viên được cập nhật thành công"
 msgstr[1] "Cộng tác viên được cập nhật thành công"
+
+#: includes/admin/tools/import/class-batch-import-affiliates.php:102
+#: includes/admin/tools/import/class-batch-import-referrals.php:94
+#, fuzzy
+msgid "You do not have permission to import data."
+msgstr "Bạn không có quyền xuất dữ liệu"
+
+#: includes/admin/tools/import/class-batch-import-affiliates.php:196
+#, fuzzy
+msgid "No new affiliates were imported."
+msgstr "Không tìm thấy cộng tác viên"
+
+#: includes/admin/tools/import/class-batch-import-affiliates.php:201
+#, fuzzy
+msgid "%s affiliate was successfully imported."
+msgid_plural "%s affiliates were successfully imported."
+msgstr[0] "Cộng tác viên được cập nhật thành công"
+msgstr[1] "Cộng tác viên được cập nhật thành công"
+
+#: includes/admin/tools/import/class-batch-import-affiliates.php:214
+msgid "%s other existing affiliate or invalid row was skipped."
+msgid_plural "%s other existing affiliates or invalid rows were skipped."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/admin/tools/import/class-batch-import-affiliates.php:224
+#, fuzzy
+msgid "Manage your affiliates."
+msgstr "Thêm Cộng tác viên"
+
+#: includes/admin/tools/import/class-batch-import-referrals.php:222
+#, fuzzy
+msgid "No new referrals were imported."
+msgstr "Không có giới thiệu nào được ghi nhận"
+
+#: includes/admin/tools/import/class-batch-import-referrals.php:227
+#, fuzzy
+msgid "%s referral was successfully imported."
+msgid_plural "%s referrals were successfully imported."
+msgstr[0] "Giới thiệu được thêm thành công"
+msgstr[1] "Giới thiệu được thêm thành công"
+
+#: includes/admin/tools/import/class-batch-import-referrals.php:240
+msgid "%s other existing referral or invalid row was skipped."
+msgid_plural "%s other existing referrals or invalid rows were skipped."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/admin/tools/import/class-batch-import-referrals.php:250
+#, fuzzy
+msgid "Manage your referrals."
+msgstr "Những giới thiệu chưa thanh toán"
 
 #: includes/admin/tools/import/import.php:24
 msgid "Please upload a valid .json file"
@@ -3326,36 +3471,35 @@ msgstr ""
 msgid "Step %d running"
 msgstr "Bước %d đang chạy"
 
-#: includes/admin/tools/tools.php:82
+#: includes/admin/tools/tools.php:84
 msgid "Export / Import"
 msgstr "Xuất ra / Nhập vào"
 
-#: includes/admin/tools/tools.php:88
+#: includes/admin/tools/tools.php:90
 msgid "Recount Stats"
 msgstr "Tính lại số liệu"
 
-#: includes/admin/tools/tools.php:89
+#: includes/admin/tools/tools.php:91
 msgid "Migration Assistant"
 msgstr "Trợ giúp di chuyển"
 
-#: includes/admin/tools/tools.php:92
+#: includes/admin/tools/tools.php:94
 msgid "System Info"
 msgstr ""
 
-#: includes/admin/tools/tools.php:96
+#: includes/admin/tools/tools.php:98
 msgid "Debug Assistant"
 msgstr "Trợ Giúp Sữa Lỗi"
 
-#: includes/admin/tools/tools.php:144
+#: includes/admin/tools/tools.php:146
 msgid "Recount Affiliate Stats"
 msgstr "Tính lại số lieu thống kê cộng tác viên"
 
-#: includes/admin/tools/tools.php:146
+#: includes/admin/tools/tools.php:148
 msgid "Use this tool to recount affiliate statistics."
 msgstr "Sử dụng công cụ này để tính lại các số liệu thống kê cộng tác viên"
 
-#: includes/admin/tools/tools.php:157
-#, fuzzy
+#: includes/admin/tools/tools.php:160
 msgid ""
 "Enter the name of the affiliate or begin typing to perform a search based on "
 "the affiliate&#8217;s name."
@@ -3363,11 +3507,11 @@ msgstr ""
 "Nhập tên của các cộng tác viên hoặc bắt đầu gõ để thực hiện tìm kiếm dựa "
 "trên tên của cộng tác viên."
 
-#: includes/admin/tools/tools.php:162
+#: includes/admin/tools/tools.php:164
 msgid "Recount"
 msgstr "Tính lại"
 
-#: includes/admin/tools/tools.php:200
+#: includes/admin/tools/tools.php:202
 msgid ""
 "These tools assist in migrating affiliate and referral data from existing "
 "platforms."
@@ -3375,11 +3519,11 @@ msgstr ""
 "Những công cụ này hỗ trợ trong việc di chuyển cộng tác viên và các dữ liệu "
 "giới thiệu từ các nền tảng hiện tại."
 
-#: includes/admin/tools/tools.php:205
+#: includes/admin/tools/tools.php:207
 msgid "User Accounts"
 msgstr "Tài khoản người dùng"
 
-#: includes/admin/tools/tools.php:208
+#: includes/admin/tools/tools.php:210
 msgid ""
 "Use this tool to create affiliate accounts for each of your existing "
 "WordPress user accounts that belong to the selected roles below."
@@ -3387,7 +3531,7 @@ msgstr ""
 "Sử dụng công cụ này để tạo tài khoản cộng tác viên cho mỗi tài khoản "
 "wordpress hiện có của bạn thuộc về các vai trò được lựa chọn dưới đây."
 
-#: includes/admin/tools/tools.php:209
+#: includes/admin/tools/tools.php:211
 msgid ""
 "<strong>NOTE:</strong> Users that already have affiliate accounts will be "
 "skipped. Duplicate accounts will not be created."
@@ -3395,17 +3539,18 @@ msgstr ""
 "<strong>CHÚ Ý:</strong>Người dùng đã có tài khoản cộng tác viên sẽ được bỏ "
 "qua. Tài khoản trùng lặp sẽ không được tạo ra."
 
-#: includes/admin/tools/tools.php:211
+#: includes/admin/tools/tools.php:213
 msgid "Select User Roles"
 msgstr "Chọn vai trò người dùng"
 
-#: includes/admin/tools/tools.php:221
+#: includes/admin/tools/tools.php:223
 msgid "Create Affiliate Accounts for Users"
 msgstr "Tạo tài khoản cộng tác viên cho người dùng"
 
-#: includes/admin/tools/tools.php:226
+#: includes/admin/tools/tools.php:228
+#, fuzzy
 msgid ""
-"<strong>NOTE:</strong> WordPress 4.4 or newer is required to use the User "
+"<strong>NOTE:</strong> WordPress 4.5 or newer is required to use the User "
 "Accounts migration tool. <a href=\"%s\" aria-label=\"Update WordPress now"
 "\">Update WordPress now</a>."
 msgstr ""
@@ -3413,15 +3558,16 @@ msgstr ""
 "dụng các công cụ di chuyển tài khoản người dùng. <a href=\"%s\" aria-label="
 "\"Update WordPress now\">Cập Nhật Wordpress Ngay</a>."
 
-#: includes/admin/tools/tools.php:228
+#: includes/admin/tools/tools.php:230
+#, fuzzy
 msgid ""
-"<strong>NOTE:</strong> WordPress 4.4 or newer is required to use the User "
+"<strong>NOTE:</strong> WordPress 4.5 or newer is required to use the User "
 "Accounts migration tool."
 msgstr ""
 "<strong>Chú Ý:</strong> Phiên bản WordPress 4.4 or mới hơn là bắt buộc để sử "
 "dụng các công cụ di chuyển tài khoản người dùng. "
 
-#: includes/admin/tools/tools.php:237
+#: includes/admin/tools/tools.php:239
 msgid ""
 "Use this tool to migrate existing affiliate / referral data from Affiliates "
 "Pro to AffiliateWP."
@@ -3429,8 +3575,7 @@ msgstr ""
 "Sử dụng công cụ này để di chuyển dữ liệu cộng tác viên / giới thiệu từ "
 "Affiliates Pro tới AffiliateWP."
 
-#: includes/admin/tools/tools.php:238
-#, fuzzy
+#: includes/admin/tools/tools.php:240
 msgid ""
 "<strong>NOTE:</strong> This tool should only ever be used on a fresh "
 "install. If you have already collected affiliate or referral data, do not "
@@ -3440,11 +3585,11 @@ msgstr ""
 "mới. Nếu bạn đã thu thập được dữ liệu cộng tác viên hoặc dữ liệu giới thiệu, "
 "không sử dụng công cụ này."
 
-#: includes/admin/tools/tools.php:244
+#: includes/admin/tools/tools.php:246
 msgid "Migrate Data from Affiliates Pro"
 msgstr "Di chuyển dữ liệu từ Affiliates Pro"
 
-#: includes/admin/tools/tools.php:253
+#: includes/admin/tools/tools.php:255
 msgid ""
 "Use this tool to migrate existing affiliate accounts from WP Affiliate to "
 "AffiliateWP."
@@ -3452,37 +3597,38 @@ msgstr ""
 "Sử dụng công cụ này để chuyển các tài khoản cộng tác viên hiện tại từ WP "
 "Affiliate tới AffiliateWP."
 
-#: includes/admin/tools/tools.php:256
+#: includes/admin/tools/tools.php:258
 msgid "Migrate Data from WP Affiliate"
 msgstr "Di chuyển dữ liệu từ WP Affiliate"
 
-#: includes/admin/tools/tools.php:280
+#: includes/admin/tools/tools.php:282
 msgid "Export Affiliates"
 msgstr "Xuất cộng tác viên"
 
-#: includes/admin/tools/tools.php:282
+#: includes/admin/tools/tools.php:284
 msgid "Export affiliates to a CSV file."
 msgstr "Xuất các cộng tác viên đến một tập tin CSV"
 
-#: includes/admin/tools/tools.php:286 includes/admin/tools/tools.php:311
+#: includes/admin/tools/tools.php:288 includes/admin/tools/tools.php:313
 msgid "All Statuses"
 msgstr "Tất cả các trạng thái"
 
-#: includes/admin/tools/tools.php:293 includes/admin/tools/tools.php:320
-#: includes/admin/tools/tools.php:344 includes/admin/tools/tools.php:358
+#: includes/admin/tools/tools.php:295 includes/admin/tools/tools.php:322
+#: includes/admin/tools/tools.php:346 includes/admin/tools/tools.php:371
+#: includes/admin/tools/tools.php:385
 msgid "Export"
 msgstr "Xuất ra"
 
-#: includes/admin/tools/tools.php:300
+#: includes/admin/tools/tools.php:302
 msgid "Export Referrals"
 msgstr "Xuất giới thiệu"
 
-#: includes/admin/tools/tools.php:302
+#: includes/admin/tools/tools.php:304
 msgid "Export referrals to a CSV file."
 msgstr "Xuất các giới thiệu đến một tập tin CSV"
 
-#: includes/admin/tools/tools.php:317 includes/admin/tools/tools.php:341
-#, fuzzy
+#: includes/admin/tools/tools.php:319 includes/admin/tools/tools.php:343
+#: includes/admin/tools/tools.php:368
 msgid ""
 "To search for an affiliate, enter the affiliate&#8217;s login name, first "
 "name, or last name. Leave blank to export referrals for all affiliates."
@@ -3490,21 +3636,33 @@ msgstr ""
 "Để tìm kiếm một cộng tác viên, nhập tên đăng nhập cộng tác viên, tên hoặc "
 "họ. Để trống để xuất tất cả các giới thiệu cho toàn bộ cộng tác viên."
 
-#: includes/admin/tools/tools.php:327
-#, fuzzy
+#: includes/admin/tools/tools.php:329
 msgid "Export Payouts"
 msgstr "Tổng lượt truy cập"
 
-#: includes/admin/tools/tools.php:329
-#, fuzzy
+#: includes/admin/tools/tools.php:331
 msgid "Export payouts to a CSV file."
 msgstr "Xuất các cộng tác viên đến một tập tin CSV"
 
-#: includes/admin/tools/tools.php:351
+#: includes/admin/tools/tools.php:353
+#, fuzzy
+msgid "Export Visits"
+msgstr "Xuất cộng tác viên"
+
+#: includes/admin/tools/tools.php:355
+#, fuzzy
+msgid "Export visits to a CSV file."
+msgstr "Xuất các cộng tác viên đến một tập tin CSV"
+
+#: includes/admin/tools/tools.php:366 includes/admin/visits/visits.php:65
+msgid "Unconverted"
+msgstr "Không thể đảo ngược"
+
+#: includes/admin/tools/tools.php:378
 msgid "Export Settings"
 msgstr "Cài đặt xuất ra"
 
-#: includes/admin/tools/tools.php:353
+#: includes/admin/tools/tools.php:380
 msgid ""
 "Export the AffiliateWP settings for this site as a .json file. This allows "
 "you to easily import the configuration into another site."
@@ -3512,11 +3670,11 @@ msgstr ""
 "Xuất các thiết lập AffiliateWP cho trang web này trong một tập tin .json. "
 "Điều này cho phép bạn dễ dàng nhập các cấu hình vào một trang web khác."
 
-#: includes/admin/tools/tools.php:365
+#: includes/admin/tools/tools.php:392
 msgid "Import Settings"
 msgstr "Cài đặt nhập vào"
 
-#: includes/admin/tools/tools.php:367
+#: includes/admin/tools/tools.php:394
 msgid ""
 "Import the AffiliateWP settings from a .json file. This file can be obtained "
 "by exporting the settings on another site using the form above."
@@ -3525,44 +3683,111 @@ msgstr ""
 "được bằng cách xuất các thiết lập trên một trang web khác sử dụng dạng thức "
 "trên."
 
-#: includes/admin/tools/tools.php:375
+#: includes/admin/tools/tools.php:402
 msgid "Import"
 msgstr "Nhập vào"
 
-#: includes/admin/tools/tools.php:399
+#: includes/admin/tools/tools.php:409
+#, fuzzy
+msgid "Import Affiliates"
+msgstr "Xuất cộng tác viên"
+
+#: includes/admin/tools/tools.php:411
+msgid "Import a CSV of affiliate records."
+msgstr ""
+
+#: includes/admin/tools/tools.php:419 includes/admin/tools/tools.php:466
+#, fuzzy
+msgid "Import CSV"
+msgstr "Nhập vào"
+
+#: includes/admin/tools/tools.php:428
+msgid ""
+"Each column loaded from the CSV may be mapped to an affiliate field. Select "
+"the column that should be mapped to each field below. Any columns not needed "
+"can be ignored. See <a href=\"%s\" target=\"_blank\">this guide</a> for "
+"assistance with importing affiliate records."
+msgstr ""
+
+#: includes/admin/tools/tools.php:437
+#, fuzzy
+msgid "Affiliate Field"
+msgstr "Cộng tác viên: #%d %s"
+
+#: includes/admin/tools/tools.php:438 includes/admin/tools/tools.php:485
+msgid "CSV Column"
+msgstr ""
+
+#: includes/admin/tools/tools.php:439 includes/admin/tools/tools.php:486
+msgid "Data Preview"
+msgstr ""
+
+#: includes/admin/tools/tools.php:447 includes/admin/tools/tools.php:494
+#, fuzzy
+msgid "Process Import"
+msgstr "Nhập vào"
+
+#: includes/admin/tools/tools.php:456
+#, fuzzy
+msgid "Import Referrals"
+msgstr "Xuất giới thiệu"
+
+#: includes/admin/tools/tools.php:458
+msgid "Import a CSV of referral records."
+msgstr ""
+
+#: includes/admin/tools/tools.php:475
+msgid ""
+"Each column loaded from the CSV may be mapped to a referral field. Select "
+"the column that should be mapped to each field below. Any columns not needed "
+"can be ignored. Any affiliates that don&#8217;t exist will be created. See "
+"<a href=\"%s\" target=\"_blank\">this guide</a> for assistance with "
+"importing referral records."
+msgstr ""
+
+#: includes/admin/tools/tools.php:484
+#, fuzzy
+msgid "Referral Field"
+msgstr "Các Giới thiệu"
+
+#: includes/admin/tools/tools.php:520
 msgid ""
 "To copy the system info, click below then press Ctrl + C (PC) or Cmd + C "
 "(Mac)."
 msgstr ""
 
-#: includes/admin/tools/tools.php:454
+#: includes/admin/tools/tools.php:573
 msgid "Debug Log"
 msgstr "Debug Log ( Bản ghi sữa lỗi )"
 
-#: includes/admin/tools/tools.php:457
+#: includes/admin/tools/tools.php:576
 #, fuzzy
-msgid "Use this tool to help debug various operations in AffiliateWP."
+msgid "Use this tool to help debug referral tracking."
 msgstr "Sử dung công cụ này để giúp theo dõi sữa lỗi"
 
-#: includes/admin/tools/tools.php:459
-msgid "Clear Debug Log"
+#: includes/admin/tools/tools.php:581
+#, fuzzy
+msgid "Download Debug Log File"
 msgstr "làm trống bản ghi sữa lỗi"
 
-#: includes/admin/tools/tools.php:531
+#: includes/admin/tools/tools.php:582
 #, fuzzy
+msgid "Clear Log"
+msgstr "làm trống bản ghi sữa lỗi"
+
+#: includes/admin/tools/tools.php:675
 msgid "Invalid batch ID."
 msgstr "Email không hợp lệ"
 
-#: includes/admin/tools/tools.php:541
+#: includes/admin/tools/tools.php:685
 msgid "Invalid batch export class."
 msgstr ""
 
-#: includes/admin/tools/upgrades/class-batch-upgrade-recount-affiliate-stats.php:38
-#, fuzzy
+#: includes/admin/tools/upgrades/class-batch-upgrade-recount-affiliate-stats.php:50
 msgid "Your database has been successfully upgraded. %s"
 msgstr "Giới thiệu được thêm thành công"
 
-#: includes/admin/tools/upgrades/class-batch-upgrade-recount-affiliate-stats.php:39
+#: includes/admin/tools/upgrades/class-batch-upgrade-recount-affiliate-stats.php:51
 msgid "Dismiss Notice"
 msgstr "Bỏ qua thông báo"
 
@@ -3582,11 +3807,11 @@ msgstr "Affiliate Actions"
 msgid "Register"
 msgstr "Đăng ký"
 
-#: includes/admin/user-profile.php:80 includes/class-register.php:506
+#: includes/admin/user-profile.php:80 includes/class-register.php:502
 msgid "Disable Affiliate Email"
 msgstr "Vô hiệu Mail cộng tác viên"
 
-#: includes/admin/user-profile.php:82 includes/class-register.php:508
+#: includes/admin/user-profile.php:82 includes/class-register.php:504
 msgid "Disable the application accepted email sent to the affiliate."
 msgstr "Vô hiệu hóa các ứng dụng chấp nhận email gửi đến các cộng tác viên."
 
@@ -3595,33 +3820,30 @@ msgid "No user roles were selected for migration."
 msgstr ""
 
 #: includes/admin/utilities/class-batch-migrate-users.php:167
-#, fuzzy
 msgid "%s affiliate was added successfully."
 msgid_plural "%s affiliates were added successfully."
 msgstr[0] "Cộng tác viên được cập nhật thành công"
 msgstr[1] "Cộng tác viên được cập nhật thành công"
 
 #: includes/admin/utilities/class-batch-migrate-wp-affiliate.php:209
-#, fuzzy
 msgid "%s affiliate was successfully converted."
 msgid_plural "%s affiliates were successfully converted."
 msgstr[0] "Cộng tác viên được cập nhật thành công"
 msgstr[1] "Cộng tác viên được cập nhật thành công"
 
-#: includes/admin/utilities/class-batch-process-registry.php:151
+#: includes/admin/utilities/class-batch-process-registry.php:171
 msgid "A batch process class must be specified."
 msgstr ""
 
-#: includes/admin/utilities/class-batch-process-registry.php:155
+#: includes/admin/utilities/class-batch-process-registry.php:175
 msgid "No batch class handler file has been supplied."
 msgstr ""
 
-#: includes/admin/utilities/class-batch-process-registry.php:160
+#: includes/admin/utilities/class-batch-process-registry.php:180
 msgid "An invalid batch class handler file has been supplied."
 msgstr ""
 
 #: includes/admin/utilities/class-batch-process.php:143
-#, fuzzy
 msgid "%s item was successfully processed."
 msgid_plural "%s items were successfully processed."
 msgstr[0] "Cài đặt đã nhập thành công"
@@ -3632,7 +3854,7 @@ msgid "Landing Page"
 msgstr "Trang đích"
 
 #: includes/admin/visits/class-list-table.php:104
-#: templates/dashboard-tab-visits.php:30
+#: templates/dashboard-tab-visits.php:28
 msgid "Referring URL"
 msgstr "URL giới thiệu"
 
@@ -3640,14 +3862,8 @@ msgstr "URL giới thiệu"
 msgid "IP"
 msgstr "IP"
 
-#: includes/admin/visits/class-list-table.php:109
-#: includes/admin/visits/visits.php:64 templates/dashboard-tab-stats.php:76
-#: templates/dashboard-tab-visits.php:31
-msgid "Converted"
-msgstr "Đã chuyển đổi"
-
 #: includes/admin/visits/class-list-table.php:258
-#: templates/dashboard-tab-visits.php:46
+#: templates/dashboard-tab-visits.php:44
 msgid "Direct traffic"
 msgstr "Lưu lượng truy cập trực tiếp"
 
@@ -3656,7 +3872,6 @@ msgid "No visits found."
 msgstr "Không có lượt truy cập nào được tìm thấy."
 
 #: includes/admin/visits/contextual-help.php:39
-#, fuzzy
 msgid "This screen provides access to your site&#8217;s visit history."
 msgstr ""
 "Màn hình này cung cấp quyền truy cập vào lịch sử truy cập trang web của bạn."
@@ -3695,7 +3910,6 @@ msgstr ""
 "từ lượt truy cập này, nếu có."
 
 #: includes/admin/visits/contextual-help.php:44
-#, fuzzy
 msgid ""
 "<strong>Context</strong>: this is the context of how the visit was "
 "generated, if set."
@@ -3747,14 +3961,12 @@ msgstr ""
 "trang web cụ thể"
 
 #: includes/admin/visits/contextual-help.php:58
-#, fuzzy
 msgid ""
 "You can enter the referral&#8217;s ID number prefixed by &#8220;referral:"
 "&#8221;"
 msgstr "Bạn có thể nhập số ID của giới thiệu bắt đầu bằng 'referral:'"
 
 #: includes/admin/visits/contextual-help.php:59
-#, fuzzy
 msgid "You can enter a visit context prefixed by &#8220;context:&#8221;"
 msgstr "Bạn có thể nhập vào bối cảnh giới thiệu bắt đầu bằng 'context:'"
 
@@ -3766,15 +3978,11 @@ msgstr "Số của lượt truy cập trên mỗi trang:"
 msgid "Filter by status"
 msgstr "Lọc theo tình trạng:"
 
-#: includes/admin/visits/visits.php:65
-msgid "Unconverted"
-msgstr "Không thể đảo ngược"
-
-#: includes/affiliate-functions.php:459
+#: includes/affiliate-functions.php:463
 msgid "Percentage (%)"
 msgstr "Tỷ lệ phần trăm (%)"
 
-#: includes/affiliate-functions.php:460
+#: includes/affiliate-functions.php:464
 msgid "Flat %s"
 msgstr "Nền %s"
 
@@ -3786,32 +3994,31 @@ msgstr "Tên đăng nhập không hợp lệ"
 msgid "No such user"
 msgstr "Người dùng không đúng"
 
-#: includes/class-login.php:73 includes/class-register.php:226
+#: includes/class-login.php:83 includes/class-register.php:226
 msgid "Please enter a password"
 msgstr "Vui lòng nhập mật khẩu"
 
-#: includes/class-login.php:80
+#: includes/class-login.php:90
 msgid "Incorrect username or password"
 msgstr "Tên đăng nhập hoặc mật khẩu không đúng"
 
-#: includes/class-referrals-graph.php:141
+#: includes/class-referrals-graph.php:142
 msgid "Unpaid Referral Earnings"
 msgstr "Thu nhập giới thiệu chưa thanh toán"
 
-#: includes/class-referrals-graph.php:142
+#: includes/class-referrals-graph.php:143
 msgid "Pending Referral Earnings"
 msgstr "thu nhập giới thiệu đang chờ xử lý"
 
-#: includes/class-referrals-graph.php:143
+#: includes/class-referrals-graph.php:144
 msgid "Rejected Referral Earnings"
 msgstr "Thu nhập giới thiệu bị từ chối"
 
-#: includes/class-referrals-graph.php:144
+#: includes/class-referrals-graph.php:145
 msgid "Paid Referral Earnings"
 msgstr "Thu nhập giới thiệu đã thanh toán"
 
 #: includes/class-register.php:77
-#, fuzzy
 msgid "Please enter a valid website URL"
 msgstr "Vui lòng nhập một URL trang web"
 
@@ -3838,7 +4045,6 @@ msgid "Email address already taken"
 msgstr "Địa chỉ email đã được dùng"
 
 #: includes/class-register.php:107
-#, fuzzy
 msgid "Invalid account email"
 msgstr "Email thanh toán không hợp lệ"
 
@@ -3859,7 +4065,6 @@ msgid "Please verify that you are not a robot"
 msgstr "Xin xác nhận bạn không phải là robot"
 
 #: includes/class-register.php:146
-#, fuzzy
 msgid "Nice try honey bear, don&#8217;t touch our honey"
 msgstr "Vui lòng không phá hoại tài nguyên của chúng tôi"
 
@@ -3876,7 +4081,6 @@ msgid "Please enter a website URL"
 msgstr "Vui lòng nhập một URL trang web"
 
 #: includes/class-register.php:272
-#, fuzzy
 msgid "Please enter your payment email"
 msgstr "Vui lòng nhập tên của bạn"
 
@@ -3884,11 +4088,11 @@ msgstr "Vui lòng nhập tên của bạn"
 msgid "Please tell us how you will promote us"
 msgstr ""
 
-#: includes/class-register.php:499
+#: includes/class-register.php:495
 msgid "Add as Affiliate"
 msgstr "Thêm như là cộng tác viên"
 
-#: includes/class-register.php:501
+#: includes/class-register.php:497
 msgid "Add the user as an affiliate."
 msgstr "Thêm người dùng như một Cộng tác viên"
 
@@ -3915,12 +4119,10 @@ msgid "An affiliate already exists for this user account."
 msgstr ""
 
 #: includes/cli/class-affiliate-sub-commands.php:167
-#, fuzzy
 msgid "An affiliate with the username \"%s\" has been created."
 msgstr "Yêu cầu làm cộng tác viên của bạn trên %s đã được chấp nhận!"
 
 #: includes/cli/class-affiliate-sub-commands.php:169
-#, fuzzy
 msgid "The affiliate account could not be added."
 msgstr "Tài khoản cộng tác viên của bạn không hoạt động"
 
@@ -3934,29 +4136,24 @@ msgid "A valid affiliate username or ID is required to proceed."
 msgstr ""
 
 #: includes/cli/class-affiliate-sub-commands.php:231
-#, fuzzy
 msgid "The affiliate was updated successfully."
 msgstr "Cộng tác viên được cập nhật thành công"
 
 #: includes/cli/class-affiliate-sub-commands.php:233
-#, fuzzy
 msgid "The affiliate account could not be updated."
 msgstr "Tài khoản cộng tác viên của bạn không hoạt động"
 
 #: includes/cli/class-affiliate-sub-commands.php:288
-#, fuzzy
 msgid ""
 "Are you sure you want to delete this affiliate, all its data and its "
 "associated user account?"
 msgstr "Bạn có chắc muốn xóa mẫu quảng cáo này?"
 
 #: includes/cli/class-affiliate-sub-commands.php:290
-#, fuzzy
 msgid "Are you sure you want to delete this affiliate and all its data?"
 msgstr "Bạn có chắc muốn xóa giới thiệu này?"
 
 #: includes/cli/class-affiliate-sub-commands.php:293
-#, fuzzy
 msgid "Are you sure you want to delete this affiliate?"
 msgstr "Bạn có chắc muốn xóa mẫu quảng cáo này?"
 
@@ -3966,22 +4163,18 @@ msgid ""
 msgstr ""
 
 #: includes/cli/class-affiliate-sub-commands.php:313
-#, fuzzy
 msgid "The affiliate account has been successfully deleted."
 msgstr "Tài khoản cộng tác viên đã được xóa thành công"
 
 #: includes/cli/class-affiliate-sub-commands.php:316
-#, fuzzy
 msgid "The affiliate account could not be deleted."
 msgstr "Yêu cầu tài khoản cộng tác viên của bạn bị từ chối"
 
 #: includes/cli/class-affiliate-sub-commands.php:393
-#, fuzzy
 msgid "Number of affiliates: %d"
 msgstr "Số cộng tác viên trên mỗi trang:"
 
 #: includes/cli/class-command.php:24
-#, fuzzy
 msgid "AffiliateWP is not installed"
 msgstr "Di chuyển AffiliateWP"
 
@@ -3990,7 +4183,6 @@ msgid "You are running AffiliateWP version: %s"
 msgstr ""
 
 #: includes/cli/class-command.php:41
-#, fuzzy
 msgid "License status is: %s"
 msgstr "Cài đặt License"
 
@@ -3999,37 +4191,30 @@ msgid "Debug mode is: %s"
 msgstr ""
 
 #: includes/cli/class-command.php:59
-#, fuzzy
 msgid "Affiliates require approval: %s"
 msgstr "Xác nhận yêu cầu"
 
 #: includes/cli/class-command.php:72
-#, fuzzy
 msgid "Email notifications are: %s"
 msgstr "tất cả các thông báo email sẽ được vô hiệu hóa?"
 
 #: includes/cli/class-command.php:85
-#, fuzzy
 msgid "Integrations: %s"
 msgstr "Tích hợp"
 
 #: includes/cli/class-command.php:92
-#, fuzzy
 msgid "Global referral rate: %s"
 msgstr "Bật tính năng tạo liên kết cộng tác viên cho biễu mẫu này"
 
 #: includes/cli/class-command.php:95
-#, fuzzy
 msgid "Global referral rate type: %s"
 msgstr "Kiểu tỷ lệ giới thiệu của các cộng tác viên"
 
 #: includes/cli/class-command.php:98
-#, fuzzy
 msgid "Currency: %s"
 msgstr "Tiền tệ"
 
 #: includes/cli/class-command.php:105
-#, fuzzy
 msgid "Referral variable: %s"
 msgstr "Biến đổi giới thiệu"
 
@@ -4038,22 +4223,18 @@ msgid "Show pretty referral URLs: %s"
 msgstr ""
 
 #: includes/cli/class-command.php:126
-#, fuzzy
 msgid "Referral URL (ID): %s"
 msgstr "URL giới thiệu"
 
 #: includes/cli/class-command.php:129
-#, fuzzy
 msgid "Referral URL (Username): %s"
 msgstr "Công cụ tạo URL giới thiệu"
 
 #: includes/cli/class-command.php:134
-#, fuzzy
 msgid "Affiliate Area URL: %s"
 msgstr "Khu vực Cộng tác viên"
 
 #: includes/cli/class-command.php:139
-#, fuzzy
 msgid "Terms of Use URL: %s"
 msgstr "Điều khoản sử dụng"
 
@@ -4062,36 +4243,30 @@ msgid "Found %s sites. Retrieving stats ..."
 msgstr ""
 
 #: includes/cli/class-command.php:190
-#, fuzzy
 msgid "Total Affiliates: %s"
 msgstr "Xuất cộng tác viên"
 
 #: includes/cli/class-command.php:193
-#, fuzzy
 msgid "Total Creatives: %s"
 msgstr "Xuất cộng tác viên"
 
 #: includes/cli/class-command.php:196
-#, fuzzy
 msgid "Total Payouts: %s"
 msgstr "Tổng lượt truy cập"
 
 #: includes/cli/class-command.php:199
-#, fuzzy
 msgid "Total Referrals: %s"
 msgstr "Tổng thanh toán cho các giới thiệu"
 
 #: includes/cli/class-command.php:202
-#, fuzzy
 msgid "Total Visits: %s"
 msgstr "Tổng lượt truy cập"
 
-#: includes/cli/class-command.php:220
-#, fuzzy
+#: includes/cli/class-command.php:222
 msgid "Are you sure you want to clear the debug log?"
 msgstr "Bạn có chắc muốn xóa giới thiệu này?"
 
-#: includes/cli/class-command.php:224
+#: includes/cli/class-command.php:227
 msgid "The debug log has been cleared."
 msgstr ""
 
@@ -4104,7 +4279,6 @@ msgid "A creative with the ID %d has been successfully created."
 msgstr ""
 
 #: includes/cli/class-creative-sub-commands.php:135
-#, fuzzy
 msgid "The creative could not be created."
 msgstr "(Người dùng hiện tại sẽ không bị xóa)"
 
@@ -4116,27 +4290,22 @@ msgid "A valid creative ID is required to proceed."
 msgstr ""
 
 #: includes/cli/class-creative-sub-commands.php:199
-#, fuzzy
 msgid "The creative was successfully updated."
 msgstr "Mẫu quảng cáo được thêm thành công"
 
 #: includes/cli/class-creative-sub-commands.php:201
-#, fuzzy
 msgid "The creative could not be updated."
 msgstr "(Người dùng hiện tại sẽ không bị xóa)"
 
 #: includes/cli/class-creative-sub-commands.php:236
-#, fuzzy
 msgid "The creative was successfully deleted."
 msgstr "Mẫu quảng cáo được thêm thành công"
 
 #: includes/cli/class-creative-sub-commands.php:238
-#, fuzzy
 msgid "The creative could not be deleted."
 msgstr "(Người dùng hiện tại sẽ không bị xóa)"
 
 #: includes/cli/class-creative-sub-commands.php:314
-#, fuzzy
 msgid "Number of creatives: %d"
 msgstr "Số lượng quảng cáo trên mỗi trang:"
 
@@ -4173,7 +4342,6 @@ msgid "Referral #%d is not valid and has been skipped."
 msgstr ""
 
 #: includes/cli/class-payout-sub-commands.php:298
-#, fuzzy
 msgid "Are you sure you want to overwrite this payout's referrals?"
 msgstr "Bạn có chắc muốn xóa giới thiệu này?"
 
@@ -4182,13 +4350,11 @@ msgid "All values passed via the --referrals argument are invalid."
 msgstr ""
 
 #: includes/cli/class-payout-sub-commands.php:312
-#, fuzzy
 msgid ""
 "Are you sure you want to overwrite the affiliate associated with this payout?"
 msgstr "Bạn có chắc muốn xóa mẫu quảng cáo này?"
 
 #: includes/cli/class-payout-sub-commands.php:316
-#, fuzzy
 msgid "The supplied affiliate ID or username is invalid and has been ignored."
 msgstr "Tên người dùng của các cộng tác viên. Không thể bị thay đổi"
 
@@ -4199,7 +4365,6 @@ msgid ""
 msgstr ""
 
 #: includes/cli/class-payout-sub-commands.php:327
-#, fuzzy
 msgid "Payout #%d has been updated successfully."
 msgstr "Cập nhật mẫu quảng cáo thành công"
 
@@ -4213,7 +4378,6 @@ msgid "A valid payout ID is required to proceed."
 msgstr ""
 
 #: includes/cli/class-payout-sub-commands.php:361
-#, fuzzy
 msgid "Are you sure you want to delete this payout?"
 msgstr "Bạn có chắc muốn xóa mẫu quảng cáo này?"
 
@@ -4222,7 +4386,6 @@ msgid "The payout has been successfully deleted."
 msgstr ""
 
 #: includes/cli/class-payout-sub-commands.php:368
-#, fuzzy
 msgid "The payout could not be deleted."
 msgstr "(Người dùng hiện tại sẽ không bị xóa)"
 
@@ -4244,12 +4407,10 @@ msgid ""
 msgstr ""
 
 #: includes/cli/class-referral-sub-commands.php:144
-#, fuzzy
 msgid "A referral with the ID \"%d\" has been created."
 msgstr "Tiêu đề email giới thiệu mới"
 
 #: includes/cli/class-referral-sub-commands.php:146
-#, fuzzy
 msgid "The referral could not be added."
 msgstr "Tiêu đề email giới thiệu mới"
 
@@ -4261,31 +4422,26 @@ msgid "A valid referral ID is required to proceed."
 msgstr ""
 
 #: includes/cli/class-referral-sub-commands.php:219
-#, fuzzy
 msgid "The referral was updated successfully."
 msgstr "Giới thiệu được cập nhật thành công"
 
 #: includes/cli/class-referral-sub-commands.php:221
-#, fuzzy
 msgid "The referral could not be updated"
 msgstr "Tiêu đề email giới thiệu mới"
 
-#: includes/cli/class-referral-sub-commands.php:254 includes/scripts.php:109
+#: includes/cli/class-referral-sub-commands.php:254 includes/scripts.php:134
 msgid "Are you sure you want to delete this referral?"
 msgstr "Bạn có chắc muốn xóa giới thiệu này?"
 
 #: includes/cli/class-referral-sub-commands.php:259
-#, fuzzy
 msgid "The referral has been successfully deleted."
 msgstr "Giới thiệu được thêm thành công"
 
 #: includes/cli/class-referral-sub-commands.php:261
-#, fuzzy
 msgid "The referral could not be deleted."
 msgstr "(Người dùng hiện tại sẽ không bị xóa)"
 
 #: includes/cli/class-referral-sub-commands.php:338
-#, fuzzy
 msgid "Number of referrals: %d"
 msgstr "Số giới thiệu trên mỗi trang"
 
@@ -4302,12 +4458,10 @@ msgid "A valid date string must be supplied. Using the current time."
 msgstr ""
 
 #: includes/cli/class-visit-sub-commands.php:179
-#, fuzzy
 msgid "The visit was successfully created."
 msgstr "Cài đặt đã nhập thành công"
 
 #: includes/cli/class-visit-sub-commands.php:181
-#, fuzzy
 msgid "The visit could not be created."
 msgstr "Tiêu đề email giới thiệu mới"
 
@@ -4323,7 +4477,6 @@ msgid "A valid new date string must be supplied. Using the original date."
 msgstr ""
 
 #: includes/cli/class-visit-sub-commands.php:277
-#, fuzzy
 msgid "The visit was updated successfully."
 msgstr "Cộng tác viên được cập nhật thành công"
 
@@ -4332,7 +4485,6 @@ msgid "The visit could not be updated."
 msgstr ""
 
 #: includes/cli/class-visit-sub-commands.php:311
-#, fuzzy
 msgid "Are you sure you want to delete this visit?"
 msgstr "Bạn có chắc muốn xóa mẫu quảng cáo này?"
 
@@ -4341,12 +4493,10 @@ msgid "The visit has been successfully deleted."
 msgstr ""
 
 #: includes/cli/class-visit-sub-commands.php:318
-#, fuzzy
 msgid "The visit could not be deleted."
 msgstr "(Người dùng hiện tại sẽ không bị xóa)"
 
 #: includes/cli/class-visit-sub-commands.php:396
-#, fuzzy
 msgid "Number of visits: %d"
 msgstr "Số của lượt truy cập trên mỗi trang:"
 
@@ -4455,17 +4605,14 @@ msgid "Your site name"
 msgstr "Tên website của bạn"
 
 #: includes/emails/class-affwp-emails.php:467
-#, fuzzy
 msgid "The affiliate&#8217;s referral URL"
 msgstr "URL giới thiệu của cộng tác viên"
 
 #: includes/emails/class-affwp-emails.php:472
-#, fuzzy
 msgid "The affiliate&#8217;s ID"
 msgstr "ID của cộng tác viên"
 
 #: includes/emails/class-affwp-emails.php:477
-#, fuzzy
 msgid "The affiliate&#8217;s referral rate"
 msgstr "Kiểu tỷ lệ giới thiệu của các cộng tác viên"
 
@@ -4481,17 +4628,11 @@ msgstr ""
 msgid "The name of the campaign associated with the referral (if any)."
 msgstr ""
 
-#: includes/emails/functions.php:121
-msgid "No reason provided"
-msgstr "Không có lý do cung cấp"
-
 #: includes/emails/functions.php:221
-#, fuzzy
 msgid "(no campaign)"
 msgstr "Chiến dịch"
 
 #: includes/integrations/class-caldera-forms.php:74
-#, fuzzy
 msgid "Total"
 msgstr "Tổng số"
 
@@ -4502,27 +4643,26 @@ msgid ""
 "created at $10."
 msgstr ""
 
-#: includes/integrations/class-caldera-forms.php:247
-#: includes/integrations/class-give.php:247
-#: includes/integrations/class-ninja-forms.php:196
+#: includes/integrations/class-caldera-forms.php:245
+#: includes/integrations/class-give.php:243
+#: includes/integrations/class-ninja-forms.php:194
 msgid "Allow Referrals"
 msgstr "cho phép giới thiệu"
 
-#: includes/integrations/class-caldera-forms.php:252
-#: includes/integrations/class-gravityforms.php:286
+#: includes/integrations/class-caldera-forms.php:250
+#: includes/integrations/class-gravityforms.php:281
 msgid "Enable affiliate referral creation for this form"
 msgstr "Bật tính năng tạo liên kết cộng tác viên cho biễu mẫu này"
 
-#: includes/integrations/class-contactform7.php:95
+#: includes/integrations/class-contactform7.php:110
 msgid "Contact Form 7"
 msgstr ""
 
-#: includes/integrations/class-contactform7.php:114
-#, fuzzy
+#: includes/integrations/class-contactform7.php:129
 msgid "Enable referrals on all Contact Form 7 forms"
 msgstr "Bật tính năng tạo liên kết cộng tác viên cho biễu mẫu này"
 
-#: includes/integrations/class-contactform7.php:115
+#: includes/integrations/class-contactform7.php:130
 msgid ""
 "Check this box to enable referrals on all Contact Form 7 forms.<ul><li>%3$s "
 "Once enabled, referrals will be generated for all valid Contact Form 7 forms."
@@ -4530,42 +4670,41 @@ msgid ""
 "integration</a></li></ul>"
 msgstr ""
 
-#: includes/integrations/class-contactform7.php:130
-#, fuzzy
+#: includes/integrations/class-contactform7.php:145
 msgid "Enable referrals for specific Contact Form 7 forms"
 msgstr "Bật tính năng tạo liên kết cộng tác viên cho biễu mẫu này"
 
-#: includes/integrations/class-contactform7.php:187
+#: includes/integrations/class-contactform7.php:198
 msgid "Form ID: "
 msgstr ""
 
-#: includes/integrations/class-edd.php:382
-#: includes/integrations/class-give.php:169
-#: includes/integrations/class-gravityforms.php:144
+#: includes/integrations/class-edd.php:358
+#: includes/integrations/class-give.php:165
+#: includes/integrations/class-gravityforms.php:139
 #: includes/integrations/class-jigoshop.php:94
-#: includes/integrations/class-pmp.php:158
-#: includes/integrations/class-shopp.php:80
+#: includes/integrations/class-pmp.php:156
+#: includes/integrations/class-shopp.php:78
 #: includes/integrations/class-sproutinvoices.php:53
-#: includes/integrations/class-woocommerce.php:196
-#: includes/integrations/class-zippycourses.php:263
+#: includes/integrations/class-woocommerce.php:199
+#: includes/integrations/class-zippycourses.php:261
 msgid "Referral #%d for %s recorded for %s"
 msgstr "Giới thiệu #%d cho %s được ghi nhận cho %s"
 
-#: includes/integrations/class-edd.php:503
-#: includes/integrations/class-pmp.php:257
+#: includes/integrations/class-edd.php:479
+#: includes/integrations/class-pmp.php:255
 #: includes/integrations/class-pms.php:105
-#: includes/integrations/class-rcp.php:236
-#: includes/integrations/class-woocommerce.php:356
+#: includes/integrations/class-rcp.php:234
+#: includes/integrations/class-woocommerce.php:376
 msgid "Affiliate Discount?"
 msgstr "Chiết khấu( giảm giá, khuyến mãi ) cộng tác viên?"
 
-#: includes/integrations/class-edd.php:509
+#: includes/integrations/class-edd.php:485
 #: includes/integrations/class-jigoshop.php:173
-#: includes/integrations/class-memberpress.php:285
-#: includes/integrations/class-pmp.php:263
+#: includes/integrations/class-memberpress.php:283
+#: includes/integrations/class-pmp.php:261
 #: includes/integrations/class-pms.php:107
-#: includes/integrations/class-rcp.php:242
-#: includes/integrations/class-woocommerce.php:361
+#: includes/integrations/class-rcp.php:240
+#: includes/integrations/class-woocommerce.php:381
 msgid ""
 "If you would like to connect this discount to an affiliate, enter the name "
 "of the affiliate it belongs to."
@@ -4573,11 +4712,11 @@ msgstr ""
 "Nếu bạn muốn kết nối sự chiết khấu (  discount ) này tới một cộng tác viên, "
 "hãy nhập tên của cộng tác viên nhận được chiết khấu đó."
 
-#: includes/integrations/class-edd.php:593
+#: includes/integrations/class-edd.php:569
 msgid "Adjust EDD Commissions"
 msgstr "Điều chỉnh hoa hồng EDD"
 
-#: includes/integrations/class-edd.php:594
+#: includes/integrations/class-edd.php:570
 msgid ""
 "Should AffiliateWP adjust the commission amounts recorded for purchases that "
 "include affiliate referrals? This will subtract the referral amount from the "
@@ -4587,11 +4726,11 @@ msgstr ""
 "hàng mà bao gồm các giới thiệu cộng tác viên? Điều này sẽ trừ số tiền giới "
 "thiệu từ số lượng cơ sở được sử dụng để tính toán tổng số tiền hoa hồng."
 
-#: includes/integrations/class-edd.php:614
+#: includes/integrations/class-edd.php:590
 msgid "Disable Renewal Referrals"
 msgstr "Vô hiệu hóa các gia hạn giới thiệu"
 
-#: includes/integrations/class-edd.php:615
+#: includes/integrations/class-edd.php:591
 msgid ""
 "Should AffiliateWP prevent referral commissions from being recorded on "
 "renewal purchases with EDD Software Licensing?"
@@ -4599,13 +4738,11 @@ msgstr ""
 "AffiliateWP có nên ngăn chặn hoa hồng giới thiệu từ những ghi nhận trên việc "
 "gia hạn mua hàng với EDD Software Licensing?"
 
-#: includes/integrations/class-edd.php:620
-#, fuzzy
+#: includes/integrations/class-edd.php:596
 msgid "Disable Referrals on Upgrades"
 msgstr "Vô hiệu giới thiệu trên sản phẩm này"
 
-#: includes/integrations/class-edd.php:621
-#, fuzzy
+#: includes/integrations/class-edd.php:597
 msgid ""
 "Should AffiliateWP prevent referral commissions from being recorded on "
 "license upgrade purchases with EDD Software Licensing?"
@@ -4613,18 +4750,18 @@ msgstr ""
 "AffiliateWP có nên ngăn chặn hoa hồng giới thiệu từ những ghi nhận trên việc "
 "gia hạn mua hàng với EDD Software Licensing?"
 
-#: includes/integrations/class-edd.php:642
+#: includes/integrations/class-edd.php:618
 #: includes/integrations/class-zippycourses.php:70
 msgid "Affiliate Rates:"
 msgstr "Các tỷ lệ cộng tác viên:"
 
-#: includes/integrations/class-edd.php:655
+#: includes/integrations/class-edd.php:631
 #: includes/integrations/class-zippycourses.php:83
 msgid "Disable referrals on this %s"
 msgstr "Vô hiệu hóa các giới thiệu trên %s này"
 
-#: includes/integrations/class-edd.php:659
-#: includes/integrations/class-memberpress.php:190
+#: includes/integrations/class-edd.php:635
+#: includes/integrations/class-memberpress.php:188
 #: includes/integrations/class-zippycourses.php:87
 msgid ""
 "These settings will be used to calculate affiliate earnings per-sale. Leave "
@@ -4633,11 +4770,11 @@ msgstr ""
 "Các thiết lập này sẽ được sử dụng để tính toán thu nhập cộng tác viên mỗi "
 "lần bán. Để trống để sử dụng các tỷ lệ giới thiệu mặc định của trang web."
 
-#: includes/integrations/class-exchange.php:305
+#: includes/integrations/class-exchange.php:299
 msgid "Affiliate coupon?"
 msgstr "Coupon  cộng tác viên?"
 
-#: includes/integrations/class-exchange.php:311
+#: includes/integrations/class-exchange.php:305
 msgid ""
 "If you would like to connect this coupon to an affiliate, enter the name of "
 "the affiliate it belongs to."
@@ -4670,26 +4807,23 @@ msgstr "AffiliateWP: Giới thiệu #%d cho %s được ghi nhận cho %s"
 msgid "AffiliateWP: Referral #%d for %s for %s rejected"
 msgstr "AffiliateWP: Giới thiệul #%d cho %s cho %s đã bị từ chối"
 
-#: includes/integrations/class-give.php:127
-#, fuzzy
+#: includes/integrations/class-give.php:123
 msgid "Custom Amount"
 msgstr "Số tiền mua"
 
-#: includes/integrations/class-give.php:248
-#, fuzzy
+#: includes/integrations/class-give.php:244
 msgid "Enable affiliate referral creation for this donation form"
 msgstr "Bật tính năng tạo liên kết cộng tác viên cho biễu mẫu này"
 
-#: includes/integrations/class-give.php:253
-#: includes/integrations/class-memberpress.php:157
-#: includes/integrations/class-rcp.php:345
-#: includes/integrations/class-rcp.php:376
-#: includes/integrations/class-woocommerce.php:498
+#: includes/integrations/class-give.php:249
+#: includes/integrations/class-memberpress.php:155
+#: includes/integrations/class-rcp.php:343
+#: includes/integrations/class-rcp.php:374
+#: includes/integrations/class-woocommerce.php:524
 msgid "Affiliate Rate"
 msgstr "Tỷ lệ cộng tác viên"
 
-#: includes/integrations/class-give.php:254
-#, fuzzy
+#: includes/integrations/class-give.php:250
 msgid ""
 "This setting will be used to calculate affiliate earnings per-donation. "
 "Leave blank to use default affiliate rates."
@@ -4697,22 +4831,21 @@ msgstr ""
 "Các thiết lập này sẽ được sử dụng để tính thu nhập cộng tác viên trên mỗi "
 "thương vụ bán hàng. Để trống sẽ sử dụng các tỷ lệ cộng tác viên mặc định."
 
-#: includes/integrations/class-gravityforms.php:166
+#: includes/integrations/class-gravityforms.php:161
 #: includes/integrations/class-sproutinvoices.php:76
 msgid "Referral #%d for %s for %s rejected"
 msgstr "Giới thiệu #%d cho %s cho %s đã bị từ chối"
 
-#: includes/integrations/class-gravityforms.php:290
+#: includes/integrations/class-gravityforms.php:285
 #: includes/integrations/class-wpforms.php:37
 msgid "Allow referrals"
 msgstr "cho phép giới thiệu"
 
-#: includes/integrations/class-gravityforms.php:321
-#, fuzzy
+#: includes/integrations/class-gravityforms.php:316
 msgid "Affiliate Coupon"
 msgstr "Coupon  cộng tác viên?"
 
-#: includes/integrations/class-gravityforms.php:324
+#: includes/integrations/class-gravityforms.php:319
 msgid ""
 "To connect this coupon to an affiliate, enter the username of the affiliate. "
 "Anytime this coupon is redeemed, the connected affiliate will receive a "
@@ -4724,82 +4857,71 @@ msgid "Affiliate Data"
 msgstr "Dữ liệu cộng tác viên"
 
 #: includes/integrations/class-lifterlms.php:115
-#, fuzzy
 msgid "Referral #%d completed"
 msgstr "Giới thiệu được cập nhật thành công"
 
-#: includes/integrations/class-lifterlms.php:152
+#: includes/integrations/class-lifterlms.php:150
 msgid "Referral not created because WooCommerce was used for payment."
 msgstr ""
 
-#: includes/integrations/class-lifterlms.php:183
-#: includes/integrations/class-lifterlms.php:318
-#, fuzzy
+#: includes/integrations/class-lifterlms.php:179
+#: includes/integrations/class-lifterlms.php:305
 msgid "Referral not created because affiliate's own account was used."
 msgstr "Xóa tài khoản cộng tác viên của người dùng?"
 
-#: includes/integrations/class-lifterlms.php:194
-#: includes/integrations/class-lifterlms.php:330
+#: includes/integrations/class-lifterlms.php:189
+#: includes/integrations/class-lifterlms.php:315
 msgid "Referral not created due to 0.00 amount."
 msgstr ""
 
-#: includes/integrations/class-lifterlms.php:230
-#, fuzzy
+#: includes/integrations/class-lifterlms.php:223
 msgid "LifterLMS Referral #%d updated successfully."
 msgstr "Giới thiệu được cập nhật thành công"
 
-#: includes/integrations/class-lifterlms.php:257
-#, fuzzy
+#: includes/integrations/class-lifterlms.php:247
 msgid "Referral #%d created successfully."
 msgstr "Giới thiệu được cập nhật thành công"
 
-#: includes/integrations/class-lifterlms.php:263
-#, fuzzy
+#: includes/integrations/class-lifterlms.php:251
 msgid "Referral failed to be created."
 msgstr "Tiêu đề email giới thiệu mới"
 
-#: includes/integrations/class-lifterlms.php:354
-#, fuzzy
+#: includes/integrations/class-lifterlms.php:338
 msgid "Referral #%d updated successfully."
 msgstr "Giới thiệu được cập nhật thành công"
 
-#: includes/integrations/class-lifterlms.php:378
-#, fuzzy
+#: includes/integrations/class-lifterlms.php:360
 msgid "Pending referral #%d created successfully."
 msgstr "Giới thiệu được cập nhật thành công"
 
-#: includes/integrations/class-lifterlms.php:389
-#, fuzzy
+#: includes/integrations/class-lifterlms.php:368
 msgid "LifterLMS Referral failed to be created."
 msgstr "Tiêu đề email giới thiệu mới"
 
-#: includes/integrations/class-lifterlms.php:436
+#: includes/integrations/class-lifterlms.php:413
 msgid "Search for an affiliate by username or email."
 msgstr ""
 
-#: includes/integrations/class-lifterlms.php:444
-#, fuzzy
+#: includes/integrations/class-lifterlms.php:421
 msgid "Affiliate Discount"
 msgstr "Chiết khấu( giảm giá, khuyến mãi ) cộng tác viên?"
 
-#: includes/integrations/class-lifterlms.php:445
+#: includes/integrations/class-lifterlms.php:422
 msgid "Connect this coupon with an affiliate."
 msgstr ""
 
-#: includes/integrations/class-lifterlms.php:664
-#: includes/integrations/class-lifterlms.php:690
-#, fuzzy
+#: includes/integrations/class-lifterlms.php:641
+#: includes/integrations/class-lifterlms.php:667
 msgid "Referral Details"
 msgstr "Cài  đặt giới thiệu"
 
-#: includes/integrations/class-lifterlms.php:744
-#: includes/integrations/class-pmp.php:362
-#: includes/integrations/class-rcp.php:386
+#: includes/integrations/class-lifterlms.php:721
+#: includes/integrations/class-pmp.php:360
+#: includes/integrations/class-rcp.php:384
 msgid "Disable Referrals"
 msgstr "Vô Hiệu Các Giới Thiệu"
 
-#: includes/integrations/class-lifterlms.php:745
-#, fuzzy
+#: includes/integrations/class-lifterlms.php:722
 msgid ""
 "Check this box to prevent orders for this %s from generating referral "
 "commissions for affiliates."
@@ -4807,49 +4929,44 @@ msgstr ""
 "Điều này sẽ ngăn chặn các đơn đặt hàng của sản phẩm này từ việc tạo ra hoa "
 "hồng giới thiệu cho các cộng tác viên."
 
-#: includes/integrations/class-lifterlms.php:753
-#, fuzzy
+#: includes/integrations/class-lifterlms.php:730
 msgid "Enable %s Referral Rate"
 msgstr "Tỷ lệ Giới thiệu"
 
-#: includes/integrations/class-lifterlms.php:754
+#: includes/integrations/class-lifterlms.php:731
 msgid "Check this box to enable %s referral rate overrides"
 msgstr ""
 
-#: includes/integrations/class-lifterlms.php:762
-#, fuzzy
+#: includes/integrations/class-lifterlms.php:739
 msgid "%s Referral Rate"
 msgstr "Tỷ lệ Giới thiệu"
 
-#: includes/integrations/class-lifterlms.php:763
-#, fuzzy
+#: includes/integrations/class-lifterlms.php:740
 msgid "Enter a referral rate for this %s"
 msgstr "Bật tính năng tạo liên kết cộng tác viên cho biễu mẫu này"
 
-#: includes/integrations/class-lifterlms.php:870
-#, fuzzy
+#: includes/integrations/class-lifterlms.php:847
 msgid "Referral #%d rejected"
 msgstr "Giới thiệu #%d cho %s cho %s đã bị từ chối"
 
-#: includes/integrations/class-memberpress.php:186
+#: includes/integrations/class-memberpress.php:184
 msgid "Disable referrals on this membership"
 msgstr "Vô hiệu quá giới thiệu trên thành viên này"
 
-#: includes/integrations/class-ninja-forms.php:197
+#: includes/integrations/class-ninja-forms.php:195
 msgid "Enable affiliate referral creation for this form?"
 msgstr "Kích hoạt tính năng cộng tác viên tạo ra giới thiệu cho biễu mẫu này?"
 
-#: includes/integrations/class-paypal.php:90
-#, fuzzy
+#: includes/integrations/class-paypal.php:96
 msgid "Pending PayPal referral"
 msgstr "Tổng các giới thiệu đang chờ"
 
-#: includes/integrations/class-pmp.php:348
+#: includes/integrations/class-pmp.php:346
 #: includes/integrations/class-zippycourses.php:55
 msgid "Affiliate Settings"
 msgstr "Cài đặt cộng tác viên"
 
-#: includes/integrations/class-pmp.php:357
+#: includes/integrations/class-pmp.php:355
 msgid ""
 "The membership-level referral rate, such as 20 for 20%%. Affiliate-level "
 "referral rates will override this value. If left blank, the site default "
@@ -4859,12 +4976,11 @@ msgstr ""
 "thiệu của cấp độ cộng tác viên sẽ ghi đè lên giá trị này. Nếu để trống, "
 "thông số mặc định sẽ được sử dụng."
 
-#: includes/integrations/class-pmp.php:364
+#: includes/integrations/class-pmp.php:362
 msgid "Check to disable per-membership referrals."
 msgstr "Chọn để vô hiệu hóa các giới thiệu cho mỗi thành viên."
 
 #: includes/integrations/class-pms.php:51
-#, fuzzy
 msgid ""
 "This rate will be used to calculate affiliate earnings when members register "
 "their account with this subscription. Leave blank to use the site default "
@@ -4873,8 +4989,8 @@ msgstr ""
 "Tỷ lệ này sẽ được sử dụng để tính toán thu nhập liên kết khi các thành viên "
 "đăng ký đến mức này. Để trống để sử dụng các tỷ lệ giới thiệu mặc định."
 
-#: includes/integrations/class-rcp.php:349
-#: includes/integrations/class-rcp.php:380
+#: includes/integrations/class-rcp.php:347
+#: includes/integrations/class-rcp.php:378
 msgid ""
 "This rate will be used to calculate affiliate earnings when members "
 "subscribe to this level. Leave blank to use the site default referral rate."
@@ -4882,22 +4998,20 @@ msgstr ""
 "Tỷ lệ này sẽ được sử dụng để tính toán thu nhập liên kết khi các thành viên "
 "đăng ký đến mức này. Để trống để sử dụng các tỷ lệ giới thiệu mặc định."
 
-#: includes/integrations/class-rcp.php:391
-#, fuzzy
+#: includes/integrations/class-rcp.php:389
 msgid "Disable referrals on this subscription level."
 msgstr "Vô hiệu giới thiệu trên sản phẩm này"
 
-#: includes/integrations/class-woocommerce.php:239
-#: includes/integrations/class-woocommerce.php:449
+#: includes/integrations/class-woocommerce.php:241
+#: includes/integrations/class-woocommerce.php:475
 msgid "(Variation ID %d)"
 msgstr ""
 
-#: includes/integrations/class-woocommerce.php:494
-#, fuzzy
+#: includes/integrations/class-woocommerce.php:520
 msgid "Configure affiliate rates for this product"
 msgstr "Vô hiệu giới thiệu trên sản phẩm này"
 
-#: includes/integrations/class-woocommerce.php:500
+#: includes/integrations/class-woocommerce.php:526
 #: includes/integrations/extras/class-exchange-feature.php:27
 msgid ""
 "These settings will be used to calculate affiliate earnings per-sale. Leave "
@@ -4906,11 +5020,11 @@ msgstr ""
 "Các thiết lập này sẽ được sử dụng để tính thu nhập cộng tác viên trên mỗi "
 "thương vụ bán hàng. Để trống sẽ sử dụng các tỷ lệ cộng tác viên mặc định."
 
-#: includes/integrations/class-woocommerce.php:504
+#: includes/integrations/class-woocommerce.php:530
 msgid "Disable referrals"
 msgstr "Vô hiệu các giới thiệu"
 
-#: includes/integrations/class-woocommerce.php:505
+#: includes/integrations/class-woocommerce.php:531
 msgid ""
 "This will prevent orders of this product from generating referral "
 "commissions for affiliates."
@@ -4918,19 +5032,31 @@ msgstr ""
 "Điều này sẽ ngăn chặn các đơn đặt hàng của sản phẩm này từ việc tạo ra hoa "
 "hồng giới thiệu cho các cộng tác viên."
 
-#: includes/integrations/class-woocommerce.php:531
+#: includes/integrations/class-woocommerce.php:557
 msgid "Configure affiliate rates for this product variation"
 msgstr ""
 
-#: includes/integrations/class-woocommerce.php:534
-#, fuzzy
+#: includes/integrations/class-woocommerce.php:560
 msgid "Referral rate (optional)"
 msgstr "Mô tả giới thiệu"
 
-#: includes/integrations/class-woocommerce.php:536
-#, fuzzy
+#: includes/integrations/class-woocommerce.php:562
 msgid "Disable referrals for this product variation"
 msgstr "Vô hiệu giới thiệu trên sản phẩm này"
+
+#: includes/integrations/class-woocommerce.php:831
+#, fuzzy
+msgid "AffiliateWP settings for the My Account page."
+msgstr "Số liệu cộng tác viên đã được tính toán lại"
+
+#: includes/integrations/class-woocommerce.php:837
+#, fuzzy
+msgid "Affiliate Area Link"
+msgstr "Khu vực Cộng tác viên"
+
+#: includes/integrations/class-woocommerce.php:838
+msgid "Display a link to the Affiliate Area in the My Account navigation."
+msgstr ""
 
 #: includes/integrations/extras/class-exchange-feature.php:39
 msgid "Disable referrals on this product"
@@ -4941,16 +5067,14 @@ msgid "Manage per-product affiliate rates."
 msgstr "Quản lý tỷ lệ cộng tác viên trên mỗi sản phẩm"
 
 #: includes/integrations/extras/class-ninja-forms-action-add-referral.php:47
-#, fuzzy
 msgid "Total Field"
 msgstr "Tổng lượt truy cập"
 
 #: includes/integrations/extras/class-ninja-forms-action-add-referral.php:63
-#, fuzzy
 msgid "Customer Email"
 msgstr "Email chào mừng"
 
-#: includes/integrations/extras/contactform7-functions.php:225
+#: includes/integrations/extras/contactform7-functions.php:234
 msgid "Redirecting to Paypal..."
 msgstr ""
 
@@ -4963,7 +5087,6 @@ msgid "Euros"
 msgstr "Euros"
 
 #: includes/misc-functions.php:28
-#, fuzzy
 msgid "Argentine Peso"
 msgstr "Mexican Peso"
 
@@ -5044,7 +5167,6 @@ msgid "Israeli Shekel"
 msgstr "Israeli Shekel"
 
 #: includes/misc-functions.php:48
-#, fuzzy
 msgid "Iranian Rial"
 msgstr "Brazilian Real"
 
@@ -5085,7 +5207,6 @@ msgid "New Zealand Dollar"
 msgstr "New Zealand Dollar"
 
 #: includes/misc-functions.php:58
-#, fuzzy
 msgid "Pakistani Rupee"
 msgstr "Indian Rupee"
 
@@ -5165,8 +5286,79 @@ msgstr ""
 msgid "Vietnamese Dong"
 msgstr "Việt Nam Đồng"
 
-#: includes/scripts.php:139
+#: includes/misc-functions.php:1091 includes/misc-functions.php:1109
+#: tests/misc/test-misc-functions.php:360
+msgid "Email (required)"
+msgstr ""
+
+#: includes/misc-functions.php:1093 tests/misc/test-misc-functions.php:362
+msgid "First/Full Name"
+msgstr ""
+
+#: includes/misc-functions.php:1094 tests/misc/test-misc-functions.php:363
 #, fuzzy
+msgid "Last Name"
+msgstr "Tuần vừa qua"
+
+#: includes/misc-functions.php:1100 tests/misc/test-misc-functions.php:369
+#, fuzzy
+msgid "Referral Count"
+msgstr "Tỷ lệ Giới thiệu"
+
+#: includes/misc-functions.php:1101 tests/misc/test-misc-functions.php:370
+#, fuzzy
+msgid "Visit Count"
+msgstr "Lượt truy cập"
+
+#: includes/misc-functions.php:1132 includes/misc-functions.php:1150
+#: tests/misc/test-misc-functions.php:395
+msgid "Affiliate ID or Username (required)"
+msgstr ""
+
+#: includes/misc-functions.php:1133 includes/misc-functions.php:1154
+#: tests/misc/test-misc-functions.php:396
+msgid "Amount (required)"
+msgstr ""
+
+#: includes/misc-functions.php:1134 tests/misc/test-misc-functions.php:397
+#, fuzzy
+msgid "Affiliate Email"
+msgstr "Vô hiệu Mail cộng tác viên"
+
+#: includes/misc-functions.php:1135 tests/misc/test-misc-functions.php:398
+#, fuzzy
+msgid "Affiliate Username"
+msgstr "Tên cộng tác viên"
+
+#: includes/misc-functions.php:1136 tests/misc/test-misc-functions.php:399
+#, fuzzy
+msgid "Affiliate First/Full Name"
+msgstr "Tên Cộng tác viên"
+
+#: includes/misc-functions.php:1137 tests/misc/test-misc-functions.php:400
+#, fuzzy
+msgid "Affiliate Last Name"
+msgstr "Tên Cộng tác viên"
+
+#: includes/misc-functions.php:1190
+msgid "- Ignore this field -"
+msgstr ""
+
+#: includes/misc-functions.php:1193
+msgid "- Select field to preview data -"
+msgstr ""
+
+#: includes/scripts.php:122
+msgid ""
+"We are sorry but your browser is not compatible with this kind of file "
+"upload. Please upgrade your browser."
+msgstr ""
+
+#: includes/scripts.php:123
+msgid "This field must be mapped for the import to proceed."
+msgstr ""
+
+#: includes/scripts.php:175
 msgid "Please enter a valid URL for this site"
 msgstr "Vui lòng nhập một URL trang web"
 
@@ -5183,7 +5375,6 @@ msgid "Referral Graphs"
 msgstr "Biểu đồ giới thiệu"
 
 #: templates/dashboard-tab-payouts.php:3
-#, fuzzy
 msgid "Referral Payouts"
 msgstr "Tỷ lệ Giới thiệu"
 
@@ -5231,46 +5422,50 @@ msgstr "Không cài"
 msgid "You have no referrals or visits that included a campaign name."
 msgstr "Bạn không có giới thiệu hoặc truy cập trong đó có một tên chiến dịch."
 
-#: templates/dashboard-tab-urls.php:6
-msgid "Referral URL Generator"
-msgstr "Công cụ tạo URL giới thiệu"
+#: templates/dashboard-tab-urls.php:6 templates/dashboard.php:56
+msgid "Affiliate URLs"
+msgstr "URL cộng tác viên"
 
-#: templates/dashboard-tab-urls.php:17
+#: templates/dashboard-tab-urls.php:19
 msgid "Your affiliate ID is: <strong>%s</strong>"
 msgstr "ID cộng tác viên của bạn: <strong>%s</strong>"
 
-#: templates/dashboard-tab-urls.php:19
+#: templates/dashboard-tab-urls.php:21
 msgid "Your affiliate username is: <strong>%s</strong>"
 msgstr "Tên đăng nhập cộng tác viên của bạn: <strong>%s</strong>"
 
-#: templates/dashboard-tab-urls.php:22
+#: templates/dashboard-tab-urls.php:24
 msgid "Your referral URL is: <strong>%s</strong>"
 msgstr "URL giới thiệu của bạn: <strong>%s</strong>"
 
-#: templates/dashboard-tab-urls.php:23
+#: templates/dashboard-tab-urls.php:38
+msgid "Referral URL Generator"
+msgstr "Công cụ tạo URL giới thiệu"
+
+#: templates/dashboard-tab-urls.php:39
 msgid ""
 "Enter any URL from this website in the form below to generate a referral "
 "link!"
 msgstr ""
 "Nhập URL bất kỳ từ website này vào khung bên dưới để tạo một link giới thiệu"
 
-#: templates/dashboard-tab-urls.php:27
+#: templates/dashboard-tab-urls.php:43
 msgid "Page URL"
 msgstr "URL trang"
 
-#: templates/dashboard-tab-urls.php:32
+#: templates/dashboard-tab-urls.php:48
 msgid "Campaign Name (optional)"
 msgstr "Tên chiến dịch ( tùy chọn )"
 
-#: templates/dashboard-tab-urls.php:37
+#: templates/dashboard-tab-urls.php:53
 msgid "Referral URL"
 msgstr "URL giới thiệu"
 
-#: templates/dashboard-tab-urls.php:39
+#: templates/dashboard-tab-urls.php:55
 msgid "(now copy this referral link and share it anywhere)"
 msgstr "(hãy sao chép link giới thiệu này và chia sẻ nó ở bất cứ nơi đâu)"
 
-#: templates/dashboard-tab-urls.php:45
+#: templates/dashboard-tab-urls.php:61
 msgid "Generate URL"
 msgstr "Tạo URL"
 
@@ -5287,7 +5482,7 @@ msgstr ""
 "Cột đầu tiên liệt kê các URL truy cập, Cột thứ hai liệt kê các giới thiệu, "
 "và cột thứ 3 cho biết các lượt truy cập có chuyển đổi thành một giới thiệu."
 
-#: templates/dashboard-tab-visits.php:62
+#: templates/dashboard-tab-visits.php:60
 msgid "You have not received any visits yet."
 msgstr "Bạn chưa có lượt truy cập nào"
 
@@ -5307,10 +5502,6 @@ msgstr "Yêu cầu tài khoản cộng tác viên của bạn bị từ chối"
 msgid "Your affiliate profile has been updated"
 msgstr "Hồ sơ cộng tác viên của bạn đã được cập nhật"
 
-#: templates/dashboard.php:56
-msgid "Affiliate URLs"
-msgstr "URL cộng tác viên"
-
 #: templates/dashboard.php:68
 msgid "Graphs"
 msgstr "Biểu đồ"
@@ -5320,7 +5511,6 @@ msgid "Log out"
 msgstr ""
 
 #: templates/login.php:15
-#, fuzzy
 msgid "Log into your account"
 msgstr "Đăng nhập vào tài khoản của bạn"
 
@@ -5337,7 +5527,6 @@ msgid "Log In"
 msgstr ""
 
 #: templates/login.php:48
-#, fuzzy
 msgid "Lost your password?"
 msgstr "Quên mật khẩu?"
 
@@ -5352,7 +5541,6 @@ msgid "The affiliate area is available only for registered affiliates."
 msgstr "Khu vực cộng tác viên đã sẵn sàng cho các cộng tác viên đã đăng ký"
 
 #: templates/register.php:54
-#, fuzzy
 msgid "Register a new affiliate account"
 msgstr "Đăng ký một Tài khoản cộng tác viên mới"
 
@@ -5376,8 +5564,7 @@ msgstr ""
 "Affiliate Plugin for WordPress ( Plugin tạo chương trình cộng tác viên cho "
 "Wordpress )"
 
-#: includes/admin/affiliates/affiliates.php:58
-#, fuzzy
+#: includes/admin/affiliates/affiliates.php:61
 msgctxt "affiliates"
 msgid "Reports"
 msgstr "Báo cáo"
@@ -5387,12 +5574,12 @@ msgctxt "Affiliate ID, affiliate name"
 msgid "ID #%d: %s"
 msgstr "ID #%d: %s"
 
-#: includes/admin/class-notices.php:50
+#: includes/admin/class-notices.php:454 tests/admin/test-notices.php:580
 msgctxt "Integrations"
 msgid "Dismiss Notice"
 msgstr "Bỏ Qua Thông Báo"
 
-#: includes/admin/class-notices.php:412 includes/admin/class-notices.php:421
+#: includes/admin/class-notices.php:504 includes/admin/class-notices.php:513
 msgctxt "License"
 msgid "Dismiss Notice"
 msgstr "Bỏ Qua Thông Báo"
@@ -5406,148 +5593,130 @@ msgstr "ID mẫu quảng cáo #%d: %s"
 #: includes/admin/overview/metaboxes/class-metabox-overview-recent-referral-visits.php:66
 #: includes/admin/overview/metaboxes/class-metabox-overview-recent-referrals.php:69
 #: includes/admin/overview/metaboxes/class-metabox-overview-registrations.php:67
-#, fuzzy
 msgctxt "Affiliate column table header"
 msgid "Affiliate"
 msgstr "Cộng tác viên"
 
 #: includes/admin/overview/metaboxes/class-metabox-overview-most-valuable.php:75
-#, fuzzy
 msgctxt "Earnings column table header"
 msgid "Earnings"
 msgstr "Thu nhập"
 
 #: includes/admin/overview/metaboxes/class-metabox-overview-most-valuable.php:76
-#, fuzzy
 msgctxt "Referrals column table header"
 msgid "Referrals"
 msgstr "Các Giới thiệu"
 
 #: includes/admin/overview/metaboxes/class-metabox-overview-most-valuable.php:77
-#, fuzzy
 msgctxt "Visits column table header"
 msgid "Visits"
 msgstr "Lượt truy cập"
 
 #: includes/admin/overview/metaboxes/class-metabox-overview-recent-referral-visits.php:67
-#, fuzzy
 msgctxt "URL column table header"
 msgid "URL"
 msgstr "URL"
 
 #: includes/admin/overview/metaboxes/class-metabox-overview-recent-referral-visits.php:68
-#, fuzzy
 msgctxt "Converted column table header"
 msgid "Converted"
 msgstr "Đã chuyển đổi"
 
 #: includes/admin/overview/metaboxes/class-metabox-overview-recent-referrals.php:70
-#, fuzzy
 msgctxt "Amount column table header"
 msgid "Amount"
 msgstr "Số lượng"
 
 #: includes/admin/overview/metaboxes/class-metabox-overview-recent-referrals.php:71
-#, fuzzy
 msgctxt "Description column table header"
 msgid "Description"
 msgstr "Mô tả"
 
 #: includes/admin/overview/metaboxes/class-metabox-overview-registrations.php:68
-#, fuzzy
 msgctxt "Status column table header"
 msgid "Status"
 msgstr "Trạng thái"
 
 #: includes/admin/overview/metaboxes/class-metabox-overview-registrations.php:69
-#, fuzzy
 msgctxt "Actions column table header"
 msgid "Actions"
 msgstr "Các hoạt động"
 
 #: includes/admin/overview/metaboxes/class-metabox-overview-totals.php:54
-#, fuzzy
 msgctxt "Paid earnings column table header"
 msgid "Paid earnings"
 msgstr "Thu nhập đã thanh toán"
 
 #: includes/admin/overview/metaboxes/class-metabox-overview-totals.php:55
-#, fuzzy
 msgctxt "Paid earnings this month column table header"
 msgid "Paid earnings this month"
 msgstr "Thu nhập đã thanh toán tháng này"
 
 #: includes/admin/overview/metaboxes/class-metabox-overview-totals.php:56
-#, fuzzy
 msgctxt "Paid earnings today column table header"
 msgid "Paid earnings today"
 msgstr "Thu nhập đã thanh toán hôm nay"
 
 #: includes/admin/overview/metaboxes/class-metabox-overview-totals.php:80
-#, fuzzy
 msgctxt "Unpaid referrals column table header"
 msgid "Unpaid referrals"
 msgstr "Những giới thiệu chưa thanh toán"
 
 #: includes/admin/overview/metaboxes/class-metabox-overview-totals.php:81
-#, fuzzy
 msgctxt "Unpaid referrals this month column table header"
 msgid "Unpaid referrals this month"
 msgstr "Những giới thiệu chưa thanh toán tháng này"
 
 #: includes/admin/overview/metaboxes/class-metabox-overview-totals.php:82
-#, fuzzy
 msgctxt "Unpaid referrals today column table header"
 msgid "Unpaid referrals today"
 msgstr "Những giới thiệu chưa thanh toán hôm nay"
 
 #: includes/admin/overview/metaboxes/class-metabox-overview-totals.php:105
-#, fuzzy
 msgctxt "Unpaid earnings column table header"
 msgid "Unpaid earnings"
 msgstr "Thu nhập chưa thanh toán"
 
 #: includes/admin/overview/metaboxes/class-metabox-overview-totals.php:106
-#, fuzzy
 msgctxt "Unpaid earnings this month"
 msgid "Unpaid earnings this month"
 msgstr "Thu nhập chưa thanh toán tháng này"
 
 #: includes/admin/overview/metaboxes/class-metabox-overview-totals.php:107
-#, fuzzy
 msgctxt "Unpaid earnings today column table header"
 msgid "Unpaid earnings today"
 msgstr "Thu nhập chưa thanh toán hôm nay"
 
 #: includes/admin/payouts/class-list-table.php:129
-#, fuzzy
 msgctxt "payouts"
 msgid "All"
 msgstr "Tất cả"
 
+#: includes/admin/payouts/payouts.php:39
+#, fuzzy
+msgctxt "payouts"
+msgid "Reports"
+msgstr "Báo cáo"
+
 #: includes/admin/payouts/class-list-table.php:149
 #: includes/admin/tools/export/class-batch-export-payouts.php:147
-#, fuzzy
 msgctxt "payout"
 msgid "Amount"
 msgstr "Số lượng"
 
 #: includes/admin/payouts/class-list-table.php:154
 #: includes/admin/tools/export/class-batch-export-payouts.php:150
-#, fuzzy
 msgctxt "payout"
 msgid "Status"
 msgstr "Trạng thái"
 
 #: includes/admin/payouts/class-list-table.php:155
 #: includes/admin/tools/export/class-batch-export-payouts.php:151
-#, fuzzy
 msgctxt "payout"
 msgid "Date"
 msgstr "Ngày"
 
 #: includes/payout-functions.php:133 includes/payout-functions.php:137
-#, fuzzy
 msgctxt "payout"
 msgid "Paid"
 msgstr "Đã thanh toán"
@@ -5560,7 +5729,6 @@ msgstr ""
 
 #: includes/admin/payouts/class-list-table.php:335
 #: includes/admin/payouts/view.php:86
-#, fuzzy
 msgctxt "payout owner ID"
 msgid "(User ID: %d)"
 msgstr "ID người dùng"
@@ -5572,37 +5740,43 @@ msgid "Date: %1$s (%2$s)"
 msgstr ""
 
 #: includes/admin/referrals/edit.php:193
-#, fuzzy
 msgctxt "visit"
 msgid "None"
 msgstr "Không cài"
 
-#: includes/admin/referrals/referrals.php:39
+#: includes/admin/tools/export/class-batch-export-visits.php:152
 #, fuzzy
+msgctxt "visit"
+msgid "Date"
+msgstr "Ngày"
+
+#: includes/admin/referrals/referrals.php:39
 msgctxt "referrals"
 msgid "Reports"
 msgstr "Báo cáo"
 
-#: includes/admin/visits/class-list-table.php:234
+#: includes/admin/tools/export/class-batch-export-visits.php:192
 #, fuzzy
+msgctxt "visit not converted"
+msgid "No"
+msgstr "Không cài"
+
+#: includes/admin/visits/class-list-table.php:234
 msgctxt "visit context"
 msgid "None"
 msgstr "Không cài"
 
 #: includes/admin/visits/visits.php:42
-#, fuzzy
 msgctxt "visits"
 msgid "Reports"
 msgstr "Báo cáo"
 
-#: includes/class-graph.php:419
-#, fuzzy
+#: includes/class-graph.php:418
 msgctxt "date filter"
 msgid "From"
 msgstr "Từ"
 
-#: includes/class-graph.php:421
-#, fuzzy
+#: includes/class-graph.php:420
 msgctxt "date filter"
 msgid "To"
 msgstr "Đến"
@@ -5613,7 +5787,6 @@ msgid "Valid"
 msgstr ""
 
 #: includes/cli/class-command.php:38
-#, fuzzy
 msgctxt "license status"
 msgid "Invalid"
 msgstr "Email không hợp lệ"
@@ -5649,7 +5822,6 @@ msgid "Disabled"
 msgstr ""
 
 #: includes/cli/class-command.php:80
-#, fuzzy
 msgctxt "integrations"
 msgid "None"
 msgstr "Không cài"
@@ -5665,10 +5837,35 @@ msgid "Disabled"
 msgstr ""
 
 #: includes/cli/class-visit-sub-commands.php:437
-#, fuzzy
 msgctxt "direct traffic"
 msgid "Direct"
 msgstr "Lưu lượng truy cập trực tiếp"
+
+#~ msgid "Date Filters"
+#~ msgstr "Lọc"
+
+#~ msgid "Total paid referrals"
+#~ msgstr "Tổng thanh toán cho các giới thiệu"
+
+#~ msgid "Total unpaid referrals"
+#~ msgstr "Tổng số tiền chưa thanh toán cho các giới thiệu"
+
+#~ msgid "Total pending referrals"
+#~ msgstr "Tổng các giới thiệu đang chờ"
+
+#~ msgid "Total rejected referrals"
+#~ msgstr "Tổng các giới thiệu bị từ chối"
+
+#~ msgid "Conversion rate"
+#~ msgstr "Tỷ lệ chuyển đổi"
+
+#~ msgid "%s affiliate&#8217;s was successfully processed."
+#~ msgid_plural "%s affiliates&#8217; were successfully processed."
+#~ msgstr[0] "Cộng tác viên được cập nhật thành công"
+#~ msgstr[1] "Cộng tác viên được cập nhật thành công"
+
+#~ msgid "No reason provided"
+#~ msgstr "Không có lý do cung cấp"
 
 #, fuzzy
 #~ msgctxt "payout"

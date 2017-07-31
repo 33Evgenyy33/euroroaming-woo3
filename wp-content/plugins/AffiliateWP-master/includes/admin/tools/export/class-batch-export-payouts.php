@@ -251,7 +251,7 @@ class Export_Payouts extends Batch\Export\CSV implements Batch\With_PreFetch {
 
 		}
 
-		return $data;
+		return $this->prepare_data( $data );
 	}
 
 	/**

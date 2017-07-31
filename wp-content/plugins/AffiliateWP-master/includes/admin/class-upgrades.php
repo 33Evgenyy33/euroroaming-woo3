@@ -135,6 +135,18 @@ class Affiliate_WP_Upgrades {
 			$this->v202_upgrade();
 		}
 
+		if ( version_compare( $this->version, '2.0.10', '<' ) ) {
+			$this->v210_upgrade();
+		}
+
+		if ( version_compare( $this->version, '2.1', '<' ) ) {
+			$this->v21_upgrade();
+		}
+
+		if ( version_compare( $this->version, '2.1.3.1', '<' ) ) {
+			$this->v2131_upgrade();
+		}
+
 		// Inconsistency between current and saved version.
 		if ( version_compare( $this->version, AFFILIATEWP_VERSION, '<>' ) ) {
 			$this->upgraded = true;
@@ -624,6 +636,47 @@ class Affiliate_WP_Upgrades {
 
 		wp_cache_set( 'last_changed', microtime(), 'visits' );
 		$this->log( 'Upgrade: The Visits cache has been invalidated following the 2.0.2 upgrade.' );
+
+		$this->upgraded = true;
+	}
+
+	/**
+	 * Performs database upgrades for version 2.0.10.
+	 *
+	 * @since 2.0.10
+	 * @access private
+	 */
+	private function v210_upgrade() {
+		update_option( 'affwp_flush_rewrites', '1' );
+		@affiliate_wp()->utils->log( 'Upgrade: AffiliateWP rewrite rules have been flushed following the 2.0.10 upgrade.' );
+
+		$this->upgraded = true;
+	}
+
+	/**
+	 * Performs database upgrades for version 2.1.
+	 *
+	 * @access private
+	 * @since  2.1
+	 */
+	private function v21_upgrade() {
+		// Schedule a rewrites flush.
+		flush_rewrite_rules();
+		$this->log( 'Upgrade: Rewrite rules flushed following the 2.1 upgrade.' );
+
+		$this->upgraded = true;
+	}
+
+	/**
+	 * Performs database upgrades for version 2.1.3.1.
+	 *
+	 * @access private
+	 * @since  2.1.3.1
+	 */
+	private function v2131_upgrade() {
+		// Refresh capabilities missed in 2.1 update (export_visit_data).
+		@affiliate_wp()->capabilities->add_caps();
+		@affiliate_wp()->utils->log( 'Upgrade: Core capabilities have been upgraded for 2.1.3.1.' );
 
 		$this->upgraded = true;
 	}

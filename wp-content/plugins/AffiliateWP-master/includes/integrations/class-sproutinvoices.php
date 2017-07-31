@@ -101,4 +101,7 @@ class Affiliate_WP_Sprout_Invoices extends Affiliate_WP_Base {
 	}
 
 }
-new Affiliate_WP_Sprout_Invoices;
+
+if ( class_exists( 'SI_Payment' ) ) {
+	new Affiliate_WP_Sprout_Invoices;
+}

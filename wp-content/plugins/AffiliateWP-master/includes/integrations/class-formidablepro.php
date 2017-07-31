@@ -299,4 +299,7 @@ class Affiliate_WP_Formidable_Pro extends Affiliate_WP_Base {
 	}
 
 }
-new Affiliate_WP_Formidable_Pro;
+
+if ( class_exists( 'FrmHooksController' ) ) {
+	new Affiliate_WP_Formidable_Pro;
+}

@@ -384,7 +384,13 @@ class AffWP_Visits_Table extends List_Table {
 			'referral_status' => $status
 		) );
 
+
+		// Retrieve the "current" total count for pagination purposes.
+		$count_args = $args;
+		$count_args['number'] = -1;
+
 		$this->total_count = affiliate_wp()->visits->count( $args );
+		$this->current_count = affiliate_wp()->visits->count( $count_args );
 
 		return affiliate_wp()->visits->get_visits( $args );
 
@@ -417,10 +423,9 @@ class AffWP_Visits_Table extends List_Table {
 		$this->items = $data;
 
 		$this->set_pagination_args( array(
-				'total_items' => $this->total_count,
-				'per_page'    => $per_page,
-				'total_pages' => ceil( $this->total_count / $per_page )
-			)
-		);
+			'total_items' => $this->current_count,
+			'per_page'    => $per_page,
+			'total_pages' => ceil( $this->total_count / $per_page )
+		) );
 	}
 }

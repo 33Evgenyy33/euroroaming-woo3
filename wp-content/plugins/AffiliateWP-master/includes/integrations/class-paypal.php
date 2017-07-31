@@ -28,7 +28,13 @@ class Affiliate_WP_PayPal extends Affiliate_WP_Base {
 	 * @since   1.9
 	*/
 	public function scripts() {
-?>
+		if ( defined( 'AFFILIATEWP_PAYPAL_IPN' ) && AFFILIATEWP_PAYPAL_IPN ) {
+			$ipn_url = AFFILIATEWP_PAYPAL_IPN;
+		} else {
+			$ipn_url = home_url( 'index.php?affwp-listener=paypal' );
+		}
+		?>
+
 		<script type="text/javascript">
 		jQuery(document).ready(function($) {
 
@@ -43,7 +49,7 @@ class Affiliate_WP_PayPal extends Affiliate_WP_Base {
 				e.preventDefault();
 
 				var $form = $(this);
-				var ipn_url = "<?php echo home_url( 'index.php?affwp-listener=paypal' ); ?>";
+				var ipn_url = "<?php echo esc_js( $ipn_url ); ?>";
 
 				$.ajax({
 					type: "POST",
@@ -89,11 +95,11 @@ class Affiliate_WP_PayPal extends Affiliate_WP_Base {
 			$reference   = affiliate_wp()->tracking->get_visit_id() . '|' . $this->affiliate_id . '|' . time();
 			$referral_id = $this->insert_pending_referral( 0.01, $reference, __( 'Pending PayPal referral', 'affiliate-wp' ) );
 
-			if( $referral_id && $this->debug ) {
+			if( $referral_id ) {
 
 				$this->log( 'Pending referral created successfully during maybe_insert_referral()' );
 
-			} elseif ( $this->debug ) {
+			} else {
 
 				$this->log( 'Pending referral failed to be created during maybe_insert_referral()' );
 
@@ -145,18 +151,14 @@ class Affiliate_WP_PayPal extends Affiliate_WP_Base {
 
 		if( empty( $ipn_data['mc_gross'] ) ) {
 
-			if( $this->debug ) {
-				$this->log( 'IPN not processed because mc_gross was empty' );
-			}
+			$this->log( 'IPN not processed because mc_gross was empty' );
 
 			return;
 		}
 
 		if( empty( $ipn_data['custom'] ) ) {
 
-			if( $this->debug ) {
-				$this->log( 'IPN not processed because custom was empty' );
-			}
+			$this->log( 'IPN not processed because custom was empty' );
 
 			return;
 		}
@@ -171,49 +173,35 @@ class Affiliate_WP_PayPal extends Affiliate_WP_Base {
 
 		if( empty( $affiliate_id ) ) {
 
-			if( $this->debug ) {
-				$this->log( 'IPN not processed because affiliate ID was empty' );
-			}
+			$this->log( 'IPN not processed because affiliate ID was empty' );
 
 			return;
 		}
 
 		if( ! $visit || ! $referral ) {
 
-			if( $this->debug ) {
+			if( ! $visit ) {
 
-				if( ! $visit ) {
+				$this->log( 'Visit not successfully retrieved during process_ipn()' );
 
-					$this->log( 'Visit not successfully retrieved during process_ipn()' );
+			}
 
-				}
+			if( ! $referral ) {
 
-				if( ! $referral ) {
-
-					$this->log( 'Referral not successfully retrieved during process_ipn()' );
-
-				}
+				$this->log( 'Referral not successfully retrieved during process_ipn()' );
 
 			}
 
 			die( 'Missing visit or referral data' );
 		}
 
-		if( $this->debug ) {
-
-			$this->log( 'Referral ID (' . $referral->ID . ') successfully retrieved during process_ipn()' );
-
-		}
+		$this->log( 'Referral ID (' . $referral->ID . ') successfully retrieved during process_ipn()' );
 
 		if( 'completed' === strtolower( $ipn_data['payment_status'] ) ) {
 
 			if( 'pending' !== $referral->status ) {
 
-				if( $this->debug ) {
-
-					$this->log( 'Referral has status other than Pending during process_ipn()' );
-
-				}
+				$this->log( 'Referral has status other than Pending during process_ipn()' );
 
 				die( 'Referral not pending' );
 			}
@@ -238,15 +226,11 @@ class Affiliate_WP_PayPal extends Affiliate_WP_Base {
 
 				if( $completed ) {
 
-					if( $this->debug ) {
-
-						$this->log( 'Referral completed successfully during process_ipn()' );
-
-					}
+					$this->log( 'Referral completed successfully during process_ipn()' );
 
 					die( 'Referral completed successfully' );
 
-				} else if ( $this->debug ) {
+				} else {
 
 					$this->log( 'Referral failed to be completed during process_ipn()' );
 
@@ -256,11 +240,7 @@ class Affiliate_WP_PayPal extends Affiliate_WP_Base {
 
 			} else {
 
-				if ( $this->debug ) {
-
-					$this->log( 'Referral not updated successfully during process_ipn()' );
-
-				}
+				$this->log( 'Referral not updated successfully during process_ipn()' );
 
 				die( 'Referral not updated successfully' );
 
@@ -270,11 +250,7 @@ class Affiliate_WP_PayPal extends Affiliate_WP_Base {
 
 			if( ! affiliate_wp()->settings->get( 'revoke_on_refund' ) ) {
 
-				if ( $this->debug ) {
-
-					$this->log( 'Referral not rejected because revoke on refund is not enabled' );
-
-				}
+				$this->log( 'Referral not rejected because revoke on refund is not enabled' );
 
 				return;
 			}
@@ -283,11 +259,7 @@ class Affiliate_WP_PayPal extends Affiliate_WP_Base {
 
 		} else {
 
-			if ( $this->debug ) {
-
-				$this->log( 'Payment status in IPN data not Complete, Refunded, or Reversed' );
-
-			}
+			$this->log( 'Payment status in IPN data not Complete, Refunded, or Reversed' );
 
 		}
 
@@ -306,12 +278,8 @@ class Affiliate_WP_PayPal extends Affiliate_WP_Base {
 		$endpoint = array_key_exists( 'test_ipn', $post_data ) ? 'https://www.sandbox.paypal.com/cgi-bin/webscr' : 'https://www.paypal.com/cgi-bin/webscr';
 		$args     = wp_unslash( array_merge( array( 'cmd' => '_notify-validate' ), $post_data ) );
 
-		if( $this->debug ) {
-
-			$this->log( 'Data passed to verify_ipn(): ' . print_r( $post_data, true ) );
-			$this->log( 'Data to be sent to IPN verification: ' . print_r( $args, true ) );
-
-		}
+		$this->log( 'Data passed to verify_ipn(): ' . print_r( $post_data, true ) );
+		$this->log( 'Data to be sent to IPN verification: ' . print_r( $args, true ) );
 
 		$request  = wp_remote_post( $endpoint, array( 'timeout' => 45, 'sslverify' => false, 'httpversion' => '1.1', 'body' => $args ) );
 		$body     = wp_remote_retrieve_body( $request );
@@ -324,30 +292,18 @@ class Affiliate_WP_PayPal extends Affiliate_WP_Base {
 
 				$verified = true;
 
-				if( $this->debug ) {
-
-					$this->log( 'IPN successfully verified' );
-
-				}
+				$this->log( 'IPN successfully verified' );
 
 			} else {
 
-				if( $this->debug ) {
-
-					$this->log( 'IPN response came back as INVALID' );
-
-				}
+				$this->log( 'IPN response came back as INVALID' );
 
 			}
 
 		} else {
 
-			if( $this->debug ) {
-
-				$this->log( 'IPN verification request failed' );
-				$this->log( 'Request: ' . print_r( $request, true ) );
-
-			}
+			$this->log( 'IPN verification request failed' );
+			$this->log( 'Request: ' . print_r( $request, true ) );
 
 		}
 

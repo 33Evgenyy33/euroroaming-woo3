@@ -7,9 +7,7 @@
 	</span>
 
 	<?php
-	if ( wp_script_is( 'affwp-forms', 'enqueued' ) ) {
-		affwp_enqueue_script( 'dashicons', 'visits' );
-	}
+	affwp_enqueue_style( 'dashicons', 'visits' );
 
 	$per_page = 30;
 	$page     = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;

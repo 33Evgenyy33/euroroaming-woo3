@@ -227,14 +227,14 @@ class Affiliate_WP_Campaigns_DB extends Affiliate_WP_DB {
 		$args['orderby'] = $orderby;
 		$args['order']   = $order;
 
-		$fields = "*";
+		// Fields.
+		$callback = '';
 
-		if ( ! empty( $args['fields'] ) ) {
-			if ( 'ids' === $args['fields'] ) {
-				$fields = "$this->primary_key";
-			} elseif ( array_key_exists( $args['fields'], $this->get_columns() ) ) {
-				$fields = $args['fields'];
-			}
+		if ( 'ids' === $args['fields'] ) {
+			$fields   = "$this->primary_key";
+			$callback = 'intval';
+		} else {
+			$fields = $this->parse_fields( $args['fields'] );
 		}
 
 		$key = ( true === $count ) ? md5( 'affwp_campaigns_count' . serialize( $args ) ) : md5( 'affwp_campaigns_' . serialize( $args ) );
@@ -253,7 +253,7 @@ class Affiliate_WP_Campaigns_DB extends Affiliate_WP_DB {
 
 			$clauses = compact( 'fields', 'join', 'where', 'orderby', 'order', 'count' );
 
-			$results = $this->get_results( $clauses, $args );
+			$results = $this->get_results( $clauses, $args, $callback );
 		}
 
 		wp_cache_add( $cache_key, $results, $this->cache_group, HOUR_IN_SECONDS );

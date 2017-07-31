@@ -120,9 +120,11 @@ class Affiliate_WP_Visits_DB extends Affiliate_WP_DB {
 	 *                                          Default 'referral_id'.
 	 *     @type string       $order            How to order results. Accepts 'ASC' (ascending) or 'DESC' (descending).
 	 *                                          Default 'DESC'.
-	 *     @type string       $fields           Fields to query for. Accepts 'ids' or '*' (all). Default '*'.
+	 *     @type string|array $fields           Specific fields to retrieve. Accepts 'ids', a single visit field, or an
+	 *                                          array of fields. Default '*' (all).
 	 * }
 	 * @param   bool  $count  Return only the total number of results found (optional)
+	 * @return \AffWP\Visit[]|int|stdClass[]
 	*/
 	public function get_visits( $args = array(), $count = false ) {
 		global $wpdb;
@@ -362,13 +364,17 @@ class Affiliate_WP_Visits_DB extends Affiliate_WP_DB {
 		$args['orderby'] = $orderby;
 		$args['order']   = $order;
 
-		$fields = "*";
+		// Fields.
+		$callback = '';
 
-		if ( ! empty( $args['fields'] ) ) {
-			if ( 'ids' === $args['fields'] ) {
-				$fields = "$this->primary_key";
-			} elseif ( array_key_exists( $args['fields'], $this->get_columns() ) ) {
-				$fields = $args['fields'];
+		if ( 'ids' === $args['fields'] ) {
+			$fields   = "$this->primary_key";
+			$callback = 'intval';
+		} else {
+			$fields = $this->parse_fields( $args['fields'] );
+
+			if ( '*' === $fields ) {
+				$callback = 'affwp_get_visit';
 			}
 		}
 
@@ -388,7 +394,7 @@ class Affiliate_WP_Visits_DB extends Affiliate_WP_DB {
 
 			$clauses = compact( 'fields', 'join', 'where', 'orderby', 'order', 'count' );
 
-			$results = $this->get_results( $clauses, $args, 'affwp_get_visit' );
+			$results = $this->get_results( $clauses, $args, $callback );
 		}
 
 		wp_cache_add( $cache_key, $results, $this->cache_group, HOUR_IN_SECONDS );

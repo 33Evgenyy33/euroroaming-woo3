@@ -43,6 +43,17 @@ abstract class List_Table extends \WP_List_Table {
 	public $screen;
 
 	/**
+	 * Total item count for the current query
+	 *
+	 * Used for the pagination controls with non-status filtered results.
+	 *
+	 * @access public
+	 * @since  2.1
+	 * @var    int
+	 */
+	public $current_count;
+
+	/**
 	 * Sets up the list table instance.
 	 *
 	 * @access public

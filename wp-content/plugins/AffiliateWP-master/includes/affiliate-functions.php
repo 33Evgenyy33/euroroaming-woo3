@@ -57,7 +57,7 @@ function affwp_get_affiliate_id( $user_id = 0 ) {
  * @since 1.9 The `$affiliate` parameter now accepts an affiliate object.
  *
  * @param int|AffWP\Affiliate $affiliate Optional. Affiliate ID or object. Default is the current affiliate.
- * @return string username if affiliate exists, boolean false otherwise
+ * @return string|false username if affiliate exists, boolean false otherwise
  */
 function affwp_get_affiliate_username( $affiliate = 0 ) {
 
@@ -67,7 +67,7 @@ function affwp_get_affiliate_username( $affiliate = 0 ) {
 		$user_info = get_userdata( $affiliate->user_id );
 
 		if ( $user_info ) {
-			$username  = esc_html( $user_info->user_login );
+			$username  = $user_info->user_login;
 			return esc_html( $username );
 		}
 
@@ -581,6 +581,7 @@ function affwp_delete_affiliate( $affiliate, $delete_data = false ) {
 
 		delete_user_meta( $affiliate->user_id, 'affwp_referral_notifications' );
 		delete_user_meta( $affiliate->user_id, 'affwp_promotion_method' );
+
 	}
 
 	$deleted = affiliate_wp()->affiliates->delete( $affiliate_id, 'affiliate' );
@@ -590,10 +591,11 @@ function affwp_delete_affiliate( $affiliate, $delete_data = false ) {
 		/**
 		 * Fires immediately after an affiliate is deleted.
 		 *
-		 * @param int  $affiliate_id The affiliate ID.
-		 * @param bool $delete_data  Whether the user data was also flagged for deletion.
+		 * @param int             $affiliate_id The affiliate ID.
+		 * @param bool            $delete_data  Whether the user data was also flagged for deletion.
+		 * @param AffWP\Affiliate $affiliate    Affiliate object.
 		 */
-		do_action( 'affwp_affiliate_deleted', $affiliate_id, $delete_data );
+		do_action( 'affwp_affiliate_deleted', $affiliate_id, $delete_data, $affiliate );
 
 	}
 
@@ -1084,6 +1086,7 @@ function affwp_get_affiliate_campaigns( $affiliate = 0 ) {
  *     @type string $user_name       User login. Used to retrieve the affiliate ID if `affiliate_id` and
  *                                   `user_id` not given.
  *     @type string $notes           Notes about the affiliate for use by administrators.
+ *     @type string $website_url     The affiliate's website URL.
  * }
  * @return int|false The ID for the newly-added affiliate, otherwise false.
  */
@@ -1106,12 +1109,14 @@ function affwp_add_affiliate( $data = array() ) {
 	$user_id = absint( $data['user_id'] );
 
 	$args = array(
-		'user_id'       => $user_id,
-		'status'        => $status,
-		'rate'          => ! empty( $data['rate'] ) ? sanitize_text_field( $data['rate'] ) : '',
-		'rate_type'     => ! empty( $data['rate_type' ] ) ? sanitize_text_field( $data['rate_type'] ) : '',
-		'payment_email' => ! empty( $data['payment_email'] ) ? sanitize_text_field( $data['payment_email'] ) : '',
-		'notes'         => ! empty( $data['notes' ] ) ? wp_kses_post( $data['notes'] ) : ''
+		'user_id'         => $user_id,
+		'status'          => $status,
+		'rate'            => ! empty( $data['rate'] ) ? sanitize_text_field( $data['rate'] ) : '',
+		'rate_type'       => ! empty( $data['rate_type' ] ) ? sanitize_text_field( $data['rate_type'] ) : '',
+		'payment_email'   => ! empty( $data['payment_email'] ) ? sanitize_text_field( $data['payment_email'] ) : '',
+		'notes'           => ! empty( $data['notes' ] ) ? wp_kses_post( $data['notes'] ) : '',
+		'website_url'     => ! empty( $data['website_url'] ) ? sanitize_text_field( $data['website_url'] ) : '',
+		'date_registered' => ! empty( $data['date_registered'] ) ? sanitize_text_field( $data['date_registered'] ) : '',
 	);
 
 	$affiliate_id = affiliate_wp()->affiliates->add( $args );

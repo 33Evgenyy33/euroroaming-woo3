@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  *
  * @since 1.0
  */
-class Affiliate_WP_Referral_Payout_Export extends Affiliate_WP_Referral_Export implements Exporter\CSV {
+class Affiliate_WP_Referral_Payout_Export extends Affiliate_WP_Referral_Export {
 
 	/**
 	 * Our export type. Used for export-type specific filters/actions

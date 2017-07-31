@@ -1289,10 +1289,14 @@ class WC_Shipping_Local_Pickup_Plus extends WC_Shipping_Method
                         if ($bolstate != 1) continue;
                     }
 
+
                     //Если есть ID ТА
                     if ($location['taid'] != '') {
 
                         $ta_id = intval(str_replace(" ", "", $location['taid']));
+
+	                    //$myfile = fopen("variation1.txt", "w") or die("Unable to open file!");
+	                    //file_put_contents("variation1.txt", print_r($ta_id, true), FILE_APPEND | LOCK_EX);
 
                         /*
                          * Запрос к селлеру
@@ -1334,6 +1338,9 @@ class WC_Shipping_Local_Pickup_Plus extends WC_Shipping_Method
                                     if ($this->check_orange_format($num, 'nano'))
                                         $nano++;
                                 }
+
+	                            //myfile = fopen("variation1.txt", "w") or die("Unable to open file!");
+	                            //file_put_contents("variation1.txt", print_r($cart_item, true), FILE_APPEND | LOCK_EX);
 
                                 //НОВАЯ!!! Проверка вариации товара на
                                 foreach( $cart_item['variation'] as $attribute_val ){
@@ -1403,6 +1410,13 @@ class WC_Shipping_Local_Pickup_Plus extends WC_Shipping_Method
                     echo '</option>';
                 }
                 echo '</select>';
+
+	            echo '<script>
+jQuery(document).ready(function($) {
+$(document).ready(function() {
+  $("td > select.pickup_location").select2();
+});
+});</script>';
 
             } else {
                 // radio styling

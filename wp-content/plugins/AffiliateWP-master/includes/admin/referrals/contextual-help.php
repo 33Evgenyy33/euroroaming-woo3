@@ -58,6 +58,7 @@ function affwp_referrals_contextual_help() {
 				<li>' . __( 'You can enter the referral context prefixed by &#8220;context:&#8221;', 'affiliate-wp' ) . '</li>
 				<li>' . __( 'You can enter the affiliate&#8217;s ID number prefixed by &#8220;affiliate:&#8221;', 'affiliate-wp' ) . '</li>
 				<li>' . __( 'You can enter a URL campaign prefixed by &#8220;campaign:&#8221;', 'affiliate-wp' ) . '</li>
+				<li>' . __( 'You can enter a word or phrase in the referral&#8217;s description prefixed by &#8220;desc:&#8221;', 'affiliate-wp' ) . '</li>
 			</ul>'
 	) );
 

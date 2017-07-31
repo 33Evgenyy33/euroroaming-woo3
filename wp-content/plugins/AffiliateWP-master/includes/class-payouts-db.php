@@ -97,10 +97,10 @@ class Affiliate_WP_Payouts_DB extends Affiliate_WP_DB {
 	 */
 	public function get_column_defaults() {
 		return array(
-			'payout_id' => 0,
-			'owner'     => 0,
-			'status'    => 'paid',
-			'date'      => date( 'Y-m-d H:i:s' ),
+			'affiliate_id' => 0,
+			'owner'        => 0,
+			'status'       => 'paid',
+			'date'         => date( 'Y-m-d H:i:s' ),
 		);
 	}
 
@@ -326,7 +326,8 @@ class Affiliate_WP_Payouts_DB extends Affiliate_WP_DB {
 	 *                                        Default 'DESC'.
 	 *     @type string       $orderby        Payouts table column to order results by. Accepts any AffWP\Affiliate\Payout
 	 *                                        field. Default 'payout_id'.
-	 *     @type string       $fields         Fields to limit the selection for. Accepts 'ids'. Default '*' for all.
+	 *     @type string|array $fields         Specific fields to retrieve. Accepts 'ids', a single payout field, or an
+	 *                                        array of fields. Default '*' (all).
 	 * }
 	 * @param bool  $count Optional. Whether to return only the total number of results found. Default false.
 	 * @return array Array of payout objects (if found).
@@ -564,13 +565,17 @@ class Affiliate_WP_Payouts_DB extends Affiliate_WP_DB {
 		$args['orderby'] = $orderby;
 		$args['order']   = $order;
 
-		$fields = "*";
+		// Fields.
+		$callback = '';
 
-		if ( ! empty( $args['fields'] ) ) {
-			if ( 'ids' === $args['fields'] ) {
-				$fields = "$this->primary_key";
-			} elseif ( array_key_exists( $args['fields'], $this->get_columns() ) ) {
-				$fields = $args['fields'];
+		if ( 'ids' === $args['fields'] ) {
+			$fields   = "$this->primary_key";
+			$callback = 'intval';
+		} else {
+			$fields = $this->parse_fields( $args['fields'] );
+
+			if ( '*' === $fields ) {
+				$callback = 'affwp_get_payout';
 			}
 		}
 
@@ -590,7 +595,7 @@ class Affiliate_WP_Payouts_DB extends Affiliate_WP_DB {
 
 			$clauses = compact( 'fields', 'join', 'where', 'orderby', 'order', 'count' );
 
-			$results = $this->get_results( $clauses, $args, 'affwp_get_payout' );
+			$results = $this->get_results( $clauses, $args, $callback );
 		}
 
 		wp_cache_add( $cache_key, $results, $this->cache_group, HOUR_IN_SECONDS );

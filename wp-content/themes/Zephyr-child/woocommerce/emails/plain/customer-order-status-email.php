@@ -51,14 +51,14 @@ do_action( 'woocommerce_email_order_meta', $order, $sent_to_admin, $plain_text )
 echo "\n";
 
 if ( SV_WC_Plugin_Compatibility::is_wc_version_gte_2_5() ) {
-	echo $order->email_order_items_table( array(
+	echo $order->wc_get_email_order_items( array(
 		'show_download_links' => $show_download_links,
 		'show_sku'            => false,
 		'show_purchase_note'  => $show_purchase_note,
 		'plain_text'          => true
 	) );
 } else {
-	echo $order->email_order_items_table( $show_download_links, false, $show_purchase_note, false, '', true );
+	echo $order->wc_get_email_order_items( $show_download_links, false, $show_purchase_note, false, '', true );
 }
 
 echo "----------\n\n";

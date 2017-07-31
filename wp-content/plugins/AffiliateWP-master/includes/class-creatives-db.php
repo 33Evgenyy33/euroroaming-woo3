@@ -108,15 +108,16 @@ class Affiliate_WP_Creatives_DB extends Affiliate_WP_DB {
 	 * @param array $args {
 	 *     Optional. Arguments for querying creatives. Default empty array.
 	 *
-	 *     @type int       $number      Number of creatives to query for. Default 20.
-	 *     @type int       $offset      Number of creatives to offset the query for. Default 0.
-	 *     @type int|array $creative_id Creative ID or array of creative IDs to explicitly retrieve. Default 0.
-	 *     @type string    $status      Creative status. Default empty (all).
-	 *     @type string    $order       How to order returned creative results. Accepts 'ASC' or 'DESC'.
-	 *                                  Default 'DESC'.
-	 *     @type string    $orderby     Creatives table column to order results by. Accepts any AffWP\Creative
-	 *                                  field. Default 'creative_id'.
-	 *     @type string    $fields      Fields to limit the selection for. Accepts 'ids' or '*' (all). Default '*'.
+	 *     @type int          $number      Number of creatives to query for. Default 20.
+	 *     @type int          $offset      Number of creatives to offset the query for. Default 0.
+	 *     @type int|array    $creative_id Creative ID or array of creative IDs to explicitly retrieve. Default 0.
+	 *     @type string       $status      Creative status. Default empty (all).
+	 *     @type string       $order       How to order returned creative results. Accepts 'ASC' or 'DESC'.
+	 *                                     Default 'DESC'.
+	 *     @type string       $orderby     Creatives table column to order results by. Accepts any AffWP\Creative
+	 *                                     field. Default 'creative_id'.
+	 *     @type string|array $fields      Specific fields to retrieve. Accepts 'ids', a single creative field, or an
+	 *                                     array of fields. Default '*' (all).
 	 * }
 	 * @param bool $count Whether to retrieve only the total number of results found. Default false.
 	 */
@@ -182,13 +183,17 @@ class Affiliate_WP_Creatives_DB extends Affiliate_WP_DB {
 		$args['orderby'] = $orderby;
 		$args['order']   = $order;
 
-		$fields = "*";
+		// Fields.
+		$callback = '';
 
-		if ( ! empty( $args['fields'] ) ) {
-			if ( 'ids' === $args['fields'] ) {
-				$fields = "$this->primary_key";
-			} elseif ( array_key_exists( $args['fields'], $this->get_columns() ) ) {
-				$fields = $args['fields'];
+		if ( 'ids' === $args['fields'] ) {
+			$fields   = "$this->primary_key";
+			$callback = 'intval';
+		} else {
+			$fields = $this->parse_fields( $args['fields'] );
+
+			if ( '*' === $fields ) {
+				$callback = 'affwp_get_creative';
 			}
 		}
 
@@ -208,7 +213,7 @@ class Affiliate_WP_Creatives_DB extends Affiliate_WP_DB {
 
 			$clauses = compact( 'fields', 'join', 'where', 'orderby', 'order', 'count' );
 
-			$results = $this->get_results( $clauses, $args, 'affwp_get_creative' );
+			$results = $this->get_results( $clauses, $args, $callback );
 		}
 
 		wp_cache_add( $cache_key, $results, $this->cache_group, HOUR_IN_SECONDS );

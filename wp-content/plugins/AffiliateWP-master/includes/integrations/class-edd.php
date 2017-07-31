@@ -59,9 +59,7 @@ class Affiliate_WP_EDD extends Affiliate_WP_Base {
 			// Customers cannot refer themselves
 			if ( $this->is_affiliate_email( $customer_email, $affiliate_id ) ) {
 
-				if( $this->debug ) {
-					$this->log( 'Referral not created because affiliate\'s own account was used.' );
-				}
+				$this->log( 'Referral not created because affiliate\'s own account was used.' );
 
 				return false;
 			}
@@ -72,9 +70,7 @@ class Affiliate_WP_EDD extends Affiliate_WP_Base {
 
 				if ( $was_renewal ) {
 
-					if( $this->debug ) {
-						$this->log( 'Referral not created because order was a renewal.' );
-					}
+					$this->log( 'Referral not created because order was a renewal.' );
 
 					return;
 				}
@@ -91,11 +87,7 @@ class Affiliate_WP_EDD extends Affiliate_WP_Base {
 
 						if ( ! empty( $item['options']['is_upgrade'] ) ) {
 
-							if( $this->debug ) {
-
-								$this->log( 'Referral not created because order was an upgrade.' );
-
-							}
+							$this->log( 'Referral not created because order was an upgrade.' );
 
 							return;
 						}
@@ -114,9 +106,7 @@ class Affiliate_WP_EDD extends Affiliate_WP_Base {
 
 			if ( empty( $desc ) ) {
 
-				if( $this->debug ) {
-					$this->log( 'Referral not created due to empty description.' );
-				}
+				$this->log( 'Referral not created due to empty description.' );
 
 				return;
 			}
@@ -146,9 +136,7 @@ class Affiliate_WP_EDD extends Affiliate_WP_Base {
 
 				if ( $was_renewal ) {
 
-					if( $this->debug ) {
-						$this->log( 'Referral not created because order was a renewal.' );
-					}
+					$this->log( 'Referral not created because order was a renewal.' );
 
 					return;
 				}
@@ -161,9 +149,7 @@ class Affiliate_WP_EDD extends Affiliate_WP_Base {
 
 				if ( $was_upgrade ) {
 
-					if( $this->debug ) {
-						$this->log( 'Referral not created because order was an upgrade.' );
-					}
+					$this->log( 'Referral not created because order was an upgrade.' );
 
 					return;
 				}
@@ -189,9 +175,7 @@ class Affiliate_WP_EDD extends Affiliate_WP_Base {
 
 				if ( ! affiliate_wp()->tracking->is_valid_affiliate( $this->affiliate_id ) ) {
 
-					if( $this->debug ) {
-						$this->log( 'Referral not created because affiliate is invalid.' );
-					}
+					$this->log( 'Referral not created because affiliate is invalid.' );
 
 					continue;
 				}
@@ -207,18 +191,14 @@ class Affiliate_WP_EDD extends Affiliate_WP_Base {
 					// If a referral was already recorded, overwrite it with the linked discount affiliate
 					affiliate_wp()->referrals->update( $existing->referral_id, array( 'affiliate_id' => $this->affiliate_id, 'status' => 'unpaid', 'amount' => $referral_total ), '', 'referral' );
 
-					if( $this->debug ) {
-						$this->log( sprintf( 'Referral #%d updated successfully.', $existing->referral_id ) );
-					}
+					$this->log( sprintf( 'Referral #%d updated successfully.', $existing->referral_id ) );
 
 				} else {
 					// new referral
 
 					if ( 0 == $referral_total && affiliate_wp()->settings->get( 'ignore_zero_referrals' ) ) {
 
-						if( $this->debug ) {
-							$this->log( 'Referral not created due to 0.00 amount.' );
-						}
+						$this->log( 'Referral not created due to 0.00 amount.' );
 
 						return false; // Ignore a zero amount referral
 					}
@@ -227,9 +207,7 @@ class Affiliate_WP_EDD extends Affiliate_WP_Base {
 
 					if ( empty( $desc ) ) {
 
-						if( $this->debug ) {
-							$this->log( 'Referral not created due to empty description.' );
-						}
+						$this->log( 'Referral not created due to empty description.' );
 
 						return false;
 					}
@@ -246,9 +224,7 @@ class Affiliate_WP_EDD extends Affiliate_WP_Base {
 						)
 					);
 
-					if( $this->debug ) {
-						$this->log( sprintf( 'Referral #%d created successfully.', $referral_id ) );
-					}
+					$this->log( sprintf( 'Referral #%d created successfully.', $referral_id ) );
 				}
 			}
 		}
@@ -674,4 +650,7 @@ class Affiliate_WP_EDD extends Affiliate_WP_Base {
 	}
 
 }
-new Affiliate_WP_EDD;
+
+if ( class_exists( 'Easy_Digital_Downloads' ) ) {
+	new Affiliate_WP_EDD;
+}

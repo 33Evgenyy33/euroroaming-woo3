@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AffiliateWP\n"
 "Report-Msgid-Bugs-To: https://affiliatewp.com/support/\n"
-"POT-Creation-Date: 2017-02-17 03:04:25+00:00\n"
-"PO-Revision-Date: 2017-02-05 13:46+1300\n"
+"POT-Creation-Date: 2017-06-28 16:58:31+00:00\n"
+"PO-Revision-Date: 2017-06-01 00:34-0600\n"
 "Last-Translator: AffiliateWP <support@affiliatewp.com>\n"
 "Language-Team: AffiliateWP <support@affiliatewp.com>\n"
 "Language: hi_IN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -34,7 +34,8 @@ msgstr ""
 "होस्ट प्रोवाइडर से कांटेक्ट करे और उनसे निवदन करे की आपके वर्शन को 5.3 या ज़ायद कर दिया "
 "जाये."
 
-#: includes/REST/class-rest.php:62 includes/admin/tools/tools.php:523
+#: includes/REST/class-rest.php:62 includes/admin/ajax-actions.php:224
+#: includes/admin/tools/tools.php:667
 msgid "Nonce verification failed"
 msgstr "अस्थायी रूप से जाँच असफल"
 
@@ -42,25 +43,29 @@ msgstr "अस्थायी रूप से जाँच असफल"
 #: includes/REST/class-rest.php:81 includes/REST/class-rest.php:84
 #: includes/admin/AFFWP_Plugin_Updater.php:402
 #: includes/admin/affiliates/actions.php:20
-#: includes/admin/affiliates/actions.php:69
-#: includes/admin/affiliates/actions.php:73
-#: includes/admin/affiliates/actions.php:77
-#: includes/admin/affiliates/actions.php:124
-#: includes/admin/affiliates/actions.php:155
-#: includes/admin/affiliates/actions.php:159
+#: includes/admin/affiliates/actions.php:99
+#: includes/admin/affiliates/actions.php:103
+#: includes/admin/affiliates/actions.php:107
+#: includes/admin/affiliates/actions.php:154
+#: includes/admin/affiliates/actions.php:185
+#: includes/admin/affiliates/actions.php:189
 #: includes/admin/class-addon-updater.php:283
-#: includes/admin/class-notices.php:463 includes/admin/creatives/actions.php:16
+#: includes/admin/class-notices.php:564
+#: includes/admin/creatives/actions.php:16
 #: includes/admin/creatives/actions.php:44
 #: includes/admin/creatives/actions.php:48
 #: includes/admin/creatives/actions.php:52
 #: includes/admin/creatives/actions.php:80
 #: includes/admin/referrals/actions.php:16
-#: includes/admin/tools/export/class-batch-export.php:198
-#: includes/admin/tools/export/class-export-settings.php:90
-#: includes/admin/tools/export/class-export.php:226
+#: includes/admin/tools/export/class-batch-export.php:199
+#: includes/admin/tools/export/class-export-settings.php:91
+#: includes/admin/tools/export/class-export.php:227
+#: includes/admin/tools/import/class-batch-import-affiliates.php:102
+#: includes/admin/tools/import/class-batch-import-referrals.php:94
 #: includes/admin/tools/import/import.php:24
-#: includes/admin/tools/import/import.php:30 includes/admin/tools/tools.php:524
-#: includes/admin/tools/tools.php:532 includes/admin/tools/tools.php:542
+#: includes/admin/tools/import/import.php:30
+#: includes/admin/tools/tools.php:668 includes/admin/tools/tools.php:676
+#: includes/admin/tools/tools.php:686
 msgid "Error"
 msgstr "ग़लती"
 
@@ -172,7 +177,6 @@ msgid "The affiliate status."
 msgstr "एफिलिएट स्थिति."
 
 #: includes/REST/v1/class-affiliates-endpoints.php:356
-#, fuzzy
 msgid "Unpaid affiliate earnings."
 msgstr "एफिलिएट कमाई."
 
@@ -451,7 +455,6 @@ msgid "The referral status or array of statuses to retrieve visits for."
 msgstr "रेफरल स्थिति या ऐरे ऑफ़ स्थितिइस जिसे विजिट की क्वेरी करे."
 
 #: includes/REST/v1/class-visits-endpoints.php:207
-#, fuzzy
 msgid "The context under which the visit was created."
 msgstr "ये निर्दश जिससे रेफरल बनाया गया है (एकीकरण)."
 
@@ -488,7 +491,6 @@ msgid "Campaign associated with the visit."
 msgstr "अभियान जो विजिट के सात है."
 
 #: includes/REST/v1/class-visits-endpoints.php:283
-#, fuzzy
 msgid "Context under which the visit was generated."
 msgstr "तारीख जब विजिट बना था."
 
@@ -500,76 +502,92 @@ msgstr "विजिटर का एप एड्रेस."
 msgid "The date the visit was generated."
 msgstr "तारीख जब विजिट बना था."
 
-#: includes/abstracts/class-affwp-reports-tab.php:115
-msgid "Date Filters"
-msgstr "तारीख के फिल्टर्स."
+#: includes/abstracts/class-affwp-reports-tab.php:135
+#, fuzzy
+msgid "Filters"
+msgstr "फ़िल्टर"
 
-#: includes/abstracts/class-affwp-reports-tab.php:130
+#: includes/abstracts/class-affwp-reports-tab.php:151
+#: includes/admin/referrals/class-list-table.php:582
+#: includes/admin/visits/visits.php:67 includes/class-graph.php:428
+msgid "Filter"
+msgstr "फ़िल्टर"
+
+#: includes/abstracts/class-affwp-reports-tab.php:172
 msgid "Quick Stats"
 msgstr "तुरंत स्टैट्‍स."
 
-#: includes/abstracts/class-affwp-reports-tab.php:163
+#: includes/abstracts/class-affwp-reports-tab.php:207
 msgid "Trends"
 msgstr "ट्रेंड्स."
 
-#: includes/abstracts/class-affwp-reports-tab.php:325
+#: includes/abstracts/class-affwp-reports-tab.php:381
 msgid "No data for the current date range."
 msgstr "कोई डाटा नहीं है करंट तारिक के रेंज मई."
 
-#: includes/abstracts/class-affwp-reports-tab.php:370
-#: includes/class-graph.php:365
+#: includes/abstracts/class-affwp-reports-tab.php:433
+#: includes/class-graph.php:361
 msgid "Today"
 msgstr "आज "
 
-#: includes/abstracts/class-affwp-reports-tab.php:371
-#: includes/class-graph.php:366
+#: includes/abstracts/class-affwp-reports-tab.php:434
+#: includes/class-graph.php:362
 msgid "Yesterday"
 msgstr "बीता कल."
 
-#: includes/abstracts/class-affwp-reports-tab.php:372
-#: includes/class-graph.php:367
+#: includes/abstracts/class-affwp-reports-tab.php:435
+#: includes/class-graph.php:363
 msgid "This Week"
 msgstr "ये हफ्ता."
 
-#: includes/abstracts/class-affwp-reports-tab.php:373
-#: includes/class-graph.php:368
+#: includes/abstracts/class-affwp-reports-tab.php:436
+#: includes/class-graph.php:364
 msgid "Last Week"
 msgstr "पिछले हफ्ता."
 
-#: includes/abstracts/class-affwp-reports-tab.php:374
-#: includes/class-graph.php:369
+#: includes/abstracts/class-affwp-reports-tab.php:437
+#: includes/class-graph.php:365
 msgid "This Month"
 msgstr "ये चौथाई."
 
-#: includes/abstracts/class-affwp-reports-tab.php:375
-#: includes/class-graph.php:370
+#: includes/abstracts/class-affwp-reports-tab.php:438
+#: includes/class-graph.php:366
 msgid "Last Month"
 msgstr "पिछला महीना. "
 
-#: includes/abstracts/class-affwp-reports-tab.php:376
-#: includes/class-graph.php:371
+#: includes/abstracts/class-affwp-reports-tab.php:439
+#: includes/class-graph.php:367
 msgid "This Quarter"
 msgstr "इस चौथाई."
 
-#: includes/abstracts/class-affwp-reports-tab.php:377
-#: includes/class-graph.php:372
+#: includes/abstracts/class-affwp-reports-tab.php:440
+#: includes/class-graph.php:368
 msgid "Last Quarter"
 msgstr "पिछला चौथाई."
 
-#: includes/abstracts/class-affwp-reports-tab.php:378
-#: includes/class-graph.php:373
+#: includes/abstracts/class-affwp-reports-tab.php:441
+#: includes/class-graph.php:369
 msgid "This Year"
 msgstr "इस साल."
 
-#: includes/abstracts/class-affwp-reports-tab.php:379
-#: includes/class-graph.php:374
+#: includes/abstracts/class-affwp-reports-tab.php:442
+#: includes/class-graph.php:370
 msgid "Last Year"
 msgstr "पिछला साल."
 
 #. translators: 1: Starting date, 2: Ending date
-#: includes/abstracts/class-affwp-reports-tab.php:389
+#: includes/abstracts/class-affwp-reports-tab.php:452
 msgid "%1$s to %2$s"
 msgstr "%1$s से %2$s"
+
+#: includes/abstracts/class-affwp-reports-tab.php:499
+#: includes/admin/referrals/class-list-table.php:568
+#: includes/admin/referrals/referrals.php:64
+#: includes/admin/tools/tools.php:152 includes/admin/tools/tools.php:308
+#: includes/admin/tools/tools.php:335 includes/admin/tools/tools.php:359
+#: includes/admin/visits/visits.php:55
+msgid "Affiliate name"
+msgstr "एफिलिएट का नाम"
 
 #: includes/admin/AFFWP_Plugin_Updater.php:201
 msgid ""
@@ -636,42 +654,43 @@ msgstr ""
 "मई."
 
 #: includes/admin/affiliates/actions.php:20
-#: includes/admin/affiliates/actions.php:124
-#: includes/admin/affiliates/actions.php:155
+#: includes/admin/affiliates/actions.php:154
+#: includes/admin/affiliates/actions.php:185
 msgid "You do not have permission to manage affiliates"
 msgstr "तुम्हारे पास परमिशन नहीं है अफीलियाट्स को मैनेज करने की."
 
-#: includes/admin/affiliates/actions.php:69
+#: includes/admin/affiliates/actions.php:99
 msgid "You do not have permission to delete affiliate accounts"
 msgstr "तुम्हारे पास परमिशन नहीं है एफिलिएट एकाउंट्स को मिटाने की."
 
-#: includes/admin/affiliates/actions.php:73
-#: includes/admin/affiliates/actions.php:159
-#: includes/admin/class-notices.php:463 includes/admin/creatives/actions.php:48
+#: includes/admin/affiliates/actions.php:103
+#: includes/admin/affiliates/actions.php:189
+#: includes/admin/class-notices.php:564
+#: includes/admin/creatives/actions.php:48
 #: includes/admin/referrals/actions.php:20
 #: includes/admin/referrals/actions.php:51
 #: includes/admin/referrals/actions.php:82
 msgid "Security check failed"
 msgstr "सिक्योरिटी चेक फेल्ड हो गया."
 
-#: includes/admin/affiliates/actions.php:77
+#: includes/admin/affiliates/actions.php:107
 msgid "No affiliate IDs specified for deletion"
 msgstr "मिटाने के लिए कोई एफिलिएट ID's नहीं मिले."
 
-#: includes/admin/affiliates/affiliates.php:56 includes/admin/class-menu.php:11
-#: includes/admin/class-menu.php:14
+#: includes/admin/affiliates/affiliates.php:59
+#: includes/admin/class-menu.php:11 includes/admin/class-menu.php:14
 #: includes/admin/reports/tabs/class-affiliates-reports-tab.php:23
 msgid "Affiliates"
 msgstr "अफीलियाट्स "
 
-#: includes/admin/affiliates/affiliates.php:57
+#: includes/admin/affiliates/affiliates.php:60
 #: includes/admin/creatives/creatives.php:44
 #: includes/admin/referrals/referrals.php:38
 msgid "Add New"
 msgstr "नया ऐड करे"
 
-#: includes/admin/affiliates/affiliates.php:71
-#: includes/admin/payouts/payouts.php:50
+#: includes/admin/affiliates/affiliates.php:74
+#: includes/admin/payouts/payouts.php:52
 #: includes/admin/referrals/referrals.php:89
 #: includes/admin/visits/visits.php:53
 msgid "Search"
@@ -680,7 +699,7 @@ msgstr "जाच करे"
 #: includes/admin/affiliates/class-list-table.php:146
 #: includes/admin/creatives/class-list-table.php:98
 #: includes/admin/referrals/class-list-table.php:148
-#: includes/admin/visits/visits.php:63
+#: includes/admin/tools/tools.php:364 includes/admin/visits/visits.php:63
 msgid "All"
 msgstr "सब "
 
@@ -688,7 +707,7 @@ msgstr "सब "
 #: includes/admin/affiliates/edit.php:127 includes/admin/affiliates/new.php:45
 #: includes/admin/creatives/class-list-table.php:99
 #: includes/admin/creatives/edit.php:105 includes/admin/creatives/new.php:94
-#: includes/admin/tools/tools.php:287 includes/affiliate-functions.php:279
+#: includes/admin/tools/tools.php:289 includes/affiliate-functions.php:283
 msgid "Active"
 msgstr "एक्टिव "
 
@@ -696,25 +715,25 @@ msgstr "एक्टिव "
 #: includes/admin/affiliates/edit.php:128 includes/admin/affiliates/new.php:46
 #: includes/admin/creatives/class-list-table.php:100
 #: includes/admin/creatives/edit.php:106 includes/admin/creatives/new.php:95
-#: includes/affiliate-functions.php:282
+#: includes/affiliate-functions.php:286
 msgid "Inactive"
 msgstr "इनएक्टिव "
 
 #: includes/admin/affiliates/class-list-table.php:149
 #: includes/admin/affiliates/edit.php:129 includes/admin/affiliates/new.php:47
 #: includes/admin/referrals/class-list-table.php:151
-#: includes/admin/referrals/edit.php:249 includes/admin/referrals/new.php:107
-#: includes/admin/tools/tools.php:288 includes/admin/tools/tools.php:314
-#: includes/affiliate-functions.php:285 includes/referral-functions.php:65
+#: includes/admin/referrals/edit.php:262 includes/admin/referrals/new.php:120
+#: includes/admin/tools/tools.php:290 includes/admin/tools/tools.php:316
+#: includes/affiliate-functions.php:289 includes/referral-functions.php:69
 msgid "Pending"
 msgstr "रुक हुआ"
 
 #: includes/admin/affiliates/class-list-table.php:150
 #: includes/admin/affiliates/edit.php:124
 #: includes/admin/referrals/class-list-table.php:152
-#: includes/admin/referrals/edit.php:250 includes/admin/referrals/new.php:108
-#: includes/admin/tools/tools.php:289 includes/admin/tools/tools.php:315
-#: includes/affiliate-functions.php:288 includes/referral-functions.php:64
+#: includes/admin/referrals/edit.php:263 includes/admin/referrals/new.php:121
+#: includes/admin/tools/tools.php:291 includes/admin/tools/tools.php:317
+#: includes/affiliate-functions.php:292 includes/referral-functions.php:68
 msgid "Rejected"
 msgstr "अस्वीकार"
 
@@ -741,39 +760,42 @@ msgstr "एफिलिएट ID"
 #: includes/admin/affiliates/class-list-table.php:168
 #: includes/admin/affiliates/edit.php:91
 #: includes/admin/affiliates/review.php:41
-#: includes/admin/settings/class-settings.php:488
+#: includes/admin/settings/class-settings.php:501
 #: includes/admin/tools/class-rest-consumers-table.php:200
 #: includes/admin/tools/export/class-batch-export-affiliates.php:96
 #: includes/admin/tools/export/class-batch-export-referrals.php:147
 #: includes/admin/tools/export/class-export-affiliates.php:53
 #: includes/admin/tools/export/class-export-referrals.php:67
-#: templates/login.php:25 templates/login.php:26 templates/register.php:69
-#: templates/register.php:70
+#: includes/misc-functions.php:1092 templates/login.php:25
+#: templates/login.php:26 templates/register.php:69 templates/register.php:70
+#: tests/misc/test-misc-functions.php:361
 msgid "Username"
 msgstr "यूजरनाम "
 
 #: includes/admin/affiliates/class-list-table.php:169
-#: includes/admin/reports/tabs/class-referrals-reports-tab.php:38
-#: includes/admin/reports/tabs/class-referrals-reports-tab.php:49
-#: includes/admin/tools/tools.php:153 templates/dashboard-tab-stats.php:44
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:149
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:160
+#: includes/admin/tools/tools.php:155 templates/dashboard-tab-stats.php:44
 msgid "Paid Earnings"
 msgstr "चुकाए हुई कमाई"
 
 #: includes/admin/affiliates/class-list-table.php:170
-#: includes/admin/reports/tabs/class-referrals-reports-tab.php:57
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:168
 #: includes/admin/tools/export/class-batch-export-affiliates.php:100
-#: templates/dashboard-tab-stats.php:43
+#: includes/admin/tools/tools.php:156 includes/misc-functions.php:1099
+#: templates/dashboard-tab-stats.php:43 tests/misc/test-misc-functions.php:368
 msgid "Unpaid Earnings"
 msgstr "नहीं चुकाए हुई कमाई"
 
 #: includes/admin/affiliates/class-list-table.php:171
 #: includes/admin/tools/export/class-batch-export-affiliates.php:97
 #: includes/admin/tools/export/class-export-affiliates.php:54
+#: includes/misc-functions.php:1096 tests/misc/test-misc-functions.php:365
 msgid "Rate"
 msgstr "मूल्य"
 
 #: includes/admin/affiliates/class-list-table.php:172
-#: includes/admin/reports/tabs/class-referrals-reports-tab.php:65
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:176
 #: templates/dashboard-tab-stats.php:11
 msgid "Unpaid Referrals"
 msgstr "नहीं चुकाए हुए रेफेर्रल्स"
@@ -788,7 +810,7 @@ msgstr "चुकाए हुए रेफेर्रल्स"
 #: includes/admin/reports/tabs/class-visits-reports-tab.php:23
 #: includes/admin/tools/export/class-batch-export-affiliates.php:102
 #: includes/admin/tools/export/class-export-affiliates.php:58
-#: includes/admin/tools/tools.php:155 includes/admin/visits/visits.php:41
+#: includes/admin/tools/tools.php:158 includes/admin/visits/visits.php:41
 #: templates/dashboard-tab-stats.php:13 templates/dashboard-tab-stats.php:74
 #: templates/dashboard.php:86
 msgid "Visits"
@@ -799,75 +821,78 @@ msgstr "विजिट्स"
 #: includes/admin/creatives/edit.php:100 includes/admin/creatives/new.php:89
 #: includes/admin/payouts/view.php:115
 #: includes/admin/referrals/class-list-table.php:174
-#: includes/admin/referrals/edit.php:242 includes/admin/referrals/new.php:100
+#: includes/admin/referrals/edit.php:255 includes/admin/referrals/new.php:113
 #: includes/admin/tools/export/class-batch-export-affiliates.php:104
 #: includes/admin/tools/export/class-batch-export-referrals.php:154
 #: includes/admin/tools/export/class-export-affiliates.php:60
 #: includes/admin/tools/export/class-export-referrals.php:74
+#: includes/misc-functions.php:1102 includes/misc-functions.php:1144
 #: templates/dashboard-tab-payouts.php:37
 #: templates/dashboard-tab-referrals.php:37
+#: tests/misc/test-misc-functions.php:371
+#: tests/misc/test-misc-functions.php:407
 msgid "Status"
 msgstr "स्थिति"
 
-#: includes/admin/affiliates/class-list-table.php:261
-#: includes/admin/affiliates/class-list-table.php:396
+#: includes/admin/affiliates/class-list-table.php:262
+#: includes/admin/affiliates/class-list-table.php:399
 #: includes/admin/payouts/class-list-table.php:272
 #: includes/admin/payouts/class-list-table.php:341
 #: includes/admin/payouts/view.php:92 includes/admin/referrals/edit.php:62
 msgid "(user deleted)"
 msgstr "(यूजर मेटा दिया है)"
 
-#: includes/admin/affiliates/class-list-table.php:278
+#: includes/admin/affiliates/class-list-table.php:279
 #: includes/admin/class-menu.php:19
-#: includes/admin/reports/class-reports-admin.php:89
+#: includes/admin/reports/class-reports-admin.php:94
 #: includes/admin/user-profile.php:51
 msgid "Reports"
 msgstr "सन्देश"
 
-#: includes/admin/affiliates/class-list-table.php:288
+#: includes/admin/affiliates/class-list-table.php:291
 msgid "Edit User"
 msgstr "एडिट यूजर"
 
-#: includes/admin/affiliates/class-list-table.php:298
-#: includes/admin/affiliates/class-list-table.php:578
+#: includes/admin/affiliates/class-list-table.php:301
+#: includes/admin/affiliates/class-list-table.php:581
 #: includes/admin/creatives/class-list-table.php:236
 msgid "Deactivate"
 msgstr "निष्क्रिय करें"
 
-#: includes/admin/affiliates/class-list-table.php:310
+#: includes/admin/affiliates/class-list-table.php:313
 #: includes/admin/overview/metaboxes/class-metabox-overview-registrations.php:83
 msgid "Review"
 msgstr "जाच करना."
 
-#: includes/admin/affiliates/class-list-table.php:320
-#: includes/admin/affiliates/class-list-table.php:575
+#: includes/admin/affiliates/class-list-table.php:323
+#: includes/admin/affiliates/class-list-table.php:578
 #: includes/admin/referrals/class-list-table.php:425
 #: includes/admin/referrals/class-list-table.php:598
 msgid "Accept"
 msgstr "स्वीकार"
 
-#: includes/admin/affiliates/class-list-table.php:330
-#: includes/admin/affiliates/class-list-table.php:576
+#: includes/admin/affiliates/class-list-table.php:333
+#: includes/admin/affiliates/class-list-table.php:579
 #: includes/admin/referrals/class-list-table.php:441
 #: includes/admin/referrals/class-list-table.php:599
 msgid "Reject"
 msgstr "अस्वीकार"
 
-#: includes/admin/affiliates/class-list-table.php:342
-#: includes/admin/affiliates/class-list-table.php:577
+#: includes/admin/affiliates/class-list-table.php:345
+#: includes/admin/affiliates/class-list-table.php:580
 #: includes/admin/creatives/class-list-table.php:248
 msgid "Activate"
 msgstr "एक्टिवटे"
 
-#: includes/admin/affiliates/class-list-table.php:354
-#: includes/admin/affiliates/class-list-table.php:579
+#: includes/admin/affiliates/class-list-table.php:357
+#: includes/admin/affiliates/class-list-table.php:582
 #: includes/admin/creatives/class-list-table.php:260
 #: includes/admin/referrals/class-list-table.php:465
 #: includes/admin/referrals/class-list-table.php:602
 msgid "Delete"
 msgstr "मिटाना"
 
-#: includes/admin/affiliates/class-list-table.php:563
+#: includes/admin/affiliates/class-list-table.php:566
 msgid "No affiliates found."
 msgstr "कोई एफिलिएट नहीं मिला."
 
@@ -913,7 +938,8 @@ msgstr ""
 "एफिलिएट &#8217;s के फर्स्ट एंड लास्ट नाम. खली होगा अगर नहीं बाहर तोह. ये चेंज हो सकता "
 "है <a href=\"%1$s\" alt=\"%2$s\">यूजर एडिट स्क्रीन pai</a>."
 
-#: includes/admin/affiliates/edit.php:42 includes/admin/affiliates/edit.php:147
+#: includes/admin/affiliates/edit.php:42
+#: includes/admin/affiliates/edit.php:147
 msgid "A link to the user edit screen for this user."
 msgstr "एक लिंक जिसे आप यूजर एडिट स्क्रीन पाई जा सकते है इस यूजर के. "
 
@@ -941,7 +967,8 @@ msgstr "एफिलिएट&#8217;s यूजर आईडी. ये चे�
 msgid "The affiliate&#8217;s username. This cannot be changed."
 msgstr "एफिलिएट&#8217;s यूजरनाम. ये चेंज नहीं हो सकती."
 
-#: includes/admin/affiliates/edit.php:104
+#: includes/admin/affiliates/edit.php:104 includes/misc-functions.php:1104
+#: tests/misc/test-misc-functions.php:373
 msgid "Registration Date"
 msgstr "रजिस्ट्रेशन की तारिक."
 
@@ -961,7 +988,8 @@ msgstr ""
 "स्थिति असाइन की गई है एफिलिएट&#8217;s अकाउंट की. अपडेट करने पे सतिहति अकाउंट रिलेटेड "
 "इवेंट्स ट्रिगर कर सकते है, जैसे ईमेल नोटिफिकेशन्स."
 
-#: includes/admin/affiliates/edit.php:139
+#: includes/admin/affiliates/edit.php:139 includes/misc-functions.php:1103
+#: tests/misc/test-misc-functions.php:372
 msgid "Website"
 msgstr "वेबसाइट"
 
@@ -975,7 +1003,7 @@ msgstr ""
 "हो सकता hai <a href=\"%1$s\" alt=\"%2$s\">यूजर एडिट स्क्रीन से</a>."
 
 #: includes/admin/affiliates/edit.php:156 includes/admin/affiliates/new.php:57
-#: includes/admin/settings/class-settings.php:504
+#: includes/admin/settings/class-settings.php:517
 msgid "Referral Rate Type"
 msgstr "रेफरल मूल्य के प्रकार."
 
@@ -988,12 +1016,12 @@ msgid "The affiliate&#8217;s referral rate type."
 msgstr "एफिलिएट&#8217;s रेफरल मूल्य के प्रकार."
 
 #: includes/admin/affiliates/edit.php:174 includes/admin/affiliates/new.php:75
-#: includes/admin/settings/class-settings.php:510
-#: includes/integrations/class-edd.php:648
-#: includes/integrations/class-memberpress.php:179
-#: includes/integrations/class-pmp.php:353
+#: includes/admin/settings/class-settings.php:523
+#: includes/integrations/class-edd.php:624
+#: includes/integrations/class-memberpress.php:177
+#: includes/integrations/class-pmp.php:351
 #: includes/integrations/class-pms.php:49
-#: includes/integrations/class-woocommerce.php:533
+#: includes/integrations/class-woocommerce.php:559
 #: includes/integrations/class-zippycourses.php:76
 #: includes/integrations/extras/class-exchange-feature.php:31
 msgid "Referral Rate"
@@ -1020,12 +1048,14 @@ msgstr ""
 "s प्रोफाइल पेज पे देखता है."
 
 #: includes/admin/affiliates/edit.php:200 includes/admin/affiliates/new.php:88
-#: includes/admin/settings/class-settings.php:801
+#: includes/admin/settings/class-settings.php:814
 #: includes/admin/tools/export/class-batch-export-affiliates.php:95
 #: includes/admin/tools/export/class-batch-export-referrals.php:146
 #: includes/admin/tools/export/class-export-affiliates.php:52
 #: includes/admin/tools/export/class-export-referrals.php:66
-#: templates/register.php:79
+#: includes/misc-functions.php:1095 includes/misc-functions.php:1138
+#: templates/register.php:79 tests/misc/test-misc-functions.php:364
+#: tests/misc/test-misc-functions.php:401
 msgid "Payment Email"
 msgstr "पेमेंट ईमेल."
 
@@ -1045,11 +1075,13 @@ msgstr "तरक़्क़ी के तरीके."
 msgid "Promotion methods entered by the affiliate during registration."
 msgstr "तरक़्क़ी के तरीके जो एफिलिएट ने एंटर किये थे रजिस्ट्रेशन के वक्त."
 
-#: includes/admin/affiliates/edit.php:226 includes/admin/affiliates/new.php:101
+#: includes/admin/affiliates/edit.php:226
+#: includes/admin/affiliates/new.php:101
 msgid "Affiliate Notes"
 msgstr "एफिलिएट के नोट्स."
 
-#: includes/admin/affiliates/edit.php:231 includes/admin/affiliates/new.php:106
+#: includes/admin/affiliates/edit.php:231
+#: includes/admin/affiliates/new.php:106
 msgid ""
 "Enter any notes for this affiliate. Notes are only visible to the admin."
 msgstr "एफिलिएट के लिए कोई भी नोट्स लिख दे. नोट्स सिर्फ विज़िबल होंगे एडमिन को."
@@ -1118,8 +1150,8 @@ msgid "Email Address"
 msgstr "ईमेल एड्रेस"
 
 #: includes/admin/affiliates/review.php:66
-#: includes/admin/class-upgrades.php:508
-#: includes/admin/settings/class-settings.php:800 includes/install.php:46
+#: includes/admin/class-upgrades.php:607
+#: includes/admin/settings/class-settings.php:813 includes/install.php:55
 #: templates/register.php:84 templates/register.php:85
 msgid "Website URL"
 msgstr "वेबसाइट URL"
@@ -1144,49 +1176,11 @@ msgstr "एफिलिएट की संख्या प्रति पे�
 msgid "Affiliate: #%d %s"
 msgstr "एफिलिएट: #%d %s"
 
-#: includes/admin/affiliates/view.php:16
-#: includes/admin/tools/export/class-batch-export-affiliates.php:99
-#: includes/admin/tools/export/class-export-affiliates.php:56
-msgid "Earnings"
-msgstr "कमाई"
-
-#: includes/admin/affiliates/view.php:23
-msgid "Total earnings"
-msgstr "कुल कमाई"
-
-#: includes/admin/affiliates/view.php:24
-msgid "Total unpaid earnings"
-msgstr "कुल ना भरी हुई कमाई"
-
-#: includes/admin/affiliates/view.php:25
-msgid "Total paid referrals"
-msgstr "कुल भरे हुए रेफेर्रल्स."
-
-#: includes/admin/affiliates/view.php:26
-msgid "Total unpaid referrals"
-msgstr "कुल नहीं भरे हुए रेफेर्रल्स."
-
-#: includes/admin/affiliates/view.php:27
-msgid "Total pending referrals"
-msgstr "कुल अपूर्ण रेफेर्रल्स."
-
-#: includes/admin/affiliates/view.php:28
-msgid "Total rejected referrals"
-msgstr "कुल अस्वीकारे हुए रेफेर्रल्स."
-
-#: includes/admin/affiliates/view.php:29
-msgid "Total visits"
-msgstr "कुल विजिट्स."
-
 #: includes/admin/affiliates/view.php:30
-msgid "Conversion rate"
-msgstr "रूपान्तरण मूल्य"
-
-#: includes/admin/affiliates/view.php:86
 msgid "Recent Payouts"
 msgstr "हाल ही के पयूटस."
 
-#: includes/admin/ajax-actions.php:93
+#: includes/admin/ajax-actions.php:93 includes/admin/ajax-actions.php:262
 msgid "A batch process ID must be present to continue."
 msgstr "बैच प्रोसेस ID होना चाइये आगे बरने के लिए."
 
@@ -1198,18 +1192,35 @@ msgstr ""
 "तुम्हारे पास परमिशन नहीं है इस रिक्वेस्ट कि. अपने एडमिनिस्ट्रेटर से संपर्क करो और जानकारी के "
 "लिए."
 
-#: includes/admin/ajax-actions.php:111
+#: includes/admin/ajax-actions.php:111 includes/admin/ajax-actions.php:271
 msgid "%s is an invalid batch process ID."
 msgstr "%s ये इनवैलिड बैच प्रोसेस ID है."
 
-#: includes/admin/ajax-actions.php:120
+#: includes/admin/ajax-actions.php:120 includes/admin/ajax-actions.php:280
 msgid "An invalid file path is registered for the %1$s batch process handler."
 msgstr "एक इनवैलिड फाइल पैच रजिस्टर हो गया है %1$s बैच प्रोसेस हलदर के लिए."
 
-#: includes/admin/ajax-actions.php:128
+#: includes/admin/ajax-actions.php:128 includes/admin/ajax-actions.php:288
 msgid ""
 "%1$s is an invalid handler for the %2$s batch process. Please try again."
 msgstr "%1$s यह इनवैलिड हैंडलर है %2$s बैच प्रोसेस के लिए. कृपया दुबारा तरय करे."
+
+#: includes/admin/ajax-actions.php:228
+msgid "Missing import file. Please provide an import file."
+msgstr ""
+
+#: includes/admin/ajax-actions.php:247
+msgid "The file you uploaded does not appear to be a CSV file."
+msgstr ""
+
+#: includes/admin/ajax-actions.php:251
+msgid "Something went wrong during the upload process, please try again."
+msgstr ""
+
+#: includes/admin/ajax-actions.php:300
+#, fuzzy
+msgid "You do not have permission to import data"
+msgstr "आपके पास परमिशन नहीं है डाटा एक्सपोर्ट करने की."
 
 #: includes/admin/class-addon-updater.php:189
 msgid ""
@@ -1241,12 +1252,13 @@ msgstr "निरीक्षण"
 #: includes/admin/tools/export/class-batch-export-affiliates.php:101
 #: includes/admin/tools/export/class-batch-export-payouts.php:146
 #: includes/admin/tools/export/class-export-affiliates.php:57
-#: includes/admin/tools/tools.php:154 templates/dashboard-tab-referrals.php:7
+#: includes/admin/tools/tools.php:157 templates/dashboard-tab-referrals.php:7
 #: templates/dashboard.php:74
 msgid "Referrals"
 msgstr "रेफेर्रल्स"
 
 #: includes/admin/class-menu.php:16 includes/admin/payouts/payouts.php:37
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:45
 #: templates/dashboard.php:80
 msgid "Payouts"
 msgstr "पयूटस "
@@ -1272,7 +1284,197 @@ msgstr "एफिलिएटवप प्रवास"
 msgid "Add-ons"
 msgstr "ऐड-ओंस"
 
-#: includes/admin/class-notices.php:49
+#: includes/admin/class-notices.php:78
+#: includes/admin/settings/class-settings.php:311
+msgid "Settings updated."
+msgstr "सेटिंग्स अपडेटेड."
+
+#: includes/admin/class-notices.php:103
+msgid "%d affiliate was added successfully."
+msgid_plural "%d affiliates were added successfully"
+msgstr[0] "%d एफिलिएट सुकसेस्सफुल्ली ऐड हो गया."
+msgstr[1] "%d एफिलिएट सुकसेस्सफुल्ली ऐड हो गये"
+
+#: includes/admin/class-notices.php:116
+msgid "Affiliate wasn&#8217;t added, please try again."
+msgstr "एफिलिएट नहीं&#8217 ऐड हुआ, दुबारा ट्राय करे."
+
+#: includes/admin/class-notices.php:123
+msgid "Affiliate updated successfully"
+msgstr "एफिलिएट सुकसेस्सफुल्ली अपडेट हो गया."
+
+#: includes/admin/class-notices.php:125
+msgid "<a href=\"%s\">Back to Affiliates</a>"
+msgstr "<a href=\"%s\">पीछे जाये अफीलियाट्स पे</a>"
+
+#: includes/admin/class-notices.php:131
+msgid "Affiliate update failed, please try again"
+msgstr "एफिलिएट अपडेट नहीं हुआ, दुबारा ट्राय करे."
+
+#: includes/admin/class-notices.php:138
+msgid "Affiliate account(s) deleted successfully"
+msgstr "एफिलिएट एकाउंट्स सुक्सीस्फुल्ली डिलीट हो गया."
+
+#: includes/admin/class-notices.php:144
+msgid "Affiliate deletion failed, please try again"
+msgstr "एफिलिएट डिलेशन नहीं हुआ, दुबारा ट्राय करे"
+
+#: includes/admin/class-notices.php:151
+msgid "Affiliate account activated"
+msgstr "एफिलिएट अकाउंट एक्टिवेटिड."
+
+#: includes/admin/class-notices.php:157
+msgid "Affiliate account deactivated"
+msgstr "एफिलिएट अकाउंट डीक्टिवटेड"
+
+#: includes/admin/class-notices.php:163
+msgid "Affiliate request was accepted"
+msgstr "एफिलिएट रिक्वेस्ट एक्सेप्ट हो गया"
+
+#: includes/admin/class-notices.php:169
+msgid "Affiliate request was rejected"
+msgstr "एफिलिएट रिक्वेस्ट रिजेक्ट हो गया."
+
+#: includes/admin/class-notices.php:183
+msgid "%d affiliate from WP Affiliate was added successfully."
+msgid_plural "%d affiliates from WP Affiliate were added successfully"
+msgstr[0] "%d एफिलिएट WP एफिलिएट से ऐड हो गया."
+msgstr[1] "%d एफिलिएटस WP एफिलिएट से ऐड हो गये."
+
+#: includes/admin/class-notices.php:204
+msgid "%d affiliate from Affiliates Pro was added successfully."
+msgid_plural "%d affiliates from Affiliates Pro were added successfully"
+msgstr[0] "%d एफिलिएट अफीलियाट्स Pro मैं से ऐड हो गयी."
+msgstr[1] "%d एफिलिएटस अफीलियाट्स Pro मैं से ऐड हो गये."
+
+#: includes/admin/class-notices.php:217
+msgid "Affiliate stats have been recounted!"
+msgstr "एफिलिएट स्तिथि को रेकॉउंट कर लिया है!"
+
+#: includes/admin/class-notices.php:224
+msgid "Referral added successfully"
+msgstr "रेफरल सुकसेस्सफुल्ली ऐड हो गया."
+
+#: includes/admin/class-notices.php:230
+msgid "Referral updated successfully"
+msgstr "रेफरल अपडेट हो गया सुक्सीस्फुल्ली."
+
+#: includes/admin/class-notices.php:236
+msgid "Referral update failed, please try again"
+msgstr "रेफरल अपडेट फ़ैल हो गया, कृपया दुबारा ट्राय करे."
+
+#: includes/admin/class-notices.php:242
+msgid "Referral deleted successfully"
+msgstr "रेफरल डिलीट हो गया सुक्सीस्फुल्ली."
+
+#: includes/admin/class-notices.php:248
+msgid "Referral deletion failed, please try again"
+msgstr "रेफरल डिलीट नहीं हुआ, कृपया दुबारा ट्राय करे."
+
+#: includes/admin/class-notices.php:255
+msgid "A payout has been created."
+msgstr "पेआउट सफलतापूर्वक हटा दिया गया है."
+
+#: includes/admin/class-notices.php:262
+msgid "Creative updated successfully"
+msgstr "क्रिएटिव अपडेट हो गया सुक्सीस्फुल्ली"
+
+#: includes/admin/class-notices.php:264
+msgid "<a href=\"%s\">Back to Creatives</a>"
+msgstr "<a href=\"%s\">पीछे जाये क्रिएटिवस पे</a>"
+
+#: includes/admin/class-notices.php:270
+msgid "Creative added successfully"
+msgstr "क्रेएटिव्स ऐड हो गये सुक्सीस्फुल्ली"
+
+#: includes/admin/class-notices.php:276
+msgid "Creative deleted successfully"
+msgstr "क्रेएटिव्स डिलीट हो गये."
+
+#: includes/admin/class-notices.php:282
+msgid "Creative activated"
+msgstr "क्रेएटिव्स ऐड हो गये."
+
+#: includes/admin/class-notices.php:288
+msgid "Creative deactivated"
+msgstr "क्रेएटिव्स डिएक्टिव हो गये."
+
+#: includes/admin/class-notices.php:295
+msgid "Settings successfully imported"
+msgstr "सेटिंग्स को इम्पोर्ट कर लिया है."
+
+#: includes/admin/class-notices.php:303
+msgid ""
+"Your license key expired on %s. Please <a href=\"%s\" target=\"_blank"
+"\">renew your license key</a>."
+msgstr ""
+"आपके लाइसेंस की एक्सपिरेड हो गयी है इस तारिक को %s. कृपया <a href=\"%s\" target="
+"\"_blank\">लाइसेंस की रिन्यू करे</a>."
+
+#: includes/admin/class-notices.php:315
+msgid ""
+"Your license key has been disabled. Please <a href=\"%s\" target=\"_blank"
+"\">contact support</a> for more information."
+msgstr ""
+"आपके लाइसेंस key डिसएबल हो गयी है. कृपया <a href=\"%s\" target=\"_blank\">सपोर्ट "
+"को संपर्क करे </a> आगे की इनफार्मेशन के लिए."
+
+#: includes/admin/class-notices.php:326
+msgid ""
+"Invalid license. Please <a href=\"%s\" target=\"_blank\">visit your account "
+"page</a> and verify it."
+msgstr ""
+"लाइसेंस इनवेलिड है. कृपया <a href=\"%s\" target=\"_blank\">अकाउंट पेज विजिट करे </a> "
+"and उसको वेरीफाई करे."
+
+#: includes/admin/class-notices.php:338
+#, fuzzy
+msgid ""
+"Your license key is not active for this URL. Please <a href=\"%s\" target="
+"\"_blank\">visit your account page</a> to manage your license key URLs."
+msgstr ""
+"तुम्हारा %s एक्टिव नहीं है इस URL पे. कृपया  <a href=\"%s\" target=\"_blank\">अकाउंट "
+"पेज विजिट करे </a> अपने लाइसेंस keys URL को मैनेज करने के लिए."
+
+#: includes/admin/class-notices.php:348
+#, fuzzy
+msgid "This appears to be an invalid license key."
+msgstr "ये इनवैलिड लाइसेंस की लग रही %s के लिए. "
+
+#: includes/admin/class-notices.php:357
+msgid ""
+"Your license key has reached its activation limit. <a href=\"%s\">View "
+"possible upgrades</a> now."
+msgstr ""
+"तुम्हारी लाइसेंस key एक्टिवेशन लिमिट रीच कर चुकी है. <a href=\"%s\">पॉसिबल उपग्रडेस "
+"देखे</a> अभी."
+
+#: includes/admin/class-notices.php:366
+msgid "The API keys were successfully generated."
+msgstr "API keys सुक्सीस्फुल्ली गेनेराते हो गयी."
+
+#: includes/admin/class-notices.php:372
+msgid "The API keys could not be generated."
+msgstr "API keys गेनेराते नहीं हो पायी."
+
+#: includes/admin/class-notices.php:379
+msgid "The API keys were successfully regenerated."
+msgstr "API keys सुक्सीस्फुल्ली दुबारा गेनेराते हो गयी."
+
+#: includes/admin/class-notices.php:385
+msgid "The API keys were successfully revoked."
+msgstr "API keys रिवोकेड हो गयी है."
+
+#: includes/admin/class-notices.php:427
+msgid ""
+"Your database needs to be upgraded following the latest AffiliateWP update."
+msgstr "आपको अपना डाटाबेस अपग्रेड करना पड़ेगा अगर आपको नयी अफ्फिलिएटवप डालना है तोह. "
+
+#: includes/admin/class-notices.php:430
+msgid "Upgrade Database"
+msgstr "डेटाबेस अपग्रेड करे"
+
+#: includes/admin/class-notices.php:453 tests/admin/test-notices.php:579
 msgid ""
 "There are currently no AffiliateWP <a href=\"%s\">integrations</a> enabled. "
 "If you are using AffiliateWP without any integrations, you may disregard "
@@ -1281,187 +1483,7 @@ msgstr ""
 "अभी कोई अफ्फिलिएटवप <a href=\"%s\">इंटेग्रटीओन्स</a> इनेबल्ड नहीं है. अगर आप "
 "एफिलिएटवप यूजर करते है बिना किसी इंटेग्रटीओन्स के, इस मैसेज को इग्नोर कर दे."
 
-#: includes/admin/class-notices.php:57
-#: includes/admin/settings/class-settings.php:311
-msgid "Settings updated."
-msgstr "सेटिंग्स अपडेटेड."
-
-#: includes/admin/class-notices.php:82
-msgid "%d affiliate was added successfully."
-msgid_plural "%d affiliates were added successfully"
-msgstr[0] "%d एफिलिएट सुकसेस्सफुल्ली ऐड हो गया."
-msgstr[1] "%d एफिलिएट सुकसेस्सफुल्ली ऐड हो गये"
-
-#: includes/admin/class-notices.php:95
-msgid "Affiliate wasn&#8217;t added, please try again."
-msgstr "एफिलिएट नहीं&#8217 ऐड हुआ, दुबारा ट्राय करे."
-
-#: includes/admin/class-notices.php:102
-msgid "Affiliate updated successfully"
-msgstr "एफिलिएट सुकसेस्सफुल्ली अपडेट हो गया."
-
-#: includes/admin/class-notices.php:104
-msgid "<a href=\"%s\">Back to Affiliates</a>"
-msgstr "<a href=\"%s\">पीछे जाये अफीलियाट्स पे</a>"
-
-#: includes/admin/class-notices.php:110
-msgid "Affiliate update failed, please try again"
-msgstr "एफिलिएट अपडेट नहीं हुआ, दुबारा ट्राय करे."
-
-#: includes/admin/class-notices.php:117
-msgid "Affiliate account(s) deleted successfully"
-msgstr "एफिलिएट एकाउंट्स सुक्सीस्फुल्ली डिलीट हो गया."
-
-#: includes/admin/class-notices.php:123
-msgid "Affiliate deletion failed, please try again"
-msgstr "एफिलिएट डिलेशन नहीं हुआ, दुबारा ट्राय करे"
-
-#: includes/admin/class-notices.php:130
-msgid "Affiliate account activated"
-msgstr "एफिलिएट अकाउंट एक्टिवेटिड."
-
-#: includes/admin/class-notices.php:136
-msgid "Affiliate account deactivated"
-msgstr "एफिलिएट अकाउंट डीक्टिवटेड"
-
-#: includes/admin/class-notices.php:142
-msgid "Affiliate request was accepted"
-msgstr "एफिलिएट रिक्वेस्ट एक्सेप्ट हो गया"
-
-#: includes/admin/class-notices.php:148
-msgid "Affiliate request was rejected"
-msgstr "एफिलिएट रिक्वेस्ट रिजेक्ट हो गया."
-
-#: includes/admin/class-notices.php:162
-msgid "%d affiliate from WP Affiliate was added successfully."
-msgid_plural "%d affiliates from WP Affiliate were added successfully"
-msgstr[0] "%d एफिलिएट WP एफिलिएट से ऐड हो गया."
-msgstr[1] "%d एफिलिएटस WP एफिलिएट से ऐड हो गये."
-
-#: includes/admin/class-notices.php:183
-msgid "%d affiliate from Affiliates Pro was added successfully."
-msgid_plural "%d affiliates from Affiliates Pro were added successfully"
-msgstr[0] "%d एफिलिएट अफीलियाट्स Pro मैं से ऐड हो गयी."
-msgstr[1] "%d एफिलिएटस अफीलियाट्स Pro मैं से ऐड हो गये."
-
-#: includes/admin/class-notices.php:196
-msgid "Affiliate stats have been recounted!"
-msgstr "एफिलिएट स्तिथि को रेकॉउंट कर लिया है!"
-
-#: includes/admin/class-notices.php:203
-msgid "Referral added successfully"
-msgstr "रेफरल सुकसेस्सफुल्ली ऐड हो गया."
-
-#: includes/admin/class-notices.php:209
-msgid "Referral updated successfully"
-msgstr "रेफरल अपडेट हो गया सुक्सीस्फुल्ली."
-
-#: includes/admin/class-notices.php:215
-msgid "Referral update failed, please try again"
-msgstr "रेफरल अपडेट फ़ैल हो गया, कृपया दुबारा ट्राय करे."
-
-#: includes/admin/class-notices.php:221
-msgid "Referral deleted successfully"
-msgstr "रेफरल डिलीट हो गया सुक्सीस्फुल्ली."
-
-#: includes/admin/class-notices.php:227
-msgid "Referral deletion failed, please try again"
-msgstr "रेफरल डिलीट नहीं हुआ, कृपया दुबारा ट्राय करे."
-
-#: includes/admin/class-notices.php:234
-#, fuzzy
-msgid "A payout has been created."
-msgstr "पेआउट सफलतापूर्वक हटा दिया गया है."
-
-#: includes/admin/class-notices.php:241
-msgid "Creative updated successfully"
-msgstr "क्रिएटिव अपडेट हो गया सुक्सीस्फुल्ली"
-
-#: includes/admin/class-notices.php:243
-msgid "<a href=\"%s\">Back to Creatives</a>"
-msgstr "<a href=\"%s\">पीछे जाये क्रिएटिवस पे</a>"
-
-#: includes/admin/class-notices.php:249
-msgid "Creative added successfully"
-msgstr "क्रेएटिव्स ऐड हो गये सुक्सीस्फुल्ली"
-
-#: includes/admin/class-notices.php:255
-msgid "Creative deleted successfully"
-msgstr "क्रेएटिव्स डिलीट हो गये."
-
-#: includes/admin/class-notices.php:261
-msgid "Creative activated"
-msgstr "क्रेएटिव्स ऐड हो गये."
-
-#: includes/admin/class-notices.php:267
-msgid "Creative deactivated"
-msgstr "क्रेएटिव्स डिएक्टिव हो गये."
-
-#: includes/admin/class-notices.php:274
-msgid "Settings successfully imported"
-msgstr "सेटिंग्स को इम्पोर्ट कर लिया है."
-
-#: includes/admin/class-notices.php:282
-msgid ""
-"Your license key expired on %s. Please <a href=\"%s\" target=\"_blank"
-"\">renew your license key</a>."
-msgstr ""
-"आपके लाइसेंस की एक्सपिरेड हो गयी है इस तारिक को %s. कृपया <a href=\"%s\" target="
-"\"_blank\">लाइसेंस की रिन्यू करे</a>."
-
-#: includes/admin/class-notices.php:294
-msgid ""
-"Your license key has been disabled. Please <a href=\"%s\" target=\"_blank"
-"\">contact support</a> for more information."
-msgstr ""
-"आपके लाइसेंस key डिसएबल हो गयी है. कृपया <a href=\"%s\" target=\"_blank\">सपोर्ट "
-"को संपर्क करे </a> आगे की इनफार्मेशन के लिए."
-
-#: includes/admin/class-notices.php:305
-msgid ""
-"Invalid license. Please <a href=\"%s\" target=\"_blank\">visit your account "
-"page</a> and verify it."
-msgstr ""
-"लाइसेंस इनवेलिड है. कृपया <a href=\"%s\" target=\"_blank\">अकाउंट पेज विजिट करे </a> "
-"and उसको वेरीफाई करे."
-
-#: includes/admin/class-notices.php:317
-msgid ""
-"Your %s is not active for this URL. Please <a href=\"%s\" target=\"_blank"
-"\">visit your account page</a> to manage your license key URLs."
-msgstr ""
-"तुम्हारा %s एक्टिव नहीं है इस URL पे. कृपया  <a href=\"%s\" target=\"_blank\">अकाउंट "
-"पेज विजिट करे </a> अपने लाइसेंस keys URL को मैनेज करने के लिए."
-
-#: includes/admin/class-notices.php:328
-msgid "This appears to be an invalid license key for %s."
-msgstr "ये इनवैलिड लाइसेंस की लग रही %s के लिए. "
-
-#: includes/admin/class-notices.php:337
-msgid ""
-"Your license key has reached its activation limit. <a href=\"%s\">View "
-"possible upgrades</a> now."
-msgstr ""
-"तुम्हारी लाइसेंस key एक्टिवेशन लिमिट रीच कर चुकी है. <a href=\"%s\">पॉसिबल उपग्रडेस "
-"देखे</a> अभी."
-
-#: includes/admin/class-notices.php:346
-msgid "The API keys were successfully generated."
-msgstr "API keys सुक्सीस्फुल्ली गेनेराते हो गयी."
-
-#: includes/admin/class-notices.php:352
-msgid "The API keys could not be generated."
-msgstr "API keys गेनेराते नहीं हो पायी."
-
-#: includes/admin/class-notices.php:359
-msgid "The API keys were successfully regenerated."
-msgstr "API keys सुक्सीस्फुल्ली दुबारा गेनेराते हो गयी."
-
-#: includes/admin/class-notices.php:365
-msgid "The API keys were successfully revoked."
-msgstr "API keys रिवोकेड हो गयी है."
-
-#: includes/admin/class-notices.php:411
+#: includes/admin/class-notices.php:503
 msgid ""
 "Your license key for AffiliateWP has expired. Please renew your license to "
 "re-enable automatic updates."
@@ -1469,7 +1491,7 @@ msgstr ""
 " आपकी लाइसेंस keys एफिलिएटवप के लिए एक्सपिरेड हो गयी है. कृपया रिन्यू करे अपने लाइसेंस को "
 "जिसे आप रे-इनेबल कर ले आटोमेटिक अप्डेट्स को."
 
-#: includes/admin/class-notices.php:420
+#: includes/admin/class-notices.php:512
 msgid ""
 "Please <a href=\"%s\">enter and activate</a> your license key for "
 "AffiliateWP to enable automatic updates."
@@ -1477,18 +1499,10 @@ msgstr ""
 "कृपया <a href=\"%s\">एंटर करे एंड एक्टिवटे करे</a> अपनी लाइसेंस की को एफिलिएटवप के लिए "
 "जिसे आप आटोमेटिक अप्डेट्स इनेबल कर सके."
 
-#: includes/admin/class-notices.php:444
-msgid ""
-"Your database needs to be upgraded following the latest AffiliateWP update."
-msgstr "आपको अपना डाटाबेस अपग्रेड करना पड़ेगा अगर आपको नयी अफ्फिलिएटवप डालना है तोह. "
-
-#: includes/admin/class-notices.php:447
-msgid "Upgrade Database"
-msgstr "डेटाबेस अपग्रेड करे"
-
-#: includes/admin/class-upgrades.php:507
-#: includes/admin/settings/class-settings.php:799 includes/install.php:45
+#: includes/admin/class-upgrades.php:606
+#: includes/admin/settings/class-settings.php:812 includes/install.php:54
 #: templates/register.php:64 templates/register.php:65
+#: tests/misc/test-misc-functions.php:478
 msgid "Your Name"
 msgstr "आपका नाम"
 
@@ -1507,7 +1521,8 @@ msgstr "कोई क्रिएटिव IDs स्पेसिफय नह�
 
 #: includes/admin/creatives/class-list-table.php:116
 #: includes/admin/creatives/edit.php:49 includes/admin/creatives/new.php:47
-#: templates/dashboard-tab-visits.php:29
+#: includes/admin/tools/export/class-batch-export-visits.php:149
+#: templates/dashboard-tab-visits.php:27
 msgid "URL"
 msgstr "यूआरएल  URL"
 
@@ -1558,7 +1573,8 @@ msgstr "क्रिएटिव का नाम. आपके आइडें�
 #: includes/admin/tools/export/class-batch-export-referrals.php:150
 #: includes/admin/tools/export/class-export-referrals.php:70
 #: includes/integrations/extras/class-ninja-forms-action-add-referral.php:77
-#: templates/dashboard-tab-referrals.php:36
+#: includes/misc-functions.php:1140 templates/dashboard-tab-referrals.php:36
+#: tests/misc/test-misc-functions.php:403
 msgid "Description"
 msgstr "डिस्क्रिप्शन"
 
@@ -1582,7 +1598,7 @@ msgstr ""
 msgid "Text"
 msgstr "टेक्स्ट "
 
-#: includes/admin/creatives/edit.php:67 includes/admin/creatives/new.php:65
+#: includes/admin/creatives/edit.php:67
 msgid "Text for this creative."
 msgstr "टेक्स्ट इस क्रिएटिव के लिए."
 
@@ -1615,10 +1631,18 @@ msgstr ""
 "इस स्क्रीन को यूज़ करे नई क्रिएटिव ऐड करने के लिए. टेक्स्ट लिंक या इमेज बैनर दोनों मैं साई कुछ "
 "भी."
 
+#: includes/admin/creatives/new.php:65
+msgid ""
+"Text for this creative. To make this a text-only creative, do not add an "
+"image below."
+msgstr ""
+
 #: includes/admin/creatives/new.php:79
+#, fuzzy
 msgid ""
 "Select an image if you would like an image banner. You can also enter an "
-"image URL if your image is hosted elsewhere."
+"image URL if your image is hosted elsewhere. Leave blank if you wish to "
+"create a text-only creative."
 msgstr ""
 "सेलेक्ट करे इमेज अगर आपको इमेज बैनर चाइये. आप एक इमेज URL भी दे सकते है अगर आपकी इमेज कही "
 "और होस्टेड है तोह."
@@ -1644,7 +1668,7 @@ msgid "Recent Referral Visits"
 msgstr "कुछ देर पहले के रेफरल विजिट्स"
 
 #: includes/admin/overview/metaboxes/class-metabox-overview-recent-referral-visits.php:81
-#: templates/dashboard-tab-visits.php:49
+#: templates/dashboard-tab-visits.php:47
 msgid "Visit converted: %s"
 msgstr "विजिट कनवर्टेड: %s"
 
@@ -1678,14 +1702,14 @@ msgstr "कुल"
 
 #: includes/admin/payouts/class-list-table.php:130
 #: includes/admin/referrals/class-list-table.php:149
-#: includes/admin/referrals/edit.php:248 includes/admin/referrals/new.php:106
-#: includes/admin/tools/tools.php:312 includes/admin/tools/tools.php:338
-#: includes/referral-functions.php:62
+#: includes/admin/referrals/edit.php:261 includes/admin/referrals/new.php:119
+#: includes/admin/tools/tools.php:314 includes/admin/tools/tools.php:340
+#: includes/referral-functions.php:66
 msgid "Paid"
 msgstr "चुकाया हुआ"
 
 #: includes/admin/payouts/class-list-table.php:131
-#: includes/admin/tools/tools.php:339 includes/payout-functions.php:134
+#: includes/admin/tools/tools.php:341 includes/payout-functions.php:134
 msgid "Failed"
 msgstr "असफल "
 
@@ -1699,10 +1723,11 @@ msgstr "पेआउट ID"
 #: includes/admin/referrals/class-list-table.php:169
 #: includes/admin/referrals/edit.php:44 includes/admin/referrals/new.php:21
 #: includes/admin/tools/export/class-batch-export-payouts.php:145
+#: includes/admin/tools/export/class-batch-export-visits.php:146
 #: includes/admin/visits/class-list-table.php:105
-#: includes/integrations/class-lifterlms.php:672
-#: includes/integrations/class-lifterlms.php:698
-#: includes/integrations/class-memberpress.php:259
+#: includes/integrations/class-lifterlms.php:649
+#: includes/integrations/class-lifterlms.php:675
+#: includes/integrations/class-memberpress.php:257
 msgid "Affiliate"
 msgstr "एफिलिएट "
 
@@ -1737,8 +1762,8 @@ msgstr "पेमेंट दुबारा तरय करे"
 msgid "No payouts found."
 msgstr "कोई पेआउट नहीं मिला."
 
-#: includes/admin/payouts/payouts.php:39
-#: includes/admin/reports/class-reports-admin.php:58
+#: includes/admin/payouts/payouts.php:40
+#: includes/admin/reports/class-reports-admin.php:61
 msgid "Manage Referrals"
 msgstr "रेफेर्रल्स मैनेज करे"
 
@@ -1757,8 +1782,8 @@ msgstr "पेआउट: #%d"
 #: includes/admin/tools/export/class-batch-generate-payouts.php:216
 #: includes/admin/tools/export/class-export-referrals-payout.php:73
 #: includes/admin/tools/export/class-export-referrals.php:68
-#: includes/integrations/class-lifterlms.php:667
-#: includes/integrations/class-lifterlms.php:694
+#: includes/integrations/class-lifterlms.php:644
+#: includes/integrations/class-lifterlms.php:671
 #: templates/dashboard-tab-payouts.php:35
 #: templates/dashboard-tab-referrals.php:35
 msgid "Amount"
@@ -1787,8 +1812,8 @@ msgid "You do not have permission to manage referrals"
 msgstr "आपके पास परमिशन नहीं है रेफेर्रल्स को मैनेज करने की"
 
 #: includes/admin/referrals/class-list-table.php:150
-#: includes/admin/referrals/edit.php:247 includes/admin/referrals/new.php:105
-#: includes/admin/tools/tools.php:313 includes/referral-functions.php:63
+#: includes/admin/referrals/edit.php:260 includes/admin/referrals/new.php:118
+#: includes/admin/tools/tools.php:315 includes/referral-functions.php:67
 msgid "Unpaid"
 msgstr "अनपेड"
 
@@ -1796,8 +1821,9 @@ msgstr "अनपेड"
 #: includes/admin/referrals/edit.php:216 includes/admin/referrals/new.php:74
 #: includes/admin/tools/export/class-batch-export-referrals.php:152
 #: includes/admin/tools/export/class-export-referrals.php:72
-#: includes/integrations/class-lifterlms.php:677
-#: includes/integrations/class-lifterlms.php:702
+#: includes/integrations/class-lifterlms.php:654
+#: includes/integrations/class-lifterlms.php:679
+#: includes/misc-functions.php:1142 tests/misc/test-misc-functions.php:405
 msgid "Reference"
 msgstr "रेफरेंस "
 
@@ -1805,11 +1831,12 @@ msgstr "रेफरेंस "
 #: includes/admin/referrals/edit.php:147 includes/admin/referrals/new.php:49
 #: includes/admin/tools/export/class-batch-export-referrals.php:155
 #: includes/admin/tools/export/class-export-referrals.php:75
-#: includes/admin/tools/export/class-export.php:84
+#: includes/admin/tools/export/class-export.php:85
 #: includes/admin/visits/class-list-table.php:110
-#: templates/dashboard-tab-payouts.php:34
+#: includes/misc-functions.php:1145 templates/dashboard-tab-payouts.php:34
 #: templates/dashboard-tab-referrals.php:38
-#: templates/dashboard-tab-visits.php:32
+#: templates/dashboard-tab-visits.php:30
+#: tests/misc/test-misc-functions.php:408
 msgid "Date"
 msgstr "तारिक "
 
@@ -1835,31 +1862,21 @@ msgstr "बल्क एक्शन्स"
 msgid "Apply"
 msgstr "लागू"
 
-#: includes/admin/referrals/class-list-table.php:568
-#: includes/admin/referrals/referrals.php:64 includes/admin/tools/tools.php:150
-#: includes/admin/tools/tools.php:306 includes/admin/tools/tools.php:333
-#: includes/admin/visits/visits.php:55
-msgid "Affiliate name"
-msgstr "एफिलिएट का नाम"
-
 #: includes/admin/referrals/class-list-table.php:574
-#: includes/admin/referrals/referrals.php:67 includes/admin/tools/tools.php:308
-#: includes/admin/tools/tools.php:335 includes/admin/visits/visits.php:58
-#: includes/class-graph.php:420
+#: includes/admin/referrals/referrals.php:67
+#: includes/admin/tools/tools.php:310 includes/admin/tools/tools.php:337
+#: includes/admin/tools/tools.php:361 includes/admin/visits/visits.php:58
+#: includes/class-graph.php:419
 msgid "From - mm/dd/yyyy"
 msgstr "अब से  - mm/dd/yyyy"
 
 #: includes/admin/referrals/class-list-table.php:575
-#: includes/admin/referrals/referrals.php:68 includes/admin/tools/tools.php:309
-#: includes/admin/tools/tools.php:336 includes/admin/visits/visits.php:59
-#: includes/class-graph.php:422
+#: includes/admin/referrals/referrals.php:68
+#: includes/admin/tools/tools.php:311 includes/admin/tools/tools.php:338
+#: includes/admin/tools/tools.php:362 includes/admin/visits/visits.php:59
+#: includes/class-graph.php:421
 msgid "To - mm/dd/yyyy"
 msgstr "तक - mm/dd/yyyy"
-
-#: includes/admin/referrals/class-list-table.php:582
-#: includes/admin/visits/visits.php:67 includes/class-graph.php:427
-msgid "Filter"
-msgstr "फ़िल्टर"
 
 #: includes/admin/referrals/contextual-help.php:29
 #: includes/admin/visits/contextual-help.php:29
@@ -1953,11 +1970,20 @@ msgstr ""
 msgid "You can enter a URL campaign prefixed by &#8220;campaign:&#8221;"
 msgstr "आप्प एंटर कर सकते है URL अभियान प्रीफ़िक्सेड के दुआरा &#8220;अभियान:&#8221;"
 
-#: includes/admin/referrals/contextual-help.php:66
+#: includes/admin/referrals/contextual-help.php:61
+#, fuzzy
+msgid ""
+"You can enter a word or phrase in the referral&#8217;s description prefixed "
+"by &#8220;desc:&#8221;"
+msgstr ""
+"आप एक रेफरल&#8217; ID नंबर एंटर कर सकते है जो प्रीफ़िक्सेड है इसके साथ &#8220;रेफरल:"
+"&#8221;"
+
+#: includes/admin/referrals/contextual-help.php:67
 msgid "Exporting Referrals"
 msgstr "रेफेर्रल्स एक्सपोर्ट किये जा रहे है"
 
-#: includes/admin/referrals/contextual-help.php:68
+#: includes/admin/referrals/contextual-help.php:69
 msgid ""
 "Referrals can be exported directly to a CSV file in order to make it easier "
 "for your own accounting needs and for you to payout your affiliates&#8217;s "
@@ -1966,7 +1992,7 @@ msgstr ""
 "रेफेर्रल्स CSV फाइल मई एक्सपोर्ट किया जायेंगे जिसे आप्प आराम से अपनी एकाउंटिंग नीड्स पूरी कर "
 "सके एंड एफिलिएट&#8217;s की कमाइए पाय कर सके."
 
-#: includes/admin/referrals/contextual-help.php:69
+#: includes/admin/referrals/contextual-help.php:70
 msgid ""
 "The CSV file generated is structured properly for PayPal&#8217;s Mass "
 "Payment system so you can easily payout all of your affiliates at once via "
@@ -1985,38 +2011,32 @@ msgid "Referral ID"
 msgstr "रेफरिंग ID"
 
 #: includes/admin/referrals/edit.php:36
-#, fuzzy
 msgid "The referral ID. This cannot be changed."
 msgstr "एफिलिएट&#8217;s आईडी. ये चेंज नहीं हो सकती."
 
 #. translators: 1: Affiliate link, 2: Affiliate ID
 #. translators: 1: Payout link with total, 2: Payout ID
 #: includes/admin/referrals/edit.php:54 includes/admin/referrals/edit.php:92
-#, fuzzy
 msgid "%1$s (ID: #%2$s)"
 msgstr "%1$s से %2$s"
 
 #: includes/admin/referrals/edit.php:67
-#, fuzzy
 msgid ""
 "The name and ID of the affiliate who generated this referral. This "
 "association cannot be changed."
 msgstr "ID एफिलिएट की जिसे ये रेफरल जेनेरेट हुआ था. ये वैल्यू चेंज नहीं हो सकती."
 
 #: includes/admin/referrals/edit.php:75
-#, fuzzy
 msgid "Payout"
 msgstr "पयूटस "
 
 #. translators: 1: Payout total amount with view link
 #: includes/admin/referrals/edit.php:84
-#, fuzzy
 msgid "Total: %1$s"
 msgstr "कुल"
 
 #. translators: 1: Pay Out action link
 #: includes/admin/referrals/edit.php:106
-#, fuzzy
 msgid "None | %1$s"
 msgstr "कोई भी सेट नहीं "
 
@@ -2025,7 +2045,8 @@ msgid "Pay Out"
 msgstr ""
 
 #: includes/admin/referrals/edit.php:116 includes/admin/referrals/edit.php:168
-#: includes/admin/settings/class-settings.php:580
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:71
+#: includes/admin/settings/class-settings.php:593
 msgid "None"
 msgstr "कुछ नहीं "
 
@@ -2039,13 +2060,11 @@ msgid "The amount of the referral, such as 15."
 msgstr "रेफरल के संख्या, जैसे 15."
 
 #: includes/admin/referrals/edit.php:159
-#, fuzzy
 msgid "Visit"
 msgstr "विजिट्स"
 
 #. translators: 1: Visit link, 2: Visit ID
 #: includes/admin/referrals/edit.php:174
-#, fuzzy
 msgid "URL: %1$s (ID: #%2$s)"
 msgstr "%1$s से %2$s"
 
@@ -2062,8 +2081,10 @@ msgstr ""
 
 #: includes/admin/referrals/edit.php:229 includes/admin/referrals/new.php:87
 #: includes/admin/tools/export/class-batch-export-referrals.php:153
+#: includes/admin/tools/export/class-batch-export-visits.php:151
 #: includes/admin/tools/export/class-export-referrals.php:73
 #: includes/admin/visits/class-list-table.php:107
+#: includes/misc-functions.php:1143 tests/misc/test-misc-functions.php:406
 msgid "Context"
 msgstr "कॉन्टेक्स्ट "
 
@@ -2075,16 +2096,30 @@ msgstr ""
 "कॉन्टेक्स्ट इस रेफरल का (ज़रूरी नहीं). ये पेमेंट सिस्टम या इंटीग्रेशन की जानकारी लेने के लिए "
 "होता है जो की ट्रांसक्शन के लिए उसे किया गया था."
 
-#: includes/admin/referrals/edit.php:253
+#: includes/admin/referrals/edit.php:242 includes/admin/referrals/new.php:100
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:147
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:186
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:232
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:272
+#: includes/class-graph.php:371
+msgid "Custom"
+msgstr "कस्टम"
+
+#: includes/admin/referrals/edit.php:247
+#, fuzzy
+msgid "Custom data stored for this referral (optional)."
+msgstr "रेफरल के डिस्क्रिप्शन एंटर करें."
+
+#: includes/admin/referrals/edit.php:266
 msgid ""
 "The referral status cannot be changed once it has been included in a payout."
 msgstr "रेफरल स्थिति चेंज नहीं की जा सकती एक बार अगर पेआउट मई इंकलूदे हो गई तोह."
 
-#: includes/admin/referrals/edit.php:255 includes/admin/referrals/new.php:110
+#: includes/admin/referrals/edit.php:268 includes/admin/referrals/new.php:123
 msgid "Select the status of the referral."
 msgstr "रेफरल की सतिहति को सेलेक्ट करें."
 
-#: includes/admin/referrals/edit.php:276
+#: includes/admin/referrals/edit.php:289
 msgid "Update Referral"
 msgstr "रेफरल अपडेट करें"
 
@@ -2114,7 +2149,11 @@ msgstr ""
 "इस रेफरल के लिए कॉन्टेक्स्ट एंटर करें (ज़रूरी नहीं). ये मदत करता है पेमेंट सिस्टम को ढूंढने मई जो "
 "इस ट्रांसक्शन के सात उसे किया गया था."
 
-#: includes/admin/referrals/new.php:127
+#: includes/admin/referrals/new.php:105
+msgid "Any custom data that should be stored with the referral (optional)."
+msgstr ""
+
+#: includes/admin/referrals/new.php:140
 #: includes/integrations/extras/class-ninja-forms-action-add-referral.php:43
 msgid "Add Referral"
 msgstr "रेफरल ऐड करें"
@@ -2167,137 +2206,274 @@ msgstr "जेनेरेट CSV फाइल"
 msgid "Number of referrals per page:"
 msgstr "रेफेर्रल्स की संख्या प्रति पेज:"
 
-#: includes/admin/reports/class-registrations-graph.php:69
+#: includes/admin/reports/class-payouts-graph.php:179
+#, fuzzy
+msgid "Earnings Generated"
+msgstr "कमाई"
+
+#: includes/admin/reports/class-payouts-graph.php:180
+#, fuzzy
+msgid "Earnings Paid"
+msgstr "कमाई"
+
+#: includes/admin/reports/class-registrations-graph.php:83
 msgid "Affiliate Registrations"
 msgstr "एफिलिएट रेगिस्ट्रेशन्स"
 
-#: includes/admin/reports/class-reports-admin.php:65
+#: includes/admin/reports/class-reports-admin.php:68
 msgid "Manage Affiliates"
 msgstr "मैनेज करें अफीलियाट्स को."
 
-#: includes/admin/reports/class-reports-admin.php:70
+#: includes/admin/reports/class-reports-admin.php:75
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:89
 msgid "View Payouts"
 msgstr "पयूटस देखें"
 
-#: includes/admin/reports/class-reports-admin.php:77
+#: includes/admin/reports/class-reports-admin.php:82
 msgid "Manage Visits"
 msgstr "मैनेज करें विजिट्स को "
 
-#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:38
+#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:40
 msgid "Total Affiliates"
 msgstr "कुल अफीलियाट्स"
 
-#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:41
-#: includes/admin/reports/tabs/class-referrals-reports-tab.php:45
-#: includes/admin/reports/tabs/class-visits-reports-tab.php:41
+#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:43
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:92
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:217
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:318
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:156
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:142
 msgid "All Time"
 msgstr "पूरा टाइम के "
 
-#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:71
-#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:135
+#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:73
+#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:137
 msgid "Affiliate #%d"
 msgstr "एफिलिएट #%d"
 
-#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:75
-#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:84
+#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:77
+#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:86
 msgid "Top Earning Affiliate"
 msgstr "टॉप कमाई वाले अफीलियाट्स."
 
-#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:99
+#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:101
 msgid "New Affiliates"
 msgstr "नए अफीलियाट्स."
 
-#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:139
+#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:141
 msgid "%d referral"
 msgid_plural "%d referrals"
 msgstr[0] "%d रेफरल"
 msgstr[1] "%d रेफेर्रल्स"
 
-#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:153
+#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:155
 msgid "Highest Converting Affiliate"
 msgstr "ज़ायद कन्वर्ट करने वाले एफिलिएट"
-
-#: includes/admin/reports/tabs/class-affiliates-reports-tab.php:178
-msgid "Average Payout"
-msgstr "औसत भुगतान"
 
 #: includes/admin/reports/tabs/class-campaigns-reports-tab.php:23
 msgid "Campaigns"
 msgstr "अभियान"
 
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:53
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:63
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:64
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:101
 msgid "Best Converting Campaign (All Time)"
 msgstr "श्रेष्ठ कन्वर्ट करें हुए अभियान (पुरे टाइम के)"
 
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:54
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:100
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:148
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:65
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:150
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:235
 msgid "n/a"
 msgstr "न/आ (नहीं उपलभ्द है)"
 
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:55
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:101
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:149
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:66
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:151
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:236
 msgid "Affiliate: <a href=\"%1$s\">%2$s</a> | Visits: %3$d"
 msgstr "एफिलिएट: <a href=\"%1$s\">%2$s</a> | विजिट्स: %3$डी"
 
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:96
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:109
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:88
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:173
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:258
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:79
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:204
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:305
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:59
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:72
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:108
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:56
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:116
+#, fuzzy
+msgid "Affiliate: <a href=\"%1$s\">%2$s</a>"
+msgstr "एफिलिएट: <a href=\"%1$s\">%2$s</a> | विजिट्स: %3$डी"
+
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:146
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:185
 msgid "Best Converting Campaign (%s)"
 msgstr "श्रेष्ठ कन्वर्ट करें हुए अभियान (%s)"
 
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:97
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:110
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:145
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:158
-#: includes/class-graph.php:375
-msgid "Custom"
-msgstr "कस्टम"
-
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:144
-#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:157
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:231
+#: includes/admin/reports/tabs/class-campaigns-reports-tab.php:271
 msgid "Most Active Campaign (%s)"
 msgstr "सबसे ज़ायद एक्टिव अभियान (%s)"
 
-#: includes/admin/reports/tabs/class-referrals-reports-tab.php:81
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:75
+#, fuzzy
+msgid "Total Earnings Paid (All Time)"
+msgstr "श्रेष्ठ कन्वर्ट करें हुए अभियान (पुरे टाइम के)"
+
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:88
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:119
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:133
+#, fuzzy
+msgid "Total Earnings Paid"
+msgstr "कुल कमाई"
+
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:123
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:169
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:253
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:123
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:138
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:70
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:95
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:127
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:232
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:256
+#, fuzzy
+msgid "Affiliate: <a href=\"%1$s\">%2$s</a> | %3$s"
+msgstr "एफिलिएट: <a href=\"%1$s\">%2$s</a> | विजिट्स: %3$डी"
+
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:165
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:179
+#, fuzzy
+msgid "Total Earnings Generated"
+msgstr "कुल कमाई"
+
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:200
+msgid "Total Payouts Count (All Time)"
+msgstr ""
+
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:213
+#, fuzzy
+msgid "Total Payouts Count"
+msgstr "कुल पयूटस: %s"
+
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:249
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:264
+msgid "Average Payout"
+msgstr "औसत भुगतान"
+
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:301
+#, fuzzy
+msgid "Average Referrals Per Payout (All Time)"
+msgstr "औसत रेफरल रकम"
+
+#: includes/admin/reports/tabs/class-payouts-reports-tab.php:314
+#, fuzzy
+msgid "Average Referrals Per Payout"
+msgstr "औसत रेफरल रकम"
+
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:55
+#, fuzzy
+msgid "Total Earnings (All Time)"
+msgstr "कुल कमाई"
+
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:68
+#, fuzzy
+msgid "Total Unpaid Earnings"
+msgstr "कुल ना भरी हुई कमाई"
+
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:79
+#, fuzzy
+msgid "Payouts (All Time)"
+msgstr "पूरा टाइम के "
+
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:85
+#, fuzzy
+msgid "Affiliate: <a href=\"%1$s\">%2$s</a> | <a href=\"%3$s\">%4$s</a>"
+msgstr "एफिलिएट: <a href=\"%1$s\">%2$s</a> | विजिट्स: %3$डी"
+
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:104
+#, fuzzy
+msgid "Average Referral Amount (All Time)"
+msgstr "औसत रेफरल रकम"
+
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:116
+#, fuzzy
+msgid "Paid / Unpaid Referrals"
+msgstr "नहीं चुकाए हुए रेफेर्रल्स"
+
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:131
+#, fuzzy
+msgid "Pending / Rejected Referrals"
+msgstr "अस्वीकार करि हुई रेफरल की कमाई"
+
+#: includes/admin/reports/tabs/class-referrals-reports-tab.php:192
 msgid "Average Referral Amount"
 msgstr "औसत रेफरल रकम"
 
-#: includes/admin/reports/tabs/class-visits-reports-tab.php:38
-#: includes/admin/reports/tabs/class-visits-reports-tab.php:45
-msgid "Total Visits"
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:53
+#, fuzzy
+msgid "Total Visits (All Time)"
 msgstr "कुल विजिट्स"
 
-#: includes/admin/reports/tabs/class-visits-reports-tab.php:61
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:63
+msgid "Total visits"
+msgstr "कुल विजिट्स."
+
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:91
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:162
 msgid "Successful Conversions"
 msgstr "रूपांतरण हो गया सही से."
 
-#: includes/admin/reports/tabs/class-visits-reports-tab.php:73
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:112
+#, fuzzy
+msgid "Conversion Rate (All Time)"
+msgstr "रूपांतरण दर"
+
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:123
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:174
 #: includes/admin/tools/export/class-batch-export-affiliates.php:103
 #: includes/admin/tools/export/class-export-affiliates.php:59
 #: templates/dashboard-tab-stats.php:14 templates/dashboard-tab-stats.php:77
 msgid "Conversion Rate"
 msgstr "रूपांतरण दर"
 
-#: includes/admin/reports/tabs/class-visits-reports-tab.php:110
-#: includes/admin/reports/tabs/class-visits-reports-tab.php:118
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:139
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:146
+msgid "Total Visits"
+msgstr "कुल विजिट्स"
+
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:245
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:269
 msgid "Top Referrer"
 msgstr "शीर्ष  रेफरेर "
 
-#: includes/admin/reports/tabs/class-visits-reports-tab.php:113
+#: includes/admin/reports/tabs/class-visits-reports-tab.php:248
 msgid "Direct Traffic"
 msgstr "प्रत्यक्ष यातायात"
 
-#: includes/admin/settings/class-settings.php:436
+#: includes/admin/settings/class-settings.php:427
+msgid ""
+"Show pretty affiliate referral URLs to affiliates. For example: <strong>%s "
+"or %s</strong>"
+msgstr ""
+"दिखाइये सुन्दर एफिलिएट रेफरल URLs अफीलियाट्स को. जैसे: <strong>%s or %s</strong>"
+
+#: includes/admin/settings/class-settings.php:437
+msgid ""
+"Note: Pretty affiliate URLs may not always work as expected when using "
+"AffiliateWP in combination with WooCommerce and Polylang."
+msgstr ""
+
+#: includes/admin/settings/class-settings.php:449
 msgid "License Settings"
 msgstr "लाइसेंस के सेटिंग्स"
 
-#: includes/admin/settings/class-settings.php:441
+#: includes/admin/settings/class-settings.php:454
 msgid "License Key"
 msgstr "लाइसेंस कुंजी"
 
-#: includes/admin/settings/class-settings.php:442
+#: includes/admin/settings/class-settings.php:455
 msgid ""
 "Please enter your license key. An active license key is needed for automatic "
 "plugin updates and <a href=\"%s\" target=\"_blank\">support</a>."
@@ -2305,43 +2481,43 @@ msgstr ""
 "लाइसेंस कुंजी एंटर करें. एक एक्टिव लाइसेंस कुंजी चाइये जिसे आपको अपने आप्प प्लगइन अप्डेट्स प्राप्त "
 "हो और <a href=\"%s\" target=\"_blank\">सपोर्ट </a> मिले."
 
-#: includes/admin/settings/class-settings.php:447
+#: includes/admin/settings/class-settings.php:460
 msgid "Pages"
 msgstr "पृष्ठ"
 
-#: includes/admin/settings/class-settings.php:452 includes/install.php:32
+#: includes/admin/settings/class-settings.php:465 includes/install.php:41
 msgid "Affiliate Area"
 msgstr "अफ्फिलाटे की जगह "
 
-#: includes/admin/settings/class-settings.php:453
+#: includes/admin/settings/class-settings.php:466
 msgid "This is the page where affiliates will manage their affiliate account."
 msgstr "यह एक पेज है जहा पे सरे अफीलियाट्स अपने एफिलिएट अकाउंट मैनेज करेंगे "
 
-#: includes/admin/settings/class-settings.php:459
+#: includes/admin/settings/class-settings.php:472
 msgid "Terms of Use"
 msgstr "उसे करने की शर्ते "
 
-#: includes/admin/settings/class-settings.php:460
+#: includes/admin/settings/class-settings.php:473
 msgid "Select the page that shows the terms of use for Affiliate Registration"
 msgstr "पेज सेलेक्ट करें जहा पे यूज़ करने की शर्ते लिखी है एफिलिएट रजिस्ट्रेशन की"
 
-#: includes/admin/settings/class-settings.php:466
+#: includes/admin/settings/class-settings.php:479
 msgid "Referral Settings"
 msgstr "रेफरल सेटिंग्स"
 
-#: includes/admin/settings/class-settings.php:471
+#: includes/admin/settings/class-settings.php:484
 msgid "Referral Variable"
 msgstr "रेफरल वेरिएबल "
 
-#: includes/admin/settings/class-settings.php:472
+#: includes/admin/settings/class-settings.php:485
 msgid "The URL variable for referral URLs. For example: <strong>%s</strong>."
 msgstr "URL वेरिएबल  रेफरल URLs के लिए. जैसे: <strong>%s</strong>."
 
-#: includes/admin/settings/class-settings.php:477
+#: includes/admin/settings/class-settings.php:490
 msgid "Default Referral Format"
 msgstr "डिफ़ॉल्ट रेफरल फॉर्मेट "
 
-#: includes/admin/settings/class-settings.php:478
+#: includes/admin/settings/class-settings.php:491
 msgid ""
 "Show referral URLs to affiliates with either their affiliate ID or Username "
 "appended.<br/> For example: <strong>%s or %s</strong>."
@@ -2349,38 +2525,31 @@ msgstr ""
 "देखाइए रेफरल URLs अफीलियाट्स को उनके एफिलिएट ID या Username से .<br/> जैसे: <strong>"
 "%s or %s</strong>."
 
-#: includes/admin/settings/class-settings.php:487
-#: includes/admin/tools/export/class-export.php:83
+#: includes/admin/settings/class-settings.php:500
+#: includes/admin/tools/export/class-export.php:84
 msgid "ID"
 msgstr "ID"
 
-#: includes/admin/settings/class-settings.php:494
+#: includes/admin/settings/class-settings.php:507
 msgid "Pretty Affiliate URLs"
 msgstr "सुंदर एफिलिएट URLs"
 
-#: includes/admin/settings/class-settings.php:495
-msgid ""
-"Show pretty affiliate referral URLs to affiliates. For example: <strong>%s "
-"or %s</strong>"
-msgstr ""
-"दिखाइये सुन्दर एफिलिएट रेफरल URLs अफीलियाट्स को. जैसे: <strong>%s or %s</strong>"
-
-#: includes/admin/settings/class-settings.php:499
+#: includes/admin/settings/class-settings.php:512
 msgid "Credit Last Referrer"
 msgstr "पिछले बार के एफिलिएट को श्रेय दो."
 
-#: includes/admin/settings/class-settings.php:500
+#: includes/admin/settings/class-settings.php:513
 msgid "Credit the last affiliate who referred the customer."
 msgstr "पिछले बार के एफिलिएट को श्रेय दो जिसने कस्टमर रेफेर्रेड किया."
 
-#: includes/admin/settings/class-settings.php:505
+#: includes/admin/settings/class-settings.php:518
 msgid ""
 "Choose a referral rate type. Referrals can be based on either a percentage "
 "or a flat rate amount."
 msgstr ""
 "रेफरल मूल्य तरीका चूसे करो. रेफेर्रल्स या तोह परसेंटेज या फ्लैट मूल्य रकम पे बेस्ड होसकते है."
 
-#: includes/admin/settings/class-settings.php:511
+#: includes/admin/settings/class-settings.php:524
 msgid ""
 "The default referral rate. A percentage if the Referral Rate Type is set to "
 "Percentage, a flat amount otherwise. Referral rates can also be set for each "
@@ -2389,93 +2558,94 @@ msgstr ""
 "डिफ़ॉल्ट रेफरल मूल्य. प्रतिशत अगर रेफरल मूल्य तरीका सेट है प्रतिशत पे, नहीं तोह (फ्लैट रेट) "
 "सपाट दर. रेफरल मूल्य अलग अलग इंडिविजुअल अफीलियाट्स के लिए भी सेट हो सकते है."
 
-#: includes/admin/settings/class-settings.php:518
+#: includes/admin/settings/class-settings.php:531
 msgid "Exclude Shipping"
 msgstr "शिपिंग हटा दो"
 
-#: includes/admin/settings/class-settings.php:519
+#: includes/admin/settings/class-settings.php:532
 msgid "Exclude shipping costs from referral calculations."
 msgstr "शिपिंग का मूल्य हटा दो रेफरल कैलुकलेशन्स मई से."
 
-#: includes/admin/settings/class-settings.php:523
+#: includes/admin/settings/class-settings.php:536
 msgid "Exclude Tax"
 msgstr "टैक्स हटा दो."
 
-#: includes/admin/settings/class-settings.php:524
+#: includes/admin/settings/class-settings.php:537
 msgid "Exclude taxes from referral calculations."
 msgstr "टैक्सेज हटा दो रेफरल कैल्क्युलेशन्स मई से ."
 
-#: includes/admin/settings/class-settings.php:528
+#: includes/admin/settings/class-settings.php:541
 msgid "Cookie Expiration"
 msgstr "कुकी समाप्ति"
 
-#: includes/admin/settings/class-settings.php:529
+#: includes/admin/settings/class-settings.php:542
 msgid "Enter how many days the referral tracking cookie should be valid for."
 msgstr "एंटर करें कितना दिन एक रेफरल ट्रैकिंग कुकी वैलिड रहेगी."
 
-#: includes/admin/settings/class-settings.php:535
+#: includes/admin/settings/class-settings.php:548
 msgid "Currency Settings"
 msgstr "मुद्रा के सेटिंग्स"
 
-#: includes/admin/settings/class-settings.php:536
+#: includes/admin/settings/class-settings.php:549
 msgid "Configure the currency options"
 msgstr "कॉन्फ़िगर करें मुद्रा के विकलप "
 
-#: includes/admin/settings/class-settings.php:540
+#: includes/admin/settings/class-settings.php:553
 #: includes/admin/tools/export/class-batch-export-referrals.php:149
 #: includes/admin/tools/export/class-batch-generate-payouts.php:217
 #: includes/admin/tools/export/class-export-referrals-payout.php:74
 #: includes/admin/tools/export/class-export-referrals.php:69
+#: includes/misc-functions.php:1139 tests/misc/test-misc-functions.php:402
 msgid "Currency"
 msgstr "मुद्रा "
 
-#: includes/admin/settings/class-settings.php:541
+#: includes/admin/settings/class-settings.php:554
 msgid ""
 "Choose your currency. Note that some payment gateways have currency "
 "restrictions."
 msgstr "मुद्रा चूसे करें. ये देख ले की कुछ पेमेंट गातेवयस मैं मुद्रा की रेस्ट्रिक्शन भी होती है."
 
-#: includes/admin/settings/class-settings.php:546
+#: includes/admin/settings/class-settings.php:559
 msgid "Currency Symbol Position"
 msgstr "मुद्रा सिंबल का स्थान"
 
-#: includes/admin/settings/class-settings.php:547
+#: includes/admin/settings/class-settings.php:560
 msgid "Choose the location of the currency symbol."
 msgstr "स्थान चुने मुद्रा सिंबल के लिए."
 
-#: includes/admin/settings/class-settings.php:550
+#: includes/admin/settings/class-settings.php:563
 msgid "Before - $10"
 msgstr "पहले - $10"
 
-#: includes/admin/settings/class-settings.php:551
+#: includes/admin/settings/class-settings.php:564
 msgid "After - 10$"
 msgstr "अभ - 10$"
 
-#: includes/admin/settings/class-settings.php:555
+#: includes/admin/settings/class-settings.php:568
 msgid "Thousands Separator"
 msgstr "थौसेंड्स सेपरेटर "
 
-#: includes/admin/settings/class-settings.php:556
+#: includes/admin/settings/class-settings.php:569
 msgid "The symbol (usually , or .) to separate thousands"
 msgstr "सिंबल ( जैसे , या .) जिसे डेसीमल पॉइंट्स  सेपरेट हो"
 
-#: includes/admin/settings/class-settings.php:562
+#: includes/admin/settings/class-settings.php:575
 msgid "Decimal Separator"
 msgstr "डेसीमल सेपरेटर"
 
-#: includes/admin/settings/class-settings.php:563
+#: includes/admin/settings/class-settings.php:576
 msgid "The symbol (usually , or .) to separate decimal points"
 msgstr "सिंबल ( जैसे , या .) जिसे डेसीमल पॉइंट्स सेपरेट हो"
 
-#: includes/admin/settings/class-settings.php:569
+#: includes/admin/settings/class-settings.php:582
 msgid "Affiliate Form Settings"
 msgstr "एफिलिएट फॉर्म सेटिंग्स"
 
-#: includes/admin/settings/class-settings.php:573
+#: includes/admin/settings/class-settings.php:586
 msgid "Affiliate Area Forms"
 msgstr "एफिलिएट एरिया के सेटिंग्स."
 
-#: includes/admin/settings/class-settings.php:574
+#: includes/admin/settings/class-settings.php:587
 msgid ""
 "Select which form(s) to show on the Affiliate Area page. The affiliate "
 "registration form will only show if <a href=\"%s\">Allow Affiliate "
@@ -2484,24 +2654,24 @@ msgstr ""
 "सेलेक्ट करें कोनसे फॉर्म(स) है जो आपको दिखानी है एफिलिएट एरिया पेज पे. एफिलिएट रजिस्ट्रेशन "
 "फॉर्म तभी देखई देगा अगर <a href=\"%s\">अल्लोव  एफिलिएट  रजिस्ट्रेशन</a> इनेबल्ड हो."
 
-#: includes/admin/settings/class-settings.php:577
+#: includes/admin/settings/class-settings.php:590
 msgid "Affiliate Registration Form and Affiliate Login Form"
 msgstr "एफिलिएट रजिस्ट्रेशन फॉर्म और एफिलिएट लॉगिन फॉर्म."
 
-#: includes/admin/settings/class-settings.php:578
+#: includes/admin/settings/class-settings.php:591
 msgid "Affiliate Registration Form Only"
 msgstr "सिर्फ एफिलिएट रजिस्ट्रेशन फॉर्म"
 
-#: includes/admin/settings/class-settings.php:579
+#: includes/admin/settings/class-settings.php:592
 msgid "Affiliate Login Form Only"
 msgstr "सिर्फ एफिलिएट लॉगिन फॉर्म"
 
-#: includes/admin/settings/class-settings.php:596
+#: includes/admin/settings/class-settings.php:609
 #: includes/admin/settings/display-settings.php:61
 msgid "Integrations"
 msgstr "इंटेग्रटीयंस"
 
-#: includes/admin/settings/class-settings.php:597
+#: includes/admin/settings/class-settings.php:610
 msgid ""
 "Choose the integrations to enable. If you are not using any of these, you "
 "may use the <strong>[affiliate_conversion_script]</strong> shortcode to "
@@ -2512,43 +2682,43 @@ msgstr ""
 "<strong>[affiliate_conversion_script]</strong> शॉर्टकोड जिसे आप्प ट्रैक एंड क्रिएट "
 "रेफेर्रल्स कर सके. देखें <a href=\"%s\" target=\"_blank\">डॉक्यूमेंटेशन</a> सहायता के लिए."
 
-#: includes/admin/settings/class-settings.php:613
+#: includes/admin/settings/class-settings.php:626
 msgid "Disable All Emails"
 msgstr "साडी ईमेल डिसएबल करें."
 
-#: includes/admin/settings/class-settings.php:614
+#: includes/admin/settings/class-settings.php:627
 msgid "Disable all email notifications."
 msgstr "साडी ईमेल नोटिफिकेशन्स डिसएबल करें."
 
-#: includes/admin/settings/class-settings.php:618
+#: includes/admin/settings/class-settings.php:631
 msgid "Logo"
 msgstr "प्रतीक चिन्ह"
 
-#: includes/admin/settings/class-settings.php:619
+#: includes/admin/settings/class-settings.php:632
 msgid "Upload or choose a logo to be displayed at the top of emails."
 msgstr "अपलोड या चूसे करें एक प्रतीक चिन्ह जो की इमेल्स के ऊपर डिस्प्ले होगा."
 
-#: includes/admin/settings/class-settings.php:623
+#: includes/admin/settings/class-settings.php:636
 msgid "Email Template"
 msgstr "ईमेल टेम्पलेट "
 
-#: includes/admin/settings/class-settings.php:624
+#: includes/admin/settings/class-settings.php:637
 msgid "Choose a template to use for email messages."
 msgstr "चूसे करें एक टेम्पलेट जो सरे ईमेल मैसेज के लिए यूज़ होगा."
 
-#: includes/admin/settings/class-settings.php:629
+#: includes/admin/settings/class-settings.php:642
 msgid "From Name"
 msgstr "नाम से"
 
-#: includes/admin/settings/class-settings.php:630
+#: includes/admin/settings/class-settings.php:643
 msgid "The name that emails come from. This is usually your site name."
 msgstr "नाम जिसे ईमेल अति है. ये आपका साइट नाम होता है ज़ायद तार."
 
-#: includes/admin/settings/class-settings.php:635
+#: includes/admin/settings/class-settings.php:648
 msgid "From Email"
 msgstr "ईमेल से "
 
-#: includes/admin/settings/class-settings.php:636
+#: includes/admin/settings/class-settings.php:649
 msgid ""
 "The email address to send emails from. This will act as the \"from\" and "
 "\"reply-to\" address."
@@ -2556,19 +2726,19 @@ msgstr ""
 "ईमेल एड्रेस जिसे इमेल्स सेंड होंगे. ये एक \"फ्रॉम\" एंड \"रिप्लाई-तो\" एड्रेस की तरह काम "
 "करेगा."
 
-#: includes/admin/settings/class-settings.php:641
+#: includes/admin/settings/class-settings.php:654
 msgid "Notify Admin"
 msgstr "एडमिन को नोटिफाई करें."
 
-#: includes/admin/settings/class-settings.php:642
+#: includes/admin/settings/class-settings.php:655
 msgid "Notify site admin of new affiliate registrations."
 msgstr "साइट एडमिन को नोटिफाई करें नई एफिलिएट रेगिस्ट्रेशन्स के लिए."
 
-#: includes/admin/settings/class-settings.php:646
+#: includes/admin/settings/class-settings.php:659
 msgid "Registration Email Subject"
 msgstr "रजिस्ट्रेशन ईमेल विषय"
 
-#: includes/admin/settings/class-settings.php:647
+#: includes/admin/settings/class-settings.php:660
 msgid ""
 "Enter the subject line for the registration email sent to admins when new "
 "affiliates register."
@@ -2576,16 +2746,16 @@ msgstr ""
 "विषय लाइन एंटर करें रजिस्ट्रेशन ईमेल के जो अडमिन्स को बेझि जाएगी जब एक नया एफिलिएट "
 "रजिस्टर करेगा."
 
-#: includes/admin/settings/class-settings.php:649
+#: includes/admin/settings/class-settings.php:662
 #: includes/emails/actions.php:41
 msgid "New Affiliate Registration"
 msgstr "नया एफिलिएट रजिस्ट्रेशन."
 
-#: includes/admin/settings/class-settings.php:652
+#: includes/admin/settings/class-settings.php:665
 msgid "Registration Email Content"
 msgstr "रजिस्ट्रेशन ईमेल का कंटेंट "
 
-#: includes/admin/settings/class-settings.php:653
+#: includes/admin/settings/class-settings.php:666
 msgid ""
 "Enter the email to send when a new affiliate registers. HTML is accepted. "
 "Available template tags:"
@@ -2593,19 +2763,19 @@ msgstr ""
 "ईमेल एंटर करें जो की सेंड की जाएगी जब एक नया एफिलिएट रजिस्टर करेगा. HTML एक्सेप्टेड है. "
 "अवलियाबले टेम्पलेट टैग्स है:"
 
-#: includes/admin/settings/class-settings.php:655
+#: includes/admin/settings/class-settings.php:668
 msgid "A new affiliate has registered on your site, %s"
 msgstr "एक नए एफिलिएट ने रजिस्टर किया है आपके साइट पे, %s"
 
-#: includes/admin/settings/class-settings.php:655
+#: includes/admin/settings/class-settings.php:668
 msgid "Name: "
 msgstr "नाम:"
 
-#: includes/admin/settings/class-settings.php:658
+#: includes/admin/settings/class-settings.php:671
 msgid "Application Accepted Email Subject"
 msgstr "आवेदन स्वीकार ईमेल विषय"
 
-#: includes/admin/settings/class-settings.php:659
+#: includes/admin/settings/class-settings.php:672
 msgid ""
 "Enter the subject line for accepted application emails sent to affiliates "
 "when their account is approved."
@@ -2613,90 +2783,90 @@ msgstr ""
 "विषय लाइन एंटर करें एक्सेप्टेड स्वीकार की हुई आवेदन ईमेल को अफीलियाट्स को जब उनका अकाउंट "
 "एप्रूव्ड हो जाये."
 
-#: includes/admin/settings/class-settings.php:661
+#: includes/admin/settings/class-settings.php:674
 #: includes/emails/actions.php:114
 msgid "Affiliate Application Accepted"
 msgstr "एफिलिएट आवेदन स्वीकार"
 
-#: includes/admin/settings/class-settings.php:664
+#: includes/admin/settings/class-settings.php:677
 msgid "Application Accepted Email Content"
 msgstr "आवेदन स्वीकार ईमेल कंटेंट "
 
-#: includes/admin/settings/class-settings.php:665
+#: includes/admin/settings/class-settings.php:678
 msgid ""
 "Enter the email to send when an application is accepted. HTML is accepted. "
 "Available template tags:"
 msgstr ""
 "ईमेल एंटर करें जब एक आवेदन एक्सेप्ट हो जाये. HTML एक्सेप्टेड है. अवलियाबले टेम्पलेट टैग्स है: "
 
-#: includes/admin/settings/class-settings.php:667
-#: includes/admin/settings/class-settings.php:679
+#: includes/admin/settings/class-settings.php:680
+#: includes/admin/settings/class-settings.php:692
 msgid "Congratulations {name}!"
 msgstr "बधाई {नाम}!"
 
-#: includes/admin/settings/class-settings.php:667
+#: includes/admin/settings/class-settings.php:680
 #: includes/emails/actions.php:119
 msgid "Your affiliate application on %s has been accepted!"
 msgstr "आपके एफिलिएट आवेदन इस तारिक को जो था %s वो एक्सेप्ट हो गया है!"
 
-#: includes/admin/settings/class-settings.php:667
+#: includes/admin/settings/class-settings.php:680
 msgid "Log into your affiliate area at"
 msgstr "लॉगिन तो करो अपने एफिलिएट एरिया मैं"
 
-#: includes/admin/settings/class-settings.php:670
+#: includes/admin/settings/class-settings.php:683
 msgid "New Referral Email Subject"
 msgstr "नए रेफरल ईमेल विषय "
 
-#: includes/admin/settings/class-settings.php:671
+#: includes/admin/settings/class-settings.php:684
 msgid ""
 "Enter the subject line for new referral emails sent when affiliates earn "
 "referrals."
 msgstr ""
 "विषय के लाइन एंटर करें नए रेफरल इमेल्स के लिए जो सेंत हो चुकी है जब एफिलिएट रेफरल कमाएंगे."
 
-#: includes/admin/settings/class-settings.php:673
+#: includes/admin/settings/class-settings.php:686
 #: includes/emails/actions.php:247
 msgid "Referral Awarded!"
 msgstr "रेफरल सम्मानित!"
 
-#: includes/admin/settings/class-settings.php:676
+#: includes/admin/settings/class-settings.php:689
 msgid "New Referral Email Content"
 msgstr "नए रेफरल ईमेल कंटेंट "
 
-#: includes/admin/settings/class-settings.php:677
+#: includes/admin/settings/class-settings.php:690
 msgid ""
 "Enter the email to send on new referrals. HTML is accepted. Available "
 "template tags:"
 msgstr ""
 "ईमेल एंटर करें नए रेफेर्रल्स को सेंड करने के लिए. HTML एक्सेप्टेड है. अवलियाबले टेम्पलेट टैग्स है:"
 
-#: includes/admin/settings/class-settings.php:679
+#: includes/admin/settings/class-settings.php:692
 msgid "You have been awarded a new referral of"
 msgstr "आपको एक नए रेफरल समानित किया जा रहा इसका"
 
-#: includes/admin/settings/class-settings.php:679
+#: includes/admin/settings/class-settings.php:692
 msgid "on %s!"
 msgstr "चालू  %s!"
 
-#: includes/admin/settings/class-settings.php:679
+#: includes/admin/settings/class-settings.php:692
 msgid ""
 "Log into your affiliate area to view your earnings or disable these "
 "notifications:"
 msgstr "एफिलिएट एरिया मैं लोग इन करें जिसे आप अपनी कमाई या ये नोटिफिकेशन्स डिसएबल करें:"
 
-#: includes/admin/settings/class-settings.php:693
+#: includes/admin/settings/class-settings.php:706
 msgid "Allow Affiliate Registration"
 msgstr "एफिलिएट रजिस्ट्रेशन की अनुमति."
 
-#: includes/admin/settings/class-settings.php:694
+#: includes/admin/settings/class-settings.php:707
 msgid "Allow users to register affiliate accounts for themselves."
 msgstr "उसेर्स को अनुमति है अपनी आप्प के लिए एफिलिएट अकाउंट रजिस्टर करने के लिए."
 
-#: includes/admin/settings/class-settings.php:698
+#: includes/admin/settings/class-settings.php:711
 msgid "Require Approval"
 msgstr "ज़रूरी है अप्रूवल."
 
-#: includes/admin/settings/class-settings.php:699
+#: includes/admin/settings/class-settings.php:712
 msgid ""
 "Require that Pending affiliate accounts must be approved before they can "
 "begin earning referrals."
@@ -2704,27 +2874,27 @@ msgstr ""
 "ज़रूरी है की पेंडिंग एफिलिएट एकाउंट्स एप्रूव्ड हो जिसे पहले की वो शुरू कर सके एअर्निंग्स रेफेर्रल्स "
 "मैं."
 
-#: includes/admin/settings/class-settings.php:703
+#: includes/admin/settings/class-settings.php:716
 msgid "Auto Register New Users"
 msgstr "नए यूजर को अपनी आप्प (ऑटो) रजिस्टर करें"
 
-#: includes/admin/settings/class-settings.php:704
+#: includes/admin/settings/class-settings.php:717
 msgid "Automatically register new users as affiliates."
 msgstr "अपनी आप्प रजिस्टर कर दे नए उसेर्स को अफीलियाट्स मैं."
 
-#: includes/admin/settings/class-settings.php:708
+#: includes/admin/settings/class-settings.php:721
 msgid "Logout Link"
 msgstr "लॉगआउट का लिंक "
 
-#: includes/admin/settings/class-settings.php:709
+#: includes/admin/settings/class-settings.php:722
 msgid "Add a logout link to the Affiliate Area."
 msgstr "लॉगआउट लिंक ऐड करें एफिलिएट एरिया  मैं."
 
-#: includes/admin/settings/class-settings.php:713
+#: includes/admin/settings/class-settings.php:726
 msgid "Default Referral URL"
 msgstr "डिफ़ॉल्ट रेफरेल एरिया URL"
 
-#: includes/admin/settings/class-settings.php:714
+#: includes/admin/settings/class-settings.php:727
 msgid ""
 "The default referral URL shown in the Affiliate Area. Also changes the URL "
 "shown in the Referral URL Generator and the {referral_url} email tag."
@@ -2732,28 +2902,28 @@ msgstr ""
 "डिफ़ॉल्ट रेफरल URL जो के दिखाइए देगा अफ्फिलाटे एरिया मैं. और चेंज कर देता है URL जो की "
 "देखाइए देता है रेफरल URL जनरेटर मैं  और  {referral_url} ईमेल टैग मैं ."
 
-#: includes/admin/settings/class-settings.php:718
+#: includes/admin/settings/class-settings.php:731
 msgid "Enable reCAPTCHA"
 msgstr "इनेबल करें eCAPTCHA "
 
-#: includes/admin/settings/class-settings.php:719
+#: includes/admin/settings/class-settings.php:732
 msgid ""
 "Prevent bots from registering affiliate accounts using Google reCAPTCHA."
 msgstr "बोट्स को रूखे रजिस्टर करने से Google reCAPTCHA यूज़ करके."
 
-#: includes/admin/settings/class-settings.php:723
+#: includes/admin/settings/class-settings.php:736
 msgid "reCAPTCHA Site Key"
 msgstr "reCAPTCHA साइट कुंजी"
 
-#: includes/admin/settings/class-settings.php:724
+#: includes/admin/settings/class-settings.php:737
 msgid "This is used to identify your site to Google reCAPTCHA."
 msgstr "ये यूज़ किया जाता है  Google reCAPTCHA के लिए जो आपके साइट की पहचान करती है."
 
-#: includes/admin/settings/class-settings.php:728
+#: includes/admin/settings/class-settings.php:741
 msgid "reCAPTCHA Secret Key"
 msgstr "reCAPTCHA गुप्त कुंजी"
 
-#: includes/admin/settings/class-settings.php:729
+#: includes/admin/settings/class-settings.php:742
 msgid ""
 "This is used for communication between your site and Google reCAPTCHA. Be "
 "sure to keep it a secret."
@@ -2761,11 +2931,11 @@ msgstr ""
 "ये यूज़ किया जाता है कम्युनिकेशन के लिए आपके साइट एंड Google reCAPTCHA के बिच मैं. पका कर "
 "ले के ये एक गुप्त रहे."
 
-#: includes/admin/settings/class-settings.php:733
+#: includes/admin/settings/class-settings.php:746
 msgid "Reject Unpaid Referrals on Refund"
 msgstr "अस्वीकार कर दिया जायेगा अगर रिफंड हुआ अनपेड रेफेर्रल्स पे "
 
-#: includes/admin/settings/class-settings.php:734
+#: includes/admin/settings/class-settings.php:747
 msgid ""
 "Automatically reject Unpaid referrals when the originating purchase is "
 "refunded or revoked."
@@ -2773,11 +2943,11 @@ msgstr ""
 "अपनी आप्प अस्वीकार कर दिया जायेगा अगर एक खरीदारी हुई और रिफंड रिफंड हुआ उसपे या "
 "वापिस ले लिया गया है."
 
-#: includes/admin/settings/class-settings.php:738
+#: includes/admin/settings/class-settings.php:751
 msgid "Use Fallback Referral Tracking Method"
 msgstr "यूज़ करें फालबैक रेफरल ट्रैकिंग का तरीका"
 
-#: includes/admin/settings/class-settings.php:739
+#: includes/admin/settings/class-settings.php:752
 msgid ""
 "The method used to track referral links can fail on sites that have jQuery "
 "errors. Enable Fallback Tracking if referrals are not being tracked properly."
@@ -2785,11 +2955,11 @@ msgstr ""
 "ये तरीका रेफरल लिंक्स को ट्रैक करने के लिए है और नहीं चलेगा अगर jQuery ररर्स हुआ तोह "
 "साइट्स पे. चालू करें फालबैक ट्रैकिंग अगर रेफेर्रल्स नहीं ट्रैक हो पा रहे."
 
-#: includes/admin/settings/class-settings.php:743
+#: includes/admin/settings/class-settings.php:756
 msgid "Ignore Referrals with Zero Amount"
 msgstr "छोर दे रेफेर्रल्स को जो जीरो रकम के है."
 
-#: includes/admin/settings/class-settings.php:744
+#: includes/admin/settings/class-settings.php:757
 msgid ""
 "Ignore referrals with a zero amount. This can be useful for multi-price "
 "products that start at zero, or if a discount was used which resulted in a "
@@ -2801,11 +2971,11 @@ msgstr ""
 "कृपया धयन दे: अगर ये सेटिंग्स चालू हो और एक विजिट हो तोह वो जीरो रेफरल होगा, जो "
 "विजिट हुई वो कन्वर्ट नहीं होगी."
 
-#: includes/admin/settings/class-settings.php:748
+#: includes/admin/settings/class-settings.php:761
 msgid "Enable Debug Mode"
 msgstr "चालू करें डिबग मोड को"
 
-#: includes/admin/settings/class-settings.php:749
+#: includes/admin/settings/class-settings.php:762
 msgid ""
 "Enable debug mode. This will turn on error logging for the referral process "
 "to help identify issues."
@@ -2813,11 +2983,11 @@ msgstr ""
 "चालू करें डिबग मोड को. ये लॉगिंग को चालू कर देगा रेफरल प्रोसेस के लिए जिसे इश्यूज को पहचान "
 "करने मैं मदत हो."
 
-#: includes/admin/settings/class-settings.php:753
+#: includes/admin/settings/class-settings.php:766
 msgid "Referral URL Blacklist"
 msgstr "रेफरल URL ब्लैकलिस्ट"
 
-#: includes/admin/settings/class-settings.php:754
+#: includes/admin/settings/class-settings.php:767
 msgid ""
 "URLs placed here will be blocked from generating referrals. Enter one URL "
 "per line. NOTE: This will only apply to new visits after the URL has been "
@@ -2826,11 +2996,11 @@ msgstr ""
 "URLs जो यहाँ पे है वो रेफेर्रल्स जेनेरेट नहीं कर सकेंगे. एक URL एक बार में एंटर करें. कृपया ध्यान "
 "दे : ये सिर्फ नए विजिट्स के लिए है जिनका URL सेव हुआ था."
 
-#: includes/admin/settings/class-settings.php:758
+#: includes/admin/settings/class-settings.php:771
 msgid "Opt into Beta Versions"
 msgstr "बीटा वर्शन मैं भाग ले"
 
-#: includes/admin/settings/class-settings.php:759
+#: includes/admin/settings/class-settings.php:772
 msgid ""
 "Receive update notifications for beta releases. When beta versions are "
 "available, an update notification will be shown on your Plugins page.\n"
@@ -2838,19 +3008,19 @@ msgstr ""
 "अपडेट नोटिफिकेशन ले जो बीटा रेलीसिस की है. जब बीटा वर्शन हो अवलियाबले, एक अपडेट "
 "नोटिफिकेशन देखगी आपके प्लुगिंस पेज पे.\n"
 
-#: includes/admin/settings/class-settings.php:764
+#: includes/admin/settings/class-settings.php:777
 msgid "Remove Data on Uninstall"
 msgstr "रिमूव डाटा अनइन्सटॉल के वक्त"
 
-#: includes/admin/settings/class-settings.php:765
+#: includes/admin/settings/class-settings.php:778
 msgid "Remove all saved data for AffiliateWP when the plugin is deleted."
 msgstr "सारा सेव्ड डाटा रिमूव हो जायेगा अफ्फिलिएटवप का जब प्लगइन डिलीट होगा."
 
-#: includes/admin/settings/class-settings.php:795
+#: includes/admin/settings/class-settings.php:808
 msgid "Required Registration Fields"
 msgstr "रजिस्ट्रेशन फ़ील्ड्स ज़रूर चाइये"
 
-#: includes/admin/settings/class-settings.php:796
+#: includes/admin/settings/class-settings.php:809
 msgid ""
 "Select which fields should be required for affiliate registration. The "
 "<strong>Username</strong>, <strong>Account Email</strong> and "
@@ -2859,28 +3029,28 @@ msgstr ""
 "सेलेक्ट करें कोनसे फ़ील्ड्स ज़रूर चाइये एफिलिएट रजिस्ट्रेशन के वक्त. <strong>यूजरनाम</strong>, "
 "<strong>अकाउंट ईमेल</strong> और <strong>पासवर्ड</strong> ये फॉर्म फ़ील्ड्स ज़रूरी है."
 
-#: includes/admin/settings/class-settings.php:802 templates/register.php:89
+#: includes/admin/settings/class-settings.php:815 templates/register.php:89
 msgid "How will you promote us?"
 msgstr "आप हमें कैसे प्रोमोट करेंगे."
 
-#: includes/admin/settings/class-settings.php:830
+#: includes/admin/settings/class-settings.php:843
 msgid "Application Pending Email Subject"
 msgstr "आवेदन अपूर्ण ईमेल विषय"
 
-#: includes/admin/settings/class-settings.php:831
+#: includes/admin/settings/class-settings.php:844
 msgid "Enter the subject line for pending affiliate application emails."
 msgstr "विषय की लाइन एंटर करें पेंडिंग एफिलिएट आवेदन ईमेल के लिए."
 
-#: includes/admin/settings/class-settings.php:833
+#: includes/admin/settings/class-settings.php:846
 #: includes/emails/actions.php:165
 msgid "Your Affiliate Application Is Being Reviewed"
 msgstr "आपके एफिलिएट आवेदन (एप्लीकेशन) देखि जा रही है."
 
-#: includes/admin/settings/class-settings.php:836
+#: includes/admin/settings/class-settings.php:849
 msgid "Application Pending Email Content"
 msgstr "आवेदन रूखी हुई ईमेल को कॉन्टेक्स्ट चाइये "
 
-#: includes/admin/settings/class-settings.php:837
+#: includes/admin/settings/class-settings.php:850
 msgid ""
 "Enter the email to send when an application is pending. HTML is accepted. "
 "Available template tags:"
@@ -2888,16 +3058,16 @@ msgstr ""
 "ईमेल एंटर करें उस टाइम के लिए जब आवेदन (एप्लीकेशन) रूखी हुई (पेंडिंग) हो. HTML एक्सेप्टेड है. "
 "अवलियाबले टेम्पलेट टैग्स है:"
 
-#: includes/admin/settings/class-settings.php:839
+#: includes/admin/settings/class-settings.php:852
 msgid "Hi {name}!"
 msgstr "नमस्ते {नाम}!"
 
-#: includes/admin/settings/class-settings.php:839
+#: includes/admin/settings/class-settings.php:852
 #: includes/emails/actions.php:170
 msgid "Thanks for your recent affiliate registration on {site_name}."
 msgstr "धन्यवाद आपकी हल की एफिलिएट रजिस्ट्रेशन के लिए {site_name} पे ."
 
-#: includes/admin/settings/class-settings.php:839
+#: includes/admin/settings/class-settings.php:852
 #: includes/emails/actions.php:171
 msgid ""
 "We&#8217;re currently reviewing your affiliate application and will be in "
@@ -2905,24 +3075,24 @@ msgid ""
 msgstr ""
 "हम&#8217; अभी आपके एफिलिएट आवेदन(एप्लीकेशन) को देख रहे है और कुछ ही देर मैं आपसे बात करेंगे!"
 
-#: includes/admin/settings/class-settings.php:842
+#: includes/admin/settings/class-settings.php:855
 msgid "Application Rejection Email Subject"
 msgstr "आवेदन अस्वीकार ईमेल का विषय"
 
-#: includes/admin/settings/class-settings.php:843
+#: includes/admin/settings/class-settings.php:856
 msgid "Enter the subject line for rejected affiliate application emails."
 msgstr "विषय के लाइन एंटर करें अस्वीकार एफिलिएट आवेदन(एप्लीकेशन) इमेल्स के लिए."
 
-#: includes/admin/settings/class-settings.php:845
+#: includes/admin/settings/class-settings.php:858
 #: includes/emails/actions.php:204
 msgid "Your Affiliate Application Has Been Rejected"
 msgstr "आपकी एफिलिएट आवेदन(एप्प्लकेशन) अस्वीकार की जाती है."
 
-#: includes/admin/settings/class-settings.php:848
+#: includes/admin/settings/class-settings.php:861
 msgid "Application Rejection Email Content"
 msgstr " ईमेल का कंटेंट जब आवेदन(एप्प्लकेशन) अस्वीकार के जाये"
 
-#: includes/admin/settings/class-settings.php:849
+#: includes/admin/settings/class-settings.php:862
 msgid ""
 "Enter the email to send when an application is rejected. HTML is accepted. "
 "Available template tags:"
@@ -2930,11 +3100,11 @@ msgstr ""
 "ईमेल एंटर करें जो बेझी जाएगी जब एक एप्लीकेशन अस्वीकार हो गा. HTML एक्सेप्टेड है. अवलियाबले "
 "टेम्पलेट टैग्स है:"
 
-#: includes/admin/settings/class-settings.php:851
+#: includes/admin/settings/class-settings.php:864
 msgid "Hi {name},"
 msgstr "नमस्ते {नाम},"
 
-#: includes/admin/settings/class-settings.php:851
+#: includes/admin/settings/class-settings.php:864
 #: includes/emails/actions.php:209
 msgid ""
 "We regret to inform you that your recent affiliate registration on "
@@ -2943,7 +3113,7 @@ msgstr ""
 "हमें दुःख है ये बताते हुआ की आपकी हल की एफिलिएट रजिस्ट्रेशन जो {site_name} पे थी वो "
 "रिजेक्ट हो गई."
 
-#: includes/admin/settings/class-settings.php:1021
+#: includes/admin/settings/class-settings.php:1034
 msgid ""
 "Your license key is globally defined via <code>AFFILIATEWP_LICENSE_KEY</"
 "code> set in <code>wp-config.php</code>.<br />It cannot be modified from "
@@ -2952,42 +3122,42 @@ msgstr ""
 "आपकी लाइसेंस कुंजी ग्लोबली डिफाइंड है वाया <code>AFFILIATEWP_LICENSE_KEY</code> जो "
 "की सेट है इन <code>wp-config.php</code>.<br />ये आप चेंज नहीं कर सकते इस स्क्रीन से."
 
-#: includes/admin/settings/class-settings.php:1023
+#: includes/admin/settings/class-settings.php:1036
 msgid "Deactivate your license key to make changes to this setting."
 msgstr "डीएक्टिवेट करदे अपनी लाइसेंस कुंजी को जिसे आप चंगेज़ करपाए इस सेटिंग्स में."
 
-#: includes/admin/settings/class-settings.php:1034
+#: includes/admin/settings/class-settings.php:1047
 msgid "Deactivate License"
 msgstr "डीएक्टिवेट करें लाइसेंस को."
 
-#: includes/admin/settings/class-settings.php:1035
+#: includes/admin/settings/class-settings.php:1048
 msgid "Your license is valid!"
 msgstr "आपका लाइसेंस वैलिड है!"
 
-#: includes/admin/settings/class-settings.php:1038
+#: includes/admin/settings/class-settings.php:1051
 msgid "Renew Your License"
 msgstr "रिन्यू करें अपनी लाइसेंस को"
 
-#: includes/admin/settings/class-settings.php:1039
+#: includes/admin/settings/class-settings.php:1052
 msgid ""
 "Your license has expired, renew today to continue getting updates and "
 "support!"
 msgstr "आपका लाइसेंस खत्म हो गया, रिन्यू करें आज ही जिसे आप अप्डेट्स एंड सपोर्ट हम से लेते रहे!"
 
-#: includes/admin/settings/class-settings.php:1041
+#: includes/admin/settings/class-settings.php:1054
 msgid "Activate License"
 msgstr "लाइसेंस एक्टिवटे करें"
 
-#: includes/admin/settings/class-settings.php:1140
+#: includes/admin/settings/class-settings.php:1153
 msgid ""
 "The callback function used for the <strong>%s</strong> setting is missing."
 msgstr "एक कालबैक फंक्शन जो यूज़ हुआ था <strong>%s</strong> सेटिंग्स के लिए वो मिसिंग है."
 
-#: includes/admin/settings/class-settings.php:1215
+#: includes/admin/settings/class-settings.php:1228
 msgid "Upload File"
 msgstr "फाइल अपलोड करें"
 
-#: includes/admin/settings/class-settings.php:1233
+#: includes/admin/settings/class-settings.php:1246
 msgid ""
 "Your license key is globally defined via <code>AFFILIATEWP_LICENSE_KEY</"
 "code> set in <code>wp-config.php</code>.<br />It cannot be modified from "
@@ -2999,7 +3169,7 @@ msgstr ""
 "एक्टिव लाइसेंस कुंजी चाइये अगर को एक्टिव अप्डेट्स चाइये हो या <a href=\"%s\" target="
 "\"_blank\">सपोर्ट चाइये तोह </a>."
 
-#: includes/admin/settings/class-settings.php:1253
+#: includes/admin/settings/class-settings.php:1266
 msgid ""
 "Debug mode is globally enabled via <code>AFFILIATE_WP_DEBUG</code> set in "
 "<code>wp-config.php</code>. This setting cannot be modified from this screen."
@@ -3019,18 +3189,53 @@ msgstr "इमेल्स "
 msgid "Misc"
 msgstr "कई तरह का"
 
-#: includes/admin/tools/class-batch-recount-affiliate-stats.php:156
-msgid "%s affiliate&#8217;s was successfully processed."
-msgid_plural "%s affiliates&#8217; were successfully processed."
-msgstr[0] "%s एफिलिएट&#8217;स प्रोसेस्ड हो गया सुफलता से."
-msgstr[1] "%s एफिलिएट&#8217; प्रोसेस्ड हो गये सुफलता से."
+#: includes/admin/tools/class-batch-recount-affiliate-stats.php:285
+msgid "No affiliates were found to be recounted for the current filters."
+msgstr ""
+
+#: includes/admin/tools/class-batch-recount-affiliate-stats.php:295
+#, fuzzy
+msgid "Earnings have been successfully recounted for %s."
+msgstr "विजिट सफलतापूर्वक हटा दिया गया है."
+
+#: includes/admin/tools/class-batch-recount-affiliate-stats.php:297
+msgid "Earnings have been successfully recounted for all matching affiliates."
+msgstr ""
+
+#: includes/admin/tools/class-batch-recount-affiliate-stats.php:303
+#, fuzzy
+msgid "Unpaid earnings have been successfully recounted for %s."
+msgstr "विजिट सफलतापूर्वक हटा दिया गया है."
+
+#: includes/admin/tools/class-batch-recount-affiliate-stats.php:305
+msgid ""
+"Unpaid earnings have been successfully recounted for all matching affiliates."
+msgstr ""
+
+#: includes/admin/tools/class-batch-recount-affiliate-stats.php:311
+#, fuzzy
+msgid "Referrals have been successfully recounted for %s."
+msgstr "रेफरल सफलतापूर्वक हटा दिया  गया है."
+
+#: includes/admin/tools/class-batch-recount-affiliate-stats.php:313
+msgid "Referrals have been successfully recounted for all matching affiliates."
+msgstr ""
+
+#: includes/admin/tools/class-batch-recount-affiliate-stats.php:319
+#, fuzzy
+msgid "Visits have been successfully recounted for %s."
+msgstr "विजिट सफलतापूर्वक हटा दिया गया है."
+
+#: includes/admin/tools/class-batch-recount-affiliate-stats.php:321
+msgid "Visits have been successfully recounted for all matching affiliates."
+msgstr ""
 
 #: includes/admin/tools/class-rest-consumers-table.php:42
 msgid "API Key"
 msgstr "API कुंजी "
 
 #: includes/admin/tools/class-rest-consumers-table.php:43
-#: includes/admin/tools/tools.php:85
+#: includes/admin/tools/tools.php:87
 msgid "API Keys"
 msgstr "API कुंजीस  "
 
@@ -3077,8 +3282,15 @@ msgstr "ईमेल "
 
 #: includes/admin/tools/export/class-batch-export-affiliates.php:98
 #: includes/admin/tools/export/class-export-affiliates.php:55
+#: includes/misc-functions.php:1097 tests/misc/test-misc-functions.php:366
 msgid "Rate Type"
 msgstr "दर प्रकार"
+
+#: includes/admin/tools/export/class-batch-export-affiliates.php:99
+#: includes/admin/tools/export/class-export-affiliates.php:56
+#: includes/misc-functions.php:1098 tests/misc/test-misc-functions.php:367
+msgid "Earnings"
+msgstr "कमाई"
 
 #: includes/admin/tools/export/class-batch-export-affiliates.php:105
 #: includes/admin/tools/export/class-export-affiliates.php:61
@@ -3106,8 +3318,10 @@ msgstr[0] "%s पेआउट लोग सफलता के सात एक�
 msgstr[1] "%s पेआउट लोगस सफलता के सात एक्सपोर्ट हो गये "
 
 #: includes/admin/tools/export/class-batch-export-referrals.php:151
+#: includes/admin/tools/export/class-batch-export-visits.php:148
 #: includes/admin/tools/export/class-export-referrals.php:71
-#: templates/dashboard-tab-stats.php:73
+#: includes/misc-functions.php:1141 templates/dashboard-tab-stats.php:73
+#: tests/misc/test-misc-functions.php:404
 msgid "Campaign"
 msgstr "अभियान"
 
@@ -3121,9 +3335,39 @@ msgid_plural "%s referrals were successfully exported."
 msgstr[0] "%s रेफरल सफलता के सात एक्सपोर्ट हो गया."
 msgstr[1] "%s रेफरलस सफलता के सात एक्सपोर्ट हो गये."
 
-#: includes/admin/tools/export/class-batch-export.php:197
-#: includes/admin/tools/export/class-export-settings.php:90
-#: includes/admin/tools/export/class-export.php:226
+#: includes/admin/tools/export/class-batch-export-visits.php:145
+#, fuzzy
+msgid "Visit ID"
+msgstr "विजिट्स"
+
+#: includes/admin/tools/export/class-batch-export-visits.php:147
+#: includes/admin/tools/tools.php:365
+#: includes/admin/visits/class-list-table.php:109
+#: includes/admin/visits/visits.php:64 templates/dashboard-tab-stats.php:76
+#: templates/dashboard-tab-visits.php:29
+msgid "Converted"
+msgstr "परिवर्तित"
+
+#: includes/admin/tools/export/class-batch-export-visits.php:150
+#, fuzzy
+msgid "Referrer"
+msgstr "शीर्ष  रेफरेर "
+
+#: includes/admin/tools/export/class-batch-export-visits.php:190
+#, fuzzy
+msgid "Yes (Ref: #%s)"
+msgstr "%1$s से %2$s"
+
+#: includes/admin/tools/export/class-batch-export-visits.php:256
+#, fuzzy
+msgid "%s visit was successfully exported."
+msgid_plural "%s visits were successfully exported."
+msgstr[0] "%s एफिलिएट सफलता के सात एक्सपोर्ट हो गया"
+msgstr[1] "%s एफिलिएट सफलता के सात एक्सपोर्ट हो गये"
+
+#: includes/admin/tools/export/class-batch-export.php:198
+#: includes/admin/tools/export/class-export-settings.php:91
+#: includes/admin/tools/export/class-export.php:227
 msgid "You do not have permission to export data."
 msgstr "आपके पास परमिशन नहीं है डाटा एक्सपोर्ट करने की."
 
@@ -3136,6 +3380,58 @@ msgid "A payout log for %s affiliate was successfully generated."
 msgid_plural "A payout log for %s affiliates was successfully generated."
 msgstr[0] "एक पेआउट लोग %s एफिलिएट का सफलता के सात जेनेरेट हो गया."
 msgstr[1] "एक पेआउट लोग %s एफिलिएटस का सफलता के सात जेनेरेट हो गये."
+
+#: includes/admin/tools/import/class-batch-import-affiliates.php:102
+#: includes/admin/tools/import/class-batch-import-referrals.php:94
+#, fuzzy
+msgid "You do not have permission to import data."
+msgstr "आपके पास परमिशन नहीं है डाटा एक्सपोर्ट करने की."
+
+#: includes/admin/tools/import/class-batch-import-affiliates.php:196
+#, fuzzy
+msgid "No new affiliates were imported."
+msgstr "कोई एफिलिएट नहीं मिला."
+
+#: includes/admin/tools/import/class-batch-import-affiliates.php:201
+#, fuzzy
+msgid "%s affiliate was successfully imported."
+msgid_plural "%s affiliates were successfully imported."
+msgstr[0] "%s एफिलिएट सफलता के सात एक्सपोर्ट हो गया"
+msgstr[1] "%s एफिलिएट सफलता के सात एक्सपोर्ट हो गये"
+
+#: includes/admin/tools/import/class-batch-import-affiliates.php:214
+msgid "%s other existing affiliate or invalid row was skipped."
+msgid_plural "%s other existing affiliates or invalid rows were skipped."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/admin/tools/import/class-batch-import-affiliates.php:224
+#, fuzzy
+msgid "Manage your affiliates."
+msgstr "मैनेज करें अफीलियाट्स को."
+
+#: includes/admin/tools/import/class-batch-import-referrals.php:222
+#, fuzzy
+msgid "No new referrals were imported."
+msgstr "कोई रेफेर्रल्स रिकॉर्ड नहीं हुए."
+
+#: includes/admin/tools/import/class-batch-import-referrals.php:227
+#, fuzzy
+msgid "%s referral was successfully imported."
+msgid_plural "%s referrals were successfully imported."
+msgstr[0] "%s रेफरल सफलता के सात एक्सपोर्ट हो गया."
+msgstr[1] "%s रेफरलस सफलता के सात एक्सपोर्ट हो गये."
+
+#: includes/admin/tools/import/class-batch-import-referrals.php:240
+msgid "%s other existing referral or invalid row was skipped."
+msgid_plural "%s other existing referrals or invalid rows were skipped."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/admin/tools/import/class-batch-import-referrals.php:250
+#, fuzzy
+msgid "Manage your referrals."
+msgstr "रेफेर्रल्स मैनेज करे"
 
 #: includes/admin/tools/import/import.php:24
 msgid "Please upload a valid .json file"
@@ -3157,35 +3453,35 @@ msgstr ""
 msgid "Step %d running"
 msgstr "स्टेप %d रनिंग."
 
-#: includes/admin/tools/tools.php:82
+#: includes/admin/tools/tools.php:84
 msgid "Export / Import"
 msgstr "एक्सपोर्ट  / इम्पोर्ट "
 
-#: includes/admin/tools/tools.php:88
+#: includes/admin/tools/tools.php:90
 msgid "Recount Stats"
 msgstr "रेकॉउंट स्टैट्‍स"
 
-#: includes/admin/tools/tools.php:89
+#: includes/admin/tools/tools.php:91
 msgid "Migration Assistant"
 msgstr "प्रवास(माइग्रेशन) सहायक"
 
-#: includes/admin/tools/tools.php:92
+#: includes/admin/tools/tools.php:94
 msgid "System Info"
 msgstr "सिस्टम की जानकारी"
 
-#: includes/admin/tools/tools.php:96
+#: includes/admin/tools/tools.php:98
 msgid "Debug Assistant"
 msgstr "डिबग का सहायक"
 
-#: includes/admin/tools/tools.php:144
+#: includes/admin/tools/tools.php:146
 msgid "Recount Affiliate Stats"
 msgstr "रेकॉउंट एफिलिएट स्टैट्‍स"
 
-#: includes/admin/tools/tools.php:146
+#: includes/admin/tools/tools.php:148
 msgid "Use this tool to recount affiliate statistics."
 msgstr "ये टूल यूज़ करें जिसे आप एफिलिएट स्टैट्‍स रेकॉउंट कर साके."
 
-#: includes/admin/tools/tools.php:157
+#: includes/admin/tools/tools.php:160
 msgid ""
 "Enter the name of the affiliate or begin typing to perform a search based on "
 "the affiliate&#8217;s name."
@@ -3193,11 +3489,11 @@ msgstr ""
 "एफिलिएट का नाम एंटर करें या लिखना शुरू करें जिसे आप्प सर्च कर सकें एफिलिएट&#8217;स के नाम "
 "के सात ."
 
-#: includes/admin/tools/tools.php:162
+#: includes/admin/tools/tools.php:164
 msgid "Recount"
 msgstr "रेकॉउंट "
 
-#: includes/admin/tools/tools.php:200
+#: includes/admin/tools/tools.php:202
 msgid ""
 "These tools assist in migrating affiliate and referral data from existing "
 "platforms."
@@ -3205,11 +3501,11 @@ msgstr ""
 "ये टूल्स सहायक है अफीलियाट्स को प्रवास(माइग्रेट) करने के लिए और रेफरल का डाटा मौजूदा मंच "
 "से प्राप्त करने के लिए."
 
-#: includes/admin/tools/tools.php:205
+#: includes/admin/tools/tools.php:207
 msgid "User Accounts"
 msgstr "यूजर एकाउंट्स "
 
-#: includes/admin/tools/tools.php:208
+#: includes/admin/tools/tools.php:210
 msgid ""
 "Use this tool to create affiliate accounts for each of your existing "
 "WordPress user accounts that belong to the selected roles below."
@@ -3217,7 +3513,7 @@ msgstr ""
 "ये टूल यूज़ करें एफिलिएट एकाउंट्स को बनाने के लिए हर एक मौजूद वर्डप्रेस यूजर एकाउंट्स के लिए "
 "जो अभी किसी सिलेक्टेड भूमिकाओं के सात ज़ुरा हुआ है."
 
-#: includes/admin/tools/tools.php:209
+#: includes/admin/tools/tools.php:211
 msgid ""
 "<strong>NOTE:</strong> Users that already have affiliate accounts will be "
 "skipped. Duplicate accounts will not be created."
@@ -3225,17 +3521,18 @@ msgstr ""
 "<strong>धयन दे:</strong> जिन उसेर्स के पास एफिलिएट अकाउंट है उन्हें छोर दिया जायेगा "
 "(स्किप कर दिया जायेगा). नकली एकाउंट्स नहीं बनेंगे."
 
-#: includes/admin/tools/tools.php:211
+#: includes/admin/tools/tools.php:213
 msgid "Select User Roles"
 msgstr "चूने हुई यूजर भूमिका"
 
-#: includes/admin/tools/tools.php:221
+#: includes/admin/tools/tools.php:223
 msgid "Create Affiliate Accounts for Users"
 msgstr "एफिलिएट एकाउंट्स क्रिएट करें उसेर्स के लिए."
 
-#: includes/admin/tools/tools.php:226
+#: includes/admin/tools/tools.php:228
+#, fuzzy
 msgid ""
-"<strong>NOTE:</strong> WordPress 4.4 or newer is required to use the User "
+"<strong>NOTE:</strong> WordPress 4.5 or newer is required to use the User "
 "Accounts migration tool. <a href=\"%s\" aria-label=\"Update WordPress now"
 "\">Update WordPress now</a>."
 msgstr ""
@@ -3243,15 +3540,16 @@ msgstr ""
 "माइग्रेशन टूल यूज़ कर सकें. <a href=\"%s\" aria-label=\"वर्डप्रेस अभी अपडेट करें\">वर्डप्रेस "
 "अभी अपडेट करें</a>."
 
-#: includes/admin/tools/tools.php:228
+#: includes/admin/tools/tools.php:230
+#, fuzzy
 msgid ""
-"<strong>NOTE:</strong> WordPress 4.4 or newer is required to use the User "
+"<strong>NOTE:</strong> WordPress 4.5 or newer is required to use the User "
 "Accounts migration tool."
 msgstr ""
 "<strong>धयन दे:</strong> वर्डप्रेस 4.4 या नए वर्शन चाइये जिसे आप्प यूजर एकाउंट्स "
 "माइग्रेशन टूल यूज़ कर सकें."
 
-#: includes/admin/tools/tools.php:237
+#: includes/admin/tools/tools.php:239
 msgid ""
 "Use this tool to migrate existing affiliate / referral data from Affiliates "
 "Pro to AffiliateWP."
@@ -3259,7 +3557,7 @@ msgstr ""
 "इस टूल को यूज़ करें जिसे आप्प परकास(माइग्रेट) कर पाए एफिलिएट / रेफरल डाटा को एफिलिएट "
 "प्रो से अफ्फिलिएटवप में."
 
-#: includes/admin/tools/tools.php:238
+#: includes/admin/tools/tools.php:240
 msgid ""
 "<strong>NOTE:</strong> This tool should only ever be used on a fresh "
 "install. If you have already collected affiliate or referral data, do not "
@@ -3268,11 +3566,11 @@ msgstr ""
 "<strong>धयन दे:</strong>ये टूल सरफ फ्रेश इनस्टॉल के सात यूज़ करें. अगर अपनी पहले ही "
 "इकट्ठा करा है रेफरल डाटा, तोह  इस टूल को यूज़ न करें."
 
-#: includes/admin/tools/tools.php:244
+#: includes/admin/tools/tools.php:246
 msgid "Migrate Data from Affiliates Pro"
 msgstr "माइग्रेट करा डाटा को एफिलिएट प्रो मैं से."
 
-#: includes/admin/tools/tools.php:253
+#: includes/admin/tools/tools.php:255
 msgid ""
 "Use this tool to migrate existing affiliate accounts from WP Affiliate to "
 "AffiliateWP."
@@ -3280,36 +3578,38 @@ msgstr ""
 "इस टूल को यूज़ करें जिसे आप्प माइग्रेट कर सकें मौजूदा एफिलिएट एकाउंट्स को WP एफिलिएट से "
 "अफ्फिलिएटवप मैं."
 
-#: includes/admin/tools/tools.php:256
+#: includes/admin/tools/tools.php:258
 msgid "Migrate Data from WP Affiliate"
 msgstr "माइग्रेट करें डाटा वप एफिलिएट मैं से."
 
-#: includes/admin/tools/tools.php:280
+#: includes/admin/tools/tools.php:282
 msgid "Export Affiliates"
 msgstr " एक्सपोर्ट करें अफीलियाट्स "
 
-#: includes/admin/tools/tools.php:282
+#: includes/admin/tools/tools.php:284
 msgid "Export affiliates to a CSV file."
 msgstr "एक्सपोर्ट करें अफीलियाट्स को CSV फाइल्स मैं."
 
-#: includes/admin/tools/tools.php:286 includes/admin/tools/tools.php:311
+#: includes/admin/tools/tools.php:288 includes/admin/tools/tools.php:313
 msgid "All Statuses"
 msgstr "साडी स्थितियां "
 
-#: includes/admin/tools/tools.php:293 includes/admin/tools/tools.php:320
-#: includes/admin/tools/tools.php:344 includes/admin/tools/tools.php:358
+#: includes/admin/tools/tools.php:295 includes/admin/tools/tools.php:322
+#: includes/admin/tools/tools.php:346 includes/admin/tools/tools.php:371
+#: includes/admin/tools/tools.php:385
 msgid "Export"
 msgstr "एक्सपोर्ट "
 
-#: includes/admin/tools/tools.php:300
+#: includes/admin/tools/tools.php:302
 msgid "Export Referrals"
 msgstr "एक्सपोर्ट रेफेर्रल्स"
 
-#: includes/admin/tools/tools.php:302
+#: includes/admin/tools/tools.php:304
 msgid "Export referrals to a CSV file."
 msgstr "एक्सपोर्ट करें रेफेर्रल्स को एक CSV फाइल्स मैं."
 
-#: includes/admin/tools/tools.php:317 includes/admin/tools/tools.php:341
+#: includes/admin/tools/tools.php:319 includes/admin/tools/tools.php:343
+#: includes/admin/tools/tools.php:368
 msgid ""
 "To search for an affiliate, enter the affiliate&#8217;s login name, first "
 "name, or last name. Leave blank to export referrals for all affiliates."
@@ -3317,19 +3617,33 @@ msgstr ""
 "एफिलिएट को सर्च करने के लिए, एंटर करें एफिलिएट&#8217;स लॉगिन नाम, फर्स्ट नाम, और "
 "लास्ट नाम. खली छोड़ दे जिसे रेफेर्रल्स एक्सपोर्ट हो जाये सरे अफईटस के लिए."
 
-#: includes/admin/tools/tools.php:327
+#: includes/admin/tools/tools.php:329
 msgid "Export Payouts"
 msgstr "एक्सपोर्ट करें पयूटस"
 
-#: includes/admin/tools/tools.php:329
+#: includes/admin/tools/tools.php:331
 msgid "Export payouts to a CSV file."
 msgstr "एक्सपोर्ट करें पयूटस एक CSV फाइल्स मैं."
 
-#: includes/admin/tools/tools.php:351
+#: includes/admin/tools/tools.php:353
+#, fuzzy
+msgid "Export Visits"
+msgstr " एक्सपोर्ट करें अफीलियाट्स "
+
+#: includes/admin/tools/tools.php:355
+#, fuzzy
+msgid "Export visits to a CSV file."
+msgstr "एक्सपोर्ट करें अफीलियाट्स को CSV फाइल्स मैं."
+
+#: includes/admin/tools/tools.php:366 includes/admin/visits/visits.php:65
+msgid "Unconverted"
+msgstr "स्थिर"
+
+#: includes/admin/tools/tools.php:378
 msgid "Export Settings"
 msgstr "एक्सपोर्ट करें सेटिंग्स "
 
-#: includes/admin/tools/tools.php:353
+#: includes/admin/tools/tools.php:380
 msgid ""
 "Export the AffiliateWP settings for this site as a .json file. This allows "
 "you to easily import the configuration into another site."
@@ -3337,11 +3651,11 @@ msgstr ""
 "एक्सपोर्ट करें अफ्फिलिएटवप की सेटिंग्स इस साइट के लिए एक .json फाइल मैं. ये आपको अनुमति "
 "देगा आराम से इम्पोर्ट करने की एक कॉन्फ़िगरेशन को दूसरी साइट मैं."
 
-#: includes/admin/tools/tools.php:365
+#: includes/admin/tools/tools.php:392
 msgid "Import Settings"
 msgstr "सेटिंग्स इम्पोर्ट करें."
 
-#: includes/admin/tools/tools.php:367
+#: includes/admin/tools/tools.php:394
 msgid ""
 "Import the AffiliateWP settings from a .json file. This file can be obtained "
 "by exporting the settings on another site using the form above."
@@ -3349,11 +3663,75 @@ msgstr ""
 "इम्पोर्ट करें एफिलिएटवप की सेटिंग्स .json फाइल मैं से. फाइल्स ले जा सकते है एक्सपोर्ट करते "
 "वक्त सेटिंग्स को दूसरी साइट पेय फॉर्म मैं भरके जो निचे है."
 
-#: includes/admin/tools/tools.php:375
+#: includes/admin/tools/tools.php:402
 msgid "Import"
 msgstr "इम्पोर्ट "
 
-#: includes/admin/tools/tools.php:399
+#: includes/admin/tools/tools.php:409
+#, fuzzy
+msgid "Import Affiliates"
+msgstr " एक्सपोर्ट करें अफीलियाट्स "
+
+#: includes/admin/tools/tools.php:411
+msgid "Import a CSV of affiliate records."
+msgstr ""
+
+#: includes/admin/tools/tools.php:419 includes/admin/tools/tools.php:466
+#, fuzzy
+msgid "Import CSV"
+msgstr "इम्पोर्ट "
+
+#: includes/admin/tools/tools.php:428
+msgid ""
+"Each column loaded from the CSV may be mapped to an affiliate field. Select "
+"the column that should be mapped to each field below. Any columns not needed "
+"can be ignored. See <a href=\"%s\" target=\"_blank\">this guide</a> for "
+"assistance with importing affiliate records."
+msgstr ""
+
+#: includes/admin/tools/tools.php:437
+#, fuzzy
+msgid "Affiliate Field"
+msgstr "एफिलिएट #%d"
+
+#: includes/admin/tools/tools.php:438 includes/admin/tools/tools.php:485
+msgid "CSV Column"
+msgstr ""
+
+#: includes/admin/tools/tools.php:439 includes/admin/tools/tools.php:486
+#, fuzzy
+msgid "Data Preview"
+msgstr "प्रीव्यू इमेज का."
+
+#: includes/admin/tools/tools.php:447 includes/admin/tools/tools.php:494
+#, fuzzy
+msgid "Process Import"
+msgstr "इम्पोर्ट "
+
+#: includes/admin/tools/tools.php:456
+#, fuzzy
+msgid "Import Referrals"
+msgstr "एक्सपोर्ट रेफेर्रल्स"
+
+#: includes/admin/tools/tools.php:458
+msgid "Import a CSV of referral records."
+msgstr ""
+
+#: includes/admin/tools/tools.php:475
+msgid ""
+"Each column loaded from the CSV may be mapped to a referral field. Select "
+"the column that should be mapped to each field below. Any columns not needed "
+"can be ignored. Any affiliates that don&#8217;t exist will be created. See "
+"<a href=\"%s\" target=\"_blank\">this guide</a> for assistance with "
+"importing referral records."
+msgstr ""
+
+#: includes/admin/tools/tools.php:484
+#, fuzzy
+msgid "Referral Field"
+msgstr "रेफेर्रल्स पेड"
+
+#: includes/admin/tools/tools.php:520
 msgid ""
 "To copy the system info, click below then press Ctrl + C (PC) or Cmd + C "
 "(Mac)."
@@ -3361,32 +3739,38 @@ msgstr ""
 "सिस्टम की जानकारी को नकल करने के लिए, क्लिक करें निचे फिर प्रेस करें Ctrl + C (PC) या "
 "Cmd + C (Mac)."
 
-#: includes/admin/tools/tools.php:454
+#: includes/admin/tools/tools.php:573
 msgid "Debug Log"
 msgstr "डिबग लोग"
 
-#: includes/admin/tools/tools.php:457
+#: includes/admin/tools/tools.php:576
 #, fuzzy
-msgid "Use this tool to help debug various operations in AffiliateWP."
+msgid "Use this tool to help debug referral tracking."
 msgstr "ये टूल यूज़ करें जिसे आपको मदत मिलेगी डिबग करने मैं रेफरल ट्रैकिंग को."
 
-#: includes/admin/tools/tools.php:459
-msgid "Clear Debug Log"
+#: includes/admin/tools/tools.php:581
+#, fuzzy
+msgid "Download Debug Log File"
 msgstr "साफ़ डिबग लोग"
 
-#: includes/admin/tools/tools.php:531
+#: includes/admin/tools/tools.php:582
+#, fuzzy
+msgid "Clear Log"
+msgstr "साफ़ डिबग लोग"
+
+#: includes/admin/tools/tools.php:675
 msgid "Invalid batch ID."
 msgstr "इनवैलिड बैच ID."
 
-#: includes/admin/tools/tools.php:541
+#: includes/admin/tools/tools.php:685
 msgid "Invalid batch export class."
 msgstr "इनवैलिड बैच एक्सपोर्ट क्लास ."
 
-#: includes/admin/tools/upgrades/class-batch-upgrade-recount-affiliate-stats.php:38
+#: includes/admin/tools/upgrades/class-batch-upgrade-recount-affiliate-stats.php:50
 msgid "Your database has been successfully upgraded. %s"
 msgstr "आपका डेटाबेस सफलता के सात उपग्रडइ हो गया है. %s"
 
-#: includes/admin/tools/upgrades/class-batch-upgrade-recount-affiliate-stats.php:39
+#: includes/admin/tools/upgrades/class-batch-upgrade-recount-affiliate-stats.php:51
 msgid "Dismiss Notice"
 msgstr "भरकास्ट सूचना"
 
@@ -3406,11 +3790,11 @@ msgstr "एफिलिएट के एक्शन्स"
 msgid "Register"
 msgstr "रजिस्टर "
 
-#: includes/admin/user-profile.php:80 includes/class-register.php:506
+#: includes/admin/user-profile.php:80 includes/class-register.php:502
 msgid "Disable Affiliate Email"
 msgstr "बंद करें एफिलिएट ईमेल को."
 
-#: includes/admin/user-profile.php:82 includes/class-register.php:508
+#: includes/admin/user-profile.php:82 includes/class-register.php:504
 msgid "Disable the application accepted email sent to the affiliate."
 msgstr "डिसएबल करें आवेदन(एप्लीकेशन) स्वीकार करें ईमेल को जो सेंत होती है एफिलिएट को."
 
@@ -3430,17 +3814,15 @@ msgid_plural "%s affiliates were successfully converted."
 msgstr[0] "%s एफिलिएट सफलता के सात परिवर्तित हो गया."
 msgstr[1] "%s एफिलिएटस सफलता के सात परिवर्तित हो गये."
 
-#: includes/admin/utilities/class-batch-process-registry.php:151
+#: includes/admin/utilities/class-batch-process-registry.php:171
 msgid "A batch process class must be specified."
 msgstr "एक बैच प्रोसेस क्लास निर्दिष्टित होने चाइये."
 
-#: includes/admin/utilities/class-batch-process-registry.php:155
-#, fuzzy
+#: includes/admin/utilities/class-batch-process-registry.php:175
 msgid "No batch class handler file has been supplied."
 msgstr "एक इनवैलिड क्लास हैंडलर फाइल सुप्प्लिएड हो गई है."
 
-#: includes/admin/utilities/class-batch-process-registry.php:160
-#, fuzzy
+#: includes/admin/utilities/class-batch-process-registry.php:180
 msgid "An invalid batch class handler file has been supplied."
 msgstr "एक इनवैलिड क्लास हैंडलर फाइल सुप्प्लिएड हो गई है."
 
@@ -3455,7 +3837,7 @@ msgid "Landing Page"
 msgstr "लैंडिंग पृष्ठ(पेज)"
 
 #: includes/admin/visits/class-list-table.php:104
-#: templates/dashboard-tab-visits.php:30
+#: templates/dashboard-tab-visits.php:28
 msgid "Referring URL"
 msgstr "रेफरिंग URL"
 
@@ -3463,14 +3845,8 @@ msgstr "रेफरिंग URL"
 msgid "IP"
 msgstr "IP"
 
-#: includes/admin/visits/class-list-table.php:109
-#: includes/admin/visits/visits.php:64 templates/dashboard-tab-stats.php:76
-#: templates/dashboard-tab-visits.php:31
-msgid "Converted"
-msgstr "परिवर्तित"
-
 #: includes/admin/visits/class-list-table.php:258
-#: templates/dashboard-tab-visits.php:46
+#: templates/dashboard-tab-visits.php:44
 msgid "Direct traffic"
 msgstr "प्रत्यक्ष यातायात"
 
@@ -3513,7 +3889,6 @@ msgstr ""
 "थी तोह."
 
 #: includes/admin/visits/contextual-help.php:44
-#, fuzzy
 msgid ""
 "<strong>Context</strong>: this is the context of how the visit was "
 "generated, if set."
@@ -3568,7 +3943,6 @@ msgstr ""
 "&#8221;"
 
 #: includes/admin/visits/contextual-help.php:59
-#, fuzzy
 msgid "You can enter a visit context prefixed by &#8220;context:&#8221;"
 msgstr "आप्प एंटर कर सकते है रेफरल कॉन्टेक्स्ट प्रीफ़िक्सेड के दुआरा &#8220;कॉन्टेक्स्ट :&#8221;"
 
@@ -3580,15 +3954,11 @@ msgstr "संख्या प्रति पेज की:"
 msgid "Filter by status"
 msgstr "फ़िल्टर करें स्थिति के अनुसार"
 
-#: includes/admin/visits/visits.php:65
-msgid "Unconverted"
-msgstr "स्थिर"
-
-#: includes/affiliate-functions.php:459
+#: includes/affiliate-functions.php:463
 msgid "Percentage (%)"
 msgstr "प्रतिशत (%)"
 
-#: includes/affiliate-functions.php:460
+#: includes/affiliate-functions.php:464
 msgid "Flat %s"
 msgstr "फ्लैट  %s"
 
@@ -3600,27 +3970,27 @@ msgstr "अमान्य यूजरनाम "
 msgid "No such user"
 msgstr "कोई ऐसा यूजर नहीं है"
 
-#: includes/class-login.php:73 includes/class-register.php:226
+#: includes/class-login.php:83 includes/class-register.php:226
 msgid "Please enter a password"
 msgstr "कृपया पासवर्ड एंटर करें"
 
-#: includes/class-login.php:80
+#: includes/class-login.php:90
 msgid "Incorrect username or password"
 msgstr "पासवर्ड या यूजरनाम गलत है"
 
-#: includes/class-referrals-graph.php:141
+#: includes/class-referrals-graph.php:142
 msgid "Unpaid Referral Earnings"
 msgstr "अनपेड रेफरल कमाई"
 
-#: includes/class-referrals-graph.php:142
+#: includes/class-referrals-graph.php:143
 msgid "Pending Referral Earnings"
 msgstr "पेंडिंग रेफरल कमाई"
 
-#: includes/class-referrals-graph.php:143
+#: includes/class-referrals-graph.php:144
 msgid "Rejected Referral Earnings"
 msgstr "अस्वीकार करि हुई रेफरल की कमाई"
 
-#: includes/class-referrals-graph.php:144
+#: includes/class-referrals-graph.php:145
 msgid "Paid Referral Earnings"
 msgstr "पेड रेफरल कमाई"
 
@@ -3692,11 +4062,11 @@ msgstr "कृपया अपनी पेमेंट ईमेल एंट�
 msgid "Please tell us how you will promote us"
 msgstr "कृपया बताया हमें की आप हमें कैसे प्रोमोट करेंगे."
 
-#: includes/class-register.php:499
+#: includes/class-register.php:495
 msgid "Add as Affiliate"
 msgstr "एफिलिएट की तरह ऐड करें"
 
-#: includes/class-register.php:501
+#: includes/class-register.php:497
 msgid "Add the user as an affiliate."
 msgstr "यूजर को एफिलिएट की तरह ऐड करें."
 
@@ -3870,11 +4240,11 @@ msgstr "कुल रेफेर्रल्स: %s"
 msgid "Total Visits: %s"
 msgstr "कुल विजिट्स: %s"
 
-#: includes/cli/class-command.php:220
+#: includes/cli/class-command.php:222
 msgid "Are you sure you want to clear the debug log?"
 msgstr "क्या अप्प पक्का है की आपको डिबग लाग को साफ करना है?"
 
-#: includes/cli/class-command.php:224
+#: includes/cli/class-command.php:227
 msgid "The debug log has been cleared."
 msgstr "डिबग लाग साफ हो चूका है."
 
@@ -4042,7 +4412,7 @@ msgstr "रेफरल सफलतापूर्वक अपडेट हो
 msgid "The referral could not be updated"
 msgstr "रेफरल अपडेट नहीं हो पाया."
 
-#: includes/cli/class-referral-sub-commands.php:254 includes/scripts.php:109
+#: includes/cli/class-referral-sub-commands.php:254 includes/scripts.php:134
 msgid "Are you sure you want to delete this referral?"
 msgstr "क्या अप्प पका है की आपको ये रेफरल को हटाना है?"
 
@@ -4240,10 +4610,6 @@ msgstr "URL जहा कस्टाइमर आया वह पर एक �
 msgid "The name of the campaign associated with the referral (if any)."
 msgstr "अभियान के नाम जो रेफरल से ज़ुरा है (अगर कोई हो तोह)."
 
-#: includes/emails/functions.php:121
-msgid "No reason provided"
-msgstr "कोई कारन नहीं उपलभ्द किया गया"
-
 #: includes/emails/functions.php:221
 msgid "(no campaign)"
 msgstr "(कोई अभियान नहीं)"
@@ -4261,26 +4627,26 @@ msgstr ""
 "यह रेफेरल की मूल्य के कूल निकलने के लिए है. जैसे, अगर रेफरल रकम है 10% और कूल है $100 , "
 "रेफरल बनेगा $10 मैं."
 
-#: includes/integrations/class-caldera-forms.php:247
-#: includes/integrations/class-give.php:247
-#: includes/integrations/class-ninja-forms.php:196
+#: includes/integrations/class-caldera-forms.php:245
+#: includes/integrations/class-give.php:243
+#: includes/integrations/class-ninja-forms.php:194
 msgid "Allow Referrals"
 msgstr "अनुमति रेफरलस के लिए"
 
-#: includes/integrations/class-caldera-forms.php:252
-#: includes/integrations/class-gravityforms.php:286
+#: includes/integrations/class-caldera-forms.php:250
+#: includes/integrations/class-gravityforms.php:281
 msgid "Enable affiliate referral creation for this form"
 msgstr "चालू करे एफिलिएट रेफरल को इस फॉर्म के लिए"
 
-#: includes/integrations/class-contactform7.php:95
+#: includes/integrations/class-contactform7.php:110
 msgid "Contact Form 7"
 msgstr "कांटेक्ट फॉर्म 7"
 
-#: includes/integrations/class-contactform7.php:114
+#: includes/integrations/class-contactform7.php:129
 msgid "Enable referrals on all Contact Form 7 forms"
 msgstr "चालू करे रेफेर्रल्स सरे कांटेक्ट फॉर्म 7 फॉर्म्स के लिए"
 
-#: includes/integrations/class-contactform7.php:115
+#: includes/integrations/class-contactform7.php:130
 msgid ""
 "Check this box to enable referrals on all Contact Form 7 forms.<ul><li>%3$s "
 "Once enabled, referrals will be generated for all valid Contact Form 7 forms."
@@ -4291,41 +4657,41 @@ msgstr ""
 "%3$s एक बार चालू हो गया, तोह रेफरल बनेंगे सारे सही कांटेक्ट फॉर्म 7 फॉर्म से.</li><li>"
 "%2$s <a href=\"%1$s\" target=\"_blank\">इस इंटीग्रेशन के डॉक्युमेन्टेन</a></li></ul>"
 
-#: includes/integrations/class-contactform7.php:130
+#: includes/integrations/class-contactform7.php:145
 msgid "Enable referrals for specific Contact Form 7 forms"
 msgstr "चालू करे रेफेर्रल्स सारे कांटेक्ट फॉर्म 7 फॉर्म्स के लिए"
 
-#: includes/integrations/class-contactform7.php:187
+#: includes/integrations/class-contactform7.php:198
 msgid "Form ID: "
 msgstr "ID से: "
 
-#: includes/integrations/class-edd.php:382
-#: includes/integrations/class-give.php:169
-#: includes/integrations/class-gravityforms.php:144
+#: includes/integrations/class-edd.php:358
+#: includes/integrations/class-give.php:165
+#: includes/integrations/class-gravityforms.php:139
 #: includes/integrations/class-jigoshop.php:94
-#: includes/integrations/class-pmp.php:158
-#: includes/integrations/class-shopp.php:80
+#: includes/integrations/class-pmp.php:156
+#: includes/integrations/class-shopp.php:78
 #: includes/integrations/class-sproutinvoices.php:53
-#: includes/integrations/class-woocommerce.php:196
-#: includes/integrations/class-zippycourses.php:263
+#: includes/integrations/class-woocommerce.php:199
+#: includes/integrations/class-zippycourses.php:261
 msgid "Referral #%d for %s recorded for %s"
 msgstr "रेफरल #%d से %s जिसके लिए रिकॉर्ड किया है %s"
 
-#: includes/integrations/class-edd.php:503
-#: includes/integrations/class-pmp.php:257
+#: includes/integrations/class-edd.php:479
+#: includes/integrations/class-pmp.php:255
 #: includes/integrations/class-pms.php:105
-#: includes/integrations/class-rcp.php:236
-#: includes/integrations/class-woocommerce.php:356
+#: includes/integrations/class-rcp.php:234
+#: includes/integrations/class-woocommerce.php:376
 msgid "Affiliate Discount?"
 msgstr "एफिलिएट का डिस्काउंट?"
 
-#: includes/integrations/class-edd.php:509
+#: includes/integrations/class-edd.php:485
 #: includes/integrations/class-jigoshop.php:173
-#: includes/integrations/class-memberpress.php:285
-#: includes/integrations/class-pmp.php:263
+#: includes/integrations/class-memberpress.php:283
+#: includes/integrations/class-pmp.php:261
 #: includes/integrations/class-pms.php:107
-#: includes/integrations/class-rcp.php:242
-#: includes/integrations/class-woocommerce.php:361
+#: includes/integrations/class-rcp.php:240
+#: includes/integrations/class-woocommerce.php:381
 msgid ""
 "If you would like to connect this discount to an affiliate, enter the name "
 "of the affiliate it belongs to."
@@ -4333,11 +4699,11 @@ msgstr ""
 "अगर आपको यह डिस्काउंट एक एफिलिएट के सात जोड़ना है, एंटर करे एफिलिएट के नाम जिसके सात "
 "यह है."
 
-#: includes/integrations/class-edd.php:593
+#: includes/integrations/class-edd.php:569
 msgid "Adjust EDD Commissions"
 msgstr "एडजस्ट करे EDD कमीशन्स को"
 
-#: includes/integrations/class-edd.php:594
+#: includes/integrations/class-edd.php:570
 msgid ""
 "Should AffiliateWP adjust the commission amounts recorded for purchases that "
 "include affiliate referrals? This will subtract the referral amount from the "
@@ -4347,11 +4713,11 @@ msgstr ""
 "इंकलूदे करते है एफिलिएट रेफेर्रल्स? ये काम कर देगा रेफरल रकम को बेस रकम मैं से जिसे कूल कॉमिशन "
 "को कैलकुलेट कर पाय."
 
-#: includes/integrations/class-edd.php:614
+#: includes/integrations/class-edd.php:590
 msgid "Disable Renewal Referrals"
 msgstr "रिन्यूअल रेफरल डिसएबल करे"
 
-#: includes/integrations/class-edd.php:615
+#: includes/integrations/class-edd.php:591
 msgid ""
 "Should AffiliateWP prevent referral commissions from being recorded on "
 "renewal purchases with EDD Software Licensing?"
@@ -4359,11 +4725,11 @@ msgstr ""
 "क्या अफ्फिलिएटवप रोखे उन रेफरल कॉमिशन को जो रिकॉर्ड हो रहे है हर बार की खरीदारी मैं "
 "EDD सॉफ्टवेर लाइसेंसिंग के सात?"
 
-#: includes/integrations/class-edd.php:620
+#: includes/integrations/class-edd.php:596
 msgid "Disable Referrals on Upgrades"
 msgstr "डिसएबल करे रेफेर्रल्स को उपग्रेडेस पर."
 
-#: includes/integrations/class-edd.php:621
+#: includes/integrations/class-edd.php:597
 msgid ""
 "Should AffiliateWP prevent referral commissions from being recorded on "
 "license upgrade purchases with EDD Software Licensing?"
@@ -4371,18 +4737,18 @@ msgstr ""
 "क्या अफ्फिलिएटवप रोखे उन रेफरल कॉमिशन को जो रिकॉर्ड हो रहे है लाइसेंस खरीदारी मैं EDD "
 "सॉफ्टवेर लाइसेंसिंग के सात?"
 
-#: includes/integrations/class-edd.php:642
+#: includes/integrations/class-edd.php:618
 #: includes/integrations/class-zippycourses.php:70
 msgid "Affiliate Rates:"
 msgstr " एफिलिएट मूल्य:"
 
-#: includes/integrations/class-edd.php:655
+#: includes/integrations/class-edd.php:631
 #: includes/integrations/class-zippycourses.php:83
 msgid "Disable referrals on this %s"
 msgstr "डिसएबल करे रेफेर्रल्स को इस पे %s"
 
-#: includes/integrations/class-edd.php:659
-#: includes/integrations/class-memberpress.php:190
+#: includes/integrations/class-edd.php:635
+#: includes/integrations/class-memberpress.php:188
 #: includes/integrations/class-zippycourses.php:87
 msgid ""
 "These settings will be used to calculate affiliate earnings per-sale. Leave "
@@ -4391,11 +4757,11 @@ msgstr ""
 "ये सेटिंग्स यूज़ होंगे हिसाब लगाने के लिए एफिलिएट कमाई को प्रति सेल पे. चोर दे खली अगर यूज़ "
 "करना है साइट के रेफौल्ट रेफरल रेट."
 
-#: includes/integrations/class-exchange.php:305
+#: includes/integrations/class-exchange.php:299
 msgid "Affiliate coupon?"
 msgstr "एफिलिएट का कपों?"
 
-#: includes/integrations/class-exchange.php:311
+#: includes/integrations/class-exchange.php:305
 msgid ""
 "If you would like to connect this coupon to an affiliate, enter the name of "
 "the affiliate it belongs to."
@@ -4427,23 +4793,23 @@ msgstr "अफ्फिलिएटवप: रेफरल #%d से %s रि�
 msgid "AffiliateWP: Referral #%d for %s for %s rejected"
 msgstr "अफ्फिलिएटवप: रेफरल #%d से %s से %s अस्वीकार"
 
-#: includes/integrations/class-give.php:127
+#: includes/integrations/class-give.php:123
 msgid "Custom Amount"
 msgstr "प्रचलन कि रकम "
 
-#: includes/integrations/class-give.php:248
+#: includes/integrations/class-give.php:244
 msgid "Enable affiliate referral creation for this donation form"
 msgstr "चालू करे एफिलिएट रेफरल क्रिएशन इस डोनेशन फॉर्म के लिए"
 
-#: includes/integrations/class-give.php:253
-#: includes/integrations/class-memberpress.php:157
-#: includes/integrations/class-rcp.php:345
-#: includes/integrations/class-rcp.php:376
-#: includes/integrations/class-woocommerce.php:498
+#: includes/integrations/class-give.php:249
+#: includes/integrations/class-memberpress.php:155
+#: includes/integrations/class-rcp.php:343
+#: includes/integrations/class-rcp.php:374
+#: includes/integrations/class-woocommerce.php:524
 msgid "Affiliate Rate"
 msgstr "एफिलिएट मूल्य "
 
-#: includes/integrations/class-give.php:254
+#: includes/integrations/class-give.php:250
 msgid ""
 "This setting will be used to calculate affiliate earnings per-donation. "
 "Leave blank to use default affiliate rates."
@@ -4451,21 +4817,21 @@ msgstr ""
 "ये सेटिंग्स यूज़ होंगे हिसाब लगाने के लिए एफिलिएट की कमाई के प्रति डोनेशन पर. खली चोर दे "
 "अगर आपको डिफ़ॉल्ट एफिलिएट रेट्स को यूज़ करने है तोह."
 
-#: includes/integrations/class-gravityforms.php:166
+#: includes/integrations/class-gravityforms.php:161
 #: includes/integrations/class-sproutinvoices.php:76
 msgid "Referral #%d for %s for %s rejected"
 msgstr "रेफरल #%d से %s से %s अस्वीकार"
 
-#: includes/integrations/class-gravityforms.php:290
+#: includes/integrations/class-gravityforms.php:285
 #: includes/integrations/class-wpforms.php:37
 msgid "Allow referrals"
 msgstr "रेफेर्रल्स की अनुमति"
 
-#: includes/integrations/class-gravityforms.php:321
+#: includes/integrations/class-gravityforms.php:316
 msgid "Affiliate Coupon"
 msgstr "एफिलिएट का कूपन"
 
-#: includes/integrations/class-gravityforms.php:324
+#: includes/integrations/class-gravityforms.php:319
 msgid ""
 "To connect this coupon to an affiliate, enter the username of the affiliate. "
 "Anytime this coupon is redeemed, the connected affiliate will receive a "
@@ -4482,68 +4848,68 @@ msgstr "एफिलिएट का डाटा"
 msgid "Referral #%d completed"
 msgstr "रेफरल  #%d पूरा हो गया"
 
-#: includes/integrations/class-lifterlms.php:152
+#: includes/integrations/class-lifterlms.php:150
 msgid "Referral not created because WooCommerce was used for payment."
 msgstr "रेफरल नहीं बन पाया कुकी वुकोम्मेर्स यूज़ हुआ था पेमेंट के लिए."
 
-#: includes/integrations/class-lifterlms.php:183
-#: includes/integrations/class-lifterlms.php:318
+#: includes/integrations/class-lifterlms.php:179
+#: includes/integrations/class-lifterlms.php:305
 msgid "Referral not created because affiliate's own account was used."
 msgstr "रेफरल नहीं बन पाया कुकी एफिलिएट के खुद के अकाउंट यूज़ किया गया था."
 
-#: includes/integrations/class-lifterlms.php:194
-#: includes/integrations/class-lifterlms.php:330
+#: includes/integrations/class-lifterlms.php:189
+#: includes/integrations/class-lifterlms.php:315
 msgid "Referral not created due to 0.00 amount."
 msgstr "रेफरल नहीं बना कुकी रकम 0.00 है और चुकानी है."
 
-#: includes/integrations/class-lifterlms.php:230
+#: includes/integrations/class-lifterlms.php:223
 msgid "LifterLMS Referral #%d updated successfully."
 msgstr "लिफ्टरलमस रेफरल #%d सफलतापूर्वक बन गया है."
 
-#: includes/integrations/class-lifterlms.php:257
+#: includes/integrations/class-lifterlms.php:247
 msgid "Referral #%d created successfully."
 msgstr "रेफरल #%d सफलतापूर्वक बन गया है."
 
-#: includes/integrations/class-lifterlms.php:263
+#: includes/integrations/class-lifterlms.php:251
 msgid "Referral failed to be created."
 msgstr "रेफरल नहीं बन पाया."
 
-#: includes/integrations/class-lifterlms.php:354
+#: includes/integrations/class-lifterlms.php:338
 msgid "Referral #%d updated successfully."
 msgstr "रेफरल #%d सफलतापूर्वक अपडेट हो गया है."
 
-#: includes/integrations/class-lifterlms.php:378
+#: includes/integrations/class-lifterlms.php:360
 msgid "Pending referral #%d created successfully."
 msgstr "रुखा हुआ रेफरल #%d अभ सफलतापूर्वक बन गया है."
 
-#: includes/integrations/class-lifterlms.php:389
+#: includes/integrations/class-lifterlms.php:368
 msgid "LifterLMS Referral failed to be created."
 msgstr "लिफ्टरलमस रेफरल बन नहीं पाया."
 
-#: includes/integrations/class-lifterlms.php:436
+#: includes/integrations/class-lifterlms.php:413
 msgid "Search for an affiliate by username or email."
 msgstr "धुन्दो एफिलिएट को उसके यूजरनाम या ईमेल से."
 
-#: includes/integrations/class-lifterlms.php:444
+#: includes/integrations/class-lifterlms.php:421
 msgid "Affiliate Discount"
 msgstr "एफिलिएट के डिस्काउंट."
 
-#: includes/integrations/class-lifterlms.php:445
+#: includes/integrations/class-lifterlms.php:422
 msgid "Connect this coupon with an affiliate."
 msgstr "जोर इस कूपन को एक एफिलिएट से."
 
-#: includes/integrations/class-lifterlms.php:664
-#: includes/integrations/class-lifterlms.php:690
+#: includes/integrations/class-lifterlms.php:641
+#: includes/integrations/class-lifterlms.php:667
 msgid "Referral Details"
 msgstr "जानकारी रेफरल की"
 
-#: includes/integrations/class-lifterlms.php:744
-#: includes/integrations/class-pmp.php:362
-#: includes/integrations/class-rcp.php:386
+#: includes/integrations/class-lifterlms.php:721
+#: includes/integrations/class-pmp.php:360
+#: includes/integrations/class-rcp.php:384
 msgid "Disable Referrals"
 msgstr "डिसएबल करे रेफेर्रल्स को"
 
-#: includes/integrations/class-lifterlms.php:745
+#: includes/integrations/class-lifterlms.php:722
 msgid ""
 "Check this box to prevent orders for this %s from generating referral "
 "commissions for affiliates."
@@ -4551,44 +4917,44 @@ msgstr ""
 "इस बॉक्स को टिक मार्क करे जिसे ऑर्डर्स को रोक पाए इसके लिए %s से उत्पन्न करने से रेफरल की "
 "कमाई को अफीलियाट्स के लिए."
 
-#: includes/integrations/class-lifterlms.php:753
+#: includes/integrations/class-lifterlms.php:730
 msgid "Enable %s Referral Rate"
 msgstr "चालू %s का रेफरल मूल्य "
 
-#: includes/integrations/class-lifterlms.php:754
+#: includes/integrations/class-lifterlms.php:731
 msgid "Check this box to enable %s referral rate overrides"
 msgstr "इस बॉक्स को टिक मार्क करे जिसे आप चालू कर सके %s रेफरल मूल्य ओवरराइड."
 
-#: includes/integrations/class-lifterlms.php:762
+#: includes/integrations/class-lifterlms.php:739
 msgid "%s Referral Rate"
 msgstr "%s रेफरल मूल्य "
 
-#: includes/integrations/class-lifterlms.php:763
+#: includes/integrations/class-lifterlms.php:740
 msgid "Enter a referral rate for this %s"
 msgstr "एक रेफरल मूल्य एंटर करे इसके लिए %s"
 
-#: includes/integrations/class-lifterlms.php:870
+#: includes/integrations/class-lifterlms.php:847
 msgid "Referral #%d rejected"
 msgstr "रेफरल #%d अस्वीकार "
 
-#: includes/integrations/class-memberpress.php:186
+#: includes/integrations/class-memberpress.php:184
 msgid "Disable referrals on this membership"
 msgstr "डिसएबल करे रेफेर्रल्स इस मेम्बरशिप पे"
 
-#: includes/integrations/class-ninja-forms.php:197
+#: includes/integrations/class-ninja-forms.php:195
 msgid "Enable affiliate referral creation for this form?"
 msgstr "चालू करे एफिलिएट रेफरल बनाने को इस फॉर्म से?"
 
-#: includes/integrations/class-paypal.php:90
+#: includes/integrations/class-paypal.php:96
 msgid "Pending PayPal referral"
 msgstr "रुक हुआ पाइपल रेफरल"
 
-#: includes/integrations/class-pmp.php:348
+#: includes/integrations/class-pmp.php:346
 #: includes/integrations/class-zippycourses.php:55
 msgid "Affiliate Settings"
 msgstr "एफिलिएट के सेटिंग्स "
 
-#: includes/integrations/class-pmp.php:357
+#: includes/integrations/class-pmp.php:355
 msgid ""
 "The membership-level referral rate, such as 20 for 20%%. Affiliate-level "
 "referral rates will override this value. If left blank, the site default "
@@ -4597,7 +4963,7 @@ msgstr ""
 "मेम्बरशिप-लेवल के रेफरल मूल्य, जैसे 20 से 20%%. एफिलिएट लेवल के मिल्या ओवरराइड हो जायेंगे इस "
 "वैल्यू पे. अगर खली छोड़ा, तोह साइट डिफ़ॉल्ट वैल्यू %s यूज़ होगी."
 
-#: includes/integrations/class-pmp.php:364
+#: includes/integrations/class-pmp.php:362
 msgid "Check to disable per-membership referrals."
 msgstr "टिक करे जिसे आप डिसएबल करें प्रति-मेम्बरशिप रेफेर्रल्स को."
 
@@ -4610,8 +4976,8 @@ msgstr ""
 "ये मूल्य यूज़ होगा हिसाब लगाने के लिए एफिलिएट की कमाई को जब मेंबर्स रजिस्टर करेंगे अपने "
 "अकाउंट जो सब्सक्रिप्शन के साथ. खली चोर दे अगर साइट डिफ़ॉल्ट रेफरल मूल्य चूसे करना है तोह."
 
-#: includes/integrations/class-rcp.php:349
-#: includes/integrations/class-rcp.php:380
+#: includes/integrations/class-rcp.php:347
+#: includes/integrations/class-rcp.php:378
 msgid ""
 "This rate will be used to calculate affiliate earnings when members "
 "subscribe to this level. Leave blank to use the site default referral rate."
@@ -4619,20 +4985,20 @@ msgstr ""
 "ये मूल्य यूज़ होगा हिसाब लगाने के लिए एफिलिएट कमाई को जब मेंबर्स सब्सकिर्बे करेने इस लेवल "
 "को. खली चोर दे अगर साइट डिफ़ॉल्ट रेफरल मूल्य यूज़ करना है तोह. "
 
-#: includes/integrations/class-rcp.php:391
+#: includes/integrations/class-rcp.php:389
 msgid "Disable referrals on this subscription level."
 msgstr "डिसएबल करें रेफेर्रल्स को इस सब्सक्रिप्शन लेवल पे."
 
-#: includes/integrations/class-woocommerce.php:239
-#: includes/integrations/class-woocommerce.php:449
+#: includes/integrations/class-woocommerce.php:241
+#: includes/integrations/class-woocommerce.php:475
 msgid "(Variation ID %d)"
 msgstr "(परिवर्तन ID %d)"
 
-#: includes/integrations/class-woocommerce.php:494
+#: includes/integrations/class-woocommerce.php:520
 msgid "Configure affiliate rates for this product"
 msgstr "कॉन्फ़िगर करें एफिलिएट मूल्य इस उत्पाद के लिए"
 
-#: includes/integrations/class-woocommerce.php:500
+#: includes/integrations/class-woocommerce.php:526
 #: includes/integrations/extras/class-exchange-feature.php:27
 msgid ""
 "These settings will be used to calculate affiliate earnings per-sale. Leave "
@@ -4641,28 +5007,42 @@ msgstr ""
 "ये सेटिंग्स यूज़ होंगे एफिलिएट कमाई का हिसाब लगाने के लिए प्रति खरीदारी पे. खली चोर दे "
 "अगर डिफ़ॉल्ट एफिलिएट रेट्स यूज़ करने है."
 
-#: includes/integrations/class-woocommerce.php:504
+#: includes/integrations/class-woocommerce.php:530
 msgid "Disable referrals"
 msgstr "डिसएबल करें रेफेर्रल्स"
 
-#: includes/integrations/class-woocommerce.php:505
+#: includes/integrations/class-woocommerce.php:531
 msgid ""
 "This will prevent orders of this product from generating referral "
 "commissions for affiliates."
 msgstr ""
 "ये रोखेगा ऑर्डर्स को इस प्रोडक्ट के लिए गेनेराते करने से रेफरल की कमाई को अफीलियाट्स के लिए."
 
-#: includes/integrations/class-woocommerce.php:531
+#: includes/integrations/class-woocommerce.php:557
 msgid "Configure affiliate rates for this product variation"
 msgstr "कॉन्फ़िगर करें एफिलिएट मूल्य इस प्रोडक्ट परिवर्तन के लिए"
 
-#: includes/integrations/class-woocommerce.php:534
+#: includes/integrations/class-woocommerce.php:560
 msgid "Referral rate (optional)"
 msgstr "रेफरल मूल्य (ज़रूरी नहीं)"
 
-#: includes/integrations/class-woocommerce.php:536
+#: includes/integrations/class-woocommerce.php:562
 msgid "Disable referrals for this product variation"
 msgstr "डिसएबल रेफेर्रल्स इस प्रोडक्ट परिवर्तन के लिए."
+
+#: includes/integrations/class-woocommerce.php:831
+#, fuzzy
+msgid "AffiliateWP settings for the My Account page."
+msgstr "एफिलिएट स्तिथि को रेकॉउंट कर लिया है!"
+
+#: includes/integrations/class-woocommerce.php:837
+#, fuzzy
+msgid "Affiliate Area Link"
+msgstr "अफ्फिलाटे की जगह "
+
+#: includes/integrations/class-woocommerce.php:838
+msgid "Display a link to the Affiliate Area in the My Account navigation."
+msgstr ""
 
 #: includes/integrations/extras/class-exchange-feature.php:39
 msgid "Disable referrals on this product"
@@ -4680,7 +5060,7 @@ msgstr "कूल फील्ड "
 msgid "Customer Email"
 msgstr "कस्टमर की ईमेल "
 
-#: includes/integrations/extras/contactform7-functions.php:225
+#: includes/integrations/extras/contactform7-functions.php:234
 msgid "Redirecting to Paypal..."
 msgstr "पयपाल पे रेडिरेक्ट हो रहा है..."
 
@@ -4892,7 +5272,80 @@ msgstr "यूक्रेनी रिव्निया"
 msgid "Vietnamese Dong"
 msgstr "वियतनामी डोंग"
 
-#: includes/scripts.php:139
+#: includes/misc-functions.php:1091 includes/misc-functions.php:1109
+#: tests/misc/test-misc-functions.php:360
+msgid "Email (required)"
+msgstr ""
+
+#: includes/misc-functions.php:1093 tests/misc/test-misc-functions.php:362
+msgid "First/Full Name"
+msgstr ""
+
+#: includes/misc-functions.php:1094 tests/misc/test-misc-functions.php:363
+#, fuzzy
+msgid "Last Name"
+msgstr "पिछले हफ्ता."
+
+#: includes/misc-functions.php:1100 tests/misc/test-misc-functions.php:369
+#, fuzzy
+msgid "Referral Count"
+msgstr "रेफरल के रकम."
+
+#: includes/misc-functions.php:1101 tests/misc/test-misc-functions.php:370
+#, fuzzy
+msgid "Visit Count"
+msgstr "विजिट्स"
+
+#: includes/misc-functions.php:1132 includes/misc-functions.php:1150
+#: tests/misc/test-misc-functions.php:395
+msgid "Affiliate ID or Username (required)"
+msgstr ""
+
+#: includes/misc-functions.php:1133 includes/misc-functions.php:1154
+#: tests/misc/test-misc-functions.php:396
+msgid "Amount (required)"
+msgstr ""
+
+#: includes/misc-functions.php:1134 tests/misc/test-misc-functions.php:397
+#, fuzzy
+msgid "Affiliate Email"
+msgstr "बंद करें एफिलिएट ईमेल को."
+
+#: includes/misc-functions.php:1135 tests/misc/test-misc-functions.php:398
+#, fuzzy
+msgid "Affiliate Username"
+msgstr "एफिलिएट का नाम"
+
+#: includes/misc-functions.php:1136 tests/misc/test-misc-functions.php:399
+#, fuzzy
+msgid "Affiliate First/Full Name"
+msgstr "एफिलिएट का नाम."
+
+#: includes/misc-functions.php:1137 tests/misc/test-misc-functions.php:400
+#, fuzzy
+msgid "Affiliate Last Name"
+msgstr "एफिलिएट का नाम."
+
+#: includes/misc-functions.php:1190
+msgid "- Ignore this field -"
+msgstr ""
+
+#: includes/misc-functions.php:1193
+msgid "- Select field to preview data -"
+msgstr ""
+
+#: includes/scripts.php:122
+msgid ""
+"We are sorry but your browser is not compatible with this kind of file "
+"upload. Please upgrade your browser."
+msgstr ""
+
+#: includes/scripts.php:123
+#, fuzzy
+msgid "This field must be mapped for the import to proceed."
+msgstr "एक URL होना चाइये सेकंड आर्गुमेंट की तरह जिसे आगे बाद पाए."
+
+#: includes/scripts.php:175
 msgid "Please enter a valid URL for this site"
 msgstr "इस साइट के लिए एक मान्य URL दर्ज करें"
 
@@ -4956,46 +5409,50 @@ msgstr "कोई भी सेट नहीं "
 msgid "You have no referrals or visits that included a campaign name."
 msgstr "आपके पास कोई रेफेर्रल्स या विजिट नहीं जो अभियान(कैंपेन) के नाम है जिनमे."
 
-#: templates/dashboard-tab-urls.php:6
-msgid "Referral URL Generator"
-msgstr "रेफरल URL जनरेटर"
+#: templates/dashboard-tab-urls.php:6 templates/dashboard.php:56
+msgid "Affiliate URLs"
+msgstr "एफिलिएट URLs"
 
-#: templates/dashboard-tab-urls.php:17
+#: templates/dashboard-tab-urls.php:19
 msgid "Your affiliate ID is: <strong>%s</strong>"
 msgstr "आपकी एफिलिएट ID है: <strong>%s</strong>"
 
-#: templates/dashboard-tab-urls.php:19
+#: templates/dashboard-tab-urls.php:21
 msgid "Your affiliate username is: <strong>%s</strong>"
 msgstr "आपकी एफिलिएट यूजरनाम है: <strong>%s</strong>"
 
-#: templates/dashboard-tab-urls.php:22
+#: templates/dashboard-tab-urls.php:24
 msgid "Your referral URL is: <strong>%s</strong>"
 msgstr "आपकी रेफरल URL है: <strong>%s</strong>"
 
-#: templates/dashboard-tab-urls.php:23
+#: templates/dashboard-tab-urls.php:38
+msgid "Referral URL Generator"
+msgstr "रेफरल URL जनरेटर"
+
+#: templates/dashboard-tab-urls.php:39
 msgid ""
 "Enter any URL from this website in the form below to generate a referral "
 "link!"
 msgstr ""
 "इस वेबसाइट मैं कोई भी URL एंटर करें फॉर्म मैं जो निचे दिया है जिसे एक रेफरल लिंक गेनेराते हो!"
 
-#: templates/dashboard-tab-urls.php:27
+#: templates/dashboard-tab-urls.php:43
 msgid "Page URL"
 msgstr "पेज का URL"
 
-#: templates/dashboard-tab-urls.php:32
+#: templates/dashboard-tab-urls.php:48
 msgid "Campaign Name (optional)"
 msgstr "अभियान का नाम (ज़रूरी नहीं)"
 
-#: templates/dashboard-tab-urls.php:37
+#: templates/dashboard-tab-urls.php:53
 msgid "Referral URL"
 msgstr "रेफरल का URL"
 
-#: templates/dashboard-tab-urls.php:39
+#: templates/dashboard-tab-urls.php:55
 msgid "(now copy this referral link and share it anywhere)"
 msgstr "(अभ कॉपी करें इस रेफरल लिंक को और शेयर करें कही भी)"
 
-#: templates/dashboard-tab-urls.php:45
+#: templates/dashboard-tab-urls.php:61
 msgid "Generate URL"
 msgstr "गेनेराते करें URL"
 
@@ -5012,7 +5469,7 @@ msgstr ""
 "पहला कॉलम विजिट URL को लिस्ट करता है  रिलेटिव फॉर्मेट मैं, दूसरा कॉलम लिस्ट करता है "
 "रेफरेर को, और तीसरा कॉलम सूचित करता है की क्या विजिट कंवर हुआ रेफरल मैं की नहीं."
 
-#: templates/dashboard-tab-visits.php:62
+#: templates/dashboard-tab-visits.php:60
 msgid "You have not received any visits yet."
 msgstr "आपके पास अभी कोई विजिट्स नहीं आए."
 
@@ -5031,10 +5488,6 @@ msgstr "आपका एफिलिएट अकाउंट की रिक�
 #: templates/dashboard.php:36
 msgid "Your affiliate profile has been updated"
 msgstr "आपका एफिलिएट प्रोफाइल अपडेट होगया है"
-
-#: templates/dashboard.php:56
-msgid "Affiliate URLs"
-msgstr "एफिलिएट URLs"
 
 #: templates/dashboard.php:68
 msgid "Graphs"
@@ -5096,7 +5549,7 @@ msgstr "हमारे <a href=\"%s\" target=\"_blank\">यूज़ की श
 msgid "Affiliate Plugin for WordPress"
 msgstr "एफिलिएट प्लगइन वर्डप्रेस के लिए"
 
-#: includes/admin/affiliates/affiliates.php:58
+#: includes/admin/affiliates/affiliates.php:61
 msgctxt "affiliates"
 msgid "Reports"
 msgstr "संदेश"
@@ -5106,12 +5559,12 @@ msgctxt "Affiliate ID, affiliate name"
 msgid "ID #%d: %s"
 msgstr "ID #%d: %s"
 
-#: includes/admin/class-notices.php:50
+#: includes/admin/class-notices.php:454 tests/admin/test-notices.php:580
 msgctxt "Integrations"
 msgid "Dismiss Notice"
 msgstr "इंटेग्रटीओन्स के सूचना बर्खास्त की "
 
-#: includes/admin/class-notices.php:412 includes/admin/class-notices.php:421
+#: includes/admin/class-notices.php:504 includes/admin/class-notices.php:513
 msgctxt "License"
 msgid "Dismiss Notice"
 msgstr "लाइसेंस के सूचना बर्खास्त की "
@@ -5224,6 +5677,12 @@ msgctxt "payouts"
 msgid "All"
 msgstr "सारे"
 
+#: includes/admin/payouts/payouts.php:39
+#, fuzzy
+msgctxt "payouts"
+msgid "Reports"
+msgstr "सन्देश"
+
 #: includes/admin/payouts/class-list-table.php:149
 #: includes/admin/tools/export/class-batch-export-payouts.php:147
 msgctxt "payout"
@@ -5261,24 +5720,33 @@ msgstr "(यूजर ID: %d)"
 
 #. translators: 1: Visit date
 #: includes/admin/referrals/edit.php:184
-#, fuzzy
 msgctxt "visit"
 msgid "Date: %1$s (%2$s)"
 msgstr "%1$s से %2$s"
 
 #: includes/admin/referrals/edit.php:193
-#, fuzzy
 msgctxt "visit"
 msgid "None"
 msgstr "कुछ नहीं "
+
+#: includes/admin/tools/export/class-batch-export-visits.php:152
+#, fuzzy
+msgctxt "visit"
+msgid "Date"
+msgstr "तारिक "
 
 #: includes/admin/referrals/referrals.php:39
 msgctxt "referrals"
 msgid "Reports"
 msgstr "रिपोर्ट रेफरल की "
 
-#: includes/admin/visits/class-list-table.php:234
+#: includes/admin/tools/export/class-batch-export-visits.php:192
 #, fuzzy
+msgctxt "visit not converted"
+msgid "No"
+msgstr "कुछ नहीं "
+
+#: includes/admin/visits/class-list-table.php:234
 msgctxt "visit context"
 msgid "None"
 msgstr "कुछ नहीं "
@@ -5288,12 +5756,12 @@ msgctxt "visits"
 msgid "Reports"
 msgstr "रिपोर्ट विजिट्स की "
 
-#: includes/class-graph.php:419
+#: includes/class-graph.php:418
 msgctxt "date filter"
 msgid "From"
 msgstr "अभ से "
 
-#: includes/class-graph.php:421
+#: includes/class-graph.php:420
 msgctxt "date filter"
 msgid "To"
 msgstr "तक"
@@ -5357,6 +5825,32 @@ msgstr "डिसेबल्ड है"
 msgctxt "direct traffic"
 msgid "Direct"
 msgstr "सीधा"
+
+#~ msgid "Date Filters"
+#~ msgstr "तारीख के फिल्टर्स."
+
+#~ msgid "Total paid referrals"
+#~ msgstr "कुल भरे हुए रेफेर्रल्स."
+
+#~ msgid "Total unpaid referrals"
+#~ msgstr "कुल नहीं भरे हुए रेफेर्रल्स."
+
+#~ msgid "Total pending referrals"
+#~ msgstr "कुल अपूर्ण रेफेर्रल्स."
+
+#~ msgid "Total rejected referrals"
+#~ msgstr "कुल अस्वीकारे हुए रेफेर्रल्स."
+
+#~ msgid "Conversion rate"
+#~ msgstr "रूपान्तरण मूल्य"
+
+#~ msgid "%s affiliate&#8217;s was successfully processed."
+#~ msgid_plural "%s affiliates&#8217; were successfully processed."
+#~ msgstr[0] "%s एफिलिएट&#8217;स प्रोसेस्ड हो गया सुफलता से."
+#~ msgstr[1] "%s एफिलिएट&#8217; प्रोसेस्ड हो गये सुफलता से."
+
+#~ msgid "No reason provided"
+#~ msgstr "कोई कारन नहीं उपलभ्द किया गया"
 
 #~ msgid "%1$s | Total: %2$s"
 #~ msgstr "%1$s | कुल: %2$s"
