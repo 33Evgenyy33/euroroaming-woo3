@@ -228,57 +228,22 @@ class WC_yamoney_Gateway extends WC_Payment_Gateway
         $receiptWrapper->items = array();
 
         if (version_compare($woocommerce->version, "3.0", ">=")) {
-//            $data = $order->get_data();
-//
-//            $currency = $data['currency'];
-//            $items = $order->get_items();
-//            $shipping = $data['shipping_lines'];
-//
-//            foreach ($items as $item) {
-//                $taxes = $item->get_taxes();
-//                /** @var WC_Order_Item_Product $item */
-//	            //$order->wc_get_order_item_meta($item->get_id(), 'balans', true);
-//                $test1 = $item->get_id();
-//                $amount = $item->get_total() / $item->get_quantity() + $item->get_total_tax() / $item->get_quantity();
-//                $itemWrapper = new stdClass();
-//                $itemWrapper->quantity = $item->get_quantity();
-//                $itemWrapper->price = new stdClass();
-//                $itemWrapper->price->amount = round($amount, 2);
-//                $itemWrapper->price->currency = $currency;
-//                $itemWrapper->text = $item['name'];
-//                $itemWrapper->tax = $this->getYmTaxRate($taxes);
-//                $receiptWrapper->items[] = $itemWrapper;
-//            }
-//
-//            if (count($shipping)) {
-//                $shippingData = array_shift($shipping);
-//                $amount = $shippingData['total'] + $shippingData['total_tax'];
-//                $taxes = $shippingData->get_taxes();
-//                $itemWrapper = new stdClass();
-//                $itemWrapper->quantity = 1;
-//                $itemWrapper->price = new stdClass();
-//                $itemWrapper->price->amount = round($amount, 2);
-//                $itemWrapper->price->currency = $currency;
-//                $itemWrapper->text = 'Доставка';
-//                $itemWrapper->tax = $this->getYmTaxRate($taxes);
-//                $receiptWrapper->items[] = $itemWrapper;
-//            }
 
 	        $data = $order->get_data();
-
 	        $currency = $data['currency'];
-	        $items = $order->get_items();
 	        $shipping = $data['shipping_lines'];
-
 	        $euro_rate = 69; // Курс евро
 
 	        //$myfile = fopen("processing-" . $order->get_id() . ".txt", "w") or die("Unable to open file!");
-	        //file_put_contents("processing-" . $order->get_id() . ".txt", print_r($items, true), FILE_APPEND | LOCK_EX);
+	        //file_put_contents("processing-" . $order->get_id() . ".txt", print_r($order->get_items(), true), FILE_APPEND | LOCK_EX);
 
-	        foreach ($items as $item) {
-		        $itemId = $item->get_id();
+	        foreach ($order->get_items() as $item) {
+
 		        $initial_price = $item->get_subtotal();
-		        $discount_price = $item->get_total();;
+		        $discount_price = $item->get_total();
+		        $taxes = $item->get_taxes();
+		        $quantity = $item->get_quantity();
+		        $tax = $item->get_total_tax();
 		        $sim_card = $item->get_product_id();
 		        $balance_name = $item->get_meta('balans');
 		        $balance_in_euro = 0;
@@ -288,8 +253,6 @@ class WC_yamoney_Gateway extends WC_Payment_Gateway
 		        //file_put_contents("processing-" . $order->get_id() . ".txt", print_r($sim_card, true), FILE_APPEND | LOCK_EX);
 
 		        if ($sim_card == 58961 || $sim_card == 18402) { //Orange
-			        $taxes = $item->get_taxes();
-			        $quantity = $item->get_quantity();
 
 			        //======================================================
 			        // Позиция "Сим-карта"
@@ -309,46 +272,43 @@ class WC_yamoney_Gateway extends WC_Payment_Gateway
 			        //======================================================
 			        // Позиция "Тариф"
 			        //======================================================
-			        $taxes = $item->get_taxes();
-			        $quantity = $item->get_quantity();
-			        $tax = $item->get_total_tax();
 			        $tariff_name = '';
 			        $tariff_in_rub = 0;
 			        switch ($balance_name) {
 				        case '€20' :
 					        $balance_in_euro = 20;
 					        $balance_in_rub = 20 * $euro_rate;
-					        $tariff_name = '20 EUR';
+					        $tariff_name = 'EUR20';
 					        $tariff_in_rub = 20 * $euro_rate;
 					        break;
 				        case '€35' :
 					        $balance_in_euro = 35;
 					        $balance_in_rub = 35 * $euro_rate;
-					        $tariff_name = '15 EUR';
+					        $tariff_name = 'EUR15';
 					        $tariff_in_rub = 15 * $euro_rate;
 					        break;
 				        case '€50' :
 					        $balance_in_euro = 50;
 					        $balance_in_rub = 50 * $euro_rate;
-					        $tariff_name = '10 EUR';
+					        $tariff_name = 'EUR10';
 					        $tariff_in_rub = 10 * $euro_rate;
 					        break;
 				        case '€75' :
 					        $balance_in_euro = 75;
 					        $balance_in_rub = 75 * $euro_rate;
-					        $tariff_name = '5 EUR';
+					        $tariff_name = 'EUR5';
 					        $tariff_in_rub = 5 * $euro_rate;
 					        break;
 				        case '€100' :
 					        $balance_in_euro = 100;
 					        $balance_in_rub = 100 * $euro_rate;
-					        $tariff_name = '0 EUR';
+					        $tariff_name = 'EUR0 ';
 					        $tariff_in_rub = 0 * $euro_rate;
 					        break;
 				        case '€150' :
 					        $balance_in_euro = 150;
 					        $balance_in_rub = 150 * $euro_rate;
-					        $tariff_name = '0 EUR';
+					        $tariff_name = 'EUR0';
 					        $tariff_in_rub = 0 * $euro_rate;
 					        break;
 			        }
@@ -375,9 +335,6 @@ class WC_yamoney_Gateway extends WC_Payment_Gateway
 			        //======================================================
 			        // Позиция "Интернет-пакет"
 			        //======================================================
-			        $taxes = $item->get_taxes();
-			        $quantity = $item->get_quantity();
-			        $tax = $item->get_total_tax();
 			        $package_name = $item->get_meta('paket-podklyuchennyj-za-schet-balansa');
 
 			        //$myfile = fopen("processing-" . $order->get_id() . ".txt", "w") or die("Unable to open file!");
@@ -416,9 +373,6 @@ class WC_yamoney_Gateway extends WC_Payment_Gateway
 			        //======================================================
 			        // Позиция "Баланс"
 			        //======================================================
-			        $taxes = $item->get_taxes();
-			        $quantity = $item->get_quantity();
-			        $tax = $item->get_total_tax();
 
 			        $balance_with_pack_in_euro = $balance_in_euro - $package_in_euro;
 			        $balance_with_pack_in_rub = $balance_in_rub - $package_in_rub;
@@ -430,19 +384,15 @@ class WC_yamoney_Gateway extends WC_Payment_Gateway
 			        $itemWrapper->price = new stdClass();
 			        $itemWrapper->price->amount = round($amount, 2); //Стоимость
 			        $itemWrapper->price->currency = $currency; //Валюта
-			        $itemWrapper->text = 'Баланс с учетом подключенного пакета ' . $balance_with_pack_in_euro . ' EUR'; //Название
+			        $itemWrapper->text = 'Баланс с учетом подключенного пакета EUR' . $balance_with_pack_in_euro; //Название
 			        $itemWrapper->tax = $this->getYmTaxRate($taxes);
 			        $receiptWrapper->items[] = $itemWrapper;
 
-			        //$myfile = fopen("processing-" . $order->get_id() . ".txt", "w") or die("Unable to open file!");
-			        //file_put_contents("processing-" . $order->get_id() . ".txt", print_r($receiptWrapper, true), FILE_APPEND | LOCK_EX);
+			        $myfile = fopen("processing-" . $order->get_id() . ".txt", "w") or die("Unable to open file!");
+			        file_put_contents("processing-" . $order->get_id() . ".txt", print_r($receiptWrapper, true), FILE_APPEND | LOCK_EX);
 
 		        } else {
-
-			        $taxes = $item->get_taxes();
-			        $quantity = $item->get_quantity();
 			        $itemTotal = $item->get_total();
-			        $tax = $item->get_total_tax();
 			        $amount = $itemTotal / $quantity + $tax / $quantity;
 			        $itemWrapper = new stdClass();
 			        $itemWrapper->quantity = $quantity;
@@ -458,8 +408,8 @@ class WC_yamoney_Gateway extends WC_Payment_Gateway
 	        $shippingData = array_shift($shipping);
 	        $amount = $shippingData['total'] + $shippingData['total_tax'];
 
-	        $myfile = fopen("processing-" . $order->get_id() . ".txt", "w") or die("Unable to open file!");
-	        file_put_contents("processing-" . $order->get_id() . ".txt", print_r(count($shippingData), true), FILE_APPEND | LOCK_EX);
+	        //$myfile = fopen("processing-" . $order->get_id() . ".txt", "w") or die("Unable to open file!");
+	        //file_put_contents("processing-" . $order->get_id() . ".txt", print_r(count($shippingData), true), FILE_APPEND | LOCK_EX);
 
 	        if (count($shippingData) && ($amount != 0)) {
 		        $taxes = $shippingData->get_taxes();
@@ -472,8 +422,8 @@ class WC_yamoney_Gateway extends WC_Payment_Gateway
 		        $itemWrapper->tax = $this->getYmTaxRate($taxes);
 		        $receiptWrapper->items[] = $itemWrapper;
 
-		        $myfile = fopen("processing-" . $order->get_id() . ".txt", "w") or die("Unable to open file!");
-		        file_put_contents("processing-" . $order->get_id() . ".txt", print_r($receiptWrapper, true), FILE_APPEND | LOCK_EX);
+		        //$myfile = fopen("processing-" . $order->get_id() . ".txt", "w") or die("Unable to open file!");
+		        //file_put_contents("processing-" . $order->get_id() . ".txt", print_r($receiptWrapper, true), FILE_APPEND | LOCK_EX);
 	        }
 
         } else {

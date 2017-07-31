@@ -1415,6 +1415,7 @@ class WC_API_POS_Orders extends WC_API_Orders
 
         // load the gateways & process payment
         $gateway_id = $data['payment_details']['method_id'];
+	    $docompleteorder = 0;
         switch ($gateway_id) {
             case 'stripe':
                 $_POST['stripe_token'] = $data['stripe_token'];
