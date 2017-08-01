@@ -31,7 +31,15 @@ do_action( 'woocommerce_before_account_navigation' );
 			</li>
 		<?php } ?>
 
-		<?php foreach ( wc_get_account_menu_items() as $endpoint => $label ) : ?>
+		<?php if (members_current_user_has_role('cashier')) { ?>
+            <li class="woocommerce-MyAccount-navigation-link--cashier">
+                <a href="https://euroroaming.ru/wp-admin/">Кабинет продаж</a>
+            </li>
+		<?php } ?>
+
+		<?php foreach ( wc_get_account_menu_items() as $endpoint => $label ) :
+			if ($label == 'Загрузки') continue;
+			?>
 			<li class="<?php echo wc_get_account_menu_item_classes( $endpoint ); ?>">
 				<a href="<?php echo esc_url( wc_get_account_endpoint_url( $endpoint ) ); ?>"><?php echo esc_html( $label ); ?></a>
 			</li>

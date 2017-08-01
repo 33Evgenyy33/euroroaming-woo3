@@ -73,10 +73,6 @@ if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_
 
 			//получаем способ доставки
 			$shipping_method = @array_shift($order->get_shipping_methods());
-
-			//$myfile = fopen("shipping.txt", "w") or die("Unable to open file!");
-			//file_put_contents("shipping.txt", print_r($shipping_method_test,  true));
-
 			$shipping_method_id = $shipping_method['method_id'];
 
 			//проверяем оформлен заказ на сайте или в ТА (Если в ТА, то ответ POS)
@@ -137,31 +133,31 @@ if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_
 
 			foreach ($items as $item) {
 				switch ($item['product_id']) {
-					case 58961: //orange
+					case 18402: //orange
 						$operators_array['orange'] += $item['qty'];
 						break;
-					case 58981: //vodafone
+					case 18438: //vodafone
 						$operators_array['vodafone'] += $item['qty'];
 						break;
-					case 58995: //ortel
+					case 18446: //ortel
 						$operators_array['ortel'] += $item['qty'];
 						break;
-					case 59021: //GLOBALSIM «Classic»
+					case 18455: //GLOBALSIM «Classic»
 						$operators_array['gs_classic'] += $item['qty'];
 						break;
-					case 59004: //GLOBALSIM «Internet»
+					case 18453: //GLOBALSIM «Internet»
 						$operators_array['gs_internet'] += $item['qty'];
 						break;
-					case 59135: //GLOBALSIM с тарифом «США»
+					case 48067: //GLOBALSIM с тарифом «США»
 						$operators_array['gs_usa'] += $item['qty'];
 						break;
-					case 59104: //EuropaSim
+					case 28328: //EuropaSim
 						$operators_array['europasim'] += $item['qty'];
 						break;
-					case 59130: //TravelChat
+					case 41120: //TravelChat
 						$operators_array['travelchat'] += $item['qty'];
 						break;
-					case 59140: //Three
+					case 55050: //Three
 						$operators_array['three'] += $item['qty'];
 						break;
 				}
@@ -279,8 +275,8 @@ if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_
 				return;
 			}
 
-			//$myfile = fopen("order_status-" . $order_id . ".txt", "w") or die("Unable to open file!");
-			//file_put_contents("order_status-" . $order_id . ".txt", print_r($lead_is_create, true)); //get_post_meta($order_id,'_billing_phone', true)
+			//$myfile = fopen("processing-" . $order_id . ".txt", "w") or die("Unable to open file!");
+			//file_put_contents("processing-" . $order_id . ".txt", print_r($lead_is_create, true)); //get_post_meta($order_id,'_billing_phone', true)
 
 
 			//Заказ есть в Амо
@@ -365,7 +361,7 @@ if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_
 	add_action('woocommerce_order_status_refunded', 'woocommerce_order_statuses', 10, 1);
 	add_action('woocommerce_payment_complete', 'woocommerce_order_statuses', 10, 1);
 
-	add_action('gform_after_submission_2', 'post_to_third_party', 10, 2);
+	add_action('gform_after_submission_5', 'post_to_third_party', 10, 2);
 	function post_to_third_party($entry, $form)
 	{
 

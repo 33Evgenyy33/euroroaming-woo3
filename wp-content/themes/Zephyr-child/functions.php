@@ -470,108 +470,114 @@ function filter_gateways($gateways)
  * Доступные способы доставки в зависимости от товара в корзине
  *
  * */
-add_filter('woocommerce_package_rates', 'my_hide_shipping_when_free_is_available', 100);
+add_filter('woocommerce_package_rates', 'my_hide_shipping_when_free_is_available', 10, 2);
 function my_hide_shipping_when_free_is_available($rates)
 {
-    global $woocommerce;
+	global $woocommerce;
 
-    $free = array();
+	$free = array();
 
-    $items = $woocommerce->cart->get_cart();
+	$items = $woocommerce->cart->get_cart();
 
-    foreach ($items as $item => $values) {
+	foreach ($items as $item) {
 
-        $_product = $values['data']->post;
-        //print_r($values['variation_id']);
+		//$_product = $values['data']->post;
+		//print_r($values['variation_id']);
 
-        if ($_product->ID == 25841) {
-            foreach ($rates as $rate_id => $rate) {
-                if ('advanced_shipping' == $rate->method_id) {
-                    $free[$rate_id] = $rate;
-                }
-            }
-            break;
-        }
+		//$myfile = fopen("items2.txt", "w") or die("Unable to open file!");
+		//file_put_contents("items2.txt", print_r($item, true), FILE_APPEND | LOCK_EX);
 
-        /*if ($_product->ID == 18446 || $_product->ID == 28328 || $_product->ID == 18453 || $_product->ID == 18443) {
-            foreach ($rates as $rate_id => $rate) {
-                if ('local_pickup_plus' == $rate->method_id || '18616' == $rate->id) {
-                    $free[$rate_id] = $rate;
-                }
-            }
-            break;
-        }*/
+		if ($item['product_id'] == 25841) {
+			foreach ($rates as $rate_id => $rate) {
+				if ('advanced_shipping' == $rate->method_id) {
+					$free[$rate_id] = $rate;
+				}
+			}
+			break;
+		}
 
-        /************Three*************/
-        /*if ($_product->ID == 55050) {
-            //print_r($_product);
-            foreach ($rates as $rate_id => $rate) {
-                //echo $rate->method_id.'<br>';
-                if ('advanced_shipping' == $rate->method_id || 'flat_rate' == $rate->method_id) {
-                    $free[$rate_id] = $rate;
-                }
-            }
-            break;
-        }*/
+		/*if ($_product->ID == 18446 || $_product->ID == 28328 || $_product->ID == 18453 || $_product->ID == 18443) {
+			foreach ($rates as $rate_id => $rate) {
+				if ('local_pickup_plus' == $rate->method_id || '18616' == $rate->id) {
+					$free[$rate_id] = $rate;
+				}
+			}
+			break;
+		}*/
 
-        /************Vodafone только выдача (все форматы)*************/
-        /*if ($_product->ID == 18438) {
-            //print_r($_product);
-            foreach ($rates as $rate_id => $rate) {
-                if ('local_pickup_plus' == $rate->method_id) {
-                    $free[$rate_id] = $rate;
-                }
-            }
-            break;
-        }*/
+		/************Three*************/
+		/*if ($_product->ID == 55050) {
+			//print_r($_product);
+			foreach ($rates as $rate_id => $rate) {
+				//echo $rate->method_id.'<br>';
+				if ('advanced_shipping' == $rate->method_id || 'flat_rate' == $rate->method_id) {
+					$free[$rate_id] = $rate;
+				}
+			}
+			break;
+		}*/
 
-        /************EuropaSim только выдача (все форматы)*************/
-        if ($_product->ID == 28328) {
-            //print_r($_product);
-            foreach ($rates as $rate_id => $rate) {
-                if ('local_pickup_plus' == $rate->method_id) {
-                    $free[$rate_id] = $rate;
-                }
-            }
-            break;
-        }
+		/************Vodafone только выдача (все форматы)*************/
+		/*if ($_product->ID == 18438) {
+			//print_r($_product);
+			foreach ($rates as $rate_id => $rate) {
+				if ('local_pickup_plus' == $rate->method_id) {
+					$free[$rate_id] = $rate;
+				}
+			}
+			break;
+		}*/
 
-        /************Orange только выдача (все форматы)*************/
-        /*if ($_product->ID == 18402) {
-            //print_r($_product);
-            foreach ($rates as $rate_id => $rate) {
-                if ('local_pickup_plus' == $rate->method_id) {
-                    $free[$rate_id] = $rate;
-                }
-            }
-            break;
-        }*/
+		/************EuropaSim только выдача (все форматы)*************/
+		if ($item['product_id'] == 28328) {
+			//print_r($_product);
+			foreach ($rates as $rate_id => $rate) {
+				if ('local_pickup_plus' == $rate->method_id) {
+					$free[$rate_id] = $rate;
+				}
+			}
+			break;
+		}
 
-        /************Orange только выдача (nano)*************/
-        /*if ($_product->ID == 18402) {
-            //print_r($_product);
-            if ($values['variation_id'] == 24062 || $values['variation_id'] == 24059 || $values['variation_id'] == 24056
-                || $values['variation_id'] == 31083 || $values['variation_id'] == 30954 || $values['variation_id'] == 30955) {
-                foreach ($rates as $rate_id => $rate) {
-                    if ('local_pickup_plus' == $rate->method_id) {
-                        $free[$rate_id] = $rate;
-                    }
-                }
-                break;
-            }
-        }*/
-        /*
-        24062
-        24059
-        24056
-        31083
-        30954
-        30955
-        local_pickup_plus
-        */
+		/************Orange только выдача (все форматы)*************/
+		if ($item['product_id'] == 18402) {
+			//print_r($_product);
+			foreach ($rates as $rate_id => $rate) {
+				if ('local_pickup_plus' == $rate->method_id) {
+					$free[$rate_id] = $rate;
+				}
+			}
+			break;
+		}
 
-    }
-    return !empty($free) ? $free : $rates;
+		/************Orange только выдача (nano)*************/
+		/*if ($_product->ID == 18402) {
+			//print_r($_product);
+			if ($values['variation_id'] == 24062 || $values['variation_id'] == 24059 || $values['variation_id'] == 24056
+				|| $values['variation_id'] == 31083 || $values['variation_id'] == 30954 || $values['variation_id'] == 30955) {
+				foreach ($rates as $rate_id => $rate) {
+					if ('local_pickup_plus' == $rate->method_id) {
+						$free[$rate_id] = $rate;
+					}
+				}
+				break;
+			}
+		}*/
+
+
+
+		/*
+		24062
+		24059
+		24056
+		31083
+		30954
+		30955
+		local_pickup_plus
+		*/
+
+	}
+	return !empty($free) ? $free : $rates;
 }
 
 add_filter('affwp_currencies', 'affwp_custom_add_currency');
