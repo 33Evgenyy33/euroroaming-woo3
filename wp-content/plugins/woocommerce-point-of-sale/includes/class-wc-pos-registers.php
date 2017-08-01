@@ -97,6 +97,20 @@ class WC_Pos_Registers
                     'required' => true
                 )
             ),
+            'orange_discount' => array(
+	            'label' => 'Скидка на Orane, Vodafone, Ortel',
+	            'description' => 'Введите размер скидки в рублях (только цифры)',
+	            'custom_attributes' => array(
+		            'required' => true
+	            )
+            ),
+            'three_discount' => array(
+	            'label' => 'Скидка на Three',
+	            'description' => 'Введите размер скидки в рублях (только цифры)',
+	            'custom_attributes' => array(
+		            'required' => true
+	            )
+            ),
             'grid_template' => array(
                 'label' => __('Product Grid', 'wc_point_of_sale'),
                 'type' => 'select',

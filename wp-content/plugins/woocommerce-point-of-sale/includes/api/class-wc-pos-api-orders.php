@@ -909,6 +909,7 @@ class WC_API_POS_Orders extends WC_API_Orders
                     $cart_item_meta = array();
                     $cart_item_meta['booking'] = $booking_form->get_posted_data($posted_data);
                     $cart_item_meta['booking']['_cost'] = $booking_form->calculate_booking_cost($posted_data);
+	                $cart_item_meta['booking']['_order_item_id'] = $item_id;
 
 
                     // Create the new booking
@@ -1583,7 +1584,8 @@ class WC_API_POS_Orders extends WC_API_Orders
             'cost' => $cart_item_meta['booking']['_cost'], // Cost of this booking
             'start_date' => $cart_item_meta['booking']['_start_date'],
             'end_date' => $cart_item_meta['booking']['_end_date'],
-            'all_day' => $cart_item_meta['booking']['_all_day']
+            'all_day' => $cart_item_meta['booking']['_all_day'],
+            'order_item_id' => $cart_item_meta['booking']['_order_item_id']
         );
 
         // Check if the booking has resources

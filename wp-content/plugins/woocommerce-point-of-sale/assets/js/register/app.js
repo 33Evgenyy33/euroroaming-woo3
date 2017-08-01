@@ -1597,7 +1597,7 @@ jQuery(document).ready(function ($) {
                 },
                 error: function (data) {
                     var data = $.parseJSON(data.responseText);
-                    if (typeof data.errors != 'undefined') {
+                    if (data.errors && typeof data.errors != 'undefined') {
                         $.each(data.errors, function (index, val) {
                             APP.showNotice(val.message, 'error');
                         });
@@ -2248,7 +2248,7 @@ jQuery(document).ready(function ($) {
                 $('select#shipping_state').val(CUSTOMER.default_state).trigger('change');
 
                 $("#pos_billing_details select#number_simcard").select2({
-                    placeholder: {text: "Your placeholder"},
+                    placeholder: {text: "Выберите номера сим-карт"},
                     language: "ru"
                 });
 
@@ -3295,6 +3295,7 @@ jQuery(document).ready(function ($) {
                 return false;
             });*/
             $('.wc_pos_register_pay').on('click', function () {
+                 var cart_total = CART.total;
                 if (CART.is_empty()) {
                     APP.showNotice(pos_i18n[9], 'error');
                     return false;
@@ -3315,24 +3316,24 @@ jQuery(document).ready(function ($) {
                         }
                         $('#pos_chip_pin_order_id').text(chip_pin_order_id);
                     }
-                    //console.log(CART.add_discount('tacom')); //Скидка
 
                     $('#amount_pay_cod, #amount_change_cod').val('');
-                    var round_total = CART.total;
-                    var h = CART.total % wc_pos_params.wc_pos_rounding_value;
+
+                    var round_total = cart_total;
+                    var h = cart_total % wc_pos_params.wc_pos_rounding_value;
                     if (wc_pos_params.wc_pos_rounding) {
                         if (h >= wc_pos_params.wc_pos_rounding_value / 2) {
-                            round_total = CART.total - h + parseFloat(wc_pos_params.wc_pos_rounding_value);
+                            round_total = cart_total - h + parseFloat(wc_pos_params.wc_pos_rounding_value);
                         } else {
-                            round_total = CART.total - h;
+                            round_total = cart_total - h;
                         }
                     }
                     if (wc_pos_params.wc_pos_rounding) {
-                        var cart_total = CART.total;
                         CART.total = round_total;
                         $('#show_total_amt_inp').val(round_total);
-                        var old_value = $('#show_total_amt .amount').text();
-                        var new_value = old_value.replace(/[0-9.]+/, round_total.toFixed(2));
+                        var total_text = $('#show_total_amt .amount').text();
+                        var old_value = total_text.replace(/[0-9.]+/, cart_total.toFixed(2));
+                        var new_value = total_text.replace(/[0-9.]+/, round_total.toFixed(2));
                         $('#show_total_amt .amount').text(new_value);
 
                         $('.payment_methods').on('click', function () {

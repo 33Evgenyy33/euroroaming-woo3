@@ -73,7 +73,6 @@ jQuery(document).ready(function ($) {
         },
         add_to_cart_handler_booking: function () {
             BOOKING.init_fields();
-            console.log(BOOKING);
             var source = $('#tmpl-booking-data').html();
             var template = Handlebars.compile(source);
 
@@ -93,8 +92,6 @@ jQuery(document).ready(function ($) {
         },
 
         add_field: function (field) {
-            console.log('add_field====');
-            console.log(field);
             if (typeof field != 'object') return;
 
             var defaults = {
@@ -249,9 +246,8 @@ jQuery(document).ready(function ($) {
          */
         resources_field: function () {
             var product = BOOKING.data.adding_to_cart;
-
             // Resources field
-            if ('yes' == product.booking.has_resources && 'customer' == product.booking.resources_assignment) {
+            if ('1' == product.booking.has_resources && 'customer' == product.booking.resources_assignment) {
 
                 var resources = product.booking.resources,
                     resource_options = [],
@@ -443,7 +439,6 @@ jQuery(document).ready(function ($) {
             }
         },
         date_picker: function (element) {
-
             var $picker;
             if ($(element).is('.picker')) {
                 $picker = $(element);
@@ -735,7 +730,6 @@ jQuery(document).ready(function ($) {
                 title = '',
                 resource_id = 0,
                 resources_assignment = product.booking.resources_assignment;
-
             // Get selected resource
             if ($form.find('select#wc_bookings_field_resource').val() > 0) {
                 resource_id = $form.find('select#wc_bookings_field_resource').val();
@@ -764,7 +758,6 @@ jQuery(document).ready(function ($) {
             if ('' + year + month + day < pos_booking_form_args.current_time) {
                 return [false, 'not_bookable', booking_form_params.i18n_date_unavailable];
             }
-
             // Apply partially booked CSS class.
             if (partially_booked_days && partially_booked_days[year + '-' + month + '-' + day]) {
                 if (partially_booked_days[year + '-' + month + '-' + day][0] || partially_booked_days[year + '-' + month + '-' + day][resource_id]) {
@@ -784,7 +777,6 @@ jQuery(document).ready(function ($) {
             }
 
             var bookable = default_availability;
-
             // Loop all the days we need to check for this block
             for (var i = 0; i < days_needed; i++) {
                 var the_date = new Date(date);
@@ -803,10 +795,9 @@ jQuery(document).ready(function ($) {
                 if (day_of_week == 0) {
                     day_of_week = 7;
                 }
-
                 $.each(availability[resource_id], function (index, rule) {
-                    var type = rule[0];
-                    var rules = rule[1];
+                    var type = rule.type;
+                    var rules = rule.range;
                     try {
                         switch (type) {
                             case 'months':
@@ -856,7 +847,6 @@ jQuery(document).ready(function ($) {
 
                     } catch (err) {
                     }
-
                     return true;
                 });
 
@@ -871,7 +861,6 @@ jQuery(document).ready(function ($) {
                     break;
                 }
             }
-
             if (!bookable) {
                 return [bookable, 'not_bookable', booking_form_params.i18n_date_unavailable];
             } else {
@@ -892,7 +881,6 @@ jQuery(document).ready(function ($) {
                     return [bookable, css_classes + 'bookable', title];
                 }
             }
-
         },
 
         get_input_date: function (fieldset, where) {
@@ -980,7 +968,6 @@ jQuery(document).ready(function ($) {
 
                 return true;
             });
-
             return availability;
         },
 

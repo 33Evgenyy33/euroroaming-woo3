@@ -333,7 +333,7 @@ class WAS_Advanced_Shipping_Method extends WC_Shipping_Method {
 
 			$rate = apply_filters( 'was_shipping_rate', array(
 				'id'       => $method_id,
-				'label'    => ( null == $label ) ? __( 'Shipping', 'woocommerce-advanced-shipping' ) : $label,
+				'label'    => ( 'Почта России (сроки доставки уточняйте на сайте Почты России)' == $label ) ? WC()->customer->get_shipping_city().", ".$label : 'Курьерская служба доставки: '. WC()->customer->get_shipping_city().", ".$label,
 				'cost'     => $this->shipping_costs,
 				'taxes'    => ( 'taxable' == $this->taxable ) ? '' : false,
 				'calc_tax' => 'per_order',

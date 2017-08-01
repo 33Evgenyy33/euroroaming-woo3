@@ -599,7 +599,7 @@ if ( is_woocommerce_active() ) {
 							case 'required':
 
 								if ( 'checkbox' === $field['type'] && 0 === $posted[ $key ] ) {
-									wc_add_notice( '<strong>' . $field['label'] . '</strong> ' . __( 'is a required field.', 'woocommerce-checkout-field-editor' ), 'error' );
+									wc_add_notice( '<strong>' . $field['label'] . '</strong> ' . __( 'Это поле обязательное.', 'woocommerce-checkout-field-editor' ), 'error' );
 								}
 
 							break;

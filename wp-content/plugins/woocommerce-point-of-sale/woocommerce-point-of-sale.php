@@ -3,10 +3,10 @@
  * Plugin Name: WooCommerce Point of Sale
  * Plugin URI: http://codecanyon.net/item/woocommerce-point-of-sale-pos/7869665&ref=actualityextensions/
  * Description: WooCommerce Point of Sale is an extension which allows you to place orders through a Point of Sale interface swiftly using the WooCommerce products and orders database. This extension is most suitable for retailers who have both an online and offline store.
- * Version: 4.1.8.5
+ * Version: 4.1.8.6
  * Author: Actuality Extensions
  * Author URI: http://actualityextensions.com/
- * Tested up to: 4.7.2
+ * Tested up to: 4.7.3
  *
  * Text Domain: wc_point_of_sale
  * Domain Path: /lang/

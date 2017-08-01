@@ -310,6 +310,7 @@
                 }
             });
         } else { //category
+            console.log('-category-');
             var archive_display = settings.archive_display;
             if (parent == 0) {
                 ul.empty();
@@ -449,7 +450,10 @@
                 });
             }
         }
-        $('#grid_layout_cycle').data('offset', offset + limit);
+        if (offset == 0) {
+            offset = 10;
+        }
+        $('#grid_layout_cycle').data('offset', offset + settings.count);
         return count;
     }
 
@@ -588,7 +592,6 @@
                         }
                     }
 
-
                     build = true;
 
                     if (pagination === true) {
@@ -622,9 +625,11 @@
                             }
                             var $li = $('<li id="attribute_' + val.slug + '" class="title_product open_variantion_attr category_cycle" data-id="' + parent + '" data-taxonomy="' + tax + '" data-term="' + val.slug + '"><span class="pr_title"></span>' + price + '</li>');
                             $li.find('span.pr_title').html(title);
-                            $li.data('title', title).css({
-                                'background-image': 'url(' + POS_TRANSIENT.grid_product_variations[variable_index].data.thumbnail_src + ')'
-                            });
+                            if(POS_TRANSIENT.grid_product_variations[variable_index]){
+                                $li.data('title', title).css({
+                                    'background-image': 'url(' + POS_TRANSIENT.grid_product_variations[variable_index].data.thumbnail_src + ')'
+                                });
+                            }
                             ul.append($li);
                         }
                     });
@@ -661,7 +666,6 @@
                         }
                     }
                 }
-
             });
         }
     }

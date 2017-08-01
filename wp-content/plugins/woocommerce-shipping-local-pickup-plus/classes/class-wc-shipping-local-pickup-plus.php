@@ -452,12 +452,12 @@ class WC_Shipping_Local_Pickup_Plus extends WC_Shipping_Method {
 								echo wc_help_tip( 'ID кабинета ТА (если есть на селлере)' );
 								?>
                             </th>
-                            <th>
-		                        <?php
-		                        esc_html_e( 'Отображение ТА', 'woocommerce-shipping-local-pickup-plus' );
-		                        echo wc_help_tip( 'ID кабинета ТА (если есть на селлере)' );
-		                        ?>
-                            </th>
+<!--                            <th>-->
+<!--								--><?php
+//								esc_html_e( 'Отображение ТА', 'woocommerce-shipping-local-pickup-plus' );
+//								echo wc_help_tip( 'ID кабинета ТА (если есть на селлере)' );
+//								?>
+<!--                            </th>-->
                         </tr>
                         </thead>
                         <tfoot>
@@ -513,10 +513,10 @@ class WC_Shipping_Local_Pickup_Plus extends WC_Shipping_Method {
 								$checked = "checked";
 //							echo '<td><input type="text" name="' . $this->id . '_cost[]" value="' . ( isset( $location['cost'] ) ? $location['cost'] : '' ) . '" placeholder="' . __( '(Optional)', 'woocommerce-shipping-local-pickup-plus' ) . '" /></td>';
 								echo '<td><input type="text" name="' . $this->id . '_taid[]" value="' . ( isset( $location['taid'] ) ? $location['taid'] : '' ) . '" placeholder="' . 'ID ТА' . '" /></td>';
-								echo '<td><input type="checkbox" name="' . $this->id . '_tadisplay[] " ' . ( $location['tadisplay'] == "on" ? "checked='checked'" : '' ) . '/></td>';
+								//echo '<td><input type="checkbox" name="' . $this->id . '_tadisplay[] " ' . ( $location['tadisplay'] == "on" ? "checked='checked'" : '' ) . '/></td>';
 								echo '</tr>';
-								echo 'tadisplay: '.$location["tadisplay"];
-								echo '<br>';
+//								echo 'tadisplay: ' . $location["tadisplay"];
+								//echo '<br>';
 							}
 						}
 						?>
@@ -648,7 +648,7 @@ class WC_Shipping_Local_Pickup_Plus extends WC_Shipping_Method {
 			'clean_amount_field'
 		), $_POST[ $this->id . '_cost' ] ) : array();
 		$ta_id     = isset( $_POST[ $this->id . '_taid' ] ) ? array_map( 'stripslashes_deep', $_POST[ $this->id . '_taid' ] ) : array();
-		$tadisplay     = isset( $_POST[ $this->id . '_tadisplay' ] ) ? array_map( 'stripslashes_deep', $_POST[ $this->id . '_tadisplay' ] ) : array();
+		//$tadisplay = isset( $_POST[ $this->id . '_tadisplay' ] ) ? array_map( 'stripslashes_deep', $_POST[ $this->id . '_tadisplay' ] ) : array();
 
 		// standard fields
 		foreach ( array_keys( $pickup_fields ) as $field_name ) {
@@ -675,10 +675,10 @@ class WC_Shipping_Local_Pickup_Plus extends WC_Shipping_Method {
 
 			// reserved fields
 			$pickup_location = array(
-				'id'      => $id,
-				'country' => isset( $countries[ $i ] ) ? $countries[ $i ] : null,
-				'taid'    => isset( $ta_id[ $i ] ) ? $ta_id[ $i ] : null,
-				'tadisplay'    => isset( $tadisplay[ $i ] ) ? $tadisplay[ $i ] : null,
+				'id'        => $id,
+				'country'   => isset( $countries[ $i ] ) ? $countries[ $i ] : null,
+				'taid'      => isset( $ta_id[ $i ] ) ? $ta_id[ $i ] : null,
+				//'tadisplay' => isset( $tadisplay[ $i ] ) ? $tadisplay[ $i ] : null,
 			);
 
 			$cost = isset( $costs[ $i ] ) ? trim( $costs[ $i ] ) : null;
@@ -1513,7 +1513,7 @@ class WC_Shipping_Local_Pickup_Plus extends WC_Shipping_Method {
 						}
 					}
 
-					array_push($available_stores_eith_id, $stores_sorted_by_region_with_id[$i]);
+					array_push( $available_stores_eith_id, $stores_sorted_by_region_with_id[ $i ] );
 
 					curl_multi_remove_handle( $mh, $conn[ $i ] );
 					curl_close( $conn[ $i ] );
@@ -1523,21 +1523,34 @@ class WC_Shipping_Local_Pickup_Plus extends WC_Shipping_Method {
 				//$myfile = fopen("store1.txt", "w") or die("Unable to open file!");
 				//file_put_contents("store1.txt", print_r($available_stores_eith_id, true), FILE_APPEND | LOCK_EX);
 
-                $all_available_stores = array_merge($available_stores_eith_id, $stores_sorted_by_region_without_id);
+				$all_available_stores = array_merge( $available_stores_eith_id, $stores_sorted_by_region_without_id );
 
-                foreach ($all_available_stores as $location_store){
-	                // determine the chosen pickup location
-	                if ( is_numeric( $chosen_pickup_location_id ) && $location_store['id'] == $chosen_pickup_location_id ) {
-		                $chosen_pickup_location = $location_store;
-	                }
+				foreach ( $all_available_stores as $location_store ) {
+					// determine the chosen pickup location
+					if ( is_numeric( $chosen_pickup_location_id ) && $location_store['id'] == $chosen_pickup_location_id ) {
+						$chosen_pickup_location = $location_store;
+					}
 
-	                echo '<option value="' . esc_attr( $location_store['id'] ) . '" ' . selected( $location_store['id'], $chosen_pickup_location_id, false ) . '>';
-	                echo $this->get_formatted_address_helper( $location_store, true, true );
-	                echo '</option>';
-                }
+					echo '<option value="' . esc_attr( $location_store['id'] ) . '" ' . selected( $location_store['id'], $chosen_pickup_location_id, false ) . '>';
+					echo $this->get_formatted_address_helper( $location_store, true, true );
+					echo '</option>';
+				}
 
 				echo '</select>';
-				echo '<script>jQuery(document).ready(function($){$(document).ready(function(){$("td > select.pickup_location").select2();});});</script>';
+				echo '<script>
+jQuery(document).ready(function(
+    $){$(document).ready(function(){
+        $("td > select.pickup_location").select2({
+  language: {
+    noResults: function (params) {
+      return "Пункты выдачи не найдены или не выбраны город и регион";
+    }
+  }
+});
+        });
+    });
+    
+    </script>';
 				echo 'Время выполнения скрипта: ' . ( microtime( true ) - $start ) . ' сек.';
 
 			} else {

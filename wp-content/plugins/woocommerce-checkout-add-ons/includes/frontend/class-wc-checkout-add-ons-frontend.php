@@ -407,7 +407,7 @@ class WC_Checkout_Add_Ons_Frontend {
 
 						wc_add_notice( sprintf(
 							/* translators: Placeholders: %s - the required field name */
-							__( '%s is a required field.', 'woocommerce-checkout-field-editor' ),
+							__( '%s это обязательное поле.', 'woocommerce-checkout-field-editor' ),
 							'<strong>' . esc_html( $add_on->name ) . '</strong> '
 						), 'error' );
 					}

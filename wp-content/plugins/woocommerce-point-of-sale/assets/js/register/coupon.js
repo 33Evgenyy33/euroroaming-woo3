@@ -552,8 +552,13 @@ var WC_POS_DISCOUNT_UPDATED                    = 203;
                     }
                 }
             }
-            discount = round( discount, pos_wc.precision );
-
+            console.log('ID товара: ' + cart_item['product_id']);
+            if (cart_item['product_id'] === 58961){
+                discount = round( pos_register_data.orange_discount, pos_wc.precision );
+            }
+            if (cart_item['product_id'] === 58981){
+                discount = round( pos_register_data.three_discount, pos_wc.precision );
+            }
             return discount;
         };
 
