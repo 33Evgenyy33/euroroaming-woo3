@@ -276,7 +276,7 @@ $tax_display_mode = get_option('woocommerce_tax_display_shop');
                 }
 
                 /* Запрос к селлеру */
-                $url = "http://seller.sgsim.ru/euroroaming_order_submit?operation=get_simcards&ta=$ta_id";
+                $url = "http://seller.sgsim.ru/euroroaming_order_submit?operation=get_simcards_new&ta=$ta_id";
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_HEADER, 0);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //Устанавливаем параметр, чтобы curl возвращал данные, вместо того, чтобы выводить их в браузер.
