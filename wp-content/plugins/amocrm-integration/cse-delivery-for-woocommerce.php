@@ -231,9 +231,18 @@ if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_
 				$id_contact = $contact->apiAdd();
 			} else { //Контакт есть. Берем самый первый контакт и привязывает к сделке. У сделки обновляем ответственного.
 
-				$contact_id = $contacts_list[0]['id'];
-				$contact_responsible_user_id = $contacts_list[0]['responsible_user_id'];
-				$linked_leads_id = $contacts_list[0]['linked_leads_id'];
+				$sorted_contacts = array();
+				$contacts_responsible_users_ids = array();
+				$linked_leads_ids = array();
+				foreach ($contacts_list as $contact){
+					$sorted_contacts[$contact['id']] = $contact['date_create'];
+					$contacts_responsible_users_ids[$contact['id']] = $contact['responsible_user_id'];
+					$linked_leads_ids[$contact['id']] = $contact['linked_leads_id'];
+				}
+
+				$contact_id = array_keys($sorted_contacts, min($sorted_contacts))[0];
+				$contact_responsible_user_id = $contacts_responsible_users_ids[$contact_id];
+				$linked_leads_id = $linked_leads_ids[$contact_id];
 
 				if (count($linked_leads_id) == 0) {
 					$contact['linked_leads_id'] = $id_lead;

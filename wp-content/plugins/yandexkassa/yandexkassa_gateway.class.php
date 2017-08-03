@@ -232,7 +232,7 @@ class WC_yamoney_Gateway extends WC_Payment_Gateway
 	        $data = $order->get_data();
 	        $currency = $data['currency'];
 	        $shipping = $data['shipping_lines'];
-	        $euro_rate = 69; // Курс евро
+	        $euro_rate = 74; // Курс евро
 
 	        //$myfile = fopen("processing-" . $order->get_id() . ".txt", "w") or die("Unable to open file!");
 	        //file_put_contents("processing-" . $order->get_id() . ".txt", print_r($order->get_items(), true), FILE_APPEND | LOCK_EX);
@@ -269,6 +269,17 @@ class WC_yamoney_Gateway extends WC_Payment_Gateway
 			        //$myfile = fopen("processing-" . $order->get_id() . ".txt", "w") or die("Unable to open file!");
 			        //file_put_contents("processing-" . $order->get_id() . ".txt", print_r($receiptWrapper, true), FILE_APPEND | LOCK_EX);
 
+
+
+			        $discount_one_pos = 0;
+			        $is_discount_price = false;
+			        $discount = $initial_price - $discount_price;
+
+			        if ($discount != 0){
+				        $is_discount_price = true;
+				        $discount_one_pos = $discount / $quantity;
+			        }
+
 			        //======================================================
 			        // Позиция "Тариф"
 			        //======================================================
@@ -278,48 +289,50 @@ class WC_yamoney_Gateway extends WC_Payment_Gateway
 				        case '€20' :
 					        $balance_in_euro = 20;
 					        $balance_in_rub = 20 * $euro_rate;
-					        $tariff_name = 'EUR20';
+					        $tariff_name = '20 EUR';
 					        $tariff_in_rub = 20 * $euro_rate;
 					        break;
 				        case '€35' :
 					        $balance_in_euro = 35;
 					        $balance_in_rub = 35 * $euro_rate;
-					        $tariff_name = 'EUR15';
+					        $tariff_name = '15 EUR';
 					        $tariff_in_rub = 15 * $euro_rate;
 					        break;
 				        case '€50' :
 					        $balance_in_euro = 50;
 					        $balance_in_rub = 50 * $euro_rate;
-					        $tariff_name = 'EUR10';
+					        $tariff_name = '10 EUR';
 					        $tariff_in_rub = 10 * $euro_rate;
 					        break;
 				        case '€75' :
 					        $balance_in_euro = 75;
 					        $balance_in_rub = 75 * $euro_rate;
-					        $tariff_name = 'EUR5';
+					        $tariff_name = '5 EUR';
 					        $tariff_in_rub = 5 * $euro_rate;
 					        break;
 				        case '€100' :
 					        $balance_in_euro = 100;
 					        $balance_in_rub = 100 * $euro_rate;
-					        $tariff_name = 'EUR0 ';
+					        $tariff_name = '0 EUR ';
 					        $tariff_in_rub = 0 * $euro_rate;
 					        break;
 				        case '€150' :
 					        $balance_in_euro = 150;
 					        $balance_in_rub = 150 * $euro_rate;
-					        $tariff_name = 'EUR0';
+					        $tariff_name = '0 EUR';
 					        $tariff_in_rub = 0 * $euro_rate;
 					        break;
 			        }
 			        $itemTotal = $tariff_in_rub * $quantity;
-			        if ($initial_price == $discount_price) {
-				        $amount = $itemTotal / $quantity + $tax / $quantity;
-			        } else {
-				        $discount = $initial_price - $discount_price;
-				        $discount_one_pos = $discount / $quantity;
+
+			        $amount = 0;
+			        if ($is_discount_price && ($itemTotal / $quantity - $discount_one_pos > 0)){
 				        $amount = ($itemTotal / $quantity + $tax / $quantity) - $discount_one_pos;
+				        $is_discount_price = false;
+			        } else {
+				        $amount = $itemTotal / $quantity + $tax / $quantity;
 			        }
+
 			        $itemWrapper = new stdClass();
 			        $itemWrapper->quantity = $quantity;
 			        $itemWrapper->price = new stdClass();
@@ -357,13 +370,20 @@ class WC_yamoney_Gateway extends WC_Payment_Gateway
 					        break;
 			        }
 			        $itemTotal = $package_in_rub * $quantity;
-			        $amount = $itemTotal / $quantity + $tax / $quantity;
+
+			        if ($is_discount_price && ($itemTotal / $quantity - $discount_one_pos > 0)){
+				        $amount = ($itemTotal / $quantity + $tax / $quantity) - $discount_one_pos;
+				        $is_discount_price = false;
+			        } else {
+				        $amount = $itemTotal / $quantity + $tax / $quantity;
+			        }
+
 			        $itemWrapper = new stdClass();
 			        $itemWrapper->quantity = $quantity;
 			        $itemWrapper->price = new stdClass();
 			        $itemWrapper->price->amount = round($amount, 2); //Стоимость
 			        $itemWrapper->price->currency = $currency; //Валюта
-			        $itemWrapper->text = 'Подкюченный интернет-пакет ' . str_replace('€', 'EUR', $package_name); //Название
+			        $itemWrapper->text = 'Подкюченный интернет-пакет ' . str_replace('ГБ', 'ГБ за',str_replace('€', ' EUR',str_replace(str_split('\\/()'), '', $package_name))); //Название
 			        $itemWrapper->tax = $this->getYmTaxRate($taxes);
 			        $receiptWrapper->items[] = $itemWrapper;
 
@@ -378,13 +398,19 @@ class WC_yamoney_Gateway extends WC_Payment_Gateway
 			        $balance_with_pack_in_rub = $balance_in_rub - $package_in_rub;
 
 			        $itemTotal = $balance_with_pack_in_rub * $quantity;
-			        $amount = $itemTotal / $quantity + $tax / $quantity;
+
+			        if ($is_discount_price && ($itemTotal / $quantity - $discount_one_pos > 0)){
+				        $amount = ($itemTotal / $quantity + $tax / $quantity) - $discount_one_pos;
+			        } else {
+				        $amount = $itemTotal / $quantity + $tax / $quantity;
+			        }
+
 			        $itemWrapper = new stdClass();
 			        $itemWrapper->quantity = $quantity;
 			        $itemWrapper->price = new stdClass();
 			        $itemWrapper->price->amount = round($amount, 2); //Стоимость
 			        $itemWrapper->price->currency = $currency; //Валюта
-			        $itemWrapper->text = 'Баланс с учетом подключенного пакета EUR' . $balance_with_pack_in_euro; //Название
+			        $itemWrapper->text = 'Баланс с учетом подключенного пакета ' . $balance_with_pack_in_euro. ' EUR'; //Название
 			        $itemWrapper->tax = $this->getYmTaxRate($taxes);
 			        $receiptWrapper->items[] = $itemWrapper;
 

@@ -1,0 +1,60 @@
+stdClass Object
+(
+    [customerContact] => 33evgenyy33@gmail.com
+    [items] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [quantity] => 1
+                    [price] => stdClass Object
+                        (
+                            [amount] => 0
+                            [currency] => RUB
+                        )
+
+                    [text] => Сим-карта
+                    [tax] => 1
+                )
+
+            [1] => stdClass Object
+                (
+                    [quantity] => 1
+                    [price] => stdClass Object
+                        (
+                            [amount] => 335
+                            [currency] => RUB
+                        )
+
+                    [text] => Тариф Orange Mundo - регистрация, активация в сети оператора 15 EUR
+                    [tax] => 1
+                )
+
+            [2] => stdClass Object
+                (
+                    [quantity] => 1
+                    [price] => stdClass Object
+                        (
+                            [amount] => 690
+                            [currency] => RUB
+                        )
+
+                    [text] => Подкюченный интернет-пакет 2ГБ за 10 EUR
+                    [tax] => 1
+                )
+
+            [3] => stdClass Object
+                (
+                    [quantity] => 1
+                    [price] => stdClass Object
+                        (
+                            [amount] => 1725
+                            [currency] => RUB
+                        )
+
+                    [text] => Баланс с учетом подключенного пакета 25 EUR
+                    [tax] => 1
+                )
+
+        )
+
+)
