@@ -17,6 +17,7 @@ if (!defined('WPINC')) {
 	die;
 }
 require_once __DIR__ . '/vendor/autoload.php';
+//require_once __DIR__ . '/amocrm.phar';
 
 /*
  * Check if WooCommerce is active
@@ -244,6 +245,8 @@ if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_
 				$contact_responsible_user_id = $contacts_responsible_users_ids[$contact_id];
 				$linked_leads_id = $linked_leads_ids[$contact_id];
 
+				$contact = $amo->contact;
+
 				if (count($linked_leads_id) == 0) {
 					$contact['linked_leads_id'] = $id_lead;
 				} else {
@@ -251,20 +254,23 @@ if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_
 					$contact['linked_leads_id'] = $linked_leads_id;
 				}
 
-				//$myfile = fopen("processing-" . $order_id . ".txt", "w") or die("Unable to open file!");
-				//file_put_contents("processing-" . $order_id . ".txt", print_r($contact['linked_leads_id'], true)); //get_post_meta($order_id,'_billing_phone', true)
+				//$order_by = get_post_meta($order_id, '_created_via', true);
+				//file_put_contents($_SERVER['DOCUMENT_ROOT']."/logs/amocrm-order_by-$order_by-" . $order_id . ".txt", print_r((int)$contact_id, true)."\r\n", FILE_APPEND | LOCK_EX);
+				//file_put_contents($_SERVER['DOCUMENT_ROOT']."/logs/amocrm-order_by-$order_by-" . $order_id . ".txt", print_r($contact_responsible_user_id, true)."\r\n", FILE_APPEND | LOCK_EX);
+				//file_put_contents($_SERVER['DOCUMENT_ROOT']."/logs/amocrm-order_by-$order_by-" . $order_id . ".txt", print_r($contact['linked_leads_id'], true)."\r\n", FILE_APPEND | LOCK_EX);
 
 				$contact->apiUpdate((int)$contact_id, 'now');
 
 				$lead = $amo->lead;
-				$lead['responsible_user_id'] = $contact_responsible_user_id;
+				//$lead->debug(true); // Режим отладки
+				$lead['responsible_user_id'] = (int)$contact_responsible_user_id;
+				sleep(1);
 				$lead->apiUpdate((int)$id_lead, 'now');
-
 			}
-
 
 		} catch (\AmoCRM\Exception $e) {
 			error_log('Error (%d): %s', $e->getCode(), $e->getMessage());
+
 		}
 	}
 

@@ -1,0 +1,425 @@
+Array
+(
+    [id] => 61106
+    [parent_id] => 0
+    [status] => pending
+    [currency] => RUB
+    [version] => 3.1.1
+    [prices_include_tax] => 
+    [date_created] => WC_DateTime Object
+        (
+            [utc_offset:protected] => 10800
+            [date] => 2017-08-03 19:49:25.000000
+            [timezone_type] => 1
+            [timezone] => +00:00
+        )
+
+    [date_modified] => WC_DateTime Object
+        (
+            [utc_offset:protected] => 10800
+            [date] => 2017-08-03 19:49:25.000000
+            [timezone_type] => 1
+            [timezone] => +00:00
+        )
+
+    [discount_total] => 0
+    [discount_tax] => 0
+    [shipping_total] => 100
+    [shipping_tax] => 0
+    [cart_tax] => 0
+    [total] => 3060.00
+    [total_tax] => 0
+    [customer_id] => 1
+    [order_key] => wc_order_59837e45edb4c
+    [billing] => Array
+        (
+            [first_name] => test7
+            [last_name] => test7
+            [company] => 
+            [address_1] => рол
+            [address_2] => 
+            [city] => Москва
+            [state] => РЕСП АЛТАЙ
+            [postcode] => 442960
+            [country] => RU
+            [email] => 33evgenyy33@gmail.com
+            [phone] => 71111111177
+        )
+
+    [shipping] => Array
+        (
+            [first_name] => test7
+            [last_name] => test7
+            [company] => 
+            [address_1] => рол
+            [address_2] => 
+            [city] => Москва
+            [state] => Респ Алтай
+            [postcode] => 442960
+            [country] => RU
+        )
+
+    [payment_method] => bank
+    [payment_method_title] => Банковская карта
+    [transaction_id] => 
+    [customer_ip_address] => 127.0.0.1
+    [customer_user_agent] => mozilla/5.0 (windows nt 10.0; win64; x64) applewebkit/537.36 (khtml, like gecko) chrome/59.0.3071.115 safari/537.36
+    [created_via] => checkout
+    [customer_note] => 
+    [date_completed] => 
+    [date_paid] => 
+    [cart_hash] => cb4e136b70a113575a6d8a9fbcf01c9c
+    [number] => 61106
+    [meta_data] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [id] => 182392
+                    [key] => _my_choice
+                    [value] => Array
+                        (
+                        )
+
+                )
+
+            [1] => stdClass Object
+                (
+                    [id] => 182393
+                    [key] => date_activ
+                    [value] => 20.08.2017
+                )
+
+            [2] => stdClass Object
+                (
+                    [id] => 182394
+                    [key] => passport
+                    [value] => 1
+                )
+
+            [3] => stdClass Object
+                (
+                    [id] => 182395
+                    [key] => activation_conditions
+                    [value] => 1
+                )
+
+        )
+
+    [line_items] => Array
+        (
+            [643] => WC_Order_Item_Product Object
+                (
+                    [extra_data:protected] => Array
+                        (
+                            [product_id] => 0
+                            [variation_id] => 0
+                            [quantity] => 1
+                            [tax_class] => 
+                            [subtotal] => 0
+                            [subtotal_tax] => 0
+                            [total] => 0
+                            [total_tax] => 0
+                            [taxes] => Array
+                                (
+                                    [subtotal] => Array
+                                        (
+                                        )
+
+                                    [total] => Array
+                                        (
+                                        )
+
+                                )
+
+                        )
+
+                    [data:protected] => Array
+                        (
+                            [order_id] => 61106
+                            [name] => Orange с тарифом «Mundo» для Европы
+                            [product_id] => 58961
+                            [variation_id] => 59096
+                            [quantity] => 1
+                            [tax_class] => 
+                            [subtotal] => 2960
+                            [subtotal_tax] => 0
+                            [total] => 2960
+                            [total_tax] => 0
+                            [taxes] => Array
+                                (
+                                    [total] => Array
+                                        (
+                                        )
+
+                                    [subtotal] => Array
+                                        (
+                                        )
+
+                                )
+
+                        )
+
+                    [cache_group:protected] => order-items
+                    [meta_type:protected] => order_item
+                    [object_type:protected] => order_item
+                    [id:protected] => 643
+                    [changes:protected] => Array
+                        (
+                        )
+
+                    [object_read:protected] => 1
+                    [default_data:protected] => Array
+                        (
+                            [order_id] => 0
+                            [name] => 
+                            [product_id] => 0
+                            [variation_id] => 0
+                            [quantity] => 1
+                            [tax_class] => 
+                            [subtotal] => 0
+                            [subtotal_tax] => 0
+                            [total] => 0
+                            [total_tax] => 0
+                            [taxes] => Array
+                                (
+                                    [subtotal] => Array
+                                        (
+                                        )
+
+                                    [total] => Array
+                                        (
+                                        )
+
+                                )
+
+                        )
+
+                    [data_store:protected] => WC_Data_Store Object
+                        (
+                            [instance:WC_Data_Store:private] => WC_Order_Item_Product_Data_Store Object
+                                (
+                                    [internal_meta_keys:protected] => Array
+                                        (
+                                            [0] => _order_id
+                                            [1] => _name
+                                            [2] => _product_id
+                                            [3] => _variation_id
+                                            [4] => _quantity
+                                            [5] => _tax_class
+                                            [6] => _subtotal
+                                            [7] => _subtotal_tax
+                                            [8] => _total
+                                            [9] => _total_tax
+                                            [10] => _taxes
+                                            [11] => _product_id
+                                            [12] => _variation_id
+                                            [13] => _qty
+                                            [14] => _tax_class
+                                            [15] => _line_subtotal
+                                            [16] => _line_subtotal_tax
+                                            [17] => _line_total
+                                            [18] => _line_tax
+                                            [19] => _line_tax_data
+                                        )
+
+                                    [meta_type:protected] => order_item
+                                    [object_id_field_for_meta:protected] => order_item_id
+                                )
+
+                            [stores:WC_Data_Store:private] => Array
+                                (
+                                    [coupon] => WC_Coupon_Data_Store_CPT
+                                    [customer] => WC_Customer_Data_Store
+                                    [customer-download] => WC_Customer_Download_Data_Store
+                                    [customer-session] => WC_Customer_Data_Store_Session
+                                    [order] => WC_Order_Data_Store_CPT
+                                    [order-refund] => WC_Order_Refund_Data_Store_CPT
+                                    [order-item] => WC_Order_Item_Data_Store
+                                    [order-item-coupon] => WC_Order_Item_Coupon_Data_Store
+                                    [order-item-fee] => WC_Order_Item_Fee_Data_Store
+                                    [order-item-product] => WC_Order_Item_Product_Data_Store
+                                    [order-item-shipping] => WC_Order_Item_Shipping_Data_Store
+                                    [order-item-tax] => WC_Order_Item_Tax_Data_Store
+                                    [payment-token] => WC_Payment_Token_Data_Store
+                                    [product] => WC_Product_Data_Store_CPT
+                                    [product-grouped] => WC_Product_Grouped_Data_Store_CPT
+                                    [product-variable] => WC_Product_Variable_Data_Store_CPT
+                                    [product-variation] => WC_Product_Variation_Data_Store_CPT
+                                    [shipping-zone] => WC_Shipping_Zone_Data_Store
+                                )
+
+                            [current_class_name:WC_Data_Store:private] => WC_Order_Item_Product_Data_Store
+                            [object_type:WC_Data_Store:private] => order-item-product
+                        )
+
+                    [meta_data:protected] => Array
+                        (
+                            [0] => stdClass Object
+                                (
+                                    [id] => 4627
+                                    [key] => balans
+                                    [value] => €20
+                                )
+
+                            [1] => stdClass Object
+                                (
+                                    [id] => 4628
+                                    [key] => razmer-sim-karty
+                                    [value] => Nano-SIM
+                                )
+
+                            [2] => stdClass Object
+                                (
+                                    [id] => 4629
+                                    [key] => paket-podklyuchennyj-za-schet-balansa
+                                    [value] => 1ГБ (7€)
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [tax_lines] => Array
+        (
+        )
+
+    [shipping_lines] => Array
+        (
+            [644] => WC_Order_Item_Shipping Object
+                (
+                    [extra_data:protected] => Array
+                        (
+                            [method_title] => 
+                            [method_id] => 
+                            [total] => 0
+                            [total_tax] => 0
+                            [taxes] => Array
+                                (
+                                    [total] => Array
+                                        (
+                                        )
+
+                                )
+
+                        )
+
+                    [data:protected] => Array
+                        (
+                            [order_id] => 61106
+                            [name] => Почта России
+                            [method_title] => Почта России
+                            [method_id] => flat_rate:1
+                            [total] => 100.00
+                            [total_tax] => 0
+                            [taxes] => Array
+                                (
+                                    [total] => Array
+                                        (
+                                        )
+
+                                )
+
+                        )
+
+                    [cache_group:protected] => order-items
+                    [meta_type:protected] => order_item
+                    [object_type:protected] => order_item
+                    [id:protected] => 644
+                    [changes:protected] => Array
+                        (
+                        )
+
+                    [object_read:protected] => 1
+                    [default_data:protected] => Array
+                        (
+                            [order_id] => 0
+                            [name] => 
+                            [method_title] => 
+                            [method_id] => 
+                            [total] => 0
+                            [total_tax] => 0
+                            [taxes] => Array
+                                (
+                                    [total] => Array
+                                        (
+                                        )
+
+                                )
+
+                        )
+
+                    [data_store:protected] => WC_Data_Store Object
+                        (
+                            [instance:WC_Data_Store:private] => WC_Order_Item_Shipping_Data_Store Object
+                                (
+                                    [internal_meta_keys:protected] => Array
+                                        (
+                                            [0] => _order_id
+                                            [1] => _name
+                                            [2] => _method_title
+                                            [3] => _method_id
+                                            [4] => _total
+                                            [5] => _total_tax
+                                            [6] => _taxes
+                                            [7] => method_id
+                                            [8] => cost
+                                            [9] => total_tax
+                                            [10] => taxes
+                                        )
+
+                                    [meta_type:protected] => order_item
+                                    [object_id_field_for_meta:protected] => order_item_id
+                                )
+
+                            [stores:WC_Data_Store:private] => Array
+                                (
+                                    [coupon] => WC_Coupon_Data_Store_CPT
+                                    [customer] => WC_Customer_Data_Store
+                                    [customer-download] => WC_Customer_Download_Data_Store
+                                    [customer-session] => WC_Customer_Data_Store_Session
+                                    [order] => WC_Order_Data_Store_CPT
+                                    [order-refund] => WC_Order_Refund_Data_Store_CPT
+                                    [order-item] => WC_Order_Item_Data_Store
+                                    [order-item-coupon] => WC_Order_Item_Coupon_Data_Store
+                                    [order-item-fee] => WC_Order_Item_Fee_Data_Store
+                                    [order-item-product] => WC_Order_Item_Product_Data_Store
+                                    [order-item-shipping] => WC_Order_Item_Shipping_Data_Store
+                                    [order-item-tax] => WC_Order_Item_Tax_Data_Store
+                                    [payment-token] => WC_Payment_Token_Data_Store
+                                    [product] => WC_Product_Data_Store_CPT
+                                    [product-grouped] => WC_Product_Grouped_Data_Store_CPT
+                                    [product-variable] => WC_Product_Variable_Data_Store_CPT
+                                    [product-variation] => WC_Product_Variation_Data_Store_CPT
+                                    [shipping-zone] => WC_Shipping_Zone_Data_Store
+                                )
+
+                            [current_class_name:WC_Data_Store:private] => WC_Order_Item_Shipping_Data_Store
+                            [object_type:WC_Data_Store:private] => order-item-shipping
+                        )
+
+                    [meta_data:protected] => Array
+                        (
+                            [0] => stdClass Object
+                                (
+                                    [id] => 4634
+                                    [key] => Позиции
+                                    [value] => Orange с тарифом «Mundo» для Европы &times; 1
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [fee_lines] => Array
+        (
+        )
+
+    [coupon_lines] => Array
+        (
+        )
+
+)
