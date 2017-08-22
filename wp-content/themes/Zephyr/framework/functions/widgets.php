@@ -116,15 +116,15 @@ abstract class US_Widget extends WP_Widget {
 	 * @param string $value Current value
 	 */
 	public function form_checkbox( $param, $value ) {
-		$param['heading'] = isset( $param['heading'] ) ? $param['heading'] : $param['name'];
-		//$field_id = $this->get_field_id( $param['name'] );
-		$output = '<p>' . $param['heading'] . ':</p><p>';
-
+		$output = '<p>';
+		if ( $param['heading'] ) {
+			$output .= '<span>' . $param['heading'] . ':</span><br>';
+		}
 		if ( isset( $param['value'] ) AND is_array( $param['value'] ) ) {
 			foreach ( $param['value'] as $value_title => $value_key ) {
 				$name = $param['name'] . '-' . esc_attr( $value_key );
 				$checked = ( is_array( $value ) AND in_array( $value_key, $value ) ) ? ' checked="checked"' : '';
-				$output .= '<label><input name="' . esc_attr( $this->get_field_name( $param['name'] ) ) . '[]" type="checkbox" value="' . esc_attr( $value_key ) . '"' . $checked . '>' . $value_title . '</label> ';
+				$output .= '<label><input name="' . esc_attr( $this->get_field_name( $param['name'] ) ) . '[]" type="checkbox" value="' . esc_attr( $value_key ) . '"' . $checked . '>' . $value_title . '</label><br>';
 			}
 		}
 		$output .= '</p>';

@@ -45,7 +45,7 @@ class ACP_ListScreen_Taxonomy extends AC_ListScreen {
 	/**
 	 * @since 4.0
 	 */
-	public function get_object_by_id( $term_id ) {
+	protected function get_object_by_id( $term_id ) {
 		return get_term_by( 'id', $term_id, $this->get_taxonomy() );
 	}
 
@@ -119,8 +119,8 @@ class ACP_ListScreen_Taxonomy extends AC_ListScreen {
 	}
 
 	protected function register_column_types() {
-		$this->register_column_type( new ACP_Column_CustomField() );
-		$this->register_column_type( new ACP_Column_UsedByMenu() );
+		$this->register_column_type( new ACP_Column_CustomField );
+		$this->register_column_type( new ACP_Column_Menu );
 
 		$this->register_column_types_from_dir( ACP()->get_plugin_dir() . 'classes/Column/Taxonomy', ACP::CLASS_PREFIX );
 	}

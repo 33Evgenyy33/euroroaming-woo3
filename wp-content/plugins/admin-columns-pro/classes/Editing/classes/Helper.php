@@ -307,4 +307,13 @@ class ACP_Editing_Helper {
 		return $options;
 	}
 
+	/**
+	 * Update post Last modified to current date/time
+	 *
+	 * @param int $id Post ID
+	 */
+	public function update_post_last_modified( $id ) {
+		wp_update_post( array( 'ID' => $id ) );
+	}
+
 }

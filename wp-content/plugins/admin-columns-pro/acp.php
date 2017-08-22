@@ -268,7 +268,7 @@ final class ACP {
 
 		// Applies to ALL list screens
 		$list_screen->register_column_type( new ACP_Column_CustomField );
-		$list_screen->register_column_type( new ACP_Column_UsedByMenu );
+		$list_screen->register_column_type( new ACP_Column_Menu );
 
 		// Native Taxonomy columns
 		$this->register_native_taxonomy_columns( $list_screen );

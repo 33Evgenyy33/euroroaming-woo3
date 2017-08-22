@@ -420,7 +420,7 @@ body.rtl .l-navigation.inv_false .to_prev {
 	line-height: 80px;
 	width: 80px;
 	}
-	
+
 .w-tabs-item,
 .w-tabs-section-header {
 	font-size: 16px !important;
@@ -636,14 +636,14 @@ body.rtl .l-navigation.inv_false .to_prev {
 	padding-right: 5px;
 	}
 	
-.w-blog.layout_smallcircle .w-blog-post-preview,
-.w-blog.layout_smallsquare .w-blog-post-preview {
+div:not(.widget_us_blog) > .w-blog.layout_smallcircle .w-blog-post-preview,
+div:not(.widget_us_blog) > .w-blog.layout_smallsquare .w-blog-post-preview {
 	float: none;
 	width: 100%;
-	margin-bottom: 20px;
+	margin-bottom: 1rem;
 	}
-.w-blog.layout_smallcircle .w-blog-post-body,
-.w-blog.layout_smallsquare .w-blog-post-body {
+div:not(.widget_us_blog) > .w-blog.layout_smallcircle .w-blog-post-body,
+div:not(.widget_us_blog) > .w-blog.layout_smallsquare .w-blog-post-body {
 	margin-left: 0 !important;
 	margin-right: 0 !important;
 	}

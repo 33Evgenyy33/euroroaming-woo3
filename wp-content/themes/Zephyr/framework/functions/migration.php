@@ -314,7 +314,7 @@ class US_Migration {
 			$output = '<div class="error us-migration">';
 			$output .= '<h2>Your website data needs to be migrated to be compatible with <strong>' . US_THEMENAME . ' ' . US_THEMEVERSION . '</strong></h2>';
 			$output .= '<p><strong>Important</strong>: Do not save any changes before the migration, as doing this you may loose some of your website data.';
-			$output .= '<br>Please <a href="https://help.us-themes.com/' . strtolower( US_THEMENAME ) . '/installation/update20/" target="_blank">read the manual ';
+			$output .= '<br><a href="https://help.us-themes.com/' . strtolower( US_THEMENAME ) . '/installation/update20/" target="_blank">Read the manual ';
 			$output .= 'how to migrate the website</a> (or how to rollback to the previous version of the theme, if you don\'t want to migrate) carefully.</p>';
 			$output .= '<p><label><input type="checkbox" name="allow_migration" id="allow_migration"> I\'ve read the manual, made a full backup and checked the website: everything works fine!</p>';
 			$output .= '<p><input disabled type="submit" value="Start the Migration" class="button button-large" id="migration-start"></p>';
@@ -344,8 +344,8 @@ class US_Migration {
 			$output = $this->migration_completed_message;
 		} else {
 			$output = '<div class="updated us-migration">';
-			$output .= '<p><strong>Congratulations</strong>: Migration to ' . US_THEMENAME . ' ' . US_THEMEVERSION . ' ';
-			$output .= 'is completed! Now please regenerate thumbnails and check your website once again. If you notice ';
+			$output .= '<p>Migration to ' . US_THEMENAME . ' ' . US_THEMEVERSION . ' ';
+			$output .= 'is completed! Now regenerate thumbnails and check your website once again. If you notice ';
 			$output .= 'some issues, <a href="https://help.us-themes.com/' . strtolower( US_THEMENAME ) . '/installation/update20/" ';
 			$output .= 'target="_blank">follow the manual</a>.</p>';
 			$output .= '</div>';
@@ -396,7 +396,6 @@ class US_Migration {
 		if ( $options_changed ) {
 			// Filling the missed options with default values
 			$updated_options = array_merge( usof_defaults(), $updated_options );
-			$updated_options['generate_css_file'] = FALSE;
 			// Saving the changed options
 			usof_save_options( $updated_options );
 		}

@@ -325,7 +325,7 @@ return array(
 				),
 				'icon' => array(
 					'title' => __( 'Icon', 'us' ),
-					'description' => sprintf( __( '%s or %s icon name', 'us' ), '<a href="http://fontawesome.io/icons/" target="_blank">FontAwesome</a>', '<a href="https://material.io/icons/" target="_blank">Material</a>' ),
+					'description' => sprintf( __( '%s or %s icon name', 'us' ), '<a href="http://fontawesome.io/icons/" target="_blank">Font Awesome</a>', '<a href="https://material.io/icons/" target="_blank">Material</a>' ),
 					'type' => 'text',
 					'std' => '',
 					'classes' => 'cols_2 desc_1',
@@ -604,9 +604,9 @@ return array(
 				),
 				'mobile_behavior' => array(
 					'title' => __( 'Dropdown Behavior', 'us' ),
-					'description' => __( 'When this option is disabled, sub items of mobile menu will open by click on arrows only.', 'us' ),
+					'description' => __( 'When this option is OFF, mobile menu dropdown will be shown by click on an arrow only.', 'us' ),
 					'type' => 'switch',
-					'text' => __( 'Open sub items by click on menu titles', 'us' ),
+					'text' => __( 'Show dropdown by click on menu item title', 'us' ),
 					'std' => 1,
 					'classes' => 'desc_2',
 					'group' => __( 'Mobile Menu', 'us' ),
@@ -738,7 +738,6 @@ return array(
 					'show_if' => array( 'layout', 'in', array( 'simple', 'modern' ) ),
 				),
 				'product_search' => array(
-					'title' => us_translate( 'WooCommerce Product Search', 'woocommerce' ),
 					'type' => 'switch',
 					'text' => __( 'Search in Shop Products only', 'us' ),
 					'place_if' => class_exists( 'woocommerce' ),
@@ -1080,7 +1079,7 @@ return array(
 				), $social_links_config, array(
 					'custom_icon' => array(
 						'title' => __( 'Custom Link Icon', 'us' ),
-						'description' => sprintf( __( '%s or %s icon name', 'us' ), '<a href="http://fontawesome.io/icons/" target="_blank">FontAwesome</a>', '<a href="https://material.io/icons/" target="_blank">Material</a>' ),
+						'description' => sprintf( __( '%s or %s icon name', 'us' ), '<a href="http://fontawesome.io/icons/" target="_blank">Font Awesome</a>', '<a href="https://material.io/icons/" target="_blank">Material</a>' ),
 						'type' => 'text',
 						'std' => '',
 						'classes' => 'cols_2 desc_1',
@@ -1170,7 +1169,7 @@ return array(
 				),
 				'icon' => array(
 					'title' => __( 'Icon', 'us' ),
-					'description' => sprintf( __( '%s or %s icon name', 'us' ), '<a href="http://fontawesome.io/icons/" target="_blank">FontAwesome</a>', '<a href="https://material.io/icons/" target="_blank">Material</a>' ),
+					'description' => sprintf( __( '%s or %s icon name', 'us' ), '<a href="http://fontawesome.io/icons/" target="_blank">Font Awesome</a>', '<a href="https://material.io/icons/" target="_blank">Material</a>' ),
 					'type' => 'text',
 					'std' => '',
 					'classes' => 'cols_2 desc_1',
@@ -1270,7 +1269,7 @@ return array(
 			'params' => array(
 				'icon' => array(
 					'title' => __( 'Icon', 'us' ),
-					'description' => sprintf( __( '%s or %s icon name', 'us' ), '<a href="http://fontawesome.io/icons/" target="_blank">FontAwesome</a>', '<a href="https://material.io/icons/" target="_blank">Material</a>' ),
+					'description' => sprintf( __( '%s or %s icon name', 'us' ), '<a href="http://fontawesome.io/icons/" target="_blank">Font Awesome</a>', '<a href="https://material.io/icons/" target="_blank">Material</a>' ),
 					'type' => 'text',
 					'std' => 'fa-shopping-cart',
 					'classes' => 'desc_1',

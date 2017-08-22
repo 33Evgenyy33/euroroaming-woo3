@@ -72,7 +72,7 @@ return array(
 		
 			// Header options
 			'us_title_1' => array(
-				'title' => __( 'Header Options', 'us' ),
+				'title' => _x( 'Header', 'site top area', 'us' ),
 				'type' => 'heading',
 			),
 			'us_header' => array(
@@ -99,7 +99,7 @@ return array(
 
 			// Titlebar options
 			'us_title_2' => array(
-				'title' => __( 'Title Bar Options', 'us' ),
+				'title' => __( 'Title Bar', 'us' ),
 				'type' => 'heading',
 			),
 			'us_titlebar' => array(
@@ -112,7 +112,8 @@ return array(
 				'std' => '',
 			),
 			'us_titlebar_subtitle' => array(
-				'title' => __( 'Description (shown next to Page Title)', 'us' ),
+				'title' => us_translate( 'Description' ),
+				'description' => __( 'Appears next to the page title', 'us' ),
 				'type' => 'text',
 				'std' => '',
 				'show_if' => array( 'us_titlebar', '=', 'custom' ),
@@ -247,7 +248,7 @@ return array(
 
 			// Sidebar options
 			'us_title_3' => array(
-				'title' => __( 'Sidebar Options', 'us' ),
+				'title' => __( 'Sidebar', 'us' ),
 				'type' => 'heading',
 			),
 			'us_sidebar' => array(
@@ -260,7 +261,6 @@ return array(
 				'std' => '',
 			),
 			'us_sidebar_id' => array(
-				'title' => __( 'Sidebar', 'us' ),
 				'description' => sprintf( __( 'You can edit selected sidebar or create a new one on the %s page', 'us' ), '<a href="' . admin_url( 'widgets.php' ) . '" target="_blank">' . us_translate( 'Widgets' ) . '</a>' ),
 				'type' => 'select',
 				'options' => $sidebars_options,
@@ -281,7 +281,7 @@ return array(
 
 			// Footer options
 			'us_title_4' => array(
-				'title' => __( 'Footer Options', 'us' ),
+				'title' => __( 'Footer', 'us' ),
 				'type' => 'heading',
 			),
 			'us_footer' => array(
@@ -294,7 +294,6 @@ return array(
 				'std' => '',
 			),
 			'us_footer_id' => array(
-				'title' => __( 'Footer', 'us' ),
 				'description' => sprintf( __( 'You can edit selected footer or create a new one on the %s page', 'us' ), '<a href="' . admin_url() . 'edit.php?post_type=us_footer" target="_blank">' . __( 'Footers', 'us' ) . '</a>' ),
 				'type' => 'select',
 				'options' => $footer_templates,

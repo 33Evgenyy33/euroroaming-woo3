@@ -7,6 +7,8 @@
  * @action After the template: us_after_template:config/theme-options.css
  */
 
+global $us_template_directory_uri;
+
 $prefixes = array( 'heading', 'body', 'menu' );
 $font_families = array();
 $default_font_weights = array_fill_keys( $prefixes, 400 );
@@ -32,6 +34,17 @@ foreach ( $prefixes as $prefix ) {
 }
 
 ?>
+
+/* Font Awesome icons font
+   =============================================================================================================================== */
+   
+@font-face {
+	font-family: 'FontAwesome';
+	src: url('<?php echo $us_template_directory_uri ?>/framework/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'),
+	url('<?php echo $us_template_directory_uri ?>/framework/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	}
 
 /* Typography
    ========================================================================== */
@@ -174,7 +187,7 @@ h6.vc_custom_heading {
 	}
 }
 
-/* Layout Options
+/* Layout
    =============================================================================================================================== */
 
 body,
@@ -243,54 +256,66 @@ body,
 
 /* Portfolio Responsive Behavior */
 @media screen and (max-width: <?php echo us_get_option( 'portfolio_breakpoint_1_width' ) ?>px) {
-.w-portfolio[class*="cols_"] .w-portfolio-item {
+<?php for ( $i = us_get_option( 'portfolio_breakpoint_1_cols' ); $i <= 6; $i++ ) {?>
+.w-portfolio.cols_<?php echo $i; ?> .w-portfolio-item {
 	width: <?php echo 100 / us_get_option( 'portfolio_breakpoint_1_cols' ) ?>%;
 	}
 <?php if ( us_get_option( 'portfolio_breakpoint_1_cols' ) != 1 ): ?>
-.w-portfolio[class*="cols_"] .w-portfolio-item.size_2x1,
-.w-portfolio[class*="cols_"] .w-portfolio-item.size_2x2 {
+.w-portfolio.cols_<?php echo $i; ?> .w-portfolio-item.size_2x1,
+.w-portfolio.cols_<?php echo $i; ?> .w-portfolio-item.size_2x2 {
 	width: <?php echo 200 / us_get_option( 'portfolio_breakpoint_1_cols' ) ?>%;
 	}
 <?php endif; ?>
+<?php } ?>
 }
 @media screen and (max-width: <?php echo us_get_option( 'portfolio_breakpoint_2_width' ) ?>px) {
-.w-portfolio[class*="cols_"] .w-portfolio-item {
+<?php for ( $i = us_get_option( 'portfolio_breakpoint_2_cols' ); $i <= 6; $i++ ) {?>
+.w-portfolio.cols_<?php echo $i; ?> .w-portfolio-item {
 	width: <?php echo 100 / us_get_option( 'portfolio_breakpoint_2_cols' ) ?>%;
 	}
 <?php if ( us_get_option( 'portfolio_breakpoint_2_cols' ) != 1 ): ?>
-.w-portfolio[class*="cols_"] .w-portfolio-item.size_2x1,
-.w-portfolio[class*="cols_"] .w-portfolio-item.size_2x2 {
+.w-portfolio.cols_<?php echo $i; ?> .w-portfolio-item.size_2x1,
+.w-portfolio.cols_<?php echo $i; ?> .w-portfolio-item.size_2x2 {
 	width: <?php echo 200 / us_get_option( 'portfolio_breakpoint_2_cols' ) ?>%;
 	}
 <?php endif; ?>
+<?php } ?>
 }
 @media screen and (max-width: <?php echo us_get_option( 'portfolio_breakpoint_3_width' ) ?>px) {
-.w-portfolio[class*="cols_"] .w-portfolio-item {
+<?php for ( $i = us_get_option( 'portfolio_breakpoint_3_cols' ); $i <= 6; $i++ ) {?>
+.w-portfolio.cols_<?php echo $i; ?> .w-portfolio-item {
 	width: <?php echo 100 / us_get_option( 'portfolio_breakpoint_3_cols' ) ?>%;
 	}
 <?php if ( us_get_option( 'portfolio_breakpoint_3_cols' ) != 1 ): ?>
-.w-portfolio[class*="cols_"] .w-portfolio-item.size_2x1,
-.w-portfolio[class*="cols_"] .w-portfolio-item.size_2x2 {
+.w-portfolio.cols_<?php echo $i; ?> .w-portfolio-item.size_2x1,
+.w-portfolio.cols_<?php echo $i; ?> .w-portfolio-item.size_2x2 {
 	width: <?php echo 200 / us_get_option( 'portfolio_breakpoint_3_cols' ) ?>%;
 	}
 <?php endif; ?>
+<?php } ?>
 }
 
 /* Blog Responsive Behavior */
 @media screen and (max-width: <?php echo us_get_option( 'blog_breakpoint_1_width' ) ?>px) {
-.w-blog[class*="cols_"] .w-blog-post {
+<?php for ( $i = us_get_option( 'blog_breakpoint_1_cols' ); $i <= 6; $i++ ) {?>
+.w-blog.cols_<?php echo $i ?> .w-blog-post {
 	width: <?php echo 100 / us_get_option( 'blog_breakpoint_1_cols' ) ?>%;
 	}
+<?php } ?>
 }
 @media screen and (max-width: <?php echo us_get_option( 'blog_breakpoint_2_width' ) ?>px) {
-.w-blog[class*="cols_"] .w-blog-post {
+<?php for ( $i = us_get_option( 'blog_breakpoint_2_cols' ); $i <= 6; $i++ ) {?>
+.w-blog.cols_<?php echo $i ?> .w-blog-post {
 	width: <?php echo 100 / us_get_option( 'blog_breakpoint_2_cols' ) ?>%;
 	}
+<?php } ?>
 }
 @media screen and (max-width: <?php echo us_get_option( 'blog_breakpoint_3_width' ) ?>px) {
-.w-blog[class*="cols_"] .w-blog-post {
+<?php for ( $i = us_get_option( 'blog_breakpoint_3_cols' ); $i <= 6; $i++ ) {?>
+.w-blog.cols_<?php echo $i ?> .w-blog-post {
 	width: <?php echo 100 / us_get_option( 'blog_breakpoint_3_cols' ) ?>%;
 	}
+<?php } ?>
 }
 
 /* Back to top Button */
@@ -764,14 +789,12 @@ p.demo_store,
 .highlight_faded,
 button.w-btn.color_light.style_flat,
 a.w-btn.color_light.style_flat,
-.w-author-url,
-.w-blog-post-meta > *,
-.w-comments-item-date,
-.w-comments-item-answer a,
-.w-profile-link.for_logout,
+.l-main .w-author-url,
+.l-main .w-blog-post-meta > *,
+.l-main .w-profile-link.for_logout,
 .l-main .w-socials.color_desaturated .w-socials-item-link,
-.g-tags,
-.w-testimonial-author-role,
+.l-main .g-tags,
+.l-main .w-testimonial-author-role,
 .l-main .widget_tag_cloud,
 .l-main .widget_product_tag_cloud,
 .woocommerce .stars span:after {
@@ -821,6 +844,7 @@ a.w-btn.color_light.style_flat,
 
 /* Link Hover Color */
 .no-touch .color_footer-top a:hover,
+.no-touch .color_footer-top a:hover + .w-blog-post-body .w-blog-post-title a,
 .color_footer-top .w-form-row.focused:before,
 .color_footer-top .w-form-row.focused > i {
 	color: <?php echo us_get_option( 'color_subfooter_link_hover' ) ?>;
@@ -872,6 +896,7 @@ a.w-btn.color_light.style_flat,
 
 /* Link Hover Color */
 .no-touch .color_footer-bottom a:hover,
+.no-touch .color_footer-bottom a:hover + .w-blog-post-body .w-blog-post-title a,
 .color_footer-bottom .w-form-row.focused:before,
 .color_footer-bottom .w-form-row.focused > i {
 	color: <?php echo us_get_option( 'color_footer_link_hover' ) ?>;

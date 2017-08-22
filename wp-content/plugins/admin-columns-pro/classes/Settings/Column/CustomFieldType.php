@@ -19,6 +19,11 @@ class ACP_Settings_Column_CustomFieldType extends AC_Settings_Column_CustomField
 				$settings[] = new AC_Settings_Column_User( $this->column );
 
 				break;
+			case 'image' :
+			case 'library_id' :
+				$settings[] = new AC_Settings_Column_NumberOfItems( $this->column );
+
+				break;
 		}
 
 		return $settings;
@@ -36,6 +41,13 @@ class ACP_Settings_Column_CustomFieldType extends AC_Settings_Column_CustomField
 				$value = new AC_Collection( $ids );
 
 				break;
+			case 'image':
+			case 'library_id' :
+				$value = parent::format( $value, $original_value );
+				$value->limit( $this->column->get_setting( 'number_of_items' )->get_value() );
+
+				break;
+
 			default :
 				$value = parent::format( $value, $original_value );
 		}

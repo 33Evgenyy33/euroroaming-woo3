@@ -12,6 +12,7 @@ vc_map(
 	array(
 		'base' => 'us_gallery',
 		'name' => __( 'Image Gallery', 'us' ),
+		'description' => '',
 		'icon' => 'icon-wpb-images-stack',
 		'category' => us_translate( 'Content', 'js_composer' ),
 		'weight' => 360,
@@ -59,14 +60,12 @@ vc_map(
 				'type' => 'checkbox',
 				'value' => array( __( 'Display items in random order', 'us' ) => 'rand' ),
 				( ( $config['atts']['orderby'] !== FALSE ) ? 'std' : '_std' ) => $config['atts']['orderby'],
-				'edit_field_class' => 'vc_col-sm-6',
 			),
 			array(
 				'param_name' => 'indents',
 				'type' => 'checkbox',
 				'value' => array( __( 'Add indents between items', 'us' ) => TRUE ),
 				( ( $config['atts']['indents'] !== FALSE ) ? 'std' : '_std' ) => $config['atts']['indents'],
-				'edit_field_class' => 'vc_col-sm-6',
 			),
 			array(
 				'param_name' => 'meta',
@@ -84,6 +83,12 @@ vc_map(
 				),
 				'std' => $config['atts']['meta_style'],
 				'dependency' => array( 'element' => 'meta', 'not_empty' => TRUE ),
+			),
+			array(
+				'param_name' => 'link',
+				'type' => 'checkbox',
+				'value' => array( __( 'Disable popup opening on click', 'us' ) => 'none' ),
+				( ( $config['atts']['link'] !== FALSE ) ? 'std' : '_std' ) => $config['atts']['link'],
 			),
 			array(
 				'param_name' => 'img_size',

@@ -34,9 +34,7 @@ if ( ( ! get_option( 'us_dismiss_addons_activate_notice' ) ) AND ( isset( $insta
 function us_js_composer_install_admin_notice() {
 	?>
 	<div class="notice notice-warning us-addons-notice for-installing is-dismissible">
-		<p><?php echo sprintf( __( 'This theme requires %s plugin to be installed.', 'us' ), '<strong>Visual Composer</strong>' ); ?>
-			<a href="<?php echo admin_url( 'admin.php?page=us-addons' ) ?>"><?php _e( 'Go to Install', 'us' ); ?></a>
-		</p>
+		<p><?php echo sprintf( __( 'This theme recommends to use %s plugin.', 'us' ), '<strong><a href="' . admin_url( 'admin.php?page=us-addons' ) .'">Visual Composer</a></strong>' ); ?></p>
 	</div>
 	<?php
 }
@@ -44,9 +42,7 @@ function us_js_composer_install_admin_notice() {
 function us_js_composer_activate_admin_notice() {
 	?>
 	<div class="notice notice-warning us-addons-notice for-activating is-dismissible">
-		<p><?php echo sprintf( __( 'This theme requires %s plugin to be activated.', 'us' ), '<strong>Visual Composer</strong>' ); ?>
-			<a href="<?php echo admin_url( 'admin.php?page=us-addons' ) ?>"><strong><?php _e( 'Go to Activate', 'us' ); ?></strong></a>
-		</p>
+		<p><?php echo sprintf( __( 'This theme recommends to use %s plugin.', 'us' ), '<strong><a href="' . admin_url( 'admin.php?page=us-addons' ) .'">Visual Composer</a></strong>' ); ?></p>
 	</div>
 	<?php
 }
@@ -90,7 +86,7 @@ function us_addons_page() {
 	$plugins = us_config( 'addons' );
 
 	foreach ( $plugins as $i => $plugin ) {
-		if ( empty( $plugins[$i]['version'] ) OR empty( $plugins[$i]['source'] ) ) {
+		if ( empty( $plugins[$i]['source'] ) ) {
 			$plugins = us_api_addons( $plugins, TRUE );
 			break;
 		}
@@ -98,90 +94,110 @@ function us_addons_page() {
 
 	$installed_plugins = get_plugins();
 	$us_template_directory_uri = get_template_directory_uri();
+
+	$premium_plugins_html = $free_plugins_html = '';
+
+	foreach ( $plugins as $plugin ) {
+
+		$keys = array_keys( get_plugins() );
+
+		$plugin['file_path'] = $plugin['slug'];
+		foreach ( $keys as $key ) {
+			if ( preg_match( '|^' . $plugin['slug'] . '/|', $key ) ) {
+				$plugin['file_path'] = $key;
+				break;
+			}
+		}
+
+		$classes = ' ' . $plugin['slug'];
+		$link_classes = $link_atts = $action = $link = '';
+		if ( is_plugin_active( $plugin['file_path'] ) ) {
+			$classes .= ' status_active';
+			$status = us_translate_x( 'Active', 'plugin' );
+
+		} elseif ( ! isset( $installed_plugins[$plugin['file_path']] ) ) {
+			if ( $plugin['source'] == '' ) {
+				$classes .= ' status_locked';
+				$status = 'Plugin Locked';
+				$action = us_translate( 'Install Now' );
+				$link = esc_url(
+					add_query_arg(
+						array(
+							'page' => urlencode( 'us-home' ),
+						), network_admin_url( 'admin.php' )
+					) . '#activation'
+				);
+				$link_classes .= ' color_primary';
+
+			} else {
+				$classes .= ' status_notinstalled';
+				$status = 'Available to Install';
+				$action = us_translate( 'Install Now' );
+				$link = 'javascript:void(0);';
+				$link_classes .= ' color_primary action-button';
+				$link_atts = ' data-plugin="' . $plugin['slug'] . '" data-action="install"';
+			}
+
+		} elseif ( is_plugin_inactive( $plugin['file_path'] ) ) {
+			$classes .= ' status_notactive';
+			$status = 'Installed But Not Activated';
+			$action = us_translate( 'Activate Plugin' );
+			$link = 'javascript:void(0);';
+			$link_classes .= ' color_primary action-button';
+			$link_atts = ' data-plugin="' . $plugin['slug'] . '" data-action="activate"';
+
+		}
+
+		// Use default icon for free plugins
+		$icon_url = ( $plugin['free'] == TRUE ) ? 'https://ps.w.org/' . $plugin['slug'] . '/assets/icon-128x128.png' : $us_template_directory_uri . '/framework/admin/img/' . $plugin['slug'] . '.png';
+		ob_start();
+
+		?>
+		<div class="us-addon<?php echo $classes; ?>">
+			<div class="us-addon-content">
+				<a href="<?php echo $plugin['url'] ?>" target="_blank">
+					<img class="us-addon-icon" src="<?php echo $icon_url; ?>" alt="">
+					<h2 class="us-addon-title"><?php echo $plugin['name'] ?></h2>
+				</a>
+				<p class="us-addon-desc"><?php echo $plugin['description']; ?></p>
+			</div>
+			<div class="us-addon-control">
+				<div class="us-addon-status"><?php echo $status; ?></div>
+
+				<?php if ( $action != '' AND $link != '' ) { ?>
+					<a class="usof-button<?php echo $link_classes; ?>" href="<?php echo $link; ?>" <?php echo $link_atts; ?>><span><?php echo $action; ?></span></a>
+				<?php } ?>
+			</div>
+		</div>
+
+		<?php
+		if ( $plugin['free'] == TRUE ) {
+			$free_plugins_html .= ob_get_clean();
+		} else {
+			$premium_plugins_html .= ob_get_clean();
+		}
+	}
+
 	?>
 	<div class="us-addons">
 
 		<h1 class="us-admin-title"><?php echo US_THEMENAME . '<strong> ' . __( 'Addons', 'us' ); ?></strong></h1>
-		<p class="us-admin-subtitle"><?php _e( 'Premium plugins which are available for free with the theme!', 'us' ); ?></p>
-
-		<div class="us-addons-list">
-			<?php foreach ( $plugins as $plugin ) {
-
-				$keys = array_keys( get_plugins() );
-
-				$plugin['file_path'] = $plugin['slug'];
-				foreach ( $keys as $key ) {
-					if ( preg_match( '|^' . $plugin['slug'] . '/|', $key ) ) {
-						$plugin['file_path'] = $key;
-						break;
-					}
-				}
-
-				$classes = ' ' . $plugin['slug'];
-				$link_classes = '';
-				$link_atts = '';
-				$action = '';
-				$link = '';
-				if ( is_plugin_active( $plugin['file_path'] ) ) {
-					$classes .= ' status_active';
-					$status = us_translate_x( 'Active', 'plugin' );
-
-				} elseif ( ! isset( $installed_plugins[$plugin['file_path']] ) ) {
-					if ( $plugin['source'] == '' ) {
-						$classes .= ' status_locked';
-						$status = __( 'Plugin Locked', 'us' );
-						$action = __( 'Activate Theme to Unlock', 'us' );
-						$link = esc_url(
-							add_query_arg(
-								array(
-									'page' => urlencode( 'us-home' ),
-								), network_admin_url( 'admin.php' )
-							) . '#activation'
-						);
-
-					} else {
-						$classes .= ' status_notinstalled';
-						$status = __( 'Available to Install', 'us' );
-						$action = us_translate( 'Install Now' );
-						$link = 'javascript:void(0);';
-						$link_classes .= ' color_primary action-button';
-						$link_atts = ' data-plugin="' . $plugin['slug'] . '" data-action="install"';
-					}
-
-				} elseif ( is_plugin_inactive( $plugin['file_path'] ) ) {
-					$classes .= ' status_notactive';
-					$status = __( 'Installed But Not Activated', 'us' );
-					$action = us_translate( 'Activate Plugin' );
-					$link = 'javascript:void(0);';
-					$link_classes .= ' color_primary action-button';
-					$link_atts = ' data-plugin="' . $plugin['slug'] . '" data-action="activate"';
-
-				}
-
-				// Use default icon for free plugins
-				$icon_url = ( $plugin['free'] == TRUE ) ? 'https://ps.w.org/' . $plugin['slug'] . '/assets/icon-128x128.png' : $us_template_directory_uri . '/framework/admin/img/' . $plugin['slug'] . '.png';
-
-				?>
-				<div class="us-addon<?php echo $classes; ?>">
-					<div class="us-addon-content">
-						<a href="<?php echo $plugin['url'] ?>" target="_blank">
-							<img class="us-addon-icon" src="<?php echo $icon_url; ?>" alt="">
-							<h2 class="us-addon-title"><?php echo $plugin['name'] ?></h2>
-						</a>
-						<p class="us-addon-desc"><?php echo $plugin['description']; ?></p>
-					</div>
-					<div class="us-addon-control">
-						<div class="us-addon-status"><?php echo $status; ?></div>
-
-						<?php if ( $action != '' AND $link != '' ) { ?>
-							<a class="usof-button<?php echo $link_classes; ?>" href="<?php echo $link; ?>" <?php echo $link_atts; ?>><span><?php echo $action; ?></span></a>
-						<?php } ?>
-					</div>
-				</div>
-
-			<?php } ?>
+		
+		<p class="us-admin-subtitle"><span><?php _e( 'Premium plugins, available for free with the theme', 'us' ); ?></span></p>
+		<div class="us-addons-list for_premium">
+			<?php echo $premium_plugins_html;
+			// Screenlock for premium plugins
+			if ( ! ( get_option( 'us_license_activated', 0 ) OR ( defined( 'US_DEV' ) AND US_DEV ) ) ) {
+				?><div class="us-screenlock"><div><?php echo sprintf( __( '<a href="%s">Activate the theme</a> to install premium addons', 'us' ), admin_url( 'admin.php?page=us-home#activation' ) ) ?></div></div><?php
+			}
+			?>
 		</div>
-
+		
+		<p class="us-admin-subtitle"><span><?php _e( 'Free plugins, compatible with the theme', 'us' ); ?></span></p>
+		<div class="us-addons-list for_free">
+			<?php echo $free_plugins_html; ?>
+		</div>
+		
 	</div>
 	<script>
 		jQuery(function($){
@@ -327,7 +343,7 @@ function us_install_plugin() {
 	$plugins = us_config( 'addons', array() );
 
 	foreach ( $plugins as $i => $plugin ) {
-		if ( ( empty( $plugins[$i]['version'] ) AND ! $plugins[$i]['free'] ) OR empty( $plugins[$i]['source'] ) ) {
+		if ( empty( $plugins[$i]['source'] ) ) {
 			unset( $plugins[$i] );
 		}
 	}

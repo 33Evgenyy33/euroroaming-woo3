@@ -54,7 +54,7 @@ class US_Layout {
 
 		do_action( 'us_layout_before_init', $this );
 
-		if ( WP_DEBUG AND ! ( isset( $GLOBALS['post'] ) OR is_404() OR is_search() OR is_archive() ) ) {
+		if ( WP_DEBUG AND ! ( isset( $GLOBALS['post'] ) OR is_404() OR is_search() OR is_archive() OR ( is_home() AND ! have_posts() ) ) ) {
 			wp_die( 'US_Layout can be inited only after the current post is obtained' );
 		}
 

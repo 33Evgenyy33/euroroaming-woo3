@@ -227,12 +227,19 @@ class us_migration_4_6 extends US_Migration_Translator {
 					}
 				}
 
+				if ( defined( 'JSON_UNESCAPED_UNICODE' ) ) {
+					$post_content = json_encode( $header_options, JSON_UNESCAPED_UNICODE );
+				} else {
+					$post_content = json_encode( $header_options );
+				}
+				$post_content = str_replace( "\\n", "\\\\n", $post_content );
+				
 				$header_post_array = array(
 					'post_type' => 'us_header',
 					'post_date' => date( 'Y-m-d H:i', time() - 86400 ),
 					'post_name' => 'site-header',
 					'post_title' => 'Site Header',
-					'post_content' => json_encode( $header_options, JSON_UNESCAPED_UNICODE ),
+					'post_content' => $post_content,
 					'post_status' => 'publish',
 				);
 
@@ -255,12 +262,19 @@ class us_migration_4_6 extends US_Migration_Translator {
 					do_action( 'wpml_set_element_language_details', $set_language_args );
 
 					foreach ( $translated_headers as $lang => $translated_header_options ) {
+						if ( defined( 'JSON_UNESCAPED_UNICODE' ) ) {
+							$post_content = json_encode( $translated_header_options, JSON_UNESCAPED_UNICODE );
+						} else {
+							$post_content = json_encode( $translated_header_options );
+						}
+						$post_content = str_replace( "\\n", "\\\\n", $post_content );
+
 						$translated_header_post_array = array(
 							'post_type' => 'us_header',
 							'post_date' => date( 'Y-m-d H:i', time() - 86400 ),
 							'post_name' => 'site-header-' . $lang,
 							'post_title' => 'Site Header [' . $lang . ']',
-							'post_content' => json_encode( $translated_header_options, JSON_UNESCAPED_UNICODE ),
+							'post_content' => $post_content,
 							'post_status' => 'publish',
 						);
 

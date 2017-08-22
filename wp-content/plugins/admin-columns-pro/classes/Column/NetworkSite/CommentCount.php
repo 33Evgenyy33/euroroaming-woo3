@@ -8,7 +8,7 @@ class ACP_Column_NetworkSite_CommentCount extends AC_Column {
 
 	public function __construct() {
 		$this->set_type( 'column-msite_commentcount' );
-		$this->set_label( __( 'Comment Count', 'codepress-admin-columns' ) );
+		$this->set_label( __( 'Comments', 'codepress-admin-columns' ) );
 	}
 
 	public function get_value( $blog_id ) {

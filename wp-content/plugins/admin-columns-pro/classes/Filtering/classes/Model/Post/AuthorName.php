@@ -19,14 +19,16 @@ class ACP_Filtering_Model_Post_AuthorName extends ACP_Filtering_Model {
 	}
 
 	public function get_filtering_data( ) {
-		$data = array();
+		$options = array();
 		if ( $values = $this->strategy->get_values_by_db_field( 'post_author' ) ) {
 			foreach ( $values as $value ) {
-				$data['options'][ $value ] = ac_helper()->user->get_display_name( $value );
+				$options[ $value ] = ac_helper()->user->get_display_name( $value );
 			}
 		}
 
-		return $data;
+		return array(
+			'options' => array_filter( $options )
+		);
 	}
 
 }

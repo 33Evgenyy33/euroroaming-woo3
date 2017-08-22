@@ -10,5 +10,12 @@
  */
 
 unset( $config['options']['global']['shadow'] );
+unset( $config['elements']['menu']['params']['hover_effect'] );
+
+$config['elements']['btn']['params']['style']['options'] = array(
+	'raised' => __( 'Raised', 'us' ),
+	'flat' => __( 'Flat', 'us' ),
+);
+$config['elements']['btn']['params']['style']['std'] = 'raised';
 
 return $config;

@@ -21,13 +21,13 @@ foreach ( $social_links as $name => $title ) {
 return array(
 	'us_contacts' => array(
 		'class' => 'US_Widget_Contacts',
-		'name' => US_THEMENAME . ' &ndash; ' . __( 'Contacts', 'us' ),
-		'description' => __( 'Contact Information', 'us' ),
+		'name' => us_translate( 'Contact Info' ),
+		'description' => us_translate( 'Contact Info' ),
 		'params' => array(
 			'title' => array(
 				'type' => 'textfield',
 				'heading' => us_translate( 'Title' ),
-				'std' => __( 'Contacts', 'us' ),
+				'std' => '',
 			),
 			'address' => array(
 				'type' => 'textarea',
@@ -53,7 +53,7 @@ return array(
 	),
 	'us_login' => array(
 		'class' => 'US_Widget_Login',
-		'name' => US_THEMENAME . ' &ndash; ' . __( 'Login', 'us' ),
+		'name' => __( 'Login', 'us' ),
 		'description' => __( 'Login Form', 'us' ),
 		'params' => array(
 			'title' => array(
@@ -85,7 +85,7 @@ return array(
 	),
 	'us_socials' => array(
 		'class' => 'US_Widget_Socials',
-		'name' => US_THEMENAME . ' &ndash; ' . __( 'Social Links', 'us' ),
+		'name' => __( 'Social Links', 'us' ),
 		'description' => __( 'Social Links', 'us' ),
 		'params' => array_merge(
 			array(
@@ -152,7 +152,7 @@ return array(
 	),
 	'us_portfolio' => array(
 		'class' => 'US_Widget_Portfolio',
-		'name' => US_THEMENAME . ' &ndash; ' . __( 'Portfolio', 'us' ),
+		'name' => __( 'Portfolio', 'us' ),
 		'description' => __( 'Portfolio', 'us' ),
 		'params' => array(
 			'title' => array(
@@ -174,7 +174,7 @@ return array(
 			'items' => array(
 				'type' => 'textfield',
 				'heading' => __( 'Items Quantity', 'us' ),
-				'std' => '',
+				'std' => '6',
 			),
 			'orderby' => array(
 				'type' => 'dropdown',
@@ -186,6 +186,58 @@ return array(
 					us_translate( 'Random' ) => 'rand',
 				),
 				'std' => 'date',
+			),
+		),
+	),
+	'us_blog' => array(
+		'class' => 'US_Widget_Blog',
+		'name' => us_translate( 'Blog' ),
+		'description' => us_translate( 'Blog' ),
+		'params' => array(
+			'title' => array(
+				'type' => 'textfield',
+				'heading' => us_translate( 'Title' ),
+				'std' => '',
+			),
+			'layout' => array(
+				'type' => 'dropdown',
+				'heading' => __( 'Layout', 'us' ),
+				'value' => array(
+					__( 'Classic', 'us' ) => 'classic',
+					__( 'Tiles', 'us' ) => 'tiles',
+					__( 'Small Circle Image', 'us' ) => 'smallcircle',
+					__( 'Small Square Image', 'us' ) => 'smallsquare',
+					__( 'Compact', 'us' ) => 'compact',
+				),
+				'std' => 'classic',
+			),
+			'orderby' => array(
+				'type' => 'dropdown',
+				'heading' => us_translate( 'Order' ),
+				'value' => array(
+					__( 'By date (newer first)', 'us' ) => 'date',
+					__( 'By date (older first)', 'us' ) => 'date_asc',
+					__( 'Alphabetically', 'us' ) => 'alpha',
+					us_translate( 'Random' ) => 'rand',
+				),
+				'std' => 'date',
+			),
+			'items' => array(
+				'type' => 'textfield',
+				'heading' => us_translate( 'Number of posts to show' ),
+				'std' => '3',
+			),
+			'meta' => array(
+				'type' => 'checkbox',
+				'heading' => __( 'Posts Elements', 'us' ),
+				'value' => array(
+					us_translate( 'Date' ) => 'date',
+					us_translate( 'Author' ) => 'author',
+					us_translate( 'Categories' ) => 'categories',
+					us_translate( 'Comments' ) => 'comments',
+					us_translate( 'Tags' ) => 'tags',
+				),
+				'std' => array(),
 			),
 		),
 	),

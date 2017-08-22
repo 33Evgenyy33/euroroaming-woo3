@@ -12,6 +12,7 @@ vc_map(
 	array(
 		'base' => 'us_image_slider',
 		'name' => __( 'Image Slider', 'us' ),
+		'description' => '',
 		'icon' => 'icon-wpb-images-carousel',
 		'category' => us_translate( 'Content', 'js_composer' ),
 		'weight' => 350,

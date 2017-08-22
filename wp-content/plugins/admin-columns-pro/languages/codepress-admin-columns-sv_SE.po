@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Admin Columns Pro\n"
 "Report-Msgid-Bugs-To: https://www.admincolumns.com\n"
-"PO-Revision-Date: 2017-04-03 16:09+0000\n"
+"PO-Revision-Date: 2017-08-17 08:18+0000\n"
 "Last-Translator: Tobias Schutter <info@codepress.nl>\n"
 "Language-Team: Swedish (Sweden) (http://www.transifex.com/codepress/admin-columns-pro/language/sv_SE/)\n"
 "MIME-Version: 1.0\n"
@@ -21,284 +21,104 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: ../../ac-addon-types/ac-addon-types.php:56
+#: ../../ac-addon-types/ac-addon-types.php:54
 msgid ""
 "The current version of this add-on is not compatible with Admin Columns Pro."
 msgstr ""
 
-#: ../../ac-addon-types/ac-addon-types.php:56
+#: ../../ac-addon-types/ac-addon-types.php:54
 msgid "Please update this add-on to the latest version."
 msgstr ""
 
-#: ../acp.php:415
+#: ../acp.php:397
 msgid "You are using a beta version of %s."
 msgstr ""
 
-#: ../acp.php:416
+#: ../acp.php:398
 msgid ""
 "Please provide us with any feedback (bugs, UI or improvements) on the beta "
 "by creating a new topic on %s."
 msgstr ""
 
-#: ../acp.php:416
+#: ../acp.php:398
 msgid "our forum"
 msgstr ""
 
-#: ../../cac-addon-woocommerce/cac-addon-woocommerce.php:206
-msgid "Regular"
-msgstr ""
-
-#: ../../cac-addon-woocommerce/cac-addon-woocommerce.php:208
-msgid "Sale from"
-msgstr ""
-
-#: ../../cac-addon-woocommerce/cac-addon-woocommerce.php:209
-msgid "Sale To"
-msgstr ""
-
-#: ../../ac-addon-pods/classes/Column.php:24
+#: ../../ac-addon-pods/classes/Column.php:18
 msgid "Pods"
 msgstr ""
 
 #: ../../ac-addon-pods/classes/Dependencies.php55,
 #: ../../ac-addon-types/classes/Dependencies.php55,
 #: ../../cac-addon-acf/classes/Dependencies.php55,
-#: ../../cac-addon-woocommerce/classes/Dependencies.php:55
+#: ../../cac-addon-woocommerce/v2/classes/Dependencies.php55,
+#: ../../cac-addon-woocommerce/v3/classes/Dependencies.php:55
 msgid "version %s or later"
 msgstr ""
 
 #: ../../ac-addon-pods/classes/Dependencies.php99,
 #: ../../ac-addon-types/classes/Dependencies.php99,
 #: ../../cac-addon-acf/classes/Dependencies.php99,
-#: ../../cac-addon-woocommerce/classes/Dependencies.php:99
+#: ../../cac-addon-woocommerce/v2/classes/Dependencies.php99,
+#: ../../cac-addon-woocommerce/v3/classes/Dependencies.php:99
 msgid " and "
 msgstr ""
 
 #: ../../ac-addon-pods/classes/Dependencies.php101,
 #: ../../ac-addon-types/classes/Dependencies.php101,
 #: ../../cac-addon-acf/classes/Dependencies.php101,
-#: ../../cac-addon-woocommerce/classes/Dependencies.php:101
+#: ../../cac-addon-woocommerce/v2/classes/Dependencies.php101,
+#: ../../cac-addon-woocommerce/v3/classes/Dependencies.php:101
 msgid "This add-on requires %s to be installed and activated."
 msgstr ""
 
-#: ../classes/ExportImport.php:23
-msgid "Export/Import"
-msgstr "Exportera/Importera"
-
-#: ../classes/ExportImport.php:54
-msgid "Export field is empty. Please select your types from the left column."
-msgstr "Exportfältet är tomt. Vänligen markera dina typer från den vänstra kolumnen."
-
-#: ../classes/ExportImport.php112, ../classes/ExportImport.php:114
-msgid "Sorry, there has been an error."
-msgstr "Tyvärr, det har uppstått ett fel."
-
-#: ../classes/ExportImport.php:114
-msgid ""
-"The export file could not be found at %s. It is likely that this was caused "
-"by a permissions problem."
-msgstr "Export av fil kunde inte hittas på %s. Troligtvis orsakades det av ett behörighetsproblem."
-
-#: ../classes/ExportImport.php:133
-msgid "Import failed. File does not contain Admin Column settings."
-msgstr "Importering misslyckades. Filen innehåller inte Admin Column inställningar."
-
-#: ../classes/ExportImport.php:142
-msgid "Screen %s does not exist."
-msgstr "Skärmen %s existerar inte."
-
-#: ../classes/ExportImport.php153, ../classes/LayoutScreen/Columns.php:63
-msgid "Original"
-msgstr "Orginal"
-
-#: ../classes/ExportImport.php:161
-msgid "Imported"
-msgstr "Importerat"
-
-#: ../classes/ExportImport.php:189
-msgid "Import failed."
-msgstr "Import misslyckades."
-
-#: ../classes/ExportImport.php:200
-msgid "Succesfully created %s for %s."
-msgstr ""
-
-#: ../classes/ExportImport.php:201
-msgid "set"
-msgid_plural "sets"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../classes/ExportImport.php:296
-msgid "read only"
-msgstr ""
-
-#: ../classes/ExportImport.php:480
-msgid "Results"
-msgstr "Resultat"
-
-#: ../classes/ExportImport.php482, ../classes/ExportImport.php582,
-#: ../classes/LayoutScreen/Columns.php:594
-msgid "Instructions"
-msgstr "Instruktioner"
-
-#: ../classes/ExportImport.php:485
-msgid "Using the PHP export"
-msgstr "Använd PHP export"
-
-#: ../classes/ExportImport.php487, ../classes/ExportImport.php:567
-msgid "Copy the generated PHP code in the right column"
-msgstr "Kopiera genererad PHP kod i den högra kolumnen"
-
-#: ../classes/ExportImport.php488, ../classes/ExportImport.php:568
-msgid ""
-"Insert the code in your themes functions.php or in your plugin (on the init "
-"action)"
-msgstr "Infoga koden i ditt temas functions.php eller i ditt plugin (på init action)"
-
-#: ../classes/ExportImport.php489, ../classes/ExportImport.php:569
-msgid ""
-"Your columns settings are now loaded from your PHP code instead of from your"
-" stored settings!"
-msgstr "Dina kolumn inställningar laddas nu från din PHP kod istället från dina sparade inställningar!"
-
-#: ../classes/ExportImport.php:502
-msgid "Columns"
-msgstr "Kolumner"
-
-#: ../classes/ExportImport.php:503
-msgid "Select the columns to be exported."
-msgstr "Välj de kolumner som ska exporteras."
-
-#: ../classes/ExportImport.php:526
-msgid "select all"
-msgstr "välj alla"
-
-#: ../classes/ExportImport.php:529
-msgid "deselect all"
-msgstr ""
-
-#: ../classes/ExportImport.php:533
-msgid "Export PHP"
-msgstr "Exportera PHP"
-
-#: ../classes/ExportImport.php534, ../classes/ExportImport.php:549
-msgid "Download export file"
-msgstr "Ladda ner exportfil"
-
-#: ../classes/ExportImport.php:538
-msgid "No stored column settings are found."
-msgstr "Inga sparade kolumninställningar hittades."
-
-#: ../classes/ExportImport.php:550
-msgid ""
-"Admin Columns will export to a format compatible with the Admin Columns "
-"import functionality."
-msgstr "Admin Columns kommer att exportera till ett format som är kompatibelt med Admin Columns import funktionalitet."
-
-#: ../classes/ExportImport.php552, ../classes/ExportImport.php:565
-msgid ""
-"Select the columns you which to export from the list in the left column"
-msgstr "Välj de kolumner som du vill exportera från listan i den vänstra kolumnen"
-
-#: ../classes/ExportImport.php:553
-msgid "Click the &quot;Download export file&quot; button"
-msgstr "Klicka på &quot;Ladda ner export fil&quot; knappen"
-
-#: ../classes/ExportImport.php:554
-msgid "Save the .json-file when prompted"
-msgstr "Spara .json-fil  när du blir ombedd"
-
-#: ../classes/ExportImport.php:555
-msgid "Go to the Admin Columns import/export page in your other installation"
-msgstr "Gå till Admin Columns import/export sida i din andra installation"
-
-#: ../classes/ExportImport.php:556
-msgid "Select the export .json-file"
-msgstr "Välj export .json-fil"
-
-#: ../classes/ExportImport.php:557
-msgid "Click the &quot;Start import&quot; button"
-msgstr "Klicka på &quot;Starta import&quto; knappen"
-
-#: ../classes/ExportImport.php:558
-msgid "That's it!"
-msgstr "Det är allt!"
-
-#: ../classes/ExportImport.php:562
-msgid "Export to PHP"
-msgstr "Exportera till PHP"
-
-#: ../classes/ExportImport.php:563
-msgid ""
-"Admin Columns will export PHP code you can directly insert in your plugin or"
-" theme."
-msgstr "Admin Columns kommer att exportera PHP-kod som du kan direkt infoga i ditt tillägg eller tema."
-
-#: ../classes/ExportImport.php:566
-msgid "Click the &quot;Export to PHP&quot; button"
-msgstr "Klicka på &quot;Export till PHP&quot; knappen"
-
-#: ../classes/ExportImport.php:579
-msgid "Import"
-msgstr "Importera"
-
-#: ../classes/ExportImport.php:580
-msgid "Import your Admin Column settings here."
-msgstr "Importera dina Admin Column inställningar här."
-
-#: ../classes/ExportImport.php:585
-msgid "Import Columns Types"
-msgstr "Importera Kolumn Typer"
-
-#: ../classes/ExportImport.php:587
-msgid "Choose a Admin Columns Export file to upload."
-msgstr "Välj en Admin Columns export fil för att ladda upp."
-
-#: ../classes/ExportImport.php:588
-msgid "Click upload file and import."
-msgstr "Klicka på ladda upp fil och importera."
-
-#: ../classes/ExportImport.php:589
-msgid "That's it! You imported settings are now active."
-msgstr "Det är allt! Du har importerat inställningarna som nu är aktivt."
-
-#: ../classes/ExportImport.php:600
-msgid "Upload file and import"
-msgstr "Ladda upp fil och importera"
-
-#: ../classes/Layout.php172, ../classes/LayoutScreen/Columns.php540,
+#: ../classes/Layout.php172, ../classes/LayoutScreen/Columns.php543,
 #: ../classes/Column/User/Roles.php:8
 msgid "Roles"
 msgstr "Roller"
 
-#: ../classes/Layout.php179, ../classes/Settings/Column/CustomFieldType.php:51
+#: ../classes/Layout.php179, ../classes/Settings/Column/CustomFieldType.php:63
 msgid "User"
 msgstr ""
 
-#: ../classes/NetworkAdmin.php:29
+#: ../classes/NetworkAdmin.php:26
 msgid "Admin Columns Settings"
 msgstr "Admin Columns Inställningar"
 
-#: ../classes/NetworkAdmin.php29, ../classes/NetworkAdmin.php:56
+#: ../classes/NetworkAdmin.php26, ../classes/NetworkAdmin.php:53
 msgid "Admin Columns"
 msgstr "Admin Columns"
 
-#: ../classes/PluginActions.php:65
+#: ../classes/PluginActions.php:64
 msgid "This add-on is no longer compatible with the current version of %s."
 msgstr ""
 
-#: ../classes/PluginActions.php:65
+#: ../classes/PluginActions.php:64
 msgid "Admin Columns Pro"
 msgstr ""
 
-#: ../classes/PluginActions.php:65
+#: ../classes/PluginActions.php:64
 msgid "Add-on should be at least version %s."
 msgstr ""
 
 #: ../../cac-addon-acf/classes/Column.php:15
 msgid "Advanced Custom Fields"
 msgstr "Advanced Custom Fields"
+
+#: ../../cac-addon-woocommerce/v2/wc.php197,
+#: ../../cac-addon-woocommerce/v3/wc.php:202
+msgid "Regular"
+msgstr ""
+
+#: ../../cac-addon-woocommerce/v2/wc.php199,
+#: ../../cac-addon-woocommerce/v3/wc.php:204
+msgid "Sale from"
+msgstr ""
+
+#: ../../cac-addon-woocommerce/v2/wc.php200,
+#: ../../cac-addon-woocommerce/v3/wc.php:205
+msgid "Sale To"
+msgstr ""
 
 #: ../../ac-addon-pods/classes/Filtering/TrueFalse.php36,
 #: ../../cac-addon-acf/classes/Filtering/TrueFalse.php36,
@@ -312,19 +132,23 @@ msgstr "Falskt"
 msgid "True"
 msgstr "Sant"
 
-#: ../../ac-addon-pods/classes/Setting/Field.php25,
+#: ../../ac-addon-pods/classes/Setting/Field.php24,
 #: ../../ac-addon-types/classes/Settings/Field.php25,
 #: ../../cac-addon-acf/classes/Setting/Field.php:26
 msgid "No %s fields available."
 msgstr ""
 
-#: ../../ac-addon-pods/classes/Setting/Field.php31,
+#: ../../ac-addon-pods/classes/Setting/Field.php:25
+msgid "Create your first %s field."
+msgstr ""
+
+#: ../../ac-addon-pods/classes/Setting/Field.php34,
 #: ../../ac-addon-types/classes/Settings/Field.php31,
 #: ../../cac-addon-acf/classes/Setting/Field.php:34
 msgid "Field"
 msgstr "Fält"
 
-#: ../../ac-addon-pods/classes/Setting/Field.php62,
+#: ../../ac-addon-pods/classes/Setting/Field.php83,
 #: ../../cac-addon-acf/classes/Setting/Field.php147,
 #: ../../cac-addon-acf/classes/Free/Setting/Field.php:25
 msgid "empty label"
@@ -343,138 +167,149 @@ msgstr ""
 msgid "Type"
 msgstr ""
 
-#: ../classes/Editing/Addon.php:104
+#: ../classes/Editing/Addon.php:117
 msgid "Enable inline editing for Custom Fields. Default is <code>off</code>"
 msgstr "Tillåta snabbredigering för anpassade fält. Standard är <code>av</code>"
 
-#: ../classes/Editing/Addon.php:107
+#: ../classes/Editing/Addon.php:120
 msgid "Inline edit will display all the raw values in an editable text field."
 msgstr "Snabbredigering kommer att visa all rådata i ett redigerbart textfält."
 
-#: ../classes/Editing/Addon.php:109
+#: ../classes/Editing/Addon.php:122
 msgid ""
 "Please read <a href='%s'>our documentation</a> if you plan to use these "
 "fields."
 msgstr "Vänligen läs <a href='%s'>vår dokumentation</a> om du planerar att använda dessa fälten."
 
-#: ../classes/LayoutScreen/Columns.php:32
+#: ../classes/LayoutScreen/Columns.php:39
 msgid "You can make an editable copy of this set by clicking %s on the right."
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:74
+#: ../classes/LayoutScreen/Columns.php95,
+#: ../classes/Admin/Page/ExportImport.php:148
+msgid "Original"
+msgstr "Orginal"
+
+#: ../classes/LayoutScreen/Columns.php:106
 msgid "Column set not created."
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:89
+#: ../classes/LayoutScreen/Columns.php:121
 msgid "Set %s succesfully created."
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:108
+#: ../classes/LayoutScreen/Columns.php:140
 msgid "Screen does not exist."
 msgstr "Screen existerar inte."
 
-#: ../classes/LayoutScreen/Columns.php:121
+#: ../classes/LayoutScreen/Columns.php:153
 msgid "Column set %s succesfully deleted."
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:215
+#: ../classes/LayoutScreen/Columns.php:221
 msgid "Select roles"
 msgstr "Välj roller"
 
-#: ../classes/LayoutScreen/Columns.php:216
+#: ../classes/LayoutScreen/Columns.php:222
 msgid "Select users"
 msgstr "Välj användare"
 
-#: ../classes/LayoutScreen/Columns.php:222
+#: ../classes/LayoutScreen/Columns.php:228
 msgid "+ Add set"
 msgstr "+ Lägg till set"
 
-#: ../classes/LayoutScreen/Columns.php233,
-#: ../classes/LayoutScreen/Columns.php:507
+#: ../classes/LayoutScreen/Columns.php239,
+#: ../classes/LayoutScreen/Columns.php:511
 msgid "Column Sets"
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:236
+#: ../classes/LayoutScreen/Columns.php:242
 msgid "Cancel"
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:251
+#: ../classes/LayoutScreen/Columns.php:257
 msgid ""
 "Create new sets to switch between different column views on the %s screen."
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:260
+#: ../classes/LayoutScreen/Columns.php:266
 msgid "Add"
 msgstr "Lägg till"
 
-#: ../classes/LayoutScreen/Columns.php:269
+#: ../classes/LayoutScreen/Columns.php:275
 msgid ""
 "Warning! The %s columns data will be deleted. This cannot be undone. 'OK' to"
 " delete, 'Cancel' to stop"
 msgstr "Varning! The %s kolumners data kommer att raderas. Detta kan inte ångras. 'OK' för att radera, 'Avbryt' för att stoppa"
 
-#: ../classes/LayoutScreen/Columns.php286,
+#: ../classes/LayoutScreen/Columns.php292,
 #: ../classes/Editing/classes/TableScreen.php:67
 msgid "Delete"
 msgstr "Ta bort"
 
-#: ../classes/LayoutScreen/Columns.php:292
+#: ../classes/LayoutScreen/Columns.php:298
 msgid "Select"
 msgstr "Välj"
 
-#: ../classes/LayoutScreen/Columns.php:305
+#: ../classes/LayoutScreen/Columns.php:311
 msgid "Saved"
 msgstr "Sparat"
 
-#: ../classes/LayoutScreen/Columns.php:310
+#: ../classes/LayoutScreen/Columns.php:316
 msgid "This set is loaded via PHP and can therefore not be edited"
 msgstr "Detta set laddas via PHP och kan därför inte redigeras"
 
-#: ../classes/LayoutScreen/Columns.php:325
+#: ../classes/LayoutScreen/Columns.php:331
 msgid "Update"
 msgstr "Uppdatera"
 
-#: ../classes/LayoutScreen/Columns.php:346
+#: ../classes/LayoutScreen/Columns.php:352
 msgid "Sets"
 msgstr "Satser"
 
-#: ../classes/LayoutScreen/Columns.php:349
+#: ../classes/LayoutScreen/Columns.php:355
 msgid "Sets allow users to switch between different column views."
 msgstr "Satser tillåter användare att byta mellan olika vyer för kolumner."
 
-#: ../classes/LayoutScreen/Columns.php:352
+#: ../classes/LayoutScreen/Columns.php:358
 msgid ""
 "Available sets are selectable from the overview screen. Users can have their"
 " own column view preference."
 msgstr "Tillgängliga satser är valbara genom överblick-fönstret. Användare kan ha deras egna preferens för kolumnvy."
 
-#: ../classes/LayoutScreen/Columns.php:358
+#: ../classes/LayoutScreen/Columns.php:364
 msgid "Online documentation"
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php524,
+#: ../classes/LayoutScreen/Columns.php527,
 #: ../classes/Column/NetworkSite/Name.php:7
 msgid "Name"
 msgstr "Namn"
 
-#: ../classes/LayoutScreen/Columns.php:529
+#: ../classes/LayoutScreen/Columns.php:532
 msgid "Please enter a name."
 msgstr "Vänligen ange ett namn."
 
-#: ../classes/LayoutScreen/Columns.php:536
+#: ../classes/LayoutScreen/Columns.php:539
 msgid "Make this set available only for specific users or roles (optional)"
 msgstr "Gör detta set endast tillgängligt för specificerade användare eller roller (valfritt)"
 
-#: ../classes/LayoutScreen/Columns.php541,
-#: ../classes/LayoutScreen/Columns.php:550
+#: ../classes/LayoutScreen/Columns.php544,
+#: ../classes/LayoutScreen/Columns.php:553
 msgid "optional"
 msgstr "valfritt"
 
-#: ../classes/LayoutScreen/Columns.php:614
+#: ../classes/LayoutScreen/Columns.php597,
+#: ../classes/Admin/Page/ExportImport.php641,
+#: ../classes/Admin/Page/ExportImport.php:741
+msgid "Instructions"
+msgstr "Instruktioner"
+
+#: ../classes/LayoutScreen/Columns.php:617
 msgid "Default"
 msgstr "Standard"
 
-#: ../classes/LayoutScreen/Table.php:55
+#: ../classes/LayoutScreen/Table.php:57
 msgid "Column View"
 msgstr ""
 
@@ -482,42 +317,42 @@ msgstr ""
 msgid "Empty response from API."
 msgstr "Ingen respons från API."
 
-#: ../classes/License/Manager.php:621
+#: ../classes/License/Manager.php:626
 msgid "Your license was successfully renewed!"
 msgstr "Din licens förnyades framgångsrikt!"
 
-#: ../classes/License/Manager.php:625
+#: ../classes/License/Manager.php:630
 msgid "Your license has not been renewed yet."
 msgstr "Din licens har inte förnyas ännu."
 
-#: ../classes/License/Manager.php:693
+#: ../classes/License/Manager.php:698
 msgid ""
 "Licence not active. Enter your licence key on <a href='%s'>the settings "
 "page</a>."
 msgstr "Licensen är inte aktiv. Fyll i din licensnyckel under <a href='%s'>sidan inställningar</a>."
 
-#: ../classes/License/Manager.php:770
+#: ../classes/License/Manager.php:775
 msgid "Empty licence."
 msgstr "Ingen licens."
 
-#: ../classes/License/Manager.php782, ../classes/License/Manager.php792,
-#: ../classes/License/Manager.php:796
+#: ../classes/License/Manager.php787, ../classes/License/Manager.php797,
+#: ../classes/License/Manager.php:801
 msgid "Wrong response from API."
 msgstr "Felaktig respons från API."
 
-#: ../classes/License/Manager.php:827
+#: ../classes/License/Manager.php:832
 msgid "Updates"
 msgstr "Uppdateringar"
 
-#: ../classes/License/Manager.php:828
+#: ../classes/License/Manager.php:833
 msgid "Enter your licence code to receive automatic updates."
 msgstr "Fyll i din licensnyckel för att få automatiska uppdateringar."
 
-#: ../classes/License/Manager.php:862
+#: ../classes/License/Manager.php:867
 msgid "network settings page"
 msgstr "nätverk sida för inställningar"
 
-#: ../classes/License/Manager.php:868
+#: ../classes/License/Manager.php:873
 msgid "The license can be managed on the %s."
 msgstr "Licensen kan hanteras på %s."
 
@@ -596,31 +431,31 @@ msgstr "Min kontosida"
 msgid "Check my license"
 msgstr "Kontrollera min licens"
 
-#: ../classes/Sorting/Addon.php:267
-msgid "Show all results when sorting. Default is <code>off</code>."
-msgstr "Visa alla resultat vid sortering. Standard är <code>av</code>."
+#: ../classes/Sorting/Addon.php:279
+msgid "Show all results when sorting."
+msgstr ""
 
-#: ../classes/Sorting/Addon.php:350
+#: ../classes/Sorting/Addon.php:365
 msgid "Sorting Preferences"
 msgstr "Sortering preferencer"
 
-#: ../classes/Sorting/Addon.php:351
+#: ../classes/Sorting/Addon.php:366
 msgid "This will reset the sorting preference for all users."
 msgstr "Detta kommer att återställa sorteringspreferenser för alla användare."
 
-#: ../classes/Sorting/Addon.php:365
+#: ../classes/Sorting/Addon.php:380
 msgid "Reset sorting preferences"
 msgstr "Återställ preferenser för sortering"
 
-#: ../classes/Sorting/Addon.php:382
+#: ../classes/Sorting/Addon.php:397
 msgid "All sorting preferences have been reset."
 msgstr "Alla preferenser för sortering har återställts."
 
-#: ../classes/Sorting/Addon.php:446
+#: ../classes/Sorting/Addon.php:467
 msgid "Reset sorting"
 msgstr "Återställ sortering"
 
-#: ../classes/Table/ScreenOptions.php:80
+#: ../classes/Table/ScreenOptions.php:79
 msgid "Horizontal scrollable table"
 msgstr ""
 
@@ -661,30 +496,195 @@ msgstr ""
 msgid "Select a repeater sub field."
 msgstr "Välj ett upprepningsfält."
 
-#: ../../cac-addon-woocommerce/classes/Settings/ProductAttributes.php:98
-msgid "Show all attributes"
-msgstr "Visa alla attribut"
+#: ../classes/Admin/Page/ExportImport.php:22
+msgid "Export/Import"
+msgstr "Exportera/Importera"
 
-#: ../../cac-addon-woocommerce/classes/Settings/ProductAttributes.php:104
-msgid "Show Single"
+#: ../classes/Admin/Page/ExportImport.php:51
+msgid "Export field is empty. Please select your types from the left column."
+msgstr "Exportfältet är tomt. Vänligen markera dina typer från den vänstra kolumnen."
+
+#: ../classes/Admin/Page/ExportImport.php109,
+#: ../classes/Admin/Page/ExportImport.php:115
+msgid "Sorry, there has been an error."
+msgstr "Tyvärr, det har uppstått ett fel."
+
+#: ../classes/Admin/Page/ExportImport.php:115
+msgid ""
+"The export file could not be found at %s. It is likely that this was caused "
+"by a permissions problem."
+msgstr "Export av fil kunde inte hittas på %s. Troligtvis orsakades det av ett behörighetsproblem."
+
+#: ../classes/Admin/Page/ExportImport.php:128
+msgid "Import failed. File does not contain Admin Column settings."
+msgstr "Importering misslyckades. Filen innehåller inte Admin Column inställningar."
+
+#: ../classes/Admin/Page/ExportImport.php:137
+msgid "Screen %s does not exist."
+msgstr "Skärmen %s existerar inte."
+
+#: ../classes/Admin/Page/ExportImport.php:156
+msgid "Imported"
+msgstr "Importerat"
+
+#: ../classes/Admin/Page/ExportImport.php:184
+msgid "Import failed."
+msgstr "Import misslyckades."
+
+#: ../classes/Admin/Page/ExportImport.php:195
+msgid "Succesfully created %s for %s."
 msgstr ""
 
-#: ../../cac-addon-woocommerce/classes/Settings/ProductAttributes.php:105
-msgid "Display a single attribute."
+#: ../classes/Admin/Page/ExportImport.php:196
+msgid "set"
+msgid_plural "sets"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../classes/Admin/Page/ExportImport.php:306
+msgid "read only"
 msgstr ""
 
-#: ../../cac-addon-woocommerce/classes/Settings/ProductAttributes.php:105
-msgid "Only works for taxonomy attributes."
+#: ../classes/Admin/Page/ExportImport.php:639
+msgid "Results"
+msgstr "Resultat"
+
+#: ../classes/Admin/Page/ExportImport.php:644
+msgid "Using the PHP export"
+msgstr "Använd PHP export"
+
+#: ../classes/Admin/Page/ExportImport.php646,
+#: ../classes/Admin/Page/ExportImport.php:726
+msgid "Copy the generated PHP code in the right column"
+msgstr "Kopiera genererad PHP kod i den högra kolumnen"
+
+#: ../classes/Admin/Page/ExportImport.php647,
+#: ../classes/Admin/Page/ExportImport.php:727
+msgid ""
+"Insert the code in your themes functions.php or in your plugin (on the init "
+"action)"
+msgstr "Infoga koden i ditt temas functions.php eller i ditt plugin (på init action)"
+
+#: ../classes/Admin/Page/ExportImport.php648,
+#: ../classes/Admin/Page/ExportImport.php:728
+msgid ""
+"Your columns settings are now loaded from your PHP code instead of from your"
+" stored settings!"
+msgstr "Dina kolumn inställningar laddas nu från din PHP kod istället från dina sparade inställningar!"
+
+#: ../classes/Admin/Page/ExportImport.php:661
+msgid "Columns"
+msgstr "Kolumner"
+
+#: ../classes/Admin/Page/ExportImport.php:662
+msgid "Select the columns to be exported."
+msgstr "Välj de kolumner som ska exporteras."
+
+#: ../classes/Admin/Page/ExportImport.php:685
+msgid "select all"
+msgstr "välj alla"
+
+#: ../classes/Admin/Page/ExportImport.php:688
+msgid "deselect all"
 msgstr ""
 
-#: ../../cac-addon-woocommerce/classes/Settings/ProductAttributes.php:166
-msgid "Is a taxonomy"
-msgstr "Är en taxanomi"
+#: ../classes/Admin/Page/ExportImport.php:692
+msgid "Export PHP"
+msgstr "Exportera PHP"
+
+#: ../classes/Admin/Page/ExportImport.php693,
+#: ../classes/Admin/Page/ExportImport.php:708
+msgid "Download export file"
+msgstr "Ladda ner exportfil"
+
+#: ../classes/Admin/Page/ExportImport.php:697
+msgid "No stored column settings are found."
+msgstr "Inga sparade kolumninställningar hittades."
+
+#: ../classes/Admin/Page/ExportImport.php:709
+msgid ""
+"Admin Columns will export to a format compatible with the Admin Columns "
+"import functionality."
+msgstr "Admin Columns kommer att exportera till ett format som är kompatibelt med Admin Columns import funktionalitet."
+
+#: ../classes/Admin/Page/ExportImport.php711,
+#: ../classes/Admin/Page/ExportImport.php:724
+msgid ""
+"Select the columns you which to export from the list in the left column"
+msgstr "Välj de kolumner som du vill exportera från listan i den vänstra kolumnen"
+
+#: ../classes/Admin/Page/ExportImport.php:712
+msgid "Click the &quot;Download export file&quot; button"
+msgstr "Klicka på &quot;Ladda ner export fil&quot; knappen"
+
+#: ../classes/Admin/Page/ExportImport.php:713
+msgid "Save the .json-file when prompted"
+msgstr "Spara .json-fil  när du blir ombedd"
+
+#: ../classes/Admin/Page/ExportImport.php:714
+msgid "Go to the Admin Columns import/export page in your other installation"
+msgstr "Gå till Admin Columns import/export sida i din andra installation"
+
+#: ../classes/Admin/Page/ExportImport.php:715
+msgid "Select the export .json-file"
+msgstr "Välj export .json-fil"
+
+#: ../classes/Admin/Page/ExportImport.php:716
+msgid "Click the &quot;Start import&quot; button"
+msgstr "Klicka på &quot;Starta import&quto; knappen"
+
+#: ../classes/Admin/Page/ExportImport.php:717
+msgid "That's it!"
+msgstr "Det är allt!"
+
+#: ../classes/Admin/Page/ExportImport.php:721
+msgid "Export to PHP"
+msgstr "Exportera till PHP"
+
+#: ../classes/Admin/Page/ExportImport.php:722
+msgid ""
+"Admin Columns will export PHP code you can directly insert in your plugin or"
+" theme."
+msgstr "Admin Columns kommer att exportera PHP-kod som du kan direkt infoga i ditt tillägg eller tema."
+
+#: ../classes/Admin/Page/ExportImport.php:725
+msgid "Click the &quot;Export to PHP&quot; button"
+msgstr "Klicka på &quot;Export till PHP&quot; knappen"
+
+#: ../classes/Admin/Page/ExportImport.php:738
+msgid "Import"
+msgstr "Importera"
+
+#: ../classes/Admin/Page/ExportImport.php:739
+msgid "Import your Admin Column settings here."
+msgstr "Importera dina Admin Column inställningar här."
+
+#: ../classes/Admin/Page/ExportImport.php:744
+msgid "Import Columns Types"
+msgstr "Importera Kolumn Typer"
+
+#: ../classes/Admin/Page/ExportImport.php:746
+msgid "Choose a Admin Columns Export file to upload."
+msgstr "Välj en Admin Columns export fil för att ladda upp."
+
+#: ../classes/Admin/Page/ExportImport.php:747
+msgid "Click upload file and import."
+msgstr "Klicka på ladda upp fil och importera."
+
+#: ../classes/Admin/Page/ExportImport.php:748
+msgid "That's it! You imported settings are now active."
+msgstr "Det är allt! Du har importerat inställningarna som nu är aktivt."
+
+#: ../classes/Admin/Page/ExportImport.php:759
+msgid "Upload file and import"
+msgstr "Ladda upp fil och importera"
 
 #: ../classes/Column/Media/Image.php10,
 #: ../classes/Editing/classes/TableScreen.php76,
-#: ../../cac-addon-woocommerce/classes/Filtering/Product/Thumb.php8,
-#: ../../cac-addon-woocommerce/classes/Filtering/Product/Thumb.php:9
+#: ../../cac-addon-woocommerce/v2/classes/Filtering/Product/Thumb.php8,
+#: ../../cac-addon-woocommerce/v2/classes/Filtering/Product/Thumb.php9,
+#: ../../cac-addon-woocommerce/v3/classes/Filtering/Product/Thumb.php8,
+#: ../../cac-addon-woocommerce/v3/classes/Filtering/Product/Thumb.php:9
 msgid "Image"
 msgstr ""
 
@@ -693,7 +693,7 @@ msgid "Blog ID"
 msgstr ""
 
 #: ../classes/Column/NetworkSite/CommentCount.php:7
-msgid "Comment Count"
+msgid "Comments"
 msgstr ""
 
 #: ../classes/Column/NetworkSite/Domain.php:7
@@ -725,12 +725,27 @@ msgid "Theme"
 msgstr ""
 
 #: ../classes/Column/NetworkSite/UploadSpace.php:7
-msgid "Upload Space"
+msgid "Storage Space"
 msgstr ""
 
-#: ../classes/Column/Post/ChildPages.php:7
+#: ../classes/Column/NetworkSite/UploadSpace.php22,
+#: ../classes/Column/NetworkSite/UploadSpace.php:26
+msgid "%s MB"
+msgstr ""
+
+#: ../classes/Column/Post/ChildPages.php:8
 msgid "Child Pages"
 msgstr "Undersidor"
+
+#: ../classes/Column/Post/Images.php:11
+msgid "Images"
+msgstr ""
+
+#: ../classes/Column/Post/Images.php:124
+msgid "%s image"
+msgid_plural "%s images"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../classes/Column/Taxonomy/Excerpt.php:11
 msgid "Excerpt"
@@ -744,6 +759,10 @@ msgstr "ID"
 msgid "Parent"
 msgstr "Förälder"
 
+#: ../classes/Column/User/Gravatar.php:10
+msgid "Profile Picture"
+msgstr ""
+
 #: ../classes/Editing/classes/Settings.php:16
 msgid "Enable Editing"
 msgstr ""
@@ -753,7 +772,7 @@ msgid "This will make the column support inline editing."
 msgstr "Detta kommer att göra så kolumner stödjer snabbredigering."
 
 #: ../classes/Editing/classes/Settings.php35,
-#: ../classes/Editing/classes/Model/CustomField.php:61
+#: ../classes/Editing/classes/Model/CustomField.php:56
 msgid "Inline Editing"
 msgstr ""
 
@@ -797,50 +816,73 @@ msgstr ""
 msgid "Audio"
 msgstr ""
 
-#: ../classes/Editing/classes/TableScreen.php:124
+#: ../classes/Editing/classes/TableScreen.php:125
 msgid "Invalid item ID."
 msgstr "Ogiltig post ID."
 
-#: ../classes/Editing/classes/TableScreen.php130,
-#: ../classes/Editing/classes/TableScreen.php:251
+#: ../classes/Editing/classes/TableScreen.php131,
+#: ../classes/Editing/classes/TableScreen.php:257
 msgid "Invalid list screen."
 msgstr ""
 
-#: ../classes/Editing/classes/TableScreen.php139,
-#: ../classes/Editing/classes/TableScreen.php259,
-#: ../classes/Editing/classes/TableScreen.php:263
+#: ../classes/Editing/classes/TableScreen.php140,
+#: ../classes/Editing/classes/TableScreen.php265,
+#: ../classes/Editing/classes/TableScreen.php:269
 msgid "Invalid column."
 msgstr "Ogiltig kolumn"
 
-#: ../classes/Editing/classes/TableScreen.php:143
+#: ../classes/Editing/classes/TableScreen.php:144
 msgid "Column does not support editing."
 msgstr ""
 
-#: ../classes/Editing/classes/TableScreen.php:149
+#: ../classes/Editing/classes/TableScreen.php:150
 msgid "User does not have write permissions"
 msgstr ""
 
-#: ../classes/Editing/classes/TableScreen.php:245
+#: ../classes/Editing/classes/TableScreen.php:251
 msgid "Invalid request."
 msgstr "Ogiltig förfrågan."
 
-#: ../classes/Filtering/classes/Model.php:206
+#: ../classes/Filtering/classes/Dropdown.php96,
+#: ../classes/Filtering/classes/Settings.php:56
+msgid "All %s"
+msgstr "Alla %s"
+
+#: ../classes/Filtering/classes/Dropdown.php146,
+#: ../../cac-addon-woocommerce/v2/classes/Filtering/ShopOrder/CustomerMessage.php25,
+#: ../../cac-addon-woocommerce/v3/classes/Filtering/ShopOrder/CustomerMessage.php:25
+msgid "Empty"
+msgstr "Tomt"
+
+#: ../classes/Filtering/classes/Dropdown.php:158
+msgid "Not empty"
+msgstr "Inte tomt"
+
+#: ../classes/Filtering/classes/Dropdown.php:297
+msgid "Loading values .."
+msgstr "Laddar värden .."
+
+#: ../classes/Filtering/classes/Dropdown.php:361
+msgid "Filter by %s"
+msgstr ""
+
+#: ../classes/Filtering/classes/Model.php:221
 msgid "Future dates"
 msgstr "Framtida datum"
 
-#: ../classes/Filtering/classes/Model.php:207
+#: ../classes/Filtering/classes/Model.php:222
 msgid "Past dates"
 msgstr ""
 
-#: ../classes/Filtering/classes/Model.php231,
-#: ../../cac-addon-woocommerce/classes/Filtering/Product/Thumb.php8,
-#: ../classes/Filtering/classes/Model/User/Url.php:40
+#: ../classes/Filtering/classes/Model.php246,
+#: ../../cac-addon-woocommerce/v2/classes/Filtering/Product/Thumb.php8,
+#: ../../cac-addon-woocommerce/v3/classes/Filtering/Product/Thumb.php:8
 msgid "Without %s"
 msgstr ""
 
-#: ../classes/Filtering/classes/Model.php232,
-#: ../../cac-addon-woocommerce/classes/Filtering/Product/Thumb.php9,
-#: ../classes/Filtering/classes/Model/User/Url.php:41
+#: ../classes/Filtering/classes/Model.php247,
+#: ../../cac-addon-woocommerce/v2/classes/Filtering/Product/Thumb.php9,
+#: ../../cac-addon-woocommerce/v3/classes/Filtering/Product/Thumb.php:9
 msgid "Has %s"
 msgstr ""
 
@@ -856,11 +898,6 @@ msgstr "Detta kommer att göra kolumner stödjer filtrering."
 msgid "Filtering"
 msgstr ""
 
-#: ../classes/Filtering/classes/Settings.php56,
-#: ../classes/Filtering/classes/TableScreen.php:405
-msgid "All %s"
-msgstr "Alla %s"
-
 #: ../classes/Filtering/classes/Settings.php:61
 msgid "Set the name of the label in the filter menu"
 msgstr ""
@@ -869,48 +906,31 @@ msgstr ""
 msgid "Top label"
 msgstr ""
 
-#: ../classes/Filtering/classes/TableScreen.php:372
+#: ../classes/Filtering/classes/TableScreen.php:344
 msgid "Filter"
 msgstr ""
 
-#: ../classes/Filtering/classes/TableScreen.php434,
-#: ../../cac-addon-woocommerce/classes/Filtering/ShopOrder/CustomerMessage.php:22
-msgid "Empty"
-msgstr "Tomt"
-
-#: ../classes/Filtering/classes/TableScreen.php:435
-msgid "Not empty"
-msgstr "Inte tomt"
-
-#: ../classes/Filtering/classes/TableScreen.php:470
-msgid "Filter by %s"
-msgstr ""
-
-#: ../classes/Filtering/classes/TableScreen.php:508
+#: ../classes/Filtering/classes/TableScreen.php:392
 msgid "Start date"
 msgstr "Startdatum"
 
-#: ../classes/Filtering/classes/TableScreen.php:509
+#: ../classes/Filtering/classes/TableScreen.php:393
 msgid "End date"
 msgstr "Slutdatum"
 
-#: ../classes/Filtering/classes/TableScreen.php:517
+#: ../classes/Filtering/classes/TableScreen.php:401
 msgid "Min"
 msgstr "Min"
 
-#: ../classes/Filtering/classes/TableScreen.php:518
+#: ../classes/Filtering/classes/TableScreen.php:402
 msgid "Max"
 msgstr "Max"
 
-#: ../classes/Filtering/classes/TableScreen.php:532
-msgid "Loading values .."
-msgstr "Laddar värden .."
-
-#: ../classes/Filtering/classes/TableScreen.php:573
+#: ../classes/Filtering/classes/TableScreen.php:457
 msgid "until"
 msgstr "tills"
 
-#: ../classes/Settings/Column/CustomFieldType.php:50
+#: ../classes/Settings/Column/CustomFieldType.php:62
 msgid "Post"
 msgstr ""
 
@@ -935,144 +955,38 @@ msgstr "bbPress"
 msgid "Related Posts"
 msgstr ""
 
-#: ../../cac-addon-woocommerce/classes/Column/Product/BackordersAllowed.php:8
-msgid "Backorders Allowed"
+#: ../../cac-addon-woocommerce/v2/classes/Settings/ProductAttributes.php98,
+#: ../../cac-addon-woocommerce/v3/classes/Settings/ProductAttributes.php:26
+msgid "Show all attributes"
+msgstr "Visa alla attribut"
+
+#: ../../cac-addon-woocommerce/v2/classes/Settings/ProductAttributes.php104,
+#: ../../cac-addon-woocommerce/v3/classes/Settings/ProductAttributes.php:32
+msgid "Show Single"
 msgstr ""
 
-#: ../../cac-addon-woocommerce/classes/Column/Product/Crosssells.php:11
-msgid "Cross Sells"
+#: ../../cac-addon-woocommerce/v2/classes/Settings/ProductAttributes.php105,
+#: ../../cac-addon-woocommerce/v3/classes/Settings/ProductAttributes.php:33
+msgid "Display a single attribute."
 msgstr ""
 
-#: ../../cac-addon-woocommerce/classes/Column/Product/Dimensions.php:61
-msgid "Length"
+#: ../../cac-addon-woocommerce/v2/classes/Settings/ProductAttributes.php105,
+#: ../../cac-addon-woocommerce/v3/classes/Settings/ProductAttributes.php:33
+msgid "Only works for taxonomy attributes."
 msgstr ""
 
-#: ../../cac-addon-woocommerce/classes/Column/Product/Dimensions.php:62
-msgid "Width"
-msgstr ""
+#: ../../cac-addon-woocommerce/v2/classes/Settings/ProductAttributes.php166,
+#: ../../cac-addon-woocommerce/v3/classes/Settings/ProductAttributes.php:101
+msgid "Is a taxonomy"
+msgstr "Är en taxanomi"
 
-#: ../../cac-addon-woocommerce/classes/Column/Product/Dimensions.php:63
-msgid "Height"
-msgstr ""
-
-#: ../../cac-addon-woocommerce/classes/Column/Product/OrderTotal.php:10
-msgid "Total order amount"
-msgstr "Totalt ordervärde"
-
-#: ../../cac-addon-woocommerce/classes/Column/Product/Parent.php:11
-msgid "Parent product"
-msgstr "Förälderprodukt"
-
-#: ../../cac-addon-woocommerce/classes/Column/Product/ProductType.php:11
-msgid "Product type"
-msgstr "Produkttyp"
-
-#: ../../cac-addon-woocommerce/classes/Column/Product/ReviewsEnabled.php:13
-msgid "Reviews enabled"
-msgstr "Omdömen aktiverade"
-
-#: ../../cac-addon-woocommerce/classes/Column/Product/StockStatus.php:33
-msgid "Stock status editing is only supported for %s products."
-msgstr ""
-
-#: ../../cac-addon-woocommerce/classes/Column/Product/StockStatus.php:39
-msgid "In stock"
-msgstr "I lager"
-
-#: ../../cac-addon-woocommerce/classes/Column/Product/StockStatus.php:43
-msgid "Out of stock"
-msgstr ""
-
-#: ../../cac-addon-woocommerce/classes/Column/Product/Upsells.php:12
-msgid "Upsells"
-msgstr ""
-
-#: ../../cac-addon-woocommerce/classes/Column/Product/Visibility.php:11
-msgid "Visiblity"
-msgstr "Synlighet"
-
-#: ../../cac-addon-woocommerce/classes/Column/ShopCoupon/ExcludeProducts.php:11
-msgid "Excluded products"
-msgstr "Exkluderade produkter"
-
-#: ../../cac-addon-woocommerce/classes/Column/ShopCoupon/FreeShipping.php:11
-msgid "Free shipping"
-msgstr "Fri frakt"
-
-#: ../../cac-addon-woocommerce/classes/Column/ShopCoupon/FreeShipping.php:27
-msgid ""
-"The free shipping method must be enabled with the &quot;must use "
-"coupon&quot; setting."
-msgstr "Gratis fraktmetod måste aktiveras med &quot;måste använd kupong&quot; inställning."
-
-#: ../../cac-addon-woocommerce/classes/Column/ShopCoupon/IncludeProducts.php:11
-msgid "Included products"
-msgstr "Inkluderade produkter"
-
-#: ../../cac-addon-woocommerce/classes/Column/ShopCoupon/MaximumAmount.php:11
-msgid "Maximum amount"
-msgstr ""
-
-#: ../../cac-addon-woocommerce/classes/Column/ShopCoupon/MinimumAmount.php:11
-msgid "Minimum amount"
-msgstr "Minsta mängd"
-
-#: ../../cac-addon-woocommerce/classes/Column/ShopCoupon/Orders.php:10
-msgid "Orders"
-msgstr ""
-
-#: ../../cac-addon-woocommerce/classes/Column/ShopCoupon/UsedBy.php:10
-msgid "Used By"
-msgstr ""
-
-#: ../../cac-addon-woocommerce/classes/Column/ShopCoupon/UsedBy.php:29
-msgid "Not a registered user"
-msgstr ""
-
-#: ../../cac-addon-woocommerce/classes/Column/ShopOrder/CouponsUsed.php11,
-#: ../../cac-addon-woocommerce/classes/Column/User/CouponsUsed.php:10
-msgid "Coupons Used"
-msgstr "Kuponger använda"
-
-#: ../../cac-addon-woocommerce/classes/Column/ShopOrder/Discount.php:11
-msgid "Order Discount"
-msgstr "Order rabatt"
-
-#: ../../cac-addon-woocommerce/classes/Column/ShopOrder/PaymentMethod.php:8
-msgid "Payment method"
-msgstr "Betalningsmetod"
-
-#: ../../cac-addon-woocommerce/classes/Column/User/Orders.php:67
-msgid "items"
-msgstr "produkter"
-
-#: ../../cac-addon-woocommerce/classes/Column/User/TotalSales.php:11
-msgid "Total Sales"
-msgstr "Summa totalt"
-
-#: ../../cac-addon-woocommerce/classes/Editing/Product/SKU.php:26
-msgid "The SKU must be unique."
-msgstr "SKU måste vara unik."
-
-#: ../../cac-addon-woocommerce/classes/Editing/Product/SKU.php:34
-msgid "The SKU is the same."
-msgstr ""
-
-#: ../../cac-addon-woocommerce/classes/Editing/Product/TaxClass.php:13
-msgid "Standard"
-msgstr "Standard"
-
-#: ../../cac-addon-woocommerce/classes/Filtering/ShopOrder/CustomerMessage.php:23
-msgid "Has customer message"
-msgstr "Har meddelande till kund"
-
-#: ../classes/Editing/classes/Model/CustomField.php:62
+#: ../classes/Editing/classes/Model/CustomField.php:57
 msgid ""
 "Inline Editing for Custom Fields is not enabled. Enable inline editing for "
 "Custom Fields on the %s."
 msgstr ""
 
-#: ../classes/Editing/classes/Model/CustomField.php:62
+#: ../classes/Editing/classes/Model/CustomField.php:57
 msgid "settings screen"
 msgstr ""
 
@@ -1132,15 +1046,15 @@ msgstr ""
 msgid "Display Options"
 msgstr ""
 
-#: ../classes/Settings/Column/NetworkSite/PostCount.php:112
+#: ../classes/Settings/Column/NetworkSite/PostCount.php:111
 msgid "All post types"
 msgstr ""
 
-#: ../classes/Settings/Column/NetworkSite/PostCount.php:146
+#: ../classes/Settings/Column/NetworkSite/PostCount.php:141
 msgid "Any post status"
 msgstr ""
 
-#: ../classes/Settings/Column/NetworkSite/PostCount.php:147
+#: ../classes/Settings/Column/NetworkSite/PostCount.php:142
 msgid "Any post status without Trash"
 msgstr ""
 
@@ -1183,6 +1097,177 @@ msgstr "Fyll i din SEO Meta Beskrivning"
 #: ../classes/ThirdParty/YoastSeo/Editing/Title.php:12
 msgid "Enter your SEO Title"
 msgstr "Fyll i din SEO Titel"
+
+#: ../../cac-addon-woocommerce/v2/classes/Column/Product/BackordersAllowed.php8,
+#: ../../cac-addon-woocommerce/v3/classes/Column/Product/BackordersAllowed.php:8
+msgid "Backorders Allowed"
+msgstr ""
+
+#: ../../cac-addon-woocommerce/v2/classes/Column/Product/Crosssells.php11,
+#: ../../cac-addon-woocommerce/v3/classes/Column/Product/Crosssells.php:11
+msgid "Cross Sells"
+msgstr ""
+
+#: ../../cac-addon-woocommerce/v2/classes/Column/Product/Dimensions.php61,
+#: ../../cac-addon-woocommerce/v3/classes/Column/Product/Dimensions.php:61
+msgid "Length"
+msgstr ""
+
+#: ../../cac-addon-woocommerce/v2/classes/Column/Product/Dimensions.php62,
+#: ../../cac-addon-woocommerce/v3/classes/Column/Product/Dimensions.php:62
+msgid "Width"
+msgstr ""
+
+#: ../../cac-addon-woocommerce/v2/classes/Column/Product/Dimensions.php63,
+#: ../../cac-addon-woocommerce/v3/classes/Column/Product/Dimensions.php:63
+msgid "Height"
+msgstr ""
+
+#: ../../cac-addon-woocommerce/v2/classes/Column/Product/OrderTotal.php10,
+#: ../../cac-addon-woocommerce/v3/classes/Column/Product/OrderTotal.php:10
+msgid "Total order amount"
+msgstr "Totalt ordervärde"
+
+#: ../../cac-addon-woocommerce/v2/classes/Column/Product/Parent.php:11
+msgid "Parent product"
+msgstr "Förälderprodukt"
+
+#: ../../cac-addon-woocommerce/v2/classes/Column/Product/ProductType.php11,
+#: ../../cac-addon-woocommerce/v3/classes/Column/Product/ProductType.php:11
+msgid "Product type"
+msgstr "Produkttyp"
+
+#: ../../cac-addon-woocommerce/v2/classes/Column/Product/ReviewsEnabled.php13,
+#: ../../cac-addon-woocommerce/v3/classes/Column/Product/ReviewsEnabled.php:13
+msgid "Reviews enabled"
+msgstr "Omdömen aktiverade"
+
+#: ../../cac-addon-woocommerce/v2/classes/Column/Product/StockStatus.php33,
+#: ../../cac-addon-woocommerce/v3/classes/Column/Product/StockStatus.php:33
+msgid "Stock status editing is only supported for %s products."
+msgstr ""
+
+#: ../../cac-addon-woocommerce/v2/classes/Column/Product/StockStatus.php39,
+#: ../../cac-addon-woocommerce/v3/classes/Column/Product/StockStatus.php:39
+msgid "In stock"
+msgstr "I lager"
+
+#: ../../cac-addon-woocommerce/v2/classes/Column/Product/StockStatus.php43,
+#: ../../cac-addon-woocommerce/v3/classes/Column/Product/StockStatus.php:43
+msgid "Out of stock"
+msgstr ""
+
+#: ../../cac-addon-woocommerce/v2/classes/Column/Product/Upsells.php12,
+#: ../../cac-addon-woocommerce/v3/classes/Column/Product/Upsells.php:12
+msgid "Upsells"
+msgstr ""
+
+#: ../../cac-addon-woocommerce/v2/classes/Column/Product/Visibility.php11,
+#: ../../cac-addon-woocommerce/v3/classes/Column/Product/Visibility.php:11
+msgid "Visiblity"
+msgstr "Synlighet"
+
+#: ../../cac-addon-woocommerce/v2/classes/Column/ShopCoupon/ExcludeProducts.php11,
+#: ../../cac-addon-woocommerce/v3/classes/Column/ShopCoupon/ExcludeProducts.php:11
+msgid "Excluded products"
+msgstr "Exkluderade produkter"
+
+#: ../../cac-addon-woocommerce/v2/classes/Column/ShopCoupon/FreeShipping.php11,
+#: ../../cac-addon-woocommerce/v3/classes/Column/ShopCoupon/FreeShipping.php:11
+msgid "Free shipping"
+msgstr "Fri frakt"
+
+#: ../../cac-addon-woocommerce/v2/classes/Column/ShopCoupon/FreeShipping.php27,
+#: ../../cac-addon-woocommerce/v3/classes/Column/ShopCoupon/FreeShipping.php:27
+msgid ""
+"The free shipping method must be enabled with the &quot;must use "
+"coupon&quot; setting."
+msgstr "Gratis fraktmetod måste aktiveras med &quot;måste använd kupong&quot; inställning."
+
+#: ../../cac-addon-woocommerce/v2/classes/Column/ShopCoupon/IncludeProducts.php11,
+#: ../../cac-addon-woocommerce/v3/classes/Column/ShopCoupon/IncludeProducts.php:11
+msgid "Included products"
+msgstr "Inkluderade produkter"
+
+#: ../../cac-addon-woocommerce/v2/classes/Column/ShopCoupon/MaximumAmount.php11,
+#: ../../cac-addon-woocommerce/v3/classes/Column/ShopCoupon/MaximumAmount.php:11
+msgid "Maximum amount"
+msgstr ""
+
+#: ../../cac-addon-woocommerce/v2/classes/Column/ShopCoupon/MinimumAmount.php11,
+#: ../../cac-addon-woocommerce/v3/classes/Column/ShopCoupon/MinimumAmount.php:11
+msgid "Minimum amount"
+msgstr "Minsta mängd"
+
+#: ../../cac-addon-woocommerce/v2/classes/Column/ShopCoupon/Orders.php10,
+#: ../../cac-addon-woocommerce/v3/classes/Column/ShopCoupon/Orders.php:11
+msgid "Orders"
+msgstr ""
+
+#: ../../cac-addon-woocommerce/v2/classes/Column/ShopCoupon/UsedBy.php10,
+#: ../../cac-addon-woocommerce/v3/classes/Column/ShopCoupon/UsedBy.php:10
+msgid "Used By"
+msgstr ""
+
+#: ../../cac-addon-woocommerce/v2/classes/Column/ShopCoupon/UsedBy.php29,
+#: ../../cac-addon-woocommerce/v3/classes/Column/ShopCoupon/UsedBy.php:30
+msgid "Not a registered user"
+msgstr ""
+
+#: ../../cac-addon-woocommerce/v2/classes/Column/ShopOrder/CouponsUsed.php11,
+#: ../../cac-addon-woocommerce/v2/classes/Column/User/CouponsUsed.php10,
+#: ../../cac-addon-woocommerce/v3/classes/Column/ShopOrder/CouponsUsed.php11,
+#: ../../cac-addon-woocommerce/v3/classes/Column/User/CouponsUsed.php:10
+msgid "Coupons Used"
+msgstr "Kuponger använda"
+
+#: ../../cac-addon-woocommerce/v2/classes/Column/ShopOrder/Discount.php11,
+#: ../../cac-addon-woocommerce/v3/classes/Column/ShopOrder/Discount.php:11
+msgid "Order Discount"
+msgstr "Order rabatt"
+
+#: ../../cac-addon-woocommerce/v2/classes/Column/ShopOrder/PaymentMethod.php8,
+#: ../../cac-addon-woocommerce/v3/classes/Column/ShopOrder/PaymentMethod.php:8
+msgid "Payment method"
+msgstr "Betalningsmetod"
+
+#: ../../cac-addon-woocommerce/v2/classes/Column/User/Orders.php67,
+#: ../../cac-addon-woocommerce/v3/classes/Column/User/Orders.php:67
+msgid "items"
+msgstr "produkter"
+
+#: ../../cac-addon-woocommerce/v2/classes/Column/User/TotalSales.php11,
+#: ../../cac-addon-woocommerce/v3/classes/Column/User/TotalSales.php:11
+msgid "Total Sales"
+msgstr "Summa totalt"
+
+#: ../../cac-addon-woocommerce/v2/classes/Editing/Product/SKU.php:26
+msgid "The SKU must be unique."
+msgstr "SKU måste vara unik."
+
+#: ../../cac-addon-woocommerce/v2/classes/Editing/Product/SKU.php:34
+msgid "The SKU is the same."
+msgstr ""
+
+#: ../../cac-addon-woocommerce/v2/classes/Editing/Product/TaxClass.php13,
+#: ../../cac-addon-woocommerce/v3/classes/Editing/Product/TaxClass.php:13
+msgid "Standard"
+msgstr "Standard"
+
+#: ../../cac-addon-woocommerce/v2/classes/Filtering/ShopOrder/CustomerMessage.php26,
+#: ../../cac-addon-woocommerce/v3/classes/Filtering/ShopOrder/CustomerMessage.php:26
+msgid "Has customer message"
+msgstr "Har meddelande till kund"
+
+#: ../../cac-addon-woocommerce/v3/classes/Column/ShopOrder/Purchased.php:12
+msgid "Purchased"
+msgstr ""
+
+#: ../../cac-addon-woocommerce/v3/classes/Column/ShopOrder/Purchased.php:27
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../classes/Editing/classes/Model/Post/Excerpt.php:8
 msgid "Excerpt automatically generated from content."

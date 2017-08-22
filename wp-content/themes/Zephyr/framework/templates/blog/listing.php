@@ -229,7 +229,6 @@ if ( $wp_query->max_num_pages > 1 AND $type != 'carousel' ) {
 			'columns' => $columns,
 			'content_type' => $content_type,
 			'show_read_more' => $show_read_more,
-			'is_shortcode' => isset( $is_shortcode ) AND $is_shortcode,
 		),
 	);
 	if ( class_exists( 'SitePress' ) ) {

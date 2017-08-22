@@ -14,8 +14,11 @@ add_action( 'wp_enqueue_scripts', 'us_bbpress_enqueue_styles', 14 );
 function us_bbpress_enqueue_styles( $styles ) {
 	global $us_template_directory_uri;
 	wp_dequeue_style( 'bbp-default' );
+	
 	$min_ext = ( ! ( defined( 'US_DEV' ) AND US_DEV ) ) ? '.min' : '';
-	wp_enqueue_style( 'us-bbpress', $us_template_directory_uri . '/css/us.bbpress' . $min_ext . '.css', array(), US_THEMEVERSION, 'all' );
+	if ( ! ( defined( 'US_DEV' ) AND US_DEV  ) AND us_get_option( 'optimize_assets', 0 ) == 0 ) {
+		wp_enqueue_style( 'us-bbpress', $us_template_directory_uri . '/css/plugins/bbpress' . $min_ext . '.css', array(), US_THEMEVERSION, 'all' );
+	}
 }
 
 // Remove Forum summaries

@@ -13,13 +13,14 @@ vc_map(
 	array(
 		'base' => 'us_iconbox',
 		'name' => __( 'IconBox', 'us' ),
+		'description' => '',
 		'category' => us_translate( 'Content', 'js_composer' ),
 		'weight' => 280,
 		'params' => array(
 			array(
 				'param_name' => 'icon',
 				'heading' => __( 'Icon', 'us' ),
-				'description' => sprintf( __( '%s or %s icon name', 'us' ), '<a href="http://fontawesome.io/icons/" target="_blank">FontAwesome</a>', '<a href="https://material.io/icons/" target="_blank">Material</a>' ),
+				'description' => sprintf( __( '%s or %s icon name', 'us' ), '<a href="http://fontawesome.io/icons/" target="_blank">Font Awesome</a>', '<a href="https://material.io/icons/" target="_blank">Material</a>' ),
 				'type' => 'textfield',
 				'std' => $config['atts']['icon'],
 				'edit_field_class' => 'vc_col-sm-6',

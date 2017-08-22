@@ -24,6 +24,11 @@ if ( isset( $design_options ) AND isset( $design_options['hide_for_sticky'] ) AN
 if ( isset( $design_options ) AND isset( $design_options['hide_for_not-sticky'] ) AND $design_options['hide_for_not-sticky'] ) {
 	$classes .= ' hide-for-not-sticky';
 }
+foreach ( array( 'default', 'tablets', 'mobiles' ) as $state ) {
+	if ( ! us_is_header_elm_shown( $id, $state ) ) {
+		$classes .= ' hidden_for_' . $state;
+	}
+}
 if ( ! empty( $img_transparent ) ) {
 	$classes .= ' with_transparent';
 }

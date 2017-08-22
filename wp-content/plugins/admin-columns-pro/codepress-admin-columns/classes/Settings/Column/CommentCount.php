@@ -26,10 +26,13 @@ class AC_Settings_Column_CommentCount extends AC_Settings_Column
 	 * @return AC_View
 	 */
 	public function create_view() {
+		$setting = $this->create_element( 'select' )
+		                ->set_options( $this->get_comment_statuses() );
+
 		$view = new AC_View( array(
 			'label'   => __( 'Comment status', 'codepress-admin-columns' ),
 			'tooltip' => __( 'Select which comment status you like to display.', 'codepress-admin-columns' ),
-			'setting' => $this->create_element( 'select' )->set_options( $this->get_comment_statuses() ),
+			'setting' => $setting,
 		) );
 
 		return $view;
@@ -38,7 +41,7 @@ class AC_Settings_Column_CommentCount extends AC_Settings_Column
 	/**
 	 * @return array
 	 */
-	private function get_comment_statuses() {
+	protected function get_comment_statuses() {
 		$options = array(
 			'approved'  => __( 'Approved', 'codepress-admin-columns' ),
 			'moderated' => __( 'Pending', 'codepress-admin-columns' ),

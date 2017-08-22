@@ -68,6 +68,7 @@ foreach ( $socials as $social_key => $social ) {
 		continue;
 	}
 	$social_url = $atts[$social_key];
+	$social_target = '';
 	if ( $social_key == 'email' ) {
 		if ( filter_var( $social_url, FILTER_VALIDATE_EMAIL ) ) {
 			$social_url = 'mailto:' . $social_url;
@@ -79,9 +80,10 @@ foreach ( $socials as $social_key => $social ) {
 		}
 	} else {
 		$social_url = esc_url( $social_url );
+		$social_target = ' target="_blank"';
 	}
 	$output .= '<div class="w-socials-item ' . $social_key . '">
-				<a class="w-socials-item-link" target="_blank" href="' . $social_url . '">
+				<a class="w-socials-item-link"' . $social_target . ' href="' . $social_url . '">
 					<span class="w-socials-item-link-hover"></span>
 					<span class="w-socials-item-link-title">' . $social . '</span>
 				</a>

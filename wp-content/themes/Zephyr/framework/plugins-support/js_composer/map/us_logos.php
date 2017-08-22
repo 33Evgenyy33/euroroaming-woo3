@@ -12,6 +12,7 @@ vc_map(
 	array(
 		'base' => 'us_logos',
 		'name' => __( 'Logos Showcase', 'us' ),
+		'description' => '',
 		'category' => us_translate( 'Content', 'js_composer' ),
 		'weight' => 230,
 		'params' => array(

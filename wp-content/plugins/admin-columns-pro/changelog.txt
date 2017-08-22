@@ -1,11 +1,46 @@
 == Changelog ==
 
+= 4.0.8 =
+Release Date: August 17th, 2017
+
+* [Added] Images column for posts. Shows all used image inside the post content.
+* [Improvement] Title Only column is now sortable and editable
+* [Improvement] Shortcodes column is now sortable
+* [Improvement] Menu column is now sortable and editable
+* [Improvement] Renamed "Comment Count" column for Multisites to "Comments"
+* [Improvement] Child Pages column now supports filtering
+* [Improvement] Post modified will now be updated when using inline edit for changing: the featured image, a page template, make sticky, add a term
+* [Improvement] Filter label for ranged items can now be changed
+* [Improvement] Comments for multisite now shows a comment bubble for total items instead of just a count
+* [Fixed] Disabling inline edit removed the blue link color from the title column
+* [Fixed] EXIF data is now sorting correctly
+* [Fixed] Items were not always editable when using filtering or pagination due to a caching issue
+* [Fixed] Sorting a custom field, available sizes or dimensions column for media was not working
+* [Changed] Renamed ACP_Column_UsedByMenu to ACP_Column_Menu
+* [Updated] Admin Columns core to v3.0.4
+    * [Improved] Attachment column: you can now limit the number of items being displayed
+    * [Improved] Only apply before/after when the value is not empty
+    * [Improved] EXIF Data now have added before and after fields
+    * [Improved] Renamed Alt column to Alternative Text
+    * [Improved] Renamed Before More Tag column to More Tag
+    * [Improved] Renamed Comment Status column to Allow Comments
+    * [Improved] Renamed Title without actions column to Title Only
+    * [Improved] Available Sizes column for media now has the option to include missing file sizes
+    * [Improved] Added Orientation and Keywords to EXIF data column
+    * [Improved] Added a tooltip to the actions column
+    * [Improved] Date Published column now shows a status icon when the post has not yet been published
+    * [Improved] Post Formats column now has the option to show an icons
+    * [Improved] Author column can now display the role(s) of the author
+    * [Improved] Added many helper methods to ac_helper()
+    * [Removed] Removed the "Attached to Post" column. The column has been replaced by the "Uploaded to" column in WordPress 4.0
+    * [Fixed] Time difference option in the date column now uses the correct GMT offset
+
 = 4.0.7 =
 Release Date: July 25th, 2017
 
 * [Added] Ranged filtering for User registered date adde
 * [Added] Profile Picture (Gravatar) column for Users
-* [Fixed] Clickin the clear button with inline edit does not jump to the top of the page
+* [Fixed] Clicking the clear button with inline edit does not jump to the top of the page
 * [Fixed] Filtering for Taxonomy column on the media overview is enabled
 * [Fixed] Image column for media overviews works again
 * [Fixed] Category filter dropdown does not always have active state anymore

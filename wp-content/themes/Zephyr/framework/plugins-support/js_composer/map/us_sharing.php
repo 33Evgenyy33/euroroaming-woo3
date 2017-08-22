@@ -12,6 +12,7 @@ vc_map(
 	array(
 		'base' => 'us_sharing',
 		'name' => __( 'Sharing Buttons', 'us' ),
+		'description' => '',
 		'category' => us_translate( 'Content', 'js_composer' ),
 		'weight' => 185,
 		'params' => array(

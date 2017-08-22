@@ -9,7 +9,7 @@ abstract class ACP_Sorting_Model_Media_Meta extends ACP_Sorting_Model_Meta {
 	protected function get_meta_values() {
 		$ids = $this->strategy->get_results( parent::get_sorting_vars() );
 
-		$query = new AC_Meta_Query( $this->column );
+		$query = new AC_Meta_QueryColumn( $this->column );
 		$query->select( 'id, meta_value' )
 		      ->where_in( $ids )
 		      ->order_by( 'meta_value', $this->get_order() );
@@ -32,19 +32,17 @@ abstract class ACP_Sorting_Model_Media_Meta extends ACP_Sorting_Model_Meta {
 	}
 
 	/**
-	 * Return meta value based on values _wp_attachment_metadata
-	 *
 	 * @param array $meta
 	 * @param string $key
 	 *
 	 * @return false|string
 	 */
 	protected function get_meta_value( $meta, $key ) {
-		if ( empty( $meta ) || ! is_array( $meta ) || ! isset( $meta_value[ $key ] ) ) {
+		if ( empty( $meta ) || ! is_array( $meta ) || ! isset( $meta[ $key ] ) ) {
 			return false;
 		}
 
-		return $meta_value[ $key ];
+		return $meta[ $key ];
 	}
 
 }

@@ -23,7 +23,7 @@
  */
 
 // Translating attributes from [gallery] to [us_gallery] format (may be used in both shortcodes
-$link_type = 'media';
+$link_type = 'file';
 if ( $shortcode_base == 'gallery' ) {
 	if ( ! isset( $atts['columns'] ) OR empty( $atts['columns'] ) ) {
 		// Default [gallery] shortcode has 3 columns by default
@@ -31,8 +31,6 @@ if ( $shortcode_base == 'gallery' ) {
 	}
 	if ( ! isset( $atts['link'] ) ) {
 		$link_type = 'attachment';
-	} elseif ( $atts['link'] == 'none' ) {
-		$link_type = 'none';
 	}
 	if ( isset( $atts['indents'] ) ) {
 		$atts['indents'] = ( $atts['indents'] == 'true' );
@@ -131,6 +129,9 @@ if ( ! empty( $atts['el_class'] ) ) {
 if ( ! empty( $atts['meta_style'] ) ) {
 	$classes .= ' style_' . $atts['meta_style'];
 }
+if ( $atts['link'] == 'none' ) {
+	$link_type = 'none';
+}
 
 // Getting images
 $query_args = array(
@@ -180,7 +181,7 @@ foreach ( $attachments as $index => $attachment ) {
 	$output .= '<' . $item_tag_name . ' class="w-gallery-item order_' . ( $index + 1 );
 	$output .= apply_filters( 'us_gallery_listing_item_classes', '' );
 	$output .= '"';
-	if ( $link_type == 'media' ) {
+	if ( $link_type == 'file' ) {
 		$output .= ' href="' . wp_get_attachment_url( $attachment->ID ) . '" title="' . esc_attr( $title ) . '"';
 	} elseif ( $link_type == 'attachment' ) {
 		$output .= ' href="' . get_attachment_link( $attachment->ID ) . '" title="' . esc_attr( $title ) . '"';

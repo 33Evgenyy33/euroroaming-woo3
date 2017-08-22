@@ -143,7 +143,7 @@ $meta_html = apply_filters( 'us_single_post_meta_html', $meta_html, get_the_ID()
 	<div class="l-section-h i-cf">
 		<div class="w-blog">
 			<?php if ( ! empty( $preview_bg ) ): ?>
-				<div class="w-blog-post-preview" style="background-image: url(<?php echo $preview_bg ?>)"></div>
+				<div class="w-blog-post-preview" style="background-image: url(<?php echo $preview_bg ?>)"><img class="hidden" src="<?php echo $preview_bg ?>" alt="<?php the_title() ?>"></div>
 			<?php elseif ( ! empty( $preview_html ) OR $preview_type == 'modern' ): ?>
 				<div class="w-blog-post-preview">
 					<?php echo $preview_html ?>

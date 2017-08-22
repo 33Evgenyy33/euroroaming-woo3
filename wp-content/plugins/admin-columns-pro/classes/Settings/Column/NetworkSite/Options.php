@@ -18,6 +18,14 @@ class ACP_Settings_Column_NetworkSite_Options extends AC_Settings_Column_Meta {
 		return $view;
 	}
 
+	protected function get_setting_field() {
+		$setting = parent::get_setting_field();
+
+		$setting->set_attribute( 'data-label', 'update' );
+
+		return $setting;
+	}
+
 	public function get_cache_group() {
 		return 'acp_network_site_options';
 	}

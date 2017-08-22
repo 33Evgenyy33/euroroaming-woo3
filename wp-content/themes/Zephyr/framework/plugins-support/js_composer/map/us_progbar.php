@@ -11,6 +11,7 @@
 vc_map(
 	array(
 		'name' => __( 'Progress Bar', 'us' ),
+		'description' => '',
 		'base' => 'us_progbar',
 		'category' => us_translate( 'Content', 'js_composer' ),
 		'weight' => 125,

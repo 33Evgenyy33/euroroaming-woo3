@@ -19,6 +19,13 @@ class ACP_Column_Post_AuthorName extends AC_Column_Post_AuthorName
 	}
 
 	public function filtering() {
+		/* @var AC_Settings_Column_User $setting */
+		$setting = $this->get_setting( 'user');
+
+		if ( 'roles' === $setting->get_display_author_as() ) {
+			return new ACP_Filtering_Model_Post_Roles( $this );
+		}
+
 		return new ACP_Filtering_Model_Post_AuthorName( $this );
 	}
 

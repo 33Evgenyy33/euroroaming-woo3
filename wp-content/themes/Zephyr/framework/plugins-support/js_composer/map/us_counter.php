@@ -12,6 +12,7 @@ vc_map(
 	array(
 		'base' => 'us_counter',
 		'name' => __( 'Counter', 'us' ),
+		'description' => '',
 		'category' => us_translate( 'Content', 'js_composer' ),
 		'weight' => 190,
 		'params' => array(

@@ -137,12 +137,16 @@ foreach ( $attachments as $index => $attachment ) {
 	}
 
 	$image_alt = trim( strip_tags( get_post_meta( $attachment->ID, '_wp_attachment_image_alt', TRUE ) ) );
+	$image_title = trim( strip_tags( $attachment->post_title ) );
 	if ( empty( $image_alt ) ) {
 		$image_alt = trim( strip_tags( $attachment->post_excerpt ) );
 	} // If not, Use the Caption
 	if ( empty( $image_alt ) ) {
 		$image_alt = trim( strip_tags( $attachment->post_title ) );
 	} // Finally, use the title
+	if ( empty( $image_title ) ) {
+		$image_title = $image_alt;
+	}
 
 	$images_html .= '<div class="rsContent">';
 	if ( $i == 1 ) {
@@ -160,7 +164,7 @@ foreach ( $attachments as $index => $attachment ) {
 	if ( $atts['meta'] ) {
 		$images_html .= '<div class="rsABlock" data-fadeEffect="false" data-moveEffect="none">';
 		if ( $image_alt != '' ) {
-			$images_html .= '<div class="w-slider-item-title">' . $image_alt . '</div>';
+			$images_html .= '<div class="w-slider-item-title">' . $image_title . '</div>';
 		}
 		if ( $attachment->post_content != '' ) {
 			$images_html .= '<div class="w-slider-item-description">' . $attachment->post_content . '</div>';

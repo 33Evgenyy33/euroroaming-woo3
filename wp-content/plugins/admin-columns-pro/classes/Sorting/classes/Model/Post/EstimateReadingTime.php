@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class ACP_Sorting_Model_Post_EstimateReadingTime extends ACP_Sorting_Model_Value {
+class ACP_Sorting_Model_Post_EstimateReadingTime extends ACP_Sorting_Model {
 
 	public function __construct( $column ) {
 		parent::__construct( $column );

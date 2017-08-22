@@ -20,6 +20,8 @@ $mobiles_breakpoint = us_get_header_option( 'breakpoint', 'mobiles' ) ? intval( 
 /* Default state */
 
 @media (min-width: <?php echo $tablets_breakpoint + 1 ?>px) {
+	
+	.hidden_for_default { display: none !important; }
 
 <?php if ( ! us_get_header_option( 'top_show' ) ): ?>
 	.l-subheader.at_top { display: none; }
@@ -238,6 +240,8 @@ if ( us_get_header_option( 'elm_valign' ) == 'bottom' ): ?>
 /* Tablets state */
 
 @media (min-width: <?php echo $mobiles_breakpoint + 1 ?>px) and (max-width: <?php echo $tablets_breakpoint ?>px) {
+	
+	.hidden_for_tablets { display: none !important; }
 
 <?php if ( ! us_get_header_option( 'top_show', 'tablets' ) ): ?>
 	.l-subheader.at_top { display: none; }
@@ -351,6 +355,8 @@ if ( us_get_header_option( 'elm_align', 'tablets' ) == 'right' ): ?>
 /* Mobiles state */
 
 @media (max-width: <?php echo $mobiles_breakpoint ?>px) {
+	
+	.hidden_for_mobiles { display: none !important; }
 
 <?php if ( ! us_get_header_option( 'top_show', 'mobiles' ) ): ?>
 	.l-subheader.at_top { display: none; }
@@ -536,13 +542,10 @@ if ( us_get_header_option( 'elm_align', 'mobiles' ) == 'right' ): ?>
 }
 .l-header .<?php echo $class ?> .w-btn {
 	background-color: <?php echo $param['color_bg'] ?>;
-	border-color: <?php echo $param['color_bg'] ?>;
 	color: <?php echo $param['color_text'] ?>;
 }
-.no-touch .l-header .<?php echo $class ?> .w-btn:before {
-	background-color: <?php echo $param['color_hover_bg'] ?>;
-}
 .no-touch .l-header .<?php echo $class ?> .w-btn:hover {
+	background-color: <?php echo $param['color_hover_bg'] ?>;
 	color: <?php echo $param['color_hover_text'] ?> !important;
 }
 <?php endforeach; ?>

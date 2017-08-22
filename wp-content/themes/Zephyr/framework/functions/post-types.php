@@ -4,26 +4,6 @@
 $portfolio_slug = us_get_option( 'portfolio_slug', 'portfolio' );
 add_action( 'init', 'us_create_post_types', 8 );
 function us_create_post_types() {
-	// Footer post type
-	register_post_type(
-		'us_footer', array(
-			'labels' => array(
-				'name' => __( 'Footers', 'us' ),
-				'singular_name' => __( 'Footer', 'us' ),
-				'add_new' => __( 'Add New Footer', 'us' ),
-				'add_new_item' => __( 'Add New Footer', 'us' ),
-				'edit_item' => __( 'Edit Footer', 'us' ),
-			),
-			'public' => TRUE,
-			'show_in_menu' => 'us-theme-options',
-			'exclude_from_search' => TRUE,
-			'show_in_admin_bar' => FALSE,
-			'publicly_queryable' => FALSE,
-			'show_in_nav_menus' => FALSE,
-			'capability_type' => array( 'us_footer', 'us_footers' ),
-			'map_meta_cap' => TRUE,
-		)
-	);
 
 	if ( us_get_option( 'enable_portfolio', 1 ) == 1 ) {
 		// Portfolio post type
@@ -42,6 +22,7 @@ function us_create_post_types() {
 					'add_new' => __( 'Add Portfolio Page', 'us' ),
 					'add_new_item' => __( 'Add Portfolio Page', 'us' ),
 					'edit_item' => __( 'Edit Portfolio Page', 'us' ),
+					'featured_image' => us_translate_x( 'Featured Image', 'page' ),
 					'view_item' => us_translate( 'View Page' ),
 					'not_found' => us_translate( 'No pages found.' ),
 					'not_found_in_trash' => us_translate( 'No pages found in Trash.' ),
@@ -106,6 +87,159 @@ function us_create_post_types() {
 				'hierarchical' => TRUE,
 			)
 		);
+	}
+
+	// Footer post type
+	register_post_type(
+		'us_footer', array(
+			'labels' => array(
+				'name' => __( 'Footers', 'us' ),
+				'singular_name' => __( 'Footer', 'us' ),
+				'add_new' => __( 'Add Footer', 'us' ),
+				'add_new_item' => __( 'Add Footer', 'us' ),
+				'edit_item' => __( 'Edit Footer', 'us' ),
+			),
+			'public' => TRUE,
+			'show_in_menu' => 'us-theme-options',
+			'exclude_from_search' => TRUE,
+			'show_in_admin_bar' => FALSE,
+			'publicly_queryable' => FALSE,
+			'show_in_nav_menus' => FALSE,
+			'capability_type' => array( 'us_footer', 'us_footers' ),
+			'map_meta_cap' => TRUE,
+			'register_meta_box_cb' => 'us_footer_type_pages',
+		)
+	);
+
+	// Add "Used in" column into Footers admin page
+	add_filter( 'manage_us_footer_posts_columns', 'us_us_footer_columns_head' );
+	add_action( 'manage_us_footer_posts_custom_column', 'us_us_footer_columns_content', 10, 2 );
+
+	function us_us_footer_columns_head( $defaults ) {
+		$result = array();
+		foreach ( $defaults as $key => $title ) {
+			if ( $key == 'date' ) {
+				$result['used_in'] = __( 'Used in', 'us' );
+			}
+			$result[$key] = $title;
+		}
+
+		return $result;
+	}
+
+	function us_us_footer_columns_content( $column_name, $post_ID ) {
+		if ( $column_name == 'used_in' ) {
+			$used_in = array(
+				'options' => array(),
+				'posts' => array(),
+			);
+			global $usof_options, $wpdb;
+			usof_load_options_once();
+			$post_slug = get_post_field( 'post_name', $post_ID );
+			if ( isset( $usof_options['footer_id'] ) AND $usof_options['footer_id'] == $post_slug ) {
+				$used_in['options'][] = '<strong>' . __( 'Defaults', 'us' ) . '</strong>';
+			}
+			if ( isset( $usof_options['footer_portfolio_id'] ) AND $usof_options['footer_portfolio_defaults'] == 0 AND $usof_options['footer_portfolio_id'] == $post_slug ) {
+				$used_in['options'][] = __( 'Portfolio Pages', 'us' );
+			}
+			if ( isset( $usof_options['footer_post_id'] ) AND $usof_options['footer_post_defaults'] == 0 AND $usof_options['footer_post_id'] == $post_slug ) {
+				$used_in['options'][] = us_translate_x( 'Posts', 'post type general name' );
+			}
+			if ( isset( $usof_options['footer_archive_id'] ) AND $usof_options['footer_archive_defaults'] == 0 AND $usof_options['footer_archive_id'] == $post_slug ) {
+				$used_in['options'][] = __( 'Archive, Search Results Pages', 'us' );
+			}
+			if ( isset( $usof_options['footer_shop_id'] ) AND $usof_options['footer_shop_defaults'] == 0 AND $usof_options['footer_shop_id'] == $post_slug ) {
+				$used_in['options'][] = __( 'Shop Pages', 'us' );
+			}
+			if ( isset( $usof_options['footer_product_id'] ) AND $usof_options['footer_product_defaults'] == 0 AND $usof_options['footer_product_id'] == $post_slug ) {
+				$used_in['options'][] = us_translate( 'Products', 'woocommerce' );
+			}
+			$usage_query = "SELECT post_id FROM {$wpdb->prefix}postmeta WHERE meta_key =  'us_footer_id' AND meta_value = '" . $post_slug . "' LIMIT 0, 100";
+			foreach ( $wpdb->get_results( $usage_query ) as $usage_result ) {
+				$post = get_post( $usage_result->post_id );
+				if ( $post ) {
+					$is_custom_footer = get_post_meta( $post->ID, 'us_footer', TRUE ) == 'custom';
+					if ( $is_custom_footer ) {
+						$post_type_obj = get_post_type_object( $post->post_type );
+						$used_in['posts'][] = array(
+							'url' => get_permalink( $post->ID ),
+							'title' => get_the_title( $post->ID ),
+							'post_type' => $post_type_obj->labels->singular_name,
+						);
+					}
+				}
+			}
+			foreach ( $used_in['options'] as $where ) {
+				echo '<a href="' . admin_url() . 'admin.php?page=us-theme-options#footer" title="' . __( 'Go to Theme Options', 'us' ) . '">' . __( 'Theme Options', 'us' ) . ' > ' . __( 'Footers', 'us' ) . '</a> > ' . $where . '<br>';
+			}
+			foreach ( $used_in['posts'] as $where ) {
+				echo $where['post_type'] . ' "<a href="' . $where['url'] . '" target="_blank" title="' . us_translate( 'View Page' ) . '">' . $where['title'] . '</a>"<br>';
+			}
+		}
+	}
+
+	add_filter( 'post_row_actions', 'us_footer_post_row_actions', 10, 2 );
+	function us_footer_post_row_actions( $actions, $post ) {
+		if ( $post->post_type === 'us_footer' ) {
+			// Removing duplicate post plugin affection
+			unset( $actions['duplicate'], $actions['edit_as_new_draft'] );
+			$actions = us_array_merge_insert(
+				$actions, array(
+				'duplicate' => '<a href="' . admin_url( 'post-new.php?post_type=us_footer&duplicate_from=' . $post->ID ) . '" aria-label="' . esc_attr__( 'Duplicate', 'us' ) . '">' . esc_html__( 'Duplicate', 'us' ) . '</a>',
+			), 'before', isset( $actions['trash'] ) ? 'trash' : 'untrash'
+			);
+		}
+
+		return $actions;
+	}
+
+	function us_footer_type_pages() {
+		global $post;
+		// Dev note: This check is not necessary, but still wanted to make sure this function won't be bound somewhere else
+		if ( ! ( $post instanceof WP_Post ) OR $post->post_type !== 'us_footer' ) {
+			return;
+		}
+		if ( $post->post_status === 'auto-draft' ) {
+			// Page for creating new footer: creating it instantly and proceeding to editing
+			$post_data = array( 'ID' => $post->ID );
+			// Retrieving occupied names to generate new post title properly
+			$existing_footers = array();
+			$footers = get_posts(
+				array(
+					'post_type' => 'us_footer',
+					'posts_per_page' => - 1,
+					'post_status' => 'any',
+					'suppress_filters' => 0,
+				)
+			);
+			foreach ( $footers as $footer ) {
+				$existing_footers[$footer->ID] = $footer->post_title;
+			}
+			if ( isset( $_GET['duplicate_from'] ) AND ( $original_post = get_post( (int) $_GET['duplicate_from'] ) ) !== NULL ) {
+				// Handling post duplication
+				$post_data['post_content'] = $original_post->post_content;
+				$title_pattern = $original_post->post_title . ' (%d)';
+				$cur_index = 2;
+			} else {
+				// Handling creation from scratch
+				$title_pattern = __( 'Footer', 'us' ) . ' %d';
+				$cur_index = count( $existing_footers ) + 1;
+			}
+			// Generating new post title
+			while ( in_array( $post_data['post_title'] = sprintf( $title_pattern, $cur_index ), $existing_footers ) ) {
+				$cur_index ++;
+			}
+			wp_update_post( $post_data );
+			wp_publish_post( $post->ID );
+			// Redirect
+			if ( isset( $_GET['duplicate_from'] ) ) {
+				// When duplicating post, showing posts list next
+				wp_redirect( admin_url( 'edit.php?post_type=us_footer' ) );
+			} else {
+				// When creating from scratch proceeding to post editing next
+				wp_redirect( admin_url( 'post.php?post=' . $post->ID . '&action=edit' ) );
+			}
+		}
 	}
 }
 

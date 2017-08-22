@@ -12,6 +12,7 @@ vc_map(
 	array(
 		'base' => 'us_gmaps',
 		'name' => __( 'Google Maps', 'us' ),
+		'description' => '',
 		'icon' => 'icon-wpb-map-pin',
 		'category' => us_translate( 'Content', 'js_composer' ),
 		'weight' => 160,

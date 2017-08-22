@@ -41,7 +41,7 @@ $preloader_type = us_get_option( 'preloader' );
 if ( ! in_array( $preloader_type, us_get_preloader_numeric_types() ) ) {
 	$preloader_type = 1;
 }
-$data_atts = 'data-preloader_type="' . intval( $preloader_type ) . '"';
+$data_atts = ' data-preloader_type="' . intval( $preloader_type ) . '"';
 
 // portfolio grid additional variables
 $classes = $list_classes = $inner_css = '';

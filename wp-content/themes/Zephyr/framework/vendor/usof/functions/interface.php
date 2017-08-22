@@ -59,7 +59,6 @@ function us_theme_options_page() {
 	}
 	us_close_wp_query_context();
 
-
 	$config = us_config( 'theme-options', array(), TRUE );
 	echo '<div class="usof-container';
 	echo apply_filters( 'usof_container_classes', '' );
@@ -71,8 +70,9 @@ function us_theme_options_page() {
 	// Output _nonce and _wp_http_referer hidden fields for ajax secuirity checks
 	wp_nonce_field( 'usof-actions' );
 	echo '<div class="usof-header"><div class="usof-header-logo">';
-	echo US_THEMENAME . ' <span class="version">' . US_THEMEVERSION . '</span><span class="dash">&mdash;</span></div>';
-	echo '<div class="usof-header-title"><h2>' . __( 'General Settings', 'us' ) . '</h2></div>';
+	echo US_THEMENAME . ' <span>' . US_THEMEVERSION . '</span></div>';
+	echo '<div class="usof-header-title"><span>' . __( 'Theme Options', 'us' ) . '&nbsp;&mdash;&nbsp;</span>';
+	echo '<h2>' . _x( 'General', 'General Settings', 'us' ) . '</h2></div>';
 	echo '<div class="usof-control for_save status_clear">';
 	echo '<button class="usof-button type_save" type="button"><span>' . us_translate( 'Save Changes' ) . '</span>';
 	echo '<span class="usof-preloader"></span></button>';

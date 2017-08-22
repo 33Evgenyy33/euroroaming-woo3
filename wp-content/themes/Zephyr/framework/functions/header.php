@@ -403,6 +403,11 @@ function us_output_header_elms( &$layout, &$data, $place ) {
 					$classes .= ' hide-for-not-sticky';
 				}
 			}
+			foreach ( array( 'default', 'tablets', 'mobiles' ) as $state ) {
+				if ( ! us_is_header_elm_shown( $elm, $state ) ) {
+					$classes .= ' hidden_for_' . $state;
+				}
+			}
 			echo '<div class="w-' . $type . $classes . ' ush_' . str_replace( ':', '_', $elm ) . '">';
 			us_output_header_elms( $layout, $data, $elm );
 			echo '</div>';
@@ -607,6 +612,21 @@ function us_get_header_shown_elements_list( $list ) {
 	}
 
 	return $shown;
+}
+
+/**
+ * Check if certain header element is shown in a certain header state
+ * @param string $elm
+ * @param string $state
+ * @return bool
+ */
+function us_is_header_elm_shown( $elm, $state = 'default' ) {
+	static $visible_elms = array();
+	if ( ! isset( $visible_elms[ $state ] ) ) {
+		$visible_elms[ $state ] = us_get_header_shown_elements_list( us_get_header_layout( $state ) );
+	}
+
+	return in_array( $elm, $visible_elms[ $state ] );
 }
 
 add_action( 'wp_footer', 'us_pass_header_settings_to_js' );

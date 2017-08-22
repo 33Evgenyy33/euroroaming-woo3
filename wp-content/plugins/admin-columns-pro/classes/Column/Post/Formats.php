@@ -21,4 +21,5 @@ class ACP_Column_Post_Formats extends AC_Column_Post_Formats
 	public function filtering() {
 		return new ACP_Filtering_Model_Post_Formats( $this );
 	}
+
 }

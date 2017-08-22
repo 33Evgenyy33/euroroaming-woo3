@@ -31,10 +31,6 @@ class ACP_Sorting_Model_Media_Dimensions extends ACP_Sorting_Model_Media_Meta {
 			$meta_values[ $id ] = $aspect ? $aspect : '';
 		}
 
-		if ( ! acp_sorting()->show_all_results() ) {
-			$meta_values = array_filter( $meta_values );
-		}
-
 		return array(
 			'ids' => $this->sort( $meta_values ),
 		);

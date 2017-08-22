@@ -31,6 +31,11 @@ if ( isset( $design_options ) AND isset( $design_options['hide_for_sticky'] ) AN
 if ( isset( $design_options ) AND isset( $design_options['hide_for_not-sticky'] ) AND $design_options['hide_for_not-sticky'] ) {
 	$wrapper_classes .= ' hide-for-not-sticky';
 }
+foreach ( array( 'default', 'tablets', 'mobiles' ) as $state ) {
+	if ( ! us_is_header_elm_shown( $id, $state ) ) {
+		$wrapper_classes .= ' hidden_for_' . $state;
+	}
+}
 if ( isset( $id ) AND ! empty( $id ) ) {
 	$wrapper_classes .= ' ush_' . str_replace( ':', '_', $id );
 }

@@ -18,8 +18,10 @@ function us_dequeue_the_events_calendar_skeleton() {
 	wp_dequeue_style( 'tribe-events-custom-jquery-styles' );
 	wp_dequeue_style( 'tribe-events-calendar-style' );
 
-	global $us_template_directory_uri;
-	$min_ext = ( ! ( defined( 'US_DEV' ) AND US_DEV ) ) ? '.min' : '';
-	wp_register_style( 'us-tribe-events', $us_template_directory_uri . '/css/us.tribe-events' . $min_ext . '.css', array(), US_THEMEVERSION, 'all' );
-	wp_enqueue_style( 'us-tribe-events' );
+	if ( ! ( defined( 'US_DEV' ) AND US_DEV  ) AND us_get_option( 'optimize_assets', 0 ) == 0 ) {
+		global $us_template_directory_uri;
+		$min_ext = ( ! ( defined( 'US_DEV' ) AND US_DEV ) ) ? '.min' : '';
+		wp_register_style( 'us-tribe-events', $us_template_directory_uri . '/css/plugins/tribe-events' . $min_ext . '.css', array(), US_THEMEVERSION, 'all' );
+		wp_enqueue_style( 'us-tribe-events' );
+	}
 }

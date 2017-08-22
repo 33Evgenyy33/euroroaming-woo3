@@ -28,6 +28,7 @@ vc_map(
 	array(
 		'base' => 'us_testimonials',
 		'name' => __( 'Testimonials', 'us' ),
+		'description' => '',
 		'category' => us_translate( 'Content', 'js_composer' ),
 		'weight' => 270,
 		'params' => array(

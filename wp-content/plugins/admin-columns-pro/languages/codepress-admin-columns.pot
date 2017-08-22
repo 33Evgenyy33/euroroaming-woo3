@@ -56,7 +56,7 @@ msgstr ""
 msgid "Roles"
 msgstr ""
 
-#: ../classes/Layout.php:179, ../classes/Settings/Column/CustomFieldType.php:51
+#: ../classes/Layout.php:179, ../classes/Settings/Column/CustomFieldType.php:63
 msgid "User"
 msgstr ""
 
@@ -609,7 +609,7 @@ msgid "Blog ID"
 msgstr ""
 
 #: ../classes/Column/NetworkSite/CommentCount.php:7
-msgid "Comment Count"
+msgid "Comments"
 msgstr ""
 
 #: ../classes/Column/NetworkSite/Domain.php:7
@@ -648,9 +648,19 @@ msgstr ""
 msgid "%s MB"
 msgstr ""
 
-#: ../classes/Column/Post/ChildPages.php:7
+#: ../classes/Column/Post/ChildPages.php:8
 msgid "Child Pages"
 msgstr ""
+
+#: ../classes/Column/Post/Images.php:11
+msgid "Images"
+msgstr ""
+
+#: ../classes/Column/Post/Images.php:124
+msgid "%s image"
+msgid_plural "%s images"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../classes/Column/Taxonomy/Excerpt.php:11
 msgid "Excerpt"
@@ -804,27 +814,27 @@ msgstr ""
 msgid "Filter"
 msgstr ""
 
-#: ../classes/Filtering/classes/TableScreen.php:386
+#: ../classes/Filtering/classes/TableScreen.php:392
 msgid "Start date"
 msgstr ""
 
-#: ../classes/Filtering/classes/TableScreen.php:387
+#: ../classes/Filtering/classes/TableScreen.php:393
 msgid "End date"
 msgstr ""
 
-#: ../classes/Filtering/classes/TableScreen.php:395
+#: ../classes/Filtering/classes/TableScreen.php:401
 msgid "Min"
 msgstr ""
 
-#: ../classes/Filtering/classes/TableScreen.php:396
+#: ../classes/Filtering/classes/TableScreen.php:402
 msgid "Max"
 msgstr ""
 
-#: ../classes/Filtering/classes/TableScreen.php:451
+#: ../classes/Filtering/classes/TableScreen.php:457
 msgid "until"
 msgstr ""
 
-#: ../classes/Settings/Column/CustomFieldType.php:50
+#: ../classes/Settings/Column/CustomFieldType.php:62
 msgid "Post"
 msgstr ""
 

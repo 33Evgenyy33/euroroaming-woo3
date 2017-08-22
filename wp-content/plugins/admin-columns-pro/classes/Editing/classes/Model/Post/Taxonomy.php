@@ -78,7 +78,7 @@ class ACP_Editing_Model_Post_Taxonomy extends ACP_Editing_Model {
 			$args['offset'] = ( $request['paged'] - 1 ) * 40;
 			$args['number'] = 40;
 		}
-		
+
 		if ( isset( $request['search'] ) ) {
 			$args['search'] = $request['search'];
 		}
@@ -152,6 +152,8 @@ class ACP_Editing_Model_Post_Taxonomy extends ACP_Editing_Model {
 		} else {
 			wp_set_object_terms( $post->ID, $term_ids, $taxonomy );
 		}
+
+		acp_editing_helper()->update_post_last_modified( $id );
 	}
 
 }

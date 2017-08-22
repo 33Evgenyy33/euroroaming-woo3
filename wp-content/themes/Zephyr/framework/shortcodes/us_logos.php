@@ -104,8 +104,7 @@ foreach ( $atts['items'] as $index => $item ) {
 		$image_html = '<img src="' . $placeholder_url . '" width="600" height="600" alt="">';
 	}
 
-	if ( $item['link'] != '' ) {
-		$link = us_vc_build_link( $item['link'] );
+	if ( $item['link'] != '' AND $link = us_vc_build_link( $item['link'] ) AND ( ! empty( $link['url'] ) ) ) {
 		$link_target = ( $link['target'] == '_blank' ) ? ' target="_blank"' : '';
 		$link_rel = ( $link['rel'] == 'nofollow' ) ? ' rel="nofollow"' : '';
 		$link_title = empty( $link['title'] ) ? '' : ( ' title="' . esc_attr( $link['title'] ) . '"' );

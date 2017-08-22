@@ -154,6 +154,7 @@ return array(
 			'indents' => FALSE,
 			'meta' => FALSE,
 			'meta_style' => 'simple',
+			'link' => FALSE,
 			'img_size' => 'default',
 			'el_class' => '',
 		),

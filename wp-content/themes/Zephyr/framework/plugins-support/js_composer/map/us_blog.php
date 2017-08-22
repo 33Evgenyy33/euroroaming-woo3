@@ -17,6 +17,7 @@ vc_map(
 	array(
 		'base' => 'us_blog',
 		'name' => us_translate( 'Blog' ),
+		'description' => '',
 		'category' => us_translate( 'Content', 'js_composer' ),
 		'weight' => 240,
 		'params' => array(

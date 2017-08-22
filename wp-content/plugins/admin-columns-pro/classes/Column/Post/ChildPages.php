@@ -4,7 +4,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class ACP_Column_Post_ChildPages extends AC_Column  {
+class ACP_Column_Post_ChildPages extends AC_Column
+	implements ACP_Column_FilteringInterface {
 
 	public function __construct() {
 		$this->set_type( 'column-child-pages' );
@@ -31,7 +32,9 @@ class ACP_Column_Post_ChildPages extends AC_Column  {
 			'post_type'      => $this->get_post_type(),
 			'post_parent'    => $post_id,
 			'fields'         => 'ids',
-			'posts_per_page' => -1
+			'posts_per_page' => -1,
+			'orderby'        => 'menu_order',
+			'order'          => 'ASC',
 		) );
 
 		return $ids;
@@ -39,6 +42,10 @@ class ACP_Column_Post_ChildPages extends AC_Column  {
 
 	public function is_valid() {
 		return is_post_type_hierarchical( $this->get_post_type() ) || post_type_supports( $this->get_post_type(), 'page-attributes' );
+	}
+
+	public function filtering() {
+		return new ACP_Filtering_Model_Post_ChildPages( $this );
 	}
 
 }

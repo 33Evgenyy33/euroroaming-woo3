@@ -808,6 +808,8 @@ jQuery('html').toggleClass('no-touch', !jQuery.isMobile);
 		this.settings = settings || {};
 		this.state = 'default'; // 'tablets' / 'mobiles'
 		this.$container = $us.$canvas.find('.l-header');
+		// Will be used to count fullscreen sections heights and proper scroll positions
+		this.scrolledOccupiedHeight = 0;
 		if (this.$container.length == 0) {
 			return;
 		}
@@ -1217,6 +1219,16 @@ jQuery('html').toggleClass('no-touch', !jQuery.isMobile);
 						this.$list.slideUpCSS(250);
 					}
 				}
+			}.bind(this));
+
+			// Close menu on anchor clicks
+			this.$anchors.on('click', function(e){
+				if (this.type != 'mobile' || $us.header.orientation != 'hor') return;
+				// Toggled the item
+				if (this.options.mobileBehavior && $(e.currentTarget).closest('.menu-item').hasClass('menu-item-has-children')) return;
+				this.mobileOpened = false;
+				this.$control.removeClass('active');
+				this.$list.slideUpCSS(250);
 			}.bind(this));
 
 			$us.$window.on('resize', this._events.resize);
@@ -2141,7 +2153,8 @@ jQuery(function($){
 
 			$us.$document.off('mousewheel DOMMouseScroll MozMousePixelScroll');
 			$us.$canvas.off('touchstart touchmove');
-			if ($us.$window.width() > this.disableWidth) {
+			
+			if ($us.$window.width() > this.disableWidth && ( ! $us.$html.hasClass('cloverlay_fixed'))) {
 				$us.$document.on('mousewheel DOMMouseScroll MozMousePixelScroll', function(e) {
 					e.preventDefault();
 					var currentTime = new Date().getTime(),
@@ -3351,7 +3364,7 @@ jQuery(function($){
  * UpSolution Shortcode: us_gallery
  */
 jQuery(function($){
-	$('.w-gallery.link_media .w-gallery-list').each(function(){
+	$('.w-gallery.link_file .w-gallery-list').each(function(){
 
 		$us.getScript($us.templateDirectoryUri+'/framework/js/jquery.magnific-popup.js', function(){
 			$(this).magnificPopup({
@@ -3738,9 +3751,9 @@ jQuery(function($){
 			this.$lightboxContentPreloader.css('display', 'block');
 			// this.$lightboxContentFrame.css('display', 'none');
 			// this.$lightboxContentFrame.css('width', this.$lightboxContent.width());
+			$us.$html.addClass('usoverlay_fixed');
 
 			if ( ! $.isMobile ) {
-				$us.$html.addClass('usoverlay_fixed');
 				// Storing the value for the whole popup visibility session
 				this.windowHasScrollbar = this._hasScrollbar();
 				if (this.windowHasScrollbar && this._getScrollbarSize()) {
@@ -3774,8 +3787,8 @@ jQuery(function($){
 			this.$lightboxOverlay.appendTo(this.$container).hide();
 			this.$lightboxWrap.appendTo(this.$container).hide();
 			this.$lightboxContentFrame.attr('src', 'about:blank');
+			$us.$html.removeClass('usoverlay_fixed');
 			if ( ! $.isMobile ) {
-				$us.$html.removeClass('usoverlay_fixed');
 				if (this.windowHasScrollbar) $us.$html.css('margin-right', '');
 			}
 		},
@@ -3966,10 +3979,15 @@ jQuery(function($){
 	};
 
 	$('.w-portfolio-list').each(function(){
+		var $list = $(this);
 		$us.getScript($us.templateDirectoryUri+'/framework/js/jquery.magnific-popup.js', function(){
+			var delegateStr = 'a[ref=magnificPopupPortfolio]:visible';
+			if ($list.hasClass('owl-carousel')) {
+				delegateStr = '.owl-item:not(.cloned) a[ref=magnificPopupPortfolio]';
+			}
 			$(this).magnificPopup({
 				type: 'image',
-				delegate: 'a[ref=magnificPopupPortfolio]:visible',
+				delegate: delegateStr,
 				gallery: {
 					enabled: true,
 					navigateByImgClick: true,

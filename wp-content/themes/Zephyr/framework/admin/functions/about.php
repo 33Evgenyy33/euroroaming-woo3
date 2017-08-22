@@ -55,15 +55,12 @@ function us_welcome_page() {
 
 			<div class="us-header-links">
 				<div class="us-header-link">
-					<i class="dashicons dashicons-editor-help"></i>
 					<a href="<?php echo $help_portal ?>/<?php echo ( defined( 'US_ACTIVATION_THEMENAME' ) ) ? strtolower( US_ACTIVATION_THEMENAME ) : strtolower( US_THEMENAME ); ?>/" target="_blank"><?php _e( 'Online Documentation', 'us' ) ?></a>
 				</div>
 				<div class="us-header-link">
-					<i class="dashicons dashicons-sos"></i>
 					<a href="<?php echo $help_portal ?>/<?php echo ( defined( 'US_ACTIVATION_THEMENAME' ) ) ? strtolower( US_ACTIVATION_THEMENAME ) : strtolower( US_THEMENAME ); ?>/tickets/" target="_blank"><?php _e( 'Support Portal', 'us' ) ?></a>
 				</div>
 				<div class="us-header-link">
-					<i class="dashicons dashicons-backup"></i>
 					<a href="<?php echo $help_portal ?>/<?php echo ( defined( 'US_ACTIVATION_THEMENAME' ) ) ? strtolower( US_ACTIVATION_THEMENAME ) : strtolower( US_THEMENAME ); ?>/changelog/" target="_blank"><?php _e( 'Theme Changelog', 'us' ) ?></a>
 				</div>
 			</div>

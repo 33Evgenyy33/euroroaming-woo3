@@ -652,7 +652,6 @@ function us_minify_css( $css ) {
 	// Remove spaces
 	$css = str_replace( ' > ', '>', $css );
 	$css = str_replace( ' ~ ', '~', $css );
-	$css = str_replace( ' + ', '+', $css );
 
 	// Remove whitespace
 	$css = str_replace( array( "\r\n", "\r", "\n", "\t", '  ', '    ', '    ' ), '', $css );

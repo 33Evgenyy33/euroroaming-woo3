@@ -20,6 +20,28 @@ if ( ! isset( $usof_supported_cpt ) ) {
 	$usof_supported_cpt = array();
 }
 
+$usof_assets = array();
+$assets_config = us_config( 'assets', array() );
+foreach ( $assets_config as $component => $component_atts ) {
+	$usof_assets[$component] = array(
+		'title' => $component_atts['title'],
+		'css_size' => $component_atts['css_size'],
+		'group' => ( isset( $component_atts['group'] ) ) ? $component_atts['group'] : NULL,
+		'hidden' => ( isset( $component_atts['hidden'] ) ) ? $component_atts['hidden'] : NULL,
+	);
+	if ( isset( $component_atts['apply_if'] ) ) {
+		$usof_assets[$component]['apply_if'] = $component_atts['apply_if'];
+	}
+}
+
+$optimize_assets_add_class = ' blocked';
+$optimize_assets_alert_add_class = '';
+$upload_dir = wp_upload_dir();
+if ( wp_is_writable( $upload_dir['basedir'] ) ) {
+	$optimize_assets_add_class = '';
+	$optimize_assets_alert_add_class = ' hidden';
+}
+
 // Getting Sidebars
 $sidebars_options = array();
 if ( is_array( $wp_registered_sidebars ) && ! empty( $wp_registered_sidebars ) ) {
@@ -134,7 +156,7 @@ foreach ( $usof_supported_cpt as $cpt_name ) {
 // Options Config
 return array(
 	'general' => array(
-		'title' => __( 'General Settings', 'us' ),
+		'title' => _x( 'General', 'General Settings', 'us' ),
 		'icon' => $us_template_directory_uri . '/framework/admin/img/usof/mixer',
 		'fields' => array(
 			'maintenance_mode' => array(
@@ -248,7 +270,7 @@ return array(
 			),
 			'custom_post_types_support' => array(
 				'title' => __( 'Support of Custom Post Types', 'us' ),
-				'description' => __( 'Mark the needed custom post type, if you want to enable Header, Sidebar, Title Bar and Footer options for it.', 'us' ),
+				'description' => __( 'Select custom post type to enable customization of its Header, Sidebar, Title Bar and Footer.', 'us' ),
 				'type' => 'checkboxes',
 				'options' => $supported_cpt_values,
 				'classes' => ( count( $supported_cpt_values ) == 0 ) ? 'hidden' : '',
@@ -257,7 +279,7 @@ return array(
 		),
 	),
 	'layout' => array(
-		'title' => __( 'Layout Options', 'us' ),
+		'title' => __( 'Site Layout', 'us' ),
 		'icon' => $us_template_directory_uri . '/framework/admin/img/usof/layout',
 		'fields' => array(
 			'responsive_layout' => array(
@@ -758,7 +780,7 @@ return array(
 		),
 	),
 	'header' => array(
-		'title' => __( 'Header Options', 'us' ),
+		'title' => _x( 'Header', 'site top area', 'us' ),
 		'icon' => $us_template_directory_uri . '/framework/admin/img/usof/header',
 		'fields' => array_merge(
 			array(
@@ -918,7 +940,7 @@ return array(
 				),
 				'header_contacts_show' => array(
 					'type' => 'switch',
-					'text' => __( 'Contacts', 'us' ),
+					'text' => us_translate( 'Contact Info' ),
 					'std' => 0,
 					'show_if' => array( 'header_layout', 'not in', array( 'simple_1', 'centered_1' ) ),
 					'classes' => 'width_full',
@@ -943,7 +965,7 @@ return array(
 				),
 				'header_contacts_custom_icon' => array(
 					'title' => __( 'Icon', 'us' ),
-					'description' => sprintf( __( '%s or %s icon name', 'us' ), '<a href="http://fontawesome.io/icons/" target="_blank">FontAwesome</a>', '<a href="https://material.io/icons/" target="_blank">Material</a>' ),
+					'description' => sprintf( __( '%s or %s icon name', 'us' ), '<a href="http://fontawesome.io/icons/" target="_blank">Font Awesome</a>', '<a href="https://material.io/icons/" target="_blank">Material</a>' ),
 					'type' => 'text',
 					'std' => '',
 					'classes' => 'cols_2 width_full desc_1',
@@ -982,7 +1004,7 @@ return array(
 				),
 				'header_socials_custom_icon' => array(
 					'title' => __( 'Custom Link Icon', 'us' ),
-					'description' => sprintf( __( '%s or %s icon name', 'us' ), '<a href="http://fontawesome.io/icons/" target="_blank">FontAwesome</a>', '<a href="https://material.io/icons/" target="_blank">Material</a>' ),
+					'description' => sprintf( __( '%s or %s icon name', 'us' ), '<a href="http://fontawesome.io/icons/" target="_blank">Font Awesome</a>', '<a href="https://material.io/icons/" target="_blank">Material</a>' ),
 					'type' => 'text',
 					'classes' => 'cols_3 width_full desc_1',
 				),
@@ -1236,7 +1258,7 @@ return array(
 					'type' => 'wrapper_end',
 				),
 				'h_header_3' => array(
-					'title' => __( 'Logo Options', 'us' ),
+					'title' => __( 'Logo', 'us' ),
 					'type' => 'heading',
 					'classes' => 'with_separator',
 				),
@@ -1351,7 +1373,7 @@ return array(
 					'show_if' => array( 'logo_type', '=', 'img' ),
 				),
 				'h_header_4' => array(
-					'title' => __( 'Menu Options', 'us' ),
+					'title' => us_translate( 'Menu' ),
 					'type' => 'heading',
 					'classes' => 'with_separator',
 				),
@@ -1402,17 +1424,17 @@ return array(
 					'postfix' => 'px',
 				),
 				'menu_togglable_type' => array(
-					'title' => __( 'Mobile Menu Behaviour', 'us' ),
-					'description' => __( 'When this option is disabled, sub items of mobile menu will open by click on arrows only.', 'us' ),
+					'title' => __( 'Dropdown Behavior', 'us' ),
+					'description' => __( 'When this option is OFF, mobile menu dropdown will be shown by click on an arrow only.', 'us' ),
 					'type' => 'switch',
-					'text' => __( 'Open sub items by click on menu titles', 'us' ),
+					'text' => __( 'Show dropdown by click on menu item title', 'us' ),
 					'std' => 1,
 				),
 			)
 		),
 	),
 	'titlebar' => array(
-		'title' => __( 'Title Bar Options', 'us' ),
+		'title' => __( 'Title Bars', 'us' ),
 		'icon' => $us_template_directory_uri . '/framework/admin/img/usof/titlebar',
 		'fields' => array(
 
@@ -2174,7 +2196,7 @@ return array(
 		),
 	),
 	'sidebar' => array(
-		'title' => __( 'Sidebar Options', 'us' ),
+		'title' => __( 'Sidebars', 'us' ),
 		'icon' => $us_template_directory_uri . '/framework/admin/img/usof/sidebar',
 		'fields' => array_merge(
 			array(
@@ -2514,7 +2536,7 @@ return array(
 		),
 	),
 	'footer' => array(
-		'title' => __( 'Footer Options', 'us' ),
+		'title' => __( 'Footers', 'us' ),
 		'icon' => $us_template_directory_uri . '/framework/admin/img/usof/footer',
 		'new' => TRUE,
 		'fields' => array(
@@ -2673,7 +2695,7 @@ return array(
 				),
 				'std' => 'Open Sans|400,700',
 			),
-			'body_fontsize_start' => array(
+			'body_font_start' => array(
 				'type' => 'wrapper_start',
 			),
 			'body_fontsize' => array(
@@ -2694,12 +2716,6 @@ return array(
 				'postfix' => 'px',
 				'classes' => 'inline cols_2 compact',
 			),
-			'body_fontsize_end' => array(
-				'type' => 'wrapper_end',
-			),
-			'body_lineheight_start' => array(
-				'type' => 'wrapper_start',
-			),
 			'body_lineheight' => array(
 				'description' => __( 'Line height', 'us' ),
 				'type' => 'slider',
@@ -2718,9 +2734,10 @@ return array(
 				'postfix' => 'px',
 				'classes' => 'inline cols_2 compact',
 			),
-			'body_lineheight_end' => array(
+			'body_font_end' => array(
 				'type' => 'wrapper_end',
 			),
+			
 			'h_typography_2' => array(
 				'title' => __( 'Headings', 'us' ),
 				'type' => 'heading',
@@ -2735,7 +2752,7 @@ return array(
 					'letterspacing_field' => 'h1_letterspacing',
 					'transform_field' => 'h1_transform',
 				),
-				'std' => 'Open Sans|400,700',
+				'std' => 'none',
 			),
 			'h1_start' => array(
 				'title' => us_translate( 'Heading 1' ),
@@ -3049,6 +3066,7 @@ return array(
 			'h6_end' => array(
 				'type' => 'wrapper_end',
 			),
+			
 			'h_typography_3' => array(
 				'title' => __( 'Header Menu', 'us' ),
 				'type' => 'heading',
@@ -3087,7 +3105,7 @@ return array(
 		),
 	),
 	'buttons' => array(
-		'title' => __( 'Buttons Options', 'us' ),
+		'title' => __( 'Buttons', 'us' ),
 		'icon' => $us_template_directory_uri . '/framework/admin/img/usof/buttons',
 		'fields' => array(
 			'button_preview' => array(
@@ -3185,7 +3203,7 @@ return array(
 		),
 	),
 	'portfolio' => array(
-		'title' => __( 'Portfolio Options', 'us' ),
+		'title' => __( 'Portfolio', 'us' ),
 		'icon' => $us_template_directory_uri . '/framework/admin/img/usof/images',
 		'place_if' => ( $usof_enable_portfolio == 1 ),
 		'fields' => array(
@@ -3340,7 +3358,7 @@ return array(
 		),
 	),
 	'blog' => array(
-		'title' => __( 'Blog Options', 'us' ),
+		'title' => us_translate( 'Blog' ),
 		'icon' => $us_template_directory_uri . '/framework/admin/img/usof/blogs',
 		'fields' => array(
 
@@ -3348,12 +3366,11 @@ return array(
 			'h_blog_1' => array(
 				'title' => us_translate_x( 'Posts', 'post type general name' ),
 				'type' => 'heading',
-				'classes' => 'with_separator',
+				'classes' => 'with_separator sticky',
 			),
 			'post_preview_layout' => array(
 				'title' => __( 'Featured Image Layout', 'us' ),
-				'description' => __( 'This option sets Featured Image Layout for all post pages. You can set it for a separate certain post when editing it.', 'us' ),
-				'type' => 'select',
+				'type' => 'radio',
 				'options' => array(
 					'basic' => __( 'Standard', 'us' ),
 					'modern' => __( 'Modern', 'us' ),
@@ -3392,17 +3409,6 @@ return array(
 				'classes' => 'force_right',
 				'show_if' => array( 'post_sharing', '=', TRUE ),
 			),
-			'post_sharing_type' => array(
-				'title' => __( 'Buttons Style', 'us' ),
-				'type' => 'radio',
-				'options' => array(
-					'simple' => __( 'Simple', 'us' ),
-					'solid' => __( 'Solid', 'us' ),
-					'outlined' => __( 'Outlined', 'us' ),
-				),
-				'std' => 'simple',
-				'classes' => 'width_full',
-			),
 			'post_sharing_providers' => array(
 				'title' => '',
 				'type' => 'checkboxes',
@@ -3416,6 +3422,17 @@ return array(
 					'vk' => 'Vkontakte',
 				),
 				'std' => array( 'facebook', 'twitter', 'gplus' ),
+				'classes' => 'width_full',
+			),
+			'post_sharing_type' => array(
+				'title' => __( 'Buttons Style', 'us' ),
+				'type' => 'radio',
+				'options' => array(
+					'simple' => __( 'Simple', 'us' ),
+					'solid' => __( 'Solid', 'us' ),
+					'outlined' => __( 'Outlined', 'us' ),
+				),
+				'std' => 'simple',
 				'classes' => 'width_full',
 			),
 			'wrapper_post_sharing_end' => array(
@@ -3500,7 +3517,7 @@ return array(
 			'h_blog_2' => array(
 				'title' => __( 'Blog Home Page', 'us' ),
 				'type' => 'heading',
-				'classes' => 'with_separator',
+				'classes' => 'with_separator sticky',
 			),
 			'blog_type' => array(
 				'title' => __( 'Display Posts as', 'us' ),
@@ -3584,7 +3601,7 @@ return array(
 			'h_blog_3' => array(
 				'title' => __( 'Archive Pages', 'us' ),
 				'type' => 'heading',
-				'classes' => 'with_separator',
+				'classes' => 'with_separator sticky',
 			),
 			'archive_type' => array(
 				'title' => __( 'Display Posts as', 'us' ),
@@ -3668,7 +3685,7 @@ return array(
 			'h_blog_4' => array(
 				'title' => __( 'Search Results Page', 'us' ),
 				'type' => 'heading',
-				'classes' => 'with_separator',
+				'classes' => 'with_separator sticky',
 			),
 			'search_type' => array(
 				'title' => __( 'Display Posts as', 'us' ),
@@ -3775,20 +3792,20 @@ return array(
 					'secondary' => __( 'Secondary (theme color)', 'us' ),
 					'light' => __( 'Border (theme color)', 'us' ),
 					'contrast' => __( 'Text (theme color)', 'us' ),
-					'black' => __( 'Black', 'us' ),
-					'white' => __( 'White', 'us' ),
-					'pink' => __( 'Pink', 'us' ),
-					'blue' => __( 'Blue', 'us' ),
-					'green' => __( 'Green', 'us' ),
-					'yellow' => __( 'Yellow', 'us' ),
+					'black' => us_translate( 'Black' ),
+					'white' => us_translate( 'White' ),
 					'purple' => __( 'Purple', 'us' ),
+					'pink' => __( 'Pink', 'us' ),
 					'red' => __( 'Red', 'us' ),
+					'yellow' => __( 'Yellow', 'us' ),
 					'lime' => __( 'Lime', 'us' ),
-					'navy' => __( 'Navy', 'us' ),
-					'cream' => __( 'Cream', 'us' ),
-					'brown' => __( 'Brown', 'us' ),
-					'midnight' => __( 'Midnight', 'us' ),
+					'green' => __( 'Green', 'us' ),
 					'teal' => __( 'Teal', 'us' ),
+					'blue' => __( 'Blue', 'us' ),
+					'navy' => __( 'Navy', 'us' ),
+					'midnight' => __( 'Midnight', 'us' ),
+					'brown' => __( 'Brown', 'us' ),
+					'cream' => __( 'Cream', 'us' ),
 				),
 				'std' => 'light',
 			),
@@ -3903,13 +3920,12 @@ return array(
 		),
 	),
 	'woocommerce' => array(
-		'title' => 'WooCommerce',
+		'title' => us_translate_x( 'Shop', 'Page title', 'woocommerce' ),
 		'icon' => $us_template_directory_uri . '/framework/admin/img/usof/cart',
 		'place_if' => class_exists( 'woocommerce' ),
 		'fields' => array(
 			'shop_listing_style' => array(
 				'title' => __( 'Products Grid Style', 'us' ),
-				'description' => __( 'This option sets style of products grid for all pages', 'us' ),
 				'std' => 'standard',
 				'type' => 'radio',
 				'options' => array(
@@ -3920,7 +3936,6 @@ return array(
 			),
 			'shop_columns' => array(
 				'title' => __( 'Products Grid Columns', 'us' ),
-				'description' => __( 'This option sets products amount per row for Shop pages', 'us' ),
 				'std' => '3',
 				'type' => 'radio',
 				'options' => array(
@@ -3934,7 +3949,7 @@ return array(
 			),
 			'product_related_qty' => array(
 				'title' => __( 'Related Products Quantity', 'us' ),
-				'description' => __( 'This option sets Related Products quantity for Product pages and Cart page', 'us' ),
+				'description' => __( 'On Product pages and Cart page', 'us' ),
 				'std' => '3',
 				'type' => 'radio',
 				'options' => array(
@@ -3964,7 +3979,7 @@ return array(
 		),
 	),
 	'advanced' => array(
-		'title' => __( 'Advanced Settings', 'us' ),
+		'title' => _x( 'Advanced', 'Advanced Settings', 'us' ),
 		'icon' => $us_template_directory_uri . '/framework/admin/img/usof/cog',
 		'fields' => array(
 			'h_advanced_1' => array(
@@ -3989,27 +4004,6 @@ return array(
 				'type' => 'heading',
 				'classes' => 'with_separator',
 			),
-			'jquery_footer' => array(
-				'type' => 'switch',
-				'text' => __( 'Move jQuery scripts to the footer', 'us' ),
-				'description' => __( 'When this option is ON jQuery library files will be loaded after page content. This will improve page loading speed.', 'us' ),
-				'std' => 1,
-				'classes' => 'width_full desc_2',
-			),
-			'disable_jquery_migrate' => array(
-				'type' => 'switch',
-				'text' => __( 'Disable jQuery migrate script', 'us' ),
-				'description' => __( 'When this option is ON "jquery-migrate.min.js" file won\'t be loaded in front-end. This will improve page loading speed.', 'us' ),
-				'std' => 1,
-				'classes' => 'width_full desc_2',
-			),
-			'ajax_load_js' => array(
-				'type' => 'switch',
-				'text' => __( 'Dynamically load theme JS components', 'us' ),
-				'description' => __( 'When this option is ON theme components JS files will be loaded dynamically without additional external requests. This will improve page loading speed.', 'us' ),
-				'std' => 1,
-				'classes' => 'width_full desc_2',
-			),
 			'lazyload_fonts' => array(
 				'type' => 'switch',
 				'text' => __( 'Defer Google Fonts loading', 'us' ),
@@ -4017,29 +4011,68 @@ return array(
 				'std' => 0,
 				'classes' => 'width_full desc_2',
 			),
-			'generate_css_file' => array(
+			'jquery_footer' => array(
 				'type' => 'switch',
-				'text' => __( 'Store Theme Options generated styles in a separate CSS file', 'us' ),
-				'description' => __( 'When this option is OFF all Theme Options generated styles will be located inside a &lt;head&gt; section of every site page.', 'us' ),
-				'std' => 0,
+				'text' => __( 'Move jQuery scripts to the footer', 'us' ),
+				'description' => __( 'When this option is ON, jQuery library files will be loaded after page content.', 'us' ) . ' ' . __( 'This will improve pages loading speed.', 'us' ),
+				'std' => 1,
+				'classes' => 'width_full desc_2',
+			),
+			'disable_jquery_migrate' => array(
+				'type' => 'switch',
+				'text' => __( 'Disable jQuery migrate script', 'us' ),
+				'description' => __( 'When this option is ON, "jquery-migrate.min.js" file won\'t be loaded in front-end.', 'us' ) . ' ' . __( 'This will improve pages loading speed.', 'us' ),
+				'std' => 1,
+				'classes' => 'width_full desc_2',
+			),
+			'ajax_load_js' => array(
+				'type' => 'switch',
+				'text' => __( 'Dynamically load theme JS components', 'us' ),
+				'description' => __( 'When this option is ON, theme components JS files will be loaded dynamically without additional external requests.', 'us' ) . ' ' . __( 'This will improve pages loading speed.', 'us' ),
+				'std' => 1,
 				'classes' => 'width_full desc_2',
 			),
 			'disable_extra_vc' => array(
 				'type' => 'switch',
 				'text' => __( 'Disable extra features of Visual Composer', 'us' ),
-				'description' => __( 'When this option is ON original CSS and JS files of Visual Composer won\'t be loaded in front-end. This will improve page loading speed.', 'us' ),
+				'description' => __( 'When this option is ON, original CSS and JS files of Visual Composer won\'t be loaded in front-end.', 'us' ) . ' ' . __( 'This will improve pages loading speed.', 'us' ),
 				'std' => 1,
 				'place_if' => class_exists( 'Vc_Manager' ),
 				'classes' => 'width_full desc_2',
 			),
+			'optimize_assets' => array(
+				'type' => 'switch',
+				'text' => __( 'Optimize CSS size', 'us' ),
+				'description' => __( 'When this option is ON, your site will load only one CSS file. You can disable unused components to reduce the file size.', 'us' ) . ' ' . __( 'This will improve pages loading speed.', 'us' ),
+				'std' => 0,
+				'classes' => 'width_full desc_2' . $optimize_assets_add_class,
+			),
+			'optimize_assets_alert' => array(
+				'description' => __( 'Your uploads folder is not writable. Change your server permissions to use this option.', 'us' ),
+				'type' => 'message',
+				'classes' => 'width_full string' . $optimize_assets_alert_add_class,
+			),
+			'optimize_assets_start' => array(
+				'type' => 'wrapper_start',
+				'show_if' => array( 'optimize_assets', '=', TRUE ),
+			),
+			'assets' => array(
+				'type' => 'check_table',
+				'options' => $usof_assets,
+				'std' => array_keys( $usof_assets ),
+				'classes' => 'width_full',
+			),
+			'optimize_assets_end' => array(
+				'type' => 'wrapper_end',
+			),
 
 			'h_advanced_3' => array(
-				'title' => us_translate( 'Image sizes' ),
+				'title' => __( 'Custom Image Sizes', 'us' ),
 				'type' => 'heading',
 				'classes' => 'with_separator',
 			),
 			'img_size_info' => array(
-				'description' => __( 'Here you can set additional image sizes which can be used in theme elements.', 'us' ) . ' ' . sprintf( __( 'After changing these settings you need to %sregenerate your thumbnails%s.', 'us' ), '<a target="_blank" href="' . admin_url() . 'plugin-install.php?tab=search&s=Force+Regenerate+Thumbnails">', '</a>' ),
+				'description' => sprintf( __( 'Read %s how to use image sizes%s to improve pages loading speed.', 'us' ), '<a target="_blank" href="https://help.us-themes.com/impreza/general/images/">', '</a>' ),
 				'type' => 'message',
 				'classes' => 'width_full color_blue',
 			),
@@ -4084,13 +4117,13 @@ return array(
 		'fields' => array(
 			'custom_css' => array(
 				'title' => __( 'Custom CSS', 'us' ),
-				'description' => __( 'Custom CSS code from this box will be added into the Theme Options generated styles.', 'us' ),
+				'description' => sprintf( __( 'CSS code from this field will overwrite theme styles. It will be located inside the %s tags just before the %s tag of every site page.', 'us' ), '<code>&lt;style&gt;&lt;/style&gt;</code>', '<code>&lt;/head&gt;</code>' ),
 				'type' => 'css',
 				'classes' => 'width_full desc_4',
 			),
 			'custom_html' => array(
 				'title' => __( 'Custom HTML', 'us' ),
-				'description' => __( 'Custom HTML code from this box will be added below the footer of every site page. You can use JS code with &lt;script&gt;&lt;/script&gt; tags. Also you can add Google Analytics or other tracking code into this field.', 'us' ),
+				'description' => sprintf( __( 'Use this field for Google Analytics code or other tracking code. If you paste custom JavaScript, use it inside the %s tags.<br><br>Content from this field will be located just before the %s tag of every site page.', 'us' ), '<code>&lt;script&gt;&lt;/script&gt;</code>', '<code>&lt;/body&gt;</code>' ),
 				'type' => 'html',
 				'classes' => 'width_full desc_4',
 			),

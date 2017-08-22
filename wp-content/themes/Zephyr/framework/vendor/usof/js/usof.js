@@ -226,6 +226,24 @@ jQuery.fn.usMod = function(mod, value){
 
 	};
 
+	$usof.field['check_table'] = {
+
+		getValue: function(){
+			var value = [];
+			$.each(this.$input, function(){
+				if (this.checked) value.push(this.value);
+			});
+			return value;
+		},
+
+		setValue: function(value, quiet){
+			$.each(this.$input, function(){
+				$(this).attr('checked', ($.inArray(this.value, value) != -1) ? 'checked' : false);
+			});
+		}
+
+	};
+
 	/**
 	 * USOF Field: Color
 	 */

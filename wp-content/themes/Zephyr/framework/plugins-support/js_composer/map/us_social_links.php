@@ -30,6 +30,7 @@ vc_map(
 	array(
 		'base' => 'us_social_links',
 		'name' => __( 'Social Links', 'us' ),
+		'description' => '',
 		'icon' => 'icon-wpb-balloon-facebook-left',
 		'category' => us_translate( 'Content', 'js_composer' ),
 		'weight' => 170,
@@ -62,7 +63,7 @@ vc_map(
 				array(
 					'param_name' => 'custom_icon',
 					'heading' => __( 'Custom Link Icon', 'us' ),
-					'description' => sprintf( __( '%s or %s icon name', 'us' ), '<a href="http://fontawesome.io/icons/" target="_blank">FontAwesome</a>', '<a href="https://material.io/icons/" target="_blank">Material</a>' ),
+					'description' => sprintf( __( '%s or %s icon name', 'us' ), '<a href="http://fontawesome.io/icons/" target="_blank">Font Awesome</a>', '<a href="https://material.io/icons/" target="_blank">Material</a>' ),
 					'type' => 'textfield',
 					'std' => $config['atts']['custom_icon'],
 					'dependency' => array( 'element' => 'custom_link', 'not_empty' => TRUE ),

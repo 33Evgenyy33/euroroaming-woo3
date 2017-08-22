@@ -25,6 +25,8 @@ class ACP_Editing_Model_Post_FeaturedImage extends ACP_Editing_Model {
 		else {
 			delete_post_thumbnail( $id );
 		}
+
+		acp_editing_helper()->update_post_last_modified( $id );
 	}
 
 }

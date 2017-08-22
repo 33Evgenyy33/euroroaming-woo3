@@ -4,25 +4,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+/**
+ * @property AC_Column_Media_AvailableSizes $column
+ */
 class ACP_Sorting_Model_Media_AvailableSizes extends ACP_Sorting_Model_Media_Meta {
 
 	public function get_sorting_vars() {
-		$sizes = (array) get_intermediate_image_sizes();
+		$ids = array();
 
-		$meta_values = $this->get_meta_values();
+		foreach ( $this->get_meta_values() as $id => $meta_value ) {
+			$count = 0;
+			if ( ! empty( $meta_value['sizes'] ) && is_array( $meta_value['sizes'] ) ) {
+				$count = count( $this->column->get_available_sizes( $meta_value['sizes'] ) );
+			}
 
-		foreach ( $meta_values as $id => $meta_value ) {
-			$meta_values[ $id ] = ! empty( $meta_value ) && ! empty( $meta_value['sizes'] ) && is_array( $meta_value['sizes'] )
-				? count( array_intersect( $sizes, array_keys( $meta_value['sizes'] ) ) )
-				: '';
-		}
-
-		if ( ! acp_sorting()->show_all_results() ) {
-			$meta_values = array_filter( $meta_values );
+			$ids[ $id ] = $count;
 		}
 
 		return array(
-			'ids' => $this->sort( $meta_values ),
+			'ids' => $this->sort( $ids ),
 		);
 	}
 }

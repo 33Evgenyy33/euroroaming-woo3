@@ -16,12 +16,13 @@ $us_layout = US_Layout::instance();
 
 	<?php wp_head() ?>
 
-	<?php global $us_generate_css_file;
-	if ( ! isset( $us_generate_css_file ) OR ! $us_generate_css_file ): ?>
+	<?php if ( ( defined( 'US_DEV' ) AND US_DEV ) OR us_get_option( 'optimize_assets', 0 ) == 0 ): ?>
 		<style id='us-theme-options-css' type="text/css"><?php echo us_get_theme_options_css() ?></style>
 	<?php endif; ?>
-	<style id='us-header-css' type="text/css"><?php echo us_minify_css( us_get_template( 'config/header.css' ) ) ?></style>
-	<?php if (($us_custom_css = us_get_option( 'custom_css', '')) != ''): ?>
+	<?php if ( $us_layout->header_show != 'never' ): ?>
+		<style id='us-header-css' type="text/css"><?php echo us_minify_css( us_get_template( 'config/header.css' ) ) ?></style>
+	<?php endif; ?>
+	<?php if ( ( $us_custom_css = us_get_option( 'custom_css', '' ) ) != '' ): ?>
 		<style id='us-custom-css' type="text/css"><?php echo us_minify_css( $us_custom_css ) ?></style>
 	<?php endif; ?>
 

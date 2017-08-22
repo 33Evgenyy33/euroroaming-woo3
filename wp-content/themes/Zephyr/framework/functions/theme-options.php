@@ -6,47 +6,68 @@
  * Should be included in global context.
  */
 
-add_action( 'usof_after_save', 'us_generate_theme_options_css_file' );
-add_action( 'usof_ajax_mega_menu_save_settings', 'us_generate_theme_options_css_file' );
-function us_generate_theme_options_css_file() {
-
-	global $usof_options;
-
-	// Just in case the function was called separately, ex. from migrations file
+// Generating single CSS file
+add_action( 'usof_after_save', 'us_generate_optimized_css_file' );
+add_action( 'usof_ajax_mega_menu_save_settings', 'us_generate_optimized_css_file' );
+function us_generate_optimized_css_file() {
+	global $usof_options, $us_template_directory;
 	usof_load_options_once();
 
-	$styles_css = us_minify_css( us_get_template( 'config/theme-options.css' ) );
+	if ( isset( $usof_options['optimize_assets'] ) AND $usof_options['optimize_assets'] ) {
+		delete_option( 'us_theme_options_css' );
 
-	if ( ! isset( $usof_options['generate_css_file'] ) OR ! $usof_options['generate_css_file'] ) {
-		// Saving to special option
-		update_option( 'us_theme_options_css', $styles_css, TRUE );
+		// Add general styles to the beginning
+		$result_css = file_get_contents( $us_template_directory . '/css/base/general.css' ) . "\n";
 
-		return;
-	}
-	delete_option( 'us_theme_options_css' );
-
-	// TODO Use WP_Filesystem instead
-	$wp_upload_dir = wp_upload_dir();
-	$styles_dir = wp_normalize_path( $wp_upload_dir['basedir'] . '/us-assets' );
-	$site_url_parts = parse_url( site_url() );
-	$styles_file_suffix = ( ! empty( $site_url_parts['host'] ) ) ? $site_url_parts['host'] : '';
-	$styles_file_suffix .= ( ! empty( $site_url_parts['path'] ) ) ? str_replace( '/', '_', $site_url_parts['host'] ) : '';
-	$styles_file_suffix = ( ! empty( $styles_file_suffix ) ) ? '-' . $styles_file_suffix : '';
-	$styles_file = $styles_dir . '/' . US_THEMENAME . $styles_file_suffix . '-theme-options.css';
-	global $output_styles_to_file;
-	$output_styles_to_file = TRUE;
-
-	if ( ! is_dir( $styles_dir ) ) {
-		wp_mkdir_p( trailingslashit( $styles_dir ) );
-	}
-	$handle = @fopen( $styles_file, 'w' );
-	if ( $handle ) {
-		if ( ! fwrite( $handle, $styles_css ) ) {
-			return FALSE;
+		// Add styles set in Theme Options
+		$assets_config = us_config( 'assets', array() );
+		foreach ( $assets_config as $component => $component_atts ) {
+			if ( isset( $component_atts['apply_if'] ) AND ! $component_atts['apply_if'] ) {
+				continue;
+			}
+			if ( in_array( $component, $usof_options['assets'] ) ) {
+				if ( isset( $component_atts['is_plugin'] ) AND $component_atts['is_plugin'] ) {
+					$result_css .= file_get_contents( ABSPATH . 'wp-content/plugins' . $component_atts['css'] ) . "\n";
+				} else {
+					$result_css .= file_get_contents( $us_template_directory . $component_atts['css'] ) . "\n";
+				}
+			}
 		}
-		fclose( $handle );
 
-		return TRUE;
+		// Add generated styles by Theme Options
+		$result_css .= us_get_template( 'config/theme-options.css' ) . "\n";
+		
+		// Add responsive styles to the end, if Responsive Layout is enabled
+		if ( $usof_options['responsive_layout'] ) {
+			$result_css .= file_get_contents( $us_template_directory . '/css/responsive.css' ) . "\n";
+		}
+
+		// TODO Use WP_Filesystem instead
+		$wp_upload_dir = wp_upload_dir();
+		$styles_dir = wp_normalize_path( $wp_upload_dir['basedir'] . '/us-assets' );
+		$site_url_parts = parse_url( site_url() );
+		$styles_file_suffix = ( ! empty( $site_url_parts['host'] ) ) ? $site_url_parts['host'] : '';
+		$styles_file_suffix .= ( ! empty( $site_url_parts['path'] ) ) ? str_replace( '/', '_', $site_url_parts['host'] ) : '';
+		$styles_file_suffix = ( ! empty( $styles_file_suffix ) ) ? $styles_file_suffix : '';
+		$styles_file = $styles_dir . '/' . $styles_file_suffix . '.css';
+
+		if ( ! is_dir( $styles_dir ) ) {
+			wp_mkdir_p( trailingslashit( $styles_dir ) );
+		}
+		$handle = @fopen( $styles_file, 'w' );
+		if ( $handle ) {
+			if ( ! fwrite( $handle, us_minify_css( $result_css ) ) ) {
+				return FALSE;
+			}
+			fclose( $handle );
+
+			return TRUE;
+		}
+
+		return FALSE;
+
+	} else {
+		update_option( 'us_theme_options_css', us_minify_css( us_get_template( 'config/theme-options.css' ) ), TRUE );
 	}
 
 	return FALSE;

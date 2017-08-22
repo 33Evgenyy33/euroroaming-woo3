@@ -173,13 +173,13 @@ a.editable-click:hover {
     border-bottom: dashed 1px #0088cc;
 }
 
-.editable-click.editable-disabled,
+/*.editable-click.editable-disabled,
 a.editable-click.editable-disabled,
 a.editable-click.editable-disabled:hover {
    color: #585858;
    cursor: default;
    border-bottom: none;
-}
+}*/
 
 .editable-empty, .editable-empty:hover, .editable-empty:focus{
   font-style: italic;

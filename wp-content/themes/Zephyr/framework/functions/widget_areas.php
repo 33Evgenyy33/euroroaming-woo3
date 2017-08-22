@@ -1,5 +1,9 @@
 <?php defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
 
+/**
+ * Adding custom sidebars
+ */
+
 class US_Widget_Areas {
 
 	public $widget_areas = array();
@@ -28,7 +32,6 @@ class US_Widget_Areas {
 		?>
 		<script type="text/html" id="us_add_widget_area">
 			<form method="POST" class="us-custom-area-form widgets-holder-wrap">
-				<h3><?php _e( 'Custom Sidebar', 'us' ) ?></h3>
 				<input type="text" value="" placeholder="<?php _e( 'Sidebar Name', 'us' ) ?>" name="us_widget_area" />
 				<input class="button button-primary" type="submit" value="<?php _e( 'Add Sidebar', 'us' ) ?>" />
 				<?php echo $nonce; ?>
@@ -189,16 +192,17 @@ function us_dynamic_sidebar( $default = NULL ) {
 function us_dynamic_sidebar_id( $default = NULL ) {
 
 	if ( is_singular() ) {
-		$sidebar_id = usof_meta( 'us_sidebar_id' );
-		if ( ! empty( $sidebar_id ) ) {
-			return $sidebar_id;
+		if ( usof_meta( 'us_sidebar' ) == 'custom' ) {
+			$sidebar_id = usof_meta( 'us_sidebar_id' );
+			if ( ! empty( $sidebar_id ) ) {
+				return $sidebar_id;
+			}
 		}
 	}
 	if ( ! empty( $default ) ) {
 		return $default;
 	} else {
 		$sidebar_id = us_get_option( 'sidebar_id', 'default_sidebar' );
-
 		return $sidebar_id;
 	}
 }

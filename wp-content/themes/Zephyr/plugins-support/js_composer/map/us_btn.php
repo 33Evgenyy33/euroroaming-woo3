@@ -29,8 +29,8 @@ vc_update_shortcode_param(
 		__( 'Secondary (theme color)', 'us' ) => 'secondary',
 		__( 'Light (theme color)', 'us' ) => 'light',
 		__( 'Contrast (theme color)', 'us' ) => 'contrast',
-		__( 'Black', 'us' ) => 'black',
-		__( 'White', 'us' ) => 'white',
+		us_translate( 'Black' ) => 'black',
+		us_translate( 'White' ) => 'white',
 		__( 'Custom colors', 'us' ) => 'custom',
 	),
 )

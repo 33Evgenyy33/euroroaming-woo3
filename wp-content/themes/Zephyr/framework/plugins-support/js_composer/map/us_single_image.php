@@ -12,6 +12,7 @@ vc_map(
 	array(
 		'base' => 'us_single_image',
 		'name' => __( 'Single Image', 'us' ),
+		'description' => '',
 		'icon' => 'icon-wpb-single-image',
 		'category' => us_translate( 'Content', 'js_composer' ),
 		'weight' => 370,

@@ -64,4 +64,9 @@ $config['blog']['fields']['search_layout']['options'] = us_array_merge_insert(
 
 unset( $config['woocommerce']['fields']['shop_listing_style']['options']['trendy'] );
 
+unset( $config['advanced']['fields']['optimize_assets'] );
+unset( $config['advanced']['fields']['optimize_assets_start'] );
+unset( $config['advanced']['fields']['assets'] );
+unset( $config['advanced']['fields']['optimize_assets_end'] );
+
 return $config;

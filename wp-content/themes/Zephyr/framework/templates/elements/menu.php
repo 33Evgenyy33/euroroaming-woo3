@@ -41,7 +41,13 @@ if ( isset( $design_options ) AND isset( $design_options['hide_for_sticky'] ) AN
 if ( isset( $design_options ) AND isset( $design_options['hide_for_not-sticky'] ) AND $design_options['hide_for_not-sticky'] ) {
 	$classes .= ' hide-for-not-sticky';
 }
-$list_classes = ' level_1 hover_' . $hover_effect;
+foreach ( array( 'default', 'tablets', 'mobiles' ) as $state ) {
+	if ( ! us_is_header_elm_shown( $id, $state ) ) {
+		$classes .= ' hidden_for_' . $state;
+	}
+}
+$list_classes = ' level_1 hide_for_mobiles';
+$list_classes .= ( isset( $hover_effect ) ) ? ' hover_' . $hover_effect : '';
 $classes .= ' type_desktop dropdown_' . $dropdown_effect;
 if ( $vstretch ) {
 	$classes .= ' height_full';
@@ -49,7 +55,6 @@ if ( $vstretch ) {
 if ( isset( $id ) AND ! empty( $id ) ) {
 	$classes .= ' ush_' . str_replace( ':', '_', $id );
 }
-$list_classes .= ' hide_for_mobiles';
 
 echo '<nav class="w-nav' . $classes . '" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">';
 echo '<a class="w-nav-control" href="javascript:void(0);">';

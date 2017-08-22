@@ -263,7 +263,7 @@ function cacie_init( $ ) {
  * Enable inline editing
  */
 function cacie_enable( $ ) {
-	$( '#cacie-toggle-edit' ).addClass( 'active' );
+	$( '.ac-button-toggle-edit' ).addClass( 'active' );
 
 	if ( typeof window.xeditables === 'undefined' ) {
 		cacie_init( $ );
@@ -282,7 +282,7 @@ function cacie_enable( $ ) {
  * Enable inline editing
  */
 function cacie_disable( $ ) {
-	$( '#cacie-toggle-edit' ).removeClass( 'active' );
+	$( '.ac-button-toggle-edit' ).removeClass( 'active' );
 	$( window.xeditables ).editable( 'disable' );
 	window.cacie_edit_enabled = 0; // disable click events
 	$( AC.table_id ).removeClass( 'cacie-enabled' );
@@ -307,10 +307,10 @@ jQuery( document ).ready( function( $ ) {
 	}
 
 	// Add button
-	$( '.tablenav.top .actions:last' ).append( '<a href="javascript:;" id="cacie-toggle-edit" class="cpac-edit add-new-h2">' + ACP_Editing.i18n.inline_edit + '</a>' );
+	$( '.tablenav.top .actions:last' ).append( '<a href="javascript:;" class="ac-button add-new-h2 ac-button-toggle-edit">' + ACP_Editing.i18n.inline_edit + '</a>' );
 
 	// Toggle Inline Edit
-	$( '#cacie-toggle-edit' ).on( 'click', function( e ) {
+	$( '.ac-button-toggle-edit' ).on( 'click', function( e ) {
 
 		// disable
 		if ( window.cacie_edit_enabled ) {

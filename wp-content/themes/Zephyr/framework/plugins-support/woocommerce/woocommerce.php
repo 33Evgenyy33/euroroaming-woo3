@@ -35,11 +35,13 @@ if ( version_compare( $woocommerce->version, '2.1', '<' ) ) {
 	}
 }
 
-add_action( 'wp_enqueue_scripts', 'us_woocommerce_enqueue_styles', 14 );
+if ( ! ( defined( 'US_DEV' ) AND US_DEV  ) AND us_get_option( 'optimize_assets', 0 ) == 0 ) {
+	add_action( 'wp_enqueue_scripts', 'us_woocommerce_enqueue_styles', 14 );
+}
 function us_woocommerce_enqueue_styles( $styles ) {
 	global $us_template_directory_uri;
 	$min_ext = ( ! ( defined( 'US_DEV' ) AND US_DEV ) ) ? '.min' : '';
-	wp_enqueue_style( 'us-woocommerce', $us_template_directory_uri . '/css/us.woocommerce' . $min_ext . '.css', array(), US_THEMEVERSION, 'all' );
+	wp_enqueue_style( 'us-woocommerce', $us_template_directory_uri . '/css/plugins/woocommerce' . $min_ext . '.css', array(), US_THEMEVERSION, 'all' );
 }
 
 // Adjust markup for all woocommerce pages
@@ -119,14 +121,7 @@ function us_woocommerce_after_shop_loop_item_title() {
 	echo '</div>';
 }
 
-/**
- * WooCommerce Extra Feature
- * --------------------------
- *
- * Change number of related products on product page
- * Set your own value for 'posts_per_page'
- *
- */
+// Change number of related products
 function woo_related_products_limit() {
 	global $product;
 
@@ -134,14 +129,12 @@ function woo_related_products_limit() {
 
 	return $args;
 }
-
 add_filter( 'woocommerce_output_related_products_args', 'us_related_products_args' );
 function us_related_products_args( $args ) {
 	$args['posts_per_page'] = us_get_option( 'product_related_qty', 4 );
 
 	return $args;
 }
-
 add_filter( 'woocommerce_cross_sells_total', 'us_woocommerce_cross_sells_total' );
 add_filter( 'woocommerce_cross_sells_columns', 'us_woocommerce_cross_sells_total' );
 function us_woocommerce_cross_sells_total( $count ) {
@@ -206,7 +199,6 @@ if ( ! function_exists( 'woocommerce_pagination' ) ) {
 }
 
 add_action( 'woocommerce_after_mini_cart', 'us_woocommerce_after_mini_cart' );
-
 function us_woocommerce_after_mini_cart() {
 	global $woocommerce;
 
@@ -218,18 +210,17 @@ function woocommerce_product_archive_description() {
 }
 
 add_filter( 'us_image_sizes_select_values', 'us_woocommerce_image_sizes_select_values' );
-
 function us_woocommerce_image_sizes_select_values( $image_sizes ) {
 	$size_names = array( 'shop_single', 'shop_catalog', 'shop_thumbnail' );
 
 	foreach ( $size_names as $size_name ) {
 		// Detecting size
 		$size = us_get_intermediate_image_size( $size_name );
-		$size_title = ( ( $size['width'] == 0 ) ? __( 'Any', 'us' ) : $size['width'] );
+		$size_title = ( ( $size['width'] == 0 ) ? __( 'any', 'us' ) : $size['width'] );
 		$size_title .= ' x ';
-		$size_title .= ( $size['height'] == 0 ) ? __( 'Any', 'us' ) : $size['height'];
+		$size_title .= ( $size['height'] == 0 ) ? __( 'any', 'us' ) : $size['height'];
 		if ( $size['crop'] ) {
-			$size_title .= ' (' . __( 'cropped', 'us' ) . ')';
+			$size_title .= ' ' . __( 'cropped', 'us' );
 		}
 		if ( ! in_array( $size_title, $image_sizes ) ) {
 			$image_sizes[$size_title] = $size_name;
@@ -240,7 +231,6 @@ function us_woocommerce_image_sizes_select_values( $image_sizes ) {
 }
 
 add_filter( 'woocommerce_checkout_fields', 'us_woocommerce_disable_autofocus_billing_firstname' );
-
 function us_woocommerce_disable_autofocus_billing_firstname( $fields ) {
 	$fields['shipping']['shipping_first_name']['autofocus'] = FALSE;
 

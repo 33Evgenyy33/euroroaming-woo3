@@ -13,6 +13,14 @@ AND ANY CHANGES MADE HERE WILL BE OVERWRITTEN.
 ----------------------------------------------------------------
 */
 
+@font-face {
+	font-family: 'FontAwesome';
+	src: url('../../../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'),
+	url('../../../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	}
+
 body.toplevel_page_us-theme-options {
 	overflow-y: scroll;
 	background-color: #fff;
@@ -118,10 +126,8 @@ button::-moz-focus-inner {
 .usof-button {
 	display: inline-block;
 	vertical-align: top;
-	font-size: 13px;
 	font-weight: 600;
 	line-height: 40px;
-	text-transform: uppercase;
 	margin: 0;
 	padding: 0 30px;
 	cursor: pointer;
@@ -135,7 +141,7 @@ button::-moz-focus-inner {
 	transition: background-color 0.3s, border-color 0.3s, color 0.3s, opacity 0.3s;
 	}
 .usof-button:hover {
-	background-color: #ddd;
+	background-color: #e5e5e5;
 	}
 .usof-button.type_save {
 	box-shadow: none;
@@ -311,26 +317,28 @@ button::-moz-focus-inner {
 }
 .usof-header-logo {
 	flex-shrink: 0;
-	font-size: 17px;
-	font-weight: 300;
+	font-weight: 600;
 	line-height: 60px;
-	text-align: center;
-	width: 200px;
+	padding: 0 42px;
+	width: 180px;
+	white-space: nowrap;
 	background-color: #464b50;
 	color: #b4b9be;
 	}
-	.usof-header-logo .version {
+	.usof-header-logo span {
 		color: #23ccaa;
-		}
-	.usof-header-logo .dash {
-		display: none;
-		margin: 0 10px;
 		}
 .usof-header-title {
 	margin-left: 40px;
 	margin-right: auto;
 	max-width: calc(100vw - 620px);
 	}
+	.usof-header-title span {
+		float: left;
+		font-size: 22px;
+		line-height: 60px;
+		color: #b4b9be;
+		}
 	.usof-header-title h2 {
 		font-size: 22px;
 		line-height: 60px;
@@ -356,7 +364,7 @@ button::-moz-focus-inner {
 	z-index: 12;
 	top: 60px;
 	left: 0;
-	width: 200px;
+	width: 180px;
 	}
 	.usof-nav-bg {
 		position: fixed;
@@ -377,7 +385,7 @@ button::-moz-focus-inner {
 	.usof-nav-list {
 		margin: 0;
 		}
-	@media (min-height: 782px) {	
+	@media (min-height: 724px) {	
 	.usof-nav-list {
 		position: fixed;
 		width: inherit;
@@ -407,7 +415,7 @@ button::-moz-focus-inner {
 					overflow: hidden;
 					}
 			.usof-nav-anchor.level_1 {
-				padding: 13px 10px 13px 44px;
+				padding: 12px 12px 12px 42px;
 				text-decoration: none !important;
 				color: inherit;
 				}
@@ -422,7 +430,7 @@ button::-moz-focus-inner {
 					display: block;
 					position: absolute;
 					z-index: 1;
-					top: 14px;
+					top: 13px;
 					left: 15px;
 					height: 16px;
 					width: 16px;
@@ -505,7 +513,7 @@ button::-moz-focus-inner {
    ========================================================================== */
    
 .usof-content {
-	margin-left: 200px;
+	margin-left: 180px;
 	}
 	.usof-section {
 		position: relative;
@@ -910,24 +918,36 @@ button::-moz-focus-inner {
 /* Form Row Types
    ========================================================================== */
    
+/* Blocked */
+.usof-form-row.blocked .usof-form-row-control {
+	opacity: 0.5;
+	pointer-events: none;
+	}
+
 /* TYPE Heading */
+.usof-form-row.type_heading.sticky {
+	position: sticky;
+	z-index: 1;
+	top: 92px;
+	background: #fff;
+	}
+.usof-form-row + .usof-form-row.type_heading,
+.usof-form-wrapper + .usof-form-row.type_heading {
+	margin-top: 30px;
+	}
 .usof-form-row.type_heading .usof-form-row-title {
 	float: none;
 	width: auto;
 	font-size: 22px;
 	line-height: 1.3;
 	padding: 0 !important;
-	margin-top: 30px;
 	position: relative;
-	}
-.usof-form-row.type_heading:first-child .usof-form-row-title {
-	margin-top: 0 !important;
 	}
 	.usof-form-row.type_heading.with_separator .usof-form-row-title:before {
 		content: '';
 		display: block;
 		position: absolute;
-		top: 50%;
+		bottom: 6px;
 		left: 0;
 		right: 0;
 		height: 1px;
@@ -936,7 +956,7 @@ button::-moz-focus-inner {
 	.usof-form-row.type_heading.with_separator .usof-form-row-title span {
 		display: inline-block;
 		vertical-align: top;
-		padding-right: 20px;
+		padding-right: 15px;
 		position: relative;
 		background-color: #fff;
 		}
@@ -988,7 +1008,7 @@ button::-moz-focus-inner {
 		background-color: #e5e5e5;
 		}
 	.usof-form-row.type_message.color_blue .usof-form-row-desc {
-		background-color: #dbf3ff;
+		background-color: #e1f5ff;
 		}
 	.usof-form-row.type_message.color_green .usof-form-row-desc {
 		background-color: #c9f7b2;
@@ -998,6 +1018,16 @@ button::-moz-focus-inner {
 		}
 	.usof-form-row.type_message.color_yellow .usof-form-row-desc {
 		background-color: #fff2b2;
+		}
+.usof-form-row.type_message.string {
+	margin-top: -10px;
+	padding-top: 0;
+	padding-bottom: 0;
+	}
+	.usof-form-row.type_message.string .usof-form-row-desc {
+		padding: 0;
+		background: none;
+		color: #f90;
 		}
 
 /* TYPE Select */
@@ -1145,19 +1175,18 @@ button::-moz-focus-inner {
 .usof-form-row.type_checkboxes.desc_3 .usof-form-row-desc {
 	top: 4px;
 	}
-.usof-checkbox-list {
-	margin: 0 !important;
+.usof-checkbox-list,
+.usof-checkbox-list:empty + .usof-checkbox-list {
+	margin: 0;
+	}
+.usof-checkbox-list + .usof-checkbox-list {
+	margin-top: 20px;
 	}
 	.usof-checkbox {
 		display: inline-block;
 		vertical-align: top;
 		position: relative;
-		padding: 4px 0;
 		margin: 0 20px 0 0;
-		}
-	.usof-form-row.type_checkboxes.layout_ver .usof-checkbox {
-		display: block;
-		margin: 0;
 		}
 	.usof-checkbox.hidden,
 	.usof-checkbox > input {
@@ -1165,7 +1194,7 @@ button::-moz-focus-inner {
 		}
 		.usof-checkbox > label {
 			display: block;
-			cursor: pointer;
+			padding: 4px 0;
 			}
 			.usof-checkbox-icon {
 				position: absolute;
@@ -1178,9 +1207,11 @@ button::-moz-focus-inner {
 				width: 20px;
 				border-radius: 3px;
 				box-shadow: 0 1px 0 rgba(0,0,0,0.08) inset, 0 0 0 1px rgba(0,0,0,0.015) inset;
-				background-color: #eee;
+				background-color: #f1f1f1;
 				color: #fff;
-				transition: background-color 0.15s;
+				}
+			.usof-checkbox > input:hover + label .usof-checkbox-icon {
+				background-color: #e5e5e5;
 				}
 			.usof-checkbox > input:checked + label .usof-checkbox-icon {
 				background-color: #23ccaa;
@@ -1190,7 +1221,6 @@ button::-moz-focus-inner {
 					position: relative;
 					left: -2px;
 					opacity: 0;
-					transition: opacity 0.15s;
 					}
 				.usof-checkbox > input:checked + label .usof-checkbox-icon:before {
 					opacity: 1;
@@ -1199,12 +1229,74 @@ button::-moz-focus-inner {
 				display: inline-block;
 				vertical-align: top;
 				padding-left: 26px;
-				color: #888;
-				transition: color 0.15s;
 				}
-			.usof-checkbox > input:checked + label .usof-checkbox-text {
-				color: inherit
-				}
+.usof-form-row.type_checkboxes.cols_2,
+.usof-form-row.type_checkboxes.cols_3,
+.usof-form-row.type_checkboxes.cols_4 {
+	width: 100%;
+	}
+	.usof-form-row.type_checkboxes.cols_1 .usof-checkbox {
+		display: block;
+		margin: 0;
+		}
+	.usof-form-row.type_checkboxes.cols_2 .usof-checkbox {
+		margin: 0;
+		width: 50%;
+		}
+	.usof-form-row.type_checkboxes.cols_3 .usof-checkbox {
+		margin: 0;
+		width: 33.3333%;
+		}
+	.usof-form-row.type_checkboxes.cols_4 .usof-checkbox {
+		margin: 0;
+		width: 25%;
+		}
+
+/* TYPE Check Table */
+.usof-checkbox-list-title {
+	font-weight: 600;
+	padding-bottom: 5px;
+	}
+.usof-checkbox-list-title:only-child {
+	display: none;
+	}
+.type_check_table .usof-checkbox {
+	margin: 0;
+	width: 45%;
+	}
+.type_check_table .usof-checkbox:nth-child(2n) {
+	margin-right: 10%;
+	}
+.type_check_table .usof-checkbox label {
+	display: flex;
+	}
+	.type_check_table .usof-checkbox-text {
+		flex: 1 0 auto;
+		position: relative;
+		overflow: hidden;
+		margin-right: 6px;
+		}
+		.type_check_table .usof-checkbox-text span {
+			margin-right: 6px;
+			}
+		.type_check_table .usof-checkbox-text:after {
+			content: '';
+			position: absolute;
+			bottom: 6px;
+			width: 100%;
+			border-bottom: 1px dotted transparent;
+			}
+		.type_check_table label:hover .usof-checkbox-text:after {
+			border-color: #ccc;
+			}
+	.type_check_table .usof-checkbox-size {
+		flex-shrink: 0;
+		color: #999;
+		}
+.usof-checkbox-description {
+	display: none;
+	position: absolute;
+	}
 
 /* TYPE Style Scheme */
 .usof-form-row.type_style_scheme .usof-form-row-title,
@@ -1346,7 +1438,6 @@ button::-moz-focus-inner {
 		width: 30px;
 		cursor: pointer;
 		opacity: 0;
-		transition: opacity 0.15s;
 		}
 	.usof-color:hover .usof-color-clear {
 		opacity: 0.5;
@@ -1364,7 +1455,6 @@ button::-moz-focus-inner {
 	vertical-align: top;
 	font-size: 13px;
 	margin: 8px 15px;
-	transition: color 0.15s;
 	}
 .usof-color.active + .usof-color-text,
 .usof-color:hover + .usof-color-text {
@@ -1463,7 +1553,7 @@ button::-moz-focus-inner {
 			font-size: 16px;
 			line-height: 1.4;
 			padding: 0 25px;
-			margin-bottom: 20px;
+			margin-bottom: 25px;
 			overflow: hidden;
 			background-color: #faf6e1;
 			}
@@ -1477,75 +1567,19 @@ button::-moz-focus-inner {
 			word-spacing: 40px;
 			}
 		.usof-font .usof-checkbox-list {
-			margin-top: 14px !important;
+			margin-top: 6px !important;
 			}
-
-/* TYPE Radio
-.usof-form-row.type_radio .usof-form-row-title {
-	padding-top: 6px;
-	padding-bottom: 6px;
-	}
-.usof-form-row.type_radio.desc_2 .usof-form-row-desc,
-.usof-form-row.type_radio.desc_3 .usof-form-row-desc {
-	top: 4px;
-	}
-.usof-radio-list {
-	margin: 0 !important;
-	}
-	.usof-radio {
-		display: inline-block;
-		vertical-align: top;
-		position: relative;
-		padding: 4px 0;
-		margin: 0 20px 0 0;
-		}
-		.usof-form-row.type_radio.layout_ver .usof-radio {
-			display: block;
-			margin: 0;
-			}
-		.usof-radio > input {
-			display: none;
-			}
-		.usof-radio > label {
-			display: block;
-			cursor: pointer;
-			color: #888;
-			transition: background-color 0.2s, color 0.2s;
-			}
-		.usof-radio > input:checked + label {
-			color: inherit;
-			}
-			.usof-radio-icon {
-				position: absolute;
-				top: 6px;
-				left: 0;
-				height: 20px;
-				width: 20px;
-				border-radius: 50%;
-				box-shadow: 0 1px 0 rgba(0,0,0,0.08) inset, 0 0 0 1px rgba(0,0,0,0.015) inset;
-				background-color: #eee;
+			.usof-font .usof-checkbox {
+				margin: 0 !important;
+				width: 25%;
 				}
-				.usof-radio-icon:before {
+				.usof-font .usof-checkbox-text {
 					display: block;
-					content: '';
-					position: relative;
-					top: 5px;
-					left: 5px;
-					height: 10px;
-					width: 10px;
-					border-radius: 50%;
-					background-color: #23ccaa;
-					opacity: 0;
-					transition: opacity 0.15s;
+					padding-right: 10px;
+					overflow: hidden;
+					white-space: nowrap;
+					text-overflow: ellipsis;
 					}
-				.usof-radio > input:checked + label .usof-radio-icon:before {
-					opacity: 1;
-					}
-			.usof-radio-text {
-				display: inline-block;
-				vertical-align: top;
-				padding-left: 26px;
-				} */
 				
 /* TYPE Radio like Switchers */
 .usof-radio-list {
@@ -1574,10 +1608,14 @@ button::-moz-focus-inner {
 			transition: background-color 0.2s, border-color 0.2s, color 0.2s;
 			white-space: nowrap;
 			}
+		.usof-radio:hover > label {
+			background-color: #e5e5e5;
+			}
 		.usof-radio > input:checked + label {
 			background-color: #23ccaa;
 			border-color: transparent;
 			color: #fff !important;
+			cursor: default;
 			}
 		.usof-radio + .usof-radio > label {
 			border-left-width: 1px;
@@ -2151,12 +2189,12 @@ button::-moz-focus-inner {
 .usof-section[data-id="typography"] .usof-form-wrapper {
 	background: none;
 	border: none;
-	padding: 10px 0 0;
+	padding: 15px 0 0;
 	}
 	.usof-section[data-id="typography"] .usof-form-wrapper-title {
-		font-size: 16px;
+		font-size: 18px;
 		font-weight: 600;
-		padding-bottom: 10px;
+		padding-bottom: 15px;
 		}
 	
 /* Improvements for Custom Code tab */
@@ -2205,31 +2243,23 @@ button::-moz-focus-inner {
 	margin-left: auto;
 	margin-right: 40px;
 	}
+.rtl .usof-header-title span {
+	float: right;
+	}
 .rtl .usof-nav {
 	right: 0;
 	left: auto;
 	}
 .rtl .usof-nav-anchor.level_1 {
-	padding: 13px 46px 13px 0;
-	}
-.rtl .usof-nav-title {
-	margin-left: 20px;
-	margin-right: 0;
+	padding: 12px 42px 12px 12px;
 	}
 .rtl .usof-nav-anchor.level_1 .usof-nav-icon {
 	left: auto;
 	right: 15px;
 	}
-.rtl .usof-nav-item.level_1.has_children .usof-nav-anchor.level_1:after {
-	left: 15px;
-	right: auto;
-	}
-.rtl .usof-nav-anchor.level_2 {
-	padding: 8px 46px 8px 20px;
-	}
 .rtl .usof-content {
 	margin-left: 0;
-	margin-right: 200px;
+	margin-right: 180px;
 	}
 .rtl .usof-container.nav_compact .usof-content {
 	margin-right: 50px;
@@ -2470,6 +2500,13 @@ button::-moz-focus-inner {
 	margin-top: 8px;
 	opacity: 1;
 	}
+.usof-font .usof-checkbox {
+	width: 50%;
+	}
+.type_check_table .usof-checkbox {
+	margin: 0 !important;
+	width: 100% !important;
+	}
 }
 
 @media ( max-width: 782px ) {
@@ -2578,6 +2615,7 @@ button::-moz-focus-inner {
 .usof-checkbox {
 	display: block;
 	margin: 0;
+	width: auto !important;
 	}
 .usof-form-wrapper .usof-form-row.inline {
 	padding-left: 0 !important;

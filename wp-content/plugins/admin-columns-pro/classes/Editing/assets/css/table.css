@@ -1628,7 +1628,7 @@ input[type="button"].btn-block {
  * Action Bar
  * ----------------------------------------------------------------------------
  */
-#cacie-toggle-edit:after {
+.ac-button.ac-button-toggle-edit:after {
   content: "\f119";
   -moz-osx-font-smoothing: grayscale;
   display: inline-block;
@@ -1638,14 +1638,14 @@ input[type="button"].btn-block {
   top: 3px;
   left: 3px; }
 
-#cacie-toggle-edit.active {
+.ac-button.ac-button-toggle-edit.active {
   background: #D54E21;
   color: #fff; }
 
 /**
- * Table
- * ----------------------------------------------------------------------------
- */
+* Table
+* ----------------------------------------------------------------------------
+*/
 table.wp-list-table tbody .cacie-item {
   display: inline-block;
   margin-right: 8px;
@@ -1691,13 +1691,6 @@ table.wp-list-table tbody.cacie-enabled td .cacie-editable {
   position: relative;
   padding-right: 4px;
   word-break: break-all; }
-  table.wp-list-table tbody.cacie-enabled td .cacie-editable.bg-transition {
-    /*background-color: $color-wp-yellow;
-					-webkit-transition: background-color 1400ms ease-out;
-					-moz-transition: background-color 1400ms ease-out;
-					-o-transition: background-color 1400ms ease-out;
-					-ms-transition: background-color 1400ms ease-out;
-					transition: background-color 1400ms ease-out;*/ }
 
 table.wp-list-table tbody.cacie-enabled td.column-order_status .inner {
   display: inline-block; }
@@ -1763,6 +1756,12 @@ table.wp-list-table tbody.cacie-enabled .spinner.cacie-ajax-loading {
   margin-top: -2px;
   z-index: 100; }
 
+table.wp-list-table tbody td.cacie-editable-media .cacie-editable .ac-image-container .cacie-item {
+  display: inline-block;
+  margin-right: 0;
+  margin-bottom: 0;
+  float: none; }
+
 table.wp-list-table tbody .cac-subfield {
   display: inline-block; }
   table.wp-list-table tbody .cac-subfield.cac-subfield-newline {
@@ -1818,7 +1817,7 @@ table.wp-list-table tbody .cac-subfield {
     min-height: 30px; }
     .wp-list-table #the-list .is-expanded td.cacie-editable-container .editable-container.popover {
       position: relative;
-      margin-left: calc( -30vw);
+      margin-left: calc(-30vw);
       width: calc(85vw - 30px);
       left: 0 !important; }
       .wp-list-table #the-list .is-expanded td.cacie-editable-container .editable-container.popover .arrow {

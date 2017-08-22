@@ -381,11 +381,17 @@ class ACP_Filtering_TableScreen {
 			// Range inputs or select dropdown
 			if ( $model->is_ranged() ) {
 
+				$label = $column->get_setting( 'label' )->get_value();
+
+				if ( $filter_label = $column->get_setting( 'filter' )->get_value( 'filter_label' ) ) {
+					$label = $filter_label;
+				}
+
 				switch ( $model->get_data_type() ) {
 					case 'date' :
 						$this->display_range( array(
 							'name'      => $column->get_name(),
-							'label'     => $column->get_setting( 'label' )->get_value(),
+							'label'     => $label,
 							'type'      => 'date',
 							'label_min' => __( 'Start date', 'codepress-admin-columns' ),
 							'label_max' => __( 'End date', 'codepress-admin-columns' ),
@@ -394,7 +400,7 @@ class ACP_Filtering_TableScreen {
 					case 'numeric' :
 						$this->display_range( array(
 							'name'       => $column->get_name(),
-							'label'      => $column->get_setting( 'label' )->get_value(),
+							'label'      => $label,
 							'type'       => 'number',
 							'label_min'  => __( 'Min', 'codepress-admin-columns' ),
 							'label_max'  => __( 'Max', 'codepress-admin-columns' ),

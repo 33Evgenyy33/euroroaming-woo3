@@ -10,7 +10,7 @@
  */
 vc_map(
 	array(
-		'name' => __( 'Contacts', 'us' ),
+		'name' => us_translate( 'Contact Info' ),
 		'base' => 'us_contacts',
 		'deprecated' => 3.9,
 		'weight' => 140,

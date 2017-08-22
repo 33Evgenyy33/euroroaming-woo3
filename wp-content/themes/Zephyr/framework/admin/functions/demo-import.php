@@ -19,13 +19,23 @@ function us_demo_import() {
 		return;
 	}
 	reset( $config );
-	$default_demo = key( $config );
+
+	if ( is_plugin_active( 'wordpress-importer/wordpress-importer.php' ) ) {
+		deactivate_plugins( 'wordpress-importer/wordpress-importer.php' );
+	}
+
+	$update_notification = '';
+	$update_themes = get_site_transient( 'update_themes' );
+	if ( ! empty( $update_themes->response ) AND isset( $update_themes->response[US_THEMENAME] ) ) {
+		$update_notification = '<p class="us-admin-subtitle">' . __( 'Some of demo data may be imported incorrectly, because you are using outdated Impreza version. Update the theme to import demos without possible issues.', 'us' ) . '</p>';
+	}
 	?>
 
 	<form class="w-importer" action="?page=us-demo-import" method="post">
 
 		<h1 class="us-admin-title"><?php _e( 'Choose the demo for import', 'us' ) ?></h1>
 		<p class="us-admin-subtitle"><?php _e( 'The images used in live demos will be replaced by placeholders due to copyright/license reasons.', 'us' ) ?></p>
+		<?php echo $update_notification; ?>
 
 		<div class="w-importer-list">
 
@@ -170,7 +180,7 @@ function us_demo_import() {
 
 		<?php
 		if ( ! ( get_option( 'us_license_activated', 0 ) OR ( defined( 'US_DEV' ) AND US_DEV ) ) ) {
-			?><div class="us-screenlock"><div><?php echo sprintf( __( '<a href="%s">Activate the theme</a> to unlock Demo Import', 'us' ), admin_url( 'admin.php?page=us-home' ) ) ?></div></div><?php
+			?><div class="us-screenlock"><div><?php echo sprintf( __( '<a href="%s">Activate the theme</a> to unlock Demo Import', 'us' ), admin_url( 'admin.php?page=us-home#activation' ) ) ?></div></div><?php
 		}
 		?>
 
@@ -362,6 +372,46 @@ function us_demo_import_content_all() {
 	}
 
 	if ( $file_copied ) {
+		// Mega menu import filters and actions - START
+		add_filter( 'wp_import_post_data_raw', 'us_demo_import_all_wp_import_post_data_raw' );
+		function us_demo_import_all_wp_import_post_data_raw ( $post ) {
+			global $us_demo_import_mega_menu_data;
+
+			if ( $post['post_type'] != 'nav_menu_item' ) {
+				return $post;
+			}
+
+			if ( isset( $post['postmeta'] ) AND is_array( $post['postmeta'] ) ) {
+				foreach ( $post['postmeta'] as $postmeta ) {
+					if ( is_array( $postmeta ) AND isset( $postmeta['key'] ) AND $postmeta['key'] == 'us_mega_menu_settings' AND ! empty( $postmeta['value'] ) ) {
+						if ( ! isset( $us_demo_import_mega_menu_data ) OR ! is_array( $us_demo_import_mega_menu_data ) ) {
+							$us_demo_import_mega_menu_data = array();
+						}
+
+						$us_demo_import_mega_menu_data[intval( $post['post_id'] )] = $postmeta['value'];
+					}
+				}
+
+			}
+
+			return $post;
+		}
+		
+		add_action( 'import_end', us_demo_import_all_import_end );
+		function us_demo_import_all_import_end () {
+			global $wp_import, $us_demo_import_mega_menu_data;
+
+			if ( is_array( $us_demo_import_mega_menu_data ) ) {
+				foreach ( $us_demo_import_mega_menu_data as $menu_import_id => $mega_menu_data ) {
+					if ( ! empty( $wp_import->processed_menu_items[$menu_import_id] ) ) {
+						update_post_meta( intval( $wp_import->processed_menu_items[$menu_import_id] ), 'us_mega_menu_settings', maybe_unserialize( $mega_menu_data ) );
+					}
+				}
+			}
+
+		}
+		// Mega menu import filters and actions - END
+
 		us_demo_import_content( $file_path );
 		unlink( $file_path );
 
@@ -637,7 +687,7 @@ function us_demo_import_content_testimonials() {
 }
 
 function us_demo_import_content( $file ) {
-	global $us_template_directory;
+	global $us_template_directory, $wp_import;
 
 	set_time_limit( 0 );
 
@@ -645,7 +695,10 @@ function us_demo_import_content( $file ) {
 		define( 'WP_LOAD_IMPORTERS', TRUE );
 	}
 
-	require_once( $us_template_directory . '/framework/vendor/wordpress-importer/wordpress-importer.php' );
+	if ( ! class_exists( 'WP_Import' ) ) {
+		require_once( $us_template_directory . '/framework/vendor/wordpress-importer/wordpress-importer.php' );
+	}
+
 
 	$wp_import = new WP_Import();
 	$wp_import->fetch_attachments = TRUE;
@@ -790,7 +843,9 @@ function us_demo_import_woocommerce() {
 	}
 
 	if ( $file_copied ) {
-		require_once( $us_template_directory . '/framework/vendor/wordpress-importer/wordpress-importer.php' );
+		if ( ! class_exists( 'WP_Import' ) ) {
+			require_once( $us_template_directory . '/framework/vendor/wordpress-importer/wordpress-importer.php' );
+		}
 
 		$wp_import = new WP_Import();
 		$wp_import->fetch_attachments = TRUE;

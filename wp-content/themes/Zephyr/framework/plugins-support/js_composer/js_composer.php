@@ -229,11 +229,11 @@ function us_image_sizes_select_values( $size_names = NULL ) {
 		if ( $size_name != 'full' ) {
 			// Detecting size
 			$size = us_get_intermediate_image_size( $size_name );
-			$size_title = ( ( $size['width'] == 0 ) ? __( 'Any', 'us' ) : $size['width'] );
+			$size_title = ( ( $size['width'] == 0 ) ? __( 'any', 'us' ) : $size['width'] );
 			$size_title .= ' x ';
-			$size_title .= ( $size['height'] == 0 ) ? __( 'Any', 'us' ) : $size['height'];
+			$size_title .= ( $size['height'] == 0 ) ? __( 'any', 'us' ) : $size['height'];
 			if ( $size['crop'] ) {
-				$size_title .= ' (' . __( 'cropped', 'us' ) . ')';
+				$size_title .= ' ' . __( 'cropped', 'us' );
 			}
 		}
 		$image_sizes[$size_title] = $size_name;
@@ -248,11 +248,11 @@ function us_image_sizes_select_values( $size_names = NULL ) {
 			$width = ( ! empty( $size['width'] ) AND intval( $size['width'] ) > 0 ) ? intval( $size['width'] ) : 0;
 			$height = ( ! empty( $size['height'] ) AND intval( $size['height'] ) > 0 ) ? intval( $size['height'] ) : 0;
 			
-			$size_title = ( ( $width == 0 ) ? __( 'Any', 'us' ) : $width );
+			$size_title = ( ( $width == 0 ) ? __( 'any', 'us' ) : $width );
 			$size_title .= ' x ';
-			$size_title .= ( $height == 0 ) ? __( 'Any', 'us' ) : $height;
+			$size_title .= ( $height == 0 ) ? __( 'any', 'us' ) : $height;
 			if ( $crop ) {
-				$size_title .= ' (' . __( 'cropped', 'us' ) . ')';
+				$size_title .= ' ' . __( 'cropped', 'us' );
 			}
 
 			$image_sizes[$size_title] = $size_name;
@@ -367,3 +367,20 @@ function us_hide_js_composer_activation_notice() {
 	</script>
 	<?php
 }
+
+// Removing support for headers
+add_filter( 'vc_settings_exclude_post_type', 'us_vc_settings_exclude_post_type' );
+function us_vc_settings_exclude_post_type( $types ) {
+	$types[] = 'us_header';
+
+	return $types;
+}
+
+add_action( 'current_screen', 'us_header_vc_check_post_type_validation_fix' );
+function us_header_vc_check_post_type_validation_fix( $current_screen ) {
+	global $pagenow;
+	if ( $pagenow == 'post.php' AND $current_screen->post_type == 'us_header' ) {
+		add_filter( 'vc_check_post_type_validation', '__return_false', 12 );
+	}
+}
+

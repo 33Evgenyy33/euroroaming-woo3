@@ -10,7 +10,7 @@ class AC_Settings_Column_PostLink extends AC_Settings_Column
 	/**
 	 * @var string
 	 */
-	private $post_link_to;
+	protected $post_link_to;
 
 	protected function define_options() {
 		return array(
@@ -60,7 +60,7 @@ class AC_Settings_Column_PostLink extends AC_Settings_Column
 		return $view;
 	}
 
-	private function get_display_options() {
+	protected function get_display_options() {
 		$options = array(
 			'edit_post'   => __( 'Edit Post' ),
 			'view_post'   => __( 'View Post' ),

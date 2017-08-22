@@ -26,6 +26,7 @@ vc_map(
 	array(
 		'base' => 'us_portfolio',
 		'name' => __( 'Portfolio', 'us' ),
+		'description' => '',
 		'category' => us_translate( 'Content', 'js_composer' ),
 		'weight' => 250,
 		'params' => array(

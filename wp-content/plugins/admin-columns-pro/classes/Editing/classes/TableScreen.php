@@ -346,12 +346,7 @@ class ACP_Editing_TableScreen {
 			}
 
 			if ( ! $rows ) {
-				$rows = wp_cache_get( $column->get_list_screen()->get_storage_key(), 'editable-rows' );
-
-				if ( ! $rows ) {
-					$rows = $editing->get_strategy()->get_rows();
-					wp_cache_add( $column->get_list_screen()->get_storage_key(), $editing->get_strategy()->get_rows(), 'editable-rows', 60 );
-				}
+				$rows = $editing->get_strategy()->get_rows();
 			}
 
 			$view_data = $editing->get_view_settings();

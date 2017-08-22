@@ -124,7 +124,7 @@ class ACP_Editing_Addon {
 				__( 'Inline edit will display all the raw values in an editable text field.', 'codepress-admin-columns' ),
 				sprintf(
 					__( "Please read <a href='%s'>our documentation</a> if you plan to use these fields.", 'codepress-admin-columns' ),
-					ac_get_site_utm_url( 'documentation', 'general-settings' ) . 'faq/enable-inline-editing-custom-fields/'
+					ac_get_site_utm_url( 'documentation/faq/enable-inline-editing-custom-fields/', 'general-settings' )
 				)
 			),
 		) );

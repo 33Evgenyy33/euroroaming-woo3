@@ -126,6 +126,5 @@ $template_vars = array(
 	'filter' => $atts['filter'],
 	'filter_style' => $atts['filter_style'],
 	'categories' => $atts['categories'],
-	'is_shortcode' => TRUE,
 );
 us_load_template( 'templates/blog/listing', $template_vars );

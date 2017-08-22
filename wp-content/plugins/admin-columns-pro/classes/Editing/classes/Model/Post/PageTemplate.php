@@ -22,6 +22,8 @@ class ACP_Editing_Model_Post_PageTemplate extends ACP_Editing_Model {
 
 	public function save( $id, $value ) {
 		update_post_meta( $id, '_wp_page_template', $value );
+
+		acp_editing_helper()->update_post_last_modified( $id );
 	}
 
 }

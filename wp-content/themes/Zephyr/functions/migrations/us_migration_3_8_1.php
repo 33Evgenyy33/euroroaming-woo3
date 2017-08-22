@@ -7,33 +7,35 @@ class us_migration_3_8_1 extends US_Migration_Translator {
 		$layers_changed = FALSE;
 
 		global $wpdb;
-		$wpdb_query = 'SELECT `id`, `layers` FROM `' . $wpdb->prefix . 'revslider_slides`';
+		if($wpdb->get_var('SHOW TABLES LIKE "' . $wpdb->prefix . 'revslider_slides"') == $wpdb->prefix . 'revslider_slides' ) {
+			$wpdb_query = 'SELECT `id`, `layers` FROM `' . $wpdb->prefix . 'revslider_slides`';
 
-		foreach ( $wpdb->get_results( $wpdb_query ) as $row ) {
-			$layers = $row->layers;
+			foreach ( $wpdb->get_results( $wpdb_query ) as $row ) {
+				$layers = $row->layers;
 
-			$layers = json_decode( $layers, TRUE );
+				$layers = json_decode( $layers, TRUE );
 
-			foreach ( $layers as $id => $layer ) {
-				if ( ! empty( $layer['text'] ) ) {
-					$layer_text = $layer['text'];
-					$text_changed = $this->_translate_content( $layer_text );
-					if ( $text_changed ) {
-						$layers[$id]['text'] = $layer_text;
-						$layers_changed = TRUE;
+				foreach ( $layers as $id => $layer ) {
+					if ( ! empty( $layer['text'] ) ) {
+						$layer_text = $layer['text'];
+						$text_changed = $this->_translate_content( $layer_text );
+						if ( $text_changed ) {
+							$layers[$id]['text'] = $layer_text;
+							$layers_changed = TRUE;
+						}
 					}
 				}
-			}
 
-			if ( $layers_changed ) {
-				$layers = json_encode( $layers );
-				$wpdb->update(
-					$wpdb->prefix . 'revslider_slides', array(
-					'layers' => $layers,
-				), array(
-						'id' => $row->id,
-					)
-				);
+				if ( $layers_changed ) {
+					$layers = json_encode( $layers );
+					$wpdb->update(
+						$wpdb->prefix . 'revslider_slides', array(
+						'layers' => $layers,
+					), array(
+							'id' => $row->id,
+						)
+					);
+				}
 			}
 		}
 

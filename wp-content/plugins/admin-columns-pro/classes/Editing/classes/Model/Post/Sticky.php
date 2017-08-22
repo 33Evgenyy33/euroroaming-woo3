@@ -25,6 +25,8 @@ class ACP_Editing_Model_Post_Sticky extends ACP_Editing_Model {
 		} else {
 			unstick_post( $id );
 		}
+
+		acp_editing_helper()->update_post_last_modified( $id );
 	}
 
 }

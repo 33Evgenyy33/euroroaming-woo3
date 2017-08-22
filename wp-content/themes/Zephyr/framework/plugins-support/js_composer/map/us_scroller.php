@@ -12,6 +12,7 @@ vc_map(
 	array(
 		'base' => 'us_scroller',
 		'name' => __( 'Page Scroller', 'us' ),
+		'description' => '',
 		'category' => us_translate( 'Content', 'js_composer' ),
 		'weight' => 115,
 		'params' => array(
