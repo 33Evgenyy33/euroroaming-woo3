@@ -227,3 +227,38 @@ Stack trace:
 #4 F:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\actions.php(23): do_action('affwp_download_...', Array)
 #5 F:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(298): affwp_do_actions('')
 #6 F:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(323): WP_Hook->apply_filt in F:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php on line 254
+[30-Aug-2017 08:09:23 UTC] WP_Community_Events::maybe_log_events_response: Valid response received. Details: {"api_url":"https:\/\/api.wordpress.org\/events\/1.0\/","request_args":{"body":{"number":5,"ip":"127.0.0.0","locale":"ru_RU","timezone":"Europe\/Moscow"}},"response_code":200,"response_body":{"location":{"ip":"94.181.179.216"},"events":"0 events trimmed."}}
+[30-Aug-2017 08:37:38 UTC] PHP Notice:  Undefined offset: 0 in F:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php on line 235
+[30-Aug-2017 08:37:38 UTC] PHP Fatal error:  Uncaught PHPExcel_Exception: Parameter $source should be an array. in F:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\Classes\PHPExcel\Worksheet.php:2446
+Stack trace:
+#0 F:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php(235): PHPExcel_Worksheet->fromArray(NULL, NULL, 'A2')
+#1 F:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\tools.php(693): AffWP\Utils\Batch_Process\Export->export()
+#2 F:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(298): affwp_process_batch_export_download(Array)
+#3 F:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(323): WP_Hook->apply_filters('', Array)
+#4 F:\OpenServer\domains\euroroaming\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#5 F:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\actions.php(23): do_action('affwp_download_...', Array)
+#6 F:\OpenServe in F:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\Classes\PHPExcel\Worksheet.php on line 2446
+[30-Aug-2017 08:38:26 UTC] PHP Notice:  Undefined offset: 0 in F:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php on line 237
+[30-Aug-2017 08:38:26 UTC] PHP Fatal error:  Uncaught PHPExcel_Exception: Parameter $source should be an array. in F:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\Classes\PHPExcel\Worksheet.php:2446
+Stack trace:
+#0 F:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php(237): PHPExcel_Worksheet->fromArray(NULL, NULL, 'A2')
+#1 F:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\tools.php(693): AffWP\Utils\Batch_Process\Export->export()
+#2 F:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(298): affwp_process_batch_export_download(Array)
+#3 F:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(323): WP_Hook->apply_filters('', Array)
+#4 F:\OpenServer\domains\euroroaming\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#5 F:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\actions.php(23): do_action('affwp_download_...', Array)
+#6 F:\OpenServe in F:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\Classes\PHPExcel\Worksheet.php on line 2446
+[30-Aug-2017 11:29:04 UTC] PHP Notice:  Undefined index: billing_partner in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 719
+[30-Aug-2017 11:29:04 UTC] PHP Notice:  Undefined index: actual_address in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 720
+[30-Aug-2017 11:29:04 UTC] PHP Notice:  Undefined index: promocod_partner in F:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 721
+[30-Aug-2017 13:50:49 UTC] PHP Notice:  Undefined offset: 1 in F:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php on line 213
+[30-Aug-2017 13:50:49 UTC] PHP Notice:  Undefined offset: 0 in F:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php on line 214
+[30-Aug-2017 13:50:49 UTC] PHP Fatal error:  Uncaught PHPExcel_Exception: Parameter $source should be an array. in F:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\Classes\PHPExcel\Worksheet.php:2446
+Stack trace:
+#0 F:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php(240): PHPExcel_Worksheet->fromArray(NULL, NULL, 'A2')
+#1 F:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\tools.php(693): AffWP\Utils\Batch_Process\Export->export()
+#2 F:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(298): affwp_process_batch_export_download(Array)
+#3 F:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(323): WP_Hook->apply_filters('', Array)
+#4 F:\OpenServer\domains\euroroaming\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#5 F:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\actions.php(23): do_action('affwp_download_...', Array)
+#6 F:\OpenServe in F:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\Classes\PHPExcel\Worksheet.php on line 2446
