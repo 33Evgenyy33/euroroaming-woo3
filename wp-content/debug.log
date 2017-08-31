@@ -262,3 +262,4 @@ Stack trace:
 #4 F:\OpenServer\domains\euroroaming\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
 #5 F:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\actions.php(23): do_action('affwp_download_...', Array)
 #6 F:\OpenServe in F:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\Classes\PHPExcel\Worksheet.php on line 2446
+[31-Aug-2017 10:24:39 UTC] WP_Community_Events::maybe_log_events_response: Valid response received. Details: {"api_url":"https:\/\/api.wordpress.org\/events\/1.0\/","request_args":{"body":{"number":5,"ip":"127.0.0.0","locale":"ru_RU","timezone":"Europe\/Moscow"}},"response_code":200,"response_body":{"location":{"ip":"94.181.179.216"},"events":"0 events trimmed."}}

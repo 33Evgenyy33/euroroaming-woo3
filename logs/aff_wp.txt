@@ -53,3 +53,58 @@ Array
 )
 
 ==========================================
+Array
+(
+    [0] => Array
+        (
+            [campaign] => 
+            [email] => test17@ya.ru
+            [coupon] => andrew
+            [description] => Orange с тарифом «Mundo» для Европы - [1 шт.] 
+            [reference] => http://euroroaming/wp-admin/post.php?post=61097&action=edit
+            [amount] => 500.00
+            [date] => 2017-08-30 11:29:39
+        )
+
+    [1] => Array
+        (
+            [campaign] => 
+            [email] => test17@ya.ru
+            [coupon] => без промокода
+            [description] => Orange с тарифом «Mundo» для Европы - [7 шт.] GLOBALSIM - самые дешевые тарифы для звонков из Европы в Россию - Nano SIM - [3 шт.] 
+            [reference] => http://euroroaming/wp-admin/post.php?post=61024&action=edit
+            [amount] => 4250.00
+            [date] => 2017-07-28 22:47:45
+        )
+
+    [2] => Array
+        (
+            [campaign] => 
+            [email] => test17@ya.ru
+            [coupon] => без промокода
+            [description] => Orange с тарифом «Mundo» для Европы (Variation ID 59096)
+ GLOBALSIM - самые дешевые тарифы для звонков из Европы в Россию - Nano SIM (Variation ID 59053)
+            [reference] => http://euroroaming/wp-admin/post.php?post=61023&action=edit
+            [amount] => 750.00
+            [date] => 2017-07-28 22:33:37
+        )
+
+    [3] => Array
+        (
+            [campaign] => 
+            [email] => test17@ya.ru
+            [coupon] => без промокода
+            [description] => Orange с тарифом «Mundo» для Европы (Variation ID 59096)
+            [reference] => http://euroroaming/wp-admin/post.php?post=61022&action=edit
+            [amount] => 500.00
+            [date] => 2017-07-28 22:30:21
+        )
+
+)
+
+==========================================
+Array
+(
+)
+
+==========================================
