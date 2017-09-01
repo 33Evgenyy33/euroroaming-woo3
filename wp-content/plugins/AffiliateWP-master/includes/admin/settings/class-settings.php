@@ -9,7 +9,7 @@ class Affiliate_WP_Settings {
 	 *
 	 * @since 1.0
 	 * @return void
-	*/
+	 */
 	public function __construct() {
 
 		$this->options = get_option( 'affwp_settings', array() );
@@ -139,7 +139,7 @@ class Affiliate_WP_Settings {
 	 *
 	 * @since 1.0
 	 * @return array
-	*/
+	 */
 	public function get_all() {
 		return $this->options;
 	}
@@ -149,7 +149,7 @@ class Affiliate_WP_Settings {
 	 *
 	 * @since 1.0
 	 * @return void
-	*/
+	 */
 	function register_settings() {
 
 		if ( false == get_option( 'affwp_settings' ) ) {
@@ -209,7 +209,7 @@ class Affiliate_WP_Settings {
 	 *
 	 * @since 1.0
 	 * @return array
-	*/
+	 */
 	function sanitize_settings( $input = array() ) {
 
 		if ( empty( $_POST['_wp_http_referer'] ) ) {
@@ -319,7 +319,7 @@ class Affiliate_WP_Settings {
 	 *
 	 * @since 1.7
 	 * @return string
-	*/
+	 */
 	public function sanitize_referral_variable( $value = '', $key = '' ) {
 
 		if( 'referral_var' === $key ) {
@@ -346,7 +346,7 @@ class Affiliate_WP_Settings {
 	 *
 	 * @since 1.7
 	 * @return string
-	*/
+	 */
 	public function sanitize_text_fields( $value = '', $key = '' ) {
 		return sanitize_text_field( $value );
 	}
@@ -356,7 +356,7 @@ class Affiliate_WP_Settings {
 	 *
 	 * @since 1.7.15
 	 * @return string
-	*/
+	 */
 	public function sanitize_url_fields( $value = '', $key = '' ) {
 		return sanitize_text_field( $value );
 	}
@@ -366,7 +366,7 @@ class Affiliate_WP_Settings {
 	 *
 	 * @since 1.7
 	 * @return int
-	*/
+	 */
 	public function sanitize_cb_fields( $value = '', $key = '' ) {
 		return absint( $value );
 	}
@@ -376,7 +376,7 @@ class Affiliate_WP_Settings {
 	 *
 	 * @since 1.7
 	 * @return int
-	*/
+	 */
 	public function sanitize_number_fields( $value = '', $key = '' ) {
 		return floatval( $value );
 	}
@@ -386,7 +386,7 @@ class Affiliate_WP_Settings {
 	 *
 	 * @since 1.7
 	 * @return int
-	*/
+	 */
 	public function sanitize_rich_editor_fields( $value = '', $key = '' ) {
 		return wp_kses_post( $value );
 	}
@@ -396,7 +396,7 @@ class Affiliate_WP_Settings {
 	 *
 	 * @since 1.9
 	 * @return string
-	*/
+	 */
 	public function option_page_capability( $capability ) {
 		return 'manage_affiliate_options';
 	}
@@ -406,7 +406,7 @@ class Affiliate_WP_Settings {
 	 *
 	 * @since 1.0
 	 * @return array
-	*/
+	 */
 	function get_registered_settings() {
 
 		// get currently logged in username
@@ -1394,7 +1394,7 @@ class Affiliate_WP_Settings {
 
 	}
 
-	public function check_license() {
+	public function check_license( $force = false ) {
 
 		if( ! empty( $_POST['affwp_settings'] ) ) {
 			return; // Don't fire when saving settings
@@ -1405,8 +1405,7 @@ class Affiliate_WP_Settings {
 		$request_url = 'https://affiliatewp.com';
 
 		// Run the license check a maximum of once per day
-		if( false === $status && site_url() !== $request_url ) {
-
+		if( ( false === $status || $force ) && site_url() !== $request_url ) {
 			// data to send in our API request
 			$api_params = array(
 				'edd_action'=> 'check_license',

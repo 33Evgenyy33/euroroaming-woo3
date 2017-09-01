@@ -1,8 +1,23 @@
 <?php
 namespace AffWP\Utils\Batch_Process;
 
+use PHPExcel_IOFactory;
+use PHPExcel_Style_Alignment;
+use PHPExcel_Style_Border;
+use PHPExcel_Style_Fill;
+use PHPExcel_Writer_Excel2007;
+
 if ( ! class_exists( '\Affiliate_WP_Export' ) ) {
 	require_once AFFILIATEWP_PLUGIN_DIR . 'includes/admin/tools/export/class-export.php';
+}
+
+error_reporting( E_ALL );
+ini_set( 'display_errors', true );
+ini_set( 'display_startup_errors', true );
+//date_default_timezone_set('Europe/London');
+
+if ( PHP_SAPI == 'cli' ) {
+	die( 'This example should only be run from a Web Browser' );
 }
 
 /**
@@ -193,24 +208,220 @@ class Export extends \Affiliate_WP_Export {
 	 * @since  2.0
 	 */
 	public function export() {
-		if ( ! $this->can_export() ) {
-			wp_die(
-				__( 'You do not have permission to export data.', 'affiliate-wp' ),
-				__( 'Error', 'affiliate-wp' ),
-				array( 'response' => 403 )
-			);
+		$all_date1 = $this->get_stat_affil();
+		$data          = $all_date1[1];
+		$summary_table = $all_date1[0];
+		$cols          = $this->get_csv_cols();
+		//$summary_table = $this->get_stat_affil();
+
+//		file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/aff_wp.txt", print_r( $data, true ), FILE_APPEND | LOCK_EX );
+//		file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/aff_wp.txt", print_r( "\n", true ), FILE_APPEND | LOCK_EX );
+
+		//print_r($test);
+
+
+		$objPHPExcel = new \PHPExcel();
+
+		$objPHPExcel->getProperties()->setCreator( "Euroroaming" )
+		            ->setLastModifiedBy( "Euroroaming" )
+		            ->setTitle( "Office 2007 XLSX Test Document" )
+		            ->setSubject( "Office 2007 XLSX Test Document" )
+		            ->setDescription( "Test document for Office 2007 XLSX, generated using PHP classes." )
+		            ->setKeywords( "office 2007 openxml php" )
+		            ->setCategory( "Report Euroroaming" );
+
+
+		/****************************Лист Рефералы**************************************************/
+
+		$objPHPExcel->setActiveSheetIndex( 0 );
+
+		$objPHPExcel->getActiveSheet()->fromArray( $cols, null, 'A1' );
+		$objPHPExcel->getActiveSheet()->fromArray( $data, null, 'A2' );
+
+
+		$objPHPExcel->getActiveSheet()->setAutoFilter( $objPHPExcel->getActiveSheet()->calculateWorksheetDimension() );
+
+		$objPHPExcel->getActiveSheet()->getColumnDimension( 'A' )->setWidth( 20 );
+		$objPHPExcel->getActiveSheet()->getColumnDimension( 'D' )->setWidth( 30 );
+		$objPHPExcel->getActiveSheet()->getColumnDimension( 'E' )->setWidth( 30 );
+
+		$objPHPExcel->getActiveSheet()->getColumnDimension( 'B' )->setAutoSize( true );
+		$objPHPExcel->getActiveSheet()->getColumnDimension( 'C' )->setAutoSize( true );
+		$objPHPExcel->getActiveSheet()->getColumnDimension( 'F' )->setAutoSize( true );
+		$objPHPExcel->getActiveSheet()->getColumnDimension( 'G' )->setAutoSize( true );
+
+		$objPHPExcel->getActiveSheet()->getStyle( 'A1:A' . $objPHPExcel->getActiveSheet()->getHighestRow() )->getAlignment()->setWrapText( true );
+		$objPHPExcel->getActiveSheet()->getStyle( 'D1:D' . $objPHPExcel->getActiveSheet()->getHighestRow() )->getAlignment()->setWrapText( true );
+		$objPHPExcel->getActiveSheet()->getStyle( 'E1:E' . $objPHPExcel->getActiveSheet()->getHighestRow() )->getAlignment()->setWrapText( true );
+
+		$objPHPExcel->getActiveSheet()->getStyle( 'A1:A500' )->getAlignment()->setHorizontal( PHPExcel_Style_Alignment::HORIZONTAL_LEFT )->setVertical( PHPExcel_Style_Alignment::VERTICAL_TOP );
+		$objPHPExcel->getActiveSheet()->getStyle( 'B1:B500' )->getAlignment()->setHorizontal( PHPExcel_Style_Alignment::HORIZONTAL_LEFT )->setVertical( PHPExcel_Style_Alignment::VERTICAL_TOP );
+		$objPHPExcel->getActiveSheet()->getStyle( 'C1:C500' )->getAlignment()->setHorizontal( PHPExcel_Style_Alignment::HORIZONTAL_LEFT )->setVertical( PHPExcel_Style_Alignment::VERTICAL_TOP );
+		$objPHPExcel->getActiveSheet()->getStyle( 'D1:D500' )->getAlignment()->setHorizontal( PHPExcel_Style_Alignment::HORIZONTAL_LEFT )->setVertical( PHPExcel_Style_Alignment::VERTICAL_TOP );
+		$objPHPExcel->getActiveSheet()->getStyle( 'E1:E500' )->getAlignment()->setHorizontal( PHPExcel_Style_Alignment::HORIZONTAL_LEFT )->setVertical( PHPExcel_Style_Alignment::VERTICAL_TOP );
+		$objPHPExcel->getActiveSheet()->getStyle( 'F1:F500' )->getAlignment()->setHorizontal( PHPExcel_Style_Alignment::HORIZONTAL_RIGHT )->setVertical( PHPExcel_Style_Alignment::VERTICAL_TOP );
+		$objPHPExcel->getActiveSheet()->getStyle( 'G1:G500' )->getAlignment()->setHorizontal( PHPExcel_Style_Alignment::HORIZONTAL_RIGHT )->setVertical( PHPExcel_Style_Alignment::VERTICAL_TOP );
+
+		$objPHPExcel->getActiveSheet()->getStyle( 'A1:G1' )->applyFromArray( array(
+			'fill' => array(
+				'type'  => PHPExcel_Style_Fill::FILL_SOLID,
+				'color' => array( 'rgb' => '4F81BD' )
+			)
+		) );
+		$objPHPExcel->getActiveSheet()->getStyle( "A1:G1" )->getFont()->setBold( true )->getColor()->setRGB( 'FFFFFF' );
+
+		$objPHPExcel->getActiveSheet()->freezePane( 'H2' );
+
+		$objPHPExcel->getActiveSheet()->getStyle( 'F1:F500' )->getNumberFormat()->setFormatCode( '#,##0.00' );
+
+		$objPHPExcel->getActiveSheet()->setTitle( 'Рефералы' );
+
+
+		/****************************Лист Сводная Таблица**************************************************/
+
+		$objPHPExcel->createSheet();
+
+		$objPHPExcel->setActiveSheetIndex( 1 );
+
+		$summary_table_title = array(
+			'Партнер',
+			'Email',
+			'Сим-карты',
+			'Кол-во сим-карт',
+			'К выплате',
+			'Платежные реквизиты'
+		);
+
+		/*******************************
+		 * Orange - 58961
+		 * Vodafone - 58981
+		 * Ortel - 58995
+		 * EuropaSim - 59104
+		 * Globalsim - 59021
+		 * Globalsim Internet - 59004
+		 * Globalsim USA - 59135
+		 * TravelChat - 59130
+		 * Three - 59140
+		 * ******************************/
+		$sim_cards = array(
+			'Orange',
+			'Vodafone',
+			'Ortel',
+			'EuropaSim',
+			'Globalsim',
+			'Globalsim Internet',
+			'Globalsim USA',
+			'TravelChat',
+			'Three'
+		);
+
+		$sim_cards_numbers = array( '58961', '58981', '58995', '59104', '59021', '59004', '59135', '59130', '59140' );
+
+		$objPHPExcel->getActiveSheet()->fromArray( $summary_table_title, null, 'A1' );
+		$objPHPExcel->getActiveSheet()->getColumnDimension( 'F' )->setWidth( 35 );
+
+
+		$i = 2;
+		foreach ( $summary_table as $affiliate ) {
+			$objPHPExcel->getActiveSheet()->setCellValue( 'A' . $i, $affiliate['campaign'] );
+			$objPHPExcel->getActiveSheet()->setCellValue( 'B' . $i, $affiliate['email'] );
+
+			$j = $i;
+			$k = 0;
+			foreach ( $sim_cards as $sim_card ) {
+				$objPHPExcel->getActiveSheet()->setCellValue( 'C' . $j, $sim_card );
+				$objPHPExcel->getActiveSheet()->setCellValue( 'D' . $j, $affiliate['simcards_qty'][ $sim_cards_numbers[ $k ] ] );
+				$k ++;
+				$j ++;
+			}
+
+			$objPHPExcel->getActiveSheet()->setCellValue( 'E' . $i, $affiliate['amount'] );
+			$objPHPExcel->getActiveSheet()->setCellValue( 'F' . $i, $affiliate['payment_details'] );
+
+			$objPHPExcel->getActiveSheet()->getRowDimension( $i )->setRowHeight( 15 );
+
+
+			$colo_last_cell = $i + 8;
+			$color_block    = 'A' . $i . ':' . 'E' . $colo_last_cell;
+
+			$objPHPExcel->getActiveSheet()
+			            ->getStyle( $color_block )
+			            ->applyFromArray(
+				            array(
+					            'fill'    => array(
+						            'type'  => PHPExcel_Style_Fill::FILL_SOLID,
+						            'color' => array( 'rgb' => 'f2f2f2' )
+					            ),
+					            'borders' => array(
+						            'allborders' => array(
+							            'style' => PHPExcel_Style_Border::BORDER_THIN,
+							            'color' => array( 'rgb' => '000000' )
+						            )
+					            ),
+					            'font'    => array(
+						            'color' => array( 'rgb' => '000000' )
+					            )
+				            )
+			            );
+
+			$i += 10;
 		}
 
-		// Set headers.
-		$this->headers();
+		$objPHPExcel->getActiveSheet()->getStyle( 'F1:F' . $objPHPExcel->getActiveSheet()->getHighestRow() )->getAlignment()->setWrapText( true );
 
-		$file = $this->get_file();
+		$objPHPExcel->getActiveSheet()->getColumnDimension( 'A' )->setAutoSize( true );
+		$objPHPExcel->getActiveSheet()->getColumnDimension( 'B' )->setAutoSize( true );
+		$objPHPExcel->getActiveSheet()->getColumnDimension( 'C' )->setAutoSize( true );
+		$objPHPExcel->getActiveSheet()->getColumnDimension( 'D' )->setAutoSize( true );
+		$objPHPExcel->getActiveSheet()->getColumnDimension( 'E' )->setAutoSize( true );
 
-		@unlink( $this->file );
+		$objPHPExcel->getActiveSheet()->getStyle( 'A1:A500' )->getAlignment()->setHorizontal( PHPExcel_Style_Alignment::HORIZONTAL_LEFT )->setVertical( PHPExcel_Style_Alignment::VERTICAL_TOP );
+		$objPHPExcel->getActiveSheet()->getStyle( 'B1:B500' )->getAlignment()->setHorizontal( PHPExcel_Style_Alignment::HORIZONTAL_LEFT )->setVertical( PHPExcel_Style_Alignment::VERTICAL_TOP );
+		$objPHPExcel->getActiveSheet()->getStyle( 'C1:C500' )->getAlignment()->setHorizontal( PHPExcel_Style_Alignment::HORIZONTAL_LEFT )->setVertical( PHPExcel_Style_Alignment::VERTICAL_TOP );
+		$objPHPExcel->getActiveSheet()->getStyle( 'D1:D500' )->getAlignment()->setHorizontal( PHPExcel_Style_Alignment::HORIZONTAL_RIGHT )->setVertical( PHPExcel_Style_Alignment::VERTICAL_TOP );
+		$objPHPExcel->getActiveSheet()->getStyle( 'E1:E500' )->getAlignment()->setHorizontal( PHPExcel_Style_Alignment::HORIZONTAL_RIGHT )->setVertical( PHPExcel_Style_Alignment::VERTICAL_TOP );
 
-		echo $file;
+		$objPHPExcel->getActiveSheet()->getStyle( 'A1:F1' )->applyFromArray( array(
+			'fill' => array(
+				'type'  => PHPExcel_Style_Fill::FILL_SOLID,
+				'color' => array( 'rgb' => '4F81BD' )
+			)
+		) );
+		$objPHPExcel->getActiveSheet()->getStyle( 'E1' )->applyFromArray( array(
+			'fill' => array(
+				'type'  => PHPExcel_Style_Fill::FILL_SOLID,
+				'color' => array( 'rgb' => '00A100' )
+			)
+		) );
 
-		die();
+
+		$objPHPExcel->getActiveSheet()->getStyle( "A1:F1" )->getFont()->setBold( true )->getColor()->setRGB( 'FFFFFF' );
+
+		$objPHPExcel->getActiveSheet()->getStyle( 'E1:E500' )->getNumberFormat()->setFormatCode( '#,##0.00' );
+
+		$objPHPExcel->getActiveSheet()->freezePane( 'F2' );
+
+		$objPHPExcel->getActiveSheet()->setTitle( 'Сводная таблица' );
+
+
+// Redirect output to a client’s web browser (Excel2007)
+		header( 'Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' );
+		header( 'Content-Disposition: attachment; filename=affiliate-wp-export-' . $this->export_type . '-' . date( 'd-m-Y|H:i:s' ) . '.xlsx' );
+		header( 'Cache-Control: max-age=0' );
+// If you're serving to IE 9, then the following may be needed
+		header( 'Cache-Control: max-age=1' );
+
+// If you're serving to IE over SSL, then the following may be needed
+		header( 'Expires: Mon, 26 Jul 1997 05:00:00 GMT' ); // Date in the past
+		header( 'Last-Modified: ' . gmdate( 'D, d M Y H:i:s' ) . ' GMT' ); // always modified
+		header( 'Cache-Control: cache, must-revalidate' ); // HTTP/1.1
+		header( 'Pragma: public' ); // HTTP/1.0
+
+		$objWriter = PHPExcel_IOFactory::createWriter( $objPHPExcel, 'Excel2007' );
+		$objWriter->save( 'php://output' );
+		//$objWriter = new PHPExcel_Writer_Excel2007($objPHPExcel);
+		//$objWriter->save('myfile.xlsx');
+		exit;
 	}
 
 	/**
@@ -274,7 +485,7 @@ class Export extends \Affiliate_WP_Export {
 	 * @abstract
 	 */
 	public function finish() {
-		$this->delete_counts();
+		affiliate_wp()->utils->data->delete_by_match( "^{$this->batch_id}[0-9a-z\_]+" );
 	}
 
 	/**

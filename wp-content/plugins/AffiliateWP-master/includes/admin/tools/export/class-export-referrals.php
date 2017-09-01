@@ -88,7 +88,7 @@ class Affiliate_WP_Referral_Export extends Affiliate_WP_Export implements Export
 	public function get_data() {
 
 		$args = array(
-			'status'       => $this->status,
+			'status'       => 'unpaid',
 			'date'         => ! empty( $this->date ) ? $this->date : '',
 			'affiliate_id' => $this->affiliate,
 			'number'       => -1
@@ -101,52 +101,42 @@ class Affiliate_WP_Referral_Export extends Affiliate_WP_Export implements Export
 
 		if( $referrals ) {
 
-			foreach( $referrals as $referral ) {
+			foreach ( $referrals as $referral ) {
 
-				/**
-				 * Filters an individual line of referral data to be exported.
-				 *
-				 * @since 1.9.5
-				 *
-				 * @param array           $referral_data {
-				 *     Single line of exported referral data
-				 *
-				 *     @type int    $affiliate_id  Affiliate ID.
-				 *     @type string $email         Affiliate email.
-				 *     @type string $payment_email Affiliate payment email.
-				 *     @type float  $amount        Referral amount.
-				 *     @type string $currency      Referral currency.
-				 *     @type string $description   Referral description.
-				 *     @type string $campaign      Campaign.
-				 *     @type string $reference     Referral reference.
-				 *     @type string $context       Context the referral was created under, e.g. 'woocommerce'.
-				 *     @type string $status        Referral status.
-				 *     @type string $date          Referral date.
-				 * }
-				 * @param \AffWP\Referral $referral Referral object.
-				 */
-				$referral_data = apply_filters( 'affwp_referral_export_get_data_line', array(
-					'affiliate_id'  => $referral->affiliate_id,
-					'email'         => affwp_get_affiliate_email( $referral->affiliate_id ),
-					'name'          => affwp_get_affiliate_name( $referral->affiliate_id ),
-					'payment_email' => affwp_get_affiliate_payment_email( $referral->affiliate_id ),
-					'username'      => affwp_get_affiliate_login( $referral->affiliate_id ),
-					'amount'        => $referral->amount,
-					'currency'      => $referral->currency,
-					'description'   => $referral->description,
-					'campaign'      => $referral->campaign,
-					'reference'     => $referral->reference,
-					'context'       => $referral->context,
-					'status'        => $referral->status,
-					'date'          => $referral->date
-				), $referral );
+				$test1 = wc_get_order( $referral->reference );
+				/*if ($test1 == '') {
+					file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/aff_wp.txt", print_r( 'да', true ), FILE_APPEND | LOCK_EX );
+					file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/aff_wp.txt", print_r( "\n", true ), FILE_APPEND | LOCK_EX );
+				}*/
 
-				// Add slashing.
-				$data[] = array_map( function( $column ) {
-					return addslashes( preg_replace( "/\"/","'", $column ) );
-				}, $referral_data );
+				if ( $test1 == '' ) {
+					continue;
+				}
 
-				unset( $referral_data );
+
+				$order  = new WC_Order( $referral->reference );
+				$coupon = '';
+				if ( ! empty( $order ) ) {
+					$coupons   = $order->get_used_coupons();
+					$order_url = admin_url( 'post.php?post=' . $order->get_id() . '&action=edit' );
+					if ( ! empty( $coupons ) ) {
+						$coupon = $coupons[0];
+					} else {
+						$coupon = 'без промокода';
+					}
+				}
+
+				$data[] = array(
+					'campaign'    => get_userdata( affwp_get_affiliate( $referral->affiliate_id )->user_id )->billing_company,
+					'email'       => affwp_get_affiliate_email( $referral->affiliate_id ),
+					'coupon'      => $coupon,
+					'description' => strip_tags( str_replace( ',', "\r\n", $referral->description ) ),
+					'reference'   => $order_url,
+					'amount'      => $referral->amount,
+					'date'        => $referral->date
+					/*'billing_partner' => get_userdata(affwp_get_affiliate($referral->affiliate_id)->user_id)->billing_partner,
+					'actual_address' => get_userdata(affwp_get_affiliate($referral->affiliate_id)->user_id)->actual_address*/
+				);
 			}
 
 		}
@@ -158,6 +148,10 @@ class Affiliate_WP_Referral_Export extends Affiliate_WP_Export implements Export
 		$data = apply_filters( 'affwp_export_get_data_' . $this->export_type, $data );
 
 		return $data;
+	}
+
+	public function get_stat_affil() {
+		return '';
 	}
 
 }

@@ -161,11 +161,11 @@ abstract class Batch_Process implements Batch\Base {
 	 * Defines logic to execute once batch processing is complete.
 	 *
 	 * @access public
-	 * @since  2.0
+	 * @since  2.1.4
 	 * @abstract
 	 */
 	public function finish() {
-		$this->delete_counts();
+		affiliate_wp()->utils->data->delete_by_match( "^{$this->batch_id}[0-9a-z\_]+" );
 	}
 
 	/**

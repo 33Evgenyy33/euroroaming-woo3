@@ -97,6 +97,9 @@ class Generate_Payouts extends Batch\Export\CSV implements Batch\With_PreFetch {
 
 		if ( null !== $data ) {
 
+			// Garbage collect any old temporary data.
+			$this->finish();
+
 			if ( ! empty( $data['user_name'] ) && $affiliate = affwp_get_affiliate( $data['user_name'] ) ) {
 				$this->affiliate_id = $affiliate->ID;
 			}
@@ -276,6 +279,10 @@ class Generate_Payouts extends Batch\Export\CSV implements Batch\With_PreFetch {
 		return apply_filters( 'affwp_batch_generate_payouts_get_data', $data, $affiliate_id, $payouts );
 	}
 
+	public function get_stat_affil() {
+		return '';
+	}
+
 	/**
 	 * Retrieves a message for the given code.
 	 *
@@ -312,19 +319,6 @@ class Generate_Payouts extends Batch\Export\CSV implements Batch\With_PreFetch {
 		}
 
 		return $message;
-	}
-
-	/**
-	 * Defines logic to execute once batch processing is complete.
-	 *
-	 * @access public
-	 * @since  2.0
-	 * @abstract
-	 */
-	public function finish() {
-		$this->delete_counts();
-
-		affiliate_wp()->utils->data->delete( "{$this->batch_id}_compiled_data" );
 	}
 
 }

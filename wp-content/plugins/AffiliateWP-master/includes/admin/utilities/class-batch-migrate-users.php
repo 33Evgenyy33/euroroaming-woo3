@@ -58,6 +58,9 @@ class Migrate_Users extends Utils\Batch_Process implements Batch\With_PreFetch {
 	 */
 	public function init( $data = null ) {
 		if ( null !== $data && ! empty( $data['roles'] ) ) {
+			// Garbage collect any old temporary data.
+			$this->finish();
+
 			$this->roles = $data['roles'];
 		}
 	}
@@ -181,16 +184,4 @@ class Migrate_Users extends Utils\Batch_Process implements Batch\With_PreFetch {
 		return $message;
 	}
 
-	/**
-	 * Defines logic to execute after the batch processing is complete.
-	 *
-	 * @access public
-	 * @since  2.0
-	 */
-	public function finish() {
-		// Clean up.
-		affiliate_wp()->utils->data->delete( "{$this->batch_id}_user_ids" );
-
-		$this->delete_counts();
-	}
 }

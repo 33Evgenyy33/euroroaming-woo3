@@ -43,6 +43,8 @@ interface Base {
 	 */
 	public function get_data();
 
+	public function get_stat_affil();
+
 	/**
 	 * Performs the export process.
 	 *

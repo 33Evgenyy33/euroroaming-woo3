@@ -78,6 +78,10 @@ class Settings implements Exporter\Base {
 		return get_option( 'affwp_settings' );
 	}
 
+	public function get_stat_affil() {
+		return '';
+	}
+
 	/**
 	 * Handles outputting the settings as a json file.
 	 *

@@ -94,11 +94,30 @@ class Data_Storage {
 	 * @since  2.0
 	 *
 	 * @param string $key The stored option name to delete.
+	 * @return int|false The number of rows deleted, or false on error.
 	 */
 	public function delete( $key ) {
 		global $wpdb;
 
-		$wpdb->delete( $wpdb->options, array( 'option_name' => $key ) );
+		return $wpdb->delete( $wpdb->options, array( 'option_name' => $key ) );
+	}
+
+	/**
+	 * Deletes all options matching a given RegEx pattern.
+	 *
+	 * @since 2.1.4
+	 *
+	 * @param string $pattern Pattern to match against option keys.
+	 * @return int|false The number of rows deleted, or false on error.
+	 */
+	public function delete_by_match( $pattern ) {
+		global $wpdb;
+
+		return $wpdb->query(
+			$wpdb->prepare(
+				"DELETE FROM $wpdb->options WHERE option_name REGEXP %s", $pattern
+			)
+		);
 	}
 
 }

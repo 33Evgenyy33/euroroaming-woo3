@@ -225,7 +225,7 @@ class Consumers_Table extends List_Table  {
 				<input type="hidden" name="affwp_api_process" value="generate" />
 				<?php wp_nonce_field( 'affwp-api-nonce' ); ?>
 				<span class="affwp-ajax-search-wrap">
-					<input type="text" name="user_name" id="user_name" class="affwp-user-search" autocomplete="off" placeholder="<?php esc_attr_e( 'Enter username', 'affiliate-wp' ); ?>" />
+					<input type="text" name="user_name" id="user_name" class="affwp-user-search" data-affwp-status="any" autocomplete="off" placeholder="<?php esc_attr_e( 'Enter username', 'affiliate-wp' ); ?>" />
 				</span>
 				<?php submit_button( __( 'Generate New API Keys', 'affiliate-wp' ), 'secondary', 'submit', false ); ?>
 			</form>

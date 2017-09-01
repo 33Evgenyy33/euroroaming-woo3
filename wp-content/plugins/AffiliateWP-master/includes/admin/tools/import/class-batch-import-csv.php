@@ -186,19 +186,6 @@ class CSV extends Batch\Import implements Importer\CSV {
 	}
 
 	/**
-	 * Defines logic to execute once batch import processing is complete.
-	 *
-	 * @access public
-	 * @since  2.1
-	 */
-	public function finish() {
-		// Running count (the "real" count).
-		affiliate_wp()->utils->data->delete( "{$this->batch_id}_running_count" );
-
-		parent::finish();
-	}
-
-	/**
 	 * Performs the import process.
 	 *
 	 * @access public

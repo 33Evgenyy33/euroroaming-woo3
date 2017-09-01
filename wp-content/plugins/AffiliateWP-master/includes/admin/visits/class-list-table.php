@@ -100,13 +100,13 @@ class AffWP_Visits_Table extends List_Table {
 	 */
 	public function get_columns() {
 		$columns = array(
+			'visit_id'     => __( 'Visit ID', 'affiliate-wp' ),
 			'url'          => __( 'Landing Page', 'affiliate-wp' ),
 			'referrer'     => __( 'Referring URL', 'affiliate-wp' ),
-			'affiliate'    => __( 'Affiliate', 'affiliate-wp' ),
-			'referral_id'  => __( 'Referral ID', 'affiliate-wp' ),
-			'context'      => __( 'Context', 'affiliate-wp' ),
 			'ip'           => __( 'IP', 'affiliate-wp' ),
 			'converted'    => __( 'Converted', 'affiliate-wp' ),
+			'referral_id'  => __( 'Referral ID', 'affiliate-wp' ),
+			'affiliate'    => __( 'Affiliate', 'affiliate-wp' ),
 			'date'         => __( 'Date', 'affiliate-wp' ),
 		);
 
@@ -129,6 +129,7 @@ class AffWP_Visits_Table extends List_Table {
 	 */
 	public function get_sortable_columns() {
 		return array(
+			'visit_id'  => array( 'visit_id', false ),
 			'date'      => array( 'date', false ),
 			'converted' => array( 'referral_id', false )
 		);
@@ -211,38 +212,6 @@ class AffWP_Visits_Table extends List_Table {
 		 * @param \AffWP\Visit $visit The current visit object.
 		 */
 		return apply_filters( 'affwp_visit_table_referral_id', $value, $visit );
-	}
-
-	/**
-	 * Renders the 'Context' column in the visits list table.
-	 *
-	 * @access public
-	 * @since  2.0.2
-	 *
-	 * @param \AffWP\Visit $visit The current visit object.
-	 * @return string The 'Context' column markup.
-	 */
-	function column_context( $visit ) {
-
-		if ( $visit->context ) {
-			$query_args = array_merge( $_GET, array(
-				'context' => $visit->context
-			) );
-
-			$value = affwp_admin_link( 'visits', $visit->context, $query_args );
-		} else {
-			$value = _x( 'None', 'visit context', 'affiliate-wp' );
-		}
-
-		/**
-		 * Filters the 'Context' column of the visits list table.
-		 *
-		 * @since 2.0.2
-		 *
-		 * @param string       $value The value of the 'Context' column in the visits list table.
-		 * @param \AffWP\Visit $visit The current visit object.
-		 */
-		return apply_filters( 'affwp_visit_table_context', $value, $visit );
 	}
 
 	/**

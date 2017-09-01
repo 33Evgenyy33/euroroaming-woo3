@@ -1,1 +1,0 @@
-F:/OpenServer/domains/euroroaming/wp-content/plugins/query-monitor/wp-content/db.php

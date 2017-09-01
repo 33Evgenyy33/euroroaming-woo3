@@ -114,4 +114,8 @@ class Affiliate_WP_Affiliate_Export extends Affiliate_WP_Export implements Expor
 		return $data;
 	}
 
+	public function get_stat_affil() {
+		return '';
+	}
+
 }

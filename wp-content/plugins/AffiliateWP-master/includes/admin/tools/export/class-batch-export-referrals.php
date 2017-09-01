@@ -81,6 +81,9 @@ class Export_Referrals extends Batch\Export\CSV implements Batch\With_PreFetch {
 
 		if ( null !== $data ) {
 
+			// Garbage collect any old temporary data.
+			$this->finish();
+
 			$data = affiliate_wp()->utils->process_request_data( $data, 'user_name' );
 
 			if ( ! empty( $data['user_id'] ) ) {
@@ -142,19 +145,15 @@ class Export_Referrals extends Batch\Export\CSV implements Batch\With_PreFetch {
 	 */
 	public function csv_cols() {
 		return array(
-			'affiliate_id'  => __( 'Affiliate ID', 'affiliate-wp' ),
-			'email'         => __( 'Email', 'affiliate-wp' ),
-			'name'          => __( 'Name', 'affiliate-wp' ),
-			'payment_email' => __( 'Payment Email', 'affiliate-wp' ),
-			'username'      => __( 'Username', 'affiliate-wp' ),
-			'amount'        => __( 'Amount', 'affiliate-wp' ),
-			'currency'      => __( 'Currency', 'affiliate-wp' ),
-			'description'   => __( 'Description', 'affiliate-wp' ),
-			'campaign'      => __( 'Campaign', 'affiliate-wp' ),
-			'reference'     => __( 'Reference', 'affiliate-wp' ),
-			'context'       => __( 'Context', 'affiliate-wp' ),
-			'status'        => __( 'Status', 'affiliate-wp' ),
-			'date'          => __( 'Date', 'affiliate-wp' ),
+			'campaign'    => 'Партнер',
+			'email'       => __( 'Email', 'affiliate-wp' ),
+			'coupon'      => 'Промокод',
+			'description' => __( 'Description', 'affiliate-wp' ),
+			'reference'   => __( 'Reference', 'affiliate-wp' ),
+			'amount'      => __( 'Amount', 'affiliate-wp' ),
+			'date'        => __( 'Date', 'affiliate-wp' )
+			/*'billing_partner' => 'Форма оплаты',
+			'actual_address' => 'Фактический адрес'*/
 		);
 	}
 
@@ -183,15 +182,16 @@ class Export_Referrals extends Batch\Export\CSV implements Batch\With_PreFetch {
 	public function get_data() {
 
 		$args = array(
-			'status'       => 'unpaid',
+			'status'       => $this->status,
 			'date'         => $this->date,
 			'affiliate_id' => $this->affiliate_id,
 			'number'       => $this->per_step,
 			'offset'       => $this->get_offset(),
 		);
 
+
+
 		$data         = array();
-		$data_buff    = array();
 		$affiliates   = array();
 		$referral_ids = array();
 		$referrals    = affiliate_wp()->referrals->get_referrals( $args );
@@ -211,8 +211,9 @@ class Export_Referrals extends Batch\Export\CSV implements Batch\With_PreFetch {
 				}
 
 
-				$order  = new WC_Order( $referral->reference );
-				$coupon = '';
+				$order     = new WC_Order( $referral->reference );
+				$coupon    = '';
+				$order_url = '';
 				if ( ! empty( $order ) ) {
 					$coupons   = $order->get_used_coupons();
 					$order_url = admin_url( 'post.php?post=' . $order->get_id() . '&action=edit' );
@@ -238,22 +239,229 @@ class Export_Referrals extends Batch\Export\CSV implements Batch\With_PreFetch {
 
 		}
 
-		/*$test111 = $this->get_stat_affil();
-		array_push( $data, $data_buff );
-		array_push( $data, $test111 );*/
-		file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/aff_wp.txt", print_r( $data, true ), FILE_APPEND | LOCK_EX );
+//		file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/aff_wp.txt", print_r( $data, true ), FILE_APPEND | LOCK_EX );
+//		file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/aff_wp.txt", print_r( "\n", true ), FILE_APPEND | LOCK_EX );
+
+
+		//return $data;
+		return $this->prepare_data( $data );
+	}
+
+	/*******************удаление из массива дублей по key*******************/
+	public function unique_multidim_array( $array, $key ) {
+		$temp_array = array();
+		$i          = 0;
+		$key_array  = array();
+
+		foreach ( $array as $val ) {
+			if ( ! in_array( $val[ $key ], $key_array ) ) {
+				$key_array[ $i ]  = $val[ $key ];
+				$temp_array[ $i ] = $val;
+				$i ++;
+			}
+
+		}
+
+		//unset($val);
+		return $temp_array;
+	}
+
+	/**
+	 * @return array
+	 */
+	public function get_stat_affil() {
+		$args = array(
+			'status'       => 'unpaid',
+			'date'         => ! empty( $this->date ) ? $this->date : '',
+			'affiliate_id' => $this->affiliate_id,
+			'number'       => - 1
+		);
+
+		file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/aff_wp.txt", print_r( $this->date, true ), FILE_APPEND | LOCK_EX );
 		file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/aff_wp.txt", print_r( "\n", true ), FILE_APPEND | LOCK_EX );
-		file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/aff_wp.txt", print_r( "==========================================", true ), FILE_APPEND | LOCK_EX );
-		file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/aff_wp.txt", print_r( "\n", true ), FILE_APPEND | LOCK_EX );
 
 
-		$data = apply_filters( 'affwp_export_get_data', $data );
-		$data = apply_filters( 'affwp_export_get_data_' . $this->export_type, $data );
+		$data_referrals = array();
+		$referrals      = affiliate_wp()->referrals->get_referrals( $args );
+
+		//print_r($referrals);
+
+		if ( $referrals ) {
+
+			foreach ( $referrals as $referral ) {
+
+				$data_referrals[] = array(
+					'affiliate_id'    => $referral->affiliate_id,
+					'campaign'        => affwp_get_affiliate_name( $referral->affiliate_id ),
+					'email'           => affwp_get_affiliate_email( $referral->affiliate_id ),
+					'reference'       => $referral->reference,
+					'amount'          => $referral->amount,
+					'payment_details' => get_userdata( affwp_get_affiliate( $referral->affiliate_id )->user_id )->billing_partner
+				);
+
+			}
+			//unset($referral);
+
+		}
+
+		asort( $data_referrals );
+
+		//return $data_referrals;
+
+		$affiliates = $this->unique_multidim_array( $data_referrals, 'affiliate_id' );
+
+		//return $affiliates;
+
+		//$report = array();
+
+		$all_date = array();
+
+		$report = array();
+
+		/*******************************
+		 * Orange - 58961
+		 * Vodafone - 58981
+		 * Ortel - 58995
+		 * EuropaSim - 59104
+		 * Globalsim - 59021
+		 * Globalsim Internet - 59004
+		 * Globalsim USA - 59135
+		 * TravelChat - 59130
+		 * Three - 59140
+		 * ******************************/
+
+		foreach ( $affiliates as $affiliate ) {
+
+			$report[] = array(
+				'affiliate_id'    => $affiliate['affiliate_id'],
+				'campaign'        => $affiliate['campaign'],
+				'email'           => $affiliate['email'],
+				'simcards_qty'    => array(
+					'58961' => 0,
+					'58981' => 0,
+					'58995' => 0,
+					'59104' => 0,
+					'59021' => 0,
+					'59004' => 0,
+					'59135' => 0,
+					'59130' => 0,
+					'59140' => 0,
+				),
+				'amount'          => 0,
+				'payment_details' => ''
+			);
+
+		}
+
+		$i = 0;
+		foreach ( $data_referrals as $data_referral ) {
+
+			$test1 = wc_get_order( $data_referral['reference'] );
+			/*if ($test1 == '') {
+				file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/aff_wp.txt", print_r( 'да', true ), FILE_APPEND | LOCK_EX );
+				file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/aff_wp.txt", print_r( "\n", true ), FILE_APPEND | LOCK_EX );
+			}*/
+
+			if ( $test1 == '' ) {
+				continue;
+			}
+
+			if ( $affiliates[ $i ]['affiliate_id'] != $data_referral['affiliate_id'] ) {
+				$i ++;
+			}
+
+			/* echo '$affiliates = ' . $affiliates[$i]['affiliate_id'] . '<br>';
+			 echo '$data_referral = ' . $data_referral['affiliate_id'] . '<br>';
+			 echo 'order: ' . $data_referral['reference'] . '<br><br>';*/
+
+			$report[ $i ]['amount']          += $data_referral['amount'];
+			$report[ $i ]['payment_details'] = $data_referral['payment_details'];
+
+			$order = new WC_Order( $data_referral['reference'] );
+			$items = $order->get_items();
+
+			foreach ( $items as $key => $item ) {
+
+				if ( get_post_meta( $item['product_id'], '_affwp_' . 'woocommerce' . '_referrals_disabled', true ) ) {
+					continue; // Referrals are disabled on this product
+				}
+
+				//Пропустить симки в отчете
+				//if  ($item['product_id'] == 41120 || $item['product_id'] == 48067) continue; //travelchat
+
+				/*if ($data_referral['affiliate_id'] == 16)
+					echo 'товар: ' . $item['product_id'] . ' кол-во: ' . $item['qty'] . '<br>';*/
+
+				$report[ $i ]['simcards_qty'][ $item['product_id'] ] += $item['qty'];
+
+			}
+
+			unset( $order );
+		}
+
+		array_push( $all_date, $report );
+
+		$args = array(
+			'status'       => 'unpaid',
+			'date'         => ! empty( $this->date ) ? $this->date : '',
+			'affiliate_id' => $this->affiliate_id,
+			'number'       => - 1
+		);
+
+		$data1        = array();
+		$affiliates   = array();
+		$referral_ids = array();
+		$referrals    = affiliate_wp()->referrals->get_referrals( $args );
+
+		if ( $referrals ) {
+
+			foreach ( $referrals as $referral ) {
+
+				$test1 = wc_get_order( $referral->reference );
+				/*if ($test1 == '') {
+					file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/aff_wp.txt", print_r( 'да', true ), FILE_APPEND | LOCK_EX );
+					file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/aff_wp.txt", print_r( "\n", true ), FILE_APPEND | LOCK_EX );
+				}*/
+
+				if ( $test1 == '' ) {
+					continue;
+				}
 
 
+				$order     = new WC_Order( $referral->reference );
+				$coupon    = '';
+				$order_url = '';
+				if ( ! empty( $order ) ) {
+					$coupons   = $order->get_used_coupons();
+					$order_url = admin_url( 'post.php?post=' . $order->get_id() . '&action=edit' );
+					if ( ! empty( $coupons ) ) {
+						$coupon = $coupons[0];
+					} else {
+						$coupon = 'без промокода';
+					}
+				}
 
+				$data1[] = array(
+					'campaign'    => get_userdata( affwp_get_affiliate( $referral->affiliate_id )->user_id )->billing_company,
+					'email'       => affwp_get_affiliate_email( $referral->affiliate_id ),
+					'coupon'      => $coupon,
+					'description' => strip_tags( str_replace( ',', "\r\n", $referral->description ) ),
+					'reference'   => $order_url,
+					'amount'      => $referral->amount,
+					'date'        => $referral->date
+					/*'billing_partner' => get_userdata(affwp_get_affiliate($referral->affiliate_id)->user_id)->billing_partner,
+					'actual_address' => get_userdata(affwp_get_affiliate($referral->affiliate_id)->user_id)->actual_address*/
+				);
+			}
 
-		return $data;
+		}
+
+		array_push( $all_date, $data1 );
+
+//		file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/aff_wp.txt", print_r( $all_date, true ), FILE_APPEND | LOCK_EX );
+//		file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/aff_wp.txt", print_r( "\n", true ), FILE_APPEND | LOCK_EX );
+
+		return $all_date;
 	}
 
 	/**

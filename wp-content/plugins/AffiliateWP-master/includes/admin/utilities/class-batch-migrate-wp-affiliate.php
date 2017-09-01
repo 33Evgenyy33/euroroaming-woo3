@@ -45,7 +45,10 @@ class Migrate_WP_Affiliate extends Utils\Batch_Process implements Batch\With_Pre
 	 *
 	 * @param null|array $data Optional. Form data. Default null.
 	 */
-	public function init( $data = null ) {}
+	public function init( $data = null ) {
+		// Garbage collect any old temporary data.
+		$this->finish();
+	}
 
 	/**
 	 * Handles pre-fetching user IDs for accounts in migration.
@@ -233,10 +236,7 @@ class Migrate_WP_Affiliate extends Utils\Batch_Process implements Batch\With_Pre
 		// Clean up.
 		delete_option( 'affwp_migrate_direct_affiliates' );
 
-		affiliate_wp()->utils->data->delete( "{$this->batch_id}_user_ids" );
-		affiliate_wp()->utils->data->delete( "{$this->batch_id}_user_email_ids" );
-
-		$this->delete_counts();
+		parent::finish();
 	}
 
 }

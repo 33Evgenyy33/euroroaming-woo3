@@ -69,6 +69,9 @@ class Import_Affiliates extends Batch\Import\CSV implements Batch\With_PreFetch 
 	 */
 	public function init( $data = null ) {
 		if ( null !== $data ) {
+			// Garbage collect any old temporary data.
+			$this->finish();
+
 			if ( ! empty( $data['affwp-import-field'] ) ) {
 				$this->data = $data['affwp-import-field'];
 			}

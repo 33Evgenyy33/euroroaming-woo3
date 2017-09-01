@@ -152,6 +152,10 @@ class Affiliate_WP_Export {
 		return $data;
 	}
 
+	public function get_stat_affil() {
+		return '';
+	}
+
 	/**
 	 * Prepares a batch of data for export.
 	 *

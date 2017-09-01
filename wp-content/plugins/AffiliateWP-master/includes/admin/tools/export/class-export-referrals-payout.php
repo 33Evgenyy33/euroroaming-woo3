@@ -165,6 +165,10 @@ class Affiliate_WP_Referral_Payout_Export extends Affiliate_WP_Referral_Export i
 		return $data;
 	}
 
+	public function get_stat_affil() {
+		return '';
+	}
+
 	/**
 	 * Retrieves referrals for export.
 	 *

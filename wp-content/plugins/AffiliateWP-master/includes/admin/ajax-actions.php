@@ -25,8 +25,9 @@ function affwp_search_users() {
 
 	$affiliate_users = array();
 
-	if ( isset( $_REQUEST['status'] ) ) {
-		$status = mb_strtolower( htmlentities2( trim( $_REQUEST['status'] ) ) );
+	$status = isset( $_REQUEST['status'] ) ? mb_strtolower( htmlentities2( trim( $_REQUEST['status'] ) ) ) : 'bypass';
+
+	if ( 'bypass' !== $status ) {
 
 		switch ( $status ) {
 			case 'none':
@@ -64,7 +65,7 @@ function affwp_search_users() {
 
 	$user_list = array();
 
-	if ( ! empty( $affiliate_users ) ) {
+	if ( 'bypass' === $status || ! empty( $affiliate_users ) ) {
 
 		// Get users matching search.
 		$found_users = get_users( $args );
@@ -327,3 +328,48 @@ function affwp_process_batch_import() {
 	exit;
 }
 add_action( 'wp_ajax_process_batch_import', 'affwp_process_batch_import' );
+
+
+/**
+ * Handles Ajax for determining if a user log in name is valid
+ *
+ * @since 2.1.4
+ */
+function affwp_check_user_login() {
+
+	if ( empty( $_REQUEST['user'] ) ) {
+		wp_die( -1 );
+	}
+
+	if ( ! current_user_can( 'manage_affiliates' ) ) {
+		wp_die( -1 );
+	}
+
+	$user = sanitize_text_field( $_REQUEST['user'] );
+
+	/**
+	 * Fires immediately prior to an AffiliateWP user check.
+	 *
+	 * @param string $user The user login.
+	 */
+	do_action( 'affwp_pre_check_user', $user );
+
+	$affiliate = affwp_get_affiliate( $user );
+
+	if ( $affiliate ) {
+		$response = array(
+			'affiliate' => true,
+			'url'       => esc_url( affwp_admin_url( 'affiliates', array(
+				'affiliate_id' => $affiliate->ID,
+				'action'       => 'edit_affiliate',
+			) ) ),
+		);
+	} else {
+		$response = array( 'affiliate' => false );
+
+	}
+
+	wp_send_json_success( $response );
+
+}
+add_action( 'wp_ajax_affwp_check_user_login', 'affwp_check_user_login' );
