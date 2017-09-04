@@ -1,0 +1,40 @@
+Array
+(
+    [status] => unpaid
+    [date] => Array
+        (
+            [start] => 05/01/2017
+            [end] => 09/01/2017
+        )
+
+    [affiliate_id] => 0
+    [number] => 100
+    [offset] => 0
+)
+=======================
+Array
+(
+    [status] => unpaid
+    [date] => Array
+        (
+            [start] => 05/01/2017
+            [end] => 09/01/2017
+        )
+
+    [affiliate_id] => 0
+    [number] => 100
+    [offset] => 100
+)
+=======================
+Array
+(
+    [status] => 
+    [date] => Array
+        (
+        )
+
+    [affiliate_id] => 0
+    [number] => 100
+    [offset] => -100
+)
+=======================

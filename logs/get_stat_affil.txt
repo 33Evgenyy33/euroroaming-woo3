@@ -1,0 +1,110 @@
+Array
+(
+    [status] => 
+    [date] => Array
+        (
+        )
+
+    [affiliate_id] => 0
+    [number] => 100
+    [offset] => 0
+)
+=======================
+Array
+(
+    [status] => unpaid
+    [date] => Array
+        (
+            [start] => 09/01/2017
+
+            [end] => 09/04/2017
+        )
+
+    [affiliate_id] => 0
+
+    [number] => 100
+    [offset] => 0
+)
+=======================
+Array
+(
+    [status] => 
+    [date] => Array
+        (
+            [start] => 09/01/2017
+            [end] => 09/04/2017
+        )
+
+    [affiliate_id] => 0
+    [number] => 100
+    [offset] => 0
+)
+=======================
+Array
+(
+    [status] => 
+    [date] => Array
+        (
+            [start] => 09/01/2017
+            [end] => 09/04/2017
+        )
+
+    [affiliate_id] => 0
+    [number] => 100
+    [offset] => 100
+)
+=======================
+Array
+(
+    [status] => 
+    [date] => Array
+        (
+        )
+
+    [affiliate_id] => 0
+    [number] => 100
+    [offset] => -100
+)
+=======================
+Array
+(
+    [status] => unpaid
+    [date] => Array
+        (
+            [start] => 09/01/2017
+            [end] => 09/04/2017
+        )
+
+    [affiliate_id] => 0
+    [number] => 100
+    [offset] => 0
+)
+=======================
+Array
+(
+    [status] => unpaid
+    [date] => Array
+        (
+            [start] => 
+            [end] => 
+        )
+
+    [affiliate_id] => 0
+    [number] => 100
+    [offset] => 0
+)
+=======================
+Array
+(
+    [status] => unpaid
+    [date] => Array
+        (
+            [start] => 
+            [end] => 
+        )
+
+    [affiliate_id] => 10
+    [number] => 100
+    [offset] => 0
+)
+=======================

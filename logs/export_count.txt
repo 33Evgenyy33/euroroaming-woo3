@@ -1,0 +1,389 @@
+Array
+(
+    [0] => 0
+
+    [1] => 09/01/2017
+
+    [2] => 09/04/2017
+)
+=======================
+Array
+(
+    [0] => Array
+        (
+        )
+
+    [1] => Array
+        (
+        )
+
+)
+=======================
+Array
+(
+    [0] => Array
+        (
+        )
+
+    [1] => Array
+        (
+        )
+
+)
+=======================
+Array
+(
+    [0] => Array
+        (
+            [0] => Array
+                (
+                    [affiliate_id] => 1
+                    [campaign] => test17
+                    [email] => test17@ya.ru
+                    [simcards_qty] => Array
+                        (
+                            [58961] => 1
+                            [58981] => 0
+                            [58995] => 0
+                            [59104] => 0
+                            [59021] => 0
+                            [59004] => 0
+                            [59135] => 0
+                            [59130] => 0
+                            [59140] => 0
+                        )
+
+                    [amount] => 700
+                    [payment_details] => 
+                )
+
+            [1] => Array
+                (
+                    [affiliate_id] => 9
+                    [campaign] => test9
+                    [email] => test9@ya.ru
+                    [simcards_qty] => Array
+                        (
+                            [58961] => 1
+                            [58981] => 0
+                            [58995] => 0
+                            [59104] => 0
+                            [59021] => 0
+                            [59004] => 0
+                            [59135] => 0
+                            [59130] => 0
+                            [59140] => 0
+                        )
+
+                    [amount] => 300
+                    [payment_details] => 
+                )
+
+            [2] => Array
+                (
+                    [affiliate_id] => 10
+                    [campaign] => test10
+                    [email] => test10@ya.ru
+                    [simcards_qty] => Array
+                        (
+                            [58961] => 3
+                            [58981] => 0
+                            [58995] => 0
+                            [59104] => 0
+                            [59021] => 7
+                            [59004] => 0
+                            [59135] => 0
+                            [59130] => 0
+                            [59140] => 0
+                        )
+
+                    [amount] => 700
+                    [payment_details] => 2
+                )
+
+        )
+
+    [1] => Array
+        (
+            [0] => Array
+                (
+                    [campaign] => 
+                    [email] => test10@ya.ru
+                    [coupon] => без промокода
+                    [description] => Orange с тарифом «Mundo» для Европы - [1 шт.]
+                    [reference] => http://euroroaming/wp-admin/post.php?post=61023&action=edit
+                    [amount] => 700.00
+                    [date] => 2017-09-03 23:34:09
+                )
+
+            [1] => Array
+                (
+                    [campaign] => 
+                    [email] => test9@ya.ru
+                    [coupon] => andrew
+                    [description] => Orange с тарифом «Mundo» для Европы - [1 шт.]
+                    [reference] => http://euroroaming/wp-admin/post.php?post=61097&action=edit
+                    [amount] => 300.00
+                    [date] => 2017-09-03 00:00:00
+                )
+
+            [2] => Array
+                (
+                    [campaign] => 
+                    [email] => test17@ya.ru
+                    [coupon] => andrew
+                    [description] => Orange с тарифом «Mundo» для Европы - [1 шт.]
+                    [reference] => http://euroroaming/wp-admin/post.php?post=61097&action=edit
+                    [amount] => 700.00
+                    [date] => 2017-09-01 00:00:00
+                )
+
+        )
+
+)
+=======================
+Array
+(
+    [0] => Array
+        (
+            [0] => Array
+                (
+                    [affiliate_id] => 1
+                    [campaign] => test17
+                    [email] => test17@ya.ru
+                    [simcards_qty] => Array
+                        (
+                            [58961] => 13
+                            [58981] => 0
+                            [58995] => 0
+                            [59104] => 0
+                            [59021] => 10
+                            [59004] => 0
+                            [59135] => 0
+                            [59130] => 0
+                            [59140] => 0
+                        )
+
+                    [amount] => 6700
+                    [payment_details] => 
+                )
+
+            [1] => Array
+                (
+                    [affiliate_id] => 9
+                    [campaign] => test9
+                    [email] => test9@ya.ru
+                    [simcards_qty] => Array
+                        (
+                            [58961] => 9
+                            [58981] => 0
+                            [58995] => 0
+                            [59104] => 0
+                            [59021] => 3
+                            [59004] => 0
+                            [59135] => 0
+                            [59130] => 0
+                            [59140] => 0
+                        )
+
+                    [amount] => 1910
+                    [payment_details] => 
+                )
+
+            [2] => Array
+                (
+                    [affiliate_id] => 10
+                    [campaign] => test10
+                    [email] => test10@ya.ru
+                    [simcards_qty] => Array
+                        (
+                            [58961] => 4
+                            [58981] => 0
+                            [58995] => 0
+                            [59104] => 0
+                            [59021] => 7
+                            [59004] => 0
+                            [59135] => 0
+                            [59130] => 0
+                            [59140] => 0
+                        )
+
+                    [amount] => 3700
+                    [payment_details] => 2
+                )
+
+        )
+
+    [1] => Array
+        (
+            [0] => Array
+                (
+                    [campaign] => 
+                    [email] => test10@ya.ru
+                    [coupon] => andrew
+                    [description] => Orange с тарифом «Mundo» для Европы - [1 шт.]
+                    [reference] => http://euroroaming/wp-admin/post.php?post=61097&action=edit
+                    [amount] => 3000.00
+                    [date] => 2017-07-01 00:00:00
+                )
+
+            [1] => Array
+                (
+                    [campaign] => 
+                    [email] => test10@ya.ru
+                    [coupon] => без промокода
+                    [description] => Orange с тарифом «Mundo» для Европы - [1 шт.]
+                    [reference] => http://euroroaming/wp-admin/post.php?post=61023&action=edit
+                    [amount] => 700.00
+                    [date] => 2017-09-03 23:34:09
+                )
+
+            [2] => Array
+                (
+                    [campaign] => 
+                    [email] => test9@ya.ru
+                    [coupon] => без промокода
+                    [description] => Orange с тарифом «Mundo» для Европы - [1 шт.]
+                    [reference] => http://euroroaming/wp-admin/post.php?post=61024&action=edit
+                    [amount] => 900.00
+                    [date] => 2017-07-30 00:00:00
+                )
+
+            [3] => Array
+                (
+                    [campaign] => 
+                    [email] => test9@ya.ru
+                    [coupon] => andrew
+                    [description] => Orange с тарифом «Mundo» для Европы - [1 шт.]
+                    [reference] => http://euroroaming/wp-admin/post.php?post=61097&action=edit
+                    [amount] => 710.00
+                    [date] => 2017-08-03 00:00:00
+                )
+
+            [4] => Array
+                (
+                    [campaign] => 
+                    [email] => test9@ya.ru
+                    [coupon] => andrew
+                    [description] => Orange с тарифом «Mundo» для Европы - [1 шт.]
+                    [reference] => http://euroroaming/wp-admin/post.php?post=61097&action=edit
+                    [amount] => 300.00
+                    [date] => 2017-09-03 00:00:00
+                )
+
+            [5] => Array
+                (
+                    [campaign] => 
+                    [email] => test17@ya.ru
+                    [coupon] => andrew
+                    [description] => Orange с тарифом «Mundo» для Европы - [1 шт.]
+                    [reference] => http://euroroaming/wp-admin/post.php?post=61097&action=edit
+                    [amount] => 700.00
+                    [date] => 2017-09-01 00:00:00
+                )
+
+            [6] => Array
+                (
+                    [campaign] => 
+                    [email] => test17@ya.ru
+                    [coupon] => andrew
+                    [description] => Orange с тарифом «Mundo» для Европы - [1 шт.] 
+                    [reference] => http://euroroaming/wp-admin/post.php?post=61097&action=edit
+                    [amount] => 500.00
+                    [date] => 2017-08-30 11:29:39
+                )
+
+            [7] => Array
+                (
+                    [campaign] => 
+                    [email] => test17@ya.ru
+                    [coupon] => без промокода
+                    [description] => Orange с тарифом «Mundo» для Европы - [7 шт.] GLOBALSIM - самые дешевые тарифы для звонков из Европы в Россию - Nano SIM - [3 шт.] 
+                    [reference] => http://euroroaming/wp-admin/post.php?post=61024&action=edit
+                    [amount] => 4250.00
+                    [date] => 2017-07-28 22:47:45
+                )
+
+            [8] => Array
+                (
+                    [campaign] => 
+                    [email] => test17@ya.ru
+                    [coupon] => без промокода
+                    [description] => Orange с тарифом «Mundo» для Европы (Variation ID 59096)
+ GLOBALSIM - самые дешевые тарифы для звонков из Европы в Россию - Nano SIM (Variation ID 59053)
+                    [reference] => http://euroroaming/wp-admin/post.php?post=61023&action=edit
+                    [amount] => 750.00
+                    [date] => 2017-07-28 22:33:37
+                )
+
+            [9] => Array
+                (
+                    [campaign] => 
+                    [email] => test17@ya.ru
+                    [coupon] => без промокода
+                    [description] => Orange с тарифом «Mundo» для Европы (Variation ID 59096)
+                    [reference] => http://euroroaming/wp-admin/post.php?post=61022&action=edit
+                    [amount] => 500.00
+                    [date] => 2017-07-28 22:30:21
+                )
+
+        )
+
+)
+=======================
+Array
+(
+    [0] => Array
+        (
+            [0] => Array
+                (
+                    [affiliate_id] => 10
+                    [campaign] => test10
+                    [email] => test10@ya.ru
+                    [simcards_qty] => Array
+                        (
+                            [58961] => 4
+                            [58981] => 0
+                            [58995] => 0
+                            [59104] => 0
+                            [59021] => 7
+                            [59004] => 0
+                            [59135] => 0
+                            [59130] => 0
+                            [59140] => 0
+                        )
+
+                    [amount] => 3700
+                    [payment_details] => 2
+                )
+
+        )
+
+    [1] => Array
+        (
+            [0] => Array
+                (
+                    [campaign] => 
+                    [email] => test10@ya.ru
+                    [coupon] => andrew
+                    [description] => Orange с тарифом «Mundo» для Европы - [1 шт.]
+                    [reference] => http://euroroaming/wp-admin/post.php?post=61097&action=edit
+                    [amount] => 3000.00
+                    [date] => 2017-07-01 00:00:00
+                )
+
+            [1] => Array
+                (
+                    [campaign] => 
+                    [email] => test10@ya.ru
+                    [coupon] => без промокода
+                    [description] => Orange с тарифом «Mundo» для Европы - [1 шт.]
+                    [reference] => http://euroroaming/wp-admin/post.php?post=61023&action=edit
+                    [amount] => 700.00
+                    [date] => 2017-09-03 23:34:09
+                )
+
+        )
+
+)
+=======================
