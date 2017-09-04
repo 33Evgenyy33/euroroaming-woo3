@@ -827,3 +827,145 @@ Stack trace:
 #6 D:\OpenServe in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\Classes\PHPExcel\Worksheet.php on line 2446
 [01-Sep-2017 03:34:22 UTC] PHP Notice:  Undefined variable: data in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export-referrals.php on line 245
 [01-Sep-2017 03:34:49 UTC] PHP Notice:  Undefined variable: data in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export-referrals.php on line 245
+[03-Sep-2017 20:37:26 UTC] WP_Community_Events::maybe_log_events_response: Valid response received. Details: {"api_url":"https:\/\/api.wordpress.org\/events\/1.0\/","request_args":{"body":{"number":5,"ip":"127.0.0.0","locale":"ru_RU","timezone":"Europe\/Moscow"}},"response_code":200,"response_body":{"location":{"ip":"37.113.20.151"},"events":"0 events trimmed."}}
+[03-Sep-2017 21:55:37 UTC] PHP Fatal error:  Class Affiliate_WP_Affiliate_Export contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (AffWP\Utils\Exporter\Base::get_stat_affil) in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-export-affiliates.php on line 24
+[03-Sep-2017 21:56:13 UTC] PHP Fatal error:  Class Affiliate_WP_Affiliate_Export contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (AffWP\Utils\Exporter\Base::get_stat_affil) in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-export-affiliates.php on line 24
+[03-Sep-2017 21:56:15 UTC] PHP Fatal error:  Class Affiliate_WP_Affiliate_Export contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (AffWP\Utils\Exporter\Base::get_stat_affil) in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-export-affiliates.php on line 24
+[03-Sep-2017 21:56:33 UTC] PHP Fatal error:  Class Affiliate_WP_Affiliate_Export contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (AffWP\Utils\Exporter\Base::get_stat_affil) in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-export-affiliates.php on line 24
+[03-Sep-2017 21:56:35 UTC] PHP Fatal error:  Class Affiliate_WP_Affiliate_Export contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (AffWP\Utils\Exporter\Base::get_stat_affil) in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-export-affiliates.php on line 24
+[03-Sep-2017 22:19:27 UTC] PHP Fatal error:  Uncaught Error: Class 'AffWP\Utils\Batch_Process\WC_Order' not found in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export-referrals.php:214
+Stack trace:
+#0 D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export-csv.php(102): AffWP\Utils\Batch_Process\Export_Referrals->get_data()
+#1 D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export-csv.php(52): AffWP\Utils\Batch_Process\Export\CSV->csv_rows_out()
+#2 D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export-referrals.php(172): AffWP\Utils\Batch_Process\Export\CSV->process_step()
+#3 D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\ajax-actions.php(174): AffWP\Utils\Batch_Process\Export_Referrals->process_step()
+#4 D:\OpenServer\domains\euroroaming\wp-includes\class-w in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export-referrals.php on line 214
+[03-Sep-2017 22:20:21 UTC] PHP Fatal error:  Uncaught Error: Class 'AffWP\Utils\Batch_Process\WC_Order' not found in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export-referrals.php:214
+Stack trace:
+#0 D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export-csv.php(102): AffWP\Utils\Batch_Process\Export_Referrals->get_data()
+#1 D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export-csv.php(52): AffWP\Utils\Batch_Process\Export\CSV->csv_rows_out()
+#2 D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export-referrals.php(172): AffWP\Utils\Batch_Process\Export\CSV->process_step()
+#3 D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\ajax-actions.php(174): AffWP\Utils\Batch_Process\Export_Referrals->process_step()
+#4 D:\OpenServer\domains\euroroaming\wp-includes\class-w in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export-referrals.php on line 214
+[03-Sep-2017 23:17:31 UTC] PHP Notice:  Функция The "woocommerce_debug_posting" hook uses out of date data structures and с версии 3.1.2 <strong>считается устаревшей</strong>! Используйте woocommerce_system_status_environment_rows. in D:\OpenServer\domains\euroroaming\wp-includes\functions.php on line 3831
+[03-Sep-2017 23:24:23 UTC] PHP Notice:  Undefined index: billing_partner in D:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 719
+[03-Sep-2017 23:24:23 UTC] PHP Notice:  Undefined index: actual_address in D:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 720
+[03-Sep-2017 23:24:23 UTC] PHP Notice:  Undefined index: promocod_partner in D:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 721
+[03-Sep-2017 23:24:23 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php:719) in D:\OpenServer\domains\euroroaming\wp-includes\pluggable.php on line 1210
+[03-Sep-2017 23:24:38 UTC] PHP Notice:  Undefined index: billing_partner in D:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 719
+[03-Sep-2017 23:24:38 UTC] PHP Notice:  Undefined index: actual_address in D:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 720
+[03-Sep-2017 23:24:38 UTC] PHP Notice:  Undefined index: promocod_partner in D:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 721
+[03-Sep-2017 23:24:38 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php:719) in D:\OpenServer\domains\euroroaming\wp-includes\pluggable.php on line 1210
+[03-Sep-2017 23:25:10 UTC] PHP Notice:  Undefined index: billing_partner in D:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 719
+[03-Sep-2017 23:25:10 UTC] PHP Notice:  Undefined index: actual_address in D:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 720
+[03-Sep-2017 23:25:10 UTC] PHP Notice:  Undefined index: promocod_partner in D:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 721
+[03-Sep-2017 23:25:10 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php:719) in D:\OpenServer\domains\euroroaming\wp-includes\pluggable.php on line 1210
+[03-Sep-2017 23:25:36 UTC] PHP Notice:  Undefined index: billing_partner in D:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 719
+[03-Sep-2017 23:25:36 UTC] PHP Notice:  Undefined index: actual_address in D:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 720
+[03-Sep-2017 23:25:36 UTC] PHP Notice:  Undefined index: promocod_partner in D:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 721
+[03-Sep-2017 23:25:36 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php:719) in D:\OpenServer\domains\euroroaming\wp-includes\pluggable.php on line 1210
+[03-Sep-2017 23:26:04 UTC] PHP Notice:  Функция WC_Order_Item_Meta::__construct с версии 3.1 <strong>считается устаревшей</strong>! Используйте WC_Order_Item_Product. in D:\OpenServer\domains\euroroaming\wp-includes\functions.php on line 3831
+[03-Sep-2017 23:26:04 UTC] PHP Notice:  Функция WC_Order_Item_Meta::__construct с версии 3.1 <strong>считается устаревшей</strong>! Используйте WC_Order_Item_Product. in D:\OpenServer\domains\euroroaming\wp-includes\functions.php on line 3831
+[03-Sep-2017 23:26:04 UTC] PHP Notice:  Функция WC_Order_Item_Meta::__construct с версии 3.1 <strong>считается устаревшей</strong>! Используйте WC_Order_Item_Product. in D:\OpenServer\domains\euroroaming\wp-includes\functions.php on line 3831
+[03-Sep-2017 23:26:04 UTC] PHP Notice:  Функция WC_Order_Item_Meta::__construct с версии 3.1 <strong>считается устаревшей</strong>! Используйте WC_Order_Item_Product. in D:\OpenServer\domains\euroroaming\wp-includes\functions.php on line 3831
+[03-Sep-2017 23:26:04 UTC] PHP Notice:  Функция WC_Order_Item_Meta::__construct с версии 3.1 <strong>считается устаревшей</strong>! Используйте WC_Order_Item_Product. in D:\OpenServer\domains\euroroaming\wp-includes\functions.php on line 3831
+[03-Sep-2017 23:26:04 UTC] PHP Notice:  Функция WC_Order_Item_Meta::__construct с версии 3.1 <strong>считается устаревшей</strong>! Используйте WC_Order_Item_Product. in D:\OpenServer\domains\euroroaming\wp-includes\functions.php on line 3831
+[03-Sep-2017 23:26:04 UTC] PHP Notice:  Функция WC_Order_Item_Meta::__construct с версии 3.1 <strong>считается устаревшей</strong>! Используйте WC_Order_Item_Product. in D:\OpenServer\domains\euroroaming\wp-includes\functions.php on line 3831
+[03-Sep-2017 23:26:04 UTC] PHP Notice:  Функция WC_Order_Item_Meta::__construct с версии 3.1 <strong>считается устаревшей</strong>! Используйте WC_Order_Item_Product. in D:\OpenServer\domains\euroroaming\wp-includes\functions.php on line 3831
+[03-Sep-2017 23:26:04 UTC] PHP Notice:  Функция WC_Order_Item_Meta::__construct с версии 3.1 <strong>считается устаревшей</strong>! Используйте WC_Order_Item_Product. in D:\OpenServer\domains\euroroaming\wp-includes\functions.php on line 3831
+[03-Sep-2017 23:26:04 UTC] PHP Notice:  Функция WC_Order_Item_Meta::__construct с версии 3.1 <strong>считается устаревшей</strong>! Используйте WC_Order_Item_Product. in D:\OpenServer\domains\euroroaming\wp-includes\functions.php on line 3831
+[03-Sep-2017 23:26:04 UTC] PHP Notice:  Функция WC_Order_Item_Meta::__construct с версии 3.1 <strong>считается устаревшей</strong>! Используйте WC_Order_Item_Product. in D:\OpenServer\domains\euroroaming\wp-includes\functions.php on line 3831
+[03-Sep-2017 23:26:04 UTC] PHP Notice:  Функция WC_Order_Item_Meta::__construct с версии 3.1 <strong>считается устаревшей</strong>! Используйте WC_Order_Item_Product. in D:\OpenServer\domains\euroroaming\wp-includes\functions.php on line 3831
+[03-Sep-2017 23:26:04 UTC] PHP Notice:  Функция WC_Order_Item_Meta::__construct с версии 3.1 <strong>считается устаревшей</strong>! Используйте WC_Order_Item_Product. in D:\OpenServer\domains\euroroaming\wp-includes\functions.php on line 3831
+[03-Sep-2017 23:26:04 UTC] PHP Notice:  Функция WC_Order_Item_Meta::__construct с версии 3.1 <strong>считается устаревшей</strong>! Используйте WC_Order_Item_Product. in D:\OpenServer\domains\euroroaming\wp-includes\functions.php on line 3831
+[03-Sep-2017 23:26:04 UTC] PHP Notice:  Функция WC_Order_Item_Meta::__construct с версии 3.1 <strong>считается устаревшей</strong>! Используйте WC_Order_Item_Product. in D:\OpenServer\domains\euroroaming\wp-includes\functions.php on line 3831
+[03-Sep-2017 23:26:04 UTC] PHP Notice:  Функция WC_Order_Item_Meta::__construct с версии 3.1 <strong>считается устаревшей</strong>! Используйте WC_Order_Item_Product. in D:\OpenServer\domains\euroroaming\wp-includes\functions.php on line 3831
+[03-Sep-2017 23:26:04 UTC] PHP Notice:  Функция WC_Order_Item_Meta::__construct с версии 3.1 <strong>считается устаревшей</strong>! Используйте WC_Order_Item_Product. in D:\OpenServer\domains\euroroaming\wp-includes\functions.php on line 3831
+[03-Sep-2017 23:26:04 UTC] PHP Notice:  Функция WC_Order_Item_Meta::__construct с версии 3.1 <strong>считается устаревшей</strong>! Используйте WC_Order_Item_Product. in D:\OpenServer\domains\euroroaming\wp-includes\functions.php on line 3831
+[03-Sep-2017 23:26:04 UTC] PHP Notice:  Функция WC_Order_Item_Meta::__construct с версии 3.1 <strong>считается устаревшей</strong>! Используйте WC_Order_Item_Product. in D:\OpenServer\domains\euroroaming\wp-includes\functions.php on line 3831
+[03-Sep-2017 23:26:04 UTC] PHP Notice:  Функция WC_Order_Item_Meta::__construct с версии 3.1 <strong>считается устаревшей</strong>! Используйте WC_Order_Item_Product. in D:\OpenServer\domains\euroroaming\wp-includes\functions.php on line 3831
+[03-Sep-2017 23:26:04 UTC] PHP Notice:  Функция WC_Order_Item_Meta::__construct с версии 3.1 <strong>считается устаревшей</strong>! Используйте WC_Order_Item_Product. in D:\OpenServer\domains\euroroaming\wp-includes\functions.php on line 3831
+[03-Sep-2017 23:28:12 UTC] PHP Notice:  Undefined index: billing_partner in D:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 719
+[03-Sep-2017 23:28:12 UTC] PHP Notice:  Undefined index: actual_address in D:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 720
+[03-Sep-2017 23:28:12 UTC] PHP Notice:  Undefined index: promocod_partner in D:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php on line 721
+[03-Sep-2017 23:28:12 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at D:\OpenServer\domains\euroroaming\wp-content\themes\Zephyr-child\functions.php:719) in D:\OpenServer\domains\euroroaming\wp-includes\pluggable.php on line 1210
+[03-Sep-2017 23:50:22 UTC] PHP Fatal error:  Uncaught Error: Class 'AffWP\Utils\Batch_Process\WC_Order' not found in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export-referrals.php:364
+Stack trace:
+#0 D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php(201): AffWP\Utils\Batch_Process\Export_Referrals->get_stat_affil()
+#1 D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\tools.php(693): AffWP\Utils\Batch_Process\Export->export()
+#2 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(298): affwp_process_batch_export_download(Array)
+#3 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(323): WP_Hook->apply_filters('', Array)
+#4 D:\OpenServer\domains\euroroaming\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#5 D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\actions.php(23): do_action('affwp_download_...', Array) in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export-referrals.php on line 364
+[03-Sep-2017 23:59:44 UTC] PHP Notice:  Array to string conversion in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php on line 207
+[04-Sep-2017 00:00:24 UTC] PHP Fatal error:  Uncaught PHPExcel_Exception: Parameter $source should be an array. in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\Classes\PHPExcel\Worksheet.php:2446
+Stack trace:
+#0 D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php(241): PHPExcel_Worksheet->fromArray('"\xD0\x9F\xD0\xB0\xD1\x80\xD1\x82\xD0\xBD\xD0\xB5\xD1\x80...', NULL, 'A2')
+#1 D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\tools.php(693): AffWP\Utils\Batch_Process\Export->export()
+#2 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(298): affwp_process_batch_export_download(Array)
+#3 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(323): WP_Hook->apply_filters('', Array)
+#4 D:\OpenServer\domains\euroroaming\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#5 D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\actions.php(2 in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\Classes\PHPExcel\Worksheet.php on line 2446
+[04-Sep-2017 00:02:04 UTC] PHP Warning:  array_map(): Argument #2 should be an array in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php on line 203
+[04-Sep-2017 00:02:04 UTC] PHP Fatal error:  Uncaught PHPExcel_Exception: Parameter $source should be an array. in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\Classes\PHPExcel\Worksheet.php:2446
+Stack trace:
+#0 D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php(241): PHPExcel_Worksheet->fromArray(NULL, NULL, 'A2')
+#1 D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\tools.php(693): AffWP\Utils\Batch_Process\Export->export()
+#2 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(298): affwp_process_batch_export_download(Array)
+#3 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(323): WP_Hook->apply_filters('', Array)
+#4 D:\OpenServer\domains\euroroaming\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#5 D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\actions.php(23): do_action('affwp_download_...', Array)
+#6 D:\OpenServe in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\Classes\PHPExcel\Worksheet.php on line 2446
+[04-Sep-2017 00:03:52 UTC] PHP Warning:  str_getcsv() expects parameter 1 to be string, array given in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php on line 204
+[04-Sep-2017 00:03:52 UTC] PHP Fatal error:  Uncaught PHPExcel_Exception: Parameter $source should be an array. in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\Classes\PHPExcel\Worksheet.php:2446
+Stack trace:
+#0 D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php(242): PHPExcel_Worksheet->fromArray(NULL, NULL, 'A2')
+#1 D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\tools.php(693): AffWP\Utils\Batch_Process\Export->export()
+#2 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(298): affwp_process_batch_export_download(Array)
+#3 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(323): WP_Hook->apply_filters('', Array)
+#4 D:\OpenServer\domains\euroroaming\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#5 D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\actions.php(23): do_action('affwp_download_...', Array)
+#6 D:\OpenServe in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\Classes\PHPExcel\Worksheet.php on line 2446
+[04-Sep-2017 00:04:13 UTC] PHP Notice:  Array to string conversion in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php on line 208
+[04-Sep-2017 00:04:30 UTC] PHP Notice:  Array to string conversion in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php on line 208
+[04-Sep-2017 00:10:06 UTC] PHP Warning:  array_combine() expects parameter 1 to be array, string given in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php on line 206
+[04-Sep-2017 00:10:06 UTC] PHP Warning:  array_combine() expects parameter 1 to be array, string given in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php on line 206
+[04-Sep-2017 00:10:06 UTC] PHP Warning:  array_combine() expects parameter 1 to be array, string given in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php on line 206
+[04-Sep-2017 00:10:06 UTC] PHP Warning:  array_combine() expects parameter 1 to be array, string given in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php on line 206
+[04-Sep-2017 00:10:06 UTC] PHP Warning:  array_combine() expects parameter 1 to be array, string given in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php on line 206
+[04-Sep-2017 00:10:06 UTC] PHP Warning:  array_combine() expects parameter 1 to be array, string given in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php on line 206
+[04-Sep-2017 00:10:06 UTC] PHP Warning:  array_combine() expects parameter 1 to be array, string given in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php on line 206
+[04-Sep-2017 00:10:06 UTC] PHP Warning:  array_combine() expects parameter 1 to be array, string given in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php on line 206
+[04-Sep-2017 00:10:06 UTC] PHP Warning:  array_combine() expects parameter 1 to be array, string given in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php on line 206
+[04-Sep-2017 00:10:06 UTC] PHP Warning:  array_combine() expects parameter 1 to be array, string given in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php on line 206
+[04-Sep-2017 00:10:06 UTC] PHP Warning:  array_combine() expects parameter 1 to be array, string given in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php on line 206
+[04-Sep-2017 00:10:06 UTC] PHP Notice:  Array to string conversion in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php on line 213
+[04-Sep-2017 00:11:42 UTC] PHP Warning:  file(&quot;Партнер&quot;,&quot;Емейл&quot;,&quot;Промокод&quot;,&quot;Описание&quot;,&quot;Отсылка&quot;,&quot;Сумма&quot;,&quot;Дата&quot;
+&quot;test10@ya.ru&quot;,&quot;3000.00&quot;,&quot;Orange с тарифом «Mundo» для Европы - [1 шт.]&quot;,&quot;&quot;,&quot;61097&quot;,&quot;2017-07-01 00:00:00&quot;,
+&quot;test10@ya.ru&quot;,&quot;700.00&quot;,&quot;Orange с тарифом «Mundo» для Европы - [1 шт.]&quot;,&quot;&quot;,&quot;61023&quot;,&quot;2017-09-03 23:34:09&quot;,
+&quot;test9@ya.ru&quot;,&quot;900.00&quot;,&quot;Orange с тарифом «Mundo» для Европы - [1 шт.]&quot;,&quot;&quot;,&quot;61024&quot;,&quot;2017-07-30 00:00:00&quot;,
+&quot;test9@ya.ru&quot;,&quot;710.00&quot;,&quot;Orange с тарифом «Mundo» для Европы - [1 шт.]&quot;,&quot;&quot;,&quot;61097&quot;,&quot;2017-08-03 00:00:00&quot;,
+&quot;test9@ya.ru&quot;,&quot;300.00&quot;,&quot;Orange с тарифом «Mundo» дл in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php on line 204
+[04-Sep-2017 00:11:42 UTC] PHP Warning:  array_map(): Argument #2 should be an array in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php on line 204
+[04-Sep-2017 00:11:42 UTC] PHP Warning:  array_walk() expects parameter 1 to be array, null given in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php on line 207
+[04-Sep-2017 00:11:42 UTC] PHP Warning:  array_shift() expects parameter 1 to be array, null given in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php on line 208
+[04-Sep-2017 00:11:42 UTC] PHP Fatal error:  Uncaught PHPExcel_Exception: Parameter $source should be an array. in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\Classes\PHPExcel\Worksheet.php:2446
+Stack trace:
+#0 D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php(247): PHPExcel_Worksheet->fromArray(NULL, NULL, 'A2')
+#1 D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\tools.php(693): AffWP\Utils\Batch_Process\Export->export()
+#2 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(298): affwp_process_batch_export_download(Array)
+#3 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(323): WP_Hook->apply_filters('', Array)
+#4 D:\OpenServer\domains\euroroaming\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#5 D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\actions.php(23): do_action('affwp_download_...', Array)
+#6 D:\OpenServe in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\Classes\PHPExcel\Worksheet.php on line 2446
+[04-Sep-2017 00:13:41 UTC] PHP Notice:  Array to string conversion in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export.php on line 215
+[04-Sep-2017 00:54:04 UTC] PHP Notice:  Array to string conversion in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export-referrals.php on line 107
+[04-Sep-2017 00:54:04 UTC] PHP Notice:  Array to string conversion in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export-referrals.php on line 113
+[04-Sep-2017 00:54:05 UTC] PHP Notice:  Array to string conversion in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export-referrals.php on line 107
+[04-Sep-2017 00:54:05 UTC] PHP Notice:  Array to string conversion in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export-referrals.php on line 113
+[04-Sep-2017 01:08:55 UTC] PHP Notice:  Undefined offset: 1 in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export-referrals.php on line 281
+[04-Sep-2017 01:08:55 UTC] PHP Notice:  Undefined offset: 2 in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export-referrals.php on line 281
+[04-Sep-2017 01:09:19 UTC] PHP Notice:  Undefined offset: 1 in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export-referrals.php on line 281
+[04-Sep-2017 01:09:19 UTC] PHP Notice:  Undefined offset: 2 in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export-referrals.php on line 281
+[04-Sep-2017 01:15:27 UTC] PHP Notice:  Undefined offset: 1 in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export-referrals.php on line 262
+[04-Sep-2017 01:15:27 UTC] PHP Notice:  Undefined offset: 2 in D:\OpenServer\domains\euroroaming\wp-content\plugins\AffiliateWP-master\includes\admin\tools\export\class-batch-export-referrals.php on line 262

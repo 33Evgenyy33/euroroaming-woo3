@@ -17,6 +17,10 @@ interface With_PreFetch extends Base {
 	 *
 	 * @access public
 	 * @since  2.0
+	 *
+	 * @param null $data
+	 *
+	 * @return
 	 */
 	public function init( $data = null );
 

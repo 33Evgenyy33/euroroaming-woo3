@@ -5,19 +5,9 @@ use PHPExcel_IOFactory;
 use PHPExcel_Style_Alignment;
 use PHPExcel_Style_Border;
 use PHPExcel_Style_Fill;
-use PHPExcel_Writer_Excel2007;
 
 if ( ! class_exists( '\Affiliate_WP_Export' ) ) {
 	require_once AFFILIATEWP_PLUGIN_DIR . 'includes/admin/tools/export/class-export.php';
-}
-
-error_reporting( E_ALL );
-ini_set( 'display_errors', true );
-ini_set( 'display_startup_errors', true );
-//date_default_timezone_set('Europe/London');
-
-if ( PHP_SAPI == 'cli' ) {
-	die( 'This example should only be run from a Web Browser' );
 }
 
 /**
@@ -208,16 +198,17 @@ class Export extends \Affiliate_WP_Export {
 	 * @since  2.0
 	 */
 	public function export() {
+
 		$all_date1 = $this->get_stat_affil();
+
 		$data          = $all_date1[1];
 		$summary_table = $all_date1[0];
+
 		$cols          = $this->get_csv_cols();
-		//$summary_table = $this->get_stat_affil();
 
-//		file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/aff_wp.txt", print_r( $data, true ), FILE_APPEND | LOCK_EX );
-//		file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/aff_wp.txt", print_r( "\n", true ), FILE_APPEND | LOCK_EX );
+//		file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/export_count.txt", print_r( $all_date1, true ), FILE_APPEND | LOCK_EX );
+//		file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/export_count.txt", print_r( "=======================\n", true ), FILE_APPEND | LOCK_EX );
 
-		//print_r($test);
 
 
 		$objPHPExcel = new \PHPExcel();

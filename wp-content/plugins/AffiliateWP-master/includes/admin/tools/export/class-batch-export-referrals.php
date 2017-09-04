@@ -1,5 +1,4 @@
 <?php
-
 namespace AffWP\Utils\Batch_Process;
 
 use AffWP\Utils\Batch_Process as Batch;
@@ -86,18 +85,27 @@ class Export_Referrals extends Batch\Export\CSV implements Batch\With_PreFetch {
 
 			$data = affiliate_wp()->utils->process_request_data( $data, 'user_name' );
 
+			file_put_contents(trailingslashit(wp_upload_dir()['basedir']).'aff_buff.csv', "");
+
+
 			if ( ! empty( $data['user_id'] ) ) {
 				if ( $affiliate_id = affwp_get_affiliate_id( absint( $data['user_id'] ) ) ) {
 					$this->affiliate_id = $affiliate_id;
+					file_put_contents(trailingslashit(wp_upload_dir()['basedir']).'aff_buff.csv', $this->affiliate_id."\n", FILE_APPEND | LOCK_EX );
 				}
+			} else{
+				file_put_contents(trailingslashit(wp_upload_dir()['basedir']).'aff_buff.csv', "0"."\n", FILE_APPEND | LOCK_EX );
 			}
 
-			if ( ! empty( $data['start_date'] ) ) {
-				$this->date['start'] = sanitize_text_field( $data['start_date'] );
+			if ( ! empty( $data['start_date' ] ) ) {
+				$this->date['start'] = sanitize_text_field( $data['start_date' ] );
+				file_put_contents(trailingslashit(wp_upload_dir()['basedir']).'aff_buff.csv', $this->date['start']."\n", FILE_APPEND | LOCK_EX );
 			}
 
 			if ( ! empty( $data['end_date'] ) ) {
 				$this->date['end'] = sanitize_text_field( $data['end_date'] );
+				file_put_contents(trailingslashit(wp_upload_dir()['basedir']).'aff_buff.csv', $this->date['end'], FILE_APPEND | LOCK_EX );
+
 			}
 
 			if ( ! empty( $data['status'] ) ) {
@@ -120,9 +128,9 @@ class Export_Referrals extends Batch\Export\CSV implements Batch\With_PreFetch {
 	public function pre_fetch() {
 		$total_to_export = $this->get_total_count();
 
-		if ( false === $total_to_export ) {
+		if ( false === $total_to_export  ) {
 			$args = array(
-				'number'       => - 1,
+				'number'       => -1,
 				'fields'       => 'ids',
 				'status'       => $this->status,
 				'date'         => $this->date,
@@ -151,9 +159,7 @@ class Export_Referrals extends Batch\Export\CSV implements Batch\With_PreFetch {
 			'description' => __( 'Description', 'affiliate-wp' ),
 			'reference'   => __( 'Reference', 'affiliate-wp' ),
 			'amount'      => __( 'Amount', 'affiliate-wp' ),
-			'date'        => __( 'Date', 'affiliate-wp' )
-			/*'billing_partner' => 'Форма оплаты',
-			'actual_address' => 'Фактический адрес'*/
+			'date'        => __( 'Date', 'affiliate-wp' ),
 		);
 	}
 
@@ -189,61 +195,42 @@ class Export_Referrals extends Batch\Export\CSV implements Batch\With_PreFetch {
 			'offset'       => $this->get_offset(),
 		);
 
-
-
 		$data         = array();
 		$affiliates   = array();
 		$referral_ids = array();
 		$referrals    = affiliate_wp()->referrals->get_referrals( $args );
 
-		if ( $referrals ) {
+		if( $referrals ) {
 
-			foreach ( $referrals as $referral ) {
+			foreach( $referrals as $referral ) {
 
-				$test1 = wc_get_order( $referral->reference );
-				/*if ($test1 == '') {
-					file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/aff_wp.txt", print_r( 'да', true ), FILE_APPEND | LOCK_EX );
-					file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/aff_wp.txt", print_r( "\n", true ), FILE_APPEND | LOCK_EX );
-				}*/
+				/** This filter is documented in includes/admin/tools/export/class-export-referrals.php */
+				$referral_data = apply_filters( 'affwp_referral_export_get_data_line', array(
+					'affiliate_id'  => $referral->affiliate_id,
+					'email'         => affwp_get_affiliate_email( $referral->affiliate_id ),
+					'name'          => affwp_get_affiliate_name( $referral->affiliate_id ),
+					'payment_email' => affwp_get_affiliate_payment_email( $referral->affiliate_id ),
+					'username'      => affwp_get_affiliate_login( $referral->affiliate_id ),
+					'amount'        => $referral->amount,
+					'currency'      => $referral->currency,
+					'description'   => $referral->description,
+					'campaign'      => $referral->campaign,
+					'reference'     => $referral->reference,
+					'context'       => $referral->context,
+					'status'        => $referral->status,
+					'date'          => $referral->date
+				), $referral );
 
-				if ( $test1 == '' ) {
-					continue;
-				}
+				// Add slashing.
+				$data[] = array_map( function( $column ) {
+					return addslashes( preg_replace( "/\"/","'", $column ) );
+				}, $referral_data );
 
-
-				$order     = new WC_Order( $referral->reference );
-				$coupon    = '';
-				$order_url = '';
-				if ( ! empty( $order ) ) {
-					$coupons   = $order->get_used_coupons();
-					$order_url = admin_url( 'post.php?post=' . $order->get_id() . '&action=edit' );
-					if ( ! empty( $coupons ) ) {
-						$coupon = $coupons[0];
-					} else {
-						$coupon = 'без промокода';
-					}
-				}
-
-				$data[] = array(
-					'campaign'    => get_userdata( affwp_get_affiliate( $referral->affiliate_id )->user_id )->billing_company,
-					'email'       => affwp_get_affiliate_email( $referral->affiliate_id ),
-					'coupon'      => $coupon,
-					'description' => strip_tags( str_replace( ',', "\r\n", $referral->description ) ),
-					'reference'   => $order_url,
-					'amount'      => $referral->amount,
-					'date'        => $referral->date
-					/*'billing_partner' => get_userdata(affwp_get_affiliate($referral->affiliate_id)->user_id)->billing_partner,
-					'actual_address' => get_userdata(affwp_get_affiliate($referral->affiliate_id)->user_id)->actual_address*/
-				);
+				unset( $referral_data );
 			}
 
 		}
 
-//		file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/aff_wp.txt", print_r( $data, true ), FILE_APPEND | LOCK_EX );
-//		file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/aff_wp.txt", print_r( "\n", true ), FILE_APPEND | LOCK_EX );
-
-
-		//return $data;
 		return $this->prepare_data( $data );
 	}
 
@@ -270,19 +257,22 @@ class Export_Referrals extends Batch\Export\CSV implements Batch\With_PreFetch {
 	 * @return array
 	 */
 	public function get_stat_affil() {
+
+		$my_data1 = file(trailingslashit(wp_upload_dir()['basedir']).'aff_buff.csv');
+		$my_date1 = array('start' => trim($my_data1[1]), 'end' => trim($my_data1[2]));
+
 		$args = array(
 			'status'       => 'unpaid',
-			'date'         => ! empty( $this->date ) ? $this->date : '',
-			'affiliate_id' => $this->affiliate_id,
-			'number'       => - 1
+			'date'         => $my_date1,
+			'affiliate_id' => trim($my_data1[0]),
+			'number'       => -1
 		);
-
-		file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/aff_wp.txt", print_r( $this->date, true ), FILE_APPEND | LOCK_EX );
-		file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/aff_wp.txt", print_r( "\n", true ), FILE_APPEND | LOCK_EX );
 
 
 		$data_referrals = array();
 		$referrals      = affiliate_wp()->referrals->get_referrals( $args );
+
+
 
 		//print_r($referrals);
 
@@ -401,17 +391,9 @@ class Export_Referrals extends Batch\Export\CSV implements Batch\With_PreFetch {
 
 		array_push( $all_date, $report );
 
-		$args = array(
-			'status'       => 'unpaid',
-			'date'         => ! empty( $this->date ) ? $this->date : '',
-			'affiliate_id' => $this->affiliate_id,
-			'number'       => - 1
-		);
-
 		$data1        = array();
 		$affiliates   = array();
 		$referral_ids = array();
-		$referrals    = affiliate_wp()->referrals->get_referrals( $args );
 
 		if ( $referrals ) {
 
@@ -471,12 +453,11 @@ class Export_Referrals extends Batch\Export\CSV implements Batch\With_PreFetch {
 	 * @since  2.0
 	 *
 	 * @param string $code Message code.
-	 *
 	 * @return string Message.
 	 */
 	public function get_message( $code ) {
 
-		switch ( $code ) {
+		switch( $code ) {
 
 			case 'done':
 				$final_count = $this->get_current_count();
