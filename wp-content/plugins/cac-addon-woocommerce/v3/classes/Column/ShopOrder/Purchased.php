@@ -28,7 +28,9 @@ class ACA_WC_Column_ShopOrder_Purchased extends AC_Column
 			return $this->get_empty_char();
 		}
 
-		return sprintf( _n( '%d item', '%d items', $count, 'codepress-admin-columns' ), $count );
+		$count = sprintf( _n( '%d item', '%d items', $count, 'codepress-admin-columns' ), $count );
+
+		return ac_helper()->html->get_ajax_toggle_box_link( $id, $count, $this->get_name() );
 	}
 
 	/**
@@ -60,7 +62,7 @@ class ACA_WC_Column_ShopOrder_Purchased extends AC_Column
 	}
 
 	public function get_raw_value( $id ) {
-        return $this->get_item_count( $id );
+		return $this->get_item_count( $id );
 	}
 
 	/**
@@ -82,18 +84,18 @@ class ACA_WC_Column_ShopOrder_Purchased extends AC_Column
 		ob_start();
 
 		?>
-        <table class="ac-table-items">
+		<table class="ac-table-items">
 			<?php foreach ( $order_items as $item ) : ?>
 
-                <?php if ( ! $item instanceof WC_Order_Item_Product ) {
-                    continue;
-                } ?>
+				<?php if ( ! $item instanceof WC_Order_Item_Product ) {
+					continue;
+				} ?>
 
-                <tr>
-                    <td class="ac-table-item-qty">
+				<tr>
+					<td class="ac-table-item-qty">
 						<?php echo $item->get_quantity(); ?>
-                    </td>
-                    <td class="ac-table-item-name">
+					</td>
+					<td class="ac-table-item-name">
 						<?php
 						$product = $item->get_product();
 
@@ -117,10 +119,10 @@ class ACA_WC_Column_ShopOrder_Purchased extends AC_Column
 							echo wc_help_tip( $item_meta_html );
 						}
 						?>
-                    </td>
-                </tr>
+					</td>
+				</tr>
 			<?php endforeach; ?>
-        </table>
+		</table>
 		<?php
 
 		return ob_get_clean();

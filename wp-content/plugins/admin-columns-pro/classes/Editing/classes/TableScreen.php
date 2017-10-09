@@ -68,6 +68,7 @@ class ACP_Editing_TableScreen {
 				'edit'          => __( 'Edit' ),
 				'redo'          => __( 'Redo', 'codepress-admin-columns' ),
 				'undo'          => __( 'Undo', 'codepress-admin-columns' ),
+				'date'          => __( 'Date' ),
 				'delete'        => __( 'Delete', 'codepress-admin-columns' ),
 				'download'      => __( 'Download', 'codepress-admin-columns' ),
 				'errors'        => array(
@@ -79,6 +80,7 @@ class ACP_Editing_TableScreen {
 				'media'         => __( 'Media', 'codepress-admin-columns' ),
 				'image'         => __( 'Image', 'codepress-admin-columns' ),
 				'audio'         => __( 'Audio', 'codepress-admin-columns' ),
+				'time'          => __( 'Time', 'codepress-admin-columns' ),
 			),
 		) );
 

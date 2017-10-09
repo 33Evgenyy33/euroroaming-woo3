@@ -168,7 +168,8 @@ function wpsl_more_info_template()
             $more_info_template .= "\t\t\t" . '<% } %>';
 
         } else {
-            $more_info_template = '<div class="w-btn-wrapper align_left"><a class="w-btn style_raised color_primary icon_none" href="<%= permalink %>"><span class="w-btn-label">Подробнее</span><span class="ripple-container"></span></a></div>';
+            $more_info_template = '<div class="w-btn-wrapper align_left"><a class="w-btn style_flat color_custom icon_atright" href="<%= permalink %>" target="_blank" style="background-color: #edf3f9;
+"><span class="w-btn-label">Подробнее</span><span class="ripple-container"></span></a></div>';
             //$more_info_template = '<p><a href="<%= permalink %>" rel="nofollow">Подробнее</a></p>';
             $more_info_template .= '<p><a class="wpsl-store-details" href="' . $more_info_url . '">Перейти к точке на карте</a></p>';
         }

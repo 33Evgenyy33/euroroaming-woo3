@@ -25,7 +25,9 @@ class ACA_WC_Column_Product_Variation extends AC_Column
 			return $this->get_empty_char();
 		}
 
-		return sprintf( _n( '%s item', '%s items', count( $variations ) ), count( $variations ) );
+		$count = sprintf( _n( '%s item', '%s items', count( $variations ) ), count( $variations ) );
+
+		return ac_helper()->html->get_ajax_toggle_box_link( $id, $count, $this->get_name() );
 	}
 
 	public function get_raw_value( $post_id ) {

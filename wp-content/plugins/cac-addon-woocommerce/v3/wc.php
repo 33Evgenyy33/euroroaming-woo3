@@ -134,7 +134,7 @@ final class ACA_WC {
 		require_once $this->get_dir() . 'classes/Dependencies.php';
 
 		$dependencies = new ACA_WC_Dependencies( $this->get_basename() );
-		$dependencies->is_acp_active( '4.0.3' );
+		$dependencies->is_acp_active( '4.0.9' );
 
 		if ( ! $this->is_woocommerce_active() ) {
 			$dependencies->add_missing( $dependencies->get_search_link( 'WooCommerce', 'WooCommerce' ) );

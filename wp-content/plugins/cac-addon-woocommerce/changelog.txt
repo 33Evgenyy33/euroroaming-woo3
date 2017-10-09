@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 2.1.5 =
+Release Date: October 2nd, 2017
+
+* [Added] New improved column for Description
+* [Fixed] Deprecated error in Product Details column (Order overview)
+* [Improved] Made Ajax columns compatible with latest fix in Core
+
 = 2.1.4 =
 Release Date: July 26th, 2017
 

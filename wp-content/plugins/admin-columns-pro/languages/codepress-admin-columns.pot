@@ -16,11 +16,15 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../../ac-addon-types/ac-addon-types.php:54
+#: ../../ac-addon-events-calendar/ac-addon-events-calendar.php:53
+msgid "The current version of this add-on is not compatible with the current version or settings of the Events Calendar."
+msgstr ""
+
+#: ../../ac-addon-types/ac-addon-types.php:56
 msgid "The current version of this add-on is not compatible with Admin Columns Pro."
 msgstr ""
 
-#: ../../ac-addon-types/ac-addon-types.php:54
+#: ../../ac-addon-types/ac-addon-types.php:56
 msgid "Please update this add-on to the latest version."
 msgstr ""
 
@@ -36,20 +40,48 @@ msgstr ""
 msgid "our forum"
 msgstr ""
 
-#: ../../ac-addon-pods/classes/Column.php:18
-msgid "Pods"
-msgstr ""
-
-#: ../../ac-addon-pods/classes/Dependencies.php:55, ../../ac-addon-types/classes/Dependencies.php:55, ../../cac-addon-acf/classes/Dependencies.php:55, ../../cac-addon-woocommerce/v2/classes/Dependencies.php:55, ../../cac-addon-woocommerce/v3/classes/Dependencies.php:55
+#: ../../ac-addon-buddypress/classes/Dependencies.php:55, ../../ac-addon-events-calendar/classes/Dependencies.php:55, ../../ac-addon-pods/classes/Dependencies.php:55, ../../ac-addon-types/classes/Dependencies.php:55, ../../cac-addon-acf/classes/Dependencies.php:55, ../../cac-addon-woocommerce/v2/classes/Dependencies.php:55, ../../cac-addon-woocommerce/v3/classes/Dependencies.php:55
 msgid "version %s or later"
 msgstr ""
 
-#: ../../ac-addon-pods/classes/Dependencies.php:99, ../../ac-addon-types/classes/Dependencies.php:99, ../../cac-addon-acf/classes/Dependencies.php:99, ../../cac-addon-woocommerce/v2/classes/Dependencies.php:99, ../../cac-addon-woocommerce/v3/classes/Dependencies.php:99
+#: ../../ac-addon-buddypress/classes/Dependencies.php:99, ../../ac-addon-events-calendar/classes/Dependencies.php:99, ../../ac-addon-pods/classes/Dependencies.php:99, ../../ac-addon-types/classes/Dependencies.php:99, ../../cac-addon-acf/classes/Dependencies.php:99, ../../cac-addon-woocommerce/v2/classes/Dependencies.php:99, ../../cac-addon-woocommerce/v3/classes/Dependencies.php:99
 msgid " and "
 msgstr ""
 
-#: ../../ac-addon-pods/classes/Dependencies.php:101, ../../ac-addon-types/classes/Dependencies.php:101, ../../cac-addon-acf/classes/Dependencies.php:101, ../../cac-addon-woocommerce/v2/classes/Dependencies.php:101, ../../cac-addon-woocommerce/v3/classes/Dependencies.php:101
+#: ../../ac-addon-buddypress/classes/Dependencies.php:101, ../../ac-addon-events-calendar/classes/Dependencies.php:101, ../../ac-addon-pods/classes/Dependencies.php:101, ../../ac-addon-types/classes/Dependencies.php:101, ../../cac-addon-acf/classes/Dependencies.php:101, ../../cac-addon-woocommerce/v2/classes/Dependencies.php:101, ../../cac-addon-woocommerce/v3/classes/Dependencies.php:101
 msgid "This add-on requires %s to be installed and activated."
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Import.php:34
+msgid "Enable our predefined column sets for %s?"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/TableScreen.php:71
+msgid "upcoming"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/TableScreen.php:76
+msgid "previous"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/TableScreen.php:80
+msgid "all"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/TableScreen.php:84
+msgid "Filtering on %s: Showing %s events from %s."
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/TableScreen.php:93
+msgid "Return to %s"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/TableScreen.php:105
+msgid "Remove this filter"
+msgstr ""
+
+#: ../../ac-addon-pods/classes/Column.php:18
+msgid "Pods"
 msgstr ""
 
 #: ../classes/Layout.php:172, ../classes/LayoutScreen/Columns.php:543, ../classes/Column/User/Roles.php:8
@@ -96,6 +128,90 @@ msgstr ""
 msgid "Sale To"
 msgstr ""
 
+#: ../../ac-addon-buddypress/classes/Settings/Date.php:13
+msgid "BuddyPress Difference"
+msgstr ""
+
+#: ../../ac-addon-buddypress/classes/Settings/Date.php:20
+msgid "The difference is returned in a human readable format."
+msgstr ""
+
+#: ../../ac-addon-buddypress/classes/Settings/Date.php:20
+msgid "For example: %s."
+msgstr ""
+
+#: ../../ac-addon-buddypress/classes/Settings/Group.php:51, ../../ac-addon-events-calendar/classes/Settings/Venue.php:12, ../classes/Settings/Column/NetworkSite/Theme.php:19
+msgid "Display"
+msgstr ""
+
+#: ../../ac-addon-buddypress/classes/Settings/GroupLink.php:44
+msgid "Link To"
+msgstr ""
+
+#: ../../ac-addon-buddypress/classes/Settings/Profile.php:21, ../../ac-addon-pods/classes/Setting/Field.php:24, ../../ac-addon-types/classes/Settings/Field.php:25, ../../cac-addon-acf/classes/Setting/Field.php:26
+msgid "No %s fields available."
+msgstr ""
+
+#: ../../ac-addon-buddypress/classes/Settings/Profile.php:21
+msgid "BuddyPress"
+msgstr ""
+
+#: ../../ac-addon-buddypress/classes/Settings/Profile.php:27, ../../ac-addon-pods/classes/Setting/Field.php:34, ../../ac-addon-types/classes/Settings/Field.php:31, ../../cac-addon-acf/classes/Setting/Field.php:34
+msgid "Field"
+msgstr ""
+
+#: ../../ac-addon-buddypress/classes/Settings/Profile.php:28, ../../ac-addon-types/classes/Settings/Field.php:32
+msgid "Select your %s field."
+msgstr ""
+
+#: ../../ac-addon-buddypress/classes/Settings/Profile.php:28
+msgid "BuddyPress profile"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Column/UpcomingEvent.php:8
+msgid "Upcoming Event"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Filtering/UpcomingEvent.php:51
+msgid "Has Upcoming Event"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Filtering/UpcomingEvent.php:52
+msgid "Has No Upcoming Event"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Settings/EventDates.php:35
+msgid "Event Date"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Settings/EventDisplay.php:35
+msgid "Show Events"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Settings/EventDisplay.php:45
+msgid "Upcoming Events"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Settings/EventDisplay.php:46
+msgid "Past Events"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Settings/ShowEventDate.php:20
+msgid "Show Event Date"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Settings/ShowEventDate.php:21
+msgid "This will show the event date below the events title."
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Settings/ShowFilterLink.php:21
+msgid "Link to Filtered Overview"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Settings/ShowFilterLink.php:22
+msgid "Enabling this option to create a link to the filtered overview of the related post type "
+msgstr ""
+
 #: ../../ac-addon-pods/classes/Filtering/TrueFalse.php:36, ../../cac-addon-acf/classes/Filtering/TrueFalse.php:36, ../classes/Filtering/classes/Model/CustomField/Checkmark.php:9
 msgid "False"
 msgstr ""
@@ -104,20 +220,20 @@ msgstr ""
 msgid "True"
 msgstr ""
 
-#: ../../ac-addon-pods/classes/Setting/Field.php:24, ../../ac-addon-types/classes/Settings/Field.php:25, ../../cac-addon-acf/classes/Setting/Field.php:26
-msgid "No %s fields available."
-msgstr ""
-
 #: ../../ac-addon-pods/classes/Setting/Field.php:25
 msgid "Create your first %s field."
 msgstr ""
 
-#: ../../ac-addon-pods/classes/Setting/Field.php:34, ../../ac-addon-types/classes/Settings/Field.php:31, ../../cac-addon-acf/classes/Setting/Field.php:34
-msgid "Field"
-msgstr ""
-
 #: ../../ac-addon-pods/classes/Setting/Field.php:83, ../../cac-addon-acf/classes/Setting/Field.php:147, ../../cac-addon-acf/classes/Free/Setting/Field.php:25
 msgid "empty label"
+msgstr ""
+
+#: ../../ac-addon-types/classes/Settings/ChildPostType.php:21
+msgid "No child post types available."
+msgstr ""
+
+#: ../../ac-addon-types/classes/Settings/ChildPostType.php:25, ../../ac-addon-types/classes/Settings/ParentPostType.php:25, ../classes/Settings/Column/NetworkSite/PostCount.php:27
+msgid "Post Type"
 msgstr ""
 
 #: ../../ac-addon-types/classes/Settings/Field.php:25, ../../ac-addon-types/classes/Settings/Field.php:32
@@ -125,11 +241,11 @@ msgid "Types"
 msgstr ""
 
 #: ../../ac-addon-types/classes/Settings/Field.php:32
-msgid "Select your %s field."
+msgid "Type"
 msgstr ""
 
-#: ../../ac-addon-types/classes/Settings/Field.php:32
-msgid "Type"
+#: ../../ac-addon-types/classes/Settings/ParentPostType.php:21
+msgid "No parent post types available."
 msgstr ""
 
 #: ../classes/Editing/Addon.php:117
@@ -200,7 +316,7 @@ msgstr ""
 msgid "Warning! The %s columns data will be deleted. This cannot be undone. 'OK' to delete, 'Cancel' to stop"
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:292, ../classes/Editing/classes/TableScreen.php:67
+#: ../classes/LayoutScreen/Columns.php:292, ../classes/Editing/classes/TableScreen.php:68
 msgid "Delete"
 msgstr ""
 
@@ -434,6 +550,114 @@ msgstr ""
 msgid "Select a repeater sub field."
 msgstr ""
 
+#: ../../ac-addon-buddypress/classes/Column/User/ActivityUpdates.php:8
+msgid "Activity Updates"
+msgstr ""
+
+#: ../../ac-addon-buddypress/classes/Column/User/LastActivity.php:9
+msgid "Last Activity"
+msgstr ""
+
+#: ../../ac-addon-buddypress/classes/Column/User/LastSeen.php:8
+msgid "Last Seen"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Column/Event/Costs.php:7
+msgid "Costs"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Column/Event/DisplayDate.php:8
+msgid "Date"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Column/Event/Duration.php:7
+msgid "Duration"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Column/Event/Featured.php:7, ../../ac-addon-events-calendar/classes/Filtering/Event/Featured.php:12
+msgid "Featured"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Column/Event/HideFromUpcoming.php:7
+msgid "Hide from Event Listing"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Column/Event/Organizer.php:8
+msgid "Organizer"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Column/Event/Sticky.php:8
+msgid "Sticky in Month View"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Column/Event/Venue.php:8
+msgid "Venue"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Column/Event/Website.php:7
+msgid "Event Website"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Column/Organizer/Email.php:7
+msgid "Email"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Column/Organizer/Phone.php:7, ../../ac-addon-events-calendar/classes/Column/Venue/Phone.php:7
+msgid "Phone"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Column/Organizer/Website.php:7, ../../ac-addon-events-calendar/classes/Column/Venue/Website.php:7
+msgid "Website"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Column/Venue/Address.php:7
+msgid "Address"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Column/Venue/City.php:7
+msgid "City"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Column/Venue/Country.php:7
+msgid "Country"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Column/Venue/PostalCode.php:7
+msgid "Postal Code"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Column/Venue/StateProvince.php:7
+msgid "State or Province"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Filtering/Event/AllDayEvent.php:12
+msgid "All Day Events"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Filtering/Event/AllDayEvent.php:13
+msgid "Not All Day Events"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Filtering/Event/Featured.php:13
+msgid "Not Featured"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Filtering/Event/HiddenFromUpcoming.php:12
+msgid "Hidden from Event Listing"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Filtering/Event/HiddenFromUpcoming.php:13
+msgid "Visible on Event Listing"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Filtering/Event/Sticky.php:8
+msgid "Sticky Events"
+msgstr ""
+
+#: ../../ac-addon-events-calendar/classes/Filtering/Event/Sticky.php:9
+msgid "Not Sticky Events"
+msgstr ""
+
 #: ../classes/Admin/Page/ExportImport.php:22
 msgid "Export/Import"
 msgstr ""
@@ -600,7 +824,7 @@ msgstr ""
 msgid "Upload file and import"
 msgstr ""
 
-#: ../classes/Column/Media/Image.php:10, ../classes/Editing/classes/TableScreen.php:76, ../../cac-addon-woocommerce/v2/classes/Filtering/Product/Thumb.php:8, ../../cac-addon-woocommerce/v2/classes/Filtering/Product/Thumb.php:9, ../../cac-addon-woocommerce/v3/classes/Filtering/Product/Thumb.php:8, ../../cac-addon-woocommerce/v3/classes/Filtering/Product/Thumb.php:9
+#: ../classes/Column/Media/Image.php:10, ../classes/Editing/classes/TableScreen.php:77, ../../cac-addon-woocommerce/v2/classes/Filtering/Product/Thumb.php:8, ../../cac-addon-woocommerce/v2/classes/Filtering/Product/Thumb.php:9, ../../cac-addon-woocommerce/v3/classes/Filtering/Product/Thumb.php:8, ../../cac-addon-woocommerce/v3/classes/Filtering/Product/Thumb.php:9
 msgid "Image"
 msgstr ""
 
@@ -702,55 +926,59 @@ msgstr ""
 msgid "Undo"
 msgstr ""
 
-#: ../classes/Editing/classes/TableScreen.php:68
+#: ../classes/Editing/classes/TableScreen.php:69
 msgid "Download"
 msgstr ""
 
-#: ../classes/Editing/classes/TableScreen.php:70
+#: ../classes/Editing/classes/TableScreen.php:71
 msgid "This field is required."
 msgstr ""
 
-#: ../classes/Editing/classes/TableScreen.php:71
+#: ../classes/Editing/classes/TableScreen.php:72
 msgid "Please enter a valid float value."
 msgstr ""
 
-#: ../classes/Editing/classes/TableScreen.php:72
+#: ../classes/Editing/classes/TableScreen.php:73
 msgid "Please enter valid float values."
 msgstr ""
 
-#: ../classes/Editing/classes/TableScreen.php:74
+#: ../classes/Editing/classes/TableScreen.php:75
 msgid "Inline Edit"
 msgstr ""
 
-#: ../classes/Editing/classes/TableScreen.php:75
+#: ../classes/Editing/classes/TableScreen.php:76
 msgid "Media"
 msgstr ""
 
-#: ../classes/Editing/classes/TableScreen.php:77
+#: ../classes/Editing/classes/TableScreen.php:78
 msgid "Audio"
 msgstr ""
 
-#: ../classes/Editing/classes/TableScreen.php:125
+#: ../classes/Editing/classes/TableScreen.php:79
+msgid "Time"
+msgstr ""
+
+#: ../classes/Editing/classes/TableScreen.php:127
 msgid "Invalid item ID."
 msgstr ""
 
-#: ../classes/Editing/classes/TableScreen.php:131, ../classes/Editing/classes/TableScreen.php:257
+#: ../classes/Editing/classes/TableScreen.php:133, ../classes/Editing/classes/TableScreen.php:259
 msgid "Invalid list screen."
 msgstr ""
 
-#: ../classes/Editing/classes/TableScreen.php:140, ../classes/Editing/classes/TableScreen.php:265, ../classes/Editing/classes/TableScreen.php:269
+#: ../classes/Editing/classes/TableScreen.php:142, ../classes/Editing/classes/TableScreen.php:267, ../classes/Editing/classes/TableScreen.php:271
 msgid "Invalid column."
 msgstr ""
 
-#: ../classes/Editing/classes/TableScreen.php:144
+#: ../classes/Editing/classes/TableScreen.php:146
 msgid "Column does not support editing."
 msgstr ""
 
-#: ../classes/Editing/classes/TableScreen.php:150
+#: ../classes/Editing/classes/TableScreen.php:152
 msgid "User does not have write permissions"
 msgstr ""
 
-#: ../classes/Editing/classes/TableScreen.php:251
+#: ../classes/Editing/classes/TableScreen.php:253
 msgid "Invalid request."
 msgstr ""
 
@@ -774,19 +1002,19 @@ msgstr ""
 msgid "Filter by %s"
 msgstr ""
 
-#: ../classes/Filtering/classes/Model.php:221
+#: ../classes/Filtering/classes/Model.php:222
 msgid "Future dates"
 msgstr ""
 
-#: ../classes/Filtering/classes/Model.php:222
+#: ../classes/Filtering/classes/Model.php:223
 msgid "Past dates"
 msgstr ""
 
-#: ../classes/Filtering/classes/Model.php:246, ../../cac-addon-woocommerce/v2/classes/Filtering/Product/Thumb.php:8, ../../cac-addon-woocommerce/v3/classes/Filtering/Product/Thumb.php:8
+#: ../classes/Filtering/classes/Model.php:247, ../../cac-addon-woocommerce/v2/classes/Filtering/Product/Thumb.php:8, ../../cac-addon-woocommerce/v3/classes/Filtering/Product/Thumb.php:8
 msgid "Without %s"
 msgstr ""
 
-#: ../classes/Filtering/classes/Model.php:247, ../../cac-addon-woocommerce/v2/classes/Filtering/Product/Thumb.php:9, ../../cac-addon-woocommerce/v3/classes/Filtering/Product/Thumb.php:9
+#: ../classes/Filtering/classes/Model.php:248, ../../cac-addon-woocommerce/v2/classes/Filtering/Product/Thumb.php:9, ../../cac-addon-woocommerce/v3/classes/Filtering/Product/Thumb.php:9
 msgid "Has %s"
 msgstr ""
 
@@ -926,10 +1154,6 @@ msgstr ""
 msgid "Include network plugins"
 msgstr ""
 
-#: ../classes/Settings/Column/NetworkSite/PostCount.php:27
-msgid "Post Type"
-msgstr ""
-
 #: ../classes/Settings/Column/NetworkSite/PostCount.php:38
 msgid "Does not include %s"
 msgstr ""
@@ -952,10 +1176,6 @@ msgstr ""
 
 #: ../classes/Settings/Column/NetworkSite/PostCount.php:142
 msgid "Any post status without Trash"
-msgstr ""
-
-#: ../classes/Settings/Column/NetworkSite/Theme.php:19
-msgid "Display"
 msgstr ""
 
 #: ../classes/Settings/Column/NetworkSite/Theme.php:28
@@ -992,6 +1212,14 @@ msgstr ""
 
 #: ../classes/ThirdParty/YoastSeo/Editing/Title.php:12
 msgid "Enter your SEO Title"
+msgstr ""
+
+#: ../classes/ThirdParty/YoastSeo/Filtering/Title.php:9
+msgid "Has Default Title"
+msgstr ""
+
+#: ../classes/ThirdParty/YoastSeo/Filtering/Title.php:10
+msgid "Has Custom SEO Title"
 msgstr ""
 
 #: ../../cac-addon-woocommerce/v2/classes/Column/Product/BackordersAllowed.php:8, ../../cac-addon-woocommerce/v3/classes/Column/Product/BackordersAllowed.php:8
@@ -1120,6 +1348,14 @@ msgstr ""
 
 #: ../../cac-addon-woocommerce/v2/classes/Filtering/ShopOrder/CustomerMessage.php:26, ../../cac-addon-woocommerce/v3/classes/Filtering/ShopOrder/CustomerMessage.php:26
 msgid "Has customer message"
+msgstr ""
+
+#: ../../cac-addon-woocommerce/v3/classes/Column/ShopCoupon/CouponDescription.php:13
+msgid "Description"
+msgstr ""
+
+#: ../../cac-addon-woocommerce/v3/classes/Column/ShopCoupon/EmailRestrictions.php:11
+msgid "Email restrictions"
 msgstr ""
 
 #: ../../cac-addon-woocommerce/v3/classes/Column/ShopOrder/Purchased.php:12

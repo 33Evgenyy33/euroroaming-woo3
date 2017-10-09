@@ -45,12 +45,20 @@ class ACA_WC_Column_ShopOrder_ProductDetails extends AC_Column {
 				if ( wc_product_sku_enabled() && $product->get_sku() ) {
 					$output .= '<div class="meta">' . __( 'SKU', 'woocommerce' ) . ': ' . $product->get_sku() . '</div>';
 				}
+
 			} else {
 				$output .= '<strong>' . $quantity . esc_html( $item->get_name() ) . '</strong>';
 			}
 
-			if ( $item_meta = new WC_Order_Item_Meta( $item ) ) {
-				$output .= '<div class="meta">' . $item_meta->display( true, true ) . '</div>';
+			if ( $item instanceof WC_Order_Item_Product ) {
+				$meta = $item->get_formatted_meta_data( true, true );
+				$meta_values = array();
+
+				foreach ( $meta as $info ) {
+					$meta_values[] = $info->display_key . ': ' . strip_tags( $info->display_value );
+				}
+
+				$output .= '<div class="meta">' . implode( ', ', $meta_values ) . '</div>';
 			}
 
 			$result[] = '<div class="ac-wc-product">' . $output . '</div>';

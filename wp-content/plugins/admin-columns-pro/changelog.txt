@@ -1,5 +1,26 @@
 == Changelog ==
 
+= 4.0.10 =
+Release Date: October 4th, 2017
+
+* [Added] Events Calendar integration add-on is now available from the add-ons tab
+* [Added] xEditable for date/time fields
+* [Improved] Date filter dropdowns are now displayed in descending order
+* [Improved] User Registered date column now uses the date/time editing field
+
+= 4.0.9 =
+Release Date: October 2nd, 2017
+
+* [Added] Filtering for Yoast title column (default or custom titles)
+* [Added] Editing support for User registered column
+* [Improvement] Improved filter drop down performance on large datasets
+* [Fixed] Roles column did not work
+* [Fixed] Sorting and Filtering on two different Taxonomy columns gives an error
+* [Updated] Admin Columns core to v3.0.5
+    * [Changed] Changed Ajax value interface
+    * [Improvement] Column interface for post relations
+    * [Added] Added before/after fields for ID column
+
 = 4.0.8 =
 Release Date: August 17th, 2017
 

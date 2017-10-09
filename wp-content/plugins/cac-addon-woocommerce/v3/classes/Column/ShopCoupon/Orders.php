@@ -23,7 +23,9 @@ class ACA_WC_Column_ShopCoupon_Orders extends AC_Column
 			return $this->get_empty_char();
 		}
 
-		return sprintf( _n( '%s item', '%s items', count( $order_ids ) ), count( $order_ids ) );
+		$count = sprintf( _n( '%s item', '%s items', count( $order_ids ) ), count( $order_ids ) );
+
+		return ac_helper()->html->get_ajax_toggle_box_link( $id, $count, $this->get_name() );
 	}
 
 	public function get_raw_value( $id ) {

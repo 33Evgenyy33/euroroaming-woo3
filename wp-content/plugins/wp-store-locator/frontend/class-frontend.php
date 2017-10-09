@@ -213,15 +213,80 @@ if ( ! class_exists( 'WPSL_Frontend' ) ) {
 			);
 
 			// Check if we need to filter the results by category.
+
+			$category_id = '';
 			if ( isset( $_GET['filter'] ) && $_GET['filter'] ) {
-				$filter_ids = array_map( 'absint', explode( ',', $_GET['filter'] ) );
-				$cat_filter = "INNER JOIN $wpdb->term_relationships AS term_rel ON posts.ID = term_rel.object_id
-                               INNER JOIN $wpdb->term_taxonomy AS term_tax ON term_rel.term_taxonomy_id = term_tax.term_taxonomy_id
-                                      AND term_tax.taxonomy = 'wpsl_store_category'
-                                      AND term_tax.term_id IN (" . implode( ',', $filter_ids ) . ")";
-			} else {
-				$cat_filter = '';
+				//file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/store1.txt", print_r( gettype($_GET['filter'])."\r\n", true ), FILE_APPEND | LOCK_EX );
+
+				//Тестовый сайт
+
+				switch ( $_GET['filter'] ) {
+					case '49':
+						$category_id = 'orange';
+						break;
+					case '51':
+						$category_id = 'ortel';
+						break;
+					case '50':
+						$category_id = 'vodafone';
+						break;
+					case '70':
+						$category_id = 'three';
+						break;
+					case '67':
+						$category_id = 'globalsim--classic';
+						break;
+					case '68':
+						$category_id = 'globalsim--tariff_usa';
+						break;
+					case '69':
+						$category_id = 'globalsim--gsim_internet';
+						break;
+					case '66':
+						$category_id = 'globalsim--europasim';
+						break;
+					case '71':
+						$category_id = 'globalsim--travelchat';
+						break;
+					case '72':
+						$category_id = 'vodafone_r';
+						break;
+				}
+				/*switch ( $_GET['filter'] ) {
+					case '97':
+						$category_id = 'orange';
+						break;
+					case '101':
+						$category_id = 'ortel';
+						break;
+					case '100':
+						$category_id = 'vodafone';
+						break;
+					case '1960':
+						$category_id = 'three';
+						break;
+					case '102':
+						$category_id = 'globalsim--classic';
+						break;
+					case '1711':
+						$category_id = 'globalsim--tariff_usa';
+						break;
+					case '103':
+						$category_id = 'globalsim--gsim_internet';
+						break;
+					case '223':
+						$category_id = 'globalsim--europasim';
+						break;
+					case '1729':
+						$category_id = 'globalsim--gsim_internet';
+						break;
+					case '133':
+						$category_id = 'vodafone_r';
+						break;
+				}*/
 			}
+
+			$cat_filter = '';
 
 			/*
              * If WPML is active we include 'GROUP BY lat' in the sql query
@@ -286,24 +351,20 @@ if ( ! class_exists( 'WPSL_Frontend' ) ) {
 				$store_data = apply_filters( 'wpsl_no_results_sql', '' );
 			}
 
-			$filter_ids_for_search = $filter_ids;
-
-
-			$filtered_store_data = array();
-
-			$urls = array();
-
+			$urls  = array();
+			$ta_id = '';
 			foreach ( $store_data as $store ) {
 				$ta_id = $store['ta_id'];
 
 				if ( ! $ta_id ) {
+					array_push( $urls, "" );
 					continue;
 				}
-
 				array_push( $urls, "http://seller.sgsim.ru/euroroaming_order_submit?operation=get_simcards_new&ta=$ta_id" );
 			}
 
-			$mh = curl_multi_init();
+			$mh  = curl_multi_init();
+			$res = array();
 			foreach ( $urls as $i => $url ) {
 				$conn[ $i ] = curl_init( $url );
 				curl_setopt( $conn[ $i ], CURLOPT_RETURNTRANSFER, 1 );  //ничего в браузер не давать
@@ -320,118 +381,38 @@ if ( ! class_exists( 'WPSL_Frontend' ) ) {
 				curl_close( $conn[ $i ] );
 			}
 			curl_multi_close( $mh );
-			//print_r($res);
 
+			file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/store1.txt", print_r( $res, true ), FILE_APPEND | LOCK_EX );
 
-			file_put_contents( "store1.txt", print_r( $res, true ), FILE_APPEND | LOCK_EX );
+			$filtered_stores = array();
+			$i               = 0;
+			if ($category_id != '') {
+				foreach ( $store_data as $store ) {
+					$ta_id     = $store['ta_id'];
+					$sim_cards = (array) json_decode( $res[ $i ] );
 
+//					file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/store1.txt", print_r( $sim_cards, true ), FILE_APPEND | LOCK_EX );
 
-			//foreach ($store_data as $store){
+					if ( ! $ta_id ) {
+						array_push( $filtered_stores, $store );
+						continue;
+					}
 
+					if ($category_id == "globalsim--classic") {
+						if ( array_key_exists( "globalsim--classic", $sim_cards ) ||  array_key_exists( "globalsim", $sim_cards )) {
+							array_push( $filtered_stores, $store );
+						}
+					} else{
+						if ( array_key_exists( $category_id, $sim_cards ) ) {
+							array_push( $filtered_stores, $store );
+						}
+					}
 
-			/*$ta_id = $store['ta_id'];
+					$i++;
 
-	            if (!$ta_id) continue;
-
-	            $url = "http://seller.sgsim.ru/euroroaming_order_submit?operation=get_simcards_new&ta=$ta_id";
-	            curl_setopt($ch, CURLOPT_HEADER, 0);
-	            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //Устанавливаем параметр, чтобы curl возвращал данные, вместо того, чтобы выводить их в браузер.
-	            curl_setopt($ch, CURLOPT_URL, $url);
-	            $data = curl_exec($ch);
-
-	            $array_of_simcard = (array)json_decode($data);*/
-
-			//file_put_contents("store1.txt", print_r($array_of_simcard,  true), FILE_APPEND | LOCK_EX);
-
-			/*$sort_array_of_simcard = array();*/
-
-			/*if (array_key_exists('orange', $array_of_simcard) && $filter_ids_for_search[0] == 49){
-		            array_push($filtered_store_data, $store);
-	            }
-	            if (array_key_exists('globalsim--classic', $array_of_simcard) && $filter_ids_for_search[0] == 67){
-		            array_push($filtered_store_data, $store);
-	            }
-	            if (array_key_exists('globalsim--tariff_usa', $array_of_simcard) && $filter_ids_for_search[0] == 68){
-		            array_push($filtered_store_data, $store);
-	            }
-	            if (array_key_exists('globalsim--gsim_internet', $array_of_simcard) && $filter_ids_for_search[0] == 69){
-		            array_push($filtered_store_data, $store);
-	            }
-	            if (array_key_exists('globalsim--europasim', $array_of_simcard) && $filter_ids_for_search[0] == 66){
-		            array_push($filtered_store_data, $store);
-	            }
-	            if (array_key_exists('globalsim--travelchat', $array_of_simcard) && $filter_ids_for_search[0] == 71){
-		            array_push($filtered_store_data, $store);
-	            }
-	            if (array_key_exists('ortel', $array_of_simcard) && $filter_ids_for_search[0] == 51){
-		            array_push($filtered_store_data, $store);
-	            }
-	            if (array_key_exists('vodafone', $array_of_simcard) && $filter_ids_for_search[0] == 50){
-		            array_push($filtered_store_data, $store);
-	            }
-	            if (array_key_exists('three', $array_of_simcard) && $filter_ids_for_search[0] == 70){
-		            array_push($filtered_store_data, $store);
-	            }
-	            if (array_key_exists('vodafone_r', $array_of_simcard) && $filter_ids_for_search[0] == 72){
-		            array_push($filtered_store_data, $store);
-	            }*/
-
-			/*switch ($key) {
-		            case 'orange':
-			            $content .= $orange_img;
-			            $simcard = "Orange";
-			            $oper = $array_of_simcard['orange'];
-			            break;
-		            case 'globalsim--classic':
-			            $content .= $globalsim_img;
-			            $simcard = "Globalsim";
-			            $oper = $array_of_simcard['globalsim--classic'];
-			            break;
-		            case 'globalsim--tariff_usa':
-			            $content .= $globalsim_img;
-			            $simcard = "Globalsim «США»";
-			            $oper = $array_of_simcard['globalsim--tariff_usa'];
-			            break;
-		            case 'globalsim--gsim_internet':
-			            $content .= $globalsim_img;
-			            $simcard = "Globalsim «Internet»";
-			            $oper = $array_of_simcard['globalsim--gsim_internet'];
-			            break;
-		            case 'globalsim--europasim':
-			            $content .= $europasim_img;
-			            $simcard = "Europasim";
-			            $oper = $array_of_simcard['globalsim--europasim'];
-			            break;
-		            case 'globalsim--travelchat':
-			            $content .= $travelchat_img;
-			            $simcard = "TravelChat";
-			            $oper = $array_of_simcard['globalsim--travelchat'];
-			            break;
-		            case 'ortel':
-			            $content .= $ortel_img;
-			            $simcard = "Ortel Mobile";
-			            $oper = $array_of_simcard['ortel'];
-			            break;
-		            case 'vodafone':
-			            $content .= $vodafone_img;
-			            $simcard = "Vodafone";
-			            $oper = $array_of_simcard['vodafone'];
-			            break;
-		            case 'three':
-			            $content .= $three;
-			            $simcard = "Three";
-			            $oper = $array_of_simcard['three'];
-			            break;
-		            case 'vodafone_r':
-			            $content .= $vodafone_img;
-			            $simcard = "Vodafone «Red»";
-			            $oper = $array_of_simcard['vodafone_r'];
-			            break;
-	            }*/
-
-			//}
-
-			//curl_close($ch);
+				}
+				$store_data = $filtered_stores;
+			}
 
 
 			return $store_data;
@@ -755,7 +736,7 @@ if ( ! class_exists( 'WPSL_Frontend' ) ) {
 				array_push( $this->load_scripts, 'wpsl_base' );
 
 				$content .= '<div class="wpsl-page-ta-simcards">';
-				$content .= '<h3 style="text-align: center">Сим-карты</h3>';
+				$content .= '<h3 style="text-align: center">Сим-карты в наличии</h3>';
 				$content .= '[wpsl_simcards]';
 				$content .= '</div>';
 				$content .= '<div class="wpsl-page-ta-content">';
@@ -889,12 +870,13 @@ if ( ! class_exists( 'WPSL_Frontend' ) ) {
 			return $output;
 		}
 
-		public function check_orange_format( $num = '') {
+		public function check_orange_format( $num = '' ) {
 			$orange_combo_check = array( "6050", "6051", "6052" );
 			$orange_nano_check  = array(
 				"615",
 				"625",
 				"6351",
+				"6352",
 				"692",
 				"6053",
 				"6054",
@@ -912,18 +894,16 @@ if ( ! class_exists( 'WPSL_Frontend' ) ) {
 
 			//Проверка на nano
 			foreach ( $orange_nano_check as $format ) {
-				if ( ( stripos( $check_num, $format, 0 ) !== false ) || ( $check_num == $format ) ) {
+				if ( ( stripos( $check_num, $format ) !== false ) || ( $check_num == $format ) ) {
 					return 'nano';
 				}
 			}
 
 
-
-
 			//Проверка на combo
 			foreach ( $orange_combo_check as $format ) {
 
-				if ( ( stripos( $check_num, $format, 0 ) !== false ) || ( $check_num == $format ) ) {
+				if ( ( stripos( $check_num, $format ) !== false ) || ( $check_num == $format ) ) {
 					return 'combo';
 				}
 			}
@@ -980,7 +960,7 @@ if ( ! class_exists( 'WPSL_Frontend' ) ) {
 				$array_of_simcard      = (array) json_decode( $data );
 				$sort_array_of_simcard = array();
 
-				$content .= '<pre>' . print_r($array_of_simcard, true) . '</pre>';
+				$content .= '<pre>' . print_r( $array_of_simcard, true ) . '</pre>';
 
 				$orange_img     = '<div class="pricing-deco" style="background:url(data:image/png;base64,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) no-repeat center;height: 90px;"></div>';
 				$globalsim_img  = '<div class="pricing-deco" style="background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAAjCAMAAAAKcND7AAABU1BMVEVHcEweDwAeDwAeDwDzV0ceDwAeDwAeDwDzV0ceDwBSIBMeDwAeDwAeDwDzV0fzV0ceDwAeDwAeDwAeDwDzV0ceDwAeDwAeDwAeDwDzV0ceDwAeDwDzV0ceDwAeDwAeDwAeDwAeDwAeDwDzV0fzV0fzV0fzV0ceDwDzV0ceDwAeDwDzV0ceDwAeDwAeDwAeDwAeDwAeDwAeDwAeDwAeDwAeDwAeDwAeDwDzV0fzV0fzV0ceDwAeDwAeDwAeDwAeDwDzV0fzV0ceDwAeDwDzV0fzV0fzV0fzV0fzV0ceDwAeDwAeDwAeDwDzV0fzV0fzV0fzV0fzV0ceDwDzV0fzV0fzV0fzV0fzV0fzV0fzV0ceDwDzV0fzV0fzV0fzV0fzV0fzV0ceDwDzV0fzV0fzV0fzV0ceDwAeDwAeDwDzV0fzV0fzV0fzV0fzV0fzV0ceDwDzV0dVyZQ5AAAAb3RSTlMAHxCgD4BgsKDwAXBAL3CwWfv3kJBNdsDnL9FUUCpH9CQ0xF/88R8MQOECBpgV/glRZAXYO5277PbcA3oYioVp7EqUydGdFDIJqKVd3bnFi+dUo77Wp4ZqeSjM4jg9WQyarH7LrEWzbbYYdBpjtZSuPCbWAAAI9UlEQVR4Xu2X6VcaTRaHfw1C2w1EoIMQCGuMiLIrYsQ17ks0iTF5NWYxi9lz+f/XqVvV3dIz8GbOfHg/zXNOyKX6dtVT1VW3ES73vo+fvHi0fbZz5x6Yn+OCt/Dy7ufE635/6tH5sznYXNw5PZ84O/l49uS9vNNl+f04s+NmQn6fhody8HA+ZaTSB60aBE2/4AsYv6INxYL6GoXL3KsX/VteyhE4uguPxp0NN+f1Myju9Ac4uYLLG7ttEw59xjMxs2WQQ571AhzpcjakyEHxnCRVOOxJZZdnw6XHnniy7poeacXUWzic2k3vR0ubfrolCY+0RgoLkrY9uwPY3F/qe9gdKj130vdy6pVWLLmP31mIp8sjpVs0wKRXOkuKY0hypPgKxZupvuTR+w93Pvw+W9rGUOnfMmnjr72LzQn7wbvST/Yxd/VJNn6A4kJ2yR9Xo6RnUyTIrzZzR6uXFPFKL5BNFkyVFCVIxl73me03ULzbGyq9J7Ne/ADzSs1y2ZGegMA8UaHiO2+Wn/KJjJJWXguQZE2vdIIjntWkM794l4jSkHzoM+dzcBkqLddx6gKKHbX5PdJqF3+Cgmdw8k3ObZR0VC40HLzSRxzx6Us681usEFEFzNxT2fE+/l56bMpzqL5NSUGvtDyo3yHZ5YRTtbEvRkhniGkOl/7CEW/6mA/AKi/5MRF1wcz0mQf4g/Qzmaa2kCu4MSi9/1Ieu11IHqhNf5f/+2uEtEZM7PHKEGkVyYwMgHkiiqQ5G8xf8rGP/UlaGk3NQeJuql1b+unExNmSnMYeFBOc/g6fufHjCGksktLWc7P/IW1x1GDZx2p6KTMtm5Scu+2mH9q8/U/pczvNu/IXStplZxeKfZ7CGTD3kJt/jJDWumQzn/l3aT9HqPI1YF2+VqR0TS2J4ERJ920eeKXdtG24bMrEK3ill36PDVz+7tz3aoQ0ssfkcNDwSut8SNVZXcGNfDUmSVDw2vxZ+gVc7isDlvbw6BuY946fLHpPRkmjsZYnm6+mR5oNu1ghQXTW4Le8ko7AkdtY/pP0jkyDwq3UP2zpX2Nj0/ef9F1BU5akccGEOjKjpAFfaJ4URx7ptKpvfNEqEtG1WnwKq4PIyPOzPD09/WmEtEqb9k7i4bKn5N11ra76Xt6OlGYWSsQkPdIVtZsfE1FpkpcbuCZB4rbkjcNmfIS0SnsFm+WnalU90rtuzsu+l09/K43ZryQwPNK8bbbUizG+qKq1Xz0Pd/ipN3+QntuQO3YOigfKzys913eq8nbfy9LcaGn3NRMblJ7lYBEox4hUqFad1gcq7sbM30m7i3cKybScwsMxr/SmOhDO4bg/w6iDujlUegU2PRKkBqVrTpAkclxX3R+DePe6Lzn/vA/sT3ikf9232cPuhqrE3wDz82t7TT3SV+qZOYdz263YfJsrfcfpche4TPeKbaDRipPg+aB0gQM/gEmSrDgX1yC54m4lDx96qscA4+p1wlIfz+xZniy70q937o5vu5k4G3gomHDLU9/DDHx13hTdSoyYenFQukjqXYgIMVsQhDiyoNhkV8VoaS4gHrZ3oaS9rWPOj6vPUPyU7W+GSCdokFUMSuecVTVTHPUgWFerbzP967+RxtvBye28wxDp813O42hpH4pv6jAMkV6lW2Jrpkc646r63b8Eguqiy97dF84WOTnd3B8ujd2XT+1qcL4HxiO99PH03u3vlF9w+CjrzhDpWm+rTpJuNQt4pFschCDI6breAdNUZWSQdxczmzN7P2CzPzaIs2zmxbNXr97uLXvu25v5/PnNvWnTbVF3eHsCMOZB9tEoNoPRXAEODZ+gDKDNQRse2uriP8j/aUcD6ytoBwtALlwOHgFIBFcAZINAJgFEogCiwaOiaA8Gs9CCDSiaGQgKQQ3AwlGQ8zSREo0ucGtBRCsI57ixbTYDTdMnU5rc+0ITkmhExAkZiTvLxQzgC/oQDhy1IcYS/wqinZMCk0UADTnYSrpeiefDPgqiGNM1oiJ8MQrLqogoJYAt0QQjlqdAKU7GOqoiVVKrE/dwQBawSvG4wfM1KF7xp9rQj8OUj+UjehKzW+QL1OepF+EqsFKnMMzjugbGCEAz0jKKG4ZmVbi/yBHNUwcUAigUJMPomVXqdrkCHlGHh8wXUSslhXQ7TUI6vopW3JbWjFUgQqkqYFjmYYrngXI+VYJkPW6EgEY+lZqdjVVnA4ajEaGgVg+FKVIzVoV0j4R0COmbCOV7+JKnMMKUWrOzzUVS0iEAQjpDFFlfhT7vSvsgGifNWauSRSmVLwPxKhghvZZKC2n9GF91W7q01QYeH4dEnnFYLKWldCvWpCyYxZvDLe4vQwum8di8lcZiei3uC1M0EZvUk9nYIvlQfB5vRkiolG4ojIOttVRbZbfiJSV9fB0SXrVukiIodPJfQFt+P0tXrfBhygSTpUxsHaiv2tLVWCIppFuxRCxD4UP9S4hS10DDqC5QCwZRNyelL5MFw1K7o5UhDddps1LFeswwbqVzFO8gTEQln1661IMs3YkHIhSt5+pRCtdiawlqymx/PuRX0snn1LIq1+kcS1eNQ9BxMsnSpWTm+hgSyygkL4FkpQZzMuAj8oOlmzepeY3Ca1Y0RAlhG1RvfqOjtcHSRRIYDQDr9Vo5PlmO92B1Z2HlD2+lkaaIkM7VAL3eXRHSoQV0UhEKL1bS4jNEghuZTUnTlg4hZVn1WCRMkVYCPSoPbI8Q5YCcVTBIUEQxX6lu0bqPUj4lHaWA5hzETjxbutS0SYoYFlRT1ShoCToCsseG39+t9KReOEHrgQHprSQgBgegUxRi3MuuZdwI3RZNis/5RU1bk0fRyGuwpS9LFLWox/cdxB9X5k1H+qsebVzGDg9ii0eU0wr5KlDolPQEynoOWOvV9GJDL9T0LICEjvKBpXMR0qOHLcgm83kIgL/HTl91XadOB5g9aPktM3oI5jAKrHBvWZ2teqtAWC+vdEpWWdOzPl3T9Bxf1vQEZx8BXyxwpFczaHXafF/ZKnU0cIKeCItRoij3kou9Rq8DYPI5/mfC5ANATfzz/As2eBhIoBuCcwAAAABJRU5ErkJggg==) no-repeat center;height: 90px;"></div>';
@@ -989,6 +969,7 @@ if ( ! class_exists( 'WPSL_Frontend' ) ) {
 				$vodafone_img   = '<div class="pricing-deco" style="background:url(data:image/png;base64,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) no-repeat center;height: 90px;"></div>';
 				$travelchat_img = '<div class="pricing-deco" style="background:url(data:image/png;base64,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) no-repeat center;height: 90px;"></div>';
 				$three          = '<div class="pricing-deco" style="background:url(data:image/png;base64,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) no-repeat center;height: 90px;"></div>';
+				$gs_new_img     = '<div class="pricing-deco" style="background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAAVCAMAAADYUzRLAAAAXVBMVEVHcEwAAAD/VkX/VkUAAAAAAAAAAAD/VkX/VkX/VkX/VkX/VkUAAAD/VkUAAAD/VkUAAAD/VkX/VkX/VkUAAAAAAAAAAAAAAAAAAAAAAAD/VkX/VkUAAAAAAAD/VkXCmJ2BAAAAHXRSTlMAd5nMRGbuRLt37hEiM93dzKpmIjO7EaqIVYhVmZWwBbQAAARPSURBVHhezZbZttsgDEXxhMd4Sjwm8v9/Zo8EAQ/XXe1TqyyHYyTMtiIgii1ds2LbojCF3LZNfa3voq3petEPhMCy9Wl8EW46I6FSZW0MWqJ6WpSKiQgduKUPeyqCxaxkFljvhsv4bPMGhic3kUTkLDs3bcM4EMbeB+jy+5Tm4eaBFbizj9zKM/RLk1jgoAlWsyu4QDe/hVaNtGydj2YVgpkzGK153hXlHrqM2J+HzGkdadoX9u17tMjVGboGYRBM+nWAphdEe4He8t9Ch9YBfJeh1OS2BEbxnXMPHUpSzUuFzvFGY18esjtBv8A1osXloUE7i2sgCg7QRXmBzqxJXmwJlWhtTC700oDtCu0ywRGlOGyGzXMiXMURWkAX5TXwwdpSy9WhgzP0tl6glbenRPjo3BZKJKGdukKLeLrBb1seeQFt2FcVQV/Lg6bFQcv38CGqVEvTEToqZIZ7aKmKzGSNfZ3tWk1C3dvsoHMWPucuOU1qayflkPDHhVgve+ggIUpGXEfobMVXeA9ti9o4QrOWSon9e+it4OwWXBkP3JygVfUhtmQPXRHNC1EF6I+H3p6G4B46lyiebMsz8b1tSGTyXqbpEfp9KI/UOh4dQJ/stJY6aL9TayL9hU44uzW1M7Wshx20ZDK77B5+X3mwepv5VwnKbcGsbiEeocsfFqLrDt3T1zO0PUZiCy0lMRPVaOITtEn1PbQqWEmGylxkZ1wyskhP0Pdb3lOGNfhK0xQhzRG6+kK/9tALwaoLtE11cwctjB0nrcEIu/S3h6ucKM9XB52z9WXhDpfGHy4Nl8fDvtnDPEPi2JSi+hPMmqhVHnpRI3HPFVpS/ch+2Kd79xs3dn9jH38Vyrqc+R0UEY/Gyuh5OMZ7tbKbrbEbkDVgGfMn4iSn4EA0m54DtKQ6zG4Woi1qWYey9grcu/25zDvuysL+AI3X6Rr/hyni3ibLS3lA/i2haA9dBYMmGgJ/Ig4CnQzD6yfoZ4H2HlqKujc/Z2hlr/6NeWj5lYtbaClqprWRmdvRXjUFvIdONGopvJjQhRY9RAmkUhAxXx9cFYSeE42O2Yxrx5YUTYpqXoQxVYivRcC3kIKimqdBxAlaFs4NtK/czA4p3D/Delby2AEMmjfWdgbXKyGeLmEJ/4sS+SyUKPQGevjwDY+rRoprjG2hR/WiDwZQYgR8CSkeKdNIhIf2WNc/TLYmd3uJkaGBFoxWU0sa0ARLEl3PjKiMRPp48liwBXoELiTxuArp04TxcyusmqFpEgEfgjhw4IEccYJWzQEa5jg96ZtlJLLfZZqQ4IEmOcICPYEmIR0Aj6VKNBTokg8ZaDXVigNwK5nWGFu3QAX0wNABPsMl0xxxhu7voV1fyTJ0EhZrTDBVpBO9EG5pBEpMrBVnVzpgH4U+VDz3znLiQWFcTcNIi06I4oBURYvU9CACPlvTJNMg4gytojtof4js5R8byfX/2C9qPso6uEh8PQAAAABJRU5ErkJggg==) no-repeat center;height: 90px;"></div>';
 
 
 				$store_phone = get_post_meta( $atts['id'], 'wpsl_phone', true );
@@ -1014,7 +995,7 @@ if ( ! class_exists( 'WPSL_Frontend' ) ) {
 								$sort_array_of_simcard['three'] = 4;
 								break;
 							case 'globalsim--classic':
-								$sort_array_of_simcard['globalsim--classic'] = 5;
+								$sort_array_of_simcard['globalsim'] = 5;
 								break;
 							case 'globalsim--tariff_usa':
 								$sort_array_of_simcard['globalsim--tariff_usa'] = 6;
@@ -1058,8 +1039,8 @@ if ( ! class_exists( 'WPSL_Frontend' ) ) {
 								$oper    = $array_of_simcard['globalsim--tariff_usa'];
 								break;
 							case 'globalsim--gsim_internet':
-								$content .= $globalsim_img;
-								$simcard = "Globalsim «Internet»";
+								$content .= $gs_new_img;
+								$simcard = "Globalsim NEW";
 								$oper    = $array_of_simcard['globalsim--gsim_internet'];
 								break;
 							case 'globalsim--europasim':
@@ -1096,9 +1077,10 @@ if ( ! class_exists( 'WPSL_Frontend' ) ) {
 
 
 						$content .= '<h4 class="wpsl-operator-header">' . $simcard . '</h4>';
+
+						$combo = 0;
+						$nano  = 0;
 						if ( $key == 'orange' ) {
-							$combo = 0;
-							$nano  = 0;
 							foreach ( $oper as $num ) {
 								$format_type = $this->check_orange_format( $num );
 								if ( $format_type == 'combo' ) {
@@ -1108,6 +1090,9 @@ if ( ! class_exists( 'WPSL_Frontend' ) ) {
 									$nano ++;
 								}
 							}
+						}
+
+						if ( $combo + $nano != 0 ) {
 
 							$content .= '<div class="wpsl-operator-format_grid">';
 							$content .= '<div class="wpsl-operator-format-type">';

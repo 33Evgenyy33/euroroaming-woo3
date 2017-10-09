@@ -126,8 +126,9 @@ class ACP_Column_Post_Images extends AC_Column
 
 		// Total images
 		$tooltip = '<strong>' . sprintf( _n( '%s image', '%s images', $count, 'codepress-admin-columns' ), $count ) . '</strong>';
+		$value = ac_helper()->html->tooltip( $label, $tooltip );
 
-		return ac_helper()->html->tooltip( $label, $tooltip );
+		return ac_helper()->html->get_ajax_toggle_box_link( $id, $value, $this->get_name() );
 	}
 
 	/**
