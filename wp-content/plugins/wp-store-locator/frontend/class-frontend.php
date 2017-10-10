@@ -6,6 +6,10 @@
  * @since  1.0.0
  */
 
+require dirname(__FILE__) .'\vendor\autoload.php';
+use \Curl\MultiCurl;
+
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -351,58 +355,112 @@ if ( ! class_exists( 'WPSL_Frontend' ) ) {
 				$store_data = apply_filters( 'wpsl_no_results_sql', '' );
 			}
 
-			$urls  = array();
-			$ta_id = '';
-			foreach ( $store_data as $store ) {
-				$ta_id = $store['ta_id'];
+			if ( $category_id != '' ) {
 
-				if ( ! $ta_id ) {
-					array_push( $urls, "" );
-					continue;
+				$urls = array();
+				$res  = array();
+
+				foreach ( $store_data as $store ) {
+					$ta_id = $store['ta_id'];
+
+					if ( ! $ta_id ) {
+						array_push( $urls, "" );
+						continue;
+					}
+					array_push( $urls, "http://seller.sgsim.ru/euroroaming_order_submit?operation=get_simcards_new&ta=$ta_id" );
 				}
-				array_push( $urls, "http://seller.sgsim.ru/euroroaming_order_submit?operation=get_simcards_new&ta=$ta_id" );
-			}
 
-			$mh  = curl_multi_init();
-			$res = array();
-			foreach ( $urls as $i => $url ) {
-				$conn[ $i ] = curl_init( $url );
-				curl_setopt( $conn[ $i ], CURLOPT_RETURNTRANSFER, 1 );  //ничего в браузер не давать
-				curl_setopt( $conn[ $i ], CURLOPT_CONNECTTIMEOUT, 10 ); //таймаут соединения
-				curl_multi_add_handle( $mh, $conn[ $i ] );
-			}//Пока все соединения не отработают
-			do {
-				curl_multi_exec( $mh, $active );
-			} while ( $active ); //разбор полетов
-			for ( $i = 0; $i < count( $urls ); $i ++ ) {
-				//ответ сервера в переменную
-				$res[ $i ] = curl_multi_getcontent( $conn[ $i ] );
-				curl_multi_remove_handle( $mh, $conn[ $i ] );
-				curl_close( $conn[ $i ] );
-			}
-			curl_multi_close( $mh );
+				$start = microtime(true);
+				$mh = curl_multi_init();
+				foreach ( $urls as $i => $url ) {
+					$conn[ $i ] = curl_init( $url );
+					curl_setopt( $conn[ $i ], CURLOPT_RETURNTRANSFER, 1 );  //ничего в браузер не давать
+					curl_setopt( $conn[ $i ], CURLOPT_CONNECTTIMEOUT, 10 ); //таймаут соединения
+					curl_multi_add_handle( $mh, $conn[ $i ] );
+				}//Пока все соединения не отработают
+				do {
+					curl_multi_exec( $mh, $active );
+				} while ( $active ); //разбор полетов
+				for ( $i = 0; $i < count( $urls ); $i ++ ) {
+					//ответ сервера в переменную
+					$res[ $i ] = curl_multi_getcontent( $conn[ $i ] );
+					curl_multi_remove_handle( $mh, $conn[ $i ] );
+					curl_close( $conn[ $i ] );
+				}
+				curl_multi_close( $mh );
+				file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/store1.txt", print_r( 'Time exec 1: '.(microtime(true) - $start).' sec.'."\r\n", true ), FILE_APPEND | LOCK_EX );
 
-			file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/store1.txt", print_r( $res, true ), FILE_APPEND | LOCK_EX );
+				$mc = JMathai\PhpMultiCurl\MultiCurl::getInstance();
+				$mc_array = array();
+				$res1 = array();
+				$start1 = microtime(true);
+				foreach ($urls as $i => $url){
+					$ch = curl_init($url);
+					curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+					curl_setopt($ch, CURLOPT_POST, 1);
+					$mc_array[$i] = $mc->addCurl($ch);
+				}
+				foreach ($mc_array as $ms_val){
+					array_push($res1, $ms_val->response);
+				}
+				file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/store1.txt", print_r( 'Time exec 2: '.(microtime(true) - $start1).' sec.'."\r\n", true ), FILE_APPEND | LOCK_EX );
 
-			$filtered_stores = array();
-			$i               = 0;
-			if ($category_id != '') {
+
+				$urls3 = array();
+				foreach ( $store_data as $store ) {
+					$ta_id = $store['ta_id'];
+
+					if ( ! $ta_id ) {
+						continue;
+					}
+					array_push($urls3, "http://seller.sgsim.ru/euroroaming_order_submit?operation=get_simcards_new&ta=$ta_id");
+					//$multi_curl->addGet("http://seller.sgsim.ru/euroroaming_order_submit?operation=get_simcards_new&ta=$ta_id");
+				}
+
+				$res3 = array();
+				$multi_curl = new MultiCurl();
+				$start2 = microtime(true);
+				$multi_curl->success(function ($instance) use (&$res3) {
+					$ta_ids = substr($instance->url, strrpos($instance->url, '=') + 1);
+					$respose1 = $instance->response;
+					//file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/store1.txt", print_r( 'call to "' . $ta_ids . '" was successful.', true )."\r\n", FILE_APPEND | LOCK_EX );
+					//file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/store1.txt", print_r( 'response: ' . $respose1, true )."\r\n", FILE_APPEND | LOCK_EX );
+					$res3[$ta_ids] = $respose1;
+				});
+				$multi_curl->error(function ($instance) {
+					//file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/store1.txt", print_r( 'call to "' . $instance->url . '" was unsuccessful.', true )."\r\n", FILE_APPEND | LOCK_EX );
+					//file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/store1.txt", print_r( 'error code: ' . $instance->errorCode, true )."\r\n", FILE_APPEND | LOCK_EX );
+					//file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/store1.txt", print_r( 'error message: ' . $instance->errorMessage, true )."\r\n", FILE_APPEND | LOCK_EX );
+				});
+
+				foreach ( $urls3 as $urls3_1 ) {
+					$multi_curl->addGet("http://seller.sgsim.ru/euroroaming_order_submit?operation=get_simcards_new&ta=$urls3_1");
+				}
+
+				$multi_curl->start();
+				file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/store1.txt", print_r( 'Time exec 3: '.(microtime(true) - $start2).' sec.'."\r\n", true ), FILE_APPEND | LOCK_EX );
+
+
+
+
+				$filtered_stores = array();
+				$i               = 0;
 				foreach ( $store_data as $store ) {
 					$ta_id     = $store['ta_id'];
 					$sim_cards = (array) json_decode( $res[ $i ] );
 
-//					file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/store1.txt", print_r( $sim_cards, true ), FILE_APPEND | LOCK_EX );
+					//file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/store1.txt", print_r( $sim_cards, true ), FILE_APPEND | LOCK_EX );
 
 					if ( ! $ta_id ) {
 						array_push( $filtered_stores, $store );
 						continue;
 					}
 
-					if ($category_id == "globalsim--classic") {
-						if ( array_key_exists( "globalsim--classic", $sim_cards ) ||  array_key_exists( "globalsim", $sim_cards )) {
+					if ( $category_id == "globalsim--classic" ) {
+						if ( array_key_exists( "globalsim--classic", $sim_cards ) || array_key_exists( "globalsim", $sim_cards ) ) {
 							array_push( $filtered_stores, $store );
 						}
-					} else{
+					} else {
 						if ( array_key_exists( $category_id, $sim_cards ) ) {
 							array_push( $filtered_stores, $store );
 						}
@@ -413,6 +471,37 @@ if ( ! class_exists( 'WPSL_Frontend' ) ) {
 				}
 				$store_data = $filtered_stores;
 			}
+
+//			$res3 = array();
+//
+//			$multi_curl = new MultiCurl();
+//			$multi_curl->success(function ($instance) use (&$res3) {
+//				$ta_ids = substr($instance->url, strrpos($instance->url, '=') + 1);
+//				$respose1 = $instance->response;
+//				file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/store1.txt", print_r( 'call to "' . $ta_ids . '" was successful.', true )."\r\n", FILE_APPEND | LOCK_EX );
+//				file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/store1.txt", print_r( 'response: ' . $respose1, true )."\r\n", FILE_APPEND | LOCK_EX );
+//				$res3[$ta_ids] = $respose1;
+//			});
+//			$multi_curl->error(function ($instance) {
+//				file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/store1.txt", print_r( 'call to "' . $instance->url . '" was unsuccessful.', true )."\r\n", FILE_APPEND | LOCK_EX );
+//				file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/store1.txt", print_r( 'error code: ' . $instance->errorCode, true )."\r\n", FILE_APPEND | LOCK_EX );
+//				file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/store1.txt", print_r( 'error message: ' . $instance->errorMessage, true )."\r\n", FILE_APPEND | LOCK_EX );
+//			});
+//
+//			$multi_curl->addGet('http://seller.sgsim.ru/euroroaming_order_submit?operation=get_simcards_new&ta=3299');
+//			$multi_curl->addGet('http://seller.sgsim.ru/euroroaming_order_submit?operation=get_simcards_new&ta=3325');
+//			$multi_curl->addGet('http://seller.sgsim.ru/euroroaming_order_submit?operation=get_simcards_new&ta=3267');
+//			$multi_curl->addGet('http://seller.sgsim.ru/euroroaming_order_submit?operation=get_simcards_new&ta=3073');
+//			$multi_curl->addGet('http://seller.sgsim.ru/euroroaming_order_submit?operation=get_simcards_new&ta=3380');
+//			$multi_curl->start();
+
+
+			/*foreach ($res3 as $key => $sim_card){
+				$res3[$key] = (array) json_decode( $sim_card );
+			}
+
+			file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/store1.txt", print_r( $res3, true )."\r\n", FILE_APPEND | LOCK_EX );*/
+
 
 
 			return $store_data;
@@ -957,10 +1046,11 @@ if ( ! class_exists( 'WPSL_Frontend' ) ) {
 				curl_setopt( $ch, CURLOPT_URL, $url );
 				$data = curl_exec( $ch );
 				curl_close( $ch );
+
 				$array_of_simcard      = (array) json_decode( $data );
 				$sort_array_of_simcard = array();
 
-				$content .= '<pre>' . print_r( $array_of_simcard, true ) . '</pre>';
+				//$content .= '<pre>' . print_r( $array_of_simcard, true ) . '</pre>';
 
 				$orange_img     = '<div class="pricing-deco" style="background:url(data:image/png;base64,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) no-repeat center;height: 90px;"></div>';
 				$globalsim_img  = '<div class="pricing-deco" style="background:url(data:image/png;base64,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) no-repeat center;height: 90px;"></div>';
@@ -995,7 +1085,7 @@ if ( ! class_exists( 'WPSL_Frontend' ) ) {
 								$sort_array_of_simcard['three'] = 4;
 								break;
 							case 'globalsim--classic':
-								$sort_array_of_simcard['globalsim'] = 5;
+								$sort_array_of_simcard['globalsim--classic'] = 5;
 								break;
 							case 'globalsim--tariff_usa':
 								$sort_array_of_simcard['globalsim--tariff_usa'] = 6;
