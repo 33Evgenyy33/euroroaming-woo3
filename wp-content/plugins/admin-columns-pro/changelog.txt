@@ -1,5 +1,15 @@
 == Changelog ==
 
+= 4.0.11 =
+Release Date: October 16th, 2017
+
+* [Fixed] Changelog view from plugins overview works again
+* [Fixed] Date filter dropdowns are now displayed in descending order
+* [Fixed] Sorting on Post Count column did not work when using a custom table prefix
+* [Fixed] Error while using inline edit on Taxonomy Column
+* [Updated] Admin Column Core changes
+    * Column Attachment count merges with Attachments
+
 = 4.0.10 =
 Release Date: October 4th, 2017
 

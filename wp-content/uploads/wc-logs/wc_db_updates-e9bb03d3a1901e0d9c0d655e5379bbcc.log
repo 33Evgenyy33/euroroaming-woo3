@@ -46,3 +46,10 @@
 2017-08-21T12:07:42+01:00 INFO Running wc_update_312_db_version callback
 2017-08-21T12:07:42+01:00 INFO Finished wc_update_312_db_version callback
 2017-08-21T12:07:42+01:00 INFO Data update complete
+2017-10-20T16:32:36+00:00 INFO Queuing 3.2.0 - wc_update_320_mexican_states
+2017-10-20T16:32:36+00:00 INFO Queuing 3.2.0 - wc_update_320_db_version
+2017-10-20T16:32:38+00:00 INFO Running wc_update_320_mexican_states callback
+2017-10-20T16:32:38+00:00 INFO Finished wc_update_320_mexican_states callback
+2017-10-20T16:32:38+00:00 INFO Running wc_update_320_db_version callback
+2017-10-20T16:32:38+00:00 INFO Finished wc_update_320_db_version callback
+2017-10-20T16:32:38+00:00 INFO Data update complete

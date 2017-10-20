@@ -221,6 +221,15 @@ class ACP_Editing_TableScreen {
 			'row_html'  => $list_screen->get_single_row( $id ) // Mostly for Default columns
 		);
 
+		/**
+		 * @since 4.0.11
+		 *
+		 * @param array     $data
+		 * @param int       $id
+		 * @param AC_Column $column
+		 */
+		$data = apply_filters( 'acp/editing/result', $data, $id, $column );
+
 		wp_send_json_success( $data );
 	}
 

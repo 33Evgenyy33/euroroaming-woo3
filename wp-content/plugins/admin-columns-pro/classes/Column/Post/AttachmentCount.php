@@ -6,6 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * @since 4.0
+ * TODO Remove with upgrade script
  */
 class ACP_Column_Post_AttachmentCount extends AC_Column_Post_AttachmentCount
 	implements ACP_Column_SortingInterface {

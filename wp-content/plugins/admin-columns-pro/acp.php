@@ -166,7 +166,7 @@ final class ACP {
 	 * @param AC_Admin_Pages $pages
 	 */
 	public function register_pages( $pages ) {
-    	$pages->register_page( new ACP_Admin_Page_ExportImport() );
+		$pages->register_page( new ACP_Admin_Page_ExportImport() );
 	}
 
 	/**
@@ -284,7 +284,7 @@ final class ACP {
 	/**
 	 * Register Taxonomy columns that are set by WordPress. These native columns are registered
 	 * by setting 'show_admin_column' to 'true' as an argument in register_taxonomy();
-     * Only supports Post Types.
+	 * Only supports Post Types.
 	 *
 	 * @see register_taxonomy
 	 *
@@ -306,8 +306,8 @@ final class ACP {
 
 		foreach ( $taxonomies as $taxonomy ) {
 			if ( in_array( $list_screen->get_post_type(), $taxonomy->object_type ) ) {
-			    $column = new ACP_Column_NativeTaxonomy();
-			    $column->set_type( 'taxonomy-' . $taxonomy->name );
+				$column = new ACP_Column_NativeTaxonomy();
+				$column->set_type( 'taxonomy-' . $taxonomy->name );
 
 				$list_screen->register_column_type( $column );
 			}
@@ -396,12 +396,12 @@ final class ACP {
 			return;
 		}
 		if ( ACP()->is_beta() ) : ?>
-            <div class="notice notice-warning">
-                <p>
+			<div class="notice notice-warning">
+				<p>
 					<?php printf( __( "You are using a beta version of %s.", 'codepress-admin-columns' ), 'Admin Columns Pro' ); ?>
 					<?php printf( __( "Please provide us with any feedback (bugs, UI or improvements) on the beta by creating a new topic on %s.", 'codepress-admin-columns' ), ac_helper()->html->link( ac_get_site_utm_url( 'forums/forum/beta-feedback/', 'beta-notice' ), __( 'our forum', 'codepress-admin-columns' ), array( 'target' => '_blank' ) ) ); ?>
-                </p>
-            </div>
+				</p>
+			</div>
 			<?php
 		endif;
 	}

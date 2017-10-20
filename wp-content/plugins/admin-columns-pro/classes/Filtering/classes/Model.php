@@ -207,7 +207,8 @@ abstract class ACP_Filtering_Model extends ACP_Model {
 		}
 
 		ksort( $options, SORT_NUMERIC );
-		$options = array_reverse( $options );
+
+		$options = array_reverse( $options, true );
 
 		return $options;
 	}

@@ -1342,45 +1342,45 @@ class WC_API_POS_Orders extends WC_API_Orders
             do_action('woocommerce_order_status_changed', $order_id, $old_status, $new_status);
         }
 
-        $key_sim_numbers = 'number_simcard';
-        $order_sim_numbers_buf = get_post_meta( $order_id, $key_sim_numbers, true );
-        $order_sim_numbers = str_replace(' ', '', $order_sim_numbers_buf);
-        $sim_numbers = explode(',',$order_sim_numbers);
-
-        $key_ta_id = 'wc_pos_ta_id';
-        $order_ta_id = get_post_meta( $order_id, $key_ta_id, true );
-
-        $key_customer_name = '_billing_first_name';
-        $order_customer_name = str_replace(' ', '', get_post_meta( $order_id, $key_customer_name, true ));
-
-        $key_customer_surname = '_billing_last_name';
-        $order_customer_surname = str_replace(' ', '', get_post_meta( $order_id, $key_customer_surname, true ));
-
-        $key_customer_email = 'client_email';
-        $order_customer_email = str_replace(' ', '', get_post_meta( $order_id, $key_customer_email, true ));
-
-        $key_customer_phone = 'client_phone';
-        $order_customer_phone = str_replace(' ', '', get_post_meta( $order_id, $key_customer_phone, true ));
-
-
-        //$order_meta1 = get_post_meta($order_id);
-        foreach ($sim_numbers as $number){
-            $int_number = intval($number);
-            $space = ' ';
-            //$url = "http://seller.sgsim.ru/euroroaming_order_submit?operation=submit_operation&ta=$order_ta_id&orderid=$order_id&customer=$order_customer_name $order_customer_surname&email=$order_customer_email&phone=$order_customer_phone&onum=$int_number";
-            $url = "http://seller.sgsim.ru/euroroaming_order_submit?operation=submit_operation&ta=$order_ta_id&orderid=$order_id&customer=$order_customer_name%20$order_customer_surname&email=$order_customer_email&phone=$order_customer_phone&onum=$number";
-
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_HEADER, 0);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //Устанавливаем параметр, чтобы curl возвращал данные, вместо того, чтобы выводить их в браузер.
-            curl_setopt($ch, CURLOPT_URL, $url);
-            $data1 = curl_exec($ch);
-            curl_close($ch);
-
-            //$myfile = fopen("processing-".$order_id.".txt", "w") or die("Unable to open file!");
-            //$txt = "Ответ на Ваш запрос: ".$data1."\n";
-            //file_put_contents("processing-".$order_id.".txt", print_r($txt, true));
-        }
+//        $key_sim_numbers = 'number_simcard';
+//        $order_sim_numbers_buf = get_post_meta( $order_id, $key_sim_numbers, true );
+//        $order_sim_numbers = str_replace(' ', '', $order_sim_numbers_buf);
+//        $sim_numbers = explode(',',$order_sim_numbers);
+//
+//        $key_ta_id = 'wc_pos_ta_id';
+//        $order_ta_id = get_post_meta( $order_id, $key_ta_id, true );
+//
+//        $key_customer_name = '_billing_first_name';
+//        $order_customer_name = str_replace(' ', '', get_post_meta( $order_id, $key_customer_name, true ));
+//
+//        $key_customer_surname = '_billing_last_name';
+//        $order_customer_surname = str_replace(' ', '', get_post_meta( $order_id, $key_customer_surname, true ));
+//
+//        $key_customer_email = 'client_email';
+//        $order_customer_email = str_replace(' ', '', get_post_meta( $order_id, $key_customer_email, true ));
+//
+//        $key_customer_phone = 'client_phone';
+//        $order_customer_phone = str_replace(' ', '', get_post_meta( $order_id, $key_customer_phone, true ));
+//
+//
+//        //$order_meta1 = get_post_meta($order_id);
+//        foreach ($sim_numbers as $number){
+//            $int_number = intval($number);
+//            $space = ' ';
+//            //$url = "http://seller.sgsim.ru/euroroaming_order_submit?operation=submit_operation&ta=$order_ta_id&orderid=$order_id&customer=$order_customer_name $order_customer_surname&email=$order_customer_email&phone=$order_customer_phone&onum=$int_number";
+//            $url = "http://seller.sgsim.ru/euroroaming_order_submit?operation=submit_operation&ta=$order_ta_id&orderid=$order_id&customer=$order_customer_name%20$order_customer_surname&email=$order_customer_email&phone=$order_customer_phone&onum=$number";
+//
+//            $ch = curl_init();
+//            curl_setopt($ch, CURLOPT_HEADER, 0);
+//            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //Устанавливаем параметр, чтобы curl возвращал данные, вместо того, чтобы выводить их в браузер.
+//            curl_setopt($ch, CURLOPT_URL, $url);
+//            $data1 = curl_exec($ch);
+//            curl_close($ch);
+//
+//            //$myfile = fopen("processing-".$order_id.".txt", "w") or die("Unable to open file!");
+//            //$txt = "Ответ на Ваш запрос: ".$data1."\n";
+//            //file_put_contents("processing-".$order_id.".txt", print_r($txt, true));
+//        }
 
         //$urls = implode("|",$order);
         //add_post_meta( $order_id, '_my_choice', $urls );

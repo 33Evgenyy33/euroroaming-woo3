@@ -103,11 +103,11 @@ class ACP_Editing_Addon {
 				$model->set_strategy( new ACP_Editing_Strategy_Site( $model ) );
 
 				break;
-			default :
-				return false;
 		}
 
-		return apply_filters( 'acp/editing/model', $model );
+		do_action( 'acp/editing/model', $model, $column );
+
+		return $model;
 	}
 
 	/**
