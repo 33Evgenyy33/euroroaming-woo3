@@ -1,0 +1,541 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Support Board\n"
+"POT-Creation-Date: 2017-07-17 18:30+0200\n"
+"PO-Revision-Date: 2017-07-17 18:32+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.1\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: index.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: admin-panel.php:28
+msgid "Documentation"
+msgstr ""
+
+#: admin-panel.php:32
+msgid "Tickets"
+msgstr ""
+
+#: admin-panel.php:35 admin-panel.php:50
+msgid "Users"
+msgstr ""
+
+#: admin-panel.php:38
+msgid "Agents"
+msgstr ""
+
+#: admin-panel.php:41
+msgid "Settings"
+msgstr ""
+
+#: admin-panel.php:44
+msgid "Emails"
+msgstr ""
+
+#: admin-panel.php:51
+msgid "Guests"
+msgstr ""
+
+#: admin-panel.php:55
+msgid ""
+"You not have any ticket, when your users will require support the tickets "
+"will appear here."
+msgstr ""
+
+#: admin-panel.php:61
+msgid "Back to tickets list"
+msgstr ""
+
+#: admin-panel.php:62
+msgid "Delete conversation"
+msgstr ""
+
+#: admin-panel.php:72 admin-panel.php:99
+msgid "ID"
+msgstr ""
+
+#: admin-panel.php:73
+msgid "Username or Email"
+msgstr ""
+
+#: admin-panel.php:74 login.php:21
+msgid "Password"
+msgstr "Senha"
+
+#: admin-panel.php:75 admin-panel.php:101 admin-panel.php:233 board.php:102
+#: login.php:75
+msgid "Email"
+msgstr ""
+
+#: admin-panel.php:90 admin-panel.php:108
+msgid "Save"
+msgstr ""
+
+#: admin-panel.php:91
+msgid "Add new user"
+msgstr ""
+
+#: admin-panel.php:92 admin-panel.php:110 admin-panel.php:558
+msgid "Saved"
+msgstr ""
+
+#: admin-panel.php:93 admin-panel.php:111
+msgid "Every user must have username and password."
+msgstr ""
+
+#: admin-panel.php:100 admin-panel.php:234
+msgid "Username"
+msgstr ""
+
+#: admin-panel.php:102
+msgid "WordPress user"
+msgstr ""
+
+#: admin-panel.php:109
+msgid "Add new agent"
+msgstr ""
+
+#: admin-panel.php:115
+msgid "General"
+msgstr ""
+
+#: admin-panel.php:119
+msgid "Main color"
+msgstr ""
+
+#: admin-panel.php:122
+msgid "Set the main color"
+msgstr ""
+
+#: admin-panel.php:133
+msgid "Secondary color"
+msgstr ""
+
+#: admin-panel.php:136
+msgid "Set the secondary color"
+msgstr ""
+
+#: admin-panel.php:147
+msgid "Registration"
+msgstr ""
+
+#: admin-panel.php:151
+msgid "Users engine"
+msgstr ""
+
+#: admin-panel.php:154
+msgid ""
+"Select WordPress for use the original users engine of WordPress. The users "
+"will need to login into WordPress to access the support page."
+msgstr ""
+
+#: admin-panel.php:168
+msgid "Login url"
+msgstr ""
+
+#: admin-panel.php:171
+msgid "Insert the WordPress login url"
+msgstr ""
+
+#: admin-panel.php:182
+msgid "Fields"
+msgstr ""
+
+#: admin-panel.php:185
+msgid "Add extra fields to the registration form by set their names"
+msgstr ""
+
+#: admin-panel.php:190
+msgid "Extra field 1"
+msgstr ""
+
+#: admin-panel.php:194
+msgid "Extra field 2"
+msgstr ""
+
+#: admin-panel.php:198
+msgid "Extra field 3"
+msgstr ""
+
+#: admin-panel.php:202
+msgid "Extra field 4"
+msgstr ""
+
+#: admin-panel.php:211
+msgid "Email field"
+msgstr ""
+
+#: admin-panel.php:214
+msgid ""
+"User must insert the email. This field is not showed for email username type"
+msgstr ""
+
+#: admin-panel.php:225
+msgid "Username type"
+msgstr ""
+
+#: admin-panel.php:228
+msgid "Choose what must insert the users as username"
+msgstr ""
+
+#: admin-panel.php:242 admin-panel.php:549 login.php:43
+msgid "Profile image"
+msgstr ""
+
+#: admin-panel.php:245
+msgid ""
+"Show the profile image to the conversation and allow the user to set their "
+"profile image on registration form"
+msgstr ""
+
+#: admin-panel.php:255
+msgid "Support desk"
+msgstr ""
+
+#: admin-panel.php:259
+msgid "Scroll box"
+msgstr ""
+
+#: admin-panel.php:262
+msgid ""
+"Active the scroll box, height can be the number of pixel or the string "
+"'fullscreen', offset adjust the fullscreen height, options list can be found "
+"at <a target='_blank' href='http://rocha.la/jQuery-slimScroll'>rocha.la/"
+"jQuery-slimScroll</a>"
+msgstr ""
+
+#: admin-panel.php:267 admin-panel.php:418 admin-panel.php:439
+#: admin-panel.php:478
+msgid "Active"
+msgstr ""
+
+#: admin-panel.php:271
+msgid "Height"
+msgstr ""
+
+#: admin-panel.php:275
+msgid "Offset"
+msgstr ""
+
+#: admin-panel.php:279
+msgid "Options"
+msgstr ""
+
+#: admin-panel.php:288 admin-panel.php:382
+msgid "Hide time stamp"
+msgstr ""
+
+#: admin-panel.php:291 admin-panel.php:385
+msgid "Hide date and time of the messages"
+msgstr ""
+
+#: admin-panel.php:302
+msgid "Width"
+msgstr ""
+
+#: admin-panel.php:305
+msgid "Set the width of the support panel"
+msgstr ""
+
+#: admin-panel.php:315
+msgid "Notifications"
+msgstr ""
+
+#: admin-panel.php:319
+msgid "Agents emails"
+msgstr ""
+
+#: admin-panel.php:322
+msgid ""
+"Send a email to the agent everytime a user send a new message. If the ticket "
+"is from a new user the email is sent to all the agents otherwise is sent "
+"only to the last agent of the conversation"
+msgstr ""
+
+#: admin-panel.php:333
+msgid "Users emails"
+msgstr ""
+
+#: admin-panel.php:336
+msgid "Send a email to the user when the agent reply"
+msgstr ""
+
+#: admin-panel.php:347
+msgid "Test email"
+msgstr ""
+
+#: admin-panel.php:350
+msgid "Send a test email to the specified email address"
+msgstr ""
+
+#: admin-panel.php:361
+msgid "Chat"
+msgstr ""
+
+#: admin-panel.php:365
+msgid "Visibility"
+msgstr ""
+
+#: admin-panel.php:368
+msgid "Choose when you want show the chat"
+msgstr ""
+
+#: admin-panel.php:373
+msgid "Everyone"
+msgstr ""
+
+#: admin-panel.php:374
+msgid "Logged in users only"
+msgstr ""
+
+#: admin-panel.php:396
+msgid "Sounds"
+msgstr ""
+
+#: admin-panel.php:399
+msgid "Play a sound notification when the user receive a new message"
+msgstr ""
+
+#: admin-panel.php:410
+msgid "Welcome message"
+msgstr ""
+
+#: admin-panel.php:413
+msgid ""
+"Write an automatic message to new users. The message is sent only to the new "
+"guest users"
+msgstr ""
+
+#: admin-panel.php:422 admin-panel.php:443
+msgid "Message"
+msgstr ""
+
+#: admin-panel.php:431
+msgid "Follow up message"
+msgstr ""
+
+#: admin-panel.php:434
+msgid ""
+"Write a message to guests users if no agents reply within 15 seconds. The "
+"message ask the user email and contain Facebook Messenger and Whatsapp Web "
+"links"
+msgstr ""
+
+#: admin-panel.php:447
+msgid "Messenger link"
+msgstr ""
+
+#: admin-panel.php:451
+msgid "Whatsapp link"
+msgstr ""
+
+#: admin-panel.php:460
+msgid "Header text"
+msgstr ""
+
+#: admin-panel.php:463
+msgid ""
+"Write any text you want, this text will be replaced by the agent name when a "
+"reply is sent"
+msgstr ""
+
+#: admin-panel.php:474
+msgid ""
+"Add a chat bot that will automatically answer to the support requests of "
+"your users, the chat bot system is powered by <a target='_blank' "
+"href='https://api.ai/'>api.ai</a>. For more information check the <a "
+"target='_blank' href='#'>documentation</a>."
+msgstr ""
+
+#: admin-panel.php:481
+msgid "Active the chat bot"
+msgstr ""
+
+#: admin-panel.php:492
+msgid "Developer access token"
+msgstr ""
+
+#: admin-panel.php:495
+msgid ""
+"Insert the developer access token of your api.ai agent. To use multilingual "
+"bots you must install the <a target='_blank' href='https://wpml.org/?"
+"aid=154204&affiliate_key=LgJiCRvycckb'>WPML</a> plugin."
+msgstr ""
+
+#: admin-panel.php:506
+msgid "Main bot language"
+msgstr ""
+
+#: admin-panel.php:509
+msgid "Set the language of the main api.ai bot"
+msgstr ""
+
+#: admin-panel.php:537
+msgid "Bot agent details"
+msgstr ""
+
+#: admin-panel.php:540
+msgid "Insert the profile informations of the bot agent"
+msgstr ""
+
+#: admin-panel.php:545
+msgid "Name"
+msgstr ""
+
+#: admin-panel.php:557
+msgid "Save settings"
+msgstr ""
+
+#: admin-panel.php:559
+msgid "Error"
+msgstr ""
+
+#: admin-panel.php:566
+msgid "Users email"
+msgstr ""
+
+#: admin-panel.php:569
+msgid "Email template for the email sent to the user when an egent reply."
+msgstr ""
+
+#: admin-panel.php:570 admin-panel.php:590
+msgid ""
+"You can use only text and the following patterns: {user_username}, "
+"{message}, {files}, {reply_link}, {site_name}, {site_url}"
+msgstr ""
+
+#: admin-panel.php:586
+msgid "Agents email"
+msgstr ""
+
+#: admin-panel.php:589
+msgid ""
+"Email template for the email sent to the agent everytime a user send a new "
+"message."
+msgstr ""
+
+#: board.php:62
+msgid "Logout"
+msgstr "Sair"
+
+#: board.php:68
+msgid "Create a new ticket by write your support request from the form below."
+msgstr "Crie um novo ticket escrevendo seu pedido de suporte."
+
+#: board.php:106
+msgid "Email is not valid"
+msgstr "E-mail não é válido"
+
+#: board.php:107
+msgid "You'll be notified here and by email."
+msgstr "Você será notificado aqui e por e-mail."
+
+#: index.php:657
+msgctxt "Google font: on or off"
+msgid "on"
+msgstr ""
+
+#: index.php:676
+msgid "Write a message..."
+msgstr "Escreve uma mensagem..."
+
+#: index.php:678
+msgid "Send"
+msgstr "Enviar"
+
+#: login.php:3
+msgid "email"
+msgstr "o email"
+
+#: login.php:4
+msgid "username"
+msgstr "nome de usuário"
+
+#: login.php:11
+msgid "Registration completed."
+msgstr "Registro completo."
+
+#: login.php:26
+msgid "User or password not valid."
+msgstr "Usuário ou senha não válido."
+
+#: login.php:29
+msgid "Login"
+msgstr "Entrar"
+
+#: login.php:32
+msgid "New here?"
+msgstr "Novo usuário?"
+
+#: login.php:34
+msgid "Create an account"
+msgstr "Crie a sua conta aqui"
+
+#: login.php:56
+msgid "Type your "
+msgstr "Inserir "
+
+#: login.php:62
+msgid "Choose your password"
+msgstr "Escolha sua senha"
+
+#: login.php:68
+msgid "Insert again your password"
+msgstr "Insira novamente sua senha"
+
+#: login.php:84
+msgid ""
+"Passwords not match.|Minimum password length is 4 characters.|User already "
+"registered.|Email is not valid."
+msgstr ""
+"Senhas não combinadas. | O comprimento mínimo da senha é de 4 caracteres. | "
+"O usuário já está registrado. | O email não é válido."
+
+#: login.php:85
+msgid "Passwords not match."
+msgstr "Senhas não combinam."
+
+#: login.php:88
+msgid "Register now"
+msgstr "Registrar agora"
+
+#: login.php:91
+msgid "Already got an account?"
+msgstr "Já obteve uma conta?"
+
+#: login.php:93
+msgid "Sign in here"
+msgstr "Entre aqui"
+
+#. Plugin Name of the plugin/theme
+msgid "Support Board"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://board.support/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Simple and fast WordPress support system."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Federico Schiocchet - Pixor"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.pixor.it/"
+msgstr ""

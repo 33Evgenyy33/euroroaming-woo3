@@ -75,7 +75,8 @@ do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 																<td style="word-break: normal;border-collapse: collapse !important;vertical-align: top;padding-top: 10px;padding-right: 10px;padding-bottom: 10px;padding-left: 10px">
 																	<div style="color:#555555;line-height:120%;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif;">
 																		<div style="font-size:16px;line-height:17px;color:#555555;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif;text-align:left;">
-                                                                            <p><?php printf( 'Для оплаты заказа, пожалуйста, воспользуйтесь следующей ссылкой: %2$s', get_bloginfo( 'name', 'display' ), '<a href="' . esc_url( $order->get_checkout_payment_url() ) . '">' . __( 'pay', 'woocommerce' ) . '</a>' ); ?></p>
+                                                                            <p><?php printf( 'Для оплаты заказа, пожалуйста, воспользуйтесь следующей ссылкой:'); ?></p>
+                                                                            <p style="width: 100%;text-align: center;"><?php printf( '<a href="' . esc_url( $order->get_checkout_payment_url() ) . '" style="color: #ffffff;font-weight:normal;text-decoration: none;background: #00bc6a;padding: 9px;font-size: 16px;text-transform: uppercase;text-align: center;">' . __( 'оплатить', 'woocommerce' ) . '</a>'); ?></p>
                                                                             <p><?php printf( '<p>Если у Вас возникли какие-либо трудности с оплатой заказа, пожалуйста, обратитесь к нам за помощью</p>'); ?></p>
 																		</div>
 																	</div>
@@ -272,7 +273,6 @@ do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 </table>
 
 
-<?php do_action( 'woocommerce_email_footer' ); ?>
-
+<?php do_action( 'woocommerce_email_footer', $email ); ?>
 
 

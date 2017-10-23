@@ -74,7 +74,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 												   border="0">
 												<tbody>
 												<tr style="vertical-align: top">
-													<td style="word-break: normal;border-collapse: collapse !important;vertical-align: top;background-color: transparent;padding-top: 5px;padding-right: 0px;padding-bottom: 5px;padding-left: 0px;border-top: 1px solid #bbbbbb;border-right: 1px solid #bbbbbb;border-bottom: 1px solid #bbbbbb;border-left: 1px solid #bbbbbb">
+													<td style="word-break: normal;border-collapse: collapse !important;vertical-align: top;background-color: transparent;padding-top: 5px;padding-right: 0px;padding-bottom: 5px;padding-left: 0px;border-top: 1px solid #bbbbbb;border-right: 1px solid #bbbbbb;border-bottom: 1px solid #bbbbbb;">
 														<table style="border-spacing: 0;border-collapse: collapse;vertical-align: top"
 															   cellpadding="0" cellspacing="0" width="100%">
 															<tbody>
@@ -83,10 +83,19 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 																	<div style="color:#555555;line-height:120%;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif;">
 																		<div style="font-size:16px;line-height:19px;color:#555555;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif;text-align:left;">
 																			<?php
-																			$some_field = get_post_meta( $order->get_id(), 'tel', true );
-																			if($some_field != '') {
-																				$billing_first = get_post_meta( $order->get_id(), 'billing_first_name', true );
-																				echo '<p>Уважаемый(-ая) ' . $order->billing_first_name . ',' . '</p>' . '<p>' . 'Ваша сим-карта Vodafone активирована, присвоен номер ' . $some_field . '</p>';
+																			$vodafone_tel = get_post_meta( $order->get_id(), 'tel', true );
+																			$orange_pin = get_post_meta( $order->get_id(), 'pin', true );
+																			$orange_puk = get_post_meta( $order->get_id(), 'puk', true );
+																			$billing_first = get_post_meta( $order->get_id(), 'billing_first_name', true );
+																			if($vodafone_tel != '') {
+																				echo '<p>Уважаемый(-ая) ' . $order->billing_first_name . ',' . '</p>' . '<p>' . 'Ваша сим-карта Vodafone активирована, присвоен номер ' . $vodafone_tel . '</p>';
+																			}
+																			if($orange_pin != '') {
+																				echo '<p>Уважаемый(-ая) ' . $order->billing_first_name . ',' . '</p>' . '<p>' . 'Ваш PIN-код восстановлен.</p>';
+																				if ($orange_pin != '')
+																					echo '<p><strong>PIN: </strong>'.$orange_pin.'</p>';
+																				if ($orange_puk != '')
+																					echo '<p><strong>PUK: </strong>'.$orange_puk.'</p>';
 																			}
 																			echo $email_body_text;
 																			?>
@@ -169,7 +178,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 											   border="0">
 											<tbody>
 											<tr style="vertical-align: top">
-												<td style="word-break: normal;border-collapse: collapse !important;vertical-align: top;background-color: transparent;padding-top: 5px;padding-right: 0px;padding-bottom: 5px;padding-left: 0px;border-top: 0px solid transparent;border-right: 1px solid #bbbbbb;border-bottom: 1px solid #bbbbbb;border-left: 1px solid #bbbbbb">
+												<td style="word-break: normal;border-collapse: collapse !important;vertical-align: top;background-color: transparent;padding-top: 5px;padding-right: 0px;padding-bottom: 5px;padding-left: 0px;border-top: 0px solid transparent;border-bottom: 1px solid #bbbbbb;border-left: 1px solid #bbbbbb">
 													<table style="border-spacing: 0;border-collapse: collapse;vertical-align: top"
 														   cellpadding="0" cellspacing="0" width="100%">
 														<tbody>
@@ -254,7 +263,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 											   border="0">
 											<tbody>
 											<tr style="vertical-align: top">
-												<td style="word-break: normal;border-collapse: collapse !important;vertical-align: top;background-color: transparent;padding-top: 5px;padding-right: 0px;padding-bottom: 5px;padding-left: 0px;border-top: 0px solid transparent;border-right: 1px solid #bbbbbb;border-bottom: 0px dashed #BBBBBB;border-left: 1px solid #bbbbbb">
+												<td style="word-break: normal;border-collapse: collapse !important;vertical-align: top;background-color: transparent;padding-top: 5px;padding-right: 0px;padding-bottom: 5px;padding-left: 0px;border-top: 0px solid transparent;border-bottom: 0px dashed #BBBBBB;">
 													<table style="border-spacing: 0;border-collapse: collapse;vertical-align: top"
 														   cellpadding="0" cellspacing="0" width="100%">
 														<tbody>

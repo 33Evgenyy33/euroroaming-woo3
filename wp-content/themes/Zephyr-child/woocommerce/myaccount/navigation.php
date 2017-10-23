@@ -24,11 +24,11 @@ do_action( 'woocommerce_before_account_navigation' );
 ?>
 
 <nav class="woocommerce-MyAccount-navigation">
-	<ul>
+    <ul>
 		<?php if (members_current_user_has_role('blogger')) { ?>
-			<li class="woocommerce-MyAccount-navigation-link--blogger">
-				<a href="/affiliate-area">Статистика по промокодам</a>
-			</li>
+            <li class="woocommerce-MyAccount-navigation-link--blogger">
+                <a href="/affiliate-area">Статистика по промокодам</a>
+            </li>
 		<?php } ?>
 
 		<?php if (members_current_user_has_role('cashier')) { ?>
@@ -40,12 +40,12 @@ do_action( 'woocommerce_before_account_navigation' );
 		<?php foreach ( wc_get_account_menu_items() as $endpoint => $label ) :
 			if ($label == 'Загрузки') continue;
 			?>
-			<li class="<?php echo wc_get_account_menu_item_classes( $endpoint ); ?>">
-				<a href="<?php echo esc_url( wc_get_account_endpoint_url( $endpoint ) ); ?>"><?php echo esc_html( $label ); ?></a>
-			</li>
+            <li class="<?php echo wc_get_account_menu_item_classes( $endpoint ); ?>">
+                <a href="<?php echo esc_url( wc_get_account_endpoint_url( $endpoint ) ); ?>"><?php echo esc_html( $label ); ?></a>
+            </li>
 		<?php endforeach; ?>
 
-	</ul>
+    </ul>
 </nav>
 
 <?php do_action( 'woocommerce_after_account_navigation' ); ?>
