@@ -3,9 +3,11 @@
  * Plugin Name: WooCommerce Checkout Field Editor
  * Plugin URI: https://woocommerce.com/products/woocommerce-checkout-field-editor/
  * Description: Add, remove and modifiy fields shown on your WooCommerce checkout page.
- * Version: 1.5.6
+ * Version: 1.5.7
  * Author: WooCommerce
  * Author URI: https://woocommerce.com
+ * WC tested up to: 3.2
+ * WC requires at least: 2.6
  *
  * Text Domain: woocommerce-checkout-field-editor
  * Domain Path: /languages
@@ -31,7 +33,7 @@ if ( ! function_exists( 'woothemes_queue_update' ) ) {
 woothemes_queue_update( plugin_basename( __FILE__ ), '2b8029f0d7cdd1118f4d843eb3ab43ff', '184594' );
 
 if ( is_woocommerce_active() ) {
-	define( 'WC_CHECKOUT_FIELD_EDITOR_VERSION', '1.5.6' );
+	define( 'WC_CHECKOUT_FIELD_EDITOR_VERSION', '1.5.7' );
 
 	/**
 	 * Updates the plugin version to DB.
@@ -599,7 +601,7 @@ if ( is_woocommerce_active() ) {
 							case 'required':
 
 								if ( 'checkbox' === $field['type'] && 0 === $posted[ $key ] ) {
-									wc_add_notice( '<strong>' . $field['label'] . '</strong> ' . __( 'Это поле обязательное.', 'woocommerce-checkout-field-editor' ), 'error' );
+									wc_add_notice( '<strong>' . $field['label'] . '</strong> ' . __( 'is a required field.', 'woocommerce-checkout-field-editor' ), 'error' );
 								}
 
 							break;
@@ -696,8 +698,11 @@ if ( is_woocommerce_active() ) {
 		}
 	}
 
-	// Add fields to view order/thanks pages
+	// Add fields to view order/thanks pages.
+	// < WC 3.2
 	add_action( 'woocommerce_order_details_after_customer_details', 'wc_display_custom_fields_view_order', 20, 1 );
+	// WC 3.2+
+	add_action( 'woocommerce_order_details_after_order_table', 'wc_display_custom_fields_view_order', 20, 1 );
 
 	/**
 	 * Get custom checkout fields data for admin order area

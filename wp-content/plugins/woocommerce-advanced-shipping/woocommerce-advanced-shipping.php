@@ -3,16 +3,17 @@
  * Plugin Name: 	WooCommerce Advanced Shipping
  * Plugin URI: 		http://jeroensormani.com/
  * Description: 	WooCommerce Advanced Shipping allows you to configure advanced shipping conditions with <strong>conditional logic!</strong>
- * Version: 		1.0.13
+ * Version: 		1.0.14
  * Author: 			Jeroen Sormani
  * Author URI: 		http://jeroensormani.com/
  * Text Domain: 	woocommerce-advanced-shipping
+ * WC requires at least: 2.6.0
+ * WC tested up to:      3.2.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /**
- * Copyright Jeroen Sormani
  * Class WooCommerce_Advanced_Shipping
  *
  * Main WAS class, add filters and handling all other files
@@ -30,7 +31,7 @@ class WooCommerce_Advanced_Shipping {
 	 * @since 1.0.1
 	 * @var string $version Plugin version number.
 	 */
-	public $version = '1.0.13';
+	public $version = '1.0.14';
 
 
 	/**
@@ -60,15 +61,10 @@ class WooCommerce_Advanced_Shipping {
 	public function __construct() {
 
 		// Check if WooCommerce is active
-		if ( ! function_exists( 'is_plugin_active_for_network' ) ) :
-			require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
-		endif;
-
-		if ( ! in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) :
-			if ( ! is_plugin_active_for_network( 'woocommerce/woocommerce.php' ) ) :
-				return;
-			endif;
-		endif;
+		require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
+		if ( ! is_plugin_active( 'woocommerce/woocommerce.php' ) && ! function_exists( 'WC' ) ) {
+			return;
+		}
 
 		// Initialize plugin parts
 		$this->init();
@@ -232,6 +228,7 @@ endif;
 // Backwards compatibility
 if ( ! function_exists( 'WAS' ) ) :
 	function WAS() {
+		_deprecated_function( 'WAS', '1.0.14', 'WooCommerce_Advanced_Shipping' );
 		return WooCommerce_Advanced_Shipping();
 
 	}
@@ -239,4 +236,4 @@ if ( ! function_exists( 'WAS' ) ) :
 
 endif;
 
-WooCommerce_Advanced_Shipping();
+add_action( 'woocommerce_init', 'WooCommerce_Advanced_Shipping' );

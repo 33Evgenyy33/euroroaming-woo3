@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License v3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: WooCommerce Checkout Add-Ons 1.10.2\n"
+"Project-Id-Version: WooCommerce Checkout Add-Ons 1.11.0\n"
 "Report-Msgid-Bugs-To: https://woocommerce.com/my-account/tickets/\n"
 "POT-Creation-Date: 2014-06-15 22:41:24+00:00\n"
 "MIME-Version: 1.0\n"
@@ -197,29 +197,29 @@ msgstr ""
 msgid "After Billing Details"
 msgstr ""
 
-#: includes/admin/post-types/class-wc-checkout-add-ons-shop-order-cpt.php:194
+#: includes/admin/post-types/class-wc-checkout-add-ons-shop-order-cpt.php:160
 msgid "%d file"
 msgid_plural "%d files"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/admin/post-types/class-wc-checkout-add-ons-shop-order-cpt.php:201
+#: includes/admin/post-types/class-wc-checkout-add-ons-shop-order-cpt.php:167
 #: includes/class-wc-checkout-add-on.php:229
 #: includes/class-wc-checkout-add-on.php:241
 msgid "(File has been removed)"
 msgstr ""
 
-#: includes/admin/post-types/class-wc-checkout-add-ons-shop-order-cpt.php:337
-#: includes/admin/post-types/class-wc-checkout-add-ons-shop-order-cpt.php:360
-#: includes/admin/post-types/class-wc-checkout-add-ons-shop-order-cpt.php:384
+#: includes/admin/post-types/class-wc-checkout-add-ons-shop-order-cpt.php:303
+#: includes/admin/post-types/class-wc-checkout-add-ons-shop-order-cpt.php:326
+#: includes/admin/post-types/class-wc-checkout-add-ons-shop-order-cpt.php:350
 #. translators: Placeholder: %s - Add on name
 #. translators: Placeholder: %s - Add on label
 #. translators: Placeholder: %s - Add on label
 msgid "Show all %s"
 msgstr ""
 
-#: includes/admin/post-types/class-wc-checkout-add-ons-shop-order-cpt.php:365
-#: includes/admin/post-types/class-wc-checkout-add-ons-shop-order-cpt.php:390
+#: includes/admin/post-types/class-wc-checkout-add-ons-shop-order-cpt.php:331
+#: includes/admin/post-types/class-wc-checkout-add-ons-shop-order-cpt.php:356
 msgid "Show all "
 msgstr ""
 
@@ -252,19 +252,19 @@ msgstr ""
 msgid "%s is a required field."
 msgstr ""
 
-#: includes/frontend/class-wc-checkout-add-ons-frontend.php:753
+#: includes/frontend/class-wc-checkout-add-ons-frontend.php:770
 msgid "required"
 msgstr ""
 
-#: includes/frontend/class-wc-checkout-add-ons-frontend.php:871
+#: includes/frontend/class-wc-checkout-add-ons-frontend.php:888
 msgid "Drag file here or click to upload"
 msgstr ""
 
-#: includes/frontend/class-wc-checkout-add-ons-frontend.php:877
+#: includes/frontend/class-wc-checkout-add-ons-frontend.php:894
 msgid "Remove"
 msgstr ""
 
-#: includes/frontend/class-wc-checkout-add-ons-frontend.php:882
+#: includes/frontend/class-wc-checkout-add-ons-frontend.php:899
 msgid "You need to enable Javascript to upload files"
 msgstr ""
 
@@ -272,7 +272,7 @@ msgstr ""
 msgid "WooCommerce Checkout Add-Ons"
 msgstr ""
 
-#: woocommerce-checkout-add-ons.php:208
+#: woocommerce-checkout-add-ons.php:211
 #. translators: Placeholders: %1$s opening <a> link HTML tag, %2$s closing </a>
 #. link HTML tag
 msgid ""
@@ -280,7 +280,7 @@ msgid ""
 "a moment to %1$sread through the documentation%2$s."
 msgstr ""
 
-#: woocommerce-checkout-add-ons.php:331 woocommerce-checkout-add-ons.php:333
+#: woocommerce-checkout-add-ons.php:351 woocommerce-checkout-add-ons.php:353
 msgid "Checkout Add-on Value"
 msgstr ""
 

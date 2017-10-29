@@ -5,7 +5,7 @@
  * Description: Easily create paid add-ons for your WooCommerce checkout and display them in the Orders admin, the My Orders section, and even order emails!
  * Author: SkyVerge
  * Author URI: http://www.woocommerce.com
- * Version: 1.10.2
+ * Version: 1.11.0
  * Text Domain: woocommerce-checkout-add-ons
  * Domain Path: /i18n/languages/
  *
@@ -19,6 +19,8 @@
  * @category  Admin
  * @copyright Copyright (c) 2014-2017, SkyVerge, Inc.
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0
+ *
+ * Woo: 466854:8fdca00b4000b7a8cc26371d0e470a8f
  */
 
 defined( 'ABSPATH' ) or exit;
@@ -41,7 +43,7 @@ if ( ! class_exists( 'SV_WC_Framework_Bootstrap' ) ) {
 	require_once( plugin_dir_path( __FILE__ ) . 'lib/skyverge/woocommerce/class-sv-wc-framework-bootstrap.php' );
 }
 
-SV_WC_Framework_Bootstrap::instance()->register_plugin( '4.6.0', __( 'WooCommerce Checkout Add-Ons', 'woocommerce-checkout-add-ons' ), __FILE__, 'init_woocommerce_checkout_add_ons', array(
+SV_WC_Framework_Bootstrap::instance()->register_plugin( '4.6.3', __( 'WooCommerce Checkout Add-Ons', 'woocommerce-checkout-add-ons' ), __FILE__, 'init_woocommerce_checkout_add_ons', array(
 	'minimum_wc_version'   => '2.5.5',
 	'minimum_wp_version'   => '4.1',
 	'backwards_compatible' => '4.4',
@@ -97,7 +99,7 @@ class WC_Checkout_Add_Ons extends SV_WC_Plugin {
 
 
 	/** plugin version number */
-	const VERSION = '1.10.2';
+	const VERSION = '1.11.0';
 
 	/** @var WC_Checkout_Add_Ons single instance of this plugin */
 	protected static $instance;
@@ -132,7 +134,8 @@ class WC_Checkout_Add_Ons extends SV_WC_Plugin {
 			self::PLUGIN_ID,
 			self::VERSION,
 			array(
-				'text_domain' => 'woocommerce-checkout-add-ons',
+				'text_domain'        => 'woocommerce-checkout-add-ons',
+				'display_php_notice' => true,
 			)
 		);
 
@@ -306,14 +309,31 @@ class WC_Checkout_Add_Ons extends SV_WC_Plugin {
 
 		echo '<td class="wc-checkout-add-ons-value">';
 
-		if ( is_array( $item ) && isset( $item['wc_checkout_add_on_id'] ) && $add_on = $this->get_add_on( $item['wc_checkout_add_on_id'] ) ) {
+		if ( SV_WC_Plugin_Compatibility::is_wc_version_gte_3_0() ) {
+
+			$add_on_id    = $item->get_meta( '_wc_checkout_add_on_id' );
+			$add_on_value = $item->get_meta( '_wc_checkout_add_on_value' );
+			$add_on_label = $item->get_meta( '_wc_checkout_add_on_label' );
+
+		} elseif ( is_array( $item ) && isset( $item['wc_checkout_add_on_id'] ) ) {
+
+			$add_on_id    = $item['wc_checkout_add_on_id'];
+			$add_on_value = $item['wc_checkout_add_on_value'];
+			$add_on_label = $item['wc_checkout_add_on_label'];
+
+		} else {
+
+			$add_on_id = 0;
+		}
+
+		if ( $add_on_id && $add_on = $this->get_add_on( $add_on_id ) ) {
 
 			$is_editable = in_array( $add_on->type, array( 'text', 'textarea' ), false );
 
 			if ( 'textarea' === $add_on->type || 'file' === $add_on->type ) {
-				$value = $add_on->normalize_value( $item['wc_checkout_add_on_value'], false );
+				$value = $add_on->normalize_value( $add_on_value, false );
 			} else {
-				$value = maybe_unserialize( $item['wc_checkout_add_on_label'] );
+				$value = maybe_unserialize( $add_on_label );
 				$value = esc_html( is_array( $value ) ? implode( ', ', $value ) : $value );
 			}
 
@@ -328,7 +348,7 @@ class WC_Checkout_Add_Ons extends SV_WC_Plugin {
 			<div class="edit" style="display: none;">
 
 				<?php if ( 'textarea' === $add_on->type ) : ?>
-					<textarea placeholder="<?php esc_attr_e( 'Checkout Add-on Value', 'woocommerce-checkout-add-ons' ); ?>" name="checkout_add_on_value[<?php echo esc_attr( $item_id ); ?>]"><?php echo esc_textarea( $item['wc_checkout_add_on_value'] ); ?></textarea>
+					<textarea placeholder="<?php esc_attr_e( 'Checkout Add-on Value', 'woocommerce-checkout-add-ons' ); ?>" name="checkout_add_on_value[<?php echo esc_attr( $item_id ); ?>]"><?php echo esc_textarea( $add_on_value ); ?></textarea>
 				<?php else : ?>
 					<input type="text" placeholder="<?php esc_attr_e( 'Checkout Add-on Value', 'woocommerce-checkout-add-ons' ); ?>" name="checkout_add_on_value[<?php echo $item_id; ?>]" value="<?php echo $value; ?>" />
 				<?php endif; ?>

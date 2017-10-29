@@ -205,7 +205,7 @@ class WAS_Post_Type {
 
 		$shipping_method                    = $_POST['_was_shipping_method'];
 		$shipping_method['shipping_title']  = sanitize_text_field( $shipping_method['shipping_title'] );
-		$shipping_method['shipping_cost']   = wc_format_decimal( $shipping_method['shipping_cost'] );
+		$shipping_method['shipping_cost']   = preg_replace( '/[^0-9\%\.\,\-]/', '', $shipping_method['shipping_cost'] );
 		$shipping_method['handling_fee']    = preg_replace( '/[^0-9\%\.\,\-]/', '', $shipping_method['handling_fee'] );
 		$shipping_method['cost_per_weight'] = wc_format_decimal( $shipping_method['cost_per_weight'] );
 		$shipping_method['cost_per_item']   = preg_replace( '/[^0-9\%\.\,\-]/', '', $shipping_method['cost_per_item'] );

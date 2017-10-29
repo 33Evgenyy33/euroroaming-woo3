@@ -54,11 +54,6 @@ class WC_Checkout_Add_Ons_Shop_Order_CPT {
 		// add sortable checkout add-ons
 		add_filter( 'manage_edit-shop_order_sortable_columns', array( $this, 'add_sortable_columns' ) );
 
-		// Display order add on values in the order edit screen.
-		if ( SV_WC_Plugin_Compatibility::is_wc_version_gte_3_0() ) {
-			add_action( 'woocommerce_admin_order_item_values', array( $this, 'display_add_on_values' ), 5, 3 );
-		}
-
 		// process sorting
 		add_filter( 'posts_orderby', array( $this, 'add_sortable_orderby' ), 10, 2 );
 
@@ -74,35 +69,6 @@ class WC_Checkout_Add_Ons_Shop_Order_CPT {
 
 		// display add-on values in order edit screen
 		add_filter( 'esc_html', array( $this, 'unescape_file_link_html' ), 20, 2 );
-	}
-
-
-	/**
-	 * Display add on values on the order edit screen.
-	 *
-	 * @internal
-	 *
-	 * @since 1.10.0
-	 * @param null $_ Unused.
-	 * @param \WC_Order_Item_Fee $item The item object.
-	 * @param int $item_id The item ID.
-	 */
-	public function display_add_on_values( $_ = null, $item, $item_id ) {
-
-		if ( $item->is_type( 'fee' ) ) {
-
-			$add_on_id = wc_get_order_item_meta( $item_id, '_wc_checkout_add_on_id', true );
-
-			if ( ! empty( $add_on_id ) && ( $add_on = wc_checkout_add_ons()->get_add_on( $add_on_id ) ) ) {
-
-				$add_on_value = wc_get_order_item_meta( $item_id, '_wc_checkout_add_on_value', true );
-				$add_on_value = ! empty( $add_on_value ) ? $add_on->normalize_value( $add_on_value, true ) : '';
-
-				?>
-				<td class="item_add_on"><?php echo wp_kses_post( $add_on_value ); ?></td>
-				<?php
-			}
-		}
 	}
 
 

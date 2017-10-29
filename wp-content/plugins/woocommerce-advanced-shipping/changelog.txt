@@ -1,8 +1,15 @@
 == Changelog ==
 
+= 1.0.14 - 20/09/2017 =
+
+* [Improvement] - Also allow comma separated values for additional cost fields
+* [Improvement] - Add a better 'is WC active' check
+* [Remove] - 'Priority' field from overview. No longer used.
+* [Tested] - WooCommerce 3.2 - Everything works :-)
+
 = 1.0.13 - 12/03/2017 =
 
-* [Add] - Full WC 2.7 compatibility (earlier versions are also compatible, but can show (harmless) notices)
+* [Add] - Full WC 3.0 compatibility (earlier versions are also compatible, but can show (harmless) notices)
 * [Add] - PHP 7.1 compatibility
 * [Improvement] - Ensure the products within a shipping package are shown in the admin order screen
 * [Fix] - 'Not equal to' operator not working properly with continents

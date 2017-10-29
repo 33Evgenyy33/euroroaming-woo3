@@ -407,7 +407,7 @@ class WC_Checkout_Add_Ons_Frontend {
 
 						wc_add_notice( sprintf(
 							/* translators: Placeholders: %s - the required field name */
-							__( '%s это обязательное поле.', 'woocommerce-checkout-field-editor' ),
+							__( '%s is a required field.', 'woocommerce-checkout-field-editor' ),
 							'<strong>' . esc_html( $add_on->name ) . '</strong> '
 						), 'error' );
 					}
@@ -583,7 +583,7 @@ class WC_Checkout_Add_Ons_Frontend {
 	public function display_subscriptions_recurring_fees( $index, $base_package, $recurring_cart ) {
 
 		// Subscriptions 2.2+ will show fees on its own, we're backporting this for 2.0 - 2.2
-		if ( is_checkout() && version_compare( SV_WC_Plugin_Compatibility::get_wc_subscriptions_version(), '2.2.0', '<' ) ) {
+		if ( is_checkout() && class_exists( 'WC_Subscriptions' ) && ! empty( WC_Subscriptions::$version ) && version_compare( WC_Subscriptions::$version, '2.2.0', '<' ) ) {
 
 			foreach ( $recurring_cart->get_fees() as $fee ) {
 				?>
@@ -704,7 +704,24 @@ class WC_Checkout_Add_Ons_Frontend {
 	 * @return string formatted label field
 	 */
 	public function get_formatted_label( $name, $label = '', $cost = '' ) {
-		return ( $label ? esc_html( $label ) : esc_html( $name ) ) . ( $cost ? ' (' . $cost . ')' : '' );
+
+		$add_on_label = ! empty( $label ) ? esc_html( $label ) : esc_html( $name );
+
+		if ( ! empty ( $cost ) ) {
+			$add_on_label .= " ({$cost})";
+		}
+
+		/**
+		 * Filters the formatted label for the add-ons on the frontend of the site.
+		 *
+		 * @since 1.11.0
+		 *
+		 * @param string $add_on_label the add-on label
+		 * @param string $name field name
+		 * @param string $label optional descriptive field label (default: empty string)
+		 * @param string $cost optional field cost (default: empty string)
+		 */
+		return apply_filters( 'wc_checkout_add_ons_formatted_add_on_label', $add_on_label, $name, $label, $cost );
 	}
 
 
@@ -1281,14 +1298,6 @@ class WC_Checkout_Add_Ons_Frontend {
 	 * @return array $total_rows
 	 */
 	public function append_order_add_on_fee_meta( $total_rows, $order ) {
-
-		if ( SV_WC_Plugin_Compatibility::is_wc_version_gte_3_0() ) {
-
-			// `woocommerce_get_order_item_totals` filter runs twice in WC 3.0 and add-ons
-			// should be added during the initial call, see WC_Order::get_order_item_totals()
-			remove_filter( 'woocommerce_get_order_item_totals', array( $this, 'append_order_add_on_fee_meta' ), 10 );
-			$this->label_separator = ' ';
-		}
 
 		foreach ( $total_rows as $row_key => $row ) {
 

@@ -1,5 +1,17 @@
 *** WooCommerce Checkout Add-Ons Changelog ***
 
+2017.07.05 - version 1.11.0
+ * Feature - Added support for WooCommerce Customer / Order CSV Export and WooCommerce Customer / Order XML Export custom format builders
+ * Dev - Filter the add-on labels at checkout
+
+2017.05.09 - version 1.10.4
+ * Fix - Fix compatibility with Print Invoices & Packing Lists in WooCommerce 3.0+
+ * Fix - Fix admin order item display in WooCommerce 3.0+
+ * Fix - Prevent errors when issuing refunds when add-ons are present
+
+2017.04.27 - version 1.10.3
+ * Fix - Prevent a fatal error when purchasing Subscriptions with recurring add-ons
+
 2017.04.18 - version 1.10.2
  * Fix - Handle inconsistent order item data to avoid Subscriptions renewal errors
  * Fix - Allow "0" as a label for radio, select, checkbox group, or multi-select choices

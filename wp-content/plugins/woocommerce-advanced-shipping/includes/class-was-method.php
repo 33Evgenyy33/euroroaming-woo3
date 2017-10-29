@@ -324,10 +324,10 @@ class WAS_Advanced_Shipping_Method extends WC_Shipping_Method {
 
 			$match_details = get_post_meta( $method_id, '_was_shipping_method', true );
 			@$label 				= $match_details['shipping_title'];
-			@$this->fee 			= $match_details['handling_fee'];
-			@$this->cost			= $match_details['shipping_cost'];
-			@$this->cost_per_item	= $match_details['cost_per_item'];
-			@$this->cost_per_weight	= $match_details['cost_per_weight'];
+			@$this->fee 			= str_replace( ',', '.', $match_details['handling_fee'] );
+			@$this->cost			= str_replace( ',', '.', $match_details['shipping_cost'] );
+			@$this->cost_per_item	= str_replace( ',', '.', $match_details['cost_per_item'] );
+			@$this->cost_per_weight	= str_replace( ',', '.', $match_details['cost_per_weight'] );
 			@$this->taxable			= $match_details['tax'];
 			$this->shipping_costs   = $this->calculate_shipping_cost( $package, $method_id );
 

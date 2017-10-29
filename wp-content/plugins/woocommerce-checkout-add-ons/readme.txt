@@ -2,9 +2,9 @@
 Author: skyverge, woocommerce
 Tags: woocommerce
 Requires at least: 4.1
-Tested up to: 4.7.3
-Requires WooCommerce at least: 2.5.5
-Tested WooCommerce up to: 3.0.0
+Tested up to: 4.8
+WC Requires at least: 2.5.5
+WC Tested up to: 3.1.0
 
 Easily add add-ons to your WooCommerce orders and display them in the Orders admin, the My Orders section, and even order emails!
 

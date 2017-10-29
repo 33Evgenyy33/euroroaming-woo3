@@ -21,7 +21,6 @@ $wc_status_options = wp_parse_args( get_option( 'woocommerce_status_options', ar
 					<th scope="col" style='padding-left: 10px;' class="column-title"><?php _e( 'Shipping title', 'woocommerce-advanced-shipping' ); ?></th>
 					<th scope="col" style='padding-left: 10px; width: 100px;' class="column-cost"><?php _e( 'Shipping cost', 'woocommerce-advanced-shipping' ); ?></th>
 					<th scope="col" style='width: 70px;' class="column-conditions"><?php _e( '# Groups', 'woocommerce-advanced-shipping' ); ?></th>
-					<th scope="col" style='width: 70px;' class="column-priority"><?php _e( 'Priority', 'woocommerce-advanced-shipping' ); ?>&nbsp;<span class="tips" data-tip="<?php echo esc_attr( __( 'Available methods will be chosen by default in this order. If multiple methods have the same priority, they will be sorted by cost. <br/>Will mix with other default shipping rate priorities.', 'woocommerce-advanced-shipping' ) ); ?>">[?]</span></th>
 				</tr>
 			</thead>
 			<tbody><?php
@@ -31,7 +30,6 @@ $wc_status_options = wp_parse_args( get_option( 'woocommerce_status_options', ar
 
 					$method_details = get_post_meta( $method->ID, '_was_shipping_method', true );
 					$conditions     = get_post_meta( $method->ID, '_was_shipping_method_conditions', true );
-					$priority       = get_post_meta( $method->ID, '_priority', true );
 
 					$alt = ( $i++ ) % 2 == 0 ? 'alternate' : '';
 					?><tr class='<?php echo $alt; ?>'>
@@ -77,9 +75,6 @@ $wc_status_options = wp_parse_args( get_option( 'woocommerce_status_options', ar
 						<td  class="column-conditions" data-colname="<?php _e( 'Condition groups', 'woocommerce-advanced-shipping' ); ?>"><?php
 							echo absint( count( $conditions ) );
 						?></td>
-						<td width="1%" class="priority column-priority" data-colname="<?php _e( 'Priority', 'woocommerce-advanced-shipping' ); ?>">
-							<input type="number" step="1" min="0" name="method_priority[<?php echo esc_attr( $method->ID ); ?>]" value="<?php echo absint( max( $priority, 1 ) ); ?>" />
-						</td>
 
 					</tr><?php
 
@@ -87,14 +82,14 @@ $wc_status_options = wp_parse_args( get_option( 'woocommerce_status_options', ar
 
 				if ( empty( $method ) ) :
 					?><tr>
-						<td colspan='6'><?php _e( 'There are no Advanced Shipping conditions. Yet...', 'woocommerce-advanced-shipping' ); ?></td>
+						<td colspan='5'><?php _e( 'There are no Advanced Shipping rates. Yet...', 'woocommerce-advanced-shipping' ); ?></td>
 					</tr><?php
 				endif;
 
 			?></tbody>
 			<tfoot>
 				<tr>
-					<th colspan='6' style='padding-left: 10px;'>
+					<th colspan='5' style='padding-left: 10px;'>
 						<a href='<?php echo admin_url( 'post-new.php?post_type=was' ); ?>' class='add button'>
 							<?php _e( 'Add Shipping Rate', 'woocommerce-advanced-shipping' ); ?>
 						</a>

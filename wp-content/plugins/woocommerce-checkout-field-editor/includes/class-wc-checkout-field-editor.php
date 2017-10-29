@@ -557,6 +557,35 @@ class WC_Checkout_Field_Editor {
 	}
 
 	/**
+	 * List of restricted field names that shouldn't be used.
+	 *
+	 * @since 1.5.7
+	 * @version 1.5.7
+	 * @return array
+	 */
+	public function restricted_field_names() {
+		return apply_filters( 'wc_checkout_field_editor_restricted_field_names', array(
+			'role',
+		) );
+	}
+
+	/**
+	 * Sanitize field names.
+	 *
+	 * @since 1.5.7
+	 * @version 1.5.7
+	 * @param string $field_name
+	 * @return string
+	 */
+	public function sanitize_field_name( $field_name ) {
+		if ( in_array( $field_name, $this->restricted_field_names() ) ) {
+			return 'cf_' . $field_name; // "cf" just stands for custom field.
+		}
+
+		return $field_name;
+	}
+
+	/**
 	 * save_options function.
 	 *
 	 * @access public
@@ -596,6 +625,10 @@ class WC_Checkout_Field_Editor {
 			) ) ) {
 				continue;
 			}
+
+			// Sanitize field names for restriction.
+			$name     = $this->sanitize_field_name( $name );
+			$new_name = $this->sanitize_field_name( $new_name );
 
 			if ( $name && $new_name && $new_name !== $name ) {
 				if ( isset( $fields[ $name ] ) ) {
