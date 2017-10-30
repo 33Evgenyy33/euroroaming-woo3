@@ -1,14 +1,12 @@
 === WooCommerce Local Pickup Plus ===
-Author: skyverge, woocommerce
+Author: skyverge
 Tags: woocommerce
-Requires at least: 4.1
-Tested up to: 4.7.3
-Requires WooCommerce at least: 2.5.5
-Tested WooCommerce up to: 3.0.0
+Requires at least: 4.4
+Tested up to: 4.8.2
 
 A shipping plugin for WooCommerce that allows the store operator to define local pickup locations, which the customer can then choose from when making a purchase.
 
-See http://docs.woothemes.com/document/local-pickup-plus/ for full documentation.
+See http://docs.woocommerce.com/document/local-pickup-plus/ for full documentation.
 
 == Installation ==
 

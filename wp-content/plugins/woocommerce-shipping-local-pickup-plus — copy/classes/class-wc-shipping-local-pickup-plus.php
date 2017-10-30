@@ -335,13 +335,6 @@ class WC_Shipping_Local_Pickup_Plus extends WC_Shipping_Method {
 				'default' => 'no',
 			),
 
-			/*'apply_pickup_location_tax' => array(
-                'title' => __('Pickup Location Tax', 'woocommerce-shipping-local-pickup-plus'),
-                'type' => 'checkbox',
-                'label' => __('When this shipping method is chosen, apply the tax rate based on the pickup location than for the customer\'s given address.', 'woocommerce-shipping-local-pickup-plus'),
-                'default' => 'no',
-            ),*/
-
 			'hide_shipping_address' => array(
 				'title'   => __( 'Hide Shipping Address', 'woocommerce-shipping-local-pickup-plus' ),
 				'type'    => 'checkbox',
@@ -439,25 +432,12 @@ class WC_Shipping_Local_Pickup_Plus extends WC_Shipping_Method {
 								echo "<th>{$field['label']}</th>";
 							}
 							?>
-                            <!--							<th>-->
-                            <!--								--><?php
-							//								esc_html_e( 'Cost', 'woocommerce-shipping-local-pickup-plus' );
-							//								echo wc_help_tip( __( 'Cost for this pickup location, enter an amount, eg. 0 or 2.50, or leave empty to use the default cost configured above.', 'woocommerce-shipping-local-pickup-plus' ) );
-							//
-							?>
-                            <!--							</th>-->
                             <th>
 								<?php
 								esc_html_e( 'ID ТА', 'woocommerce-shipping-local-pickup-plus' );
 								echo wc_help_tip( 'ID кабинета ТА (если есть на селлере)' );
 								?>
                             </th>
-<!--                            <th>-->
-<!--								--><?php
-//								esc_html_e( 'Отображение ТА', 'woocommerce-shipping-local-pickup-plus' );
-//								echo wc_help_tip( 'ID кабинета ТА (если есть на селлере)' );
-//								?>
-<!--                            </th>-->
                         </tr>
                         </thead>
                         <tfoot>
@@ -473,6 +453,11 @@ class WC_Shipping_Local_Pickup_Plus extends WC_Shipping_Method {
                         <tbody class="pickup_locations">
 						<?php
 						if ( $this->pickup_locations ) {
+
+							//file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/pickup.txt", print_r( $this->pickup_locations, true ), FILE_APPEND | LOCK_EX );
+
+							//echo '<pre>',print_r($this->pickup_locations,1),'</pre>';
+
 							foreach ( $this->pickup_locations as $location ) {
 								echo '<tr class="pickup_location">
 								<td class="check-column" style="width:20px;"><input type="checkbox" name="select" />';
@@ -510,13 +495,8 @@ class WC_Shipping_Local_Pickup_Plus extends WC_Shipping_Method {
 
 									echo '</td>';
 								}
-								$checked = "checked";
-//							echo '<td><input type="text" name="' . $this->id . '_cost[]" value="' . ( isset( $location['cost'] ) ? $location['cost'] : '' ) . '" placeholder="' . __( '(Optional)', 'woocommerce-shipping-local-pickup-plus' ) . '" /></td>';
 								echo '<td><input type="text" name="' . $this->id . '_taid[]" value="' . ( isset( $location['taid'] ) ? $location['taid'] : '' ) . '" placeholder="' . 'ID ТА' . '" /></td>';
-								//echo '<td><input type="checkbox" name="' . $this->id . '_tadisplay[] " ' . ( $location['tadisplay'] == "on" ? "checked='checked'" : '' ) . '/></td>';
 								echo '</tr>';
-//								echo 'tadisplay: ' . $location["tadisplay"];
-								//echo '<br>';
 							}
 						}
 						?>
@@ -664,6 +644,11 @@ class WC_Shipping_Local_Pickup_Plus extends WC_Shipping_Method {
 			$max_id = max( $max_id, $location['id'] );
 		}
 
+		//file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "/logs/pickup.txt", print_r( $max_id, true ), FILE_APPEND | LOCK_EX );
+
+		//echo '<pre>',print_r($max_id,1),'</pre>';
+
+
 		for ( $i = 0, $ix = count( $ids ); $i < $ix; $i ++ ) {
 
 			// pickup location id
@@ -675,9 +660,9 @@ class WC_Shipping_Local_Pickup_Plus extends WC_Shipping_Method {
 
 			// reserved fields
 			$pickup_location = array(
-				'id'        => $id,
-				'country'   => isset( $countries[ $i ] ) ? $countries[ $i ] : null,
-				'taid'      => isset( $ta_id[ $i ] ) ? $ta_id[ $i ] : null,
+				'id'      => $id,
+				'country' => isset( $countries[ $i ] ) ? $countries[ $i ] : null,
+				'taid'    => isset( $ta_id[ $i ] ) ? $ta_id[ $i ] : null,
 				//'tadisplay' => isset( $tadisplay[ $i ] ) ? $tadisplay[ $i ] : null,
 			);
 
@@ -1282,12 +1267,13 @@ class WC_Shipping_Local_Pickup_Plus extends WC_Shipping_Method {
 		}
 	}
 
-	public function check_orange_format( $num = '', $format_type = '' ) {
+	public function check_orange_format( $num = '' ) {
 		$orange_combo_check = array( "6050", "6051", "6052" );
 		$orange_nano_check  = array(
 			"615",
 			"625",
 			"6351",
+			"6352",
 			"692",
 			"6053",
 			"6054",
@@ -1295,24 +1281,27 @@ class WC_Shipping_Local_Pickup_Plus extends WC_Shipping_Method {
 			"6056",
 			"6057",
 			"6058",
-			"6059"
+			"6059",
+			"645"
 		);
-		$format_array       = array();
-
-		if ( $format_type == 'combo' ) {
-			$format_array = $orange_combo_check;
-		} elseif ( $format_type == 'nano' ) {
-			$format_array = $orange_nano_check;
-		}
 
 		$check_num = substr( $num, 0, 4 );
-		foreach ( $format_array as $format ) {
-			if ( strpos( $check_num, $format ) || $check_num == $format ) {
-				return true;
+
+		//Проверка на nano
+		foreach ( $orange_nano_check as $format ) {
+			if ( ( stripos( $check_num, $format ) !== false ) || ( $check_num == $format ) ) {
+				return 'nano';
 			}
 		}
 
-		return false;
+		//Проверка на combo
+		foreach ( $orange_combo_check as $format ) {
+			if ( ( stripos( $check_num, $format ) !== false ) || ( $check_num == $format ) ) {
+				return 'combo';
+			}
+		}
+
+		return '';
 	}
 
 
@@ -1355,7 +1344,7 @@ class WC_Shipping_Local_Pickup_Plus extends WC_Shipping_Method {
 
 			if ( 'select' === $this->get_checkout_pickup_location_styling() ) {
 
-				$start = microtime( true );
+				//$start = microtime( true );
 
 				echo '<select name="pickup_location[' . $package_index . ']" class="pickup_location" data-placeholder="Выберите один" style="width: 100%;">';
 				echo '<option value=""></option>';
@@ -1434,17 +1423,18 @@ class WC_Shipping_Local_Pickup_Plus extends WC_Shipping_Method {
 						$combo             = 0;
 						$nano              = 0;
 						$orange_validation = 0;
-						if ( $product_id == 58961 ) {
+						if ( $product_id == 18402 ) {
 							if ( ! in_array( 'orange', $exist_operators ) ) {
 								continue 2;
 							}//Есть ли Orange на селлере
 
 							//Подсчет кол-ва форматов
 							foreach ( $array_of_simcard['orange'] as $num ) {
-								if ( $this->check_orange_format( $num, 'combo' ) ) {
+								$format_type = $this->check_orange_format( $num );
+								if ( $format_type == 'combo' ) {
 									$combo ++;
 								}
-								if ( $this->check_orange_format( $num, 'nano' ) ) {
+								if ( $format_type == 'nano' ) {
 									$nano ++;
 								}
 							}
@@ -1471,32 +1461,32 @@ class WC_Shipping_Local_Pickup_Plus extends WC_Shipping_Method {
 								continue 2;
 							}
 						}
-						if ( $product_id == 58981 ) {
+						if ( $product_id == 18438 ) {
 							if ( ! in_array( 'vodafone', $exist_operators ) ) {
 								continue 2;
 							}//Есть ли Vodafone на селлере
 						}
-						if ( $product_id == 58995 ) {
+						if ( $product_id == 18446 ) {
 							if ( ! in_array( 'ortel', $exist_operators ) ) {
 								continue 2;
 							}//Есть ли ortel на селлере
 						}
-						if ( $product_id == 59021 ) {
+						if ( $product_id == 18455 ) {
 							if ( ! in_array( 'globalsim--classic', $exist_operators ) ) {
 								continue 2;
 							}
 						}
-						if ( $product_id == 59004 ) {
+						if ( $product_id == 18453 ) {
 							if ( ! in_array( 'globalsim--gsim_internet', $exist_operators ) ) {
 								continue 2;
 							}
 						}
-						if ( $product_id == 59130 ) {
+						if ( $product_id == 41120 ) {
 							if ( ! in_array( 'globalsim--travelchat', $exist_operators ) ) {
 								continue 2;
 							}
 						}
-						if ( $product_id == 59135 ) {
+						if ( $product_id == 48067 ) {
 							if ( ! in_array( 'globalsim--tariff_usa', $exist_operators ) ) {
 								continue 2;
 							}
@@ -1506,7 +1496,7 @@ class WC_Shipping_Local_Pickup_Plus extends WC_Shipping_Method {
 								continue 2;
 							}
 						}
-						if ( $product_id == 59140 ) {
+						if ( $product_id == 55050 ) {
 							if ( ! in_array( 'three', $exist_operators ) ) {
 								continue 2;
 							}
@@ -1537,21 +1527,22 @@ class WC_Shipping_Local_Pickup_Plus extends WC_Shipping_Method {
 				}
 
 				echo '</select>';
-				echo '<script>
-jQuery(document).ready(function(
-    $){$(document).ready(function(){
-        $("td > select.pickup_location").select2({
-  language: {
-    noResults: function (params) {
-      return "Пункты выдачи не найдены или не выбраны город и регион";
-    }
-  }
-});
-        });
+				/*echo '<script>
+jQuery(document).ready(function ($) {
+    $("td > select.pickup_location").select2({
+        language: {
+            noResults: function (params) {
+                return "Пункты выдачи не найдены или не выбраны город и регион";
+            }
+        },
+        escapeMarkup: function (markup) {
+            return markup;
+        }
     });
-    
-    </script>';
-				echo 'Время выполнения скрипта: ' . ( microtime( true ) - $start ) . ' сек.';
+});
+
+    </script>';*/
+				//echo 'Время выполнения скрипта: ' . ( microtime( true ) - $start ) . ' сек.';
 
 			} else {
 				// radio styling
@@ -1575,39 +1566,41 @@ jQuery(document).ready(function(
 			$product_id = $cart_item['product_id'];
 
 			switch ( $product_id ) {
-				case 58961:
-					if ( ! array_key_exists( 58961, $products_in_cart ) ) {
-						$products_in_cart[58961] = 'orange';
+				case 18402:
+					if ( ! array_key_exists( 18402, $products_in_cart ) ) {
+						$products_in_cart[18402] = 'orange';
+					}
+
+					break;
+				case
+				18438:
+					if ( ! array_key_exists( 18438, $products_in_cart ) ) {
+						$products_in_cart[18438] = 'vodafone';
 					}
 					break;
-				case 58981:
-					if ( ! array_key_exists( 58981, $products_in_cart ) ) {
-						$products_in_cart[58981] = 'vodafone';
+				case 18446:
+					if ( ! array_key_exists( 18446, $products_in_cart ) ) {
+						$products_in_cart[18446] = 'ortel';
 					}
 					break;
-				case 58995:
-					if ( ! array_key_exists( 58995, $products_in_cart ) ) {
-						$products_in_cart[58995] = 'ortel';
+				case 18455:
+					if ( ! array_key_exists( 18455, $products_in_cart ) ) {
+						$products_in_cart[18455] = 'globalsim--classic';
 					}
 					break;
-				case 59021:
-					if ( ! array_key_exists( 59021, $products_in_cart ) ) {
-						$products_in_cart[59021] = 'globalsim--classic';
+				case 18453:
+					if ( ! array_key_exists( 18453, $products_in_cart ) ) {
+						$products_in_cart[18453] = 'globalsim--gsim_internet';
 					}
 					break;
-				case 59004:
-					if ( ! array_key_exists( 59004, $products_in_cart ) ) {
-						$products_in_cart[59004] = 'globalsim--gsim_internet';
+				case 41120: //TravelChat
+					if ( ! array_key_exists( 41120, $products_in_cart ) ) {
+						$products_in_cart[41120] = 'globalsim--travelchat';
 					}
 					break;
-				case 59130: //TravelChat
-					if ( ! array_key_exists( 59130, $products_in_cart ) ) {
-						$products_in_cart[59130] = 'globalsim--travelchat';
-					}
-					break;
-				case 59135:
-					if ( ! array_key_exists( 59135, $products_in_cart ) ) {
-						$products_in_cart[59135] = 'globalsim--tariff_usa';
+				case 48067:
+					if ( ! array_key_exists( 48067, $products_in_cart ) ) {
+						$products_in_cart[48067] = 'globalsim--tariff_usa';
 					}
 					break;
 				case 28328:
@@ -1615,7 +1608,7 @@ jQuery(document).ready(function(
 						$products_in_cart[28328] = 'globalsim--europasim';
 					}
 					break;
-				case 59140:
+				case 55050:
 					if ( ! array_key_exists( 59140, $products_in_cart ) ) {
 						$products_in_cart[59140] = 'three';
 					}
@@ -1671,7 +1664,7 @@ jQuery(document).ready(function(
 						$simcard = "Globalsim «США»";
 						break;
 					case 'globalsim--gsim_internet':
-						$simcard = "Globalsim «Internet»";
+						$simcard = "Globalsim NEW";
 						break;
 					case 'globalsim--europasim':
 						$simcard = "Europasim";
@@ -1699,10 +1692,11 @@ jQuery(document).ready(function(
 					$combo = 0;
 					$nano  = 0;
 					foreach ( $oper as $num ) {
-						if ( $this->check_orange_format( $num, 'combo' ) ) {
+						$format_type = $this->check_orange_format( $num );
+						if ( $format_type == 'combo' ) {
 							$combo ++;
 						}
-						if ( $this->check_orange_format( $num, 'nano' ) ) {
+						if ( $format_type == 'nano' ) {
 							$nano ++;
 						}
 					}
@@ -2189,7 +2183,7 @@ jQuery(document).ready(function(
 
 		if ( count( $pickup_locations ) > 0 ) {
 			echo '<div>';
-			echo '<h3>' . _n( 'Pickup Location', 'Pickup Locations', count( $pickup_locations ), 'woocommerce-shipping-local-pickup-plus' ) . '</h3>';
+			echo '<h3>' . _n( 'Пункт выдачи', 'Пункты выдачи', count( $pickup_locations ), 'woocommerce-shipping-local-pickup-plus' ) . '</h3>';
 		}
 
 		foreach ( $pickup_locations as $pickup_location ) {
@@ -2227,7 +2221,7 @@ jQuery(document).ready(function(
 		$pickup_locations = $this->get_order_pickup_locations( $order );
 
 		if ( count( $pickup_locations ) > 0 ) {
-			echo _n( 'Pickup Location', 'Pickup Locations', count( $pickup_locations ), 'woocommerce-shipping-local-pickup-plus' );
+			echo _n( 'Пункт выдачи', 'Пункты выдачи', count( $pickup_locations ), 'woocommerce-shipping-local-pickup-plus' );
 		}
 
 		foreach ( $pickup_locations as $pickup_location ) {

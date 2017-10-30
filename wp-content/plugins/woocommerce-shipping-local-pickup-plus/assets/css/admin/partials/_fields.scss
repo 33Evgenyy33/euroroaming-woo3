@@ -1,0 +1,35 @@
+/**
+ * Load WooCommerce Local Pickup admin input fields styles.
+ *
+ * @since 2.0.0
+ */
+
+
+@import "field_business_hours";
+@import "field_public_holidays";
+@import "field_schedule_adjustment";
+@import "field_price_adjustment";
+
+
+/** Address Fields
+ ---------------------------------------------------------*/
+
+.wc-local-pickup-plus-address-fields {
+
+	.city,
+	.country {
+		max-width: 300px;
+	}
+	.phone,
+	.postcode {
+		max-width: 200px;
+	}
+}
+
+
+// tweak to fix WooCommerce 3.2 padding in standard dropdowns in settings
+.woocommerce table.form-table select.wc-local-pickup-plus-dropdown {
+	box-sizing: content-box;
+	padding: 2px;
+	width: auto;
+}

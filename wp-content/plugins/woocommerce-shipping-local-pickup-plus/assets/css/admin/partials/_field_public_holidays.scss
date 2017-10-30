@@ -1,0 +1,229 @@
+/**
+ * WooCommerce Local Pickup Plus public holidays input field.
+ *
+ * @since 2.0.0
+ */
+.wc-local-pickup-plus-public-holidays-field {
+
+	position: relative;
+
+	.dates,
+	.calendar {
+		box-sizing: border-box;
+		float: left;
+	}
+
+	.dates {
+		width: 50%;
+		select {
+			min-width: 320px;
+		}
+	}
+
+	.calendar {
+
+		padding-right: 20px;
+
+		table {
+			border: 1px solid #DDDDDD;
+			border-collapse: collapse;
+			-webkit-box-shadow: inset 0 1px 2px rgba( 0, 0, 0, 0.07 );
+			box-shadow: inset 0 1px 2px rgba( 0, 0, 0, 0.07 );
+			color: #32373C;
+			margin: 0 0 18px 0;
+			outline: none;
+			padding: 0;
+			width: auto;
+		}
+
+		thead {
+
+			th {
+
+				background-color: #FFFFFF;
+				cursor: default;
+				font-weight: normal;
+				margin: 0;
+				padding: 12px;
+				text-align: center;
+				width: auto;
+
+				&.nav {
+					font-weight: bold;
+				}
+
+				&.month {
+					font-style: italic;
+				}
+			}
+		}
+
+		tbody {
+
+			td {
+				background-color: #FFFFFF;
+			}
+
+			td.void {
+
+				background-color: #F8F8F8;
+
+				&.jump {
+					color: #CCCCCC;
+					&:hover {
+						color: #444444;
+					}
+				}
+			}
+
+			td.day {
+
+				border: 1px solid #EDEDED;
+				cursor: default;
+				margin: 0;
+				padding: 12px;
+				text-align: center;
+				width: auto;
+
+				&:first-child {
+					border-left: none;
+				}
+
+				&:last-child {
+					border-right: none;
+				}
+			}
+
+			tr.week:last-child td.day {
+				border-bottom: none;
+			}
+		}
+
+		table thead th.nav:hover,
+		table tbody td.day:hover,
+		.selected {
+			background-color: #666666;
+			color: #FFFFFF;
+		}
+	}
+
+	@media (max-width:782px) {
+
+		margin-top: 10px;
+
+		table th,
+		table td {
+			display: table-cell;
+		}
+
+		.dates,
+		.calendar {
+
+			float: none;
+			max-width: none;
+			width: 100%;
+		}
+
+		.dates {
+			select {
+				width: 100%;
+			}
+		}
+	}
+}
+
+
+/* WordPress Admin styles */
+
+
+/* Fresh */
+body.admin-color-fresh {
+	.wc-local-pickup-plus-public-holidays-field {
+		.calendar table thead th.nav:hover,
+		.calendar table tbody td.day:hover,
+		.selected {
+			background-color: #0073AA !important;
+		}
+	}
+}
+
+/* Blue */
+body.admin-color-blue {
+	.wc-local-pickup-plus-public-holidays-field {
+		.calendar table thead th.nav:hover,
+		.calendar table tbody td.day:hover,
+		.selected {
+			background-color: #096484 !important;
+		}
+	}
+}
+
+/* Coffee */
+body.admin-color-coffee {
+	.wc-local-pickup-plus-public-holidays-field {
+		.calendar table thead th.nav:hover,
+		.calendar table tbody td.day:hover,
+		.selected {
+			background-color: #C7A589 !important;
+			color: #0B0B0B !important;
+		}
+	}
+}
+
+/* Ectoplasm */
+body.admin-color-ectoplasm {
+	.wc-local-pickup-plus-public-holidays-field {
+		.calendar table thead th.nav:hover,
+		.calendar table tbody td.day:hover,
+		.selected {
+			background-color: #A3B745 !important;
+			color: #0B0B0B !important;
+		}
+	}
+}
+
+/* Midnight */
+body.admin-color-midnight {
+	.wc-local-pickup-plus-public-holidays-field {
+		.calendar table thead th.nav:hover,
+		.calendar table tbody td.day:hover,
+		.selected {
+			background-color: #E14D43 !important;
+		}
+	}
+}
+
+/* Ocean */
+body.admin-color-ocean {
+	.wc-local-pickup-plus-public-holidays-field {
+		.calendar table thead th.nav:hover,
+		.calendar table tbody td.day:hover,
+		.selected {
+			background-color: #9EBAA0 !important;
+			color: #0B0B0B !important;
+		}
+	}
+}
+
+/* Sunrise */
+body.admin-color-sunrise {
+	.wc-local-pickup-plus-public-holidays-field {
+		.calendar table thead th.nav:hover,
+		.calendar table tbody td.day:hover,
+		.selected {
+			background-color: #DD823B !important;
+		}
+	}
+}
+
+/* Light */
+body.admin-color-light {
+	.wc-local-pickup-plus-public-holidays-field {
+		.calendar table thead th.nav:hover,
+		.calendar table tbody td.day:hover,
+		.selected {
+			background-color: #AAAAAA !important;
+			color: #0B0B0B !important;
+		}
+	}
+}
