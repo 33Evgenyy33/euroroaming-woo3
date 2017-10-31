@@ -10,7 +10,7 @@ global $us_template_directory;
 
 return array(
 	array(
-		'name' => 'Visual Composer',
+		'name' => 'WPBakery Page Builder',
 		'free' => FALSE,
 		'description' => __( 'Most popular drag & drop WordPress page builder. Save tons of time working on your website content.', 'us' ),
 		'slug' => 'js_composer',
@@ -39,7 +39,7 @@ return array(
 	array(
 		'name' => 'Ultimate Addons for&nbsp;Visual&nbsp;Composer',
 		'free' => FALSE,
-		'description' => __( 'Adds dozens of options and content elements to Visual Composer.', 'us' ),
+		'description' => __( 'Adds dozens of options and content elements to WPBakery Page Builder.', 'us' ),
 		'slug' => 'Ultimate_VC_Addons',
 		'source' => '',
 		'changelog_url' => 'https://changelog.brainstormforce.com/ultimate/',

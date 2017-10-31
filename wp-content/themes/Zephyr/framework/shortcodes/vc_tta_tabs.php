@@ -60,6 +60,13 @@ if ( empty( $active_tab_indexes ) AND $shortcode_base != 'vc_tta_accordion' ) {
 	$us_tabs_atts[0]['active'] = 'yes';
 }
 
+if ( ! ( $shortcode_base == 'vc_tta_accordion' AND $atts['toggle'] ) AND count ( $active_tab_indexes ) > 1 ) {
+	foreach ( array_slice( $active_tab_indexes, 1 ) as $index ) {
+		$us_tabs_atts[$index]['active'] = 0;
+		$us_tabs_atts[$index]['defined_active'] = 0;
+	}
+}
+
 // Inheriging some of the attributes to the sections
 if ( isset( $atts['c_position'] ) ) {
 	foreach ( $us_tabs_atts as $index => $tab_atts ) {

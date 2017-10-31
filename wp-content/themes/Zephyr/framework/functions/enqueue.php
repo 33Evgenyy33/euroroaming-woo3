@@ -1,10 +1,9 @@
 <?php defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
 
 /**
- * Embed custom fonts
+ * Embed Google Fonts
  */
-$lazyload_fonts = us_get_option( 'lazyload_fonts' );
-if ( $lazyload_fonts ) {
+if ( us_get_option( 'lazyload_fonts', 0 ) == 1 ) {
 	add_action( 'wp_footer', 'us_lazyload_fonts' );
 } else {
 	add_action( 'wp_enqueue_scripts', 'us_enqueue_fonts' );
@@ -34,6 +33,10 @@ function us_lazyload_fonts() {
 		foreach ( $selected_font_variants as $font_variant ) {
 			$fonts[$font[0]][] = $font_variant;
 		}
+	}
+
+	if ( count( $fonts ) == 0 ) {
+		return;
 	}
 
 	$subset = ':' . us_get_option( 'font_subset', 'latin' );
@@ -108,16 +111,17 @@ function us_enqueue_fonts() {
 	}
 }
 
+/**
+ * Embed CSS files
+ */
 add_action( 'wp_enqueue_scripts', 'us_styles', 12 );
 function us_styles() {
 	global $us_template_directory_uri;
+	$assets_config = us_config( 'assets', array() );
 
-	if ( defined( 'US_DEV' ) AND US_DEV AND $assets_config = us_config( 'assets', array() ) AND count( $assets_config ) > 0 ) {
-		wp_enqueue_style( 'us-general-styles', $us_template_directory_uri . '/css/base/general.css', array(), US_THEMEVERSION, 'all' );
+	if ( defined( 'US_DEV' ) AND US_DEV ) {
 		foreach ( $assets_config as $component => $component_atts ) {
-			if ( ! isset( $component_atts['is_plugin'] ) ) {
-				wp_enqueue_style( 'us-' . $component, $us_template_directory_uri . $component_atts['css'], array(), US_THEMEVERSION, 'all' );
-			}
+			wp_enqueue_style( 'us-' . $component, $us_template_directory_uri . $component_atts['css'], array(), US_THEMEVERSION, 'all' );
 		}
 	} elseif ( us_get_option( 'optimize_assets', 0 ) == 1 ) {
 		$wp_upload_dir = wp_upload_dir();
@@ -128,24 +132,39 @@ function us_styles() {
 		$styles_file_suffix .= ( ! empty( $site_url_parts['path'] ) ) ? str_replace( '/', '_', $site_url_parts['host'] ) : '';
 		$styles_file_suffix = ( ! empty( $styles_file_suffix ) ) ? $styles_file_suffix : '';
 		$styles_file = $styles_dir . '/' . $styles_file_suffix . '.css';
+		// If the styles file does not exists
+		if ( ! file_exists( $styles_file ) ) {
+			// Try to create the styles file
+			us_generate_optimized_css_file();
+			// If create attempt failed
+			if ( ! file_exists( $styles_file ) ) {
+				// Switch the Optimize CSS size option off
+				global $usof_options;
+				usof_load_options_once();
+				$updated_options = $usof_options;
+				$updated_options['optimize_assets'] = 0;
+				usof_save_options( $updated_options );
+				// Load all styles to make sure site looks as it should
+				foreach ( $assets_config as $component => $component_atts ) {
+					wp_enqueue_style( 'us-' . $component, $us_template_directory_uri . $component_atts['css'], array(), US_THEMEVERSION, 'all' );
+				}
+			}
+		}
 		if ( file_exists( $styles_file ) ) {
 			$styles_file_uri = $wp_upload_dir['baseurl'] . '/us-assets/' . $styles_file_suffix . '.css';
 			// Removing protocols for better compatibility with caching plugins and services
 			$styles_file_uri = str_replace( array( 'http:', 'https:' ), '', $styles_file_uri );
 			wp_enqueue_style( 'us-theme', $styles_file_uri, array(), US_THEMEVERSION, 'all' );
 		}
-		// Dequeue plugin's styles
-		$assets_config = us_config( 'assets', array() );
-		foreach ( $assets_config as $component => $component_atts ) {
-			if ( isset( $component_atts['is_plugin'] ) AND $component_atts['is_plugin'] ) {
-				wp_dequeue_style( $component );
-				wp_deregister_style( $component );
-			}
-		}
 	} else {
 		wp_register_style( 'us-style', $us_template_directory_uri . '/css/style.min.css', array(), US_THEMEVERSION, 'all' );
 		wp_enqueue_style( 'us-style' );
 	}
+}
+
+add_action( 'wp_enqueue_scripts', 'us_rtl_styles', 15 );
+function us_rtl_styles() {
+	global $us_template_directory_uri;
 
 	$min_ext = ( ! ( defined( 'US_DEV' ) AND US_DEV ) ) ? '.min' : '';
 	if ( is_rtl() ) {
@@ -173,6 +192,9 @@ function us_custom_styles() {
 	}
 }
 
+/**
+ * Embed JS files
+ */
 if ( us_get_option( 'disable_jquery_migrate', 1 ) == 1 ) {
 	add_action( 'wp_default_scripts', 'us_dequeue_jquery_migrate' );
 }

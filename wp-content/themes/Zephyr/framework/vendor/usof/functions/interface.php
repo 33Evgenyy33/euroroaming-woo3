@@ -22,7 +22,7 @@ function us_theme_options_page() {
 	// For notices
 	echo '<div class="wrap"><h2 class="hidden"></h2>';
 
-	global $usof_directory, $usof_options, $usof_img_sizes, $usof_enable_portfolio, $usof_wp_pages, $usof_supported_cpt;
+	global $usof_directory, $usof_options, $usof_img_sizes, $usof_enable_portfolio, $usof_wp_pages, $usof_supported_cpt, $usof_footers_list;
 	usof_load_options_once();
 	$usof_options = array_merge( usof_defaults(), $usof_options );
 
@@ -59,6 +59,24 @@ function us_theme_options_page() {
 	}
 	us_close_wp_query_context();
 
+	// Getting Footers
+	us_open_wp_query_context();
+	$footer_templates_query = new WP_Query(
+		array(
+			'post_type' => 'us_footer',
+			'posts_per_page' => '-1',
+			'post_status' => 'any',
+		)
+	);
+	$usof_footers_list = array();
+	while ( $footer_templates_query->have_posts() ) {
+		$footer_templates_query->the_post();
+		global $post;
+
+		$usof_footers_list[$post->post_name] = get_the_title();
+	}
+	us_close_wp_query_context();
+
 	$config = us_config( 'theme-options', array(), TRUE );
 	echo '<div class="usof-container';
 	echo apply_filters( 'usof_container_classes', '' );
@@ -72,7 +90,7 @@ function us_theme_options_page() {
 	echo '<div class="usof-header"><div class="usof-header-logo">';
 	echo US_THEMENAME . ' <span>' . US_THEMEVERSION . '</span></div>';
 	echo '<div class="usof-header-title"><span>' . __( 'Theme Options', 'us' ) . '&nbsp;&mdash;&nbsp;</span>';
-	echo '<h2>' . _x( 'General', 'General Settings', 'us' ) . '</h2></div>';
+	echo '<h2>' . us_translate_x( 'General', 'settings screen' ) . '</h2></div>';
 	echo '<div class="usof-control for_save status_clear">';
 	echo '<button class="usof-button type_save" type="button"><span>' . us_translate( 'Save Changes' ) . '</span>';
 	echo '<span class="usof-preloader"></span></button>';

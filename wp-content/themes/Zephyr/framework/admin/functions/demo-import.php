@@ -1,5 +1,9 @@
 <?php defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
 
+/**
+ * Demo Import admin page
+ */
+
 $help_portal_url = 'https://help.us-themes.com/';
 $help_portal_preview_url = $help_portal_url . 'uploads/demos/';
 $help_portal_preview_url .= ( defined( 'US_ACTIVATION_THEMENAME' ) ) ? strtolower( US_ACTIVATION_THEMENAME ) . '/' : strtolower( US_THEMENAME ) . '/';
@@ -27,7 +31,7 @@ function us_demo_import() {
 	$update_notification = '';
 	$update_themes = get_site_transient( 'update_themes' );
 	if ( ! empty( $update_themes->response ) AND isset( $update_themes->response[US_THEMENAME] ) ) {
-		$update_notification = '<p class="us-admin-subtitle">' . __( 'Some of demo data may be imported incorrectly, because you are using outdated Impreza version. Update the theme to import demos without possible issues.', 'us' ) . '</p>';
+		$update_notification = sprintf( __( 'Some of demo data may be imported incorrectly, because you are using outdated Impreza version. %sUpdate the theme%s to import demos without possible issues.', 'us' ), '<a href="' . admin_url( 'themes.php' ) . '">', '</a>' );
 	}
 	?>
 
@@ -35,7 +39,7 @@ function us_demo_import() {
 
 		<h1 class="us-admin-title"><?php _e( 'Choose the demo for import', 'us' ) ?></h1>
 		<p class="us-admin-subtitle"><?php _e( 'The images used in live demos will be replaced by placeholders due to copyright/license reasons.', 'us' ) ?></p>
-		<?php echo $update_notification; ?>
+		<p class="us-admin-subtitle"><strong><?php echo $update_notification; ?></strong></p>
 
 		<div class="w-importer-list">
 
@@ -86,7 +90,7 @@ function us_demo_import() {
 									<span class="usof-checkbox-text"><?php echo _e( 'Portfolio', 'us' ) ?></span>
 									<?php if ( us_get_option( 'enable_portfolio', 1 ) == 0 ) { ?>
 										<span class="usof-checkbox-note"> &mdash;
-											<a href="<?php echo admin_url( 'admin.php?page=us-theme-options#advanced' )?>"><?php _e( 'Enable Portfolio module', 'us' ) ?></a>
+											<a href="<?php echo admin_url( 'admin.php?page=us-theme-options#advanced' )?>"><?php echo sprintf( __( 'Enable %s module', 'us' ), __( 'Portfolio', 'us' ) ) ?></a>
 										</span>
 									<?php } ?>
 								</label>
@@ -103,7 +107,7 @@ function us_demo_import() {
 									<span class="usof-checkbox-text"><?php _e( 'Testimonials', 'us' ) ?></span>
 									<?php if ( us_get_option( 'enable_testimonials', 1 ) == 0 ) { ?>
 										<span class="usof-checkbox-note"> &mdash;
-											<a href="<?php echo admin_url( 'admin.php?page=us-theme-options#advanced' )?>"><?php _e( 'Enable Testimonials module', 'us' ) ?></a>
+											<a href="<?php echo admin_url( 'admin.php?page=us-theme-options#advanced' )?>"><?php echo sprintf( __( 'Enable %s module', 'us' ), __( 'Testimonials', 'us' ) ) ?></a>
 										</span>
 									<?php } ?>
 								</label>
@@ -183,7 +187,6 @@ function us_demo_import() {
 			?><div class="us-screenlock"><div><?php echo sprintf( __( '<a href="%s">Activate the theme</a> to unlock Demo Import', 'us' ), admin_url( 'admin.php?page=us-home#activation' ) ) ?></div></div><?php
 		}
 		?>
-
 
 	</form>
 	<script type="text/javascript">
@@ -311,8 +314,6 @@ function us_demo_import() {
 					if ($item.find('input[name=content_woocommerce]').prop('checked')) importQueue.push('us_demo_import_woocommerce');
 					if ($item.find('input[name=rev_slider]').prop('checked')) importQueue.push('us_demo_import_sliders');
 
-					console.log(importQueue);
-
 					if (importQueue.length == 0) return false;
 
 					import_running = true;
@@ -331,6 +332,7 @@ function us_demo_import() {
 }
 
 // Content Import
+
 // All Content
 add_action( 'wp_ajax_us_demo_import_content_all', 'us_demo_import_content_all' );
 function us_demo_import_content_all() {
@@ -783,7 +785,7 @@ function us_demo_import_widgets() {
 		us_wie_process_import_file( $file_path );
 		ob_end_clean();
 		unlink( $file_path );
-	} else { // TODO: do we have any case where we have areas with no widgets?
+	} else {
 		wp_send_json(
 			array(
 				'success' => FALSE,

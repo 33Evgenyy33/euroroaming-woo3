@@ -63,7 +63,7 @@ if ( isset( $field['preview']['lineheight_field'] ) AND ! empty( $usof_options[$
 	$output .= 'line-height: ' . $usof_options[$field['preview']['lineheight_field']] . 'px;';
 }
 if ( isset( $field['preview']['letterspacing_field'] ) AND ! empty( $usof_options[$field['preview']['letterspacing_field']] ) ) {
-	$output .= 'letter-spacing: ' . $usof_options[$field['preview']['letterspacing_field']] . 'px;';
+	$output .= 'letter-spacing: ' . $usof_options[$field['preview']['letterspacing_field']] . 'em;';
 }
 if ( isset( $field['preview']['transform_field'] ) AND ! empty( $usof_options[$field['preview']['transform_field']] ) ) {
 	if ( in_array( 'uppercase', $usof_options[$field['preview']['transform_field']] ) ) {

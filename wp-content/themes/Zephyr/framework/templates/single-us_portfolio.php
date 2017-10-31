@@ -21,7 +21,7 @@ $default_portfolio_sidebar_id = us_get_option( 'portfolio_sidebar_id', 'default_
 <div class="l-main">
 	<div class="l-main-h i-cf">
 
-		<main class="l-content" itemprop="mainContentOfPage">
+		<main class="l-content"<?php echo ( us_get_option( 'schema_markup' ) ) ? ' itemprop="mainContentOfPage"' : ''; ?>>
 
 			<?php do_action( 'us_before_us_portfolio' ); ?>
 
@@ -74,7 +74,7 @@ $default_portfolio_sidebar_id = us_get_option( 'portfolio_sidebar_id', 'default_
 		</main>
 
 		<?php if ( $us_layout->sidebar_pos == 'left' OR $us_layout->sidebar_pos == 'right' ): ?>
-			<aside class="l-sidebar at_<?php echo $us_layout->sidebar_pos . ' ' . us_dynamic_sidebar_id( $default_portfolio_sidebar_id ); ?>" itemscope="itemscope" itemtype="https://schema.org/WPSideBar">
+			<aside class="l-sidebar at_<?php echo $us_layout->sidebar_pos . ' ' . us_dynamic_sidebar_id( $default_portfolio_sidebar_id ); ?>"<?php echo ( us_get_option( 'schema_markup' ) ) ? ' itemscope itemtype="https://schema.org/WPSideBar"' : ''; ?>>
 				<?php us_dynamic_sidebar( $default_portfolio_sidebar_id ); ?>
 			</aside>
 		<?php endif; ?>

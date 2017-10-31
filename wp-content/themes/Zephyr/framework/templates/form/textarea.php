@@ -46,7 +46,7 @@ if ( $required ) {
 	</div>
 	<div class="w-form-row-field">
 		<?php do_action( 'us_form_field_start', $vars ) ?>
-		<textarea name="<?php echo $name ?>" id="<?php echo $id ?>" cols="30" rows="10" placeholder="<?php echo esc_attr( $placeholder ) ?>"
+		<textarea aria-label="<?php echo $name ?>" name="<?php echo $name ?>" id="<?php echo $id ?>" cols="30" rows="10" placeholder="<?php echo esc_attr( $placeholder ) ?>"
 			<?php echo $required_atts ?>><?php echo esc_textarea( $value ) ?></textarea>
 		<span class="w-form-row-field-bar"></span>
 		<?php do_action( 'us_form_field_end', $vars ) ?>

@@ -84,6 +84,12 @@ vc_map(
 				'dependency' => array( 'element' => 'type', 'value' => array( 'grid', 'masonry' ) ),
 			),
 			array(
+				'param_name' => 'ignore_sticky',
+				'type' => 'checkbox',
+				'value' => array( __( 'Ignore sticky posts', 'us' ) => TRUE ),
+				( ( $config['atts']['ignore_sticky'] !== FALSE ) ? 'std' : '_std' ) => $config['atts']['ignore_sticky'],
+			),
+			array(
 				'param_name' => 'categories',
 				'heading' => __( 'Display Posts of selected categories', 'us' ),
 				'type' => 'checkbox',

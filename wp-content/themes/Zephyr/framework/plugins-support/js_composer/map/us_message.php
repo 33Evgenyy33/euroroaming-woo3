@@ -15,6 +15,7 @@ vc_map(
 		'name' => __( 'Message Box', 'us' ),
 		'description' => '',
 		'wrapper_class' => 'alert',
+		'icon' => 'icon-wpb-information-white',
 		'category' => us_translate( 'Content', 'js_composer' ),
 		'weight' => 200,
 		'params' => array(
@@ -23,10 +24,10 @@ vc_map(
 				'heading' => __( 'Color Style', 'us' ),
 				'type' => 'dropdown',
 				'value' => array(
-					__( 'Notification (blue)', 'us' ) => 'info',
-					__( 'Attention (yellow)', 'us' ) => 'attention',
-					__( 'Success (green)', 'us' ) => 'success',
-					__( 'Error (red)', 'us' ) => 'error',
+					__( 'Blue', 'us' ) => 'blue',
+					__( 'Yellow', 'us' ) => 'yellow',
+					__( 'Green', 'us' ) => 'green',
+					__( 'Red', 'us' ) => 'red',
 					__( 'Custom colors', 'us' ) => 'custom',
 				),
 				'std' => $config['atts']['color'],

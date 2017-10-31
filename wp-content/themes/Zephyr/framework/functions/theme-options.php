@@ -15,9 +15,7 @@ function us_generate_optimized_css_file() {
 
 	if ( isset( $usof_options['optimize_assets'] ) AND $usof_options['optimize_assets'] ) {
 		delete_option( 'us_theme_options_css' );
-
-		// Add general styles to the beginning
-		$result_css = file_get_contents( $us_template_directory . '/css/base/general.css' ) . "\n";
+		$result_css = '';
 
 		// Add styles set in Theme Options
 		$assets_config = us_config( 'assets', array() );
@@ -25,12 +23,8 @@ function us_generate_optimized_css_file() {
 			if ( isset( $component_atts['apply_if'] ) AND ! $component_atts['apply_if'] ) {
 				continue;
 			}
-			if ( in_array( $component, $usof_options['assets'] ) ) {
-				if ( isset( $component_atts['is_plugin'] ) AND $component_atts['is_plugin'] ) {
-					$result_css .= file_get_contents( ABSPATH . 'wp-content/plugins' . $component_atts['css'] ) . "\n";
-				} else {
-					$result_css .= file_get_contents( $us_template_directory . $component_atts['css'] ) . "\n";
-				}
+			if ( ( isset( $component_atts['hidden'] ) AND $component_atts['hidden'] ) OR ! isset( $usof_options['assets'] ) OR in_array( $component, $usof_options['assets'] ) ) {
+				$result_css .= file_get_contents( $us_template_directory . $component_atts['css'] ) . "\n";
 			}
 		}
 
@@ -40,6 +34,10 @@ function us_generate_optimized_css_file() {
 		// Add responsive styles to the end, if Responsive Layout is enabled
 		if ( $usof_options['responsive_layout'] ) {
 			$result_css .= file_get_contents( $us_template_directory . '/css/responsive.css' ) . "\n";
+		}
+
+		if ( ( $us_custom_css = us_get_option( 'custom_css', '' ) ) != '' ) {
+			$result_css .= $us_custom_css;
 		}
 
 		// TODO Use WP_Filesystem instead

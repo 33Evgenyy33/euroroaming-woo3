@@ -11,9 +11,6 @@ $us_layout = US_Layout::instance();
 <head>
 	<meta charset="UTF-8">
 
-	<?php /* Don't remove the semicolon in the title tag below: it's needed for Theme Check */ ?>
-	<title><?php wp_title( '' ); ?></title>
-
 	<?php wp_head() ?>
 
 	<?php if ( ( defined( 'US_DEV' ) AND US_DEV ) OR us_get_option( 'optimize_assets', 0 ) == 0 ): ?>
@@ -22,12 +19,15 @@ $us_layout = US_Layout::instance();
 	<?php if ( $us_layout->header_show != 'never' ): ?>
 		<style id='us-header-css' type="text/css"><?php echo us_minify_css( us_get_template( 'config/header.css' ) ) ?></style>
 	<?php endif; ?>
-	<?php if ( ( $us_custom_css = us_get_option( 'custom_css', '' ) ) != '' ): ?>
+	<?php if ( us_get_option( 'optimize_assets', 0 ) == 0 AND ( $us_custom_css = us_get_option( 'custom_css', '' ) ) != '' ): ?>
 		<style id='us-custom-css' type="text/css"><?php echo us_minify_css( $us_custom_css ) ?></style>
 	<?php endif; ?>
 
 </head>
-<body <?php body_class( 'l-body ' . $us_layout->body_classes() ) ?><?php echo $us_layout->body_styles() ?> itemscope="itemscope" itemtype="https://schema.org/WebPage">
+<body <?php body_class( 'l-body ' . $us_layout->body_classes() );
+if ( us_get_option( 'schema_markup' ) ) {
+	echo ' itemscope itemtype="https://schema.org/WebPage"';
+} ?>>
 <?php
 global $us_iframe;
 if ( ! ( isset( $us_iframe ) AND $us_iframe ) AND us_get_option( 'preloader' ) != 'disabled' ) {

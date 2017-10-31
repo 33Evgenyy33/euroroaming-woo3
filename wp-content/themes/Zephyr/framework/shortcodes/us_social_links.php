@@ -26,16 +26,11 @@
 $atts = us_shortcode_atts( $atts, 'us_social_links' );
 
 $socials = us_config( 'social_links' );
-
 $socials = array_merge( array( 'email' => 'Email' ), $socials );
 
-$classes = '';
-
+// Generate extra "index" class to differ several elements at one page
 global $us_socials_index;
-// Social links indexes indexes start from 1
 $us_socials_index = isset( $us_socials_index ) ? ( $us_socials_index + 1 ) : 1;
-
-$classes .= ' align_' . $atts['align'];
 
 $style_translate = array(
 	'solid_square' => 'solid',
@@ -43,14 +38,13 @@ $style_translate = array(
 	'solid_circle' => 'solid circle',
 	'outlined_circle' => 'outlined circle',
 );
-
 if ( array_key_exists( $atts['style'], $style_translate ) ) {
 	$atts['style'] = $style_translate[$atts['style']];
 }
 
+$classes = ' align_' . $atts['align'];
 $classes .= ' style_' . $atts['style'];
 $classes .= ' color_' . $atts['color'];
-
 $classes .= ' index_' . $us_socials_index;
 if ( $atts['el_class'] != '' ) {
 	$classes .= ' ' . $atts['el_class'];
@@ -83,9 +77,8 @@ foreach ( $socials as $social_key => $social ) {
 		$social_target = ' target="_blank"';
 	}
 	$output .= '<div class="w-socials-item ' . $social_key . '">
-				<a class="w-socials-item-link"' . $social_target . ' href="' . $social_url . '">
+				<a class="w-socials-item-link"' . $social_target . ' href="' . $social_url . '" aria-label="' . $social . '">
 					<span class="w-socials-item-link-hover"></span>
-					<span class="w-socials-item-link-title">' . $social . '</span>
 				</a>
 				<div class="w-socials-item-popup">
 					<span>' . $social . '</span>
@@ -98,13 +91,12 @@ $custom_css = '';
 $atts['custom_icon'] = trim( $atts['custom_icon'] );
 if ( ! empty( $atts['custom_icon'] ) AND ! empty( $atts['custom_link'] ) ) {
 	$output .= '<div class="w-socials-item custom">';
-	$output .= '<a class="w-socials-item-link" target="_blank" href="' . esc_url( $atts['custom_link'] ) . '"';
+	$output .= '<a class="w-socials-item-link" target="_blank" href="' . esc_url( $atts['custom_link'] ) . '" aria-label="' . $atts['custom_title'] . '"';
 	if ( $atts['color'] == 'brand' ) {
 		$output .= ' style="color: ' . $atts['custom_color'] . '"';
 	}
 	$output .= '>';
 	$output .= '<span class="w-socials-item-link-hover" style="background-color: ' . $atts['custom_color'] . '"></span>';
-	$output .= '<span class="w-socials-item-link-title">' . $atts['custom_title'] . '</span>';
 	$output .= us_prepare_icon_tag( $atts['custom_icon'] );
 	$output .= '</a>';
 	$output .= '<div class="w-socials-item-popup"><span>' . $atts['custom_title'] . '</span></div>';

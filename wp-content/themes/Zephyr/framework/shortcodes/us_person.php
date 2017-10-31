@@ -30,6 +30,16 @@
 
 $atts = us_shortcode_atts( $atts, 'us_person' );
 
+// Generate schema.org markup
+$schema_base = $schema_image = $schema_name = $schema_job = $schema_desc = '';
+if ( us_get_option( 'schema_markup' ) ) {
+	$schema_base = ' itemscope itemtype="https://schema.org/Person"';
+	$schema_image = ' itemprop="image"';
+	$schema_name = ' itemprop="name"';
+	$schema_job = ' itemprop="jobTitle"';
+	$schema_desc = ' itemprop="description"';
+}
+
 $classes = ' layout_' . $atts['layout'];
 if ( $atts['effect'] != 'none' ) {
 	$classes .= ' effect_' . $atts['effect'];
@@ -39,7 +49,11 @@ $img_html = '';
 if ( is_numeric( $atts['image'] ) ) {
 	$img = wp_get_attachment_image_src( intval( $atts['image'] ), 'tnail-1x1-small' );
 	if ( $img !== FALSE ) {
-		$img_html = '<img src="' . $img[0] . '" width="' . $img[1] . '" height="' . $img[2] . '" alt="' . esc_attr( $atts['name'] ) . '" itemprop="image">';
+		if ( preg_match( '~\.svg$~', $img[0] ) ) {
+			$img_html = '<img src="' . $img[0] . '" alt="' . esc_attr( $atts['name'] ) . '"' . $schema_image . '>';
+		} else {
+			$img_html = '<img src="' . $img[0] . '" width="' . $img[1] . '" height="' . $img[2] . '" alt="' . esc_attr( $atts['name'] ) . '"' . $schema_image . '>';
+		}
 	}
 } elseif ( ! empty( $atts['image'] ) ) {
 	// Direct link to image is set in the shortcode attribute
@@ -107,7 +121,7 @@ if ( ! empty( $atts['el_class'] ) ) {
 	$classes .= ' ' . $atts['el_class'];
 }
 
-$output = '<div class="w-person' . $classes . '" itemscope="itemscope" itemtype="https://schema.org/Person">';
+$output = '<div class="w-person' . $classes . '"' . $schema_base . '>';
 $output .= '<div class="w-person-image">';
 $output .= $link_start . $img_html . $link_end;
 if ( in_array( $atts['layout'], array( 'square', 'circle' ) ) ) {
@@ -116,10 +130,10 @@ if ( in_array( $atts['layout'], array( 'square', 'circle' ) ) ) {
 $output .= '</div>';
 $output .= '<div class="w-person-content">';
 if ( ! empty( $atts['name'] ) ) {
-	$output .= $link_start . '<h4 class="w-person-name" itemprop="name"><span>' . $atts['name'] . '</span></h4>' . $link_end;
+	$output .= $link_start . '<h4 class="w-person-name"' . $schema_name . '><span>' . $atts['name'] . '</span></h4>' . $link_end;
 }
 if ( ! empty( $atts['role'] ) ) {
-	$output .= '<div class="w-person-role" itemprop="jobTitle">' . $atts['role'] . '</div>';
+	$output .= '<div class="w-person-role"' . $schema_job . '>' . $atts['role'] . '</div>';
 }
 if ( $atts['layout'] == 'trendy' AND ( ! empty( $content ) OR ! empty( $links_html ) ) ) {
 	$output .= '</div><div class="w-person-content-alt">' . $link_start . $link_end;
@@ -128,7 +142,7 @@ if ( ! in_array( $atts['layout'], array( 'square', 'circle' ) ) ) {
 	$output .= $links_html;
 }
 if ( ! empty( $content ) ) {
-	$output .= '<div class="w-person-description" itemprop="description">' . do_shortcode( $content ) . '</div>';
+	$output .= '<div class="w-person-description"' . $schema_desc . '>' . do_shortcode( $content ) . '</div>';
 }
 $output .= '</div></div>';
 

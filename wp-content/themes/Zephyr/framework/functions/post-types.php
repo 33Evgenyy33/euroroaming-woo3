@@ -1,6 +1,6 @@
 <?php defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
 
-// Should be inited before the visual composer (that is 9)
+// Should be inited before the WPBakery Page Builder (that is 9)
 $portfolio_slug = us_get_option( 'portfolio_slug', 'portfolio' );
 add_action( 'init', 'us_create_post_types', 8 );
 function us_create_post_types() {
@@ -88,6 +88,23 @@ function us_create_post_types() {
 			)
 		);
 	}
+
+	// Widget Area post type (used in Menus)
+	register_post_type(
+		'us_widget_area', array(
+			'labels' => array(
+				'name' => __( 'Sidebars', 'us' ),
+				'singular_name' => __( 'Sidebar', 'us' ),
+			),
+			'public' => FALSE,
+			'show_in_menu' => FALSE,
+			'show_ui' => FALSE,
+			'exclude_from_search' => TRUE,
+			'show_in_admin_bar' => FALSE,
+			'publicly_queryable' => FALSE,
+			'show_in_nav_menus' => TRUE,
+		)
+	);
 
 	// Footer post type
 	register_post_type(
@@ -326,6 +343,30 @@ function us_add_theme_caps() {
 		// To prevent infinite refreshes when the DB is not writable
 		setcookie( 'us_cap_page_refreshed' );
 		header( 'Refresh: 0' );
+	}
+}
+
+add_action( 'admin_init', 'us_theme_activation_add_caps' );
+function us_theme_activation_add_caps() {
+	global $pagenow;
+	if ( is_admin() AND $pagenow == 'themes.php' AND isset( $_GET['activated'] ) ) {
+		if ( get_option( US_THEMENAME . '_editor_caps_set' ) == 1 ) {
+			return;
+		}
+		update_option( US_THEMENAME . '_editor_caps_set', 1 );
+		global $wp_post_types;
+		$role = get_role( 'editor' );
+		$custom_post_types = array( 'us_portfolio', 'us_testimonial' );
+		foreach ( $custom_post_types as $post_type ) {
+			if ( ! isset( $wp_post_types[$post_type] ) ) {
+				continue;
+			}
+			foreach ( $wp_post_types[$post_type]->cap as $cap ) {
+				if ( ! $role->has_cap( $cap ) ) {
+					$role->add_cap( $cap );
+				}
+			}
+		}
 	}
 }
 

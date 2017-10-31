@@ -46,7 +46,7 @@ if ( $required ) {
 	</div>
 	<div class="w-form-row-field">
 		<?php do_action( 'us_form_field_start', $vars ) ?>
-		<input type="password" name="<?php echo esc_attr( $name ) ?>" id="<?php echo $id ?>" value="<?php echo esc_attr( $value ) ?>"
+		<input type="password" aria-label="<?php echo esc_attr( $name ) ?>" name="<?php echo esc_attr( $name ) ?>" id="<?php echo $id ?>" value="<?php echo esc_attr( $value ) ?>"
 			   placeholder="<?php echo esc_attr( $placeholder ) ?>"<?php echo $required_atts ?>/>
 		<span class="w-form-row-field-bar"></span>
 		<?php do_action( 'us_form_field_end', $vars ) ?>

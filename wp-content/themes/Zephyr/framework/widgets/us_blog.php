@@ -43,6 +43,10 @@ class US_Widget_Blog extends US_Widget {
 		$query_args['post_status'] += (array) get_post_stati( array( 'public' => TRUE ) );
 		$query_args['post_status'] = array_values( $query_args['post_status'] );
 
+		if ( ! empty( $instance['ignore_sticky'] ) AND $instance['ignore_sticky'][0] ) {
+			$query_args['ignore_sticky_posts'] = 1;
+		}
+
 		if ( ! empty( $instance['categories'] ) ) {
 			$query_args['category_name'] = implode( ', ', $instance['categories'] );
 		}

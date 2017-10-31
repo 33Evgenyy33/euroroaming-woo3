@@ -4,20 +4,17 @@ class US_Walker_Nav_Menu extends Walker_Nav_Menu {
 
 	public function start_lvl( &$output, $depth = 0, $args = array() ) {
 		// depth dependent classes
-		$indent = ( $depth > 0 ? str_repeat( "\t", $depth ) : '' ); // code indent
 		$level = ( $depth + 2 ); // because it counts the first submenu as 0
 
 		// build html
-		$output .= "\n" . $indent . '<ul class="w-nav-list level_' . $level . '">' . "\n";
+		$output .= "\n" . '<ul class="w-nav-list level_' . $level . '">' . "\n";
 	}
 
 	public function end_lvl( &$output, $depth = 0, $args = array() ) {
-		$indent = ( $depth > 0 ? str_repeat( "\t", $depth ) : '' ); // code indent
-		$output .= $indent . "</ul>\n";
+		$output .= "</ul>\n";
 	}
 
 	public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
-		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 		$level = ( $depth + 1 ); // because it counts the first submenu as 0
 
 		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
@@ -45,25 +42,35 @@ class US_Walker_Nav_Menu extends Walker_Nav_Menu {
 		$id = apply_filters( 'nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args );
 		$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 
-		$output .= $indent . '<li' . $id . $class_names .'>';
+		$output .= '<li' . $id . $class_names .'>';
+		if ( $item->object == 'us_widget_area' ) {
+			$item_post = get_post( $item->object_id );
+			if ( $item_post AND is_active_sidebar( $item_post->post_name ) ) {
+				ob_start();
+				dynamic_sidebar( $item_post->post_name );
+				$output .= ob_get_clean();
+			}
 
-		$attributes = ! empty( $item->attr_title ) ? ' title="' . esc_attr( $item->attr_title ) . '"' : '';
-		$attributes .= ! empty( $item->target ) ? ' target="' . esc_attr( $item->target ) . '"' : '';
-		$attributes .= ! empty( $item->xfn ) ? ' rel="' . esc_attr( $item->xfn ) . '"' : '';
-		$attributes .= ! empty( $item->url ) ? ' href="' . esc_attr( $item->url ) . '"' : '';
+		} else {
+			$attributes = ! empty( $item->attr_title ) ? ' title="' . esc_attr( $item->attr_title ) . '"' : '';
+			$attributes .= ! empty( $item->target ) ? ' target="' . esc_attr( $item->target ) . '"' : '';
+			$attributes .= ! empty( $item->xfn ) ? ' rel="' . esc_attr( $item->xfn ) . '"' : '';
+			$attributes .= ! empty( $item->url ) ? ' href="' . esc_attr( $item->url ) . '"' : '';
 
-		$item_output = $args->before;
-		$item_output .= '<a class="w-nav-anchor level_' . $level . '" ' . $attributes . '>';
-		$item_output .= $args->link_before . '<span class="w-nav-title">' . apply_filters( 'the_title', $item->title, $item->ID ) . '</span><span class="w-nav-arrow"></span>' . $args->link_after;
-		$item_output .= '</a>';
-		$item_output .= $args->after;
+			$item_output = $args->before;
+			$item_output .= '<a class="w-nav-anchor level_' . $level . '" ' . $attributes . '>';
+			$item_output .= $args->link_before . '<span class="w-nav-title">' . apply_filters( 'the_title', $item->title, $item->ID ) . '</span><span class="w-nav-arrow"></span>' . $args->link_after;
+			$item_output .= '</a>';
+			$item_output .= $args->after;
 
-		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+			$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+		}
+
+
 	}
 
 	public function end_el( &$output, $item, $depth = 0, $args = array() ) {
-		$indent = ( $depth > 0 ? str_repeat( "\t", $depth ) : '' ); // code indent
-		$output .= "$indent</li>\n";
+		$output .= "</li>\n";
 	}
 }
 

@@ -390,3 +390,4 @@ Time exec 3: 3.6133940219879 sec.
 Time exec 1: 3.9632890224457 sec.
 Time exec 2: 3.7736690044403 sec.
 Time exec 3: 4.2066011428833 sec.
+Time exec 1: 3.8721399307251 sec.

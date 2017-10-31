@@ -446,7 +446,7 @@ jQuery.fn.usMod = function(mod, value){
 			}
 			if (this.fontStyleFields.letterspacingField != undefined) {
 				$usof.instance.fields[this.fontStyleFields.letterspacingField].on('change', function(){
-					this.$preview.css('letter-spacing', $usof.instance.fields[this.fontStyleFields.letterspacingField].getValue()+'px');
+					this.$preview.css('letter-spacing', $usof.instance.fields[this.fontStyleFields.letterspacingField].getValue()+'em');
 				}.bind(this));
 			}
 			if (this.fontStyleFields.transformField != undefined) {
@@ -729,7 +729,7 @@ jQuery.fn.usMod = function(mod, value){
 
 			if ($.isNumeric(value)) {
 				value = parseFloat(value);
-				valueDecimalPart = value % 1 + '';
+				valueDecimalPart = Math.abs(value) % 1 + '';
 				if (valueDecimalPart.charAt(3) !== '' && valueDecimalPart.charAt(3) !== '0') { // Decimal part has 1/100 part
 					value = value.toFixed(2);
 				} else if (valueDecimalPart.charAt(2) !== '' && valueDecimalPart.charAt(2) !== '0') { // Decimal part has 1/10 part
@@ -788,66 +788,86 @@ jQuery.fn.usMod = function(mod, value){
 
 			this.dependsOn = ['color_content_primary','button_fontsize','button_fontweight','button_height','button_width','button_border_radius','button_letterspacing','button_shadow','button_text_style','button_font','button_hover','heading_font_family','body_font_family','menu_font_family'];
 			this.$buttons = this.$row.find('.usof-button-example');
-			this.$buttonsBefore = this.$row.find('.usof-button-example.style_outlined > .usof-button-example-before');
+			this.$buttonsBefore = this.$row.find('.usof-button-example-before');
 			this.$buttonsPreview = this.$row.find('.usof-button-preview');
 
 			for (var fieldId in $usof.instance.fields) {
 				if (!$usof.instance.fields.hasOwnProperty(fieldId)) continue;
 				if ($.inArray($usof.instance.fields[fieldId].name, this.dependsOn) === -1) continue;
 				$usof.instance.fields[fieldId].on('change', function(field, value){
-					if (field.name == 'color_content_primary') {
-						this.$buttons.css('background-color', value);
-						this.$buttons.css('border-color', value);
-						this.$buttons.css('color', value);
-						this.$buttonsBefore.css('background-color', value);
-					} else if (field.name == 'button_fontsize') {
-						this.$buttons.css('font-size', value);
-					} else if (field.name == 'button_fontweight') {
-						this.$buttons.css('font-weight', value);
-					} else if (field.name == 'button_height') {
-						this.$buttons.css('line-height', value);
-					} else if (field.name == 'button_width') {
-						this.$buttons.css('padding', '0 '+value+'em');
-					} else if (field.name == 'button_border_radius') {
-						this.$buttons.css('border-radius', value+'em');
-					} else if (field.name == 'button_letterspacing') {
-						this.$buttons.css('letter-spacing', value+'px');
-					} else if (field.name == 'button_shadow') {
-						this.$buttons.css('box-shadow', '0 '+value/2+'em '+value+'em rgba(0,0,0,0.18)');
-					} else if (field.name == 'button_hover') {
-						this.$buttonsPreview.usMod('hov', value);
-					} else if (field.name == 'button_font' || field.name == 'heading_font_family' || field.name == 'body_font_family' || field.name == 'menu_font_family') {
-						var fontFamily = $usof.instance.getValue($usof.instance.getValue('button_font')+'_font_family').split('|')[0];
-						if (fontFamily == 'none') {
-							fontFamily = '';
-						}
-						this.$buttons.css('font-family', fontFamily);
-					} else if (field.name == 'button_text_style') {
-						if ($.inArray('italic', value) !== -1) {
-							this.$buttons.css('font-style', 'italic');
-						} else {
-							this.$buttons.css('font-style', 'normal');
-						}
-						if ($.inArray('uppercase', value) !== -1) {
-							this.$buttons.css('text-transform', 'uppercase');
-						} else {
-							this.$buttons.css('text-transform', 'none');
-						}
-					}
+					this.applyStyle();
 				}.bind(this));
 			}
-
-			// Apply possible changes for values outside of Buttons Options tab (if they were changed before tab was first shown)
+			this.applyStyle();
+		},
+		applyStyle: function() {
+			// Colors
+			this.$buttons.css('background-color', $usof.instance.getValue('color_content_primary'));
+			this.$buttons.css('border-color', $usof.instance.getValue('color_content_primary'));
+			this.$buttons.css('color', $usof.instance.getValue('color_content_primary'));
+			this.$buttonsBefore.css('background-color', $usof.instance.getValue('color_content_primary'));
+			// Hover class
+			this.$buttonsPreview.usMod('hov', $usof.instance.getValue('button_hover'));
+			// Font family
 			var fontFamily = $usof.instance.getValue($usof.instance.getValue('button_font')+'_font_family').split('|')[0];
 			if (fontFamily == 'none') {
 				fontFamily = '';
 			}
 			this.$buttons.css('font-family', fontFamily);
+			// Text style
+			if ($.inArray('italic', $usof.instance.getValue('button_text_style')) !== -1) {
+				this.$buttons.css('font-style', 'italic');
+			} else {
+				this.$buttons.css('font-style', 'normal');
+			}
+			if ($.inArray('uppercase', $usof.instance.getValue('button_text_style')) !== -1) {
+				this.$buttons.css('text-transform', 'uppercase');
+			} else {
+				this.$buttons.css('text-transform', 'none');
+			}
+			// Font size
+			this.$buttons.css('font-size', $usof.instance.getValue('button_fontsize'));
+			// Font weight
+			this.$buttons.css('font-weight', $usof.instance.getValue('button_fontweight'));
+			// Height
+			this.$buttons.css('line-height', $usof.instance.getValue('button_height'));
+			// Width
+			this.$buttons.css('padding', '0 '+$usof.instance.getValue('button_width')+'em');
+			// Border radius
+			this.$buttons.css('border-radius', $usof.instance.getValue('button_border_radius')+'em');
+			// Letter spacing
+			this.$buttons.css('letter-spacing', $usof.instance.getValue('button_letterspacing')+'em');
+			// Shadow
+			this.$buttons.css('box-shadow', '0 '+$usof.instance.getValue('button_shadow')/2+'em '+$usof.instance.getValue('button_shadow')+'em rgba(0,0,0,0.2)');
+			// Hovered state
+			this.$buttons.off('mouseenter mouseleave').on('mouseenter', function() {
+				var $this = $(this),
+					$before = $this.find('.usof-button-example-before');
+				$this.css('box-shadow', '0 '+$usof.instance.getValue('button_shadow_hover')/2+'em '+$usof.instance.getValue('button_shadow_hover')+'em rgba(0,0,0,0.2)');
+				if ($usof.instance.getValue('button_hover') == 'reverse') {
+					if ($this.hasClass('style_solid')) {
+						$this.css('background-color', 'transparent');
+						$this.css('color', '');
+						$this.attr('style', function(i,s) { return s + 'color: '+$usof.instance.getValue('color_content_primary')+' !important;' });
+					} else if ($this.hasClass('style_outlined')) {
+						$this.css('background-color', '');
+						$this.css('color', '#fff');
+						$this.attr('style', function(i,s) { return s + 'background-color: '+$usof.instance.getValue('color_content_primary')+' !important;' });
+					}
+				}
+			}).on('mouseleave', function() {
+				var $this = $(this),
+					$before = $this.find('.usof-button-example-before');
+				$this.css('box-shadow', '0 '+$usof.instance.getValue('button_shadow')/2+'em '+$usof.instance.getValue('button_shadow')+'em rgba(0,0,0,0.2)');
+				if ($usof.instance.getValue('button_hover') == 'reverse') {
+					$this.css('background-color', $usof.instance.getValue('color_content_primary'));
+					$this.css('border-color', $usof.instance.getValue('color_content_primary'));
+					$this.css('color', $usof.instance.getValue('color_content_primary'));
+					$before.css('background-color', $usof.instance.getValue('color_content_primary'));
+				}
+			});
 
-			this.$buttons.css('background-color', $usof.instance.getValue('color_content_primary'));
-			this.$buttons.css('border-color', $usof.instance.getValue('color_content_primary'));
-			this.$buttons.css('color', $usof.instance.getValue('color_content_primary'));
-		},
+		}
 
 	};
 
@@ -1082,12 +1102,6 @@ jQuery.fn.usMod = function(mod, value){
 					}
 				});
 			}
-			// TODO: replace this with actual save of options
-			//if (schemeId !== false) {
-			//	this.$schemeItems.filter('.type_custom[data-id="'+schemeId+'"]').addClass('active');
-			//	this.$input.val('custom-'+schemeId);
-			//	this.trigger('change', 'custom-'+schemeId);
-			//}
 		}
 
 	};
@@ -1539,8 +1553,6 @@ jQuery.fn.usMod = function(mod, value){
 				$(document.body).trigger('usof_mm_save');
 			}.bind(this));
 		}
-
-
 
 	};
 	$.extend(USOF_Meta.prototype, $usof.mixins.Fieldset, {});

@@ -12,13 +12,13 @@
  * @var   $content        string Shortcode's inner content
  * @var   $atts           array Shortcode attributes
  *
- * @param $atts           ['width'] string Width in format: 1/2 (is set by visual composer renderer)
+ * @param $atts           ['width'] string Width in format: 1/2 (is set by WPBakery Page Builder renderer)
  * @param $atts           ['text_color'] string Text color
  * @param $atts           ['animate'] string Animation type: '' / 'fade' / 'afc' / 'afl' / 'afr' / 'afb' / 'aft' / 'hfc' / 'wfc'
  * @param $atts           ['animate_delay'] float Animation delay (in seconds)
  * @param $atts           ['el_id'] string element ID
  * @param $atts           ['el_class'] string Additional class
- * @param $atts           ['offset'] string Visual Composer classes for responsive behaviour
+ * @param $atts           ['offset'] string WPBakery Page Builder classes for responsive behaviour
  * @param $atts           ['css'] string Custom CSS
  */
 

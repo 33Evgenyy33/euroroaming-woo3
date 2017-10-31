@@ -142,7 +142,7 @@ $classes = apply_filters( 'us_portfolio_listing_item_classes', $classes );
 		if ( $image2_id ) {
 			$image2 = wp_get_attachment_image_src( $image2_id, $img_size );
 			if ( $tile_size != '1x1' AND $img_size != 'full' ) {
-				$image2 = wp_get_attachment_image_src( $tnail_id, 'large' );
+				$image2 = wp_get_attachment_image_src( $image2_id, 'large' );
 			}
 		}
 		if ( $image2_id != '' AND is_array( $image2 ) ) {

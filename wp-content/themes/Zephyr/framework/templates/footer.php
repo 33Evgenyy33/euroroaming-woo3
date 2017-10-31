@@ -13,7 +13,7 @@ global $us_iframe, $us_hide_footer;
 if ( ( ! isset( $us_iframe ) OR ! $us_iframe ) AND ( ! isset( $us_hide_footer ) OR ! $us_hide_footer ) ) {
 	do_action( 'us_before_footer' );
 ?>
-<footer class="l-footer" itemscope="itemscope" itemtype="https://schema.org/WPFooter">
+<footer class="l-footer"<?php echo ( us_get_option( 'schema_markup' ) ) ? ' itemscope itemtype="https://schema.org/WPFooter"' : ''; ?>>
 
 	<?php
 	$hide_footer = FALSE;
@@ -51,7 +51,6 @@ if ( ( ! isset( $us_iframe ) OR ! $us_iframe ) AND ( ! isset( $us_hide_footer ) 
 			$footer_id = us_get_option( 'footer_archive_id', NULL );
 		}
 	}
-
 
 	$footer_content = '';
 	if ( is_singular() OR ( is_404() AND $page_404 = get_page_by_path( 'error-404' ) ) ) {

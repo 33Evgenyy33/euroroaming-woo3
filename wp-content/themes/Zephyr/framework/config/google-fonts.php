@@ -141,10 +141,6 @@ return array(
 		'variants' => array( '400', '700', ),
 		'fallback' => 'cursive',
 	),
-	'Amatica SC' => array(
-		'variants' => array( '400', '700', ),
-		'fallback' => 'cursive',
-	),
 	'Amethysta' => array(
 		'variants' => array( '400', ),
 		'fallback' => 'serif',
@@ -217,12 +213,16 @@ return array(
 		'variants' => array( '400', ),
 		'fallback' => 'cursive',
 	),
+	'Archivo' => array(
+		'variants' => array( '400', '400italic', '500', '500italic', '600', '600italic', '700', '700italic', ),
+		'fallback' => 'sans-serif',
+	),
 	'Archivo Black' => array(
 		'variants' => array( '400', ),
 		'fallback' => 'sans-serif',
 	),
 	'Archivo Narrow' => array(
-		'variants' => array( '400', '400italic', '700', '700italic', ),
+		'variants' => array( '400', '400italic', '500', '500italic', '600', '600italic', '700', '700italic', ),
 		'fallback' => 'sans-serif',
 	),
 	'Aref Ruqaa' => array(
@@ -262,7 +262,11 @@ return array(
 		'fallback' => 'sans-serif',
 	),
 	'Asap' => array(
-		'variants' => array( '400', '400italic', '500', '500italic', '700', '700italic', ),
+		'variants' => array( '400', '400italic', '500', '500italic', '600', '600italic', '700', '700italic', ),
+		'fallback' => 'sans-serif',
+	),
+	'Asap Condensed' => array(
+		'variants' => array( '400', '400italic', '500', '500italic', '600', '600italic', '700', '700italic', ),
 		'fallback' => 'sans-serif',
 	),
 	'Asar' => array(
@@ -349,6 +353,10 @@ return array(
 		'variants' => array( '400', ),
 		'fallback' => 'cursive',
 	),
+	'Baloo Bhaijaan' => array(
+		'variants' => array( '400', ),
+		'fallback' => 'cursive',
+	),
 	'Baloo Bhaina' => array(
 		'variants' => array( '400', ),
 		'fallback' => 'cursive',
@@ -366,6 +374,10 @@ return array(
 		'fallback' => 'cursive',
 	),
 	'Baloo Tamma' => array(
+		'variants' => array( '400', ),
+		'fallback' => 'cursive',
+	),
+	'Baloo Tammudu' => array(
 		'variants' => array( '400', ),
 		'fallback' => 'cursive',
 	),
@@ -402,6 +414,10 @@ return array(
 		'fallback' => 'cursive',
 	),
 	'Belgrano' => array(
+		'variants' => array( '400', ),
+		'fallback' => 'serif',
+	),
+	'Bellefair' => array(
 		'variants' => array( '400', ),
 		'fallback' => 'serif',
 	),
@@ -969,10 +985,6 @@ return array(
 		'variants' => array( '400', '500', '600', '700', '800', ),
 		'fallback' => 'serif',
 	),
-	'Ek Mukta' => array(
-		'variants' => array( '200', '300', '400', '500', '600', '700', '800', ),
-		'fallback' => 'sans-serif',
-	),
 	'El Messiri' => array(
 		'variants' => array( '400', '500', '600', '700', ),
 		'fallback' => 'sans-serif',
@@ -996,6 +1008,26 @@ return array(
 	'Emilys Candy' => array(
 		'variants' => array( '400', ),
 		'fallback' => 'cursive',
+	),
+	'Encode Sans' => array(
+		'variants' => array( '100', '200', '300', '400', '500', '600', '700', '800', '900', ),
+		'fallback' => 'sans-serif',
+	),
+	'Encode Sans Condensed' => array(
+		'variants' => array( '100', '200', '300', '400', '500', '600', '700', '800', '900', ),
+		'fallback' => 'sans-serif',
+	),
+	'Encode Sans Expanded' => array(
+		'variants' => array( '100', '200', '300', '400', '500', '600', '700', '800', '900', ),
+		'fallback' => 'sans-serif',
+	),
+	'Encode Sans Semi Condensed' => array(
+		'variants' => array( '100', '200', '300', '400', '500', '600', '700', '800', '900', ),
+		'fallback' => 'sans-serif',
+	),
+	'Encode Sans Semi Expanded' => array(
+		'variants' => array( '100', '200', '300', '400', '500', '600', '700', '800', '900', ),
+		'fallback' => 'sans-serif',
 	),
 	'Engagement' => array(
 		'variants' => array( '400', ),
@@ -1063,6 +1095,10 @@ return array(
 	),
 	'Fauna One' => array(
 		'variants' => array( '400', ),
+		'fallback' => 'serif',
+	),
+	'Faustina' => array(
+		'variants' => array( '400', '400italic', '500', '500italic', '600', '600italic', '700', '700italic', ),
 		'fallback' => 'serif',
 	),
 	'Federant' => array(
@@ -1135,7 +1171,7 @@ return array(
 	),
 	'Frank Ruhl Libre' => array(
 		'variants' => array( '300', '400', '500', '700', '900', ),
-		'fallback' => 'sans-serif',
+		'fallback' => 'serif',
 	),
 	'Freckle Face' => array(
 		'variants' => array( '400', ),
@@ -1526,7 +1562,7 @@ return array(
 		'fallback' => 'serif',
 	),
 	'Jura' => array(
-		'variants' => array( '300', '400', '500', '600', ),
+		'variants' => array( '300', '400', '500', '600', '700', ),
 		'fallback' => 'sans-serif',
 	),
 	'Just Another Hand' => array(
@@ -1705,6 +1741,30 @@ return array(
 		'variants' => array( '300', '400', '600', '700', ),
 		'fallback' => 'cursive',
 	),
+	'Libre Barcode 128' => array(
+		'variants' => array( '400', ),
+		'fallback' => 'cursive',
+	),
+	'Libre Barcode 128 Text' => array(
+		'variants' => array( '400', ),
+		'fallback' => 'cursive',
+	),
+	'Libre Barcode 39' => array(
+		'variants' => array( '400', ),
+		'fallback' => 'cursive',
+	),
+	'Libre Barcode 39 Extended' => array(
+		'variants' => array( '400', ),
+		'fallback' => 'cursive',
+	),
+	'Libre Barcode 39 Extended Text' => array(
+		'variants' => array( '400', ),
+		'fallback' => 'cursive',
+	),
+	'Libre Barcode 39 Text' => array(
+		'variants' => array( '400', ),
+		'fallback' => 'cursive',
+	),
 	'Libre Baskerville' => array(
 		'variants' => array( '400', '400italic', '700', ),
 		'fallback' => 'serif',
@@ -1754,7 +1814,7 @@ return array(
 		'fallback' => 'cursive',
 	),
 	'Londrina Solid' => array(
-		'variants' => array( '400', ),
+		'variants' => array( '100', '300', '400', '900', ),
 		'fallback' => 'cursive',
 	),
 	'Lora' => array(
@@ -1794,7 +1854,7 @@ return array(
 		'fallback' => 'cursive',
 	),
 	'Mada' => array(
-		'variants' => array( '300', '400', '500', '900', ),
+		'variants' => array( '200', '300', '400', '500', '600', '700', '900', ),
 		'fallback' => 'sans-serif',
 	),
 	'Magra' => array(
@@ -1820,6 +1880,10 @@ return array(
 	'Mandali' => array(
 		'variants' => array( '400', ),
 		'fallback' => 'sans-serif',
+	),
+	'Manuale' => array(
+		'variants' => array( '400', '400italic', '500', '500italic', '600', '600italic', '700', '700italic', ),
+		'fallback' => 'serif',
 	),
 	'Marcellus' => array(
 		'variants' => array( '400', ),
@@ -2057,6 +2121,18 @@ return array(
 		'variants' => array( '400', ),
 		'fallback' => 'cursive',
 	),
+	'Mukta' => array(
+		'variants' => array( '200', '300', '400', '500', '600', '700', '800', ),
+		'fallback' => 'sans-serif',
+	),
+	'Mukta Mahee' => array(
+		'variants' => array( '200', '300', '400', '500', '600', '700', '800', ),
+		'fallback' => 'sans-serif',
+	),
+	'Mukta Malar' => array(
+		'variants' => array( '200', '300', '400', '500', '600', '700', '800', ),
+		'fallback' => 'sans-serif',
+	),
 	'Mukta Vaani' => array(
 		'variants' => array( '200', '300', '400', '500', '600', '700', '800', ),
 		'fallback' => 'sans-serif',
@@ -2098,7 +2174,7 @@ return array(
 		'fallback' => 'cursive',
 	),
 	'Nobile' => array(
-		'variants' => array( '400', '400italic', '700', '700italic', ),
+		'variants' => array( '400', '400italic', '500', '500italic', '700', '700italic', ),
 		'fallback' => 'sans-serif',
 	),
 	'Nokora' => array(
@@ -2430,7 +2506,7 @@ return array(
 		'fallback' => 'sans-serif',
 	),
 	'Poppins' => array(
-		'variants' => array( '300', '400', '500', '600', '700', ),
+		'variants' => array( '100', '100italic', '200', '200italic', '300', '300italic', '400', '400italic', '500', '500italic', '600', '600italic', '700', '700italic', '800', '800italic', '900', '900italic', ),
 		'fallback' => 'sans-serif',
 	),
 	'Port Lligat Sans' => array(
@@ -2729,6 +2805,22 @@ return array(
 		'variants' => array( '400', ),
 		'fallback' => 'cursive',
 	),
+	'Saira' => array(
+		'variants' => array( '100', '200', '300', '400', '500', '600', '700', '800', '900', ),
+		'fallback' => 'sans-serif',
+	),
+	'Saira Condensed' => array(
+		'variants' => array( '100', '200', '300', '400', '500', '600', '700', '800', '900', ),
+		'fallback' => 'sans-serif',
+	),
+	'Saira Extra Condensed' => array(
+		'variants' => array( '100', '200', '300', '400', '500', '600', '700', '800', '900', ),
+		'fallback' => 'sans-serif',
+	),
+	'Saira Semi Condensed' => array(
+		'variants' => array( '100', '200', '300', '400', '500', '600', '700', '800', '900', ),
+		'fallback' => 'sans-serif',
+	),
 	'Salsa' => array(
 		'variants' => array( '400', ),
 		'fallback' => 'cursive',
@@ -2784,6 +2876,14 @@ return array(
 	'Secular One' => array(
 		'variants' => array( '400', ),
 		'fallback' => 'sans-serif',
+	),
+	'Sedgwick Ave' => array(
+		'variants' => array( '400', ),
+		'fallback' => 'cursive',
+	),
+	'Sedgwick Ave Display' => array(
+		'variants' => array( '400', ),
+		'fallback' => 'cursive',
 	),
 	'Sevillana' => array(
 		'variants' => array( '400', ),
@@ -2932,6 +3032,10 @@ return array(
 	'Special Elite' => array(
 		'variants' => array( '400', ),
 		'fallback' => 'cursive',
+	),
+	'Spectral' => array(
+		'variants' => array( '200', '200italic', '300', '300italic', '400', '400italic', '500', '500italic', '600', '600italic', '700', '700italic', '800', '800italic', ),
+		'fallback' => 'serif',
 	),
 	'Spicy Rice' => array(
 		'variants' => array( '400', ),
@@ -3210,7 +3314,7 @@ return array(
 		'fallback' => 'serif',
 	),
 	'Vollkorn' => array(
-		'variants' => array( '400', '400italic', '700', '700italic', ),
+		'variants' => array( '400', '400italic', '600', '600italic', '700', '700italic', '900', '900italic', ),
 		'fallback' => 'serif',
 	),
 	'Voltaire' => array(
@@ -3279,6 +3383,14 @@ return array(
 	),
 	'Zeyada' => array(
 		'variants' => array( '400', ),
+		'fallback' => 'cursive',
+	),
+	'Zilla Slab' => array(
+		'variants' => array( '300', '300italic', '400', '400italic', '500', '500italic', '600', '600italic', '700', '700italic', ),
+		'fallback' => 'serif',
+	),
+	'Zilla Slab Highlight' => array(
+		'variants' => array( '400', '700', ),
 		'fallback' => 'cursive',
 	),
 );

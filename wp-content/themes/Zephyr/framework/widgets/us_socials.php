@@ -82,9 +82,8 @@ class US_Widget_Socials extends US_Widget {
 					$value = esc_url( $value );
 				}
 				$output .= '<div class="w-socials-item ' . $param_name . '">';
-				$output .= '<a class="w-socials-item-link"' . $link_target . ' href="' . $value . '">';
+				$output .= '<a class="w-socials-item-link"' . $link_target . ' href="' . $value . '" aria-label="' . $param['heading'] . '">';
 				$output .= '<span class="w-socials-item-link-hover"></span>';
-				$output .= '<span class="w-socials-item-link-title">' . $param['heading'] . '</span>';
 				$output .= '</a>';
 				$output .= '<div class="w-socials-item-popup"><span>' . $param['heading'] . '</span></div>';
 				$output .= '</div>';
@@ -101,9 +100,8 @@ class US_Widget_Socials extends US_Widget {
 			}
 
 			$output .= '<div class="w-socials-item custom">';
-			$output .= '<a class="w-socials-item-link" target="_blank" href="' . esc_attr( $instance['custom_link'] ) . '"' . $link_style . '>';
+			$output .= '<a class="w-socials-item-link" target="_blank" href="' . esc_attr( $instance['custom_link'] ) . '" aria-label="' . $instance['custom_title'] . '"' . $link_style . '>';
 			$output .= '<span class="w-socials-item-link-hover"' . $hover_style . '></span>';
-			$output .= '<span class="w-socials-item-link-title">' . $instance['custom_title'] . '</span>';
 			$output .= us_prepare_icon_tag( $instance['custom_icon'] );
 			$output .= '</a>';
 			if ( ! empty( $instance['custom_title'] ) ) {

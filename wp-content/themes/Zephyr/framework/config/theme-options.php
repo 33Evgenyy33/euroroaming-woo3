@@ -6,7 +6,7 @@
  * @filter us_config_theme-options
  */
 
-global $us_template_directory_uri, $wp_registered_sidebars, $usof_img_sizes, $usof_enable_portfolio, $usof_wp_pages, $usof_supported_cpt;
+global $us_template_directory_uri, $wp_registered_sidebars, $usof_img_sizes, $usof_enable_portfolio, $usof_wp_pages, $usof_supported_cpt, $usof_footers_list;
 if ( ! isset( $usof_img_sizes ) ) {
 	$usof_img_sizes = array();
 }
@@ -19,15 +19,20 @@ if ( ! isset( $usof_wp_pages ) ) {
 if ( ! isset( $usof_supported_cpt ) ) {
 	$usof_supported_cpt = array();
 }
+if ( ! isset( $usof_footers_list ) ) {
+	$usof_footers_list = array();
+}
 
 $usof_assets = array();
 $assets_config = us_config( 'assets', array() );
 foreach ( $assets_config as $component => $component_atts ) {
+	if ( isset( $component_atts['hidden'] ) AND $component_atts['hidden'] ) {
+		continue;
+	}
 	$usof_assets[$component] = array(
 		'title' => $component_atts['title'],
 		'css_size' => $component_atts['css_size'],
 		'group' => ( isset( $component_atts['group'] ) ) ? $component_atts['group'] : NULL,
-		'hidden' => ( isset( $component_atts['hidden'] ) ) ? $component_atts['hidden'] : NULL,
 	);
 	if ( isset( $component_atts['apply_if'] ) ) {
 		$usof_assets[$component]['apply_if'] = $component_atts['apply_if'];
@@ -96,24 +101,6 @@ foreach ( $social_links as $name => $title ) {
 	);
 }
 
-// Getting Footers
-us_open_wp_query_context();
-$footer_templates_query = new WP_Query(
-	array(
-		'post_type' => 'us_footer',
-		'posts_per_page' => '-1',
-		'post_status' => 'any',
-	)
-);
-$footer_templates = array();
-while ( $footer_templates_query->have_posts() ) {
-	$footer_templates_query->the_post();
-	global $post;
-
-	$footer_templates[$post->post_name] = get_the_title();
-}
-us_close_wp_query_context();
-
 // Additional Sidebar Options for supported CPT
 $usof_cpt_sidebars_config = array();
 foreach ( $usof_supported_cpt as $cpt_name ) {
@@ -156,7 +143,7 @@ foreach ( $usof_supported_cpt as $cpt_name ) {
 // Options Config
 return array(
 	'general' => array(
-		'title' => _x( 'General', 'General Settings', 'us' ),
+		'title' => us_translate_x( 'General', 'settings screen' ),
 		'icon' => $us_template_directory_uri . '/framework/admin/img/usof/mixer',
 		'fields' => array(
 			'maintenance_mode' => array(
@@ -407,9 +394,9 @@ return array(
 				'title' => __( 'Columns Stacking Width', 'us' ),
 				'description' => __( 'When screen width is less than this value, all columns within a row will become a single column.', 'us' ),
 				'type' => 'slider',
-				'min' => 767,
-				'max' => 1024,
-				'std' => 767,
+				'min' => 768,
+				'max' => 1025,
+				'std' => 768,
 				'postfix' => 'px',
 			),
 			'disable_effects_width' => array(
@@ -417,7 +404,7 @@ return array(
 				'description' => __( 'When screen width is less than this value, vertical parallax and animation of elements appearance will be disabled.', 'us' ),
 				'type' => 'slider',
 				'min' => 300,
-				'max' => 1024,
+				'max' => 1025,
 				'std' => 900,
 				'postfix' => 'px',
 			),
@@ -2551,7 +2538,7 @@ return array(
 				'title' => __( 'Footer', 'us' ),
 				'description' => sprintf( __( 'You can edit selected footer or create a new one on the %s page', 'us' ), '<a href="' . admin_url() . 'edit.php?post_type=us_footer" target="_blank">' . __( 'Footers', 'us' ) . '</a>' ),
 				'type' => 'select',
-				'options' => $footer_templates,
+				'options' => $usof_footers_list,
 				'std' => 'default-footer',
 				'classes' => 'width_full desc_4',
 			),
@@ -2574,7 +2561,7 @@ return array(
 				'title' => __( 'Footer', 'us' ),
 				'description' => sprintf( __( 'You can edit selected footer or create a new one on the %s page', 'us' ), '<a href="' . admin_url() . 'edit.php?post_type=us_footer" target="_blank">' . __( 'Footers', 'us' ) . '</a>' ),
 				'type' => 'select',
-				'options' => $footer_templates,
+				'options' => $usof_footers_list,
 				'std' => 'default-footer',
 				'classes' => 'width_full desc_4',
 				'show_if' => array( 'footer_portfolio_defaults', '=', 0 ),
@@ -2597,7 +2584,7 @@ return array(
 				'title' => __( 'Footer', 'us' ),
 				'description' => sprintf( __( 'You can edit selected footer or create a new one on the %s page', 'us' ), '<a href="' . admin_url() . 'edit.php?post_type=us_footer" target="_blank">' . __( 'Footers', 'us' ) . '</a>' ),
 				'type' => 'select',
-				'options' => $footer_templates,
+				'options' => $usof_footers_list,
 				'std' => 'default-footer',
 				'classes' => 'width_full desc_4',
 				'show_if' => array( 'footer_post_defaults', '=', 0 ),
@@ -2619,7 +2606,7 @@ return array(
 				'title' => __( 'Footer', 'us' ),
 				'description' => sprintf( __( 'You can edit selected footer or create a new one on the %s page', 'us' ), '<a href="' . admin_url() . 'edit.php?post_type=us_footer" target="_blank">' . __( 'Footers', 'us' ) . '</a>' ),
 				'type' => 'select',
-				'options' => $footer_templates,
+				'options' => $usof_footers_list,
 				'std' => 'default-footer',
 				'classes' => 'width_full desc_4',
 				'show_if' => array( 'footer_archive_defaults', '=', 0 ),
@@ -2643,7 +2630,7 @@ return array(
 				'title' => __( 'Footer', 'us' ),
 				'description' => sprintf( __( 'You can edit selected footer or create a new one on the %s page', 'us' ), '<a href="' . admin_url() . 'edit.php?post_type=us_footer" target="_blank">' . __( 'Footers', 'us' ) . '</a>' ),
 				'type' => 'select',
-				'options' => $footer_templates,
+				'options' => $usof_footers_list,
 				'std' => 'default-footer',
 				'classes' => 'width_full desc_4',
 				'show_if' => array( 'footer_shop_defaults', '=', 0 ),
@@ -2668,7 +2655,7 @@ return array(
 				'title' => __( 'Footer', 'us' ),
 				'description' => sprintf( __( 'You can edit selected footer or create a new one on the %s page', 'us' ), '<a href="' . admin_url() . 'edit.php?post_type=us_footer" target="_blank">' . __( 'Footers', 'us' ) . '</a>' ),
 				'type' => 'select',
-				'options' => $footer_templates,
+				'options' => $usof_footers_list,
 				'std' => 'default-footer',
 				'classes' => 'width_full desc_4',
 				'show_if' => array( 'footer_product_defaults', '=', 0 ),
@@ -2788,10 +2775,11 @@ return array(
 			'h1_letterspacing' => array(
 				'description' => __( 'Letter Spacing', 'us' ),
 				'type' => 'slider',
-				'min' => -3,
-				'max' => 5,
+				'min' => -0.10,
+				'max' => 0.20,
+				'step' => 0.01,
 				'std' => 0,
-				'postfix' => 'px',
+				'postfix' => 'em',
 				'classes' => 'inline compact',
 			),
 			'h1_transform' => array(
@@ -2840,10 +2828,11 @@ return array(
 			'h2_letterspacing' => array(
 				'description' => __( 'Letter Spacing', 'us' ),
 				'type' => 'slider',
-				'min' => -3,
-				'max' => 5,
+				'min' => -0.10,
+				'max' => 0.20,
+				'step' => 0.01,
 				'std' => 0,
-				'postfix' => 'px',
+				'postfix' => 'em',
 				'classes' => 'inline compact',
 			),
 			'h2_transform' => array(
@@ -2892,10 +2881,11 @@ return array(
 			'h3_letterspacing' => array(
 				'description' => __( 'Letter Spacing', 'us' ),
 				'type' => 'slider',
-				'min' => -3,
-				'max' => 5,
+				'min' => -0.10,
+				'max' => 0.20,
+				'step' => 0.01,
 				'std' => 0,
-				'postfix' => 'px',
+				'postfix' => 'em',
 				'classes' => 'inline compact',
 			),
 			'h3_transform' => array(
@@ -2944,10 +2934,11 @@ return array(
 			'h4_letterspacing' => array(
 				'description' => __( 'Letter Spacing', 'us' ),
 				'type' => 'slider',
-				'min' => -3,
-				'max' => 5,
+				'min' => -0.10,
+				'max' => 0.20,
+				'step' => 0.01,
 				'std' => 0,
-				'postfix' => 'px',
+				'postfix' => 'em',
 				'classes' => 'inline compact',
 			),
 			'h4_transform' => array(
@@ -2996,10 +2987,11 @@ return array(
 			'h5_letterspacing' => array(
 				'description' => __( 'Letter Spacing', 'us' ),
 				'type' => 'slider',
-				'min' => -3,
-				'max' => 5,
+				'min' => -0.10,
+				'max' => 0.20,
+				'step' => 0.01,
 				'std' => 0,
-				'postfix' => 'px',
+				'postfix' => 'em',
 				'classes' => 'inline compact',
 			),
 			'h5_transform' => array(
@@ -3048,10 +3040,11 @@ return array(
 			'h6_letterspacing' => array(
 				'description' => __( 'Letter Spacing', 'us' ),
 				'type' => 'slider',
-				'min' => -3,
-				'max' => 5,
+				'min' => -0.10,
+				'max' => 0.20,
+				'step' => 0.01,
 				'std' => 0,
-				'postfix' => 'px',
+				'postfix' => 'em',
 				'classes' => 'inline compact',
 			),
 			'h6_transform' => array(
@@ -3110,7 +3103,7 @@ return array(
 		'fields' => array(
 			'button_preview' => array(
 				'type' => 'button_preview',
-				'classes' => 'width_full',
+				'classes' => 'width_full sticky',
 			),
 			'button_text_style' => array(
 				'title' => __( 'Text Styles', 'us' ),
@@ -3140,10 +3133,11 @@ return array(
 			'button_letterspacing' => array(
 				'title' => __( 'Letter Spacing', 'us' ),
 				'type' => 'slider',
-				'min' => - 3,
-				'max' => 5,
+				'min' => -0.10,
+				'max' => 0.20,
+				'step' => 0.01,
 				'std' => 0,
-				'postfix' => 'px',
+				'postfix' => 'em',
 			),
 			'button_font' => array(
 				'title' => __( 'Use Font from', 'us' ),
@@ -3195,10 +3189,21 @@ return array(
 				'title' => __( 'Hover Style', 'us' ),
 				'type' => 'radio',
 				'options' => array(
+					'none' => us_translate( 'None' ),
+					'fade' => __( 'Fade', 'us' ),
 					'slide' => __( 'Slide', 'us' ),
-					'shadow' => __( 'Shadow', 'us' ),
+					'reverse' => __( 'Reverse', 'us' ),
 				),
 				'std' => 'slide',
+			),
+			'button_shadow_hover' => array(
+				'title' => __( 'Shadow on Hover', 'us' ),
+				'type' => 'slider',
+				'min' => 0.0,
+				'max' => 2.0,
+				'step' => 0.1,
+				'std' => 0,
+				'postfix' => 'em',
 			),
 		),
 	),
@@ -3211,6 +3216,12 @@ return array(
 				'title' => __( 'Portfolio Pages', 'us' ),
 				'type' => 'heading',
 				'classes' => 'with_separator',
+			),
+			'portfolio_breadcrumbs_page' => array(
+				'title' => __( 'Intermediate Breadcrumbs Page', 'us' ),
+				'type' => 'select',
+				'options' => array_merge( array( '' => '&ndash; ' . us_translate( 'None' ) . ' &ndash;' ), $usof_wp_pages ),
+				'std' => '',
 			),
 			'portfolio_comments' => array(
 				'title' => us_translate( 'Comments' ),
@@ -3989,16 +4000,29 @@ return array(
 			),
 			'enable_portfolio' => array(
 				'type' => 'switch',
-				'text' => sprintf( __( 'Enable %s module', 'us' ), __( 'Portfolio', 'us' ) ),
+				'text' => sprintf( __( '%s module', 'us' ), __( 'Portfolio', 'us' ) ),
 				'std' => 1,
 				'classes' => 'width_full desc_2',
 			),
 			'enable_testimonials' => array(
 				'type' => 'switch',
-				'text' => sprintf( __( 'Enable %s module', 'us' ), __( 'Testimonials', 'us' ) ),
+				'text' => sprintf( __( '%s module', 'us' ), __( 'Testimonials', 'us' ) ),
 				'std' => 1,
 				'classes' => 'width_full desc_2',
 			),
+			'og_enabled' => array(
+				'type' => 'switch',
+				'text' => __( 'Open Graph meta tags', 'us' ),
+				'std' => 1,
+				'classes' => 'width_full desc_2',
+			),
+			'schema_markup' => array(
+				'type' => 'switch',
+				'text' => __( 'Schema.org markup', 'us' ),
+				'std' => 1,
+				'classes' => 'width_full desc_2',
+			),
+
 			'h_advanced_2' => array(
 				'title' => __( 'Website Performance', 'us' ),
 				'type' => 'heading',
@@ -4034,8 +4058,8 @@ return array(
 			),
 			'disable_extra_vc' => array(
 				'type' => 'switch',
-				'text' => __( 'Disable extra features of Visual Composer', 'us' ),
-				'description' => __( 'When this option is ON, original CSS and JS files of Visual Composer won\'t be loaded in front-end.', 'us' ) . ' ' . __( 'This will improve pages loading speed.', 'us' ),
+				'text' => __( 'Disable extra features of WPBakery Page Builder', 'us' ),
+				'description' => __( 'When this option is ON, original CSS and JS files of WPBakery Page Builder won\'t be loaded in front-end.', 'us' ) . ' ' . __( 'This will improve pages loading speed.', 'us' ),
 				'std' => 1,
 				'place_if' => class_exists( 'Vc_Manager' ),
 				'classes' => 'width_full desc_2',

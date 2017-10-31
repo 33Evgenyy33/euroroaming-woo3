@@ -108,7 +108,15 @@ function us_breadcrumbs() {
 						echo $delimiter . $breadcrumbs[$i];
 					}
 				}
-			} elseif ( get_post_type() != 'post' ) {
+			} elseif ( get_post_type() == 'us_portfolio' AND us_get_option( 'portfolio_breadcrumbs_page' ) != '' ) {
+				$portfolio_breadcrumbs_page = get_page_by_path( us_get_option( 'portfolio_breadcrumbs_page' ) );
+				if ( $portfolio_breadcrumbs_page ) {
+					echo sprintf( $link, get_permalink( $portfolio_breadcrumbs_page->ID ), get_the_title( $portfolio_breadcrumbs_page->ID ) );
+				}
+				if ( $showCurrent == 1 ) {
+					echo $delimiter . $before . get_the_title() . $after;
+				}
+			}  elseif ( get_post_type() != 'post' ) {
 				$post_type = get_post_type_object( get_post_type() );
 				if ( ! empty( $post_type->labels->name ) ) {
 					echo $post_type->labels->name;

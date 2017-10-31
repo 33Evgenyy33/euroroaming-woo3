@@ -1,7 +1,7 @@
 <?php defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
 
 /**
- * Visual Composer Theme Support
+ * WPBakery Page Builder support
  *
  * @link http://codecanyon.net/item/visual-composer-page-builder-for-wordpress/242431?ref=UpSolution
  */
@@ -116,7 +116,7 @@ function us_vc_after_set_mode() {
 		unset( $shortcodes_config['us_testimonials'] );
 	}
 
-	// Mapping Visual Composer backend behaviour for used shortcodes
+	// Mapping WPBakery Page Builder backend behaviour for used shortcodes
 	if ( vc_mode() != 'page' ) {
 		foreach ( $shortcodes_config as $shortcode => $config ) {
 			if ( isset( $config['custom_vc_map'] ) AND ! empty( $config['custom_vc_map'] ) ) {
@@ -141,7 +141,6 @@ function us_vc_after_set_mode() {
 
 	if ( ! vc_is_page_editable() ) {
 		// Removing original VC styles and scripts
-		// TODO move to a separate option
 		add_action( 'wp_enqueue_scripts', 'us_remove_vc_base_css_js', 15 );
 		function us_remove_vc_base_css_js() {
 			global $us_template_directory_uri;

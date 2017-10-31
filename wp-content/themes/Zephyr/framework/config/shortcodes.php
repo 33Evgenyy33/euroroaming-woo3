@@ -23,7 +23,7 @@ return array(
 	'us_blog' => array(
 		'atts' => array(
 			'type' => 'grid',
-			'columns' => 2,
+			'columns' => '2',
 			'orderby' => 'date',
 			'items' => NULL,
 			'pagination' => 'none',
@@ -31,6 +31,7 @@ return array(
 			'layout' => 'classic',
 			'img_size' => 'default',
 			'title_size' => '',
+			'ignore_sticky' => FALSE,
 			'show_date' => TRUE,
 			'show_author' => TRUE,
 			'show_categories' => TRUE,
@@ -44,7 +45,7 @@ return array(
 			'carousel_center' => FALSE,
 			'carousel_slideby' => FALSE,
 			'carousel_autoplay' => FALSE,
-			'carousel_interval' => 3,
+			'carousel_interval' => '3',
 			'filter' => 'none',
 			'filter_style' => 'style_1',
 		),
@@ -147,7 +148,7 @@ return array(
 	'us_gallery' => array(
 		'atts' => array(
 			'ids' => '',
-			'columns' => 6,
+			'columns' => '6',
 			'layout' => 'default',
 			'masonry' => FALSE, // Masonry checkbox used in WP gallery
 			'orderby' => '',
@@ -167,10 +168,10 @@ return array(
 			'show_infowindow' => FALSE,
 			'markers' => '',
 			'custom_marker_img' => '',
-			'custom_marker_size' => 20,
-			'height' => 400,
+			'custom_marker_size' => '20',
+			'height' => '400',
 			'type' => 'roadmap',
-			'zoom' => 14,
+			'zoom' => '14',
 			'latitude' => '',
 			'longitude' => '',
 			'hide_controls' => FALSE,
@@ -208,7 +209,7 @@ return array(
 			'nav' => 'none',
 			'transition' => 'slide',
 			'autoplay' => FALSE,
-			'autoplay_period' => 3,
+			'autoplay_period' => '3',
 			'fullscreen' => FALSE,
 			'meta' => FALSE,
 			'orderby' => '',
@@ -222,9 +223,9 @@ return array(
 	'us_logos' => array(
 		'atts' => array(
 			'type' => 'carousel',
-			'columns' => 5,
+			'columns' => '5',
 			'with_indents' => FALSE,
-			'style' => 1,
+			'style' => '1',
 			'orderby' => '',
 			'items' => array(),
 			'el_class' => '',
@@ -233,7 +234,16 @@ return array(
 			'carousel_center' => FALSE,
 			'carousel_slideby' => FALSE,
 			'carousel_autoplay' => FALSE,
-			'carousel_interval' => 3,
+			'carousel_interval' => '3',
+			'breakpoint_1_width' => '1024px',
+			'breakpoint_1_cols' => '3',
+			'breakpoint_1_autoplay' => TRUE,
+			'breakpoint_2_width' => '768px',
+			'breakpoint_2_cols' => '2',
+			'breakpoint_2_autoplay' => TRUE,
+			'breakpoint_3_width' => '480px',
+			'breakpoint_3_cols' => '1',
+			'breakpoint_3_autoplay' => TRUE,
 		),
 		'items_atts' => array(
 			'image' => '',
@@ -243,7 +253,7 @@ return array(
 	),
 	'us_message' => array(
 		'atts' => array(
-			'color' => 'info',
+			'color' => 'blue',
 			'bg_color' => '',
 			'text_color' => '',
 			'icon' => '',
@@ -278,7 +288,7 @@ return array(
 	'us_portfolio' => array(
 		'atts' => array(
 			'type' => 'grid',
-			'columns' => 3,
+			'columns' => '3',
 			'orderby' => 'date',
 			'items' => '',
 			'pagination' => 'none',
@@ -301,7 +311,7 @@ return array(
 			'carousel_center' => FALSE,
 			'carousel_slideby' => FALSE,
 			'carousel_autoplay' => FALSE,
-			'carousel_interval' => 3,
+			'carousel_interval' => '3',
 			'filter' => 'none',
 			'filter_style' => 'style_1',
 		),
@@ -428,7 +438,7 @@ return array(
 	),
 	'us_testimonial' => array(
 		'atts' => array(
-			'style' => 1,
+			'style' => '1',
 			'author' => 'John Doe',
 			'company' => 'UpSolution Client',
 			'img' => '',
@@ -441,9 +451,9 @@ return array(
 	'us_testimonials' => array(
 		'atts' => array(
 			'type' => 'grid',
-			'columns' => 3,
+			'columns' => '3',
 			'orderby' => 'date',
-			'style' => 1,
+			'style' => '1',
 			'text_size' => '',
 			'items' => '',
 			'ids' => '',
@@ -454,7 +464,7 @@ return array(
 			'carousel_center' => FALSE,
 			'carousel_slideby' => FALSE,
 			'carousel_autoplay' => FALSE,
-			'carousel_interval' => 3,
+			'carousel_interval' => '3',
 		),
 		'custom_vc_map' => $us_template_directory . '/framework/plugins-support/js_composer/map/us_testimonials.php',
 	),

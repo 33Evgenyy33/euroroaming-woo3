@@ -32,6 +32,7 @@ if ( version_compare( $woocommerce->version, '2.1', '<' ) ) {
 	add_action( 'wp_enqueue_scripts', 'us_woocomerce_dequeue_checkout_styles', 100 );
 	function us_woocomerce_dequeue_checkout_styles() {
 		wp_dequeue_style( 'select2' );
+		wp_deregister_style( 'select2' );
 	}
 }
 
@@ -92,7 +93,11 @@ if ( ! function_exists( 'us_woocommerce_after_main_content' ) ) {
 					}
 				}
 			}
-			echo '<aside class="l-sidebar at_' . $us_layout->sidebar_pos . ' ' . $sidebar_id . '" itemtype="https://schema.org/WPSideBar">';
+			echo '<aside class="l-sidebar at_' . $us_layout->sidebar_pos . ' ' . $sidebar_id . '"';
+			if ( us_get_option( 'schema_markup' ) ) {
+				echo ' itemscope itemtype="https://schema.org/WPSideBar"';
+			}
+			echo '>';
 			dynamic_sidebar( $sidebar_id );
 			echo '</aside>';
 		}
@@ -235,4 +240,11 @@ function us_woocommerce_disable_autofocus_billing_firstname( $fields ) {
 	$fields['shipping']['shipping_first_name']['autofocus'] = FALSE;
 
 	return $fields;
+}
+
+add_filter( 'woocommerce_dropdown_variation_attribute_options_html', 'us_woocommerce_dropdown_variation_attribute_options_html' );
+function us_woocommerce_dropdown_variation_attribute_options_html( $html ) {
+	$html = '<div class="woocommerce-select">' . $html . '</div>';
+
+	return $html;
 }

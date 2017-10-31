@@ -54,7 +54,9 @@ function us_ajax_blog() {
 			// Custom users' queries
 			'post_type',
 		);
-		$allowed_post_types = array( 'us_portfolio', 'post' );
+		$usof_supported_cpt = us_get_option( 'custom_post_types_support', array() );
+		$allowed_post_types = array_merge( array( 'us_portfolio', 'post' ), $usof_supported_cpt );
+
 		foreach ( $template_vars['query_args'] as $query_key => $query_val ) {
 			if ( ! in_array( $query_key, $allowed_query_keys ) ) {
 				unset( $template_vars['query_args'][$query_key] );

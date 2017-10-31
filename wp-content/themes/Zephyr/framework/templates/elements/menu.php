@@ -13,6 +13,7 @@
  * @var $id              string
  * @var $source          string WP Menu source
  */
+
 if ( substr( $source, 0, 9 ) == 'location:' ) {
 	$location = substr( $source, 9 );
 	$theme_locations = get_nav_menu_locations();
@@ -30,7 +31,7 @@ if ( substr( $source, 0, 9 ) == 'location:' ) {
 	$location = NULL;
 }
 
-if ( empty( $source ) OR ! is_nav_menu( $source ) ) {
+if ( empty( $location ) AND ( empty( $source ) OR ! is_nav_menu( $source ) ) ) {
 	return;
 }
 
@@ -56,8 +57,12 @@ if ( isset( $id ) AND ! empty( $id ) ) {
 	$classes .= ' ush_' . str_replace( ':', '_', $id );
 }
 
-echo '<nav class="w-nav' . $classes . '" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">';
-echo '<a class="w-nav-control" href="javascript:void(0);">';
+echo '<nav class="w-nav' . $classes . '"';
+if ( us_get_option( 'schema_markup' ) ) {
+	echo ' itemscope itemtype="https://schema.org/SiteNavigationElement"';
+}
+echo '>';
+echo '<a class="w-nav-control" href="javascript:void(0);" aria-label="' . us_translate( 'Menu' ) . '">';
 echo '<div class="w-nav-icon"><i></i></div>';
 echo '<span>' . us_translate( 'Menu' ) . '</span>';
 echo '</a>';

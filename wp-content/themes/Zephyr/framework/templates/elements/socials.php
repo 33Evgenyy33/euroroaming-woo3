@@ -37,9 +37,8 @@ foreach ( $socials as $social_key => $social ) {
 	}
 
 	$output_inner .= '<div class="w-socials-item ' . $social_key . '">
-		<a class="w-socials-item-link" target="_blank" href="' . $social_url . '">
+		<a class="w-socials-item-link" target="_blank" href="' . $social_url . '" aria-label="' . $social . '">
 			<span class="w-socials-item-link-hover"></span>
-			<span class="w-socials-item-link-title">' . $social . '</span>
 		</a>
 		<div class="w-socials-item-popup">
 			<span>' . $social . '</span>
@@ -50,9 +49,8 @@ foreach ( $socials as $social_key => $social ) {
 // Custom icon
 if ( ! empty( $custom_icon ) AND ! empty( $custom_url ) ) {
 	$output_inner .= '<div class="w-socials-item custom">';
-	$output_inner .= '<a class="w-socials-item-link" target="_blank" href="' . esc_url( $custom_url ) . '">';
+	$output_inner .= '<a class="w-socials-item-link" target="_blank" href="' . esc_url( $custom_url ) . '" aria-label="' . $custom_title . '">';
 	$output_inner .= '<span class="w-socials-item-link-hover"></span>';
-	$output_inner .= '<span class="w-socials-item-link-title">' . $custom_title . '</span>';
 	$output_inner .= us_prepare_icon_tag( $custom_icon );
 	$output_inner .= '</a></div>';
 }

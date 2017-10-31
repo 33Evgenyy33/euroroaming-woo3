@@ -10,9 +10,10 @@
  */
 vc_map(
 	array(
+		'base' => 'us_progbar',
 		'name' => __( 'Progress Bar', 'us' ),
 		'description' => '',
-		'base' => 'us_progbar',
+		'icon' => 'icon-wpb-graph',
 		'category' => us_translate( 'Content', 'js_composer' ),
 		'weight' => 125,
 		'params' => array(

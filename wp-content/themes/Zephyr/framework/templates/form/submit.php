@@ -24,6 +24,6 @@ $btn_inner_css = ( isset( $btn_inner_css ) AND ! empty( $btn_inner_css ) ) ? ( '
 ?>
 <div class="w-form-row for_<?php echo $name ?>">
 	<div class="w-form-row-field">
-		<button class="w-btn<?php echo $btn_classes ?>"<?php echo $btn_inner_css ?> type="submit"><span class="g-preloader type_1"></span><span class="w-btn-label"><?php echo $title ?></span></button>
+		<button class="w-btn<?php echo $btn_classes ?>"<?php echo $btn_inner_css ?> type="submit" aria-label="<?php echo $title ?>"><span class="g-preloader type_1"></span><span class="w-btn-label"><?php echo $title ?></span></button>
 	</div>
 </div>

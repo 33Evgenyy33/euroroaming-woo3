@@ -39,21 +39,23 @@ $classes .= ' style_' . $atts['style'];
 if ( $atts['with_indents'] ) {
 	$classes .= ' with_indents';
 }
-
 if ( isset( $atts['type'] ) ) {
 	$classes .= ' type_' . $atts['type'];
+}
+if ( $atts['columns'] != 1 ) {
+	$classes .= ' cols_' . $atts['columns'];
+}
+if ( $atts['el_class'] != '' ) {
+	$classes .= ' ' . $atts['el_class'];
 }
 if ( $atts['type'] == 'carousel' ) {
 	$list_classes .= ' owl-carousel';
 }
 
-if ( $atts['columns'] != 1 ) {
-	$classes .= ' cols_' . $atts['columns'];
-}
-
-if ( $atts['el_class'] != '' ) {
-	$classes .= ' ' . $atts['el_class'];
-}
+// Generate extra "index" class to differ several elements at one page
+global $us_logos_index;
+$us_logos_index = isset( $us_logos_index ) ? ( $us_logos_index + 1 ) : 1;
+$classes .= ' index_' . $us_logos_index;
 
 // We need owl script for this
 if ( us_get_option( 'ajax_load_js', 0 ) == 0 ) {
@@ -73,6 +75,15 @@ if ( isset( $atts['type'] ) AND $atts['type'] == 'carousel' ) {
 	} else {
 		$output .= ' data-slideby="1"';
 	}
+	$output .= ' data-breakpoint_1_width="' . intval( $atts['breakpoint_1_width'] ) . '"';
+	$output .= ' data-breakpoint_1_cols="' . intval( $atts['breakpoint_1_cols'] ) . '"';
+	$output .= ' data-breakpoint_1_autoplay="' . intval( ! ! $atts['breakpoint_1_autoplay'] ) . '"';
+	$output .= ' data-breakpoint_2_width="' . intval( $atts['breakpoint_2_width'] ) . '"';
+	$output .= ' data-breakpoint_2_cols="' . intval( $atts['breakpoint_2_cols'] ) . '"';
+	$output .= ' data-breakpoint_2_autoplay="' . intval( ! ! $atts['breakpoint_2_autoplay'] ) . '"';
+	$output .= ' data-breakpoint_3_width="' . intval( $atts['breakpoint_3_width'] ) . '"';
+	$output .= ' data-breakpoint_3_cols="' . intval( $atts['breakpoint_3_cols'] ) . '"';
+	$output .= ' data-breakpoint_3_autoplay="' . intval( ! ! $atts['breakpoint_3_autoplay'] ) . '"';
 }
 $output .= '>';
 
@@ -125,5 +136,20 @@ if ( $atts['type'] == 'carousel' ) {
 }
 
 $output .= '</div>';
+
+// Generate responsive styles for Grid type
+if ( $atts['type'] == 'grid' ) {
+	$output .= '<style>
+@media(max-width:' . ( intval( $atts['breakpoint_1_width'] ) - 1 ) . 'px){
+.w-logos.index_' . $us_logos_index . ' .w-logos-item{width:' . 100 / intval( $atts['breakpoint_1_cols'] ) . '%}
+}
+@media(max-width:' . ( intval( $atts['breakpoint_2_width'] ) - 1 ) . 'px){
+.w-logos.index_' . $us_logos_index . ' .w-logos-item{width:' . 100 / intval( $atts['breakpoint_2_cols'] ) . '%}
+}
+@media(max-width:' . ( intval( $atts['breakpoint_3_width'] ) - 1 ) . 'px){
+.w-logos.index_' . $us_logos_index . ' .w-logos-item{width:' . 100 / intval( $atts['breakpoint_3_cols'] ) . '%}
+}
+</style>';
+}
 
 echo $output;

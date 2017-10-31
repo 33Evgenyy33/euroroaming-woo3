@@ -227,6 +227,14 @@ return array(
 				'heading' => us_translate( 'Number of posts to show' ),
 				'std' => '3',
 			),
+			'ignore_sticky' => array(
+				'type' => 'checkbox',
+				'heading' => '',
+				'value' => array(
+					__( 'Ignore sticky posts', 'us' ) => TRUE,
+				),
+				'std' => array(),
+			),
 			'meta' => array(
 				'type' => 'checkbox',
 				'heading' => __( 'Posts Elements', 'us' ),

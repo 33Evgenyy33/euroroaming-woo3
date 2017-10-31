@@ -15,6 +15,14 @@
 
 $us_layout = US_Layout::instance();
 
+// Generate schema.org markup
+$schema_heading = $schema_text = $schema_date = '';
+if ( us_get_option( 'schema_markup' ) ) {
+	$schema_heading = ' itemprop="headline"';
+	$schema_text = ' itemprop="text"';
+	$schema_date = ' itemprop="datePublished"';
+}
+
 // Filling and filtering parameters
 $default_metas = array( 'date', 'author', 'categories', 'comments' );
 $metas = ( isset( $metas ) AND is_array( $metas ) ) ? array_intersect( $metas, $default_metas ) : $default_metas;
@@ -86,9 +94,9 @@ $pagination = us_wp_link_pages(
 // If content has no sections, we'll create them manually
 $has_own_sections = ( strpos( $the_content, ' class="l-section' ) !== FALSE );
 if ( ! $has_own_sections ) {
-	$the_content = '<section class="l-section"><div class="l-section-h i-cf" itemprop="text">' . $the_content . $pagination . '</div></section>';
+	$the_content = '<section class="l-section"><div class="l-section-h i-cf"' . $schema_text . '>' . $the_content . $pagination . '</div></section>';
 } elseif ( ! empty( $pagination ) ) {
-	$the_content .= '<section class="l-section"><div class="l-section-h i-cf" itemprop="text">' . $pagination . '</div></section>';
+	$the_content .= '<section class="l-section"><div class="l-section-h i-cf"' . $schema_text . '>' . $pagination . '</div></section>';
 }
 
 // Meta => certain html in a proper order
@@ -100,7 +108,7 @@ if ( ! in_array( 'date', $metas ) ) {
 	// Hiding from users but not from search engines
 	$meta_html['date'] .= ' hidden';
 }
-$meta_html['date'] .= '" itemprop="datePublished" datetime="' . get_the_date( 'Y-m-d H:i:s' ) . '">' . get_the_date() . '</time>';
+$meta_html['date'] .= '"' . $schema_date . ' datetime="' . get_the_date( 'Y-m-d H:i:s' ) . '">' . get_the_date() . '</time>';
 
 $meta_html['author'] = '<span class="w-blog-post-meta-author vcard author';
 if ( ! in_array( 'author', $metas ) ) {
@@ -143,14 +151,14 @@ $meta_html = apply_filters( 'us_single_post_meta_html', $meta_html, get_the_ID()
 	<div class="l-section-h i-cf">
 		<div class="w-blog">
 			<?php if ( ! empty( $preview_bg ) ): ?>
-				<div class="w-blog-post-preview" style="background-image: url(<?php echo $preview_bg ?>)"><img class="hidden" src="<?php echo $preview_bg ?>" alt="<?php the_title() ?>"></div>
+				<div class="w-blog-post-preview" style="background-image: url(<?php echo $preview_bg ?>)"><img class="hidden" src="<?php echo $preview_bg ?>" alt="<?php echo esc_attr( strip_tags( get_the_title() ) ) ?>"></div>
 			<?php elseif ( ! empty( $preview_html ) OR $preview_type == 'modern' ): ?>
 				<div class="w-blog-post-preview">
 					<?php echo $preview_html ?>
 				</div>
 			<?php endif; ?>
 			<div class="w-blog-post-body">
-				<h1 class="w-blog-post-title entry-title" itemprop="headline"><?php the_title() ?></h1>
+				<h1 class="w-blog-post-title entry-title"<?php echo $schema_heading ?>><?php the_title() ?></h1>
 
 				<div class="w-blog-post-meta<?php echo empty( $metas ) ? ' hidden' : '' ?>">
 					<?php echo implode( '', $meta_html ) ?>

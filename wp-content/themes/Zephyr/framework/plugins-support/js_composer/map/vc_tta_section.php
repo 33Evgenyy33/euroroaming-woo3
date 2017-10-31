@@ -39,12 +39,26 @@ if ( ! vc_is_page_editable() ) {
 	vc_add_params(
 		'vc_tta_section', array(
 		array(
+			'param_name' => 'active',
+			'type' => 'checkbox',
+			'value' => array( __( 'Show this section after page loading', 'us' ) => TRUE ),
+			( ( $config['atts']['active'] !== FALSE ) ? 'std' : '_std' ) => $config['atts']['active'],
+			'weight' => 70,
+		),
+		array(
+			'param_name' => 'indents',
+			'type' => 'checkbox',
+			'value' => array( __( 'Stretch this section content to the full available area', 'us' ) => 'none' ),
+			( ( $config['atts']['indents'] !== FALSE ) ? 'std' : '_std' ) => $config['atts']['indents'],
+			'weight' => 60,
+		),
+		array(
 			'param_name' => 'icon',
 			'heading' => __( 'Icon', 'us' ),
 			'description' => sprintf( __( '%s or %s icon name', 'us' ), '<a href="http://fontawesome.io/icons/" target="_blank">Font Awesome</a>', '<a href="https://material.io/icons/" target="_blank">Material</a>' ),
 			'type' => 'textfield',
 			'std' => $config['atts']['icon'],
-			'weight' => 70,
+			'weight' => 50,
 		),
 		array(
 			'param_name' => 'i_position',
@@ -56,22 +70,6 @@ if ( ! vc_is_page_editable() ) {
 			),
 			'std' => $config['atts']['i_position'],
 			'dependency' => array( 'element' => 'icon', 'not_empty' => TRUE ),
-			'weight' => 60,
-		),
-		array(
-			'param_name' => 'active',
-			'heading' => __( 'Active', 'us' ),
-			'type' => 'checkbox',
-			'value' => array( __( 'Show this section when the page loads', 'us' ) => TRUE ),
-			( ( $config['atts']['active'] !== FALSE ) ? 'std' : '_std' ) => $config['atts']['active'],
-			'weight' => 50,
-		),
-		array(
-			'param_name' => 'indents',
-			'heading' => __( 'Full Size Content', 'us' ),
-			'type' => 'checkbox',
-			'value' => array( __( 'Remove paddings in the section\'s content area', 'us' ) => 'none' ),
-			( ( $config['atts']['indents'] !== FALSE ) ? 'std' : '_std' ) => $config['atts']['indents'],
 			'weight' => 40,
 		),
 		array(

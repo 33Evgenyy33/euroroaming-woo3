@@ -64,3 +64,77 @@ function us_ultimate_addons_update_plugins_transient( $_transient_data ) {
 	}
 	return $_transient_data;
 }
+
+add_filter( 'ultimate_front_scripts_post_content', 'us_ultimate_front_scripts_post_content' );
+function us_ultimate_front_scripts_post_content( $content ) {
+	$hide_footer = FALSE;
+
+	// Default footer option
+	$footer_id = us_get_option( 'footer_id', NULL );
+	if ( is_singular( array( 'us_portfolio' ) ) ) {
+		if ( us_get_option( 'footer_portfolio_defaults', 1 ) == 0 ) {
+			$footer_id = us_get_option( 'footer_portfolio_id', NULL );
+		}
+	} elseif ( is_singular( array( 'post', 'attachment' ) ) ) {
+		if ( us_get_option( 'footer_post_defaults', 1 ) == 0 ) {
+			$footer_id = us_get_option( 'footer_post_id', NULL );
+		}
+	} elseif ( function_exists( 'is_woocommerce' ) AND is_woocommerce() ) {
+		if ( is_singular() ) {
+			if ( us_get_option( 'footer_product_defaults', 1 ) == 0 ) {
+				$footer_id = us_get_option( 'footer_product_id', NULL );
+			}
+		} else {
+			if ( us_get_option( 'footer_shop_defaults', 1 ) == 0 ) {
+				$footer_id = us_get_option( 'footer_shop_id', NULL );
+			}
+			if ( ! is_search() AND ! is_tax() ) {
+				if ( usof_meta( 'us_footer', array(), wc_get_page_id( 'shop' ) ) == 'hide' ) {
+					$hide_footer = TRUE;
+				}
+				if ( usof_meta( 'us_footer', array(), wc_get_page_id( 'shop' ) ) == 'custom' ) {
+					$footer_id = usof_meta( 'us_footer_id', array(), wc_get_page_id( 'shop' ) );
+				}
+			}
+		}
+	} elseif ( is_archive() OR is_search() ) {
+		if ( us_get_option( 'footer_archive_defaults', 1 ) == 0 ) {
+			$footer_id = us_get_option( 'footer_archive_id', NULL );
+		}
+	}
+
+
+	if ( is_singular() OR ( is_404() AND $page_404 = get_page_by_path( 'error-404' ) ) ) {
+		if ( is_singular() ) {
+			$postID = get_the_ID();
+		} elseif ( is_404() ) {
+			$postID = $page_404->ID;
+		}
+		if ( usof_meta( 'us_footer', array(), $postID ) == 'hide' ) {
+			$hide_footer = TRUE;
+		}
+		if ( usof_meta( 'us_footer', array(), $postID ) == 'custom' ) {
+			$footer_id = usof_meta( 'us_footer_id', array(), $postID );
+		}
+	}
+
+	if ( ! $hide_footer ) {
+		$footer = FALSE;
+		if ( ! empty( $footer_id ) ) {
+			$footer = get_page_by_path( $footer_id, OBJECT, 'us_footer' );
+		}
+
+		if ( $footer ) {
+			$translated_footer_id = apply_filters( 'wpml_object_id', $footer->ID, 'us_footer', TRUE );
+			if ( $translated_footer_id != $footer->ID ) {
+				$footer = get_post( $translated_footer_id );
+			}
+
+			$content .= $footer->post_content;
+		}
+
+
+	}
+
+	return $content;
+}

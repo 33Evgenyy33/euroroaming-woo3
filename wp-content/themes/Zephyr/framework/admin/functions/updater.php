@@ -1,7 +1,7 @@
 <?php defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
 
 /**
- * Auto-updater for the plugins bundled with the theme
+ * Updater of the plugins from UpSolution Help Portal
  */
 
 add_filter( 'us_config_addons', 'us_api_addons' );
@@ -10,6 +10,7 @@ function us_api_addons( $plugins, $force_request = FALSE ) {
 
 	$license_activated = get_option( 'us_license_activated', 0 );
 	$license_secret = get_option( 'us_license_secret' );
+	$addons_version = get_option( 'us_addons_version' );
 
 	if ( $license_activated AND $license_secret != '' ) {
 
@@ -19,13 +20,14 @@ function us_api_addons( $plugins, $force_request = FALSE ) {
 		$url = "https://help.us-themes.com/us.api/check_addons_update/" . strtolower( US_THEMENAME ) . "?secret=" . urlencode( $license_secret ) . "&domain=" . urlencode( $domain ) . "&current_version=" . urlencode( US_THEMEVERSION );
 		$transient = 'us_update_addons_data_' . US_THEMENAME;
 
-		if ( FALSE !== $results = get_transient( $transient ) ) {
+		if ( ( ! empty( $addons_version ) AND $addons_version == US_THEMEVERSION ) AND FALSE !== $results = get_transient( $transient ) ) {
 			$update_addons_data = $results;
 		}
 
 		if ( ( empty( $update_addons_data ) OR $force_request ) AND $results = us_api_remote_request( $url ) ) {
-			set_transient( $transient, $results, 1800 ); // TODO: move to config
+			set_transient( $transient, $results, 1800 );
 			$update_addons_data = $results;
+			update_option( 'us_addons_version', US_THEMEVERSION );
 		}
 
 		if ( ! empty( $update_addons_data->data ) ) {

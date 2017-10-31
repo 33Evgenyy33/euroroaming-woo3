@@ -14,6 +14,7 @@ class US_Widget_Areas {
 		add_action( 'load-widgets.php', array( &$this, 'load_widgets' ), 5 );
 		add_action( 'widgets_init', array( &$this, 'register_widget_areas' ), 100 );
 		add_action( 'wp_ajax_us_delete_custom_widget_area', array( &$this, 'delete_widget_area' ), 100 );
+		add_action( 'admin_init', array( &$this, 'add_missing_posts' ), 10 );
 	}
 
 	public function load_widgets() {
@@ -54,6 +55,15 @@ class US_Widget_Areas {
 				$this->widget_areas = array_merge( $this->widget_areas, array( $id => $name ) );
 			}
 
+			// New post to represent Widget Area in menu
+			wp_insert_post( array(
+				'post_type' => 'us_widget_area',
+				'post_date' => date( 'Y-m-d H:i', time() - 86400 ),
+				'post_name' => $id,
+				'post_title' => $name,
+				'post_status' => 'publish',
+			) );
+
 			update_option( $this->option_name, $this->widget_areas );
 			wp_redirect( admin_url( 'widgets.php' ) );
 			die();
@@ -68,6 +78,10 @@ class US_Widget_Areas {
 			$this->widget_areas = get_option( $this->option_name );
 
 			if ( ( $id = array_search( $name, $this->widget_areas ) ) !== FALSE ) {
+				$widget_area_post = get_page_by_path( $id, OBJECT, 'us_widget_area' );
+				if ( $widget_area_post ) {
+					wp_delete_post( $widget_area_post->ID );
+				}
 				unset( $this->widget_areas[$id] );
 				update_option( $this->option_name, $this->widget_areas );
 				echo "success";
@@ -126,6 +140,29 @@ class US_Widget_Areas {
 				$args['name'] = $name;
 				$args['id'] = $id;
 				register_sidebar( $args );
+			}
+		}
+	}
+
+	public function add_missing_posts() {
+		global $pagenow;
+		if ( is_admin() AND $pagenow == 'nav-menus.php' ) {
+			if ( empty( $this->widget_areas ) ) {
+				$this->widget_areas = get_option( $this->option_name );
+			}
+
+			if ( is_array( $this->widget_areas ) ) {
+				foreach ( $this->widget_areas as $id => $name ) {
+					if ( get_page_by_path( $id, OBJECT, 'us_widget_area' ) == NULL ) {
+						wp_insert_post( array(
+							'post_type' => 'us_widget_area',
+							'post_date' => date( 'Y-m-d H:i', time() - 86400 ),
+							'post_name' => $id,
+							'post_title' => $name,
+							'post_status' => 'publish',
+						) );
+					}
+				}
 			}
 		}
 	}

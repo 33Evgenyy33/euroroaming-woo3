@@ -44,7 +44,7 @@ if ( $atts['color'] == 'custom' ) {
 		$inner_css .= 'color:' . $atts['text_color'] . ';';
 	}
 }
-$classes .= ' type_' . $atts['color'];
+$classes .= ' color_' . $atts['color'];
 
 if ( ! empty( $atts['el_class'] ) ) {
 	$classes .= ' ' . $atts['el_class'];

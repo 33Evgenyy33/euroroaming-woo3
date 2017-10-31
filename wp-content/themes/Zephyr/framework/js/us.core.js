@@ -189,7 +189,7 @@ jQuery.easing.jswing=jQuery.easing.swing;jQuery.extend(jQuery.easing,{def:"easeO
 					containerWidth = $this.width();
 
 
-					if ($window.width() <= $us.canvasOptions.disableEffectsWidth) {
+					if ($window.width() < $us.canvasOptions.disableEffectsWidth) {
 						disableParallax = true;
 					} else {
 						disableParallax = false;
@@ -737,7 +737,7 @@ jQuery('html').toggleClass('no-touch', !jQuery.isMobile);
 			this.winWidth = parseInt($us.$window.width());
 
 			// Disabling animation on mobile devices
-			$us.$body.toggleClass('disable_effects', (this.winWidth <= this.options.disableEffectsWidth));
+			$us.$body.toggleClass('disable_effects', (this.winWidth < this.options.disableEffectsWidth));
 
 			// Vertical centering of fullscreen sections in IE 11
 			var ieVersion = $us.detectIE();
@@ -1251,7 +1251,7 @@ jQuery('html').toggleClass('no-touch', !jQuery.isMobile);
 		 */
 		resize: function(){
 			if (this.$nav.length == 0) return;
-			var nextType = (window.innerWidth <= this.options.mobileWidth) ? 'mobile' : 'desktop';
+			var nextType = (window.innerWidth < this.options.mobileWidth) ? 'mobile' : 'desktop';
 			if ($us.header.orientation != this.headerOrientation || nextType != this.type) {
 				// Clearing the previous state
 				this.$subLists.resetInlineCSS('display', 'opacity', 'height');
@@ -2747,6 +2747,7 @@ jQuery(function($){
 			this.$headers = this.$sections.children('.w-tabs-section-header');
 			this.$contents = this.$sections.children('.w-tabs-section-content');
 			this.$line_charts = this.$container.find(".vc_line-chart");
+			this.$round_charts = this.$container.find(".vc_round-chart");
 
 			// Class variables
 			this.width = 0;
@@ -2813,6 +2814,7 @@ jQuery(function($){
 				contentChanged: function(){
 					$us.$canvas.trigger('contentChange');
 					this.$line_charts.length&&jQuery.fn.vcLineChart&&this.$line_charts.vcLineChart({reload:!1});// TODO: check if we can do this without hardcoding line charts init here;
+					this.$round_charts.length&&jQuery.fn.vcRoundChart&&this.$round_charts.vcRoundChart({reload:!1});// TODO: check if we can do this without hardcoding line charts init here;
 				}.bind(this)
 			};
 
@@ -2826,11 +2828,6 @@ jQuery(function($){
 
 			$us.$document.on('ready', function(){
 				setTimeout(this._events.resize, 50);
-				setTimeout(function(){
-					if (this.curLayout != 'accordion' || !this.isTogglable) {
-						this.openSection(this.active[0]);
-					}
-				}.bind(this), 100);
 
 				setTimeout(function(){
 				// Open tab on page load by hash
@@ -2844,7 +2841,6 @@ jQuery(function($){
 					}
 				}.bind(this), 150);
 			}.bind(this));
-
 
 			// Support for external links to tabs
 			$.each(this.tabs, function(index){
@@ -2860,6 +2856,8 @@ jQuery(function($){
 					});
 				}
 			}.bind(this));
+
+			this.$container.addClass('initialized');
 		},
 
 		switchLayout: function(to){
@@ -2988,8 +2986,7 @@ jQuery(function($){
 				}, this.options.duration, function(){
 					this.$container.addClass('autoresize');
 				}.bind(this), this.options.easing);
-			}
-			else if (this.curLayout == 'accordion' || this.curLayout == 'ver') {
+			} else if (this.curLayout == 'accordion' || this.curLayout == 'ver') {
 				if (this.contents[this.active[0]] !== undefined) {
 					this.contents[this.active[0]].css('display', 'block').slideUp(this.options.duration);
 				}
@@ -3081,7 +3078,35 @@ jQuery(function($){
 	$(".w-logos.type_carousel").each(function(){
 		$us.getScript($us.templateDirectoryUri+'/framework/js/owl.carousel.min.js', function() {
 			var $list = $(this).find('.w-logos-list'),
-				items = parseInt($list.data('items'));
+				items = parseInt($list.data('items')),
+				breakpoint1_width = 1024,
+				breakpoint1_cols = 3,
+				breakpoint2_width = 768,
+				breakpoint2_cols = 2,
+				breakpoint3_width = 480,
+				breakpoint3_cols = 1,
+				responsive_breakpoints = {};
+
+			if (parseInt($list.data('breakpoint_1_width')) > 0 && parseInt($list.data('breakpoint_1_cols'))) {
+				breakpoint1_width = parseInt($list.data('breakpoint_1_width'));
+				breakpoint1_cols = parseInt($list.data('breakpoint_1_cols'));
+			}
+
+			if (parseInt($list.data('breakpoint_2_width')) > 0 && parseInt($list.data('breakpoint_2_cols'))) {
+				breakpoint2_width = parseInt($list.data('breakpoint_2_width'));
+				breakpoint2_cols = parseInt($list.data('breakpoint_2_cols'));
+			}
+
+			if (parseInt($list.data('breakpoint_3_width')) > 0 && parseInt($list.data('breakpoint_3_cols'))) {
+				breakpoint3_width = parseInt($list.data('breakpoint_3_width'));
+				breakpoint3_cols = parseInt($list.data('breakpoint_3_cols'));
+			}
+
+			responsive_breakpoints[0] = {items: Math.min(items, breakpoint3_cols), autoplay: $list.data('breakpoint_3_autoplay')};
+			responsive_breakpoints[breakpoint3_width] = {items: Math.min(items, breakpoint2_cols), autoplay: $list.data('breakpoint_2_autoplay')};
+			responsive_breakpoints[breakpoint2_width] = {items: Math.min(items, breakpoint1_cols), autoplay: $list.data('breakpoint_1_autoplay')};
+			responsive_breakpoints[breakpoint1_width] = {items: items};
+
 			$list.owlCarousel({
 				items: items,
 				loop: true,
@@ -3093,16 +3118,9 @@ jQuery(function($){
 				autoplayTimeout: $list.data('timeout'),
 				autoplayHoverPause: true,
 				slideBy: $list.data('slideby'),
-				responsive: {
-					0: {items: 1},
-					480: {items: Math.min(items, 2)},
-					768: {items: Math.min(items, 3)},
-					901: {items: Math.min(items, 4)},
-					1279: {items: items}
-				}
+				responsive: responsive_breakpoints
 			});
 		}.bind(this));
-
 
 	});
 });
@@ -3531,7 +3549,7 @@ jQuery(function($){
 
 					if ( ! $item.hasClass('custom-link')) {
 						$anchor.click(function(e){
-							if ($us.$window.width() > $us.canvasOptions.disableEffectsWidth ) {
+							if ($us.$window.width() >= $us.canvasOptions.disableEffectsWidth ) {
 								e.stopPropagation();
 								e.preventDefault();
 
@@ -3542,7 +3560,7 @@ jQuery(function($){
 				}.bind(this));
 
 				$(window).on('resize', function(){
-					if (this.lightboxOpened && $us.$window.width() <= $us.canvasOptions.disableEffectsWidth ) {
+					if (this.lightboxOpened && $us.$window.width() < $us.canvasOptions.disableEffectsWidth ) {
 						this.hideLightbox();
 					}
 				}.bind(this));
@@ -3851,7 +3869,7 @@ jQuery(function($){
 
 									if ( ! $loadedItem.hasClass('custom-link')) {
 										$anchor.click(function(e){
-											if ($us.$window.width() > $us.canvasOptions.disableEffectsWidth ) {
+											if ($us.$window.width() >= $us.canvasOptions.disableEffectsWidth ) {
 												e.stopPropagation();
 												e.preventDefault();
 												this.openLightboxItem(itemUrl, $loadedItem);
@@ -4454,7 +4472,7 @@ jQuery(function($){
 	$('.w-tabs .rev_slider').each(function(){
 		var $slider = $(this);
 		$slider.bind("revolution.slide.onloaded",function (e) {
-			$us.canvas.$container.on('contentChange', function(){
+			$us.$canvas.on('contentChange', function(){
 				$slider.revredraw();
 			});
 		});

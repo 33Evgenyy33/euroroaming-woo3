@@ -211,41 +211,6 @@ function us_exclude_hidden_portfolios_from_prevnext( $where ) {
 	return $where;
 }
 
-add_filter( 'the_password_form', 'us_the_password_form' );
-function us_the_password_form() {
-	$template_vars = array(
-		'type' => 'protectedpost',
-		'action' => get_option( 'siteurl' ) . '/wp-login.php?action=postpass',
-		'method' => 'post',
-		'fields' => array(
-			'info' => array(
-				'type' => 'info',
-				'title' => us_translate( 'This content is password protected. To view it please enter your password below:' ),
-			),
-			'post_password' => array(
-				'type' => 'password',
-			),
-			'submit' => array(
-				'type' => 'submit',
-				'title' => __( 'Submit', 'us' ),
-				'btn_classes' => '',
-			),
-		),
-	);
-
-	return us_get_template( 'templates/form/form', $template_vars );
-}
-
-// Since WP 4.6. Fix previews for post/portfolio thumbs. Overrides _wp_preview_post_thumbnail_filter from wp-includes/revision.php
-add_filter( 'get_post_metadata', 'us_preview_post_thumbnail_filter', 11, 3 );
-function us_preview_post_thumbnail_filter( $value, $post_id, $meta_key ) {
-	if ( '_thumbnail_id' == $meta_key ) {
-		return NULL;
-	}
-
-	return $value;
-}
-
 // Display specific page when Maintenance Mode is enabled in Theme Options
 add_action( 'init', 'us_maintenance_mode' );
 function us_maintenance_mode() {
@@ -313,7 +278,7 @@ function us_display_maintenance_page( ) {
 ?>
 <div class="l-main">
 	<div class="l-main-h i-cf">
-		<main class="l-content" itemprop="mainContentOfPage">
+		<main class="l-content"<?php echo ( us_get_option( 'schema_markup' ) ) ? ' itemprop="mainContentOfPage"' : ''; ?>>
 			<?php
 			do_action( 'us_before_page' );
 

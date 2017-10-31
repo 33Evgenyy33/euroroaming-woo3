@@ -16,19 +16,21 @@ if ( ! empty( $author_url ) ) {
 
 <section class="l-section for_author">
 	<div class="l-section-h i-cf">
-		<div class="w-author" itemscope="itemscope" itemtype="https://schema.org/Person" itemprop="author">
+		<div class="w-author"<?php echo ( us_get_option( 'schema_markup' ) ) ? ' itemscope itemtype="https://schema.org/Person" itemprop="author"' : ''; ?>>
 			<div class="w-author-img">
 				<?php echo $author_avatar ?>
 			</div>
-			<div class="w-author-name" itemprop="name">
+			<div class="w-author-name"<?php echo ( us_get_option( 'schema_markup' ) ) ? ' itemprop="name"' : ''; ?>>
 				<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>"><?php the_author(); ?></a>
 			</div>
-			<div class="w-author-url" itemprop="url">
+			<div class="w-author-url"<?php echo ( us_get_option( 'schema_markup' ) ) ? ' itemprop="url"' : ''; ?>>
 				<?php if ( get_the_author_meta( 'url' ) ) { ?>
 					<a href="<?php echo esc_url( get_the_author_meta( 'url' ) ); ?>"><?php echo esc_url( get_the_author_meta( 'url' ) ); ?></a>
 				<?php } ?>
 			</div>
-			<div class="w-author-desc" itemprop="description"><?php the_author_meta( 'description' ) ?></div>
+			<div class="w-author-desc"<?php echo ( us_get_option( 'schema_markup' ) ) ? ' itemprop="description"' : ''; ?>>
+				<?php the_author_meta( 'description' ) ?>
+			</div>
 		</div>
 	</div>
 </section>

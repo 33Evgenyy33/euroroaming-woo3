@@ -21,15 +21,27 @@ echo '<header class="l-header ' . $us_layout->header_classes();
 if ( isset( $options['bg_img'] ) AND ! empty( $options['bg_img'] ) ) {
 	echo ' with_bgimg';
 }
-echo '" itemscope="itemscope" itemtype="https://schema.org/WPHeader">';
+echo '"';
+if ( us_get_option( 'schema_markup' ) ) {
+	echo ' itemscope itemtype="https://schema.org/WPHeader"';
+}
+echo '>';
 foreach ( array( 'top', 'middle', 'bottom' ) as $valign ) {
-	$show_state_count = 0;
+	$show_state = FALSE;
 	foreach ( array( 'default', 'tablets', 'mobiles' ) as $state ) {
-		if ( ! isset( $us_header_settings[$state]['options'][$valign.'_show'] ) OR $us_header_settings[$state]['options'][$valign.'_show'] == 1 ) {
-			$show_state_count++;
+		if ( ! isset( $us_header_settings[$state]['options'][$valign . '_show'] ) OR $us_header_settings[$state]['options'][$valign . '_show'] == 1 ) {
+			$show_state = TRUE;
+			break;
 		}
 	}
-	if ( $show_state_count == 0 ) {
+	foreach ( array( 'left', 'center', 'right' ) as $halign ) {
+		if ( isset( $us_header_settings['default']['layout'][$valign . '_' . $halign] ) AND count( $us_header_settings['default']['layout'][$valign . '_' . $halign] ) > 0 ) {
+			$show_state = TRUE;
+			break;
+		}
+	}
+
+	if ( ! $show_state ) {
 		continue;
 	}
 	echo '<div class="l-subheader at_' . $valign;

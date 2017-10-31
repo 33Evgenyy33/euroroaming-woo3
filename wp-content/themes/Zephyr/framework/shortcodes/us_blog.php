@@ -18,6 +18,7 @@
  * @param $atts           ['type'] strubg layout type: 'grid' / 'masonry' / 'carousel'
  * @param $atts           ['content_type'] string Content type: 'excerpt' / 'content' / 'none'
  * @param $atts           ['pagination'] string Pagination type: 'none' / 'regular' / 'ajax' / 'infinite'
+ * @param $atts           ['ignore_sticky'] bool Ignore sticky posts
  * @param $atts           ['categories'] string Comma-separated list of categories slugs to filter the posts
  * @param $atts           ['orderby'] string Posts order: 'date' / 'rand'
  * @param $atts           ['show_date'] bool
@@ -65,6 +66,9 @@ $query_args['post_status'] = array_values( $query_args['post_status'] );
 
 if ( ! empty( $atts['categories'] ) ) {
 	$query_args['category_name'] = $atts['categories'];
+}
+if ( ! empty( $atts['ignore_sticky'] ) AND $atts['ignore_sticky'] ) {
+	$query_args['ignore_sticky_posts'] = 1;
 }
 
 // Setting posts order

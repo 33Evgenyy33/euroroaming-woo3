@@ -11,7 +11,7 @@ us_load_template( 'templates/titlebar' );
 <div class="l-main">
 	<div class="l-main-h i-cf">
 
-		<main class="l-content" itemprop="mainContentOfPage">
+		<main class="l-content"<?php echo ( us_get_option( 'schema_markup' ) ) ? ' itemprop="mainContentOfPage"' : ''; ?>>
 
 			<?php do_action( 'us_before_page' ) ?>
 
@@ -66,7 +66,7 @@ us_load_template( 'templates/titlebar' );
 		</main>
 
 		<?php if ( $us_layout->sidebar_pos == 'left' OR $us_layout->sidebar_pos == 'right' ): ?>
-			<aside class="l-sidebar at_<?php echo $us_layout->sidebar_pos . ' ' . us_dynamic_sidebar_id(); ?>" itemscope="itemscope" itemtype="https://schema.org/WPSideBar">
+			<aside class="l-sidebar at_<?php echo $us_layout->sidebar_pos . ' ' . us_dynamic_sidebar_id(); ?>"<?php echo ( us_get_option( 'schema_markup' ) ) ? ' itemscope itemtype="https://schema.org/WPSideBar"' : ''; ?>>
 				<?php
 				// Sidebar for Events Calendar pages
 				$post_type = get_post_type();

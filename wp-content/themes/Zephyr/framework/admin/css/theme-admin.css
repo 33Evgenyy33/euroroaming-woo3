@@ -1,12 +1,17 @@
 
 /* WordPress Admin UI customizing
    ========================================================================== */
-   
+
+/* Show SVG as Featured Image */
+#postimagediv .inside img[width="1"] {
+	width: 254px;
+	}
+
 /* Hide Size option in Media Gallery */
 .gallery-settings .setting.size {
 	display: none;
 	}
-	
+
 /* UpSolution icon for the WP menu item */
 .menu-icon-generic.toplevel_page_us-theme-options .wp-menu-image {
 	background: url(../img/us-logo.png) no-repeat center 6px / 22px auto !important;
@@ -303,7 +308,7 @@
 		transition: background-color 0.3s;
 		}
 	.usof-metabox .usof-switcher > input:checked + label .usof-switcher-box {
-		background-color: #00a0d2;
+		background-color: #0073aa;
 		}
 		.usof-metabox .usof-switcher-box > i {
 			position: absolute;
@@ -361,8 +366,8 @@
 			}
 		.usof-metabox .usof-radio input[type="radio"]:checked + label {
 			box-shadow: 0 2px 5px -3px rgba(0, 0, 0, 0.6) inset;
-			border-color: #00a0d2;
-			background: #00a0d2;
+			border-color: #0073aa;
+			background: #0073aa;
 			color: #fff;
 			cursor: default;
 			}
@@ -436,6 +441,7 @@
 .usof-metabox .usof-color input.usof-color-value {
 	position: relative;
 	font-family: monospace;
+	font-weight: 600;
 	text-align: center;
 	line-height: inherit;
 	padding: 0;
@@ -477,6 +483,9 @@
 .us_wpml_non_default .usof-metabox .usof-form-row.type_color {
 	opacity: 0.33;
 	pointer-events: none;
+	}
+.us_wpml_non_default .usof-metabox .usof-form-row.us_wpml_non_default_hidden {
+	display: none !important;
 	}
 	
 @media (max-width: 782px) {
@@ -1407,7 +1416,7 @@
 	}
 }
 
-/* CUSTOM STYLING FOR VISUAL COMPOSER
+/* CUSTOM STYLING FOR WPBakery Page Builder
    ========================================================================== */
 
 /* Correct order of columns for RTL */
@@ -1550,6 +1559,7 @@
 		}
 	.controls_row .column_move {
 		background: none !important;
+		width: 14px;
 		}
 
 .wpb_row_container > .wpb_vc_column,
@@ -1785,14 +1795,6 @@
 	}
 	
 /* Custom icons for elements */
-#us_portfolio .vc_element-icon,
-.wpb_us_portfolio .vc_element-icon {
-	background-position: 0 -32px;
-	}
-#us_blog .vc_element-icon,
-.wpb_us_blog .vc_element-icon {
-	background-position: 0 -384px;
-	}
 #us_iconbox .vc_element-icon,
 .wpb_us_iconbox .vc_element-icon {
 	background: url(../img/vc_elements.png) 0 0;
@@ -1823,8 +1825,8 @@
 .wpb_us_cform .vc_element-icon {
 	background: url(../img/vc_elements.png) 0 -192px;
 	}
-#us_message .vc_element-icon,
-.wpb_us_message .vc_element-icon {
+#us_blog .vc_element-icon,
+.wpb_us_blog .vc_element-icon {
 	background: url(../img/vc_elements.png) 0 -224px;
 	}
 #us_pricing .vc_element-icon,
@@ -1835,8 +1837,8 @@
 .wpb_us_sharing .vc_element-icon {
 	background: url(../img/vc_elements.png) 0 -288px;
 	}
-#us_progbar .vc_element-icon,
-.wpb_us_progbar .vc_element-icon {
+#us_portfolio .vc_element-icon,
+.wpb_us_portfolio .vc_element-icon {
 	background: url(../img/vc_elements.png) 0 -320px;
 	}
 #us_scroller .vc_element-icon,
@@ -1952,31 +1954,25 @@ div[data-vc-shortcode-param-name="categories"] .vc_checkbox-label {
 	}
 
 /* Improving appearance for Message Box element */
-.wpb_us_message .alert {
-	border: none !important;
-	}
-.wpb_us_message .alert.info,
-.wpb-select option.info {
+.wpb_us_message .alert.blue,
+[data-vc-shortcode="us_message"] .wpb-select option.blue {
 	background-color: #cef;
 	color: #3a648e;
 	}
-.wpb_us_message .alert.attention,
-.wpb-select option.attention {
+.wpb_us_message .alert.yellow,
+[data-vc-shortcode="us_message"] .wpb-select option.yellow {
 	background-color: #fff2b2;
 	color: #846534;
 	}
-.wpb_us_message .alert.success,
-.wpb-select option.success {
+.wpb_us_message .alert.green,
+[data-vc-shortcode="us_message"] .wpb-select option.green {
 	background-color: #c9f7b2;
 	color: #587549;
 	}
-.wpb_us_message .alert.error,
-.wpb-select option.error {
+.wpb_us_message .alert.red,
+[data-vc-shortcode="us_message"] .wpb-select option.red {
 	background-color: #ffd9d9;
 	color: #a24141;
-	}
-.wpb_us_message div.error {
-	margin: 0;
 	}
 	
 /* Fixing appearance of dropdown options */

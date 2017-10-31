@@ -218,7 +218,7 @@ if ( ! $use_special_quote_markup ): ?>
 			<?php endif/*( ! empty( $featured_html ) )*/
 			; ?>
 			<?php if ( $has_preview AND empty( $featured_html ) ): ?>
-				<a href="<?php echo $link; ?>"<?php echo $anchor_atts ?>>
+				<a href="<?php echo $link; ?>"<?php echo $anchor_atts ?> aria-label="<?php the_title(); ?>">
 					<div class="w-blog-post-preview">
 						<?php echo $featured_image; ?>
 						<span class="w-blog-post-preview-icon"<?php echo $preview_icon_style; ?>></span>

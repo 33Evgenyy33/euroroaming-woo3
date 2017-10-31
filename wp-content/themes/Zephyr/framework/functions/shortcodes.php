@@ -62,7 +62,7 @@ class US_Shortcodes {
 		add_filter( 'the_content', array( $this, 'a_to_img_magnific_pupup' ) );
 		add_filter( 'us_footer_the_content', array( $this, 'a_to_img_magnific_pupup' ) );
 
-		// Make sure that priority makes the class init after Visual Composer
+		// Make sure that priority makes the class init after WPBakery Page Builder
 		add_action( 'init', array( $this, 'init' ), 20 );
 
 		$this->_template_directory = $us_template_directory;

@@ -165,7 +165,7 @@ if ( $type == 'carousel' ) {
 }
 
 ?>
-	<div class="w-blog<?php echo $classes; ?>" itemscope="itemscope" itemtype="https://schema.org/Blog"><?php
+	<div class="w-blog<?php echo $classes; ?>"<?php echo ( us_get_option( 'schema_markup' ) ) ? ' itemscope itemtype="https://schema.org/Blog"' : ''; ?>><?php
 echo $filter_html;
 if ( ( $wp_query->max_num_pages > 1 ) AND ( $pagination == 'regular' OR $filter == 'category' ) ) {
 	?>

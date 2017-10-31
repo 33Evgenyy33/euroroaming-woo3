@@ -1,6 +1,6 @@
 <?php
 
-add_action( 'admin_init', 'us_theme_activation' );
+add_action( 'admin_init', 'us_theme_activation', 99 );
 function us_theme_activation() {
 	global $pagenow;
 	if ( is_admin() AND $pagenow == 'themes.php' AND isset( $_GET['activated'] ) ) {
@@ -30,11 +30,14 @@ function us_include_cpt_to_menu() {
 			}
 
 			if ( $hidden_meta_boxes !== FALSE ) {
-				if ( ( $key = array_search( 'add-us_portfolio', $hidden_meta_boxes ) ) !== FALSE AND isset( $hidden_meta_boxes[$key] ) ) {
+				if ( ( $key = array_search( 'add-post-type-us_portfolio', $hidden_meta_boxes ) ) !== FALSE AND isset( $hidden_meta_boxes[$key] ) ) {
 					unset( $hidden_meta_boxes[$key] );
 				}
 				if ( ( $key = array_search( 'add-us_portfolio_category', $hidden_meta_boxes ) ) === FALSE ) {
 					$hidden_meta_boxes[] = 'add-us_portfolio_category';
+				}
+				if ( ( $key = array_search( 'add-post-type-us_widget_area', $hidden_meta_boxes ) ) !== FALSE AND isset( $hidden_meta_boxes[$key] ) ) {
+					unset( $hidden_meta_boxes[$key] );
 				}
 
 				$user = wp_get_current_user();

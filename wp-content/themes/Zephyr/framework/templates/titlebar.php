@@ -133,7 +133,7 @@ if ( ! $show_titlebar ) {
 $show_title = isset( $show_title ) ? $show_title : TRUE;
 if ( $show_title ) {
 	$title = isset( $title ) ? $title : get_the_title();
-	if ( ! isset( $subtitle ) ) {
+	if ( ! isset( $subtitle ) AND usof_meta( 'us_titlebar', array(), $postID ) == 'custom' ) {
 		$subtitle = $postID ? usof_meta( 'us_titlebar_subtitle', array(), $postID ) : '';
 	}
 }
@@ -194,6 +194,12 @@ if ( $bg_parallax == 'vertical' ) {
 
 $classes .= ' size_' . $size . ' color_' . $color_style;
 
+// Generate schema.org markup
+$schema_heading = '';
+if ( us_get_option( 'schema_markup' ) ) {
+	$schema_heading = ' itemprop="headline"';
+}
+
 $output = '<div class="l-titlebar' . $classes . '">';
 if ( ! empty( $bg_image ) ) {
 	$output .= '<div class="l-titlebar-img" style="background-image: url(' . $bg_image . ');' . $bg_img_styles . '"' . $bg_img_atts . '></div>';
@@ -203,7 +209,7 @@ if ( ! empty( $bg_overlay_color ) ) {
 }
 $output .= '<div class="l-titlebar-h"><div class="l-titlebar-content">';
 if ( $show_title ) {
-	$output .= ( $title != '' ) ? '<h1 itemprop="headline">' . $title . '</h1>' : '';
+	$output .= ( $title != '' ) ? '<h1' . $schema_heading . '>' . $title . '</h1>' : '';
 	if ( ! empty( $subtitle ) ) {
 		$output .= '<p>' . $subtitle . '</p>';
 	}

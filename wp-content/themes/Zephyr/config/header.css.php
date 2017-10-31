@@ -7,26 +7,34 @@
  * @action After the template: us_after_template:config/header.css
  */
 
-?>
-
-/* Header Settings
-   ========================================================================== */
-
-<?php
 $tablets_breakpoint = us_get_header_option( 'breakpoint', 'tablets' ) ? intval( us_get_header_option( 'breakpoint', 'tablets' ) ) : 900;
 $mobiles_breakpoint = us_get_header_option( 'breakpoint', 'mobiles' ) ? intval( us_get_header_option( 'breakpoint', 'mobiles' ) ) : 600;
 ?>
-   
+
 /* Default state */
 
 @media (min-width: <?php echo $tablets_breakpoint + 1 ?>px) {
-	
+
 	.hidden_for_default { display: none !important; }
 
 <?php if ( ! us_get_header_option( 'top_show' ) ): ?>
 	.l-subheader.at_top { display: none; }
-<?php endif; ?>
+<?php endif;
+if ( ! us_get_header_option( 'bottom_show' ) ): ?>
+	.l-subheader.at_bottom { display: none; }
+<?php endif;
+if ( us_get_header_option( 'bg_img' ) AND $bg_image = usof_get_image_src( us_get_header_option( 'bg_img' ) ) ): ?>
+	.l-subheader.at_middle {
+		background-image: url(<?php echo $bg_image[0] ?>);
+		background-attachment: <?php echo ( us_get_header_option( 'bg_img_attachment' ) ) ? 'scroll' : 'fixed'; ?>;
+		background-position: <?php echo us_get_header_option( 'bg_img_position' ) ?>;
+		background-repeat: <?php echo us_get_header_option( 'bg_img_repeat' ) ?>;
+		background-size: <?php echo us_get_header_option( 'bg_img_size' ) ?>;
+	}
+<?php endif;
 
+// Horizontal header
+if ( us_get_header_option( 'orientation' ) == 'hor' ) { ?>
 	.header_hor .l-subheader.at_top {
 		line-height: <?php echo us_get_header_option( 'top_height' ) ?>px;
 		height: <?php echo us_get_header_option( 'top_height' ) ?>px;
@@ -50,10 +58,6 @@ $mobiles_breakpoint = us_get_header_option( 'breakpoint', 'mobiles' ) ? intval( 
 		overflow: hidden;
 	<?php endif; ?>
 	}
-
-<?php if ( ! us_get_header_option( 'bottom_show' ) ): ?>
-	.l-subheader.at_bottom { display: none; }
-<?php endif; ?>
 
 	.header_hor .l-subheader.at_bottom {
 		line-height: <?php echo us_get_header_option( 'bottom_height' ) ?>px;
@@ -123,18 +127,46 @@ $mobiles_breakpoint = us_get_header_option( 'breakpoint', 'mobiles' ) ? intval( 
 	.header_hor .sidebar_none .l-header.pos_fixed.sticky + .l-main .l-section.type_sticky:first-child {
 		padding-top: <?php echo $header_sticky_height ?>px;
 	}
-
-<?php if ( us_get_header_option( 'bg_img' ) AND $bg_image = usof_get_image_src( us_get_header_option( 'bg_img' ) ) ): ?>
-	.l-subheader.at_middle {
-		background-image: url(<?php echo $bg_image[0] ?>);
-		background-attachment: <?php echo ( us_get_header_option( 'bg_img_attachment' ) ) ? 'scroll' : 'fixed'; ?>;
-		background-position: <?php echo us_get_header_option( 'bg_img_position' ) ?>;
-		background-repeat: <?php echo us_get_header_option( 'bg_img_repeat' ) ?>;
-		background-size: <?php echo us_get_header_option( 'bg_img_size' ) ?>;
+	
+	/* Initial header position BOTTOM & BELOW */
+	.header_hor.header_inpos_below .l-header.pos_fixed:not(.sticky) {
+		position: absolute;
+		top: 100%;
 	}
-<?php endif; ?>
+	.header_hor.header_inpos_bottom .l-header.pos_fixed:not(.sticky) {
+		position: absolute;
+		bottom: 0;
+	}
+	.header_inpos_below .l-header.pos_fixed ~ .l-main .l-section:first-child,
+	.header_inpos_bottom .l-header.pos_fixed ~ .l-main .l-section:first-child {
+		padding-top: 0 !important;
+	}
+	.header_hor.header_inpos_below .l-header.pos_fixed ~ .l-main .l-section.height_full:nth-child(2) {
+		min-height: 100vh;
+	}
+	.admin-bar.header_hor.header_inpos_below .l-header.pos_fixed ~ .l-main .l-section.height_full:nth-child(2) {
+		min-height: calc(100vh - 32px); /* WP admin bar height */
+	}
+	.header_inpos_bottom .l-header.pos_fixed:not(.sticky) .w-cart-dropdown,
+	.header_inpos_bottom .l-header.pos_fixed:not(.sticky) .w-nav.type_desktop .w-nav-list.level_2 {
+		bottom: 100%;
+		transform-origin: 0 100%;
+	}
+	.header_inpos_bottom .l-header.pos_fixed:not(.sticky) .w-nav.type_mobile .w-nav-list.level_1 {
+		top: auto;
+		bottom: 100%;
+		box-shadow: 0 -3px 3px rgba(0,0,0,0.1);
+	}	
+	.header_inpos_bottom .l-header.pos_fixed:not(.sticky) .w-nav.type_desktop .w-nav-list.level_3,
+	.header_inpos_bottom .l-header.pos_fixed:not(.sticky) .w-nav.type_desktop .w-nav-list.level_4 {
+		top: auto;
+		bottom: 0;
+		transform-origin: 0 100%;
+	}
+<?php }
 
-	/* Calculate layout of Vertical header */
+// Vertical header
+if ( us_get_header_option( 'orientation' ) == 'ver' ) { ?>
 	.header_ver {
 		padding-left: <?php echo us_get_header_option( 'width' ) ?>px;
 		position: relative;
@@ -175,7 +207,8 @@ $mobiles_breakpoint = us_get_header_option( 'breakpoint', 'mobiles' ) ? intval( 
 		width: calc(100vw - <?php echo us_get_header_option( 'width' ) ?>px);
 		max-width: 980px;
 	}
-<?php if ( us_get_header_option( 'elm_align' ) == 'left' ): ?>
+<?php }
+if ( us_get_header_option( 'elm_align' ) == 'left' ): ?>
 	.header_ver .l-subheader-cell {
 		text-align: left;
 		align-items: flex-start;
@@ -199,54 +232,34 @@ if ( us_get_header_option( 'elm_valign' ) == 'bottom' ): ?>
 		align-items: flex-end;
 	}
 <?php endif; ?>
-	
-	/* Initial header position BOTTOM & BELOW */
-	.header_hor.header_inpos_below .l-header.pos_fixed:not(.sticky) {
-		position: absolute;
-		top: 100%;
-	}
-	.header_hor.header_inpos_bottom .l-header.pos_fixed:not(.sticky) {
-		position: absolute;
-		bottom: 0;
-	}
-	.header_inpos_below .l-header.pos_fixed ~ .l-main .l-section:first-child,
-	.header_inpos_bottom .l-header.pos_fixed ~ .l-main .l-section:first-child {
-		padding-top: 0 !important;
-	}
-	.header_hor.header_inpos_below .l-header.pos_fixed ~ .l-main .l-section.height_full:nth-child(2) {
-		min-height: 100vh;
-	}
-	.admin-bar.header_hor.header_inpos_below .l-header.pos_fixed ~ .l-main .l-section.height_full:nth-child(2) {
-		min-height: calc(100vh - 32px); /* WP admin bar height */
-	}
-	.header_inpos_bottom .l-header.pos_fixed:not(.sticky) .w-cart-dropdown,
-	.header_inpos_bottom .l-header.pos_fixed:not(.sticky) .w-nav.type_desktop .w-nav-list.level_2 {
-		bottom: 100%;
-		transform-origin: 0 100%;
-	}
-	.header_inpos_bottom .l-header.pos_fixed:not(.sticky) .w-nav.type_mobile .w-nav-list.level_1 {
-		top: auto;
-		bottom: 100%;
-		box-shadow: 0 -3px 3px rgba(0,0,0,0.1);
-	}	
-	.header_inpos_bottom .l-header.pos_fixed:not(.sticky) .w-nav.type_desktop .w-nav-list.level_3,
-	.header_inpos_bottom .l-header.pos_fixed:not(.sticky) .w-nav.type_desktop .w-nav-list.level_4 {
-		top: auto;
-		bottom: 0;
-		transform-origin: 0 100%;
-	}
 }
+
+
 
 /* Tablets state */
 
 @media (min-width: <?php echo $mobiles_breakpoint + 1 ?>px) and (max-width: <?php echo $tablets_breakpoint ?>px) {
-	
+
 	.hidden_for_tablets { display: none !important; }
 
 <?php if ( ! us_get_header_option( 'top_show', 'tablets' ) ): ?>
 	.l-subheader.at_top { display: none; }
-<?php endif; ?>
+<?php endif;
+if ( ! us_get_header_option( 'bottom_show', 'tablets' ) ): ?>
+	.l-subheader.at_bottom { display: none; }
+<?php endif;
+if ( us_get_header_option( 'bg_img', 'tablets' ) AND $bg_image = usof_get_image_src( us_get_header_option( 'bg_img', 'tablets' ) ) ): ?>
+	.l-subheader.at_middle {
+		background-image: url(<?php echo $bg_image[0] ?>);
+		background-attachment: <?php echo ( us_get_header_option( 'bg_img_attachment', 'tablets' ) ) ? 'scroll' : 'fixed'; ?>;
+		background-position: <?php echo us_get_header_option( 'bg_img_position', 'tablets' ) ?>;
+		background-repeat: <?php echo us_get_header_option( 'bg_img_repeat', 'tablets' ) ?>;
+		background-size: <?php echo us_get_header_option( 'bg_img_size', 'tablets' ) ?>;
+	}
+<?php endif;
 
+// Horizontal header on Tablets
+if ( us_get_header_option( 'orientation', 'tablets' ) == 'hor' ) { ?>
 	.header_hor .l-subheader.at_top {
 		line-height: <?php echo us_get_header_option( 'top_height', 'tablets' ) ?>px;
 		height: <?php echo us_get_header_option( 'top_height', 'tablets' ) ?>px;
@@ -270,10 +283,6 @@ if ( us_get_header_option( 'elm_valign' ) == 'bottom' ): ?>
 		overflow: hidden;
 	<?php endif; ?>
 	}
-
-<?php if ( ! us_get_header_option( 'bottom_show', 'tablets' ) ): ?>
-	.l-subheader.at_bottom { display: none; }
-<?php endif; ?>
 
 	.header_hor .l-subheader.at_bottom {
 		line-height: <?php echo us_get_header_option( 'bottom_height', 'tablets' ) ?>px;
@@ -320,17 +329,10 @@ if ( us_get_header_option( 'elm_valign' ) == 'bottom' ): ?>
 	.header_hor .sidebar_none .l-header.pos_fixed.sticky + .l-main .l-section.type_sticky:first-child {
 		padding-top: <?php echo $header_sticky_height ?>px;
 	}
+<?php }
 
-<?php if ( us_get_header_option( 'bg_img', 'tablets' ) AND $bg_image = usof_get_image_src( us_get_header_option( 'bg_img', 'tablets' ) ) ): ?>
-	.l-subheader.at_middle {
-		background-image: url(<?php echo $bg_image[0] ?>);
-		background-attachment: <?php echo ( us_get_header_option( 'bg_img_attachment', 'tablets' ) ) ? 'scroll' : 'fixed'; ?>;
-		background-position: <?php echo us_get_header_option( 'bg_img_position', 'tablets' ) ?>;
-		background-repeat: <?php echo us_get_header_option( 'bg_img_repeat', 'tablets' ) ?>;
-		background-size: <?php echo us_get_header_option( 'bg_img_size', 'tablets' ) ?>;
-	}
-<?php endif; ?>
-
+// Vertical header on Tablets
+if ( us_get_header_option( 'orientation', 'tablets' ) == 'ver' ): ?>
 	.header_ver .l-header {
 		width: <?php echo us_get_header_option( 'width', 'tablets' ) ?>px;
 	}
@@ -338,7 +340,27 @@ if ( us_get_header_option( 'elm_valign' ) == 'bottom' ): ?>
 	.header_ver .w-search.layout_modern.active {
 		width: <?php echo us_get_header_option( 'width', 'tablets' ) - 40 ?>px;
 	}
-<?php if ( us_get_header_option( 'elm_align', 'tablets' ) == 'left' ): ?>
+
+	/* Slided vertical header */
+	.header_ver .w-header-show,
+	.header_ver .w-header-overlay {
+		display: block;
+	}
+	.header_ver .l-header {
+		bottom: 0;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+		box-shadow: none;
+		transition: transform 0.3s;
+		-webkit-transform: translate3d(-100%,0,0);
+		transform: translate3d(-100%,0,0);
+	}
+	.header_ver.header-show .l-header {
+		-webkit-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+	}
+<?php endif;
+if ( us_get_header_option( 'elm_align', 'tablets' ) == 'left' ): ?>
 	.header_ver .l-subheader-cell {
 		text-align: left;
 		align-items: flex-start;
@@ -352,16 +374,32 @@ if ( us_get_header_option( 'elm_align', 'tablets' ) == 'right' ): ?>
 <?php endif; ?>
 }
 
+
+
 /* Mobiles state */
 
 @media (max-width: <?php echo $mobiles_breakpoint ?>px) {
-	
+
 	.hidden_for_mobiles { display: none !important; }
 
 <?php if ( ! us_get_header_option( 'top_show', 'mobiles' ) ): ?>
 	.l-subheader.at_top { display: none; }
-<?php endif; ?>
+<?php endif;
+if ( ! us_get_header_option( 'bottom_show', 'mobiles' ) ): ?>
+	.l-subheader.at_bottom { display: none; }
+<?php endif;
+if ( us_get_header_option( 'bg_img', 'mobiles' ) AND $bg_image = usof_get_image_src( us_get_header_option( 'bg_img', 'mobiles' ) ) ): ?>
+	.l-subheader.at_middle {
+		background-image: url(<?php echo $bg_image[0] ?>);
+		background-attachment: <?php echo ( us_get_header_option( 'bg_img_attachment', 'mobiles' ) ) ? 'scroll' : 'fixed'; ?>;
+		background-position: <?php echo us_get_header_option( 'bg_img_position', 'mobiles' ) ?>;
+		background-repeat: <?php echo us_get_header_option( 'bg_img_repeat', 'mobiles' ) ?>;
+		background-size: <?php echo us_get_header_option( 'bg_img_size', 'mobiles' ) ?>;
+	}
+<?php endif;
 
+// Horizontal header on Mobiles
+if ( us_get_header_option( 'orientation', 'mobiles' ) == 'hor' ) { ?>
 	.header_hor .l-subheader.at_top {
 		line-height: <?php echo us_get_header_option( 'top_height', 'mobiles' ) ?>px;
 		height: <?php echo us_get_header_option( 'top_height', 'mobiles' ) ?>px;
@@ -385,10 +423,6 @@ if ( us_get_header_option( 'elm_align', 'tablets' ) == 'right' ): ?>
 		overflow: hidden;
 	<?php endif; ?>
 	}
-
-<?php if ( ! us_get_header_option( 'bottom_show', 'mobiles' ) ): ?>
-	.l-subheader.at_bottom { display: none; }
-<?php endif; ?>
 
 	.header_hor .l-subheader.at_bottom {
 		line-height: <?php echo us_get_header_option( 'bottom_height', 'mobiles' ) ?>px;
@@ -435,17 +469,10 @@ if ( us_get_header_option( 'elm_align', 'tablets' ) == 'right' ): ?>
 	.header_hor .sidebar_none .l-header.pos_fixed.sticky + .l-main .l-section.type_sticky:first-child {
 		padding-top: <?php echo $header_sticky_height ?>px;
 	}
+<?php }
 
-<?php if ( us_get_header_option( 'bg_img', 'mobiles' ) AND $bg_image = usof_get_image_src( us_get_header_option( 'bg_img', 'mobiles' ) ) ): ?>
-	.l-subheader.at_middle {
-		background-image: url(<?php echo $bg_image[0] ?>);
-		background-attachment: <?php echo ( us_get_header_option( 'bg_img_attachment', 'mobiles' ) ) ? 'scroll' : 'fixed'; ?>;
-		background-position: <?php echo us_get_header_option( 'bg_img_position', 'mobiles' ) ?>;
-		background-repeat: <?php echo us_get_header_option( 'bg_img_repeat', 'mobiles' ) ?>;
-		background-size: <?php echo us_get_header_option( 'bg_img_size', 'mobiles' ) ?>;
-	}
-<?php endif; ?>
-
+// Vertical header on Mobiles
+if ( us_get_header_option( 'orientation', 'mobiles' ) == 'ver' ): ?>
 	.header_ver .l-header {
 		width: <?php echo us_get_header_option( 'width', 'mobiles' ) ?>px;
 	}
@@ -453,22 +480,8 @@ if ( us_get_header_option( 'elm_align', 'tablets' ) == 'right' ): ?>
 	.header_ver .w-search.layout_modern.active {
 		width: <?php echo us_get_header_option( 'width', 'mobiles' ) - 40 ?>px;
 	}
-<?php if ( us_get_header_option( 'elm_align', 'mobiles' ) == 'left' ): ?>
-	.header_ver .l-subheader-cell {
-		text-align: left;
-		align-items: flex-start;
-	}
-<?php endif;
-if ( us_get_header_option( 'elm_align', 'mobiles' ) == 'right' ): ?>
-	.header_ver .l-subheader-cell {
-		text-align: right;
-		align-items: flex-end;
-	}
-<?php endif; ?>
-}
 
-/* Slided version of vertical header */
-@media (max-width: <?php echo $tablets_breakpoint ?>px) {
+	/* Slided vertical header */
 	.header_ver .w-header-show,
 	.header_ver .w-header-overlay {
 		display: block;
@@ -486,10 +499,22 @@ if ( us_get_header_option( 'elm_align', 'mobiles' ) == 'right' ): ?>
 		-webkit-transform: translate3d(0,0,0);
 		transform: translate3d(0,0,0);
 	}
+<?php endif;
+if ( us_get_header_option( 'elm_align', 'mobiles' ) == 'left' ): ?>
+	.header_ver .l-subheader-cell {
+		text-align: left;
+		align-items: flex-start;
+	}
+<?php endif;
+if ( us_get_header_option( 'elm_align', 'mobiles' ) == 'right' ): ?>
+	.header_ver .l-subheader-cell {
+		text-align: right;
+		align-items: flex-end;
+	}
+<?php endif; ?>
 }
 
-/* Header Elements Settings
-   ========================================================================== */
+
 
 /* Image */
 
@@ -507,6 +532,8 @@ if ( us_get_header_option( 'elm_align', 'mobiles' ) == 'right' ): ?>
 	.l-header.sticky .<?php echo $class ?> { height: <?php echo $param['height_sticky_mobiles'] ?>px; }
 }
 <?php endforeach; ?>
+
+
 
 /* Text */
 
@@ -527,6 +554,8 @@ if ( us_get_header_option( 'elm_align', 'mobiles' ) == 'right' ): ?>
 <?php endif; ?>
 
 <?php endforeach; ?>
+
+
 
 /* Button */
 
@@ -550,6 +579,8 @@ if ( us_get_header_option( 'elm_align', 'mobiles' ) == 'right' ): ?>
 }
 <?php endforeach; ?>
 
+
+
 /* Menu */
 
 <?php foreach ( us_get_header_elms_of_a_type( 'menu' ) as $class => $param ): ?>
@@ -562,15 +593,15 @@ if ( us_get_header_option( 'elm_align', 'mobiles' ) == 'right' ): ?>
 .<?php echo $class ?>.type_desktop .btn.menu-item.level_1 > .w-nav-anchor {
 	margin: <?php echo $param['indents']/4 ?>px;
 }
-.<?php echo $class ?>.type_desktop .w-nav-list.level_1 > .menu-item > a {
-	font-size: <?php echo $param['font_size'] ?>px;
-}
 <?php if ( $param['dropdown_arrow'] ): ?>
 .<?php echo $class ?>.type_desktop .menu-item-has-children .w-nav-anchor.level_1 > .w-nav-arrow {
 	display: inline-block;
 }
 <?php endif; ?>
-.<?php echo $class ?>.type_desktop .w-nav-anchor:not(.level_1) {
+.<?php echo $class ?>.type_desktop .w-nav-list > .menu-item.level_1 {
+	font-size: <?php echo $param['font_size'] ?>px;
+}
+.<?php echo $class ?>.type_desktop .w-nav-list > .menu-item:not(.level_1) {
 	font-size: <?php echo $param['dropdown_font_size'] ?>px;
 }
 <?php if ( $param['dropdown_width'] ): ?>
@@ -584,13 +615,18 @@ if ( us_get_header_option( 'elm_align', 'mobiles' ) == 'right' ): ?>
 .<?php echo $class ?>.type_mobile .w-nav-anchor:not(.level_1) {
 	font-size: <?php echo $param['mobile_dropdown_font_size'] ?>px;
 }
-/* Hide Mobile Menu items on page loading */
-@media screen and (max-width: <?php echo $param['mobile_width'] ?>px) {
-	.header_hor .w-nav-list.hide_for_mobiles {
+/* Show mobile menu instead of desktop */
+@media screen and (max-width: <?php echo $param['mobile_width'] - 1 ?>px) {
+	.header_hor .<?php echo $class ?> .w-nav-list {
 		display: none;
+	}
+	.header_hor .<?php echo $class ?> .w-nav-control {
+		display: block;
 	}
 }
 <?php endforeach; ?>
+
+
 
 /* Links Menu */
 
@@ -639,6 +675,8 @@ if ( us_get_header_option( 'elm_align', 'mobiles' ) == 'right' ): ?>
 }
 <?php endforeach; ?>
 
+
+
 /* Search */
 
 <?php foreach ( us_get_header_elms_of_a_type( 'search' ) as $class => $param ): ?>
@@ -659,6 +697,8 @@ if ( us_get_header_option( 'elm_align', 'mobiles' ) == 'right' ): ?>
 	}
 }
 <?php endforeach; ?>
+
+
 
 /* Socials */
 
@@ -686,6 +726,8 @@ if ( us_get_header_option( 'elm_align', 'mobiles' ) == 'right' ): ?>
 }
 <?php endforeach; ?>
 
+
+
 /* Dropdown */
 
 <?php foreach ( us_get_header_elms_of_a_type( 'dropdown' ) as $class => $param ): ?>
@@ -706,6 +748,8 @@ if ( us_get_header_option( 'elm_align', 'mobiles' ) == 'right' ): ?>
 }
 <?php endforeach; ?>
 
+
+
 /* Cart */
 
 <?php foreach ( us_get_header_elms_of_a_type( 'cart' ) as $class => $param ): ?>
@@ -725,6 +769,8 @@ if ( us_get_header_option( 'elm_align', 'mobiles' ) == 'right' ): ?>
 	}
 }
 <?php endforeach; ?>
+
+
 
 /* Design Options */
 

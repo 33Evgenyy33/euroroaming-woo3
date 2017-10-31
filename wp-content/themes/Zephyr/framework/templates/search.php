@@ -31,7 +31,7 @@ $default_search_sidebar_id = us_get_option( 'search_sidebar_id', 'default_sideba
 	<div class="l-main">
 		<div class="l-main-h i-cf">
 
-			<main class="l-content" itemprop="mainContentOfPage">
+			<main class="l-content"<?php echo ( us_get_option( 'schema_markup' ) ) ? ' itemprop="mainContentOfPage"' : ''; ?>>
 				<section class="l-section">
 					<div class="l-section-h i-cf">
 
@@ -46,7 +46,7 @@ $default_search_sidebar_id = us_get_option( 'search_sidebar_id', 'default_sideba
 			</main>
 
 			<?php if ( $us_layout->sidebar_pos == 'left' OR $us_layout->sidebar_pos == 'right' ): ?>
-				<aside class="l-sidebar at_<?php echo $us_layout->sidebar_pos . ' ' . us_dynamic_sidebar_id( $default_search_sidebar_id ); ?>" itemscope="itemscope" itemtype="https://schema.org/WPSideBar">
+				<aside class="l-sidebar at_<?php echo $us_layout->sidebar_pos . ' ' . us_dynamic_sidebar_id( $default_search_sidebar_id ); ?>"<?php echo ( us_get_option( 'schema_markup' ) ) ? ' itemscope itemtype="https://schema.org/WPSideBar"' : ''; ?>>
 					<?php us_dynamic_sidebar( $default_search_sidebar_id ); ?>
 				</aside>
 			<?php endif; ?>

@@ -8,6 +8,7 @@
  */
 
 global $us_template_directory_uri;
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
 $prefixes = array( 'heading', 'body', 'menu' );
 $font_families = array();
@@ -35,9 +36,8 @@ foreach ( $prefixes as $prefix ) {
 
 ?>
 
-/* Font Awesome icons font
+/* CSS paths need to be absolute
    =============================================================================================================================== */
-   
 @font-face {
 	font-family: 'FontAwesome';
 	src: url('<?php echo $us_template_directory_uri ?>/framework/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'),
@@ -45,11 +45,46 @@ foreach ( $prefixes as $prefix ) {
 	font-weight: normal;
 	font-style: normal;
 	}
+.style_phone6-1 > div {
+	background-image: url(<?php echo $us_template_directory_uri ?>/framework/img/phone-6-black-real.png);
+	}
+.style_phone6-2 > div {
+	background-image: url(<?php echo $us_template_directory_uri ?>/framework/img/phone-6-white-real.png);
+	}
+.style_phone6-3 > div {
+	background-image: url(<?php echo $us_template_directory_uri ?>/framework/img/phone-6-black-flat.png);
+	}
+.style_phone6-4 > div {
+	background-image: url(<?php echo $us_template_directory_uri ?>/framework/img/phone-6-white-flat.png);
+	}
+<?php if ( is_plugin_active( 'woocommerce/woocommerce.php' ) ) { ?>
+.wc-credit-card-form-card-number.visa {
+	background-image: url(<?php echo WP_PLUGIN_URL ?>/woocommerce/assets/images/icons/credit-cards/visa.svg);
+	}
+.wc-credit-card-form-card-number.mastercard {
+	background-image: url(<?php echo WP_PLUGIN_URL ?>/woocommerce/assets/images/icons/credit-cards/mastercard.svg);
+	}
+.wc-credit-card-form-card-number.discover {
+	background-image: url(<?php echo WP_PLUGIN_URL ?>/woocommerce/assets/images/icons/credit-cards/discover.svg);
+	}
+.wc-credit-card-form-card-number.amex {
+	background-image: url(<?php echo WP_PLUGIN_URL ?>/woocommerce/assets/images/icons/credit-cards/amex.svg);
+	}
+.wc-credit-card-form-card-number.maestro {
+	background-image: url(<?php echo WP_PLUGIN_URL ?>/woocommerce/assets/images/icons/credit-cards/maestro.svg);
+	}
+.wc-credit-card-form-card-number.jcb {
+	background-image: url(<?php echo WP_PLUGIN_URL ?>/woocommerce/assets/images/icons/credit-cards/jcb.svg);
+	}
+.wc-credit-card-form-card-number.dinersclub {
+	background-image: url(<?php echo WP_PLUGIN_URL ?>/woocommerce/assets/images/icons/credit-cards/diners.svg);
+	}
+<?php } ?>
 
 /* Typography
    ========================================================================== */
-
-html {
+html,
+.w-nav .widget {
 	<?php echo $font_families['body'] ?>
 	font-size: <?php echo us_get_option( 'body_fontsize' ) ?>px;
 	line-height: <?php echo us_get_option( 'body_lineheight' ) ?>px;
@@ -75,7 +110,7 @@ h1, h2, h3, h4, h5, h6,
 h1 {
 	font-size: <?php echo us_get_option( 'h1_fontsize' ) ?>px;
 	font-weight: <?php echo us_get_option( 'h1_fontweight' ) ?>;
-	letter-spacing: <?php echo us_get_option( 'h1_letterspacing' ) ?>px;
+	letter-spacing: <?php echo us_get_option( 'h1_letterspacing' ) ?>em;
 	<?php if ( is_array( us_get_option( 'h1_transform' ) ) AND in_array( 'italic', us_get_option( 'h1_transform' ) ) ): ?>
 	font-style: italic;
 	<?php endif; if ( is_array( us_get_option( 'h1_transform' ) ) AND in_array( 'uppercase', us_get_option( 'h1_transform' ) ) ): ?>
@@ -85,7 +120,7 @@ h1 {
 h2 {
 	font-size: <?php echo us_get_option( 'h2_fontsize' ) ?>px;
 	font-weight: <?php echo us_get_option( 'h2_fontweight' ) ?>;
-	letter-spacing: <?php echo us_get_option( 'h2_letterspacing' ) ?>px;
+	letter-spacing: <?php echo us_get_option( 'h2_letterspacing' ) ?>em;
 	<?php if ( is_array( us_get_option( 'h2_transform' ) ) AND in_array( 'italic', us_get_option( 'h2_transform' ) ) ): ?>
 	font-style: italic;
 	<?php endif; if ( is_array( us_get_option( 'h2_transform' ) ) AND in_array( 'uppercase', us_get_option( 'h2_transform' ) ) ): ?>
@@ -95,7 +130,7 @@ h2 {
 h3 {
 	font-size: <?php echo us_get_option( 'h3_fontsize' ) ?>px;
 	font-weight: <?php echo us_get_option( 'h3_fontweight' ) ?>;
-	letter-spacing: <?php echo us_get_option( 'h3_letterspacing' ) ?>px;
+	letter-spacing: <?php echo us_get_option( 'h3_letterspacing' ) ?>em;
 	<?php if ( is_array( us_get_option( 'h3_transform' ) ) AND in_array( 'italic', us_get_option( 'h3_transform' ) ) ): ?>
 	font-style: italic;
 	<?php endif; if ( is_array( us_get_option( 'h3_transform' ) ) AND in_array( 'uppercase', us_get_option( 'h3_transform' ) ) ): ?>
@@ -111,7 +146,7 @@ h4,
 .woocommerce .cross-sells > h2 {
 	font-size: <?php echo us_get_option( 'h4_fontsize' ) ?>px;
 	font-weight: <?php echo us_get_option( 'h4_fontweight' ) ?>;
-	letter-spacing: <?php echo us_get_option( 'h4_letterspacing' ) ?>px;
+	letter-spacing: <?php echo us_get_option( 'h4_letterspacing' ) ?>em;
 	<?php if ( is_array( us_get_option( 'h4_transform' ) ) AND in_array( 'italic', us_get_option( 'h4_transform' ) ) ): ?>
 	font-style: italic;
 	<?php endif; if ( is_array( us_get_option( 'h4_transform' ) ) AND in_array( 'uppercase', us_get_option( 'h4_transform' ) ) ): ?>
@@ -121,7 +156,7 @@ h4,
 h5 {
 	font-size: <?php echo us_get_option( 'h5_fontsize' ) ?>px;
 	font-weight: <?php echo us_get_option( 'h5_fontweight' ) ?>;
-	letter-spacing: <?php echo us_get_option( 'h5_letterspacing' ) ?>px;
+	letter-spacing: <?php echo us_get_option( 'h5_letterspacing' ) ?>em;
 	<?php if ( is_array( us_get_option( 'h5_transform' ) ) AND in_array( 'italic', us_get_option( 'h5_transform' ) ) ): ?>
 	font-style: italic;
 	<?php endif; if ( is_array( us_get_option( 'h5_transform' ) ) AND in_array( 'uppercase', us_get_option( 'h5_transform' ) ) ): ?>
@@ -131,7 +166,7 @@ h5 {
 h6 {
 	font-size: <?php echo us_get_option( 'h6_fontsize' ) ?>px;
 	font-weight: <?php echo us_get_option( 'h6_fontweight' ) ?>;
-	letter-spacing: <?php echo us_get_option( 'h6_letterspacing' ) ?>px;
+	letter-spacing: <?php echo us_get_option( 'h6_letterspacing' ) ?>em;
 	<?php if ( is_array( us_get_option( 'h6_transform' ) ) AND in_array( 'italic', us_get_option( 'h6_transform' ) ) ): ?>
 	font-style: italic;
 	<?php endif; if ( is_array( us_get_option( 'h6_transform' ) ) AND in_array( 'uppercase', us_get_option( 'h6_transform' ) ) ): ?>
@@ -189,7 +224,15 @@ h6.vc_custom_heading {
 
 /* Layout
    =============================================================================================================================== */
-
+<?php if ( us_get_option( 'body_bg_image' ) AND $body_bg_image = usof_get_image_src( us_get_option( 'body_bg_image' ) ) ): ?>
+body {
+	background-image: url(<?php echo $body_bg_image[0] ?>);
+	background-attachment: <?php echo ( us_get_option( 'body_bg_image_attachment' ) ) ? 'scroll' : 'fixed'; ?>;
+	background-position: <?php echo us_get_option( 'body_bg_image_position' ) ?>;
+	background-repeat: <?php echo us_get_option( 'body_bg_image_repeat' ) ?>;
+	background-size: <?php echo us_get_option( 'body_bg_image_size' ) ?>;
+}
+<?php endif; ?>
 body,
 .header_hor .l-header.pos_fixed {
 	min-width: <?php echo us_get_option( 'site_canvas_width' ) ?>px;
@@ -229,8 +272,9 @@ body,
 	}
 	
 /* Columns Stacking Width */
-@media (max-width: <?php echo us_get_option( 'columns_stacking_width' ) ?>px) {
+@media (max-width: <?php echo us_get_option( 'columns_stacking_width' ) - 1 ?>px) {
 .g-cols > div:not([class*=" vc_col-"]) {
+	clear: both;
 	float: none;
 	width: 100%;
 	margin: 0 0 2rem;
@@ -244,13 +288,6 @@ body,
 .align_center_xs,
 .align_center_xs .w-socials {
 	text-align: center;
-	}
-}
-
-/* Effects Disabling Width */
-@media (max-width: <?php echo us_get_option( 'disable_effects_width' ) ?>px) {
-.l-section-video video {
-	display: none;
 	}
 }
 
@@ -329,6 +366,7 @@ body,
 
 body {
 	background-color: <?php echo us_get_option( 'color_body_bg' ) ?>;
+	-webkit-tap-highlight-color: <?php echo us_hex2rgba( us_get_option( 'color_content_primary' ), 0.2 ) ?>;
 	}
 
 /*************************** HEADER ***************************/
@@ -345,7 +383,6 @@ body {
 	color: <?php echo us_get_option( 'color_header_top_text' ) ?>;
 	}
 .no-touch .l-subheader.at_top a:hover,
-.no-touch .l-subheader.at_top .w-cart-quantity,
 .no-touch .l-header.bg_transparent .l-subheader.at_top .w-dropdown.active a:hover {
 	color: <?php echo us_get_option( 'color_header_top_text_hover' ) ?>;
 	}
@@ -363,7 +400,6 @@ body {
 	color: <?php echo us_get_option( 'color_header_middle_text' ) ?>;
 	}
 .no-touch .l-subheader.at_middle a:hover,
-.no-touch .l-subheader.at_middle .w-cart-quantity,
 .no-touch .l-header.bg_transparent .l-subheader.at_middle .w-dropdown.active a:hover {
 	color: <?php echo us_get_option( 'color_header_middle_text_hover' ) ?>;
 	}
@@ -380,7 +416,6 @@ body {
 	color: <?php echo us_get_option( 'color_header_bottom_text' ) ?>;
 	}
 .no-touch .l-subheader.at_bottom a:hover,
-.no-touch .l-subheader.at_bottom .w-cart-quantity,
 .no-touch .l-header.bg_transparent .l-subheader.at_bottom .w-dropdown.active a:hover {
 	color: <?php echo us_get_option( 'color_header_bottom_text_hover' ) ?>;
 	}
@@ -459,6 +494,7 @@ body {
 	}
 
 /* Header Button */
+.w-cart-quantity,
 .btn.w-menu-item,
 .btn.menu-item.level_1 > a,
 .l-footer .vc_wp_custommenu.layout_hor .btn > a {
@@ -488,7 +524,6 @@ body.us_iframe,
 .us-woo-shop_modern .product-h,
 .no-touch .us-woo-shop_modern .product-meta,
 .woocommerce #payment .payment_box,
-.widget_layered_nav ul li.chosen,
 .wpcf7-form-control-wrap.type_select:after {
 	background-color: <?php echo us_get_option( 'color_content_bg' ) ?>;
 	}
@@ -532,22 +567,19 @@ a.w-btn.color_contrast.style_raised,
 .w-testimonials.style_1 .w-testimonial-h,
 .widget_calendar #calendar_wrap,
 .no-touch .l-main .widget_nav_menu a:hover,
+.select2-selection__choice,
 .woocommerce .login,
 .woocommerce .track_order,
 .woocommerce .checkout_coupon,
 .woocommerce .lost_reset_password,
 .woocommerce .register,
 .no-touch .us-woo-shop_modern .product-h .button:hover,
-.woocommerce .variations_form,
-.woocommerce .variations_form .variations td.value:after,
 .woocommerce .comment-respond,
-.woocommerce .stars span a:after,
 .woocommerce .cart_totals,
 .no-touch .woocommerce .product-remove a:hover,
 .woocommerce .checkout #order_review,
 .woocommerce ul.order_details,
 .widget_shopping_cart,
-.widget_layered_nav ul,
 .smile-icon-timeline-wrap .timeline-wrapper .timeline-block,
 .smile-icon-timeline-wrap .timeline-feature-item.feat-item {
 	background-color: <?php echo us_get_option( 'color_content_bg_alt' ) ?>;
@@ -589,14 +621,13 @@ select,
 .woocommerce .upsells,
 .woocommerce .cross-sells,
 .woocommerce ul.order_details li,
-.select2-selection--single,
+.select2-selection,
 .smile-icon-timeline-wrap .timeline-line {
 	border-color: <?php echo us_get_option( 'color_content_border' ) ?>;
 	}
 .w-iconbox.style_default.color_light .w-iconbox-icon,
 .w-separator,
-.pagination .page-numbers,
-.woocommerce .star-rating:before {
+.pagination .page-numbers {
 	color: <?php echo us_get_option( 'color_content_border' ) ?>;
 	}
 button.w-btn.color_light.style_raised,
@@ -733,8 +764,8 @@ textarea:focus,
 .woocommerce .quantity.buttons_added input.qty:focus,
 .validate-required.woocommerce-validated input:focus,
 .validate-required.woocommerce-invalid input:focus,
-.woocommerce .button.loading:before,
-.woocommerce .button.loading:after,
+.us-woo-shop_modern .button.loading:before,
+.us-woo-shop_modern .button.loading:after,
 .woocommerce .form-row .chosen-search input[type="text"]:focus,
 .woocommerce-tabs .tabs li.active {
 	border-color: <?php echo us_get_option( 'color_content_primary' ) ?>;
@@ -757,8 +788,9 @@ a.w-btn.color_secondary.style_flat,
 .no-touch .w-iconbox-link:hover .w-iconbox-title,
 .no-touch .w-sharing.type_simple.color_secondary .w-sharing-item:hover .w-sharing-icon,
 .w-separator.color_secondary,
-.woocommerce .star-rating span:before,
-.woocommerce .stars span a:after {
+.no-touch .woocommerce .stars:hover a,
+.no-touch .woocommerce .stars a:hover,
+.woocommerce .star-rating span:before {
 	color: <?php echo us_get_option( 'color_content_secondary' ) ?>;
 	}
 .l-section.color_secondary,
@@ -796,8 +828,7 @@ a.w-btn.color_light.style_flat,
 .l-main .g-tags,
 .l-main .w-testimonial-author-role,
 .l-main .widget_tag_cloud,
-.l-main .widget_product_tag_cloud,
-.woocommerce .stars span:after {
+.l-main .widget_product_tag_cloud {
 	color: <?php echo us_get_option( 'color_content_faded' ) ?>;
 	}
 .w-btn.style_flat .ripple,
@@ -913,48 +944,44 @@ a.w-btn.color_light.style_flat,
 
 /* Menu Dropdown Settings
    =============================================================================================================================== */
-   
 <?php
+global $wpdb;
+$wpdb_query = 'SELECT `id` FROM `' . $wpdb->posts . '` WHERE `post_type` = "nav_menu_item"';
 $menu_items = array();
-foreach ( get_terms( array( 'taxonomy' => 'nav_menu', 'hide_empty' => TRUE ) ) as $menu_obj ) {
-	$menu_items = array_merge(
-		$menu_items,
-		wp_get_nav_menu_items( $menu_obj->term_id, array( 'post_status' => 'any' ) )
-	);
+foreach ( $wpdb->get_results( $wpdb_query ) as $result ) {
+	$menu_items[] = $result->id;
 }
-?>
-
-<?php foreach ($menu_items as $menu_item): ?>
-	<?php $settings = ( get_post_meta( $menu_item->ID, 'us_mega_menu_settings', TRUE ) ) ? get_post_meta( $menu_item->ID, 'us_mega_menu_settings', TRUE ) : array(); ?>
-	<?php if (empty($settings)) continue; ?>
+foreach ($menu_items as $menu_item_id):
+	$settings = ( get_post_meta( $menu_item_id, 'us_mega_menu_settings', TRUE ) ) ? get_post_meta( $menu_item_id, 'us_mega_menu_settings', TRUE ) : array();
+	if ( empty($settings) ) continue; ?>
 
 <?php if ( $settings['columns'] != '1' AND $settings['width'] == 'full' ): ?>
-.header_hor .w-nav.type_desktop .menu-item-<?php echo $menu_item->ID; ?> {
+.header_hor .w-nav.type_desktop .menu-item-<?php echo $menu_item_id; ?> {
 	position: static;
 }
-.header_hor .w-nav.type_desktop .menu-item-<?php echo $menu_item->ID; ?> .w-nav-list.level_2 {
+.header_hor .w-nav.type_desktop .menu-item-<?php echo $menu_item_id; ?> .w-nav-list.level_2 {
 	left: 0;
 	right: 0;
 	width: 100%;
 	transform-origin: 50% 0;
 }
-.header_inpos_bottom .l-header.pos_fixed:not(.sticky) .w-nav.type_desktop .menu-item-<?php echo $menu_item->ID; ?> .w-nav-list.level_2 {
+.header_inpos_bottom .l-header.pos_fixed:not(.sticky) .w-nav.type_desktop .menu-item-<?php echo $menu_item_id; ?> .w-nav-list.level_2 {
 	transform-origin: 50% 100%;
 }
 <?php endif; ?>
 
 <?php if ( $settings['direction'] == 1 AND ( $settings['columns'] == '1' OR ( $settings['columns'] != '1' AND $settings['width'] == 'custom' ) ) ): ?>
-.header_hor:not(.rtl) .w-nav.type_desktop .menu-item-<?php echo $menu_item->ID; ?> .w-nav-list.level_2 {
+.header_hor:not(.rtl) .w-nav.type_desktop .menu-item-<?php echo $menu_item_id; ?> .w-nav-list.level_2 {
 	right: 0;
 	transform-origin: 100% 0;
 }
-.header_hor.rtl .w-nav.type_desktop .menu-item-<?php echo $menu_item->ID; ?> .w-nav-list.level_2 {
+.header_hor.rtl .w-nav.type_desktop .menu-item-<?php echo $menu_item_id; ?> .w-nav-list.level_2 {
 	left: 0;
 	transform-origin: 0 0;
 	}
 <?php endif; ?>
 
-.w-nav.type_desktop .menu-item-<?php echo $menu_item->ID; ?> .w-nav-list.level_2 {
+.w-nav.type_desktop .menu-item-<?php echo $menu_item_id; ?> .w-nav-list.level_2 {
 	padding: <?php echo $settings['padding']; ?>px;
 	background-size: <?php echo $settings['bg_image_size']; ?>;
 	background-repeat: <?php echo $settings['bg_image_repeat']; ?>;

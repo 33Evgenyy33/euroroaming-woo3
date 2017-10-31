@@ -48,7 +48,7 @@ if ( ! empty( $title ) ) {
 	<div class="w-form-row-field">
 		<?php do_action( 'us_form_captcha_start', $vars ) ?>
 		<input type="hidden" name="<?php echo $name ?>_hash" value="<?php echo $result_hash ?>" />
-		<input type="text" name="<?php echo esc_attr( $name ) ?>" id="<?php echo $id ?>" value="<?php echo esc_attr( $value ) ?>"
+		<input type="text" aria-label="<?php echo esc_attr( $name ) ?>" name="<?php echo esc_attr( $name ) ?>" id="<?php echo $id ?>" value="<?php echo esc_attr( $value ) ?>"
 			   data-required="1" placeholder="<?php echo esc_attr( $placeholder ) ?>" aria-required="true" />
 		<span class="w-form-row-field-bar"></span>
 		<?php do_action( 'us_form_captcha_end', $vars ) ?>

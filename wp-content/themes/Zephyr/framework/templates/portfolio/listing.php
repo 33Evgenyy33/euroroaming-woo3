@@ -94,6 +94,14 @@ $query_args = array(
 	'post_status' => 'publish',
 );
 
+// Exclude the current page from listing
+if ( is_singular( 'us_portfolio' ) ) {
+	$current_ID = get_the_ID();
+	if ( ! empty( $current_ID ) ) {
+		$query_args['post__not_in'] = array( $current_ID );
+	}
+}
+
 // Show only items from the certain categories
 $categories = ( isset( $categories ) AND ! empty( $categories ) ) ? array_filter( explode( ',', $categories ) ) : array();
 if ( ! empty( $categories ) ) {
@@ -249,13 +257,15 @@ $filter_html = '';
 $filter = isset( $filter ) ? $filter : 'none';
 if ( $filter == 'category' AND $type != 'carousel' ) {
 	// $categories_names already contains only the used categories
-	ksort( $categories_names );
 	if ( count( $categories_names ) > 1 ) {
 		$classes .= ' with_filters';
 		$filter_html .= '<div class="g-filters ' . $filter_style . '"><div class="g-filters-list">';
 		$filter_html .= '<div class="g-filters-item active" data-category="*"><span>' . __( 'All', 'us' ) . '</span></div>';
-		foreach ( $categories_names as $category_slug => $category_name ) {
-			$filter_html .= '<div class="g-filters-item" data-category="' . $category_slug . '"><span>' . $category_name . '</span></div>';
+		$all_categories = get_terms( array( 'taxonomy' => 'us_portfolio_category' ) );
+		foreach ( $all_categories as $category ) {
+			if ( isset( $categories_names[$category->slug] ) ) {
+				$filter_html .= '<div class="g-filters-item" data-category="' . $category->slug . '"><span>' . $category->name . '</span></div>';
+			}
 		}
 		$filter_html .= '</div></div>';
 	}

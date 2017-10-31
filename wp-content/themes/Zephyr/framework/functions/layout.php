@@ -232,36 +232,6 @@ class US_Layout {
 	}
 
 	/**
-	 * Obtain inner styles for .l-body
-	 *
-	 * @param boolean $with_attr
-	 *
-	 * @return string
-	 */
-	public function body_styles( $with_attr = TRUE ) {
-		$styles = array();
-
-		$bg_image_value = us_get_option( 'body_bg_image' );
-		if ( $bg_image_value AND ( $bg_image = usof_get_image_src( $bg_image_value ) ) ) {
-			$styles['background-image'] = 'url(' . $bg_image[0] . ')';
-			$styles['background-repeat'] = us_get_option( 'body_bg_image_repeat', 'repeat' );
-			$styles['background-position'] = us_get_option( 'body_bg_image_position', 'top center' );
-			$styles['background-attachment'] = ( us_get_option( 'body_bg_image_attachment', 1 ) ) ? 'scroll' : 'fixed';
-			$styles['background-size'] = us_get_option( 'body_bg_image_size', 'cover' );
-		}
-
-		$result = '';
-		foreach ( $styles as $prop => $value ) {
-			$result .= $prop . ': ' . $value . ';';
-		}
-		if ( $with_attr AND ! empty( $result ) ) {
-			$result = ' style="' . $result . '"';
-		}
-
-		return $result;
-	}
-
-	/**
 	 * Obtain CSS classes for .l-canvas
 	 *
 	 * @return string

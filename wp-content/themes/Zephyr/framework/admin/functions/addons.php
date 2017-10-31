@@ -34,7 +34,7 @@ if ( ( ! get_option( 'us_dismiss_addons_activate_notice' ) ) AND ( isset( $insta
 function us_js_composer_install_admin_notice() {
 	?>
 	<div class="notice notice-warning us-addons-notice for-installing is-dismissible">
-		<p><?php echo sprintf( __( 'This theme recommends to use %s plugin.', 'us' ), '<strong><a href="' . admin_url( 'admin.php?page=us-addons' ) .'">Visual Composer</a></strong>' ); ?></p>
+		<p><?php echo sprintf( __( 'This theme recommends to use %s plugin.', 'us' ), '<strong><a href="' . admin_url( 'admin.php?page=us-addons' ) .'">WPBakery Page Builder</a></strong>' ); ?></p>
 	</div>
 	<?php
 }
@@ -42,7 +42,7 @@ function us_js_composer_install_admin_notice() {
 function us_js_composer_activate_admin_notice() {
 	?>
 	<div class="notice notice-warning us-addons-notice for-activating is-dismissible">
-		<p><?php echo sprintf( __( 'This theme recommends to use %s plugin.', 'us' ), '<strong><a href="' . admin_url( 'admin.php?page=us-addons' ) .'">Visual Composer</a></strong>' ); ?></p>
+		<p><?php echo sprintf( __( 'This theme recommends to use %s plugin.', 'us' ), '<strong><a href="' . admin_url( 'admin.php?page=us-addons' ) .'">WPBakery Page Builder</a></strong>' ); ?></p>
 	</div>
 	<?php
 }

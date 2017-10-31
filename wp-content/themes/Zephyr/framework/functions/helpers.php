@@ -160,14 +160,16 @@ $us_wp_queries = array();
  * (!) Don't forget to close it!
  */
 function us_open_wp_query_context() {
-	array_unshift( $GLOBALS['us_wp_queries'], $GLOBALS['wp_query'] );
+	if ( is_array( $GLOBALS ) AND isset( $GLOBALS['wp_query'] )  ) {
+		array_unshift( $GLOBALS['us_wp_queries'], $GLOBALS['wp_query'] );
+	}
 }
 
 /**
  * Closes last context with a custom
  */
 function us_close_wp_query_context() {
-	if ( count( $GLOBALS['us_wp_queries'] ) > 0 ) {
+	if ( isset( $GLOBALS['us_wp_queries'] ) AND count( $GLOBALS['us_wp_queries'] ) > 0 ) {
 		$GLOBALS['wp_query'] = array_shift( $GLOBALS['us_wp_queries'] );
 		wp_reset_postdata();
 	} else {
@@ -328,7 +330,7 @@ function us_vc_build_link( $value ) {
 	if ( function_exists( 'vc_build_link' ) ) {
 		$result = vc_build_link( $value );
 	} else {
-		$result = array( 'url' => '', 'title' => '', 'target' => '' );
+		$result = array( 'url' => '', 'title' => '', 'target' => '', 'rel' => '' );
 		$params_pairs = explode( '|', $value );
 		if ( ! empty( $params_pairs ) ) {
 			foreach ( $params_pairs as $pair ) {
@@ -643,8 +645,8 @@ function us_minify_css( $css ) {
 	// Remove comments
 	$css = preg_replace( '!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $css );
 
-	// Remove space before opening bracket
-	$css = str_replace( ' {', '{', $css );
+	// Remove space around opening bracket
+	$css = str_replace( array( ' {', '{ ' ), '{', $css );
 
 	// Remove space after colons
 	$css = str_replace( ': ', ':', $css );
@@ -657,7 +659,7 @@ function us_minify_css( $css ) {
 	$css = str_replace( array( "\r\n", "\r", "\n", "\t", '  ', '    ', '    ' ), '', $css );
 
 	// Remove semicolon before closing bracket
-	$css = str_replace( ';}', '}', $css );
+	$css = str_replace( array( ';}', '; }' ), '}', $css );
 
 	return $css;
 }
@@ -741,4 +743,44 @@ function us_get_preloader_numeric_types() {
 	} else {
 		return array();
 	}
+}
+
+function us_hex2rgba( $color, $opacity = FALSE ) {
+
+	$default = 'rgb(0,0,0)';
+
+	//Return default if no color provided
+	if ( empty( $color ) ) {
+		return $default;
+	}
+
+	//Sanitize $color if "#" is provided
+	if ( $color[0] == '#' ) {
+		$color = substr( $color, 1 );
+	}
+
+	//Check if color has 6 or 3 characters and get values
+	if ( strlen( $color ) == 6 ) {
+		$hex = array( $color[0] . $color[1], $color[2] . $color[3], $color[4] . $color[5] );
+	} elseif ( strlen( $color ) == 3 ) {
+		$hex = array( $color[0] . $color[0], $color[1] . $color[1], $color[2] . $color[2] );
+	} else {
+		return $default;
+	}
+
+	//Convert hexadec to rgb
+	$rgb = array_map( 'hexdec', $hex );
+
+	//Check if opacity is set(rgba or rgb)
+	if ( $opacity ) {
+		if ( abs( $opacity ) > 1 ) {
+			$opacity = 1.0;
+		}
+		$output = 'rgba(' . implode( ",", $rgb ) . ',' . $opacity . ')';
+	} else {
+		$output = 'rgb(' . implode( ",", $rgb ) . ')';
+	}
+
+	//Return rgb(a) color string
+	return $output;
 }

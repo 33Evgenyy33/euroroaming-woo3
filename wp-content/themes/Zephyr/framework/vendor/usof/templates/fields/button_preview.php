@@ -31,33 +31,13 @@ foreach ( $prefixes as $prefix ) {
 	}
 }
 
-$style = '
-box-shadow:0 0 0 2px ' . us_get_option( 'color_content_primary' ) . ' inset;
-background-color:' . us_get_option( 'color_content_primary' ) . ';
-color:' . us_get_option( 'color_content_primary' ) . ';
-font-size: ' . us_get_option( 'button_fontsize' ) . 'px;
-font-weight: ' . us_get_option( 'button_fontweight' ) . ';
-line-height: ' . us_get_option( 'button_height' ) . ';
-padding: 0 ' . us_get_option( 'button_width' ) . 'em;
-border-radius: ' . us_get_option( 'button_border_radius' ) . 'em;
-letter-spacing: ' . us_get_option( 'button_letterspacing' ) . 'px;
-box-shadow: 0  ' . us_get_option( 'button_shadow' ) / 2 . 'em ' . us_get_option( 'button_shadow' ) . 'em rgba(0,0,0,0.18);
-';
-if ( in_array( 'italic', us_get_option( 'button_text_style' ) ) ) {
-	$style .= ' font-style: italic;';
-}
-if ( in_array( 'uppercase', us_get_option( 'button_text_style' ) ) ) {
-	$style .= ' text-transform: uppercase;';
-}
-$style .= $font_families[us_get_option( 'button_font' )];
-
 $output = '<div class="usof-button-preview hov_' . us_get_option( 'button_hover' ) . '">';
-$output .= '<div class="usof-button-example style_solid" style="' . $style . '">';
+$output .= '<div class="usof-button-example style_solid">';
 $output .= '<div class="usof-button-example-before"></div>';
 $output .= '<span>' . __( 'Button Example', 'us' ) . '</span>';
 $output .= '</div>';
-$output .= '<div class="usof-button-example style_outlined" style="' . $style . '">';
-$output .= '<div class="usof-button-example-before" style="background-color:' . us_get_option( 'color_content_primary' ) . '"></div>';
+$output .= '<div class="usof-button-example style_outlined">';
+$output .= '<div class="usof-button-example-before"></div>';
 $output .= '<span>' . __( 'Button Example', 'us' ) . '</span>';
 $output .= '</div>';
 $output .= '</div>';

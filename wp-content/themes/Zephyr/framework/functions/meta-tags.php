@@ -19,7 +19,7 @@ function us_output_meta_tags() {
 	}
 
 	// Open Graph meta tags when needed
-	if ( is_singular() AND isset( $GLOBALS['post'] ) ) {
+	if ( us_get_option( 'og_enabled' ) AND is_singular() AND isset( $GLOBALS['post'] ) ) {
 		if ( ! isset( $us_meta_tags['og:title'] ) ) {
 			$us_meta_tags['og:title'] = get_the_title();
 		}
@@ -29,10 +29,16 @@ function us_output_meta_tags() {
 		if ( ! isset( $us_meta_tags['og:url'] ) ) {
 			$us_meta_tags['og:url'] = site_url( $_SERVER['REQUEST_URI'] );
 		}
-		if ( ! isset( $us_meta_tags['og:image'] ) AND ( $the_post_thumbnail_id = get_post_thumbnail_id() ) ) {
-			$the_post_thumbnail_src = wp_get_attachment_image_src( $the_post_thumbnail_id, 'medium' );
-			if ( $the_post_thumbnail_src ) {
+		if ( ! isset( $us_meta_tags['og:image'] ) ) {
+			if  ( $the_post_thumbnail_id = get_post_thumbnail_id() AND $the_post_thumbnail_src = wp_get_attachment_image_src( $the_post_thumbnail_id, 'large' ) ) {
 				$us_meta_tags['og:image'] = $the_post_thumbnail_src[0];
+			} else {
+				$post = get_post();
+				$the_content = $post->post_content;
+				$the_content = apply_filters( 'the_content', $the_content );
+				if ( preg_match('/<img [^>]*src=["|\']([^"|\']+)/i', $the_content, $matches) ) {
+					$us_meta_tags['og:image'] = $matches[1];
+				}
 			}
 		}
 		if ( ! isset( $us_meta_tags['og:description'] ) AND has_excerpt() AND ( $the_excerpt = get_the_excerpt() ) ) {
