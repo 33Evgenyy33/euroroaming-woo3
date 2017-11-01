@@ -6,10 +6,6 @@ Author:	UpSolution
 Theme URI: http://zephyr.us-themes.com/
 Author URI: http://us-themes.com/
 */
-.w-img-h img {
-    max-height: 70px
-}
-
 @media screen and (max-width: 640px) {
     table {
         display: block;
@@ -28,6 +24,10 @@ Author URI: http://us-themes.com/
 
 .woocommerce .form-row .required {
     color: #f60000
+}
+ul.products h2.woocommerce-loop-product__title {
+    text-transform: uppercase;
+    font-size: 17px;
 }
 
 tr.cart-subtotal {
@@ -99,6 +99,45 @@ a.g-breadcrumbs-item {
 
 span.woocommerce-Price-amount.amount {
     color: #838b08
+}
+
+header.woocommerce-products-header {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .05), 0 1px 3px 0 rgba(0, 0, 0, .27);
+}
+
+header.woocommerce-products-header .store_additional_services {
+    margin: 0 auto;
+    position: relative;
+    text-align: center
+}
+
+.store_additional_services a.w-btn {
+    line-height: 1.1;
+    padding: 7px 17px 7px 17px;
+    background-color: #fff;
+    color: #175cac
+}
+
+div.product_cat-sim-karty button.single_add_to_cart_button.button.alt.intro {
+    margin-right: 7px
+}
+
+.woocommerce .store_additional_services button.single_add_to_cart_button {
+    line-height: 1.3;
+    padding: 7px 17px 7px 17px;
+    margin-top: 0
+}
+
+.woocommerce .store_additional_services .store_additional_services_btn {
+    background-color: #175cac !important;
+    color: #fff !important
+}
+
+h3#shop-plastic-price {
+    margin-bottom: 7px
 }
 
 .single-product, body.single-product .l-main {
@@ -341,10 +380,6 @@ h2.w-blog-post-title {
     font-weight: 500
 }
 
-.widget {
-    margin-bottom: 35px
-}
-
 .widgettitle {
     margin: 0 0 1rem
 }
@@ -386,7 +421,7 @@ div#text-2 {
 
 .widgettitle {
     font-weight: 700;
-    color: #1d5485
+    color: #132b3f
 }
 
 .acatw-term-list {
@@ -438,8 +473,7 @@ div#text-2 {
     box-shadow: none
 }
 
-.singl
-e-post section.l-section.for_related {
+.single-post section.l-section.for_related {
     background-color: #f5f5f5
 }
 
@@ -450,11 +484,6 @@ e-post section.l-section.for_related {
 .single-post .l-content section:not(:first-child) {
     padding-right: 30px;
     padding-left: 30px
-}
-
-.l-sidebar {
-    margin-top: 80px;
-    padding: 7px
 }
 
 .blog .l-content, .archive .l-content {
@@ -544,13 +573,17 @@ ul.gw-go-body li .gw-go-body-cell {
     box-shadow: 0 3px 7px rgba(0, 0, 0, .2);
     box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
     -webkit-transition: box-shadow .1s ease-in-out;
-    transition: box-shadow .1s ease-in-out
+    transition: box-shadow .1s ease-in-out;
+    transition: 500ms ease-out;
 }
 
 .wpsl-page-ta-simcard:hover {
     background-color: #fff;
     box-shadow: 0 14px 25px rgba(0, 0, 0, .16);
-    box-shadow: 0 3px 8px -2px rgba(0, 0, 0, .2), 0 3px 14px 0 rgba(0, 0, 0, .14), 0 3px 13px 0 rgba(0, 0, 0, .12)
+    box-shadow: 0 3px 8px -2px rgba(0, 0, 0, .2), 0 3px 14px 0 rgba(0, 0, 0, .14), 0 3px 13px 0 rgba(0, 0, 0, .12);
+    box-shadow: 0 32px 62px -9px rgba(0, 0, 0, 0.12);
+    margin-top: -15px;
+    transition: 500ms ease-out;
 }
 
 div#wpsl-base-gmap_0 {
@@ -697,8 +730,7 @@ table.wpsl-opening-hours {
     box-shadow: 0 3px 12px 0 rgba(50, 50, 50, .47)
 }
 
-#affwp-affiliate-dashboard #affwp-affiliate-dashboard-tab
-s li {
+#affwp-affiliate-dashboard #affwp-affiliate-dashboard-tabs li {
     display: inline-block;
     float: left;
     margin: 0;
@@ -966,10 +998,6 @@ time.w-blog-post-meta-date.date.updated.hidden {
     display: inline-block !important
 }
 
-
-
-
-
 [tooltip]:before {
     font-size: 14px;
     position: absolute;
@@ -1070,11 +1098,28 @@ time.w-blog-post-meta-date.date.updated.hidden {
     background: #00c9eb url(https://euroroaming.ru/wp-content/uploads/2016/12/telegram.svg) center no-repeat
 }
 
-.dialog h2 {
-    font-size: 2em;
-    font-weight: 300 !important;
+.dialog .fab-dialog-title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+.fab-dialog-title.dialog-viber-icon {
+    color: #7d3daf;
+}
+.fab-dialog-title.dialog-whatsapp-icon {
+    color: #00b45c;
+}
+.fab-dialog-title.dialog-skype-icon {
+    color: #0bbff2;
+}
+.fab-dialog-title.dialog-telegram-icon{
+    color: #00c9eb;
+}
+
+#dialog__h2 {
+    font-size: 1.7em;
+    font-weight: 300;
     margin: 0;
-    padding: 0 0 1em
+    padding: 0 0 27px;
 }
 
 .dialog__content .w-btn-wrapper a {
@@ -1223,8 +1268,7 @@ time.w-blog-post-meta-date.date.updated.hidden {
     padding: 0
 }
 
-.men
-u > ul > li a {
+.menu > ul > li a {
     display: block;
     padding: 1em 1em;
     text-decoration: none
@@ -1721,31 +1765,57 @@ li.menu-dropdown-icon {
 }
 
 div#gform_wrapper_5 {
+    position: relative;
     max-width: 700px;
     margin: 0 auto;
-    margin-bottom: 20px
+    border-radius: .66em;
+    background-color: #5d82f9;
+    color: #fff
+}
+
+div#gform_wrapper_5 a#gf_5 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background-position: 50% 50%;
+    opacity: .3;
+    background: url(https://euroroaming.ru/wp-content/uploads/2017/02/bg.jpg);
+    background-size: cover !important
 }
 
 form#gform_5 {
-    text-align: center;
-    background-image: url(https://euroroaming.ru/wp-content/uploads/2016/10/img-0-min.png);
-    background-repeat: no-repeat;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, .1), 0 3px 8px rgba(0, 0, 0, .1);
-    background-color: #fff;
-    background-size: contain
+    position: relative;
+    text-align: center
+}
+
+ul#gform_fields_5 label.gfield_label {
+    display: none
+}
+
+label#label_5_4_1 a,
+label#label_5_4_1{
+    color: #fff
+}
+
+input#gform_submit_button_5 {
+    background: #f57c01
 }
 
 #gform_5 h3.gform_title {
-    font-weight: 500;
-    padding-top: 10px
+    color: #fff;
+    font-weight: 300 !important;
+    padding-top: 10px !important
+}
+
+#gform_5 .gform_footer.top_label {
+    background: none !important
 }
 
 #gform_5 label.gfield_label {
     font-weight: 400
-}
-
-#gform_5 .gform_footer.top_label {
-    background: #fec947
 }
 
 #popmake-51651 ul#gform_fields_5 {
@@ -1760,7 +1830,8 @@ form#gform_5 {
 }
 
 #gform_5 .ginput_container input {
-    background: rgba(242, 242, 242, .52) !important
+    background: rgba(255, 255, 255, .81) !important;
+    color: #000 !important
 }
 
 .buy-btn {
@@ -1793,11 +1864,12 @@ form#order_review {
 }
 
 .fancybox-container div#callback_request {
+    position: relative;
     max-width: 703px !important;
     width: 77%;
     background-color: rgba(255, 255, 255, 0);
     background-size: contain;
-    pa dding: 0
+    padding: 0
 }
 
 .fancybox-container h3.gform_title {
@@ -1830,11 +1902,6 @@ label.gfield_label {
     box-shadow: none !important
 }
 
-.gform_footer.top_label {
-    background: #fec947;
-    text-align: center
-}
-
 input#gform_submit_button_7 {
     background: #1875d1;
     color: #fff
@@ -1865,6 +1932,12 @@ div#gform_wrapper_5 label.gfield_label {
 
 #gform_wrapper_5 .gfield_description.validation_message {
     padding-top: 0;
+    font-weight: 400;
+    color: #ff9090
+}
+
+form#gform_5 .instruction.validation_message {
+    color: #ff9090;
     font-weight: 400
 }
 
@@ -1886,17 +1959,6 @@ div#gform_wrapper_5 label.gfield_label {
 
 .woocommerce .stock {
     color: #cc5f29
-}
-
-.sabai-entity-bundle-name-questions .l-section-h.i-cf {
-    padding: 0;
-    margin-top: 170px
-}
-
-.sabai-entity-bundle-name-questions p#breadcrumbs {
-    position: relative;
-    top: 150px;
-    z-index: 1
 }
 
 .ginput_container.ginput_container_checkbox {
@@ -1957,3 +2019,223 @@ ul#gform_fields_5 #field_5_4 label.gfield_label {
         font-size: 45px
     }
 }
+
+a.button.product_type_simple.add_to_cart_button, a.button.product_type_variable.add_to_cart_button {
+    display: none
+}
+
+.fab.js-fab.is-expanded {
+    z-index: 9999999999
+}
+
+.fab {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: fixed !important;
+    right: 14px;
+    bottom: 10px;
+    z-index: 9999999999999999999;
+}
+
+.fab__button {
+    width: 47px;
+    height: 47px;
+    border-radius: 50%;
+    will-change: transform
+}
+
+.fab__button--primary {
+    width: 56px;
+    height: 56px;
+    margin-top: 6px;
+    background-image: -webkit-linear-gradient(315deg, #f57c00 0, #f6682f 60%, #fc4275 100%);
+    background-image: linear-gradient(135deg, #f57c00 0, #f6682f 60%, #fc4275 100%);
+    background-size: 12rem 12rem;
+    background-position: -3rem -3rem;
+    position: relative;
+    -webkit-transition: background-position .4s, -webkit-transform .16s;
+    transition: background-position .4s, -webkit-transform .16s;
+    transition: background-position .4s, transform .16s;
+    transition: background-position .4s, transform .16s, -webkit-transform .16s;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .16), 0 6px 7px rgba(0, 0, 0, .1)
+}
+
+.fab__button--primary:active {
+    -webkit-transform: scale(.85);
+    transform: scale(.85)
+}
+
+.fab__button--primary:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 .9rem .3rem rgba(252, 66, 117, .3);
+    opacity: 0;
+    -webkit-transition: opacity .4s;
+    transition: opacity .4s;
+    will-change: opacity
+}
+
+.fab__button--primary:hover {
+    background-position: -5rem -5rem
+}
+
+.fab__button--primary:hover:before {
+    opacity: 1
+}
+
+.fab__button--primary__icon {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    top: 32px;
+    left: 32px;
+    margin: -32px 0 0 -31px;
+    position: absolute;
+    transition: all .2s cubic-bezier(.4, 0, .2, 1);
+    transform: rotate(0deg);
+    background: url(https://euroroaming.ru/wp-content/uploads/2016/12/ic_send_white_24px.svg) center no-repeat;
+    background-size: 24px
+}
+
+.fab__button--primary__icon:before {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg)
+}
+
+.fab__button--secondary {
+    display: inline-block;
+    background-color: #fff;
+    margin: 6px 0;
+    box-shadow: 0 0 .6rem #e2e8ed;
+    position: relative;
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transform: translateY(25%);
+    transform: translateY(25%);
+    -webkit-transition: opacity .24s, -webkit-transform .4s cubic-bezier(.23, 1, .32, 1);
+    transition: opacity .24s, -webkit-transform .4s cubic-bezier(.23, 1, .32, 1);
+    transition: opacity .24s, transform .4s cubic-bezier(.23, 1, .32, 1);
+    transition: opacity .24s, transform .4s cubic-bezier(.23, 1, .32, 1), -webkit-transform .4s cubic-bezier(.23, 1, .32, 1)
+}
+
+.fab__button--secondary:nth-child(3) {
+    -webkit-transition-delay: 60ms;
+    transition-delay: 60ms
+}
+
+.fab__button--secondary:nth-child(4) {
+    -webkit-transition-delay: .12s;
+    transition-delay: .12s
+}
+
+.fab__button--secondary:nth-child(5) {
+    -webkit-transition-delay: .16s;
+    transition-delay: .16s
+}
+
+.fab__button--secondary:nth-child(6) {
+    -webkit-transition-delay: .2s;
+    transition-delay: .2s
+}
+
+.fab__button--secondary svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%)
+}
+
+.fab__button--secondary:before {
+    content: attr(data-label);
+    display: inline-block;
+    position: absolute;
+    padding: .3rem .7rem;
+    border-radius: .5rem;
+    top: 50%;
+    left: -1.3rem;
+    -webkit-transform: translateX(-100%) translateY(-25%) rotateX(-25deg);
+    transform: translateX(-100%) translateY(-25%) rotateX(-25deg);
+    background-color: #fff;
+    box-shadow: 0 0 1rem #e2e8ed;
+    font-family: Open Sans, sans-serif;
+    color: #5f646b;
+    pointer-events: none;
+    opacity: 0;
+    -webkit-transition: opacity .33s, -webkit-transform .33s;
+    transition: opacity .33s, -webkit-transform .33s;
+    transition: transform .33s, opacity .33s;
+    transition: transform .33s, opacity .33s, -webkit-transform .33s;
+    font-size: 14px;
+    font-weight: 400
+}
+
+.fab__button--secondary:hover:before {
+    opacity: 1;
+    -webkit-transform: translateX(-100%) translateY(-50%);
+    transform: translateX(-100%) translateY(-50%)
+}
+
+.fab.is-expanded .fab__button--primary {
+    -webkit-transform: scale(.9);
+    transform: scale(.9)
+}
+
+.fab.is-expanded .fab__button--primary:active {
+    -webkit-transform: scale(.8);
+    transform: scale(.8)
+}
+
+.fab.is-expanded .fab__button--primary__icon {
+    transform: rotate(316deg);
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAQAAAD9CzEMAAAAbElEQVR4Ae3XwQnFQAiE4eVVsGAP1mkPFjwvQvYSWCQYCYGZv4Dv5MGB5ghcIiDQI+kCftCzNsAR8y5gYu2rwCBAgMBTgEC3rek2yQEtAZoDjso8AyaKexmIDJUZD40AAQIE0gwx449GgMC9/t0b7GTsa7J+AAAAAElFTkSuQmCC)
+}
+
+.fab.is-expanded .fab__button--secondary {
+    opacity: 1;
+    pointer-events: auto;
+    -webkit-transform: none;
+    transform: none
+}
+
+button.fab__button--secondary:hover {
+    box-shadow: 0 0 .6rem #e2e8ed !important
+}
+
+span.sku_wrapper {
+    display: none;
+}
+
+#breadcrumbs {
+    text-align: center;
+    padding: 30px 0 0 0;
+    margin-bottom: 0;
+}
+
+.single-wpsl_stores section.l-section.for_sharing {
+    margin-top: 30px;
+}
+
+.single-wpsl_stores section.l-section.for_comments,
+.single-wpsl_stores .w-sharing.type_solid{
+    display: none;
+}
+
+/*.l-section-h.i-cf {*/
+/*padding-top: 12px;*/
+/*}*/
+
+/*i.fa.fa-chevron-right {*/
+/*color: #599bd1 !important;*/
+/*}*/
