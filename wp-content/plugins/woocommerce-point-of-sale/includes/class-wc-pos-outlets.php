@@ -77,7 +77,7 @@ class WC_Pos_Outlets{
 				unset($filds['first_name']);
 				unset($filds['last_name']);
 				unset($filds['company']);
-				$c[''] = __('Select a country…', 'wc_point_of_sale');
+				$c[''] = __('Выберите страну…', 'wc_point_of_sale');
 				$filds['country']['options'] = array_merge ($c, $countries->get_allowed_countries() );
 				$filds['country']['type'] = 'select';
 
@@ -368,22 +368,22 @@ class WC_Pos_Outlets{
 	?>	
 			<?php if(!$ajax) : ?>
 					<div class="col-wrap">
-						<p><?php echo _e( 'Outlets for your store can be managed here. Outlets can be added using the form below. To edit an outlet, simply hover over the outlet and click on Edit.', 'wc_point_of_sale' ); ?></p>
+<!--						<p>--><?php //echo _e( 'Outlets for your store can be managed here. Outlets can be added using the form below. To edit an outlet, simply hover over the outlet and click on Edit.', 'wc_point_of_sale' ); ?><!--</p>-->
 						<div class="form-wrap">
-							<h3><?php _e( 'Outlet Details', 'wc_point_of_sale' ); ?></h3>
+							<h3><?php _e( 'Данные организации', 'wc_point_of_sale' ); ?></h3>
 							<form id="add_wc_pos_outlets" class="validate" action="" method="post">
 			<?php endif; ?>
 									<input type="hidden" value="add-wc-pos-outlets" name="action">
 									<?php wp_nonce_field( 'nonce-add-wc-pos-outlets', '_wpnonce_add-wc-pos-outlets'); ?>
 
 								<div class="form-field form-required">
-									<label for="_outlet_name"><?php _e('Name', 'wc_point_of_sale'); ?></label>
+									<label for="_outlet_name"><?php _e('Название организации', 'wc_point_of_sale'); ?></label>
 									<?php if($data['name']){ ?>
 										<input type="text" aria-required="true" size="40" id="_outlet_name" name="_outlet_name" value="<?php echo $data['name']; ?>">
 									<?php }else{ ?>
 										<input type="text" aria-required="true" size="40" id="_outlet_name" name="_outlet_name">
 									<?php } ?>
-									<p><?php echo _e( 'The name of the outlet as it appears when opening a register.', 'wc_point_of_sale' ); ?></p>
+									<p><?php echo _e( 'Введите название организации', 'wc_point_of_sale' ); ?></p>
 								</div>
 										<?php 
 										foreach ( $this->outlet_address_fields as $key => $field ) {
@@ -407,10 +407,10 @@ class WC_Pos_Outlets{
 										}
 										?>
 										<br class="clear">
-										<p><?php echo _e( 'The address of the outlet at which the register will be located.', 'wc_point_of_sale' ); ?></p>
+										<p><?php echo _e( '', 'wc_point_of_sale' ); ?></p>
 								<br class="clear">
-								<h3><?php _e( 'Contact Details', 'wc_point_of_sale' ); ?></h3>
-								<p><?php echo _e( 'Enter the contact details of the outlet as this will appear on receipts that are printed from registers at this outlet.', 'wc_point_of_sale' ); ?></p>
+								<h3><?php _e( 'Контактные данные', 'wc_point_of_sale' ); ?></h3>
+								<p><?php echo _e( 'Не обязательные поля', 'wc_point_of_sale' ); ?></p>
 								<?php 
 										foreach ( $this->outlet_contact_fields as $key => $field ) {
 											if ( ! isset( $field['type'] ) )
@@ -430,8 +430,8 @@ class WC_Pos_Outlets{
 										}
 								?>
 								<br class="clear">
-								<h3><?php _e( 'Social Details', 'wc_point_of_sale' ); ?></h3>
-								<p><?php echo _e( 'Enter the social details of the outlet as this will appear on receipts that are printed from registers at this outlet.', 'wc_point_of_sale' ); ?></p>
+<!--								<h3>--><?php //_e( 'Social Details', 'wc_point_of_sale' ); ?><!--</h3>-->
+<!--								<p>--><?php //echo _e( 'Enter the social details of the outlet as this will appear on receipts that are printed from registers at this outlet.', 'wc_point_of_sale' ); ?><!--</p>-->
 								<?php 
 										foreach ( $this->outlet_social_fields as $key => $field ) {
 											if ( ! isset( $field['type'] ) )
@@ -453,7 +453,7 @@ class WC_Pos_Outlets{
 											}
 										}
 								?>
-								<p class="submit"><input type="submit" value="<?php _e( 'Add New Outlet', 'wc_point_of_sale' ); ?>" class="button button-primary" id="submit" name="submit"></p>
+								<p class="submit"><input type="submit" value="<?php _e( 'Созранить', 'wc_point_of_sale' ); ?>" class="button button-primary" id="submit" name="submit"></p>
 				<?php if(!$ajax) : ?>							
 							</form>
 						</div>

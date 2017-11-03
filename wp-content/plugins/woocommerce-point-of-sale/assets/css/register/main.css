@@ -6,6 +6,10 @@ body.wc_poin_of_sale_body #edit_wc_pos_registers {
     visibility: hidden;
 }
 
+.woocommerce-billing-fields b {
+    display: none;
+}
+
 #adminmenuback,
 #adminmenuwrap {
     display: none;

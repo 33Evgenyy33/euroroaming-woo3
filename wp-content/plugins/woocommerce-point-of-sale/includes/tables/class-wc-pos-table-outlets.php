@@ -52,7 +52,7 @@ class WC_Pos_Table_Outlets extends WP_List_Table {
   function get_columns() {
     $columns = array(
       'cb' => '<input type="checkbox" />',
-      'name' => __( 'Outlet', 'wc_point_of_sale' ),
+      'name' => __( 'Организация', 'wc_point_of_sale' ),
       'contact' => __( 'Contact & Social Details', 'wc_point_of_sale' ),
       'registers' => __( 'Registers', 'wc_point_of_sale' ),
     );

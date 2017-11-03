@@ -1308,6 +1308,7 @@ jQuery(document).ready(function ($) {
                 //CART.add_discount('tacom'); //Скидка
             }
             CART.add_discount('tacom'); //Скидка Рабочая
+            CART.add_discount('tacomthree'); //Скидка
         },
         find_matching_variations: function (product_variations, settings) {
 

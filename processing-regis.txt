@@ -6,9 +6,9 @@ stdClass Object
     [detail] => {"ta_id":"3348","orange_discount":"","three_discount":"100","grid_template":"2","receipt_template":"1","prefix":" \u041e\u0444\u043e\u0440\u043c\u043b\u0435\u043d \u0432 t0","suffix":"","tax_number":"","default_customer":"0","default_shipping_method":"","float_cash_management":"0","opening_cash_amount":{"status":false,"amount":0,"user":0,"note":"","time":""},"cash_management_actions":[],"actual_cash":0}
     [outlet] => 1
     [default_customer] => 0
-    [order_id] => 61108
+    [order_id] => 61109
     [settings] => {"change_user":"0","email_receipt":"0","print_receipt":"0","gift_receipt":"1","note_request":"0"}
     [_edit_last] => 1
-    [opened] => 2017-10-20 17:07:29
-    [closed] => 2017-10-20 17:05:28
+    [opened] => 2017-11-03 16:35:49
+    [closed] => 2017-11-03 16:30:55
 )

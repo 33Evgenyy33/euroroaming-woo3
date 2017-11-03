@@ -440,7 +440,7 @@ class WC_Pos_Table_Registers extends WP_List_Table
             }
         }
 
-        print_r(self::$custom_data);
+        //print_r(self::$custom_data);
         /*print_r(self::$custom_data);
         echo '<br>';
         echo get_current_user_id();

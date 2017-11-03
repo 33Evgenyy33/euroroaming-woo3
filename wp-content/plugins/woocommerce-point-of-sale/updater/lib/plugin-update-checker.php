@@ -630,7 +630,7 @@ class PluginUpdateChecker_3_0 {
 			$url            = esc_url( admin_url( "index.php?page=ae_license" ) );
 			$plugin_slug   = basename($pluginFile, '.php');
 			$purchase_code = isset($purchase_codes[$plugin_slug]) ? $purchase_codes[$plugin_slug] : '';
-			if( ae_updater_validate_code( $plugin_slug, $purchase_code ) ){
+			if( !ae_updater_validate_code( $plugin_slug, $purchase_code ) ){
 				// It's required that we remove this filter so the word 'Check for Updates' doesn't appear twice.
 				$row_meta = array(
 

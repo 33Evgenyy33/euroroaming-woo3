@@ -386,8 +386,25 @@ body.point-of-sale_page_wc_pos_outlets #s2id__outlet_country {
 }
 
 div.form-field._register_suffix_field,
-div.form-field._register_prefix_field {
+div.form-field._register_prefix_field{
     width: 50%;
+}
+
+.form-field._register_prefix_field,
+.form-field._register_receipt_template_field,
+.form-field._register_tax_number_field,
+.form-field._register_default_customer_field,
+.form-field._register_default_shipping_method_field,
+.form-field._register_float_cash_management_field,
+.form-field._register_float_cash_management_field + h3,
+.form-field._register_change_user_field,
+.form-field._register_email_receipt_field,
+.form-field._register_print_receipt_field,
+.form-field._register_gift_receipt_field,
+.form-field._register_note_request_field,
+.form-field._outlet_twitter_field,
+.form-field._outlet_facebook_field{
+    display: none;
 }
 
 #wc_pos_registers_table th#name {

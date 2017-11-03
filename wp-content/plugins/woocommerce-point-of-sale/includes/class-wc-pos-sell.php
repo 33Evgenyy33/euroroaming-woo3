@@ -22,7 +22,7 @@ class WC_Pos_Sell
     protected static $_instance = null;
 
     public $data = null;
-    public $script_ver = '0.1.7';
+    public $script_ver = '0.3.7';
     public $id = null;
     public $active_plugins = array();
 
@@ -838,8 +838,8 @@ class WC_Pos_Sell
                 $manifest .= site_url() . str_replace(' ', '%20', $style->src) . "\n";
             }
         }
-        //$file = WC_POS()->plugin_path() . '/assets/cache.manifest';
-        //file_put_contents($file, $manifest);
+        $file = WC_POS()->plugin_path() . '/assets/cache.manifest';
+        file_put_contents($file, $manifest);
 
     }
 

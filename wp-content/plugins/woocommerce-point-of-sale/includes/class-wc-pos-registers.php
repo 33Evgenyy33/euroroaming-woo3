@@ -84,8 +84,8 @@ class WC_Pos_Registers
         }
         self::$register_detail_fields = array(
             'name' => array(
-                'label' => __('Name', 'woocommerce'),
-                'description' => __('The name of the register that will appear when opening it.', 'wc_point_of_sale'),
+                'label' => 'Название ТА',
+                'description' => 'Введите название турагентства',
                 'custom_attributes' => array(
                     'required' => true
                 )
@@ -112,10 +112,10 @@ class WC_Pos_Registers
 	            )
             ),
             'grid_template' => array(
-                'label' => __('Product Grid', 'wc_point_of_sale'),
+                'label' => 'Сим-карты',
                 'type' => 'select',
                 'options' => WC_POS()->grid()->get_data_names(),
-                'description' => __('Select the product grid that this register will use.', 'wc_point_of_sale'),
+                'description' => 'Выбрать "продукты"',
             ),
             'receipt_template' => array(
                 'label' => __('Receipt Template', 'wc_point_of_sale'),
@@ -129,15 +129,15 @@ class WC_Pos_Registers
                 'custom_attributes' => array()
             ),
             'suffix' => array(
-                'label' => __('Suffix', 'wc_point_of_sale'),
-                'description' => __('Enter the suffix of the orders from this register.', 'wc_point_of_sale'),
+                'label' => __('Суффикс', 'wc_point_of_sale'),
+                'description' => 'Пример: Оформлен в турагентстве Апельсин (ООО ЕвроТур)',
                 'custom_attributes' => array()
             ),
             'outlet' => array(
-                'label' => __('Outlet', 'wc_point_of_sale'),
+                'label' => 'Организация',
                 'type' => 'select',
                 'options' => WC_POS()->outlet()->get_data_names(),
-                'description' => __('Select the outlet that this register is assigned to.', 'wc_point_of_sale'),
+                'description' => 'Выберите организацию из списка',
             ),
             'tax_number' => array(
                 'label' => __('Tax Number', 'wc_point_of_sale'),
@@ -483,9 +483,9 @@ class WC_Pos_Registers
     {
         ?>
         <div class="col-wrap">
-            <p><?php echo _e('Registers for your store can be managed here. Registers can be added using the form below. To edit an register, simply hover over the register and click on Edit.', 'wc_point_of_sale'); ?></p>
+<!--            <p>--><?php //echo _e('Registers for your store can be managed here. Registers can be added using the form below. To edit an register, simply hover over the register and click on Edit.', 'wc_point_of_sale'); ?><!--</p>-->
             <div class="form-wrap">
-                <h3><?php _e('Register Details', 'wc_point_of_sale'); ?></h3>
+                <h3><?php _e('Данные кабинета', 'wc_point_of_sale'); ?></h3>
                 <form id="add_wc_pos_registers" class="validate" action="" method="post">
                     <input type="hidden" value="add-wc-pos-registers" name="action">
                     <?php wp_nonce_field('nonce-add-wc-pos-registers', '_wpnonce_add-wc-pos-registers'); ?>
@@ -532,7 +532,7 @@ class WC_Pos_Registers
                         }
                     }
                     ?>
-                    <p class="submit"><input type="submit" value="<?php _e('Add New Register', 'wc_point_of_sale'); ?>"
+                    <p class="submit"><input type="submit" value="<?php _e('Сохранить', 'wc_point_of_sale'); ?>"
                                              class="button button-primary" id="submit" name="submit"></p>
                 </form>
             </div>
