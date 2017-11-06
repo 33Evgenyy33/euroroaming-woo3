@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License v3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: WooCommerce Local Pickup Plus 2.3.0\n"
+"Project-Id-Version: WooCommerce Local Pickup Plus 2.3.1\n"
 "Report-Msgid-Bugs-To: "
 "https://woocommerce.com/my-account/marketplace-ticket-form/\n"
 "POT-Creation-Date: 2017-05-31 08:40:44+00:00\n"
@@ -649,7 +649,7 @@ msgid ""
 "Geocoding API key is valid and Google is returning results."
 msgstr ""
 
-#: includes/class-wc-local-pickup-plus-ajax.php:683
+#: includes/class-wc-local-pickup-plus-ajax.php:687
 #: includes/frontend/class-wc-local-pickup-plus-pickup-location-package-field.php:434
 #. translators: Placeholder: %s - day of the week name
 msgid "Opening hours for pickup on %s:"
@@ -665,7 +665,7 @@ msgstr ""
 
 #: includes/class-wc-local-pickup-plus-orders.php:318
 #: includes/class-wc-local-pickup-plus-post-types.php:62
-#: includes/frontend/class-wc-local-pickup-plus-checkout.php:140
+#: includes/frontend/class-wc-local-pickup-plus-checkout.php:135
 msgid "Pickup Location"
 msgstr ""
 
@@ -1025,40 +1025,40 @@ msgstr ""
 msgid "Anywhere"
 msgstr ""
 
-#: includes/frontend/abstract-wc-local-pickup-plus-pickup-location-field.php:441
+#: includes/frontend/abstract-wc-local-pickup-plus-pickup-location-field.php:418
 msgid "Change"
 msgstr ""
 
-#: includes/frontend/abstract-wc-local-pickup-plus-pickup-location-field.php:443
+#: includes/frontend/abstract-wc-local-pickup-plus-pickup-location-field.php:420
 #. translators: Placeholder: %s - country or state name (or "Anywhere")
 msgid "Enter a postcode or city to search for pickup locations from: %s"
 msgstr ""
 
-#: includes/frontend/abstract-wc-local-pickup-plus-pickup-location-field.php:461
-#: includes/frontend/abstract-wc-local-pickup-plus-pickup-location-field.php:513
-#: includes/frontend/abstract-wc-local-pickup-plus-pickup-location-field.php:529
+#: includes/frontend/abstract-wc-local-pickup-plus-pickup-location-field.php:438
+#: includes/frontend/abstract-wc-local-pickup-plus-pickup-location-field.php:491
+#: includes/frontend/abstract-wc-local-pickup-plus-pickup-location-field.php:508
 msgid "Search locations&hellip;"
 msgstr ""
 
-#: includes/frontend/abstract-wc-local-pickup-plus-pickup-location-field.php:491
-#: includes/frontend/abstract-wc-local-pickup-plus-pickup-location-field.php:499
+#: includes/frontend/abstract-wc-local-pickup-plus-pickup-location-field.php:469
+#: includes/frontend/abstract-wc-local-pickup-plus-pickup-location-field.php:477
 #: includes/frontend/class-wc-local-pickup-plus-pickup-location-package-field.php:348
 #. translators: Placeholder: %s - pickup location name
 #. translators: Placeholder: %s - the name of the pickup location
 msgid "Pickup Location: %s"
 msgstr ""
 
-#: includes/frontend/class-wc-local-pickup-plus-checkout.php:784
+#: includes/frontend/class-wc-local-pickup-plus-checkout.php:328
 msgid "%s discount"
 msgstr ""
 
-#: includes/frontend/class-wc-local-pickup-plus-checkout.php:824
+#: includes/frontend/class-wc-local-pickup-plus-checkout.php:368
 #. translators: Placeholder: %s - user assigned name for Local Pickup Plus
 #. shipping method
 msgid "Please select a pickup location if you intend to use %s as shipping method."
 msgstr ""
 
-#: includes/frontend/class-wc-local-pickup-plus-checkout.php:830
+#: includes/frontend/class-wc-local-pickup-plus-checkout.php:374
 #. translators: Placeholder: %s - user assigned name for Local Pickup Plus
 #. shipping method
 msgid "Please choose a date to schedule a pickup when using %s shipping method."
@@ -1068,19 +1068,19 @@ msgstr ""
 msgid "Enter a postcode or address&hellip;"
 msgstr ""
 
-#: includes/frontend/class-wc-local-pickup-plus-pickup-location-cart-item-field.php:224
+#: includes/frontend/class-wc-local-pickup-plus-pickup-location-cart-item-field.php:227
 #. translators: Placeholders: %1$s - opening <a> link tag, %2$s - closing </a>
 #. link tag
 msgid "This item is set for shipping. %1$sClick here to pickup this item%2$s."
 msgstr ""
 
-#: includes/frontend/class-wc-local-pickup-plus-pickup-location-cart-item-field.php:226
+#: includes/frontend/class-wc-local-pickup-plus-pickup-location-cart-item-field.php:229
 #. translators: Placeholders: %1$s - opening <a> link tag, %2$s - closing </a>
 #. link tag
 msgid "This item is set for pickup. %1$sClick here to ship this item%2$s."
 msgstr ""
 
-#: includes/frontend/class-wc-local-pickup-plus-pickup-location-cart-item-field.php:259
+#: includes/frontend/class-wc-local-pickup-plus-pickup-location-cart-item-field.php:262
 msgid "This item can only be shipped"
 msgstr ""
 
@@ -1105,25 +1105,25 @@ msgstr ""
 msgid "Required"
 msgstr ""
 
-#: includes/frontend/class-wc-local-pickup-plus-pickup-location-package-field.php:552
+#: includes/frontend/class-wc-local-pickup-plus-pickup-location-package-field.php:531
 msgid "This item will be shipped."
 msgid_plural "These items will be shipped."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/frontend/class-wc-local-pickup-plus-pickup-location-package-field.php:553
+#: includes/frontend/class-wc-local-pickup-plus-pickup-location-package-field.php:532
 msgid "Click if you want to pickup this item"
 msgid_plural "Click if you want to pickup these items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/frontend/class-wc-local-pickup-plus-pickup-location-package-field.php:557
+#: includes/frontend/class-wc-local-pickup-plus-pickup-location-package-field.php:536
 msgid "This item is for pickup."
 msgid_plural "These items are for pick up."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/frontend/class-wc-local-pickup-plus-pickup-location-package-field.php:558
+#: includes/frontend/class-wc-local-pickup-plus-pickup-location-package-field.php:537
 msgid "Click if you want to ship this item"
 msgid_plural "Click if you want these items to be shipped"
 msgstr[0] ""
@@ -1207,7 +1207,7 @@ msgstr ""
 msgid "WooCommerce Local Pickup Plus"
 msgstr ""
 
-#: woocommerce-shipping-local-pickup-plus.php:668
+#: woocommerce-shipping-local-pickup-plus.php:685
 #. translators: the %s placeholders are meant for pairs of opening <a> and
 #. closing </a> link tags
 msgid ""

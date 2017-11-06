@@ -5,7 +5,7 @@
  * Description: A shipping plugin for WooCommerce that allows the store operator to define local pickup locations, which the customer can then choose from when making a purchase.
  * Author: SkyVerge
  * Author URI: http://woocommerce.com
- * Version: 2.3.0
+ * Version: 2.3.1
  * Text Domain: woocommerce-shipping-local-pickup-plus
  * Domain Path: /i18n/languages/
  *
@@ -45,7 +45,7 @@ if ( ! class_exists( 'SV_WC_Framework_Bootstrap' ) ) {
 	require_once( plugin_dir_path( __FILE__ ) . 'lib/skyverge/woocommerce/class-sv-wc-framework-bootstrap.php' );
 }
 
-SV_WC_Framework_Bootstrap::instance()->register_plugin( '4.6.3', __( 'WooCommerce Local Pickup Plus', 'woocommerce-shipping-local-pickup-plus' ), __FILE__, 'init_woocommerce_shipping_local_pickup_plus', array(
+SV_WC_Framework_Bootstrap::instance()->register_plugin( '4.7.3', __( 'WooCommerce Local Pickup Plus', 'woocommerce-shipping-local-pickup-plus' ), __FILE__, 'init_woocommerce_shipping_local_pickup_plus', array(
 	'minimum_wc_version'   => '2.6.14',
 	'minimum_wp_version'   => '4.4',
 	'backwards_compatible' => '4.4',
@@ -61,7 +61,7 @@ function init_woocommerce_shipping_local_pickup_plus() {
 class WC_Local_Pickup_Plus extends SV_WC_Plugin {
 
 
-	const VERSION = '2.3.0';
+	const VERSION = '2.3.1';
 
 	/** shipping method ID */
 	const SHIPPING_METHOD_ID = 'local_pickup_plus';
@@ -92,6 +92,9 @@ class WC_Local_Pickup_Plus extends SV_WC_Plugin {
 
 	/** @var \WC_Local_Pickup_Plus_Orders orders handler instance */
 	private $orders;
+
+	/** @var \WC_Local_Pickup_Plus_Packages packages handler instance */
+	private $packages;
 
 	/** @var \WC_Local_Pickup_Plus_Admin admin instance */
 	private $admin;
@@ -171,6 +174,8 @@ class WC_Local_Pickup_Plus extends SV_WC_Plugin {
 		$this->products         = $this->load_class( '/includes/class-wc-local-pickup-plus-products.php', 'WC_Local_Pickup_Plus_Products' );
 		// orders handler
 		$this->orders           = $this->load_class( '/includes/class-wc-local-pickup-plus-orders.php', 'WC_Local_Pickup_Plus_Orders' );
+		// packages handler
+		$this->packages         = $this->load_class( '/includes/class-wc-local-pickup-plus-packages.php', 'WC_Local_Pickup_Plus_Packages' );
 		// init pickup locations
 		$this->pickup_locations = $this->load_class( '/includes/class-wc-local-pickup-plus-pickup-locations.php', 'WC_Local_Pickup_Plus_Pickup_Locations' );
 
@@ -386,6 +391,18 @@ class WC_Local_Pickup_Plus extends SV_WC_Plugin {
 	 */
 	public function get_orders_instance() {
 		return $this->orders;
+	}
+
+
+	/**
+	 * Get the packages handler instance.
+	 *
+	 * @since 2.3.1
+	 *
+	 * @return \WC_Local_Pickup_Plus_Packages
+	 */
+	public function get_packages_instance() {
+		return $this->packages;
 	}
 
 

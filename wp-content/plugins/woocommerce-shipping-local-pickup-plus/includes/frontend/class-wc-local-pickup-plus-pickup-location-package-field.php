@@ -516,33 +516,12 @@ class WC_Local_Pickup_Plus_Pickup_Location_Package_Field extends WC_Local_Pickup
 				     && 1 === count( $package['rates'] )
 				     && $local_pickup_plus->get_method_id() === key( $package['rates'] ) ) {
 
-					$available_rates = $rates = array();
+					if ( ! wc_local_pickup_plus()->get_packages_instance()->package_can_be_shipped( $package ) ) {
 
-					$check_package_rates = $package;
+						$show_toggle      = false;
+						$default_handling = 'pickup';
 
-					unset( $check_package_rates['ship_via'] );
-
-					if ( $shipping_zone = wc_get_shipping_zone( $package ) ) {
-
-						$shipping_methods = $shipping_zone->get_shipping_methods( true );
-
-						if ( is_array( $shipping_methods ) ) {
-
-							foreach ( $shipping_methods as $shipping_method ) {
-
-								$rates = $shipping_method->get_rates_for_package( $check_package_rates );
-
-								if ( ! empty( $rates ) ) {
-									$available_rates = array_merge( $available_rates, $rates );
-								}
-							}
-						}
-
-						if ( 0 === count( $available_rates ) ) {
-
-							$show_toggle      = false;
-							$default_handling = 'pickup';
-						}
+						wc_local_pickup_plus()->get_session_instance()->set_default_handling( 'pickup' );
 					}
 				}
 

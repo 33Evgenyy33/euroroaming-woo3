@@ -297,9 +297,8 @@ class WC_Local_Pickup_Plus_Ajax {
 		);
 
 		$set_for_pickup   = array(
-			'handling'           => 'pickup',
-			'lookup_area'        => '',
-			'pickup_location_id' => 0,
+			'handling'    => 'pickup',
+			'lookup_area' => '',
 		);
 
 		foreach ( $cart_items as $cart_item_id => $cart_item_data ) {
@@ -318,7 +317,12 @@ class WC_Local_Pickup_Plus_Ajax {
 			}
 		}
 
-		WC()->session->set( 'wc_local_pickup_plus_cart_items', $new_items );
+		// merge new handling data with existing - this ensures that pickup locations are not overriden for
+		// pickup-only items
+		foreach ( $new_items as $cart_item_key => $data ) {
+			wc_local_pickup_plus()->get_session_instance()->set_cart_item_pickup_data( $cart_item_key, $data );
+		}
+
 		WC()->session->set( 'wc_local_pickup_plus_packages', array() );
 		WC()->session->set( 'wc_local_pickup_plus_default_handling', $handling );
 

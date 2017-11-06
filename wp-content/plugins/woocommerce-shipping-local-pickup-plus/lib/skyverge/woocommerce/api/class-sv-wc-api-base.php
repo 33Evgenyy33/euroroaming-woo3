@@ -97,7 +97,7 @@ abstract class SV_WC_API_Base {
 		$start_time = microtime( true );
 
 		// If this API requires TLS v1.2, force it
-		if ( $this->require_tls_1_2() ) {
+		if ( $this->require_tls_1_2() && $this->is_tls_1_2_available() ) {
 			add_action( 'http_api_curl', array( $this, 'set_tls_1_2_request' ), 10, 3 );
 		}
 
@@ -771,19 +771,6 @@ abstract class SV_WC_API_Base {
 			return;
 		}
 
-		$versions     = curl_version();
-		$curl_version = $versions['version'];
-
-		// Get the SSL details
-		list( $ssl_type, $ssl_version ) = explode( '/', $versions['ssl_version'] );
-
-		$ssl_version = substr( $ssl_version, 0, -1 );
-
-		// If cURL and/or OpenSSL aren't up to the challenge, bail
-		if ( ! version_compare( $curl_version, '7.34.0', '>=' ) || ( 'OpenSSL' === $ssl_type && ! version_compare( $ssl_version, '1.0.1', '>=' ) ) ) {
-			return;
-		}
-
 		curl_setopt( $handle, CURLOPT_SSLVERSION, 6 );
 	}
 
@@ -796,8 +783,43 @@ abstract class SV_WC_API_Base {
 	 * @since 4.4.0
 	 * @return bool
 	 */
-	protected function require_tls_1_2() {
+	public function require_tls_1_2() {
 		return false;
+	}
+
+
+	/**
+	 * Determines if TLS 1.2 is available.
+	 *
+	 * @since 4.6.5
+	 *
+	 * @return bool
+	 */
+	public function is_tls_1_2_available() {
+
+		// assume availability to avoid notices for unknown SSL types
+		$is_available = true;
+
+		// check the cURL version if installed
+		if ( is_callable( 'curl_version' ) ) {
+
+			$versions = curl_version();
+
+			// cURL 7.34.0 is considered the minimum version that supports TLS 1.2
+			if ( version_compare( $versions['version'], '7.34.0', '<' ) ) {
+				$is_available = false;
+			}
+		}
+
+		/**
+		 * Filters whether TLS 1.2 is available.
+		 *
+		 * @since 4.7.1
+		 *
+		 * @param bool $is_available whether TLS 1.2 is available
+		 * @param \SV_WC_API_Base $api API class instance
+		 */
+		return apply_filters( 'wc_' . $this->get_plugin()->get_id() . '_api_is_tls_1_2_available', $is_available, $this );
 	}
 
 

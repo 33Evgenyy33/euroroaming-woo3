@@ -1,5 +1,12 @@
 *** WooCommerce Local Pickup Plus Changelog ***
 
+2017.11.01 - version 2.3.1
+ * Fix - Ensure merging packages tries to retain selected pickup location
+ * Fix - Ensure the "Click to ship this item/these items" link is not shown when no shipping methods are available
+ * Fix - Ensure pickup location is not reset if Local Pickup Plus is the only available method and "Ship Items" is the default cart item handling mode
+ * Fix - Ensure pickup location field correctly displays placeholders when no selection has been made
+ * Fix - Ensure only a single pickup package is created at checkout when using per-order location with automatic grouping
+
 2017.10.04 - version 2.3.0
  * Tweak - You can set the cart items default handling to either pickup or ship also when using the "Automatically group cart items into as few packages as possible" option
  * Tweak - When using "Automatically group cart items into as few packages as possible" checkout mode, do not show a toggle to change package handling from pickup to shipping if no other shipping methods are available for the package than pickup

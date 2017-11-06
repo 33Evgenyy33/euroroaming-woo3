@@ -312,29 +312,6 @@ abstract class WC_Local_Pickup_Plus_Pickup_Location_Field {
 
 
 	/**
-	 * Determines whether the item handling toggle should be hidden to customers in frontend.
-	 *
-	 * @since 2.2.0
-	 *
-	 * @return bool
-	 */
-	protected function hiding_item_handling_toggle() {
-
-		$local_pickup_plus = wc_local_pickup_plus_shipping_method();
-		$hiding            = false;
-
-		if (    $local_pickup_plus
-		     && $local_pickup_plus->is_item_handling_mode( 'automatic' )
-		     && $local_pickup_plus->is_per_order_selection_enabled() ) {
-
-			$hiding = true;
-		}
-
-		return $hiding;
-	}
-
-
-	/**
 	 * Returns all locations available.
 	 *
 	 * This should be only used when simple dropdown is active and locations are less than a hundred or will cause performance issues.
@@ -452,18 +429,19 @@ abstract class WC_Local_Pickup_Plus_Pickup_Location_Field {
 		<?php if ( ! $enhanced_search || $using_single_location ) : ?>
 
 			<?php $pickup_locations = ! $using_single_location ? $this->get_all_pickup_locations() : array( $chosen_location->get_id() => $chosen_location ); ?>
-			<?php $chosen_location  = array_key_exists( $chosen_location ? $chosen_location->get_id() : null, $pickup_locations ) ? $chosen_location : current( $pickup_locations ); ?>
+			<?php $chosen_location  = array_key_exists( $chosen_location ? $chosen_location->get_id() : null, $pickup_locations ) ? $chosen_location : null ?>
 
 			<select
 				name="<?php echo sanitize_html_class( $field_name ); ?>[<?php echo esc_attr( $object_id ); ?>]"
 				class="pickup-location-lookup"
 				style="width: 100%; max-width: 512px; <?php echo $using_single_location ? ' display: none;' : ''; ?>"
-				placeholder="<?php esc_attr_e( 'Search locations&hellip;', 'woocommerce-shipping-local-pickup-plus' ); ?>"
+				data-placeholder="<?php esc_attr_e( 'Search locations&hellip;', 'woocommerce-shipping-local-pickup-plus' ); ?>"
 				<?php if ( $using_single_location ) : ?>
 					data-single-pickup-location="<?php echo esc_attr( $chosen_location->get_id() ); ?>"
 				<?php endif; ?>
 				data-pickup-object-type="<?php echo esc_attr( $object_type ); ?>"
 				data-pickup-object-id="<?php echo esc_attr( $object_id ); ?>" >
+				<option></option>
 				<?php foreach ( $pickup_locations as $pickup_location ) : ?>
 					<?php if ( $this->can_be_picked_up( $pickup_location ) ) : ?>
 						<?php $address = $pickup_location->get_address(); ?>
@@ -510,9 +488,10 @@ abstract class WC_Local_Pickup_Plus_Pickup_Location_Field {
 					name="<?php echo sanitize_html_class( $field_name ); ?>[<?php echo esc_attr( $object_id ); ?>]"
 					class="pickup-location-lookup"
 					style="width:100%; max-width:512px;"
-					placeholder="<?php esc_attr_e( 'Search locations&hellip;', 'woocommerce-shipping-local-pickup-plus' ); ?>"
+					data-placeholder="<?php esc_attr_e( 'Search locations&hellip;', 'woocommerce-shipping-local-pickup-plus' ); ?>"
 					data-pickup-object-type="<?php echo esc_attr( $object_type ); ?>"
 					data-pickup-object-id="<?php echo esc_attr( $object_id ); ?>">
+					<option></option>
 					<?php if ( $chosen_location instanceof WC_Local_Pickup_Plus_Pickup_Location ) : ?>
 						<option value="<?php echo $chosen_location->get_id(); ?>" selected="selected"><?php echo esc_html( $chosen_location->get_name() ); ?></option>
 					<?php endif; ?>
@@ -526,7 +505,7 @@ abstract class WC_Local_Pickup_Plus_Pickup_Location_Field {
 					class="pickup-location-lookup"
 					style="width:100%; max-width:512px;"
 					value="<?php echo $chosen_location ? $chosen_location->get_id() : ''; ?>"
-					placeholder="<?php esc_attr_e( 'Search locations&hellip;', 'woocommerce-shipping-local-pickup-plus' ); ?>"
+					data-placeholder="<?php esc_attr_e( 'Search locations&hellip;', 'woocommerce-shipping-local-pickup-plus' ); ?>"
 					data-pickup-object-type="<?php echo esc_attr( $object_type ); ?>"
 					data-pickup-object-id="<?php echo esc_attr( $object_id ); ?>"
 				/>

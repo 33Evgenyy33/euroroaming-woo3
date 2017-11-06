@@ -35,6 +35,9 @@ class WC_Local_Pickup_Plus_Pickup_Location_Cart_Item_Field extends WC_Local_Pick
 	/** @var string $cart_item_key the ID of the cart item for this field */
 	private $cart_item_key;
 
+	/** @var bool $can_be_shipped memoization helper for checking whether the item can be shipped or not */
+	private $can_be_shipped;
+
 
 	/**
 	 * Field constructor.
@@ -173,7 +176,7 @@ class WC_Local_Pickup_Plus_Pickup_Location_Cart_Item_Field extends WC_Local_Pick
 
 				$cart_item_id        = $this->get_cart_item_id();
 				$pickup_data         = $this->get_pickup_data();
-				$should_be_picked_up = isset( $pickup_data['handling'] ) && 'pickup' === $pickup_data['handling'];
+				$should_be_picked_up = ( isset( $pickup_data['handling'] ) && 'pickup' === $pickup_data['handling'] ) || ! $this->can_be_shipped();
 				$must_be_picked_up   = wc_local_pickup_plus_product_must_be_picked_up( $product );
 
 				if ( ! empty( $pickup_data['pickup_location_id'] ) ) {
@@ -204,7 +207,7 @@ class WC_Local_Pickup_Plus_Pickup_Location_Cart_Item_Field extends WC_Local_Pick
 						</div>
 					<?php endif; ?>
 
-					<?php if ( ! $must_be_picked_up  ) : ?>
+					<?php if ( ! $must_be_picked_up ) : ?>
 
 						<?php if ( ! $this->hiding_item_handling_toggle() ) : ?>
 
@@ -283,6 +286,47 @@ class WC_Local_Pickup_Plus_Pickup_Location_Cart_Item_Field extends WC_Local_Pick
 	 */
 	protected function can_be_picked_up( $pickup_location ) {
 		return $this->get_product() ? wc_local_pickup_plus_product_can_be_picked_up( $this->get_product(), $pickup_location ) : true;
+	}
+
+
+	/**
+	 * Determines if the current product can be shipped, depending on the available shipping methods.
+	 *
+	 * If there are no shipping methods/rates available for the item's package, the item should be picked up instead.
+	 *
+	 * @since 2.3.1
+	 *
+	 * @return bool
+	 */
+	protected function can_be_shipped() {
+
+		if ( ! isset( $this->can_be_shipped ) ) {
+
+			$package              = wc_local_pickup_plus()->get_packages_instance()->get_cart_item_package( $this->get_cart_item_id() );
+			$this->can_be_shipped = wc_local_pickup_plus()->get_packages_instance()->package_can_be_shipped( $package );
+		}
+
+		return $this->can_be_shipped;
+	}
+
+
+	/**
+	 * Determines whether the item handling toggle should be hidden to customers in frontend.
+	 *
+	 * @since 2.2.0
+	 *
+	 * @return bool
+	 */
+	protected function hiding_item_handling_toggle() {
+
+		$local_pickup_plus = wc_local_pickup_plus_shipping_method();
+		$hiding            = false;
+
+		if ( ! $this->can_be_shipped() || ( $local_pickup_plus && $local_pickup_plus->is_per_order_selection_enabled() && $local_pickup_plus->is_item_handling_mode( 'automatic' ) ) ) {
+			$hiding = true;
+		}
+
+		return $hiding;
 	}
 
 
