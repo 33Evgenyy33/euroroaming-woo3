@@ -544,11 +544,11 @@ function my_hide_shipping_when_free_is_available( $rates ) {
 //		}
 
 		/************Vodafone только выдача (все форматы)*************/
-		if ($item['product_id'] == 18438) {
+		if ( $item['product_id'] == 18438 ) {
 			//print_r($_product);
-			foreach ($rates as $rate_id => $rate) {
-				if ('local_pickup_plus' == $rate->method_id) {
-					$free[$rate_id] = $rate;
+			foreach ( $rates as $rate_id => $rate ) {
+				if ( 'local_pickup_plus' == $rate->method_id ) {
+					$free[ $rate_id ] = $rate;
 				}
 			}
 			break;
@@ -832,6 +832,15 @@ function custom_templates( $templates ) {
 
 	return $templates;
 }
+//=======================================================================================================
+// Store Locator убираем отступы в заголовке, если нет миниатюры
+//=======================================================================================================
+add_action( 'us_before_template:templates/l-header', 'action_woocommerce_checkout_billing' );
+function action_woocommerce_checkout_billing() {
+	if ( ! has_post_thumbnail() && is_singular( 'wpsl_stores' ) ) {
+		echo "<style>.sidebar_none .l-section.preview_modern .w-blog{padding-top:0;}.w-blog-post-meta{display: none;}.w-blog-post-preview,.l-section.preview_modern .w-blog:after{background: #ffffff!important;}.l-section.preview_modern .w-blog-post-title{color:#3b4664;text-align:center}article.l-section>.l-section-h.i-cf{margin-top:2.7rem;padding-bottom:.7rem;padding-top:0}</style>";
+	}
+}
 
 //=======================================================================================================
 // Загрузка стилей если роль cashier
@@ -933,17 +942,21 @@ function messaandgers_us_after_footer() {
 add_action( 'us_after_footer', 'ga_new_us_after_footer' );
 function ga_new_us_after_footer() {
 	$page_ID = get_queried_object_id();
-	if ($page_ID == 70063){
+	if ( $page_ID == 70063 ) {
 		wp_enqueue_style( 'my-tippy-css', '/wp-content/themes/Zephyr-child/css/tippy.css', array(), '1.0' );
 		wp_enqueue_style( 'my-dataTables-css', 'https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.16/css/jquery.dataTables.min.css', array(), '1.0' );
 
 		wp_register_script( 'my-tippy-js', '/wp-content/themes/Zephyr-child/js/tippy.min.js', array(), '1.0', true );
-		wp_register_script( 'my-dataTables-js', 'https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.16/js/jquery.dataTables.min.js', array('jquery'), '1.0', true );
-		wp_register_script( 'my-gs-new-js', '/wp-content/themes/Zephyr-child/js/gs.new.js', array('jquery','my-tippy-js', 'my-dataTables-js'), '1.0', true );
+		wp_register_script( 'my-dataTables-js', 'https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.16/js/jquery.dataTables.min.js', array( 'jquery' ), '1.0', true );
+		wp_register_script( 'my-gs-new-js', '/wp-content/themes/Zephyr-child/js/gs.new.js', array(
+			'jquery',
+			'my-tippy-js',
+			'my-dataTables-js'
+		), '1.0', true );
 
-		wp_enqueue_script('my-tippy-js');
-		wp_enqueue_script('my-dataTables-js');
-		wp_enqueue_script('my-gs-new-js');
+		wp_enqueue_script( 'my-tippy-js' );
+		wp_enqueue_script( 'my-dataTables-js' );
+		wp_enqueue_script( 'my-gs-new-js' );
 	}
 }
 
@@ -1017,15 +1030,15 @@ function custom_result_sort( $store_meta ) {
 
 add_action( 'us_before_template:shortcodes/us_sharing', 'my_us_before_sharing_in_post' );
 function my_us_before_sharing_in_post() {
-	if (is_singular('post')) {
+	if ( is_singular( 'post' ) ) {
 // Код, который будет работать только на отдельных страницах с типом записи post
 		echo '<div style="padding: 20px 0px 3px 0;margin-bottom: 12px;background: #4c75a3;background-image: url(https://euroroaming.ru/wp-content/uploads/2016/08/bg-hero6-7.svg);background-position: bottom left;background-repeat: repeat;">';
 		echo '<h3 style="padding-left: 20px;color: #fff;text-align: center;font-weight: 400;">Не забудьте взять сим-карту для интернета в путешествие</h3>';
 
-		wp_register_style( 'owl-base-style', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.0/assets/owl.carousel.min.css');
-		wp_register_script('owl-script', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.0/owl.carousel.min.js');
-		wp_print_styles('owl-base-style');
-		wp_print_scripts('owl-script');
+		wp_register_style( 'owl-base-style', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.0/assets/owl.carousel.min.css' );
+		wp_register_script( 'owl-script', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.0/owl.carousel.min.js' );
+		wp_print_styles( 'owl-base-style' );
+		wp_print_scripts( 'owl-script' );
 
 
 		echo '<div class="owl-carousel owl-theme">';
@@ -1041,16 +1054,16 @@ function my_us_before_sharing_in_post() {
 		echo '<script>jQuery(document).ready(function(a){a(".owl-carousel").owlCarousel({items:8,lazyLoad:!0,loop:!0,margin:10,stagePadding:6,autoplay:!0,smartSpeed:1200,slideSpeed:1200,autoplayHoverPause:!0,responsiveClass:!0,responsive:{0:{items:1,nav:!0},600:{items:2,nav:!0},1e3:{items:2,nav:!0,loop:!0}}})});</script>';
 		echo '<style>.owl-carousel{background:rgba(255,255,255,.8);padding:12px 0 12px 0}</style>';
 
-		echo do_shortcode('[vc_row height="auto" css=".vc_custom_1477837569113{padding-bottom: 20px !important;}"][vc_column el_class="buy-btn"][us_btn text="подробнее" link="url:https%3A%2F%2Feuroroaming.ru||target:%20_blank|"][us_btn text="купить" link="url:https%3A%2F%2Feuroroaming.ru%2Fshop||target:%20_blank|" color="secondary"][/vc_column][/vc_row]');
+		echo do_shortcode( '[vc_row height="auto" css=".vc_custom_1477837569113{padding-bottom: 20px !important;}"][vc_column el_class="buy-btn"][us_btn text="подробнее" link="url:https%3A%2F%2Feuroroaming.ru||target:%20_blank|"][us_btn text="купить" link="url:https%3A%2F%2Feuroroaming.ru%2Fshop||target:%20_blank|" color="secondary"][/vc_column][/vc_row]' );
 		echo '<style>#gform_5 h3.gform_title{font-weight:500;padding-top: 10px;}#gform_5 label.gfield_label{font-weight:400}#gform_5 .gform_footer.top_label{background:#fec947}#gform_5 .ginput_container input{background:rgba(242,242,242,.52)!important}.buy-btn{text-align: center;}.slick-slider{background: rgba(255, 255, 255, 0.8);padding: 15px 0 12px 0;}.ult-carousel-wrapper{ margin-bottom: 0!important;}</style>';
-		gravity_form(5, true, false, false, '', true);
+		gravity_form( 5, true, false, false, '', true );
 		echo '</div>';
 		echo '<h3 style="padding-left: 20px;color: #124572;text-align: center;font-weight: 400;"><i class="fa fa-share-alt" style="color: #1e73be;"></i> Забирайте статью себе, чтобы не потерять :) </h3>';
 	}
-	if (is_singular('wpsl_stores')) {
+	if ( is_singular( 'wpsl_stores' ) ) {
 		// Код, который будет работать только на отдельных страницах с типом записи wpsl_stores
 		echo '<style>#gform_5 h3.gform_title{font-weight:500;padding-top: 10px;}#gform_5 label.gfield_label{font-weight:400}#gform_5 .gform_footer.top_label{background:#fec947}#gform_5 .ginput_container input{background:rgba(242,242,242,.52)!important}@media only screen and (max-width: 641px){input#gform_submit_button_5{max-width:176px;line-height:3}ul#gform_fields_5{padding:16px}.gform_validation_error ul#gform_fields_5 {padding-right: 12px!important;} }.gform_validation_error ul#gform_fields_5 {padding-right: 33px;}</style>';
-		gravity_form(5, true, false, false, '', true);
+		gravity_form( 5, true, false, false, '', true );
 	}
 	echo '<style>#gform_wrapper_5{padding: 10px;}#gform_5{text-align: center;}</style>';
 }
@@ -1058,13 +1071,15 @@ function my_us_before_sharing_in_post() {
 //=======================================================================================================
 // Отправка данных на seller при продаже сим-карты ТА
 //=======================================================================================================
-add_action( 'woocommerce_order_status_processing', 'woocommerce_order_statuses_pos'); // Отправка данных на seller если заказ оплачен
-add_action( 'woocommerce_order_status_on-hold', 'woocommerce_order_statuses_pos'); // Отправка данных на seller если статус заказа "Новый заказ" (Pay.Travel)
+add_action( 'woocommerce_order_status_processing', 'woocommerce_order_statuses_pos' ); // Отправка данных на seller если заказ оплачен
+add_action( 'woocommerce_order_status_on-hold', 'woocommerce_order_statuses_pos' ); // Отправка данных на seller если статус заказа "Новый заказ" (Pay.Travel)
 function woocommerce_order_statuses_pos( $order_id ) {
 	$order_by = get_post_meta( $order_id, '_created_via', true );
 
 	//если категория не 'сим-карты' выходим
-	if (!is_category_sim_karty($order_id) || $order_by != 'POS') return;
+	if ( ! is_category_sim_karty( $order_id ) || $order_by != 'POS' ) {
+		return;
+	}
 
 	$key_sim_numbers       = 'number_simcard';
 	$order_sim_numbers_buf = get_post_meta( $order_id, $key_sim_numbers, true );
