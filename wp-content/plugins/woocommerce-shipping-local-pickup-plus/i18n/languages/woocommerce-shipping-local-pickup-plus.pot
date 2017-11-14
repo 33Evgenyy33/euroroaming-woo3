@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License v3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: WooCommerce Local Pickup Plus 2.3.1\n"
+"Project-Id-Version: WooCommerce Local Pickup Plus 2.3.2\n"
 "Report-Msgid-Bugs-To: "
 "https://woocommerce.com/my-account/marketplace-ticket-form/\n"
 "POT-Creation-Date: 2017-05-31 08:40:44+00:00\n"

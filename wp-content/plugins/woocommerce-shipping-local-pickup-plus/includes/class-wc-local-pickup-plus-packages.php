@@ -59,12 +59,12 @@ class WC_Local_Pickup_Plus_Packages {
 	private function create_package( $items ) {
 
 		$billing_address = array(
-			'country'   => WC()->customer->get_billing_country(),
-			'state'     => WC()->customer->get_billing_state(),
-			'postcode'  => WC()->customer->get_billing_postcode(),
-			'city'      => WC()->customer->get_billing_city(),
-			'address'   => WC()->customer->get_billing_address(),
-			'address_2' => WC()->customer->get_billing_address_2(),
+			'country'   => SV_WC_Plugin_Compatibility::is_wc_version_gte_3_0() ? WC()->customer->get_billing_country()   : WC()->customer->get_country(),
+			'state'     => SV_WC_Plugin_Compatibility::is_wc_version_gte_3_0() ? WC()->customer->get_billing_state()     : WC()->customer->get_state(),
+			'postcode'  => SV_WC_Plugin_Compatibility::is_wc_version_gte_3_0() ? WC()->customer->get_billing_postcode()  : WC()->customer->get_postcode(),
+			'city'      => SV_WC_Plugin_Compatibility::is_wc_version_gte_3_0() ? WC()->customer->get_billing_city()      : WC()->customer->get_city(),
+			'address'   => SV_WC_Plugin_Compatibility::is_wc_version_gte_3_0() ? WC()->customer->get_billing_address()   : WC()->customer->get_address(),
+			'address_2' => SV_WC_Plugin_Compatibility::is_wc_version_gte_3_0() ? WC()->customer->get_billing_address_2() : WC()->customer->get_address_2(),
 		);
 
 		$shipping_address = array(
@@ -205,7 +205,12 @@ class WC_Local_Pickup_Plus_Packages {
 
 			foreach ( $cart_items as $cart_item_key => $cart_item ) {
 
-				if ( $this->cart_item_should_be_picked_up( $cart_item, $cart_item_key, $pickup_data, $shipping_rates ) ) {
+				// skip virtual items completely as they don't need any handling
+				if ( $cart_item['data'] instanceof WC_Product && ! $cart_item['data']->needs_shipping() ) {
+
+					continue;
+
+				} elseif ( $this->cart_item_should_be_picked_up( $cart_item, $cart_item_key, $pickup_data, $shipping_rates ) ) {
 
 					$cart_item_pickup_location_id = ! empty( $pickup_data[ $cart_item_key ]['pickup_location_id'] ) ? (int) $pickup_data[ $cart_item_key ]['pickup_location_id'] : 0;
 
