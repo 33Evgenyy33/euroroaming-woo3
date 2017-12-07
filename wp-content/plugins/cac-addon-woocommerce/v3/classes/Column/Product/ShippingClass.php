@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.1
  */
 class ACA_WC_Column_Product_ShippingClass extends AC_Column
-	implements ACP_Column_SortingInterface, ACP_Column_EditingInterface, ACP_Column_FilteringInterface {
+	implements ACP_Column_SortingInterface, ACP_Column_EditingInterface, ACP_Column_FilteringInterface, ACP_Export_Column {
 
 	public function __construct() {
 		$this->set_type( 'column-wc-shipping_class' );
@@ -44,6 +44,10 @@ class ACA_WC_Column_Product_ShippingClass extends AC_Column
 
 	public function filtering() {
 		return new ACP_Filtering_Model_Post_Taxonomy( $this );
+	}
+
+	public function export() {
+		return new ACP_Export_Model_StrippedValue( $this );
 	}
 
 }

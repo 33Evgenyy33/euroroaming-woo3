@@ -7,8 +7,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * @since 1.2
  */
-class ACA_WC_Column_Product_Visibility extends AC_Column_Meta
-	implements ACP_Column_SortingInterface, ACP_Column_EditingInterface, ACP_Column_FilteringInterface {
+class ACA_WC_Column_Product_Visibility extends AC_Column
+	implements ACP_Column_SortingInterface, ACP_Column_EditingInterface, ACP_Column_FilteringInterface, ACP_Export_Column {
 
 	public function __construct() {
 		$this->set_type( 'column-wc-visibility' );
@@ -16,8 +16,8 @@ class ACA_WC_Column_Product_Visibility extends AC_Column_Meta
 		$this->set_group( 'woocommerce' );
 	}
 
-	public function get_meta_key() {
-		return '_visibility';
+	public function get_taxonomy() {
+		return 'product_visibility';
 	}
 
 	// Display
@@ -50,6 +50,10 @@ class ACA_WC_Column_Product_Visibility extends AC_Column_Meta
 
 	public function sorting() {
 		return new ACP_Sorting_Model_Value( $this );
+	}
+
+	public function export() {
+		return new ACP_Export_Model_StrippedValue( $this );
 	}
 
 }

@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0
  */
 class ACA_WC_Column_ShopOrder_CustomerMessage extends AC_Column
-	implements ACP_Column_SortingInterface, ACP_Column_FilteringInterface {
+	implements ACP_Column_SortingInterface, ACP_Column_FilteringInterface, ACP_Export_Column {
 
 	public function __construct() {
 		$this->set_type( 'customer_message' );
@@ -35,6 +35,10 @@ class ACA_WC_Column_ShopOrder_CustomerMessage extends AC_Column
 
 	public function filtering() {
 		return new ACA_WC_Filtering_ShopOrder_CustomerMessage( $this );
+	}
+
+	public function export() {
+		return new ACA_WC_Export_ShopOrder_CustomerMessage( $this );
 	}
 
 }

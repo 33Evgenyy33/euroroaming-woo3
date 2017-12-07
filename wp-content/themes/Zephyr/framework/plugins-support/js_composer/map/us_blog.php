@@ -117,6 +117,7 @@ vc_map(
 			array(
 				'param_name' => 'img_size',
 				'heading' => __( 'Images Size', 'us' ),
+				'description' => sprintf( __( 'To change the default image sizes, go to %s.', 'us' ), '<a target="_blank" href="' . admin_url( 'options-media.php' ) . '">' . us_translate( 'Media Settings' ) . '</a>' ) . ' ' . sprintf( __( 'To add custom image sizes, go to %s.', 'us' ), '<a target="_blank" href="' . admin_url( 'admin.php?page=us-theme-options#advanced' ) . '">' . __( 'Theme Options', 'us' ) . '</a>' ),
 				'type' => 'dropdown',
 				'value' => array_merge( array( us_translate( 'Default' ) => 'default' ), us_image_sizes_select_values() ),
 				'std' => $config['atts']['img_size'],
@@ -126,7 +127,7 @@ vc_map(
 			array(
 				'param_name' => 'title_size',
 				'heading' => __( 'Posts Titles Size', 'us' ),
-				'description' => sprintf( __( 'Add custom value to change default font-size of posts titles. Examples: %s', 'us' ), '26px, 1.3em, 200%' ),
+				'description' => sprintf( __( 'Examples: %s', 'us' ), '26px, 1.3em, 200%' ),
 				'type' => 'textfield',
 				'std' => $config['atts']['title_size'],
 				'group' => us_translate( 'Appearance' ),

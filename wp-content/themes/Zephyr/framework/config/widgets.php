@@ -121,11 +121,6 @@ return array(
 					),
 					'std' => 'brand',
 				),
-				'email' => array(
-					'type' => 'textfield',
-					'heading' => 'Email',
-					'std' => '',
-				),
 			), $social_links_config, array(
 				'custom_link' => array(
 					'type' => 'textfield',

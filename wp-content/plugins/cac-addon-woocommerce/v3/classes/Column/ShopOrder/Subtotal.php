@@ -4,7 +4,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class ACA_WC_Column_ShopOrder_Subtotal extends AC_Column {
+class ACA_WC_Column_ShopOrder_Subtotal extends AC_Column
+	implements ACP_Export_Column {
 
 	public function __construct() {
 		$this->set_type( 'column-wc-order-subtotal' );
@@ -18,6 +19,10 @@ class ACA_WC_Column_ShopOrder_Subtotal extends AC_Column {
 		$order = new WC_Order( $post_id );
 
 		return $order->get_subtotal_to_display();
+	}
+
+	public function export() {
+		return new ACP_Export_Model_StrippedValue( $this );
 	}
 
 }

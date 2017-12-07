@@ -337,7 +337,7 @@ AND ANY CHANGES MADE HERE WILL BE OVERWRITTEN.
 	font-size: 15px;
 	line-height: 14px;
 	white-space: nowrap;
-	word-spacing: -3.6px;
+	word-spacing: -0.25em;
 	height: 14px;
 	width: 75px;
 	overflow: hidden;
@@ -954,6 +954,7 @@ AND ANY CHANGES MADE HERE WILL BE OVERWRITTEN.
 	top: 0;
 	right: 0;
 	z-index: 1;
+	font-size: 0;
 	text-align: center;
 	line-height: 4rem;
 	width: 4rem;
@@ -967,12 +968,13 @@ AND ANY CHANGES MADE HERE WILL BE OVERWRITTEN.
 .no-touch .woocommerce-product-gallery:hover .woocommerce-product-gallery__trigger {
 	opacity: 1;
 	}
-	.no-touch .woocommerce-product-gallery__trigger:before {
-		content: 'fullscreen';
+	.woocommerce-product-gallery__trigger:before {
+		content: 'zoom_in';
+		vertical-align: top;
 		font-family: 'Material Icons';
 		font-size: 34px;
 		}
-	.no-touch .woocommerce-product-gallery__trigger img {
+	.woocommerce-product-gallery__trigger img {
 		display: none !important;
 		}
 .woocommerce-product-gallery__wrapper {
@@ -1282,7 +1284,7 @@ AND ANY CHANGES MADE HERE WILL BE OVERWRITTEN.
 			font-size: 0;
 			word-spacing: -6px;
 			height: 26px;
-			width: 130px;
+			width: 150px;
 			}
 			.woocommerce .stars a {
 				float: left;

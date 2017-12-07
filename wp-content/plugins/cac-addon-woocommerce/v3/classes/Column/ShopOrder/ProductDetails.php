@@ -7,7 +7,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * @since 1.4
  */
-class ACA_WC_Column_ShopOrder_ProductDetails extends AC_Column {
+class ACA_WC_Column_ShopOrder_ProductDetails extends AC_Column
+	implements ACP_Export_Column {
 
 	public function __construct() {
 		$this->set_type( 'column-wc-product_details' );
@@ -69,6 +70,10 @@ class ACA_WC_Column_ShopOrder_ProductDetails extends AC_Column {
 
 	public function get_raw_value( $order_id ) {
 		return ac_addon_wc_helper()->get_product_ids_by_order( $order_id );
+	}
+
+	public function export() {
+		return new ACP_Export_Model_Disabled( $this );
 	}
 
 }

@@ -1553,8 +1553,9 @@ jQuery.fn.cacie_edit_color = function( column, item ) {
 			for ( var i = 0; i < 24; i++ ) {
 				var $option = $( '<option>' );
 				var val = ('0' + i).slice( -2 );
+				var label = ( 12 === this.options.timeformat ) ? this.formatAMPM( i ) : val;
 
-				$option.val( val ).text( this.formatAMPM( i ) );
+				$option.val( val ).text( label );
 				$time_hours_field.append( $option );
 			}
 			$time_hours_field.find( 'option:first' ).prop( 'selected', true );
@@ -1626,7 +1627,8 @@ jQuery.fn.cacie_edit_color = function( column, item ) {
 
 	EditableDateTime.defaults = $.extend( {}, $.fn.editabletypes.abstractinput.defaults, {
 		tpl : template,
-		weekstart : 0
+		weekstart : 0,
+		timeformat : 12
 	} );
 
 	$.fn.editabletypes.date_time = EditableDateTime;
@@ -1639,6 +1641,7 @@ jQuery.fn.cacie_edit_date_time = function( column, item ) {
 	el.cacie_xeditable( {
 		type : 'date_time',
 		value : el.cacie_get_value( column, item ),
-		weekstart : column.editable.weekstart
+		weekstart : column.editable.weekstart,
+		timeformat : column.editable.timeformat
 	}, column, item );
 };

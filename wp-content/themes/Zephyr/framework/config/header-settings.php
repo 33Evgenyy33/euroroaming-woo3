@@ -316,7 +316,8 @@ return array(
 					'std' => 'Some text',
 				),
 				'link' => array(
-					'title' => __( 'Link (optional)', 'us' ),
+					'title' => us_translate( 'Link' ),
+					'placeholder' => us_translate( 'Enter the URL' ),
 					'type' => 'link',
 					'std' => array(
 						'url' => '',
@@ -399,7 +400,7 @@ return array(
 					'extension' => 'png,jpg,jpeg,gif,svg',
 				),
 				'link' => array(
-					'title' => __( 'Image link', 'us' ),
+					'title' => us_translate( 'Link' ),
 					'placeholder' => us_translate( 'Enter the URL' ),
 					'type' => 'link',
 					'std' => array(
@@ -573,13 +574,45 @@ return array(
 					'group' => __( 'Dropdowns', 'us' ),
 				),
 				'mobile_width' => array(
-					'title' => __( 'Enable mobile layout when screen width is less than', 'us' ),
+					'title' => __( 'Show mobile menu when screen width is less than', 'us' ),
 					'type' => 'slider',
 					'min' => 300,
 					'max' => 2000,
 					'step' => 10,
 					'std' => 900,
 					'postfix' => 'px',
+					'group' => __( 'Mobile Menu', 'us' ),
+				),
+				'mobile_layout' => array(
+					'title' => __( 'Mobile Menu Layout', 'us' ),
+					'type' => 'radio',
+					'options' => array(
+						'dropdown' => __( 'Dropdown', 'us' ),
+						'panel' => __( 'Vertical Panel', 'us' ),
+						'fullscreen' => __( 'Full Screen', 'us' ),
+					),
+					'std' => 'dropdown',
+					'group' => __( 'Mobile Menu', 'us' ),
+				),
+				'mobile_effect_p' => array(
+					'type' => 'radio',
+					'options' => array(
+						'afl' => __( 'Appear From Left', 'us' ),
+						'afr' => __( 'Appear From Right', 'us' ),
+					),
+					'std' => 'afl',
+					'show_if' => array( 'mobile_layout', '=', 'panel' ),
+					'group' => __( 'Mobile Menu', 'us' ),
+				),
+				'mobile_effect_f' => array(
+					'type' => 'radio',
+					'options' => array(
+						'aft' => __( 'Appear From Top', 'us' ),
+						'afc' => __( 'Appear From Center', 'us' ),
+						'afb' => __( 'Appear From Bottom', 'us' ),
+					),
+					'std' => 'aft',
+					'show_if' => array( 'mobile_layout', '=', 'fullscreen' ),
 					'group' => __( 'Mobile Menu', 'us' ),
 				),
 				'mobile_font_size' => array(
@@ -602,6 +635,17 @@ return array(
 					'postfix' => 'px',
 					'group' => __( 'Mobile Menu', 'us' ),
 				),
+				'mobile_align' => array(
+					'title' => __( 'Menu Items Alignment', 'us' ),
+					'type' => 'radio',
+					'options' => array(
+						'left' => us_translate( 'Left' ),
+						'center' => us_translate( 'Center' ),
+						'right' => us_translate( 'Right' ),
+					),
+					'std' => 'left',
+					'group' => __( 'Mobile Menu', 'us' ),
+				),
 				'mobile_behavior' => array(
 					'title' => __( 'Dropdown Behavior', 'us' ),
 					'description' => __( 'When this option is OFF, mobile menu dropdown will be shown by click on an arrow only.', 'us' ),
@@ -609,6 +653,35 @@ return array(
 					'text' => __( 'Show dropdown by click on menu item title', 'us' ),
 					'std' => 1,
 					'classes' => 'desc_2',
+					'group' => __( 'Mobile Menu', 'us' ),
+				),
+				'mobile_icon_size' => array(
+					'title' => __( 'Icon Size', 'us' ),
+					'type' => 'slider',
+					'min' => 11,
+					'max' => 50,
+					'std' => 20,
+					'postfix' => 'px',
+					'group' => __( 'Mobile Menu', 'us' ),
+				),
+				'mobile_icon_size_tablets' => array(
+					'title' => __( 'Icon Size on Tablets', 'us' ),
+					'type' => 'slider',
+					'min' => 11,
+					'max' => 50,
+					'std' => 20,
+					'postfix' => 'px',
+					'classes' => 'cols_2',
+					'group' => __( 'Mobile Menu', 'us' ),
+				),
+				'mobile_icon_size_mobiles' => array(
+					'title' => __( 'Icon Size on Mobiles', 'us' ),
+					'type' => 'slider',
+					'min' => 11,
+					'max' => 50,
+					'std' => 20,
+					'postfix' => 'px',
+					'classes' => 'cols_2',
 					'group' => __( 'Mobile Menu', 'us' ),
 				),
 				'design_options' => array(
@@ -701,6 +774,32 @@ return array(
 		'search' => array(
 			'title' => us_translate( 'Search' ),
 			'params' => array(
+				'icon_size' => array(
+					'title' => __( 'Icon Size', 'us' ),
+					'type' => 'slider',
+					'min' => 11,
+					'max' => 50,
+					'std' => 17,
+					'postfix' => 'px',
+				),
+				'icon_size_tablets' => array(
+					'title' => __( 'Icon Size on Tablets', 'us' ),
+					'type' => 'slider',
+					'min' => 11,
+					'max' => 50,
+					'std' => 17,
+					'postfix' => 'px',
+					'classes' => 'cols_2',
+				),
+				'icon_size_mobiles' => array(
+					'title' => __( 'Icon Size on Mobiles', 'us' ),
+					'type' => 'slider',
+					'min' => 11,
+					'max' => 50,
+					'std' => 17,
+					'postfix' => 'px',
+					'classes' => 'cols_2',
+				),
 				'text' => array(
 					'title' => __( 'Placeholder Text', 'us' ),
 					'type' => 'text',
@@ -708,7 +807,7 @@ return array(
 				),
 				'layout' => array(
 					'title' => __( 'Layout', 'us' ),
-					'type' => 'select',
+					'type' => 'radio',
 					'options' => array(
 						'simple' => __( 'Simple', 'us' ),
 						'modern' => __( 'Modern', 'us' ),
@@ -757,7 +856,7 @@ return array(
 					'title' => us_translate( 'Source' ),
 					'type' => 'select',
 					'options' => array(
-						'own' => __( 'My own links', 'us' ),
+						'own' => us_translate( 'Custom Links' ),
 						'wpml' => 'WPML',
 						'polylang' => 'Polylang',
 						'qtranslate' => 'qTranslate X',
@@ -1139,6 +1238,110 @@ return array(
 				)
 			),
 		),
+		// TODO: remove after TD-1716 is done
+		// 'socials2' => array(
+			// 'title' => __( 'Social Links 2', 'us' ),
+			// 'params' => array(
+				// 'items' => array(
+					// 'is_hb' => TRUE,
+					// 'type' => 'group',
+					// 'classes' => 'compact',
+					// 'params' => array(
+						// 'type' => array(
+							// 'title' => __( 'Icon', 'us' ),
+							// 'type' => 'select',
+							// 'options' => array_merge( $social_links, array( 'custom' => __( 'Custom Icon', 'us' ) ) ),
+							// 'std' => 'facebook',
+							// 'classes' => 'cols_2',
+						// ),
+						// 'url' => array(
+							// 'title' => us_translate( 'Link' ),
+							// 'type' => 'text',
+							// 'std' => '',
+							// 'classes' => 'cols_2',
+						// ),
+						// 'custom_icon' => array(
+							// 'title' => __( 'Custom Link Icon', 'us' ),
+							// 'description' => sprintf( __( '%s or %s icon name', 'us' ), '<a href="http://fontawesome.io/icons/" target="_blank">Font Awesome</a>', '<a href="https://material.io/icons/" target="_blank">Material</a>' ),
+							// 'type' => 'text',
+							// 'std' => '',
+							// 'classes' => 'desc_1',
+							// 'show_if' => array( 'type', '=', 'custom' ),
+						// ),
+						// 'custom_title' => array(
+							// 'title' => __( 'Custom Link Title', 'us' ),
+							// 'type' => 'text',
+							// 'std' => '',
+							// 'classes' => 'cols_2',
+							// 'show_if' => array( 'type', '=', 'custom' ),
+						// ),
+						// 'custom_color' => array(
+							// 'type' => 'color',
+							// 'title' => __( 'Custom Link Color', 'us' ),
+							// 'std' => '#1abc9c',
+							// 'classes' => 'cols_2',
+							// 'show_if' => array( 'type', '=', 'custom' ),
+						// ),
+					// ),
+				// ),
+				// 'color' => array(
+					// 'title' => __( 'Icons Color', 'us' ),
+					// 'type' => 'select',
+					// 'options' => array(
+						// 'brand' => __( 'Default brand colors', 'us' ),
+						// 'text' => __( 'Text (theme color)', 'us' ),
+					// ),
+					// 'std' => 'text',
+					// 'classes' => 'cols_2',
+					// 'group' => us_translate( 'Appearance' ),
+				// ),
+				// 'hover' => array(
+					// 'title' => __( 'Hover Style', 'us' ),
+					// 'type' => 'select',
+					// 'options' => array(
+						// 'default' => us_translate( 'Default' ),
+						// 'none' => us_translate( 'None' ),
+					// ),
+					// 'std' => 'default',
+					// 'classes' => 'cols_2',
+					// 'group' => us_translate( 'Appearance' ),
+				// ),
+				// 'size' => array(
+					// 'title' => us_translate( 'Size' ),
+					// 'type' => 'slider',
+					// 'min' => 15,
+					// 'max' => 30,
+					// 'std' => 18,
+					// 'postfix' => 'px',
+					// 'group' => __( 'Sizes', 'us' ),
+				// ),
+				// 'size_tablets' => array(
+					// 'title' => __( 'Size on Tablets', 'us' ),
+					// 'type' => 'slider',
+					// 'min' => 15,
+					// 'max' => 30,
+					// 'std' => 18,
+					// 'postfix' => 'px',
+					// 'classes' => 'cols_2',
+					// 'group' => __( 'Sizes', 'us' ),
+				// ),
+				// 'size_mobiles' => array(
+					// 'title' => __( 'Size on Mobiles', 'us' ),
+					// 'type' => 'slider',
+					// 'min' => 15,
+					// 'max' => 30,
+					// 'std' => 18,
+					// 'postfix' => 'px',
+					// 'classes' => 'cols_2',
+					// 'group' => __( 'Sizes', 'us' ),
+				// ),
+				// 'design_options' => array(
+					// 'type' => 'design_options',
+					// 'std' => '',
+					// 'group' => __( 'More Options', 'us' ),
+				// ),
+			// ),
+		// ),
 		'btn' => array(
 			'title' => __( 'Button', 'us' ),
 			'params' => array(
@@ -1149,7 +1352,7 @@ return array(
 					'classes' => 'cols_2',
 				),
 				'link' => array(
-					'title' => __( 'Button Link', 'us' ),
+					'title' => us_translate( 'Link' ),
 					'placeholder' => us_translate( 'Enter the URL' ),
 					'type' => 'link',
 					'std' => array(
@@ -1160,7 +1363,7 @@ return array(
 				),
 				'style' => array(
 					'title' => __( 'Button Style', 'us' ),
-					'type' => 'select',
+					'type' => 'radio',
 					'options' => array(
 						'solid' => __( 'Solid', 'us' ),
 						'outlined' => __( 'Outlined', 'us' ),
@@ -1274,21 +1477,38 @@ return array(
 					'std' => 'fa-shopping-cart',
 					'classes' => 'desc_1',
 				),
+				'size' => array(
+					'title' => __( 'Icon Size', 'us' ),
+					'type' => 'slider',
+					'min' => 11,
+					'max' => 50,
+					'std' => 20,
+					'postfix' => 'px',
+				),
+				'size_tablets' => array(
+					'title' => __( 'Icon Size on Tablets', 'us' ),
+					'type' => 'slider',
+					'min' => 11,
+					'max' => 50,
+					'std' => 20,
+					'postfix' => 'px',
+					'classes' => 'cols_2',
+				),
+				'size_mobiles' => array(
+					'title' => __( 'Icon Size on Mobiles', 'us' ),
+					'type' => 'slider',
+					'min' => 11,
+					'max' => 50,
+					'std' => 20,
+					'postfix' => 'px',
+					'classes' => 'cols_2',
+				),
 				'vstretch' => array(
 					'title' => us_translate( 'Height' ),
 					'type' => 'switch',
 					'text' => __( 'Stretch to the full available height', 'us' ),
 					'std' => 1,
 				),
-				// 'dropdown_direction' => array(
-					// 'title' => __( 'Dropdown Direction', 'us' ),
-					// 'type' => 'radio',
-					// 'options' => array(
-						// 'left' => us_translate( 'Left' ),
-						// 'right' => us_translate( 'Right' ),
-					// ),
-					// 'std' => 'left',
-				// ),
 				'dropdown_effect' => array(
 					'title' => __( 'Dropdown Effect', 'us' ),
 					'type' => 'select',
@@ -1302,35 +1522,6 @@ return array(
 						'mdesign' => __( 'Material Design Effect', 'us' ),
 					),
 					'std' => 'height',
-				),
-				'size' => array(
-					'title' => __( 'Font Size', 'us' ),
-					'type' => 'slider',
-					'min' => 11,
-					'max' => 50,
-					'std' => 20,
-					'postfix' => 'px',
-					'group' => __( 'Sizes', 'us' ),
-				),
-				'size_tablets' => array(
-					'title' => __( 'Font Size on Tablets', 'us' ),
-					'type' => 'slider',
-					'min' => 11,
-					'max' => 50,
-					'std' => 20,
-					'postfix' => 'px',
-					'classes' => 'cols_2',
-					'group' => __( 'Sizes', 'us' ),
-				),
-				'size_mobiles' => array(
-					'title' => __( 'Font Size on Mobiles', 'us' ),
-					'type' => 'slider',
-					'min' => 11,
-					'max' => 50,
-					'std' => 20,
-					'postfix' => 'px',
-					'classes' => 'cols_2',
-					'group' => __( 'Sizes', 'us' ),
 				),
 				'design_options' => array(
 					'type' => 'design_options',

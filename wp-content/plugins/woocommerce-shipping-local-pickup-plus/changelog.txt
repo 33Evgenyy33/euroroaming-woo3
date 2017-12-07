@@ -1,5 +1,9 @@
 *** WooCommerce Local Pickup Plus Changelog ***
 
+2017.11.15 - version 2.3.3
+ * Fix - Address an issue where pickup appointment field was not displayed for product variations when the parent product was not available on all pickup locations
+ * Fix - Ensure pickup location field is not displayed to virtual product variations when the parent product is not virtual
+
 2017.11.07 - version 2.3.2
  * Fix - Compatibility issue with WooCommerce 2.6.14 introduced in version 2.3.0
  * Fix - Ensure that virtual items are skipped when building packages

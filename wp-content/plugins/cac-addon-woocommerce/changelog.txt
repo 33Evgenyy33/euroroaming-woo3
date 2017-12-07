@@ -1,5 +1,15 @@
 == Changelog ==
 
+= 2.2 =
+Release Date: November 22nd, 2017
+
+* [Added] Added Exporting
+* [Added] WooCommerce Email Restrictions Column added
+* [Fixed] Filtering for Product Visibility Column
+* [Improved] Don't show the attribute label for single WooCommerce attribute columns
+* [Improved] Enabled select2 on the WooCommerce Orders page
+
+
 = 2.1.5 =
 Release Date: October 2nd, 2017
 

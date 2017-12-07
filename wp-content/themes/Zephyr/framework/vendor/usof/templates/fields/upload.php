@@ -30,6 +30,7 @@ $output .= '<div class="usof-button type_set" style="display: ' . ( $upload_imag
 $output .= '<span class="usof-button-label">' . $field['label'] . '</span>';
 $output .= '</div>';
 $output .= '<div class="usof-upload-container" style="display: ' . ( $upload_image ? 'block' : 'none' ) . '">';
+$output .= '<div class="usof-preloader"></div>';
 if ( $upload_image ) {
 	$output .= '<img src="' . esc_attr( $upload_image[0] ) . '" alt="" />';
 } else {

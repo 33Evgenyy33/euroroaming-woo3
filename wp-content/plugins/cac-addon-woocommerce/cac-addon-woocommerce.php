@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: 		Admin Columns Pro - WooCommerce
-Version: 			2.1.5
+Version: 			2.2
 Description: 		Supercharges Admin Columns Pro with powerful WooCommerce columns.
 Author: 			Admin Columns
 Author URI: 		https://www.admincolumns.com

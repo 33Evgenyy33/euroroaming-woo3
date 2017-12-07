@@ -62,7 +62,7 @@ if ( ! vc_is_page_editable() ) {
 		),
 		array(
 			'param_name' => 'i_position',
-			'heading' => __( 'Icon position', 'us' ),
+			'heading' => __( 'Icon Position', 'us' ),
 			'type' => 'dropdown',
 			'value' => array(
 				__( 'Before title', 'us' ) => 'left',

@@ -93,6 +93,7 @@ vc_map(
 			array(
 				'param_name' => 'img_size',
 				'heading' => __( 'Images Size', 'us' ),
+				'description' => sprintf( __( 'To change the default image sizes, go to %s.', 'us' ), '<a target="_blank" href="' . admin_url( 'options-media.php' ) . '">' . us_translate( 'Media Settings' ) . '</a>' ) . ' ' . sprintf( __( 'To add custom image sizes, go to %s.', 'us' ), '<a target="_blank" href="' . admin_url( 'admin.php?page=us-theme-options#advanced' ) . '">' . __( 'Theme Options', 'us' ) . '</a>' ),
 				'type' => 'dropdown',
 				'value' => array_merge( array( us_translate( 'Default' ) => 'default' ), us_image_sizes_select_values() ),
 				'std' => $config['atts']['img_size'],

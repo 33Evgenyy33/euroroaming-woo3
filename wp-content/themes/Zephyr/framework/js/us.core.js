@@ -1103,12 +1103,15 @@ jQuery('html').toggleClass('no-touch', !jQuery.isMobile);
 		this.init(container, options);
 	};
 
+	$us.mobileNavOpened = 0;
+
 	$us.Nav.prototype = {
 		init: function(container, options){
 			// Commonly used dom elements
 			this.$nav = $(container);
 			if (this.$nav.length == 0) return;
 			this.$control = this.$nav.find('.w-nav-control');
+			this.$close = this.$nav.find('.w-nav-close');
 			this.$items = this.$nav.find('.menu-item');
 			this.$list = this.$nav.find('.w-nav-list.level_1');
 			this.$subItems = this.$list.find('.menu-item-has-children');
@@ -1123,6 +1126,7 @@ jQuery('html').toggleClass('no-touch', !jQuery.isMobile);
 			if (this.$nav.length == 0) return;
 
 			this.type = this.$nav.usMod('type');
+			this.layout = this.$nav.usMod('layout');
 			this.mobileOpened = false;
 
 			// Mobile menu toggler
@@ -1136,15 +1140,45 @@ jQuery('html').toggleClass('no-touch', !jQuery.isMobile);
 					// Closing opened sublists
 					this.$control.addClass('active');
 					this.$items.filter('.opened').removeClass('opened');
-					this.$subLists.resetInlineCSS('display', 'opacity', 'height');
-					this.$list.slideDownCSS(250, this._events.contentChanged);
+					this.$subLists.resetInlineCSS('display', 'height');
+					if (this.layout == 'dropdown') {
+						this.$list.slideDownCSS(250, this._events.contentChanged);
+					}
+					$us.mobileNavOpened++;
 				} else {
 					this.$control.removeClass('active');
-					this.$list.slideUpCSS(250, this._events.contentChanged);
+					if (this.layout == 'dropdown') {
+						this.$list.slideUpCSS(250, this._events.contentChanged);
+					}
+					$us.mobileNavOpened--;
+				}
+				$us.$canvas.trigger('contentChange');
+			}.bind(this));
+
+			// Close
+			this.$close.on('click', function(){
+				this.mobileOpened = false;
+				this.$control.removeClass('active');
+				$us.mobileNavOpened--;
+				$us.$canvas.trigger('contentChange');
+			}.bind(this));
+
+			// Close on ESC key pressed
+			$us.$document.keyup(function(e) {
+				if (e.keyCode == 27) {
+					if (this.mobileOpened) {
+						if (this.layout == 'dropdown') {
+							this.$list.slideUpCSS(250, this._events.contentChanged);
+						}
+						this.mobileOpened = false;
+						this.$control.removeClass('active');
+						$us.mobileNavOpened--;
+						$us.$canvas.trigger('contentChange');
+					}
 				}
 			}.bind(this));
 
-			// Boundable events
+			// Bindable events
 			this._events = {
 				// Mobile submenu togglers
 				toggle: function(e){
@@ -1169,9 +1203,13 @@ jQuery('html').toggleClass('no-touch', !jQuery.isMobile);
 					$us.header.$container.trigger('contentChange');
 				}.bind(this),
 				close: function(){
-					if (this.$list != undefined && jQuery.fn.slideUpCSS != undefined && this.mobileOpened && this.type == 'mobile' && this.headerOrientation == 'hor') {
+					if (this.$list != undefined && jQuery.fn.slideUpCSS != undefined && this.mobileOpened && this.type == 'mobile') {
 						this.mobileOpened = false;
-						this.$list.slideUpCSS(250);
+						if (this.layout == 'dropdown' && this.headerOrientation == 'hor') {
+							this.$list.slideUpCSS(250);
+						}
+						$us.mobileNavOpened--;
+						$us.$canvas.trigger('contentChange');
 					}
 				}.bind(this)
 			};
@@ -1211,12 +1249,18 @@ jQuery('html').toggleClass('no-touch', !jQuery.isMobile);
 			}
 			// Close on click outside of level 1 menu list
 			// TODO: maybe move this to resize logic
-			$($us.$document).mouseup(function(e) {
-				if (this.mobileOpened && this.type == 'mobile' && this.headerOrientation == 'hor') {
+			$($us.$document).on('mouseup touchend', function(e) {
+				if (this.mobileOpened && this.type == 'mobile') {
 					if ( ! this.$control.is(e.target) && this.$control.has(e.target).length === 0 && ! this.$list.is(e.target) && this.$list.has(e.target).length === 0) {
 						this.mobileOpened = false;
 						this.$control.removeClass('active');
-						this.$list.slideUpCSS(250);
+						this.$items.filter('.opened').removeClass('opened');
+						this.$subLists.slideUpCSS(250);
+						if (this.layout == 'dropdown' && this.headerOrientation == 'hor') {
+							this.$list.slideUpCSS(250);
+						}
+						$us.mobileNavOpened--;
+						$us.$canvas.trigger('contentChange');
 					}
 				}
 			}.bind(this));
@@ -1228,7 +1272,11 @@ jQuery('html').toggleClass('no-touch', !jQuery.isMobile);
 				if (this.options.mobileBehavior && $(e.currentTarget).closest('.menu-item').hasClass('menu-item-has-children')) return;
 				this.mobileOpened = false;
 				this.$control.removeClass('active');
-				this.$list.slideUpCSS(250);
+				if (this.layout == 'dropdown') {
+					this.$list.slideUpCSS(250);
+				}
+				$us.mobileNavOpened--;
+				$us.$canvas.trigger('contentChange');
 			}.bind(this));
 
 			$us.$window.on('resize', this._events.resize);
@@ -1254,26 +1302,18 @@ jQuery('html').toggleClass('no-touch', !jQuery.isMobile);
 			var nextType = (window.innerWidth < this.options.mobileWidth) ? 'mobile' : 'desktop';
 			if ($us.header.orientation != this.headerOrientation || nextType != this.type) {
 				// Clearing the previous state
-				this.$subLists.resetInlineCSS('display', 'opacity', 'height');
+				this.$subLists.resetInlineCSS('display', 'height');
 				if (this.headerOrientation == 'hor' && this.type == 'mobile') {
-					this.$list.resetInlineCSS('display', 'opacity', 'height', 'max-height');
+					this.$list.resetInlineCSS('display', 'height', 'max-height');
 				}
 				// Closing opened sublists
 				this.$items.removeClass('opened');
-				// Applying the new state
-				if ($us.header.orientation == 'hor') {
-					if (nextType == 'mobile') {
-						this.mobileOpened = false;
-						this.$list.css('height', 0);
-						this.$subLists.css('height', 0);
-					}
-				}
 				this.headerOrientation = $us.header.orientation;
 				this.type = nextType;
 				this.$nav.usMod('type', nextType);
 			}
 			// Max-height limitation for fixed header layouts
-			if ($us.header.orientation == 'hor' && this.type == 'mobile' && $us.canvas.headerPos == 'fixed') this.setFixedMobileMaxHeight();
+			if ($us.header.orientation == 'hor' && this.type == 'mobile' && this.layout == 'dropdown' && $us.canvas.headerPos == 'fixed') this.setFixedMobileMaxHeight();
 			this.$list.removeClass('hide_for_mobiles');
 		}
 	};
@@ -1932,12 +1972,10 @@ jQuery(function($){
 				overflow: 'hidden',
 				height: '0px',
 				visibility: '',
-				position: '',
-				opacity: 0
+				position: ''
 			});
 			$this.performCSSTransition({
 				height: height + paddingTop + paddingBottom,
-				opacity: 1,
 				'padding-top': paddingTop,
 				'padding-bottom': paddingBottom
 			}, duration, function(){
@@ -1954,17 +1992,15 @@ jQuery(function($){
 			height: this.outerHeight(),
 			overflow: 'hidden',
 			'padding-top': this.css('padding-top'),
-			'padding-bottom': this.css('padding-bottom'),
-			opacity: 1
+			'padding-bottom': this.css('padding-bottom')
 		});
 		var $this = this;
 		this.performCSSTransition({
 			height: 0,
 			'padding-top': 0,
-			'padding-bottom': 0,
-			opacity: 0
+			'padding-bottom': 0
 		}, duration, function(){
-			$this.resetInlineCSS('overflow', 'padding-top', 'padding-bottom', 'opacity').css({
+			$this.resetInlineCSS('overflow', 'padding-top', 'padding-bottom').css({
 				display: 'none'
 			});
 			if (typeof onFinish == 'function') onFinish();
@@ -1991,57 +2027,6 @@ jQuery(function($){
 			$this.css('display', 'none');
 			if (typeof onFinish == 'function') onFinish();
 		}, easing, delay);
-	};
-	// Slide element left / right
-	var slideIn = function($this, from){
-			if ($this.length == 0) return;
-			$this.clearPreviousTransitions();
-			$this.css({width: 'auto', height: 'auto'});
-			var width = $this.width(),
-				height = $this.height();
-			$this.css({
-				width: width,
-				height: height,
-				position: 'relative',
-				left: (from == 'right') ? '100%' : '-100%',
-				opacity: 0,
-				display: 'block'
-			});
-			$this.performCSSTransition({
-				left: '0%',
-				opacity: 1
-			}, arguments[0] || 250, function(){
-				$this.resetInlineCSS('position', 'left', 'opacity', 'display').css({width: 'auto', height: 'auto'});
-			});
-		},
-		slideOut = function($this, to){
-			if ($this.length == 0) return;
-			$this.clearPreviousTransitions();
-			$this.css({
-				position: 'relative',
-				left: 0,
-				opacity: 1
-			});
-			$this.performCSSTransition({
-				left: (to == 'left') ? '-100%' : '100%',
-				opacity: 0
-			}, arguments[0] || 250, function(){
-				$this.css({
-					display: 'none'
-				}).resetInlineCSS('position', 'left', 'opacity');
-			});
-		};
-	jQuery.fn.slideOutLeft = function(){
-		slideOut(this, 'left');
-	};
-	jQuery.fn.slideOutRight = function(){
-		slideOut(this, 'right');
-	};
-	jQuery.fn.slideInLeft = function(){
-		slideIn(this, 'left');
-	};
-	jQuery.fn.slideInRight = function(){
-		slideIn(this, 'right');
 	};
 }();
 
@@ -2154,7 +2139,7 @@ jQuery(function($){
 			$us.$document.off('mousewheel DOMMouseScroll MozMousePixelScroll');
 			$us.$canvas.off('touchstart touchmove');
 			
-			if ($us.$window.width() > this.disableWidth && ( ! $us.$html.hasClass('cloverlay_fixed'))) {
+			if ($us.$window.width() > this.disableWidth && $us.mobileNavOpened <= 0 && ( ! $us.$html.hasClass('cloverlay_fixed'))) {
 				$us.$document.on('mousewheel DOMMouseScroll MozMousePixelScroll', function(e) {
 					e.preventDefault();
 					var currentTime = new Date().getTime(),
@@ -2329,7 +2314,7 @@ jQuery(function($){
 				$wrapper.css({overflow: 'hidden', height: $this.outerHeight(true)});
 				$wrapper.performCSSTransition({
 					height: 0
-				}, 400, function(){
+				}, 300, function(){
 					$wrapper.remove();
 					$us.$canvas.trigger('contentChange');
 				}, 'cubic-bezier(.4,0,.2,1)');
@@ -2431,6 +2416,7 @@ jQuery(function($){
 					responsive[this.$list.data('breakpoint_2_width')] = {items: Math.min(items, this.$list.data('breakpoint_1_cols'))};
 					responsive[this.$list.data('breakpoint_1_width')] = {items: items};
 					this.$list.owlCarousel({
+						mouseDrag: ! jQuery.isMobile,
 						items: items,
 						loop: true,
 						rtl: $('.l-body').hasClass('rtl'),
@@ -3108,6 +3094,7 @@ jQuery(function($){
 			responsive_breakpoints[breakpoint1_width] = {items: items};
 
 			$list.owlCarousel({
+				mouseDrag: ! jQuery.isMobile,
 				items: items,
 				loop: true,
 				rtl: $('.l-body').hasClass('rtl'),
@@ -3135,6 +3122,7 @@ jQuery(function($){
 			var $list = $(this).find('.w-testimonials-list'),
 				items = parseInt($list.data('items'));
 			$list.owlCarousel({
+				mouseDrag: ! jQuery.isMobile,
 				items: items,
 				loop: true,
 				rtl: $('.l-body').hasClass('rtl'),
@@ -3576,6 +3564,7 @@ jQuery(function($){
 					responsive[this.$list.data('breakpoint_1_width')] = {items: items};
 
 					this.$list.owlCarousel({
+						mouseDrag: ! jQuery.isMobile,
 						items: items,
 						loop: true,
 						rtl: $('.l-body').hasClass('rtl'),

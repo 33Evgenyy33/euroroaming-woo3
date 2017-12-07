@@ -7,11 +7,6 @@
 	width: 254px;
 	}
 
-/* Hide Size option in Media Gallery */
-.gallery-settings .setting.size {
-	display: none;
-	}
-
 /* UpSolution icon for the WP menu item */
 .menu-icon-generic.toplevel_page_us-theme-options .wp-menu-image {
 	background: url(../img/us-logo.png) no-repeat center 6px / 22px auto !important;
@@ -429,7 +424,8 @@
 	line-height: 30px;
 	height: 30px;
 	width: 216px;
-	background:	url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAAHnlligAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAHJJREFUeNpi+P///4EDBxiAGMgCCCAGFB5AADGCRBgYDh48CCRZIJS9vT2QBAggFBkmBiSAogxFBiCAoHogAKIKAlBUYTELAiAmEtABEECk20G6BOmuIl0CIMBQ/IEMkO0myiSSraaaBhZcbkUOs0HuBwDplz5uFJ3Z4gAAAABJRU5ErkJggg==");
+	background:	url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAMFJREFUeNrsVlsOhCAM7Jg9j97/GHChMTxcC9UPTNatif0AIxhmOlMqSMpIhBiG9k/y43gP+P8Bn/FPkIbiPZQhTRSafXDKoMDL4DNqWn7fNccMlAYF66ZE/8avBvu0qUG1sPvKLQOFlo0GigfvcVGI8cQbNr8plnlxehflPELlMbMhYDzu7zaluj1onM7GL0/sB+ic7pGBxcXu+QkuqhhrJasartXQ9iqPGtQKOO20lKscbtbAIAXk8J/HEYNVgAEAHShEyUuW684AAAAASUVORK5CYII=");
+	background-size: 16px;
 	}
 .usof-metabox .usof-color-preview {
 	position: absolute;
@@ -445,10 +441,13 @@
 	text-align: center;
 	line-height: inherit;
 	padding: 0;
-	text-shadow: 1px 1px 0 rgba(255,255,255,0.6);
 	box-shadow: 0 0 0 1px rgba(0,0,0,0.06) inset;
 	background: none !important;
 	border: none !important;
+	color: #333;
+	}
+.usof-metabox .usof-color input.usof-color-value.white {
+	color: #fff;
 	}
 .usof-metabox .usof-color-clear {
 	position: absolute;
@@ -1913,7 +1912,7 @@ div[data-vc-shortcode-param-name="categories"] .vc_checkbox-label {
 .vc_param_group-list .vc_controls-row .vc_control {
 	padding: 8px;
 	border: none;
-	border-radius: 0;
+	margin: 0;
 	background-color: transparent;
 	}
 .vc_param_group-list .vc_controls-row .vc_control:hover {
@@ -1921,13 +1920,23 @@ div[data-vc-shortcode-param-name="categories"] .vc_checkbox-label {
 	}
 .vc_param_group-list .vc_controls-row .vc_control.column_toggle {
 	text-align: right;
-	width: calc(100% - 121px);
+	width: calc(100% - 118px);
+	}
+.vc_param_group-list .vc-c-icon-dragndrop {
+	display: block;
+	line-height: 18px;
+	width: 18px;
 	}
 .vc_param-group-admin-labels {
+	position: absolute;
+	font-style: normal;
 	margin-top: 5px;
 	pointer-events: none;
-	position: absolute;
+	color: inherit;
 	}
+	.vc_param-group-admin-labels > label {
+		color: #999;
+		}
 .vc_settings .vc_param .vc_controls {
 	background-color: #e6e6e6;
 	}

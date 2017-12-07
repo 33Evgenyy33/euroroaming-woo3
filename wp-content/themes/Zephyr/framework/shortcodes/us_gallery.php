@@ -21,22 +21,29 @@
  * @param $atts           ['img_size'] string Images Size
  * @param $atts           ['el_class'] string Extra class name
  */
-
 // Translating attributes from [gallery] to [us_gallery] format (may be used in both shortcodes
 $link_type = 'file';
+if ( isset( $atts['link'] ) AND $atts['link'] == 'post' ) {
+	$link_type = 'attachment';
+}
 if ( $shortcode_base == 'gallery' ) {
 	if ( ! isset( $atts['columns'] ) OR empty( $atts['columns'] ) ) {
 		// Default [gallery] shortcode has 3 columns by default
 		$atts['columns'] = '3';
-	}
-	if ( ! isset( $atts['link'] ) ) {
-		$link_type = 'attachment';
 	}
 	if ( isset( $atts['indents'] ) ) {
 		$atts['indents'] = ( $atts['indents'] == 'true' );
 	}
 	if ( isset( $atts['meta'] ) ) {
 		$atts['meta'] = ( $atts['meta'] == 'true' );
+	}
+	if ( isset( $atts['size'] ) ) {
+		$atts['img_size'] = $atts['size'];
+	} else {
+		$atts['img_size'] = 'default';
+	}
+	if ( ! isset( $atts['link'] ) ) {
+		$link_type = 'attachment';
 	}
 }
 if ( ! isset( $atts['ids'] ) OR empty( $atts['ids'] ) ) {
@@ -104,9 +111,9 @@ if ( $atts['layout'] == 'masonry' AND $atts['columns'] > 1 ) {
 	if ( $atts['columns'] == 1 ) {
 		$tnail_size = 'full';
 	} elseif ( $atts['columns'] < 5 ) {
-		$tnail_size = 'tnail-1x1';
+		$tnail_size = 'us_600_600_crop';
 	} elseif ( $atts['columns'] < 8 ) {
-		$tnail_size = 'tnail-1x1-small';
+		$tnail_size = 'us_350_350_crop';
 	} else {
 		$tnail_size = 'thumbnail';
 	}

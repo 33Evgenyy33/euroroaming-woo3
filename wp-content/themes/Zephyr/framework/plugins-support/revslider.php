@@ -34,3 +34,26 @@ function us_move_revslider_js_footer() {
 	remove_action( 'wp_footer', array( 'RevSliderFront', 'putAdminBarMenus' ) );
 	add_action( 'wp_footer', array( 'RevSliderFront', 'putAdminBarMenus' ), 99 );
 }
+
+
+add_action( 'wp_enqueue_scripts', 'us_include_revslider_js_for_row_bg', 5 );
+function us_include_revslider_js_for_row_bg() {
+	$operations = new RevSliderOperations();
+	$arrValues = $operations->getGeneralSettingsValues();
+
+	$strPutIn = RevSliderFunctions::getVal( $arrValues, "pages_for_includes" );
+
+	$isPutIn = RevSliderOutput::isPutIn( $strPutIn, TRUE );
+	$includesGlobally = RevSliderFunctions::getVal( $arrValues, "includes_globally", "on" );
+
+	if ( $isPutIn == FALSE && $includesGlobally == "off" ) {
+		if ( ! is_singular() ) {
+			return;
+		}
+		$post = get_post( get_the_ID() );
+
+		if ( stripos( $post->post_content, 'us_bg_slider=' ) !== FALSE ) {
+			add_filter( 'revslider_include_libraries', '__return_true' );
+		}
+	}
+}

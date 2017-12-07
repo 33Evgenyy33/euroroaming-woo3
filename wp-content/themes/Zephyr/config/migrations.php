@@ -33,4 +33,5 @@ return array(
 	'4.7' => 'functions/migrations/us_migration_4_7.php',
 	'4.8' => 'functions/migrations/us_migration_4_8.php',
 	'4.9' => 'functions/migrations/us_migration_4_9.php',
+	'4.10' => 'functions/migrations/us_migration_4_10.php',
 );

@@ -374,12 +374,12 @@ body {
 /* Top Header Colors */
 .l-subheader.at_top,
 .l-subheader.at_top .w-dropdown-list,
-.header_hor .l-subheader.at_top .type_mobile .w-nav-list.level_1 {
+.l-subheader.at_top .type_mobile .w-nav-list.level_1 {
 	background-color: <?php echo us_get_option( 'color_header_top_bg' ) ?>;
 	}
 .l-subheader.at_top,
 .l-subheader.at_top .w-dropdown.active,
-.header_hor .l-subheader.at_top .type_mobile .w-nav-list.level_1 {
+.l-subheader.at_top .type_mobile .w-nav-list.level_1 {
 	color: <?php echo us_get_option( 'color_header_top_text' ) ?>;
 	}
 .no-touch .l-subheader.at_top a:hover,
@@ -391,12 +391,12 @@ body {
 .header_ver .l-header,
 .header_hor .l-subheader.at_middle,
 .l-subheader.at_middle .w-dropdown-list,
-.header_hor .l-subheader.at_middle .type_mobile .w-nav-list.level_1 {
+.l-subheader.at_middle .type_mobile .w-nav-list.level_1 {
 	background-color: <?php echo us_get_option( 'color_header_middle_bg' ) ?>;
 	}
 .l-subheader.at_middle,
 .l-subheader.at_middle .w-dropdown.active,
-.header_hor .l-subheader.at_middle .type_mobile .w-nav-list.level_1 {
+.l-subheader.at_middle .type_mobile .w-nav-list.level_1 {
 	color: <?php echo us_get_option( 'color_header_middle_text' ) ?>;
 	}
 .no-touch .l-subheader.at_middle a:hover,
@@ -407,12 +407,12 @@ body {
 /* Bottom Header Colors */
 .l-subheader.at_bottom,
 .l-subheader.at_bottom .w-dropdown-list,
-.header_hor .l-subheader.at_bottom .type_mobile .w-nav-list.level_1 {
+.l-subheader.at_bottom .type_mobile .w-nav-list.level_1 {
 	background-color: <?php echo us_get_option( 'color_header_bottom_bg' ) ?>;
 	}
 .l-subheader.at_bottom,
 .l-subheader.at_bottom .w-dropdown.active,
-.header_hor .l-subheader.at_bottom .type_mobile .w-nav-list.level_1 {
+.l-subheader.at_bottom .type_mobile .w-nav-list.level_1 {
 	color: <?php echo us_get_option( 'color_header_bottom_text' ) ?>;
 	}
 .no-touch .l-subheader.at_bottom a:hover,
@@ -738,6 +738,7 @@ a.w-btn.color_primary.style_raised,
 .w-progbar.color_primary .w-progbar-bar-h,
 .w-sharing.type_solid.color_primary .w-sharing-item,
 .w-sharing.type_fixed.color_primary .w-sharing-item,
+.w-socials-item-link-hover,
 .w-tabs-list-bar,
 .w-tabs.layout_timeline .w-tabs-item.active,
 .no-touch .w-tabs.layout_timeline .w-tabs-item:hover,

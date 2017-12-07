@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.1
  */
 class ACA_WC_Column_ShopCoupon_ExcludeProducts extends AC_Column
-	implements ACP_Column_EditingInterface {
+	implements ACP_Column_EditingInterface, ACP_Export_Column {
 
 	public function __construct() {
 		$this->set_type( 'column-wc-exclude_products' );
@@ -44,6 +44,10 @@ class ACA_WC_Column_ShopCoupon_ExcludeProducts extends AC_Column
 
 	public function editing() {
 		return new ACA_WC_Editing_ShopCoupon_ExcludeProducts( $this );
+	}
+
+	public function export() {
+		return new ACP_Export_Model_StrippedValue( $this );
 	}
 
 }

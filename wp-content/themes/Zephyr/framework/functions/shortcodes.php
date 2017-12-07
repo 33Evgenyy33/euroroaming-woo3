@@ -263,3 +263,8 @@ function us_media_templates() {
 	</script>
 	<?php
 }
+
+add_filter( 'image_size_names_choose', 'us_image_size_names_choose_add_theme_sizes' );
+function us_image_size_names_choose_add_theme_sizes( $sizes ) {
+	return array_merge( array( 'default' => us_translate( 'Default' ) ), array_flip( us_image_sizes_select_values() ) );
+}

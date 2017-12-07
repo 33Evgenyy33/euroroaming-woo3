@@ -189,19 +189,37 @@ foreach ( $wpdb->get_results( $wpdb_query ) as $row ) {
 		$categories_names[$row->category_slug] = $row->category_name;
 	}
 }
-if ( empty( $items_categories ) ) {
-	if ( ! empty( $categories ) ) {
-		// Nothing is found in the needed categories
-		return;
-	} else {
-		// Very unlikely, but still: portfolio posts may be not attached to categories, so fetching them the other way
-		// TODO Rewrite the whole algorithm in a more lean way
-		us_open_wp_query_context();
+if ( empty( $items_categories ) AND ( ! empty( $categories ) ) ) {
+	// Nothing is found in the needed categories
+	return;
+}
+if ( empty( $categories ) ) {
+	// TODO Rewrite the whole algorithm in a more lean way
+	us_open_wp_query_context();
+	if ( empty( $items_categories ) ) {
 		foreach ( get_posts( array( 'post_type' => 'us_portfolio', 'numberposts' => - 1 ) ) as $post ) {
 			$items_categories[$post->ID] = array();
 		}
-		us_close_wp_query_context();
+	} else {
+		$get_posts_args = array(
+			'post_type' => 'us_portfolio',
+			'numberposts' => - 1,
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'us_portfolio_category',
+					'terms' => get_terms( array( 'taxonomy' => 'us_portfolio_category', 'fields' => 'ids' ) ),
+					'operator' => 'NOT IN',
+				),
+			),
+		);
+
+		foreach ( get_posts( $get_posts_args ) as $post ) {
+			if ( ! isset( $items_categories[$post->ID] ) ) {
+				$items_categories[$post->ID] = array();
+			}
+		}
 	}
+	us_close_wp_query_context();
 }
 
 if ( $has_pagination AND count( $items_categories ) <= $perpage ) {

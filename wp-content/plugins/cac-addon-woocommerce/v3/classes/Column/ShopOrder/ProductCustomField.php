@@ -4,7 +4,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class ACA_WC_Column_ShopOrder_ProductCustomField extends AC_Column_CustomField {
+class ACA_WC_Column_ShopOrder_ProductCustomField extends AC_Column_CustomField
+	implements ACP_Export_Column {
 
 	public function __construct() {
 		parent::__construct();
@@ -31,6 +32,10 @@ class ACA_WC_Column_ShopOrder_ProductCustomField extends AC_Column_CustomField {
 	public function register_settings() {
 		$this->add_setting( new ACA_WC_Settings_ProductMeta( $this ) );
 		$this->add_setting( new AC_Settings_Column_BeforeAfter( $this ) );
+	}
+
+	public function export() {
+		return new ACA_WC_Export_ShopOrder_ProductCustomField( $this );
 	}
 
 }

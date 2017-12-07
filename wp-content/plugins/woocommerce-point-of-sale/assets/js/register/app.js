@@ -3447,6 +3447,17 @@ jQuery(document).ready(function ($) {
 
             });
 
+            $('.payment_method_clientpay').on('click', function (e) {
+                var $row = $('tr.tr_order_coupon');
+                var coupon_code = $row.data('coupon');
+                console.log('coupon: ' + coupon_code);
+                console.log('payment_method_clientpay is clicked');
+                if (CART.remove_coupon(coupon_code, true)) {
+                    console.log('coupon is remove_coupon');
+                }
+
+            });
+
             $(document.body).on('change', '#product_type', function () {
                 var type = $(this).val();
             });

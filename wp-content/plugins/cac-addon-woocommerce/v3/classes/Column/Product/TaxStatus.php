@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.4
  */
 class ACA_WC_Column_Product_TaxStatus extends AC_Column_Meta
-	implements ACP_Column_SortingInterface, ACP_Column_EditingInterface, ACP_Column_FilteringInterface {
+	implements ACP_Column_SortingInterface, ACP_Column_EditingInterface, ACP_Column_FilteringInterface, ACP_Export_Column {
 
 	public function __construct() {
 		$this->set_type( 'column-wc-tax_status' );
@@ -49,6 +49,10 @@ class ACA_WC_Column_Product_TaxStatus extends AC_Column_Meta
 
 	public function editing() {
 		return new ACA_WC_Editing_Product_TaxStatus( $this );
+	}
+
+	public function export() {
+		return new ACP_Export_Model_StrippedValue( $this );
 	}
 
 	// Common

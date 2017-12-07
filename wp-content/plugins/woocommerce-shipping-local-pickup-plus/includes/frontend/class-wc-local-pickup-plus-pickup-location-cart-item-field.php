@@ -99,9 +99,14 @@ class WC_Local_Pickup_Plus_Pickup_Location_Cart_Item_Field extends WC_Local_Pick
 	 */
 	private function get_product_id() {
 
-		$cart_item = $this->get_cart_item();
+		$cart_item  = $this->get_cart_item();
+		$product_id = isset( $cart_item['product_id'] ) ? abs( $cart_item['product_id'] ) : 0;
 
-		return isset( $cart_item['product_id'] ) ? abs( $cart_item['product_id'] ) : 0;
+		if ( ! empty( $cart_item['variation_id'] ) ) {
+			$product_id = abs( $cart_item['variation_id'] );
+		}
+
+		return $product_id;
 	}
 
 

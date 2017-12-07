@@ -40,7 +40,7 @@ function usof_ajax_save() {
 	//Preparing regex for group fields
 	$group_regexes = array();
 	$group_fields = array();
-	foreach( $config as $section_id => $section ) {
+	foreach ( $config as $section_id => $section ) {
 		foreach ( $section['fields'] as $field_id => $field ) {
 			if ( $field['type'] == 'group' ) {
 				$group_fields[] = $field_id;
@@ -358,10 +358,13 @@ function usof_ajax_add_group_params() {
 		$result_html .= '<div class="usof-form-wrapper-cont">';
 		ob_start();
 		foreach ( $field['params'] as $param_name => $param ) {
+			if ( isset( $param['show_if'] ) AND is_array( $param['show_if'] ) ) {
+				$param['show_if'][0] = $group . '_' . $index . '_' . $param['show_if'][0];
+			}
 			us_load_template(
 				'vendor/usof/templates/field', array(
-					'name' => $group.'_'.$index.'_'.$param_name,
-					'id' => 'usof_' . $group.'_'.$index.'_'.$param_name,
+					'name' => $group . '_' . $index . '_' . $param_name,
+					'id' => 'usof_' . $group . '_' . $index . '_' . $param_name,
 					'field' => $param,
 					'values' => array(),
 				)

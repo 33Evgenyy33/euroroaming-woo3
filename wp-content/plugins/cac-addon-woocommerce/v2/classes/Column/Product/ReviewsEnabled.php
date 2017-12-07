@@ -7,16 +7,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * @since 1.0
  */
-class ACA_WC_Column_Product_ReviewsEnabled extends ACP_Column_Post_Comments
+class ACA_WC_Column_Product_ReviewsEnabled extends AC_Column
 	implements ACP_Column_SortingInterface, ACP_Column_EditingInterface, ACP_Column_FilteringInterface {
 
 	public function __construct() {
-		parent::__construct();
-
 		$this->set_type( 'column-wc-reviews_enabled' );
 		$this->set_label( __( 'Reviews enabled', 'codepress-admin-columns' ) );
 		$this->set_group( 'woocommerce' );
-		$this->set_original( false );
 	}
 
 	// Display
@@ -27,6 +24,10 @@ class ACA_WC_Column_Product_ReviewsEnabled extends ACP_Column_Post_Comments
 
 	public function get_raw_value( $id ) {
 		return $this->get_comment_status( $id );
+	}
+
+	public function is_valid() {
+		return post_type_supports( $this->get_post_type(), 'comments' );
 	}
 
 	// Pro

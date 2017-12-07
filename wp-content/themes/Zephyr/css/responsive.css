@@ -385,16 +385,14 @@ body.rtl .l-navigation.inv_false .to_prev {
 	display: block;
 	}
 
-.w-search.layout_fullscreen .w-search-form-field {
-	line-height: 60px;
-	margin-top: -30px;
+.w-search.layout_fullscreen input {
+	font-size: 2rem;
 	}
-	.w-search.layout_fullscreen input {
-		font-size: 30px;
-		}
+.w-nav-close,
 .w-search.layout_fullscreen .w-search-close {
-	line-height: 80px;
-	width: 80px;
+	font-size: 2rem;
+	line-height: 4rem;
+	width: 4rem;
 	}
 
 .w-tabs-item,
@@ -603,11 +601,11 @@ body.rtl .l-navigation.inv_false .to_prev {
 		padding: 25px 0;
 		}
 
-.header_hor .w-nav.type_mobile .w-nav-list.level_1 {
-	left: -15px;
-	right: -15px;
-	padding-left: 5px;
-	padding-right: 5px;
+.header_hor .w-nav.type_mobile .w-nav-list.style_dropdown {
+	left: -1rem;
+	right: -1rem;
+	padding-left: 0.3rem;
+	padding-right: 0.3rem;
 	}
 	
 div:not(.widget_us_blog) > .w-blog.layout_smallcircle .w-blog-post-preview,
@@ -838,12 +836,14 @@ div:not(.widget_us_blog) > .w-blog.layout_smallsquare .w-blog-post-body {
 
 @media screen and (max-width: 480px) {
 
-.header_ver .l-header {
-	width: 280px !important; /* fixed value */
+.header_ver .l-header,
+.header_ver .l-header .w-cart-notification,
+.header_ver .w-nav.type_mobile.m_layout_panel .w-nav-list.level_1 {
+	max-width: 270px; /* fixed value */
 	}
 .header_ver .w-search.layout_simple,
 .header_ver .w-search.layout_modern.active {
-	width: 240px !important; /* fixed value */
+	width: 230px !important; /* fixed value */
 	}
 
 .w-cart {
@@ -1091,7 +1091,10 @@ div:not(.widget_us_blog) > .w-blog.layout_smallsquare .w-blog-post-body {
 		}
 .woocommerce .cart_totals {
 	padding: 1rem 1.5rem 1.5rem;
-	margin: 0 -1.5rem;
+	margin: 0 -25px;
+	}
+.woocommerce .cart-collaterals:last-child .cart_totals {
+	margin-bottom: -25px;
 	}
 .woocommerce .cart_totals table,
 .woocommerce .cart_totals tbody,
@@ -1113,7 +1116,7 @@ div:not(.widget_us_blog) > .w-blog.layout_smallsquare .w-blog-post-body {
 	font-size: 1rem;
 	}
 .woocommerce .checkout #order_review {
-	margin: 0 -1.5rem -1.5rem;
+	margin: 0 -25px -25px;
 	}
 .wc-credit-card-form {
 	padding: 0;

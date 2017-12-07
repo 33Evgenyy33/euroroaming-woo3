@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.3.1
  */
 class ACA_WC_Column_ShopOrder_Product extends AC_Column
-	implements ACP_Column_SortingInterface, ACP_Column_FilteringInterface {
+	implements ACP_Column_SortingInterface, ACP_Column_FilteringInterface, ACP_Export_Column {
 
 	public function __construct() {
 		$this->set_group( 'woocommerce' );
@@ -50,6 +50,10 @@ class ACA_WC_Column_ShopOrder_Product extends AC_Column
 
 	public function sorting() {
 		return new ACA_WC_Sorting_ShopOrder_Product( $this );
+	}
+
+	public function export() {
+		return new ACP_Export_Model_StrippedValue( $this );
 	}
 
 	// Settings

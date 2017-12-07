@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0
  */
 class ACA_WC_Column_Product_Dimensions extends AC_Column
-	implements ACP_Column_SortingInterface, ACP_Column_EditingInterface {
+	implements ACP_Column_SortingInterface, ACP_Column_EditingInterface, ACP_Export_Column {
 
 	public function __construct() {
 		$this->set_type( 'column-wc-dimensions' );
@@ -102,6 +102,10 @@ class ACA_WC_Column_Product_Dimensions extends AC_Column
 
 	private function get_dimension_unit() {
 		return get_option( 'woocommerce_dimension_unit' );
+	}
+
+	public function export() {
+		return new ACP_Export_Model_StrippedValue( $this );
 	}
 
 }

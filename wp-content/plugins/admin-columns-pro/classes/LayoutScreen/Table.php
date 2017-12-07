@@ -53,6 +53,12 @@ class ACP_LayoutScreen_Table {
 			return;
 		}
 
+		$link = $list_screen->get_screen_link();
+
+		if ( $post_status = filter_input( INPUT_GET, 'post_status', FILTER_SANITIZE_STRING ) ) {
+			$link = add_query_arg( array( 'post_status' => $post_status ), $link );
+		}
+
 		$layouts = ACP()->layouts( $list_screen )->get_layouts_for_current_user();
 
 		if ( count( $layouts ) > 1 ) : ?>
@@ -63,7 +69,7 @@ class ACP_LayoutScreen_Table {
                 <span class="spinner"></span>
                 <select id="column-view-selector" name="layout">
 					<?php foreach ( $layouts as $layout ) : ?>
-                        <option value="<?php echo add_query_arg( array( 'layout' => $layout->get_id() ), $list_screen->get_screen_link() ); ?>"<?php selected( $layout->get_id(), $list_screen->get_layout_id() ); ?>><?php echo esc_html( $layout->get_name() ); ?></option>
+                        <option value="<?php echo add_query_arg( array( 'layout' => $layout->get_id() ), $link ); ?>"<?php selected( $layout->get_id(), $list_screen->get_layout_id() ); ?>><?php echo esc_html( $layout->get_name() ); ?></option>
 					<?php endforeach; ?>
                 </select>
                 <script type="text/javascript">

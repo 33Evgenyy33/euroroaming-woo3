@@ -60,8 +60,8 @@ class ACA_WC_Settings_ProductAttributes extends AC_Settings_Column
 	}
 
 	/**
-	 * @param array $attributes
-	 * @param int   $product_id
+	 * @param array|string $attributes
+	 * @param int          $product_id
 	 *
 	 * @return string
 	 */
@@ -90,6 +90,11 @@ class ACA_WC_Settings_ProductAttributes extends AC_Settings_Column
 				$values = $product->get_attribute( $name );
 			}
 
+			// Don't show label for single attribute
+			if ( $this->get_product_taxonomy_display() ) {
+				$label = false;
+			}
+
 			// Tooltip
 			$tooltip = array();
 
@@ -106,7 +111,7 @@ class ACA_WC_Settings_ProductAttributes extends AC_Settings_Column
 			}
 
 			// Add tooltip
-			if ( $tooltip ) {
+			if ( $label && $tooltip ) {
 				$label = '<strong class="label" ' . ac_helper()->html->get_tooltip_attr( implode( ' | ', $tooltip ) ) . '">' . esc_html( $label ) . ':</strong>';
 			}
 

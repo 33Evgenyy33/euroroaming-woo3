@@ -38,7 +38,7 @@ vc_map(
 			),
 			array(
 				'param_name' => 'email',
-				'heading' => us_translate( 'Email', 'us' ),
+				'heading' => us_translate( 'Email' ),
 				'type' => 'textfield',
 				'std' => $config['atts']['email'],
 				'weight' => 20,

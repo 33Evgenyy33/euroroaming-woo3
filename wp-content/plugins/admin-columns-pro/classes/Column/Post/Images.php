@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 4.0.8
  */
 class ACP_Column_Post_Images extends AC_Column
-	implements ACP_Column_SortingInterface, AC_Column_AjaxValue {
+	implements ACP_Column_SortingInterface, AC_Column_AjaxValue, ACP_Export_Column {
 
 	public function __construct() {
 		$this->set_type( 'column-images' );
@@ -16,9 +16,11 @@ class ACP_Column_Post_Images extends AC_Column
 	}
 
 	public function sorting() {
-		$model = new ACP_Sorting_Model_Post_ImageFileSizes( $this );
+		return new ACP_Sorting_Model_Post_ImageFileSizes( $this );
+	}
 
-		return $model;
+	public function export() {
+		return new ACP_Export_Model_Post_ImageFileSizes( $this );
 	}
 
 	/**

@@ -1,7 +1,7 @@
 <?php defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
 
 /**
- * Theme's Options
+ * Theme Options
  *
  * @filter us_config_theme-options
  */
@@ -140,7 +140,17 @@ foreach ( $usof_supported_cpt as $cpt_name ) {
 	) );
 }
 
-// Options Config
+// Custom Images Sizes description
+$img_size_info = $img_size_desc = sprintf( __( 'To change the default image sizes, go to %s.', 'us' ), '<a target="_blank" href="' . admin_url( 'options-media.php' ) . '">' . us_translate( 'Media Settings' ) . '</a>' );
+if ( class_exists( 'woocommerce' ) ) {
+	$img_size_info .= ' ' . sprintf( __( 'To change the Product image sizes, go to %s.', 'us' ), '<a target="_blank" href="' . admin_url( 'admin.php?page=wc-settings&tab=products&section=display' ) . '">' . us_translate( 'WooCommerce settings', 'woocommerce' ) . '</a>' );
+}
+$img_size_info .= ' ' . sprintf( __( 'Read about %simage sizes and how to use them%s.', 'us' ), '<a target="_blank" href="https://help.us-themes.com/impreza/general/images/">', '</a>' );
+$img_size_desc .= ' ' . sprintf( __( 'To add custom image sizes, go to %s.', 'us' ), '<a href="#advanced">' . __( 'Theme Options', 'us' ) . '</a>' );
+
+
+
+// Theme Options Config
 return array(
 	'general' => array(
 		'title' => us_translate_x( 'General', 'settings screen' ),
@@ -171,7 +181,7 @@ return array(
 			),
 			'site_icon' => array(
 				'title' => us_translate( 'Site Icon' ),
-				'description' => sprintf( us_translate( 'The Site Icon is used as a browser and app icon for your site. Icons must be square, and at least %s pixels wide and tall.' ), '<strong>512</strong>' ),
+				'description' => us_translate( 'Site Icons are what you see in browser tabs, bookmark bars, and within the WordPress mobile apps. Upload one here!' ) . '<br>' . sprintf( us_translate( 'Site Icons should be square and at least %s pixels.' ), '<strong>512</strong>' ),
 				'type' => 'upload',
 				'extension' => 'png,jpg,jpeg,gif',
 			),
@@ -913,7 +923,7 @@ return array(
 				),
 				'header_search_layout' => array(
 					'title' => __( 'Layout', 'us' ),
-					'type' => 'select',
+					'type' => 'radio',
 					'options' => array(
 						'simple' => __( 'Simple', 'us' ),
 						'modern' => __( 'Modern', 'us' ),
@@ -1023,7 +1033,7 @@ return array(
 					'title' => us_translate( 'Source' ),
 					'type' => 'select',
 					'options' => array(
-						'own' => __( 'My own links', 'us' ),
+						'own' => us_translate( 'Custom Links' ),
 						'wpml' => 'WPML',
 					),
 					'std' => 'own',
@@ -3424,7 +3434,7 @@ return array(
 				'title' => '',
 				'type' => 'checkboxes',
 				'options' => array(
-					'email' => 'Email',
+					'email' => us_translate( 'Email' ),
 					'facebook' => 'Facebook',
 					'twitter' => 'Twitter',
 					'gplus' => 'Google+',
@@ -3514,11 +3524,12 @@ return array(
 			),
 			'post_related_img_size' => array(
 				'title' => __( 'Images Size', 'us' ),
+				'description' => $img_size_desc,
 				'type' => 'select',
 				'options' => $usof_img_sizes,
-				'std' => 'tnail-1x1-small',
+				'std' => 'us_350_350_crop',
 				'show_if' => array( 'post_related_layout', '=', 'related' ),
-				'classes' => 'width_full',
+				'classes' => 'width_full desc_4',
 			),
 			'wrapper_post_related_end' => array(
 				'type' => 'wrapper_end',
@@ -3556,6 +3567,7 @@ return array(
 			),
 			'blog_img_size' => array(
 				'title' => __( 'Images Size', 'us' ),
+				'description' => $img_size_desc,
 				'type' => 'select',
 				'options' => array_merge( array( 'default' => us_translate( 'Default' ) ), $usof_img_sizes ),
 				'std' => 'default',
@@ -3640,6 +3652,7 @@ return array(
 			),
 			'archive_img_size' => array(
 				'title' => __( 'Images Size', 'us' ),
+				'description' => $img_size_desc,
 				'type' => 'select',
 				'options' => array_merge( array( 'default' => us_translate( 'Default' ) ), $usof_img_sizes ),
 				'std' => 'default',
@@ -3724,6 +3737,7 @@ return array(
 			),
 			'search_img_size' => array(
 				'title' => __( 'Images Size', 'us' ),
+				'description' => $img_size_desc,
 				'type' => 'select',
 				'options' => array_merge( array( 'default' => us_translate( 'Default' ) ), $usof_img_sizes ),
 				'std' => 'default',
@@ -4096,7 +4110,7 @@ return array(
 				'classes' => 'with_separator',
 			),
 			'img_size_info' => array(
-				'description' => sprintf( __( 'Read %s how to use image sizes%s to improve pages loading speed.', 'us' ), '<a target="_blank" href="https://help.us-themes.com/impreza/general/images/">', '</a>' ),
+				'description' => $img_size_info,
 				'type' => 'message',
 				'classes' => 'width_full color_blue',
 			),
@@ -4127,8 +4141,20 @@ return array(
 						'options' => array(
 							'crop' => __( 'Crop to exact dimensions', 'us' ),
 						),
-						'std' => array(),
+						'std' => array( '0' => 'crop' ),
 						'classes' => 'inline',
+					),
+				),
+				'std' => array(
+					array(
+						'width' => 350,
+						'height' => 350,
+						'crop' => array( '0' => 'crop' ),
+					),
+					array(
+						'width' => 600,
+						'height' => 600,
+						'crop' => array( '0' => 'crop' ),
 					),
 				),
 			),

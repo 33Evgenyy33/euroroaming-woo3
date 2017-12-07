@@ -138,7 +138,7 @@ vc_map(
 			),
 			array(
 				'param_name' => 'link',
-				'heading' => __( 'Link (optional)', 'us' ),
+				'heading' => us_translate( 'Link' ),
 				'type' => 'vc_link',
 				'std' => $config['atts']['link'],
 				'weight' => 30,

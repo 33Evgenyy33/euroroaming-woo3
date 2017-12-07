@@ -214,9 +214,7 @@ function us_vc_init_vendor_woocommerce() {
  */
 function us_image_sizes_select_values( $size_names = NULL ) {
 	if ( $size_names === NULL ) {
-		$size_names = array_merge(
-			array( 'full', 'large', 'medium_large' ), array_keys( us_config( 'image-sizes' ) ), array( 'medium', 'thumbnail' )
-		);
+		$size_names = array( 'full', 'large', 'medium_large', 'medium', 'thumbnail' );
 	}
 	$image_sizes = array();
 	// For translation purposes
@@ -242,12 +240,13 @@ function us_image_sizes_select_values( $size_names = NULL ) {
 	$custom_tnail_sizes = us_get_option( 'img_size' );
 	if ( is_array( $custom_tnail_sizes ) ) {
 		foreach ( $custom_tnail_sizes as $size_index => $size ) {
-			$size_name = 'us_img_size_' . $size_index;
 			$crop = ( ! empty( $size['crop'][0] ) );
+			$crop_str = ( $crop ) ? '_crop' : '';
 			$width = ( ! empty( $size['width'] ) AND intval( $size['width'] ) > 0 ) ? intval( $size['width'] ) : 0;
 			$height = ( ! empty( $size['height'] ) AND intval( $size['height'] ) > 0 ) ? intval( $size['height'] ) : 0;
+			$size_name = 'us_' . $width . '_' . $height . $crop_str;
 			
-			$size_title = ( ( $width == 0 ) ? __( 'any', 'us' ) : $width );
+			$size_title = ( $width == 0 ) ? __( 'any', 'us' ) : $width;
 			$size_title .= ' x ';
 			$size_title .= ( $height == 0 ) ? __( 'any', 'us' ) : $height;
 			if ( $crop ) {

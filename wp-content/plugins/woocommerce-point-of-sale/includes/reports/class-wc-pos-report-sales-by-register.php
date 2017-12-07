@@ -630,6 +630,7 @@ class WC_POS_Report_Sales_By_Register extends WC_Admin_Report {
 					'order_by'            => 'count DESC',
 					'query_type'          => 'get_results',
 					'filter_range'        => true,
+					'limit'               => 700,
 					'order_types'         => wc_get_order_types( 'order-count' ),
 					'order_status'        => array( 'completed', 'processing', 'on-hold', 'vodafone-complete', 'ortel-completed', 'activating-by-dat', 'point-of-sale', 'pending-activatio', 'orange-completed', 'internet-passport', 'waiting-for-passp', 'instructions-comp', 'instructions-comp'),
 				) );

@@ -221,7 +221,7 @@ function us_woocommerce_image_sizes_select_values( $image_sizes ) {
 	foreach ( $size_names as $size_name ) {
 		// Detecting size
 		$size = us_get_intermediate_image_size( $size_name );
-		$size_title = ( ( $size['width'] == 0 ) ? __( 'any', 'us' ) : $size['width'] );
+		$size_title = ( $size['width'] == 0 ) ? __( 'any', 'us' ) : $size['width'];
 		$size_title .= ' x ';
 		$size_title .= ( $size['height'] == 0 ) ? __( 'any', 'us' ) : $size['height'];
 		if ( $size['crop'] ) {

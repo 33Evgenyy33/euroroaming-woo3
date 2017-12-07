@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0
  */
 class ACA_WC_Column_ShopCoupon_Type extends ACP_Column_Meta
-	implements ACP_Column_SortingInterface, ACP_Column_EditingInterface, ACP_Column_FilteringInterface {
+	implements ACP_Column_SortingInterface, ACP_Column_EditingInterface, ACP_Column_FilteringInterface, ACP_Export_Column {
 
 	public function __construct() {
 		$this->set_type( 'type' );
@@ -41,6 +41,10 @@ class ACA_WC_Column_ShopCoupon_Type extends ACP_Column_Meta
 
 	public function filtering() {
 		return new ACA_WC_Filtering_ShopCoupon_Type( $this );
+	}
+
+	public function export() {
+		return new ACA_WC_Export_ShopCoupon_Type( $this );
 	}
 
 }

@@ -53,6 +53,10 @@ class ACA_WC_Column_Product_OrderTotal extends AC_Column {
 			$post_id
 		) );
 
+		if ( ! $num_orders ) {
+			return false;
+		}
+
 		return $num_orders;
 	}
 

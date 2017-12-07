@@ -47,7 +47,7 @@ if ( $atts['effect'] != 'none' ) {
 
 $img_html = '';
 if ( is_numeric( $atts['image'] ) ) {
-	$img = wp_get_attachment_image_src( intval( $atts['image'] ), 'tnail-1x1-small' );
+	$img = wp_get_attachment_image_src( intval( $atts['image'] ), $atts['img_size'] );
 	if ( $img !== FALSE ) {
 		if ( preg_match( '~\.svg$~', $img[0] ) ) {
 			$img_html = '<img src="' . $img[0] . '" alt="' . esc_attr( $atts['name'] ) . '"' . $schema_image . '>';
@@ -61,7 +61,7 @@ if ( is_numeric( $atts['image'] ) ) {
 }
 
 if ( is_numeric( $atts['image_hover'] ) ) {
-	$img_hover = wp_get_attachment_image_src( intval( $atts['image_hover'] ), 'tnail-1x1-small' );
+	$img_hover = wp_get_attachment_image_src( intval( $atts['image_hover'] ), $atts['img_size'] );
 	if ( $img_hover !== FALSE ) {
 		$img_html .= '<div class="img_hover" style="background-image:url(' . $img_hover[0] . ')"></div>';
 	}

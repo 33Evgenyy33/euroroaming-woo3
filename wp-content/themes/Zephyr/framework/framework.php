@@ -8,9 +8,8 @@
 global $us_template_directory, $us_stylesheet_directory, $us_template_directory_uri, $us_stylesheet_directory_uri;
 $us_template_directory = get_template_directory();
 $us_stylesheet_directory = get_stylesheet_directory();
-// Removing protocols for better compatibility with caching plugins and services
-$us_template_directory_uri = str_replace( array( 'http:', 'https:' ), '', get_template_directory_uri() );
-$us_stylesheet_directory_uri = str_replace( array( 'http:', 'https:' ), '', get_stylesheet_directory_uri() );
+$us_template_directory_uri = get_template_directory_uri();
+$us_stylesheet_directory_uri = get_stylesheet_directory_uri();
 
 if ( ! defined( 'US_THEMENAME' ) OR ! defined( 'US_THEMEVERSION' ) ) {
 	$us_theme = wp_get_theme();
@@ -125,29 +124,19 @@ function us_theme_setup() {
 		$content_width = 1500;
 	}
 	add_theme_support( 'automatic-feed-links' );
-
 	add_theme_support( 'post-formats', array( 'video', 'gallery', 'audio', 'image', 'quote', 'link' ) );
-
 	add_theme_support( 'title-tag' );
-
-	// Add post thumbnail functionality
 	add_theme_support( 'post-thumbnails' );
 
-	/**
-	 * Dev note: you can overload theme's image sizes config using filter 'us_config_image-sizes'
-	 */
-	$tnail_sizes = us_config( 'image-sizes', array() );
-	foreach ( $tnail_sizes as $size_name => $size ) {
-		add_image_size( $size_name, $size['width'], $size['height'], $size['crop'] );
-	}
-
+	// Custom image sizes
 	$custom_tnail_sizes = us_get_option( 'img_size' );
 	if ( is_array( $custom_tnail_sizes ) ) {
 		foreach ( $custom_tnail_sizes as $size_index => $size ) {
 			$crop = ( ! empty( $size['crop'][0] ) );
+			$crop_str = ( $crop ) ? '_crop' : '';
 			$width = ( ! empty( $size['width'] ) AND intval( $size['width'] ) > 0 ) ? intval( $size['width'] ) : 0;
 			$height = ( ! empty( $size['height'] ) AND intval( $size['height'] ) > 0 ) ? intval( $size['height'] ) : 0;
-			add_image_size( 'us_img_size_' . $size_index, $width, $height, $crop );
+			add_image_size( 'us_' . $width . '_' . $height . $crop_str, $width, $height, $crop );
 		}
 	}
 

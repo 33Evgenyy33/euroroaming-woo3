@@ -1,5 +1,42 @@
 == Changelog ==
 
+= 4.1 =
+Release Date: November 22nd, 2017
+
+* [Added] Internal domains for the  Link Count can now be changed by using the following filter: add_filter( 'ac/column/linkcount/domains', $internal_domains )
+* [Improvement] Added Exporting
+* [Improvement] When switching to a different layout, the WP status filters are taken into account
+
+= 4.0.14 =
+Release Date: November 10th, 2017
+
+* [Fixed] Free version is now deactivated correctly on activating the Pro version
+
+= 4.0.13 =
+Release Date: November 10th, 2017
+
+* [Updated] Admin Column Core version could not be read and update message would not go away
+
+= 4.0.12 =
+Release Date: November 9th, 2017
+
+* [Added] New column for revisions. Shows the revision count with more info on click
+* [Added] New column for links in content. Shows internal/external link count
+* [Added] Download action added for Media overview
+* [Added] Sorting for Custom Field column User type
+* [Fixed] Filtering on daily and monthly dates now shows the correct posts
+* [Fixed] Comment count sorting
+* [Improved] Textarea field type support for custom field with wordcount setting and text area editing
+* [Improved] Better date ranged filtering (does not include the first day of next month)
+* [Improved] No support 12/24 hour format for date time picker
+* [Improved] Layouts UI improvements
+* [Updated] Admin Column Core changes
+    * [Improved] Added the AC_Plugin class as a more DRY approach to asking metadata about a plugin
+    * [Improved] Redone the way user preferences are stored. Fewer records and better compatible with Multisite.
+    * [Improved] Added the option to write database updates and apply them to a new version
+    * [Improved] Empty character is just a method now instead of getter/setter with a filter
+    * [Improved] Added AC_Services class to register services to a column on the fly (DI approach)
+
 = 4.0.11 =
 Release Date: October 16th, 2017
 
@@ -8,7 +45,7 @@ Release Date: October 16th, 2017
 * [Fixed] Sorting on Post Count column did not work when using a custom table prefix
 * [Fixed] Error while using inline edit on Taxonomy Column
 * [Updated] Admin Column Core changes
-    * Column Attachment count merges with Attachments
+    * Column Attachment count merged with Attachments
 
 = 4.0.10 =
 Release Date: October 4th, 2017

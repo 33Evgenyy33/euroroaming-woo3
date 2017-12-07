@@ -28,15 +28,15 @@ msgstr ""
 msgid "Please update this add-on to the latest version."
 msgstr ""
 
-#: ../acp.php:397
+#: ../acp.php:399
 msgid "You are using a beta version of %s."
 msgstr ""
 
-#: ../acp.php:398
+#: ../acp.php:400
 msgid "Please provide us with any feedback (bugs, UI or improvements) on the beta by creating a new topic on %s."
 msgstr ""
 
-#: ../acp.php:398
+#: ../acp.php:400
 msgid "our forum"
 msgstr ""
 
@@ -84,7 +84,7 @@ msgstr ""
 msgid "Pods"
 msgstr ""
 
-#: ../classes/Layout.php:172, ../classes/LayoutScreen/Columns.php:543, ../classes/Column/User/Roles.php:8
+#: ../classes/Layout.php:172, ../classes/LayoutScreen/Columns.php:515, ../classes/Column/User/Roles.php:8
 msgid "Roles"
 msgstr ""
 
@@ -260,19 +260,19 @@ msgstr ""
 msgid "Please read <a href='%s'>our documentation</a> if you plan to use these fields."
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:39
+#: ../classes/LayoutScreen/Columns.php:37
 msgid "You can make an editable copy of this set by clicking %s on the right."
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:95, ../classes/Admin/Page/ExportImport.php:148
+#: ../classes/LayoutScreen/Columns.php:92, ../classes/Admin/Page/ExportImport.php:148
 msgid "Original"
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:106
+#: ../classes/LayoutScreen/Columns.php:103
 msgid "Column set not created."
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:121
+#: ../classes/LayoutScreen/Columns.php:118
 msgid "Set %s succesfully created."
 msgstr ""
 
@@ -280,99 +280,99 @@ msgstr ""
 msgid "Screen does not exist."
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:153
+#: ../classes/LayoutScreen/Columns.php:145
 msgid "Column set %s succesfully deleted."
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:221
+#: ../classes/LayoutScreen/Columns.php:193
 msgid "Select roles"
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:222
+#: ../classes/LayoutScreen/Columns.php:194
 msgid "Select users"
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:228
+#: ../classes/LayoutScreen/Columns.php:200
 msgid "+ Add set"
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:239, ../classes/LayoutScreen/Columns.php:511
+#: ../classes/LayoutScreen/Columns.php:211, ../classes/LayoutScreen/Columns.php:483
 msgid "Column Sets"
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:242
+#: ../classes/LayoutScreen/Columns.php:214
 msgid "Cancel"
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:257
+#: ../classes/LayoutScreen/Columns.php:229
 msgid "Create new sets to switch between different column views on the %s screen."
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:266
+#: ../classes/LayoutScreen/Columns.php:238
 msgid "Add"
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:275
+#: ../classes/LayoutScreen/Columns.php:247
 msgid "Warning! The %s columns data will be deleted. This cannot be undone. 'OK' to delete, 'Cancel' to stop"
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:292, ../classes/Editing/classes/TableScreen.php:68
+#: ../classes/LayoutScreen/Columns.php:264, ../classes/Editing/classes/TableScreen.php:68
 msgid "Delete"
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:298
+#: ../classes/LayoutScreen/Columns.php:270
 msgid "Select"
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:311
+#: ../classes/LayoutScreen/Columns.php:283
 msgid "Saved"
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:316
+#: ../classes/LayoutScreen/Columns.php:288
 msgid "This set is loaded via PHP and can therefore not be edited"
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:331
+#: ../classes/LayoutScreen/Columns.php:303
 msgid "Update"
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:352
+#: ../classes/LayoutScreen/Columns.php:324
 msgid "Sets"
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:355
+#: ../classes/LayoutScreen/Columns.php:327
 msgid "Sets allow users to switch between different column views."
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:358
+#: ../classes/LayoutScreen/Columns.php:330
 msgid "Available sets are selectable from the overview screen. Users can have their own column view preference."
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:364
+#: ../classes/LayoutScreen/Columns.php:336
 msgid "Online documentation"
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:527, ../classes/Column/NetworkSite/Name.php:7
+#: ../classes/LayoutScreen/Columns.php:499, ../classes/Column/NetworkSite/Name.php:7
 msgid "Name"
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:532
+#: ../classes/LayoutScreen/Columns.php:504
 msgid "Please enter a name."
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:539
+#: ../classes/LayoutScreen/Columns.php:511
 msgid "Make this set available only for specific users or roles (optional)"
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:544, ../classes/LayoutScreen/Columns.php:553
+#: ../classes/LayoutScreen/Columns.php:516, ../classes/LayoutScreen/Columns.php:525
 msgid "optional"
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:597, ../classes/Admin/Page/ExportImport.php:641, ../classes/Admin/Page/ExportImport.php:741
+#: ../classes/LayoutScreen/Columns.php:569, ../classes/Admin/Page/ExportImport.php:641, ../classes/Admin/Page/ExportImport.php:741
 msgid "Instructions"
 msgstr ""
 
-#: ../classes/LayoutScreen/Columns.php:617
+#: ../classes/LayoutScreen/Columns.php:589
 msgid "Default"
 msgstr ""
 
@@ -486,31 +486,31 @@ msgstr ""
 msgid "Check my license"
 msgstr ""
 
-#: ../classes/Sorting/Addon.php:279
+#: ../classes/Sorting/Addon.php:285
 msgid "Show all results when sorting."
 msgstr ""
 
-#: ../classes/Sorting/Addon.php:365
+#: ../classes/Sorting/Addon.php:371
 msgid "Sorting Preferences"
 msgstr ""
 
-#: ../classes/Sorting/Addon.php:366
+#: ../classes/Sorting/Addon.php:372
 msgid "This will reset the sorting preference for all users."
 msgstr ""
 
-#: ../classes/Sorting/Addon.php:380
+#: ../classes/Sorting/Addon.php:386
 msgid "Reset sorting preferences"
 msgstr ""
 
-#: ../classes/Sorting/Addon.php:397
+#: ../classes/Sorting/Addon.php:405
 msgid "All sorting preferences have been reset."
 msgstr ""
 
-#: ../classes/Sorting/Addon.php:467
+#: ../classes/Sorting/Addon.php:495
 msgid "Reset sorting"
 msgstr ""
 
-#: ../classes/Table/ScreenOptions.php:79
+#: ../classes/Table/ScreenOptions.php:84
 msgid "Horizontal scrollable table"
 msgstr ""
 
@@ -757,7 +757,7 @@ msgid "Admin Columns will export to a format compatible with the Admin Columns i
 msgstr ""
 
 #: ../classes/Admin/Page/ExportImport.php:711, ../classes/Admin/Page/ExportImport.php:724
-msgid "Select the columns you which to export from the list in the left column"
+msgid "Select the columns you like to export from the list in the left column"
 msgstr ""
 
 #: ../classes/Admin/Page/ExportImport.php:712
@@ -886,6 +886,28 @@ msgid_plural "%s images"
 msgstr[0] ""
 msgstr[1] ""
 
+#: ../classes/Column/Post/LinkCount.php:12
+msgid "Link Count"
+msgstr ""
+
+#: ../classes/Column/Post/LinkCount.php:31
+msgid "Internal Links"
+msgstr ""
+
+#: ../classes/Column/Post/LinkCount.php:32
+msgid "External Links"
+msgstr ""
+
+#: ../classes/Column/Post/Revisions.php:11
+msgid "Revisions"
+msgstr ""
+
+#: ../classes/Column/Post/Revisions.php:21
+msgid "%s revision"
+msgid_plural "%s revisions"
+msgstr[0] ""
+msgstr[1] ""
+
 #: ../classes/Column/Taxonomy/Excerpt.php:11
 msgid "Excerpt"
 msgstr ""
@@ -962,11 +984,11 @@ msgstr ""
 msgid "Invalid item ID."
 msgstr ""
 
-#: ../classes/Editing/classes/TableScreen.php:133, ../classes/Editing/classes/TableScreen.php:259
+#: ../classes/Editing/classes/TableScreen.php:133, ../classes/Editing/classes/TableScreen.php:270
 msgid "Invalid list screen."
 msgstr ""
 
-#: ../classes/Editing/classes/TableScreen.php:142, ../classes/Editing/classes/TableScreen.php:267, ../classes/Editing/classes/TableScreen.php:271
+#: ../classes/Editing/classes/TableScreen.php:142, ../classes/Editing/classes/TableScreen.php:278, ../classes/Editing/classes/TableScreen.php:282
 msgid "Invalid column."
 msgstr ""
 
@@ -978,7 +1000,7 @@ msgstr ""
 msgid "User does not have write permissions"
 msgstr ""
 
-#: ../classes/Editing/classes/TableScreen.php:253
+#: ../classes/Editing/classes/TableScreen.php:264
 msgid "Invalid request."
 msgstr ""
 
@@ -1002,19 +1024,19 @@ msgstr ""
 msgid "Filter by %s"
 msgstr ""
 
-#: ../classes/Filtering/classes/Model.php:222
+#: ../classes/Filtering/classes/Model.php:223
 msgid "Future dates"
 msgstr ""
 
-#: ../classes/Filtering/classes/Model.php:223
+#: ../classes/Filtering/classes/Model.php:224
 msgid "Past dates"
 msgstr ""
 
-#: ../classes/Filtering/classes/Model.php:247, ../../cac-addon-woocommerce/v2/classes/Filtering/Product/Thumb.php:8, ../../cac-addon-woocommerce/v3/classes/Filtering/Product/Thumb.php:8
+#: ../classes/Filtering/classes/Model.php:248, ../../cac-addon-woocommerce/v2/classes/Filtering/Product/Thumb.php:8, ../../cac-addon-woocommerce/v3/classes/Filtering/Product/Thumb.php:8
 msgid "Without %s"
 msgstr ""
 
-#: ../classes/Filtering/classes/Model.php:248, ../../cac-addon-woocommerce/v2/classes/Filtering/Product/Thumb.php:9, ../../cac-addon-woocommerce/v3/classes/Filtering/Product/Thumb.php:9
+#: ../classes/Filtering/classes/Model.php:249, ../../cac-addon-woocommerce/v2/classes/Filtering/Product/Thumb.php:9, ../../cac-addon-woocommerce/v3/classes/Filtering/Product/Thumb.php:9
 msgid "Has %s"
 msgstr ""
 
@@ -1114,11 +1136,23 @@ msgstr ""
 msgid "settings screen"
 msgstr ""
 
-#: ../classes/Editing/classes/Settings/Taxonomy.php:35
+#: ../classes/Editing/classes/Settings/Excerpt.php:30
+msgid "Textarea"
+msgstr ""
+
+#: ../classes/Editing/classes/Settings/Excerpt.php:31
+msgid "Text"
+msgstr ""
+
+#: ../classes/Editing/classes/Settings/Excerpt.php:36
+msgid "Input Type"
+msgstr ""
+
+#: ../classes/Editing/classes/Settings/Taxonomy.php:39
 msgid "Allow new %s to be created whilst editing"
 msgstr ""
 
-#: ../classes/Editing/classes/Settings/Taxonomy.php:34
+#: ../classes/Editing/classes/Settings/Taxonomy.php:38
 msgid "Allow new %s?"
 msgstr ""
 
@@ -1352,10 +1386,6 @@ msgstr ""
 
 #: ../../cac-addon-woocommerce/v3/classes/Column/ShopCoupon/CouponDescription.php:13
 msgid "Description"
-msgstr ""
-
-#: ../../cac-addon-woocommerce/v3/classes/Column/ShopCoupon/EmailRestrictions.php:11
-msgid "Email restrictions"
 msgstr ""
 
 #: ../../cac-addon-woocommerce/v3/classes/Column/ShopOrder/Purchased.php:12

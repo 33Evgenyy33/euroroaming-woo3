@@ -119,11 +119,20 @@ class WC_Local_Pickup_Plus_Products {
 					$this->product_can_be_picked_up[ $pickup_location_id ] = array();
 				}
 
+				// check if the product can be picked up at all
 				$this->product_can_be_picked_up[ $pickup_location_id ][ $product_id ] = $can_be && $product->needs_shipping();
 
+				// check if the product can be picked up at the pickup location
 				if ( $pickup_location && $this->product_can_be_picked_up[ $pickup_location_id ][ $product_id ] ) {
-					$product_ids = $pickup_location->get_products();
-					$this->product_can_be_picked_up[ $pickup_location_id ][ $product_id ] = empty( $product_ids ) || in_array( $product_id, $product_ids, false );
+
+					$product_ids              = $pickup_location->get_products();
+					$is_available_at_location = empty( $product_ids ) || in_array( $product_id, $product_ids, false );
+
+					if ( ! $is_available_at_location && $product->is_type( 'variation' ) ) {
+						$is_available_at_location = in_array( SV_WC_Product_Compatibility::get_prop( $product, 'parent_id' ), $product_ids, false );
+					}
+
+					$this->product_can_be_picked_up[ $pickup_location_id ][ $product_id ] = $is_available_at_location;
 				}
 
 				$can_be = $this->product_can_be_picked_up[ $pickup_location_id ][ $product_id ];

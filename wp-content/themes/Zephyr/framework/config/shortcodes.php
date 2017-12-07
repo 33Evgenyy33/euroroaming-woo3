@@ -280,6 +280,7 @@ return array(
 			'skype' => '',
 			'custom_icon' => '',
 			'custom_link' => '',
+			'img_size' => 'us_350_350_crop',
 			'el_class' => '',
 		),
 		'content' => '',
@@ -419,20 +420,20 @@ return array(
 		'custom_vc_map' => $us_template_directory . '/framework/plugins-support/js_composer/map/us_single_image.php',
 	),
 	'us_social_links' => array(
-		'atts' => array_merge(
-			array(
-				'email' => '',
-			), $social_links_config, array(
-				'custom_link' => '',
-				'custom_title' => '',
-				'custom_icon' => '',
-				'custom_color' => '#1abc9c',
-				'style' => 'default',
-				'color' => 'brand',
-				'size' => '20px',
-				'align' => 'left',
-				'el_class' => '',
-			)
+		'atts' => array(
+			'items' => '',
+			'style' => 'default',
+			'color' => 'brand',
+			'size' => '20px',
+			'align' => 'left',
+			'el_class' => '',
+		),
+		'items_atts' => array(
+			'type' => '',
+			'url' => '',
+			'title' => '',
+			'icon' => '',
+			'color' => '',
 		),
 		'custom_vc_map' => $us_template_directory . '/framework/plugins-support/js_composer/map/us_social_links.php',
 	),
@@ -530,6 +531,7 @@ return array(
 			'us_bg_parallax_width' => '130',
 			'us_bg_parallax_reverse' => FALSE,
 			'us_bg_video' => '',
+			'us_bg_slider' => '',
 			'us_bg_overlay_color' => '',
 			'sticky' => FALSE,
 			'sticky_disable_width' => '900px',

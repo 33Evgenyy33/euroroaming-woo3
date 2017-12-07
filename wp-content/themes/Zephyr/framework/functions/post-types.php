@@ -377,6 +377,9 @@ if ( strpos( $portfolio_slug, '%us_portfolio_category%' ) !== FALSE ) {
 			$terms = wp_get_object_terms( $post->ID, 'us_portfolio_category' );
 			if ( $terms ) {
 				return str_replace( '%us_portfolio_category%', $terms[0]->slug, $post_link );
+			} else {
+				// If no terms are assigned to this post, use a string instead (can't leave the placeholder there)
+				return str_replace( '%us_portfolio_category%', 'uncategorized', $post_link );
 			}
 		}
 

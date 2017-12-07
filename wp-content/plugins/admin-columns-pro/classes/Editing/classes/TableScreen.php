@@ -60,7 +60,7 @@ class ACP_Editing_TableScreen {
 		wp_localize_script( 'acp-editing-table', 'ACP_Editing_Items', $column_items );
 		wp_localize_script( 'acp-editing-table', 'ACP_Editing', array(
 			'inline_edit' => array(
-				'active' => $this->preferences()->set_key( $list_screen->get_key() )->get(),
+				'active' => '1' === $this->preferences()->get( $list_screen->get_key() ),
 			),
 			// Translations
 			'i18n'        => array(
@@ -241,8 +241,10 @@ class ACP_Editing_TableScreen {
 	public function ajax_editability_state_save() {
 		check_ajax_referer( 'ac-ajax' );
 
-		$preferences = $this->preferences();
-		$preferences->set_key( filter_input( INPUT_POST, 'list_screen' ) )->update( filter_input( INPUT_POST, 'value' ) );
+		$key = filter_input( INPUT_POST, 'list_screen' );
+		$value = filter_input( INPUT_POST, 'value' ) ? '1' : '0';
+
+		$this->preferences()->set( $key, $value );
 		exit;
 	}
 
@@ -470,10 +472,10 @@ class ACP_Editing_TableScreen {
 	/**
 	 * Get an instance of preferences for the current user
 	 *
-	 * @return ACP_Editing_Preferences
+	 * @return AC_Preferences
 	 */
-	private function preferences() {
-		return new ACP_Editing_Preferences();
+	public function preferences() {
+		return new AC_Preferences( 'editability_state' );
 	}
 
 }

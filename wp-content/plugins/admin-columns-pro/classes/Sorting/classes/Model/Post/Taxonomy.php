@@ -11,7 +11,6 @@ class ACP_Sorting_Model_Post_Taxonomy extends ACP_Sorting_Model {
 
 		return array(
 			'suppress_filters' => false,
-			'_acp_sorting_taxonomy'    => $this->column->get_taxonomy(),
 		);
 	}
 
@@ -28,7 +27,7 @@ class ACP_Sorting_Model_Post_Taxonomy extends ACP_Sorting_Model {
 	public function sorting_clauses_callback( $clauses, $query ) {
 		global $wpdb;
 
-		$conditions[] = $wpdb->prepare( 'taxonomy = %s', $query->get( '_acp_sorting_taxonomy' ) );
+		$conditions[] = $wpdb->prepare( 'taxonomy = %s', $this->column->get_taxonomy() );
 		$conditions[] = ACP()->sorting()->show_all_results() ? ' OR taxonomy IS NULL' : '';
 
 		$clauses['where'] .= vsprintf( ' AND (%s%s)', $conditions );

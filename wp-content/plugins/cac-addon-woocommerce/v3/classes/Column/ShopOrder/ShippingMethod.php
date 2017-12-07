@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.4
  */
 class ACA_WC_Column_ShopOrder_ShippingMethod extends AC_Column
-	implements ACP_Column_SortingInterface, ACP_Column_FilteringInterface {
+	implements ACP_Column_SortingInterface, ACP_Column_FilteringInterface, ACP_Export_Column {
 
 	public function __construct() {
 		$this->set_group( 'woocommerce' );
@@ -38,6 +38,10 @@ class ACA_WC_Column_ShopOrder_ShippingMethod extends AC_Column
 
 	public function sorting() {
 		return new ACP_Sorting_Model( $this );
+	}
+
+	public function export() {
+		return new ACP_Export_Model_StrippedValue( $this );
 	}
 
 }

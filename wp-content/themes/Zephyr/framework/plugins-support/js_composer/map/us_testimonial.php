@@ -63,7 +63,7 @@ vc_map(
 			),
 			array(
 				'param_name' => 'link',
-				'heading' => __( 'Link (optional)', 'us' ),
+				'heading' => us_translate( 'Link' ),
 				'description' => __( 'Applies to the Name and to the Photo', 'us' ),
 				'type' => 'vc_link',
 				'std' => $config['atts']['link'],

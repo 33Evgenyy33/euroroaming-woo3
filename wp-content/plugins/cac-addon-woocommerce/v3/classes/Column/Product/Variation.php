@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.3
  */
 class ACA_WC_Column_Product_Variation extends AC_Column
-	implements AC_Column_AjaxValue, ACP_Column_SortingInterface {
+	implements AC_Column_AjaxValue, ACP_Column_SortingInterface, ACP_Export_Column {
 
 	public function __construct() {
 		$this->set_type( 'column-wc-variation' );
@@ -186,6 +186,10 @@ class ACA_WC_Column_Product_Variation extends AC_Column
 
 	public function sorting() {
 		return new ACA_WC_Sorting_Product_Variation( $this );
+	}
+
+	public function export() {
+		return new ACA_WC_Export_Product_Variation( $this );
 	}
 
 }

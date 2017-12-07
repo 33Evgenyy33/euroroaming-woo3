@@ -7,6 +7,7 @@
  */
 
 return array(
+	'email' => us_translate( 'Email' ),
 	'facebook' => 'Facebook',
 	'twitter' => 'Twitter',
 	'google' => 'Google+',
@@ -19,6 +20,7 @@ return array(
 	'xing' => 'Xing',
 	'pinterest' => 'Pinterest',
 	'skype' => 'Skype',
+	'whatsapp' => 'WhatsApp',
 	'dribbble' => 'Dribbble',
 	'vk' => 'Vkontakte',
 	'tumblr' => 'Tumblr',

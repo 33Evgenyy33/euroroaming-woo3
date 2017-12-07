@@ -152,7 +152,7 @@ if ( us_get_header_option( 'orientation' ) == 'hor' ) { ?>
 		bottom: 100%;
 		transform-origin: 0 100%;
 	}
-	.header_inpos_bottom .l-header.pos_fixed:not(.sticky) .w-nav.type_mobile .w-nav-list.level_1 {
+	.header_inpos_bottom .l-header.pos_fixed:not(.sticky) .w-nav.type_mobile.m_layout_dropdown .w-nav-list.level_1 {
 		top: auto;
 		bottom: 100%;
 		box-shadow: 0 -3px 3px rgba(0,0,0,0.1);
@@ -176,7 +176,8 @@ if ( us_get_header_option( 'orientation' ) == 'ver' ) { ?>
 		padding-right: <?php echo us_get_header_option( 'width' ) ?>px;
 	}
 	.header_ver .l-header,
-	.header_ver .l-header .w-cart-notification {
+	.header_ver .l-header .w-cart-notification,
+	.header_ver .w-nav.type_mobile.m_layout_panel .w-nav-list.level_1 {
 		width: <?php echo us_get_header_option( 'width' ) ?>px;
 	}
 	.rtl.header_ver .l-header {
@@ -333,7 +334,9 @@ if ( us_get_header_option( 'orientation', 'tablets' ) == 'hor' ) { ?>
 
 // Vertical header on Tablets
 if ( us_get_header_option( 'orientation', 'tablets' ) == 'ver' ): ?>
-	.header_ver .l-header {
+	.header_ver .l-header,
+	.header_ver .l-header .w-cart-notification,
+	.header_ver .w-nav.type_mobile.m_layout_panel .w-nav-list.level_1 {
 		width: <?php echo us_get_header_option( 'width', 'tablets' ) ?>px;
 	}
 	.header_ver .w-search.layout_simple,
@@ -473,7 +476,9 @@ if ( us_get_header_option( 'orientation', 'mobiles' ) == 'hor' ) { ?>
 
 // Vertical header on Mobiles
 if ( us_get_header_option( 'orientation', 'mobiles' ) == 'ver' ): ?>
-	.header_ver .l-header {
+	.header_ver .l-header,
+	.header_ver .l-header .w-cart-notification,
+	.header_ver .w-nav.type_mobile.m_layout_panel .w-nav-list.level_1 {
 		width: <?php echo us_get_header_option( 'width', 'mobiles' ) ?>px;
 	}
 	.header_ver .w-search.layout_simple,
@@ -615,12 +620,27 @@ if ( us_get_header_option( 'elm_align', 'mobiles' ) == 'right' ): ?>
 .<?php echo $class ?>.type_mobile .w-nav-anchor:not(.level_1) {
 	font-size: <?php echo $param['mobile_dropdown_font_size'] ?>px;
 }
+@media (min-width: <?php echo $tablets_breakpoint + 1 ?>px) {
+	.<?php echo $class ?> .w-nav-icon {
+		font-size: <?php echo $param['mobile_icon_size'] ?>px;
+	}
+}
+@media (min-width: <?php echo $mobiles_breakpoint + 1 ?>px) and (max-width: <?php echo $tablets_breakpoint ?>px) {
+	.<?php echo $class ?> .w-nav-icon {
+		font-size: <?php echo $param['mobile_icon_size_tablets'] ?>px;
+	}
+}
+@media (max-width: <?php echo $mobiles_breakpoint ?>px) {
+	.<?php echo $class ?> .w-nav-icon {
+		font-size: <?php echo $param['mobile_icon_size_mobiles'] ?>px;
+	}
+}
 /* Show mobile menu instead of desktop */
 @media screen and (max-width: <?php echo $param['mobile_width'] - 1 ?>px) {
-	.header_hor .<?php echo $class ?> .w-nav-list {
+	.<?php echo $class ?> .w-nav-list {
 		display: none;
 	}
-	.header_hor .<?php echo $class ?> .w-nav-control {
+	.<?php echo $class ?> .w-nav-control {
 		display: block;
 	}
 }
@@ -687,6 +707,11 @@ if ( us_get_header_option( 'elm_align', 'mobiles' ) == 'right' ): ?>
 	.<?php echo $class ?>.layout_modern.active {
 		width: <?php echo $param['width'] ?>px;
 	}
+	.<?php echo $class ?> .w-search-open,
+	.<?php echo $class ?> .w-search-close,
+	.<?php echo $class ?> .w-search-form-btn {
+		font-size: <?php echo $param['icon_size'] ?>px;
+	}
 }
 @media (min-width: <?php echo $mobiles_breakpoint + 1 ?>px) and (max-width: <?php echo $tablets_breakpoint ?>px) {
 	.<?php echo $class ?>.layout_simple {
@@ -694,6 +719,18 @@ if ( us_get_header_option( 'elm_align', 'mobiles' ) == 'right' ): ?>
 	}
 	.<?php echo $class ?>.layout_modern.active {
 		width: <?php echo $param['width_tablets'] ?>px;
+	}
+	.<?php echo $class ?> .w-search-open,
+	.<?php echo $class ?> .w-search-close,
+	.<?php echo $class ?> .w-search-form-btn {
+		font-size: <?php echo $param['icon_size_tablets'] ?>px;
+	}
+}
+@media (max-width: <?php echo $mobiles_breakpoint ?>px) {
+	.<?php echo $class ?> .w-search-open,
+	.<?php echo $class ?> .w-search-close,
+	.<?php echo $class ?> .w-search-form-btn {
+		font-size: <?php echo $param['icon_size_mobiles'] ?>px;
 	}
 }
 <?php endforeach; ?>

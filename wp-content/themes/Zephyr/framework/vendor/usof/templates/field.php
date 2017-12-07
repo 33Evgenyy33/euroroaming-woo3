@@ -47,18 +47,24 @@ if ( $field['type'] == 'wrapper_start' ) {
 	return;
 }
 
+$field['std'] = isset( $field['std'] ) ? $field['std'] : NULL;
+$value = isset( $values[$name] ) ? $values[$name] : $field['std'];
+
 // Options Group
 if ( $field['type'] == 'group' ) {
 	global $usof_options;
 
 	$index = 1;
-	$value = isset( $values[$name] ) ? $values[$name] : FALSE;
 	if ( is_array( $value ) AND count( $value ) > 0 ) {
 		$index = max( array_keys( $value ) ) + 1;
 	}
 
 	$field_classes = ( ! empty( $field['classes'] ) ) ? ' ' . $field['classes'] : '' ;
 	echo '<div class="usof-form-group' . $field_classes . '" data-name="' . $name . '" data-index="' . $index . '"';
+	// TODO: make this field more versatile and maybe make HB determination in usof.js
+	if ( isset( $field[ 'is_hb' ] ) AND $field[ 'is_hb' ] ) {
+		echo 'data-hb="1" data-element="' . $index . '"';
+	}
 	echo 'style="display: ' . ( $show_field ? 'block' : 'none' ) . '">';
 
 
@@ -97,9 +103,6 @@ if ( $field['type'] == 'group' ) {
 
 	return;
 }
-
-$field['std'] = isset( $field['std'] ) ? $field['std'] : NULL;
-$value = isset( $values[$name] ) ? $values[$name] : $field['std'];
 
 $row_classes = ' type_' . $field['type'];
 if ( $field['type'] != 'message' AND ( ! isset( $field['classes'] ) OR strpos( $field['classes'], 'desc_' ) === FALSE ) ) {

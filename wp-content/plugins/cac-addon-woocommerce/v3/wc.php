@@ -85,7 +85,7 @@ final class ACA_WC {
 	}
 
 	/**
-	 * @since 2.0
+	 * @since 2.1
 	 */
 	public function get_url() {
 		return plugin_dir_url( __FILE__ );
@@ -134,7 +134,7 @@ final class ACA_WC {
 		require_once $this->get_dir() . 'classes/Dependencies.php';
 
 		$dependencies = new ACA_WC_Dependencies( $this->get_basename() );
-		$dependencies->is_acp_active( '4.0.9' );
+		$dependencies->is_acp_active( '4.1' );
 
 		if ( ! $this->is_woocommerce_active() ) {
 			$dependencies->add_missing( $dependencies->get_search_link( 'WooCommerce', 'WooCommerce' ) );
@@ -181,11 +181,6 @@ final class ACA_WC {
 	public function table_scripts_editing( $list_screen ) {
 		if ( ! $this->is_wc_list_screen( $list_screen ) ) {
 			return;
-		}
-
-		// Select2 version 4 is used by WooCommerce
-		if ( $list_screen instanceof ACA_WC_ListScreen_ShopOrder ) {
-			wp_dequeue_script( 'acp-editing-select2' );
 		}
 
 		$url = $this->get_url();

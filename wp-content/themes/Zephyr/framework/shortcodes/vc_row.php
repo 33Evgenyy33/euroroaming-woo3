@@ -142,6 +142,12 @@ if ( $atts['us_bg_video'] != '' ) {
 	}
 }
 
+$bg_slider_html = '';
+if ( class_exists( 'RevSlider' ) AND $atts['us_bg_slider'] != '' ) {
+	$classes .= ' with_slider';
+	$bg_slider_html = '<div class="l-section-slider">' . do_shortcode( '[rev_slider ' . $atts['us_bg_slider'] . ']' ) . '</div>';
+}
+
 $bg_overlay_html = '';
 if ( ! empty( $atts['us_bg_overlay_color'] ) ) {
 	$classes .= ' with_overlay';
@@ -182,7 +188,7 @@ if ( ! empty( $inner_css ) ) {
 if ( $atts['sticky'] == 1 AND ! empty( $atts['sticky_disable_width'] ) ) {
 	$output .= ' data-sticky-disable-width="' . intval( $atts['sticky_disable_width'] ) . '"';
 }
-$output .= '>' . $bg_image_html . $bg_video_html . $bg_overlay_html . '<div class="l-section-h i-cf">';
+$output .= '>' . $bg_image_html . $bg_video_html . $bg_slider_html . $bg_overlay_html . '<div class="l-section-h i-cf">';
 
 $inner_output = do_shortcode( $content );
 

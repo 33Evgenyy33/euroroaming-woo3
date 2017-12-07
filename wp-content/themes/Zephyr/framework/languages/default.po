@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Impreza and Zephyr\n"
-"POT-Creation-Date: 2017-10-30 17:24+0300\n"
-"PO-Revision-Date: 2017-10-30 17:24+0300\n"
+"POT-Creation-Date: 2017-11-27 18:33+0300\n"
+"PO-Revision-Date: 2017-11-27 18:33+0300\n"
 "Last-Translator: Aleksandr <clients@us-theme.com>\n"
 "Language-Team: \n"
 "Language: en_GB\n"
@@ -65,7 +65,7 @@ msgstr ""
 
 #: plugins/us-header-builder/config/meta-boxes.php:27
 #: themes/Impreza/framework/config/header-settings.php:49
-#: themes/Impreza/framework/config/theme-options.php:792
+#: themes/Impreza/framework/config/theme-options.php:802
 msgid "Sticky Header"
 msgstr ""
 
@@ -76,27 +76,27 @@ msgstr ""
 
 #: plugins/us-header-builder/config/meta-boxes.php:36
 #: plugins/us-header-builder/config/meta-boxes.php:58
-#: themes/Impreza/framework/config/theme-options.php:795
+#: themes/Impreza/framework/config/theme-options.php:805
 msgid "On Desktops"
 msgstr ""
 
 #: plugins/us-header-builder/config/meta-boxes.php:37
 #: plugins/us-header-builder/config/meta-boxes.php:59
-#: themes/Impreza/framework/config/theme-options.php:796
-#: themes/Impreza/framework/config/theme-options.php:1351
+#: themes/Impreza/framework/config/theme-options.php:806
+#: themes/Impreza/framework/config/theme-options.php:1361
 msgid "On Tablets"
 msgstr ""
 
 #: plugins/us-header-builder/config/meta-boxes.php:38
 #: plugins/us-header-builder/config/meta-boxes.php:60
-#: themes/Impreza/framework/config/theme-options.php:797
-#: themes/Impreza/framework/config/theme-options.php:1357
+#: themes/Impreza/framework/config/theme-options.php:807
+#: themes/Impreza/framework/config/theme-options.php:1367
 msgid "On Mobiles"
 msgstr ""
 
 #: plugins/us-header-builder/config/meta-boxes.php:49
 #: themes/Impreza/framework/config/header-settings.php:72
-#: themes/Impreza/framework/config/theme-options.php:804
+#: themes/Impreza/framework/config/theme-options.php:814
 msgid "Transparent Header"
 msgstr ""
 
@@ -111,9 +111,9 @@ msgstr ""
 
 #: plugins/us-header-builder/config/theme-options.php:21
 #: plugins/us-header-builder/us-header-builder.php:261
-#: themes/Impreza/framework/config/theme-options.php:1430
-#: themes/Impreza/framework/config/theme-options.php:2193
-#: themes/Impreza/framework/config/theme-options.php:2533
+#: themes/Impreza/framework/config/theme-options.php:1440
+#: themes/Impreza/framework/config/theme-options.php:2203
+#: themes/Impreza/framework/config/theme-options.php:2543
 #: themes/Impreza/framework/functions/post-types.php:157
 msgid "Defaults"
 msgstr ""
@@ -127,17 +127,17 @@ msgstr ""
 #: plugins/us-header-builder/us-header-builder.php:217
 #: themes/Impreza/config/assets.php:50
 #: themes/Impreza/framework/config/meta-boxes.php:75
-#: themes/Impreza/framework/config/theme-options.php:770
+#: themes/Impreza/framework/config/theme-options.php:780
 msgctxt "site top area"
 msgid "Header"
 msgstr ""
 
 #: plugins/us-header-builder/config/theme-options.php:35
 #: plugins/us-header-builder/us-header-builder.php:264
-#: themes/Impreza/framework/config/theme-options.php:1551
-#: themes/Impreza/framework/config/theme-options.php:2224
-#: themes/Impreza/framework/config/theme-options.php:2548
-#: themes/Impreza/framework/config/theme-options.php:3216
+#: themes/Impreza/framework/config/theme-options.php:1561
+#: themes/Impreza/framework/config/theme-options.php:2234
+#: themes/Impreza/framework/config/theme-options.php:2558
+#: themes/Impreza/framework/config/theme-options.php:3226
 #: themes/Impreza/framework/functions/post-types.php:21
 #: themes/Impreza/framework/functions/post-types.php:160
 msgid "Portfolio Pages"
@@ -148,30 +148,30 @@ msgstr ""
 #: plugins/us-header-builder/config/theme-options.php:86
 #: plugins/us-header-builder/config/theme-options.php:108
 #: plugins/us-header-builder/config/theme-options.php:132
-#: themes/Impreza/framework/config/theme-options.php:1565
-#: themes/Impreza/framework/config/theme-options.php:1727
-#: themes/Impreza/framework/config/theme-options.php:1883
-#: themes/Impreza/framework/config/theme-options.php:2035
-#: themes/Impreza/framework/config/theme-options.php:2555
-#: themes/Impreza/framework/config/theme-options.php:2579
-#: themes/Impreza/framework/config/theme-options.php:2601
-#: themes/Impreza/framework/config/theme-options.php:2624
-#: themes/Impreza/framework/config/theme-options.php:2649
+#: themes/Impreza/framework/config/theme-options.php:1575
+#: themes/Impreza/framework/config/theme-options.php:1737
+#: themes/Impreza/framework/config/theme-options.php:1893
+#: themes/Impreza/framework/config/theme-options.php:2045
+#: themes/Impreza/framework/config/theme-options.php:2565
+#: themes/Impreza/framework/config/theme-options.php:2589
+#: themes/Impreza/framework/config/theme-options.php:2611
+#: themes/Impreza/framework/config/theme-options.php:2634
+#: themes/Impreza/framework/config/theme-options.php:2659
 msgid "Use Defaults"
 msgstr ""
 
 #: plugins/us-header-builder/config/theme-options.php:80
 #: plugins/us-header-builder/us-header-builder.php:270
-#: themes/Impreza/framework/config/theme-options.php:1871
-#: themes/Impreza/framework/config/theme-options.php:2595
+#: themes/Impreza/framework/config/theme-options.php:1881
+#: themes/Impreza/framework/config/theme-options.php:2605
 #: themes/Impreza/framework/functions/post-types.php:166
 msgid "Archive, Search Results Pages"
 msgstr ""
 
 #: plugins/us-header-builder/config/theme-options.php:101
 #: plugins/us-header-builder/us-header-builder.php:273
-#: themes/Impreza/framework/config/theme-options.php:2383
-#: themes/Impreza/framework/config/theme-options.php:2617
+#: themes/Impreza/framework/config/theme-options.php:2393
+#: themes/Impreza/framework/config/theme-options.php:2627
 #: themes/Impreza/framework/functions/post-types.php:169
 msgid "Shop Pages"
 msgstr ""
@@ -236,9 +236,15 @@ msgstr ""
 #: themes/Impreza/framework/admin/functions/demo-import.php:119
 #: themes/Impreza/framework/admin/functions/demo-import.php:991
 #: themes/Impreza/framework/admin/functions/demo-import.php:1005
+#: themes/Impreza/framework/config/theme-options.php:149
 #: themes/Impreza/framework/functions/header.php:721
 #: themes/Impreza/framework/functions/header.php:726
 #: themes/Impreza/framework/functions/post-types.php:190
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:120
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_gallery.php:96
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_image_slider.php:99
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:97
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:234
 #: themes/Impreza/framework/vendor/usof/functions/interface.php:5
 #: themes/Impreza/framework/vendor/usof/functions/interface.php:6
 #: themes/Impreza/framework/vendor/usof/functions/interface.php:92
@@ -303,31 +309,32 @@ msgstr ""
 
 #: plugins/us-header-builder/vendor/usof/templates/fields/header_builder.php:103
 #: plugins/us-header-builder/vendor/usof/templates/fields/header_builder.php:259
-#: themes/Impreza/framework/config/header-settings.php:622
+#: themes/Impreza/framework/config/header-settings.php:695
 msgid "Links Menu"
 msgstr ""
 
 #: plugins/us-header-builder/vendor/usof/templates/fields/header_builder.php:115
 #: plugins/us-header-builder/vendor/usof/templates/fields/header_builder.php:260
-#: themes/Impreza/framework/config/header-settings.php:754
-#: themes/Impreza/framework/config/theme-options.php:1009
+#: themes/Impreza/framework/config/header-settings.php:590
+#: themes/Impreza/framework/config/header-settings.php:853
+#: themes/Impreza/framework/config/theme-options.php:1019
 msgid "Dropdown"
 msgstr ""
 
 #: plugins/us-header-builder/vendor/usof/templates/fields/header_builder.php:130
 #: plugins/us-header-builder/vendor/usof/templates/fields/header_builder.php:261
 #: themes/Impreza/config/assets.php:203
-#: themes/Impreza/framework/config/header-settings.php:1056
-#: themes/Impreza/framework/config/theme-options.php:971
+#: themes/Impreza/framework/config/header-settings.php:1155
+#: themes/Impreza/framework/config/theme-options.php:981
 #: themes/Impreza/framework/config/widgets.php:88
 #: themes/Impreza/framework/config/widgets.php:89
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:32
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:17
 msgid "Social Links"
 msgstr ""
 
 #: plugins/us-header-builder/vendor/usof/templates/fields/header_builder.php:138
 #: plugins/us-header-builder/vendor/usof/templates/fields/header_builder.php:262
-#: themes/Impreza/framework/config/header-settings.php:1143
+#: themes/Impreza/framework/config/header-settings.php:1346
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_btn.php:14
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cform.php:90
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cform.php:99
@@ -341,7 +348,7 @@ msgstr ""
 
 #: plugins/us-header-builder/vendor/usof/templates/fields/header_builder.php:146
 #: plugins/us-header-builder/vendor/usof/templates/fields/header_builder.php:263
-#: themes/Impreza/framework/config/header-settings.php:1268
+#: themes/Impreza/framework/config/header-settings.php:1471
 #: themes/Impreza/framework/templates/elements/cart.php:39
 msgid "Cart"
 msgstr ""
@@ -394,7 +401,7 @@ msgid ""
 msgstr ""
 
 #: plugins/us-header-builder/vendor/usof/templates/fields/header_builder.php:251
-#: themes/Impreza/framework/vendor/usof/templates/field.php:93
+#: themes/Impreza/framework/vendor/usof/templates/field.php:99
 msgid "Are you sure want to delete the element?"
 msgstr ""
 
@@ -458,7 +465,7 @@ msgid "Content Elements"
 msgstr ""
 
 #: themes/Impreza/config/assets.php:103
-#: themes/Impreza/framework/config/theme-options.php:3101
+#: themes/Impreza/framework/config/theme-options.php:3111
 msgid "Buttons"
 msgstr ""
 
@@ -510,10 +517,10 @@ msgstr ""
 #: themes/Impreza/framework/admin/functions/demo-import.php:90
 #: themes/Impreza/framework/admin/functions/demo-import.php:93
 #: themes/Impreza/framework/admin/functions/demo-import.php:626
-#: themes/Impreza/framework/config/theme-options.php:3211
-#: themes/Impreza/framework/config/theme-options.php:4003
-#: themes/Impreza/framework/config/widgets.php:155
-#: themes/Impreza/framework/config/widgets.php:156
+#: themes/Impreza/framework/config/theme-options.php:3221
+#: themes/Impreza/framework/config/theme-options.php:4017
+#: themes/Impreza/framework/config/widgets.php:150
+#: themes/Impreza/framework/config/widgets.php:151
 #: themes/Impreza/framework/functions/post-types.php:19
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:28
 msgid "Portfolio"
@@ -540,7 +547,7 @@ msgid "Separator"
 msgstr ""
 
 #: themes/Impreza/config/assets.php:193
-#: themes/Impreza/framework/config/theme-options.php:3413
+#: themes/Impreza/framework/config/theme-options.php:3423
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_sharing.php:14
 msgid "Sharing Buttons"
 msgstr ""
@@ -555,7 +562,7 @@ msgstr ""
 #: themes/Impreza/framework/admin/functions/demo-import.php:110
 #: themes/Impreza/framework/admin/functions/demo-import.php:454
 #: themes/Impreza/framework/admin/functions/demo-import.php:683
-#: themes/Impreza/framework/config/theme-options.php:4009
+#: themes/Impreza/framework/config/theme-options.php:4023
 #: themes/Impreza/framework/functions/post-types.php:63
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_testimonials.php:30
 msgid "Testimonials"
@@ -598,7 +605,7 @@ msgid "White Purple"
 msgstr ""
 
 #: themes/Impreza/config/style-schemes.php:605
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:93
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:86
 msgid "Black & White"
 msgstr ""
 
@@ -943,7 +950,7 @@ msgid "Please enter your Name"
 msgstr ""
 
 #: themes/Impreza/framework/config/cform.php:26
-#: themes/Impreza/framework/config/theme-options.php:944
+#: themes/Impreza/framework/config/theme-options.php:954
 #: themes/Impreza/framework/functions/ajax/cform.php:116
 #: themes/Impreza/framework/functions/ajax/cform.php:118
 #: themes/Zephyr/config/cform.php:25
@@ -1012,7 +1019,7 @@ msgid "Vertical"
 msgstr ""
 
 #: themes/Impreza/framework/config/header-settings.php:51
-#: themes/Impreza/framework/config/theme-options.php:799
+#: themes/Impreza/framework/config/theme-options.php:809
 msgid "Fix the header at the top of a page during scroll"
 msgstr ""
 
@@ -1027,18 +1034,18 @@ msgid ""
 msgstr ""
 
 #: themes/Impreza/framework/config/header-settings.php:74
-#: themes/Impreza/framework/config/theme-options.php:806
+#: themes/Impreza/framework/config/theme-options.php:816
 msgid "Make the header transparent at its initial position"
 msgstr ""
 
 #: themes/Impreza/framework/config/header-settings.php:80
-#: themes/Impreza/framework/config/theme-options.php:884
+#: themes/Impreza/framework/config/theme-options.php:894
 msgid "Header Width"
 msgstr ""
 
 #: themes/Impreza/framework/config/header-settings.php:89
-#: themes/Impreza/framework/config/header-settings.php:1347
-#: themes/Impreza/framework/config/header-settings.php:1367
+#: themes/Impreza/framework/config/header-settings.php:1538
+#: themes/Impreza/framework/config/header-settings.php:1558
 msgid "Elements Alignment"
 msgstr ""
 
@@ -1070,7 +1077,7 @@ msgstr ""
 #: themes/Impreza/framework/config/header-settings.php:145
 #: themes/Impreza/framework/config/header-settings.php:181
 #: themes/Impreza/framework/config/header-settings.php:296
-#: themes/Impreza/framework/config/theme-options.php:811
+#: themes/Impreza/framework/config/theme-options.php:821
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_row.php:88
 msgid "Full Width Content"
 msgstr ""
@@ -1082,11 +1089,11 @@ msgstr ""
 #: themes/Impreza/framework/config/header-settings.php:206
 #: themes/Impreza/framework/config/mega-menu.php:75
 #: themes/Impreza/framework/config/meta-boxes.php:161
-#: themes/Impreza/framework/config/theme-options.php:1474
-#: themes/Impreza/framework/config/theme-options.php:1620
-#: themes/Impreza/framework/config/theme-options.php:1784
-#: themes/Impreza/framework/config/theme-options.php:1934
-#: themes/Impreza/framework/config/theme-options.php:2090
+#: themes/Impreza/framework/config/theme-options.php:1484
+#: themes/Impreza/framework/config/theme-options.php:1630
+#: themes/Impreza/framework/config/theme-options.php:1794
+#: themes/Impreza/framework/config/theme-options.php:1944
+#: themes/Impreza/framework/config/theme-options.php:2100
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_row.php:130
 msgid "Background Image"
 msgstr ""
@@ -1094,12 +1101,12 @@ msgstr ""
 #: themes/Impreza/framework/config/header-settings.php:215
 #: themes/Impreza/framework/config/mega-menu.php:84
 #: themes/Impreza/framework/config/meta-boxes.php:167
-#: themes/Impreza/framework/config/theme-options.php:308
-#: themes/Impreza/framework/config/theme-options.php:1488
-#: themes/Impreza/framework/config/theme-options.php:1642
-#: themes/Impreza/framework/config/theme-options.php:1804
-#: themes/Impreza/framework/config/theme-options.php:1954
-#: themes/Impreza/framework/config/theme-options.php:2112
+#: themes/Impreza/framework/config/theme-options.php:318
+#: themes/Impreza/framework/config/theme-options.php:1498
+#: themes/Impreza/framework/config/theme-options.php:1652
+#: themes/Impreza/framework/config/theme-options.php:1814
+#: themes/Impreza/framework/config/theme-options.php:1964
+#: themes/Impreza/framework/config/theme-options.php:2122
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_row.php:138
 msgid "Background Image Size"
 msgstr ""
@@ -1107,13 +1114,13 @@ msgstr ""
 #: themes/Impreza/framework/config/header-settings.php:218
 #: themes/Impreza/framework/config/mega-menu.php:87
 #: themes/Impreza/framework/config/meta-boxes.php:171
-#: themes/Impreza/framework/config/theme-options.php:311
-#: themes/Impreza/framework/config/theme-options.php:1491
-#: themes/Impreza/framework/config/theme-options.php:1645
-#: themes/Impreza/framework/config/theme-options.php:1807
-#: themes/Impreza/framework/config/theme-options.php:1957
-#: themes/Impreza/framework/config/theme-options.php:2115
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_image_slider.php:112
+#: themes/Impreza/framework/config/theme-options.php:321
+#: themes/Impreza/framework/config/theme-options.php:1501
+#: themes/Impreza/framework/config/theme-options.php:1655
+#: themes/Impreza/framework/config/theme-options.php:1817
+#: themes/Impreza/framework/config/theme-options.php:1967
+#: themes/Impreza/framework/config/theme-options.php:2125
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_image_slider.php:113
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_row.php:141
 msgid "Fill Area"
 msgstr ""
@@ -1121,13 +1128,13 @@ msgstr ""
 #: themes/Impreza/framework/config/header-settings.php:219
 #: themes/Impreza/framework/config/mega-menu.php:88
 #: themes/Impreza/framework/config/meta-boxes.php:172
-#: themes/Impreza/framework/config/theme-options.php:312
-#: themes/Impreza/framework/config/theme-options.php:1492
-#: themes/Impreza/framework/config/theme-options.php:1646
-#: themes/Impreza/framework/config/theme-options.php:1808
-#: themes/Impreza/framework/config/theme-options.php:1958
-#: themes/Impreza/framework/config/theme-options.php:2116
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_image_slider.php:111
+#: themes/Impreza/framework/config/theme-options.php:322
+#: themes/Impreza/framework/config/theme-options.php:1502
+#: themes/Impreza/framework/config/theme-options.php:1656
+#: themes/Impreza/framework/config/theme-options.php:1818
+#: themes/Impreza/framework/config/theme-options.php:1968
+#: themes/Impreza/framework/config/theme-options.php:2126
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_image_slider.php:112
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_row.php:142
 msgid "Fit to Area"
 msgstr ""
@@ -1135,13 +1142,13 @@ msgstr ""
 #: themes/Impreza/framework/config/header-settings.php:220
 #: themes/Impreza/framework/config/mega-menu.php:89
 #: themes/Impreza/framework/config/meta-boxes.php:173
-#: themes/Impreza/framework/config/theme-options.php:313
-#: themes/Impreza/framework/config/theme-options.php:1493
-#: themes/Impreza/framework/config/theme-options.php:1647
-#: themes/Impreza/framework/config/theme-options.php:1809
-#: themes/Impreza/framework/config/theme-options.php:1959
-#: themes/Impreza/framework/config/theme-options.php:2117
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_image_slider.php:110
+#: themes/Impreza/framework/config/theme-options.php:323
+#: themes/Impreza/framework/config/theme-options.php:1503
+#: themes/Impreza/framework/config/theme-options.php:1657
+#: themes/Impreza/framework/config/theme-options.php:1819
+#: themes/Impreza/framework/config/theme-options.php:1969
+#: themes/Impreza/framework/config/theme-options.php:2127
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_image_slider.php:111
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_row.php:143
 msgid "Initial"
 msgstr ""
@@ -1149,12 +1156,12 @@ msgstr ""
 #: themes/Impreza/framework/config/header-settings.php:225
 #: themes/Impreza/framework/config/mega-menu.php:95
 #: themes/Impreza/framework/config/meta-boxes.php:183
-#: themes/Impreza/framework/config/theme-options.php:319
-#: themes/Impreza/framework/config/theme-options.php:1499
-#: themes/Impreza/framework/config/theme-options.php:1654
-#: themes/Impreza/framework/config/theme-options.php:1815
-#: themes/Impreza/framework/config/theme-options.php:1965
-#: themes/Impreza/framework/config/theme-options.php:2124
+#: themes/Impreza/framework/config/theme-options.php:329
+#: themes/Impreza/framework/config/theme-options.php:1509
+#: themes/Impreza/framework/config/theme-options.php:1664
+#: themes/Impreza/framework/config/theme-options.php:1825
+#: themes/Impreza/framework/config/theme-options.php:1975
+#: themes/Impreza/framework/config/theme-options.php:2134
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_row.php:152
 msgid "Background Image Repeat"
 msgstr ""
@@ -1162,12 +1169,12 @@ msgstr ""
 #: themes/Impreza/framework/config/header-settings.php:228
 #: themes/Impreza/framework/config/mega-menu.php:98
 #: themes/Impreza/framework/config/meta-boxes.php:187
-#: themes/Impreza/framework/config/theme-options.php:322
-#: themes/Impreza/framework/config/theme-options.php:1502
-#: themes/Impreza/framework/config/theme-options.php:1657
-#: themes/Impreza/framework/config/theme-options.php:1818
-#: themes/Impreza/framework/config/theme-options.php:1968
-#: themes/Impreza/framework/config/theme-options.php:2127
+#: themes/Impreza/framework/config/theme-options.php:332
+#: themes/Impreza/framework/config/theme-options.php:1512
+#: themes/Impreza/framework/config/theme-options.php:1667
+#: themes/Impreza/framework/config/theme-options.php:1828
+#: themes/Impreza/framework/config/theme-options.php:1978
+#: themes/Impreza/framework/config/theme-options.php:2137
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_row.php:155
 msgid "Repeat"
 msgstr ""
@@ -1175,12 +1182,12 @@ msgstr ""
 #: themes/Impreza/framework/config/header-settings.php:229
 #: themes/Impreza/framework/config/mega-menu.php:99
 #: themes/Impreza/framework/config/meta-boxes.php:188
-#: themes/Impreza/framework/config/theme-options.php:323
-#: themes/Impreza/framework/config/theme-options.php:1503
-#: themes/Impreza/framework/config/theme-options.php:1658
-#: themes/Impreza/framework/config/theme-options.php:1819
-#: themes/Impreza/framework/config/theme-options.php:1969
-#: themes/Impreza/framework/config/theme-options.php:2128
+#: themes/Impreza/framework/config/theme-options.php:333
+#: themes/Impreza/framework/config/theme-options.php:1513
+#: themes/Impreza/framework/config/theme-options.php:1668
+#: themes/Impreza/framework/config/theme-options.php:1829
+#: themes/Impreza/framework/config/theme-options.php:1979
+#: themes/Impreza/framework/config/theme-options.php:2138
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_row.php:156
 msgid "Horizontally"
 msgstr ""
@@ -1188,12 +1195,12 @@ msgstr ""
 #: themes/Impreza/framework/config/header-settings.php:230
 #: themes/Impreza/framework/config/mega-menu.php:100
 #: themes/Impreza/framework/config/meta-boxes.php:189
-#: themes/Impreza/framework/config/theme-options.php:324
-#: themes/Impreza/framework/config/theme-options.php:1504
-#: themes/Impreza/framework/config/theme-options.php:1659
-#: themes/Impreza/framework/config/theme-options.php:1820
-#: themes/Impreza/framework/config/theme-options.php:1970
-#: themes/Impreza/framework/config/theme-options.php:2129
+#: themes/Impreza/framework/config/theme-options.php:334
+#: themes/Impreza/framework/config/theme-options.php:1514
+#: themes/Impreza/framework/config/theme-options.php:1669
+#: themes/Impreza/framework/config/theme-options.php:1830
+#: themes/Impreza/framework/config/theme-options.php:1980
+#: themes/Impreza/framework/config/theme-options.php:2139
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_row.php:157
 msgid "Vertically"
 msgstr ""
@@ -1201,150 +1208,140 @@ msgstr ""
 #: themes/Impreza/framework/config/header-settings.php:236
 #: themes/Impreza/framework/config/mega-menu.php:107
 #: themes/Impreza/framework/config/meta-boxes.php:200
-#: themes/Impreza/framework/config/theme-options.php:331
-#: themes/Impreza/framework/config/theme-options.php:1511
-#: themes/Impreza/framework/config/theme-options.php:1667
-#: themes/Impreza/framework/config/theme-options.php:1827
-#: themes/Impreza/framework/config/theme-options.php:1977
-#: themes/Impreza/framework/config/theme-options.php:2137
+#: themes/Impreza/framework/config/theme-options.php:341
+#: themes/Impreza/framework/config/theme-options.php:1521
+#: themes/Impreza/framework/config/theme-options.php:1677
+#: themes/Impreza/framework/config/theme-options.php:1837
+#: themes/Impreza/framework/config/theme-options.php:1987
+#: themes/Impreza/framework/config/theme-options.php:2147
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_row.php:167
 msgid "Background Image Position"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:319
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_iconbox.php:141
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_logos.php:32
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:63
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_testimonial.php:66
-msgid "Link (optional)"
-msgstr ""
-
-#: themes/Impreza/framework/config/header-settings.php:327
-#: themes/Impreza/framework/config/header-settings.php:1171
-#: themes/Impreza/framework/config/header-settings.php:1271
-#: themes/Impreza/framework/config/theme-options.php:954
+#: themes/Impreza/framework/config/header-settings.php:328
+#: themes/Impreza/framework/config/header-settings.php:1374
+#: themes/Impreza/framework/config/header-settings.php:1474
+#: themes/Impreza/framework/config/theme-options.php:964
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_btn.php:103
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_iconbox.php:22
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_message.php:66
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_separator.php:130
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:28
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_tta_accordion.php:83
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_tta_section.php:57
 msgid "Icon"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:328
-#: themes/Impreza/framework/config/header-settings.php:1082
-#: themes/Impreza/framework/config/header-settings.php:1172
-#: themes/Impreza/framework/config/header-settings.php:1272
-#: themes/Impreza/framework/config/theme-options.php:955
-#: themes/Impreza/framework/config/theme-options.php:994
+#: themes/Impreza/framework/config/header-settings.php:329
+#: themes/Impreza/framework/config/header-settings.php:1181
+#: themes/Impreza/framework/config/header-settings.php:1375
+#: themes/Impreza/framework/config/header-settings.php:1475
+#: themes/Impreza/framework/config/theme-options.php:965
+#: themes/Impreza/framework/config/theme-options.php:1004
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_btn.php:104
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cta.php:173
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cta.php:270
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_iconbox.php:23
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_message.php:67
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:168
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:162
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_pricing.php:117
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_separator.php:131
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:66
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:53
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_tta_section.php:58
 #: themes/Zephyr/plugins-support/js_composer/map/us_pricing.php:130
 #, php-format
 msgid "%s or %s icon name"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:334
-#: themes/Impreza/framework/config/theme-options.php:3143
+#: themes/Impreza/framework/config/header-settings.php:335
+#: themes/Impreza/framework/config/theme-options.php:3153
 msgid "Use Font from"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:337
-#: themes/Impreza/framework/config/theme-options.php:2672
-#: themes/Impreza/framework/config/theme-options.php:3146
+#: themes/Impreza/framework/config/header-settings.php:338
+#: themes/Impreza/framework/config/theme-options.php:2682
+#: themes/Impreza/framework/config/theme-options.php:3156
 msgid "Regular Text"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:338
-#: themes/Impreza/framework/config/theme-options.php:2729
-#: themes/Impreza/framework/config/theme-options.php:3147
+#: themes/Impreza/framework/config/header-settings.php:339
+#: themes/Impreza/framework/config/theme-options.php:2739
+#: themes/Impreza/framework/config/theme-options.php:3157
 msgid "Headings"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:339
-#: themes/Impreza/framework/config/theme-options.php:3064
-#: themes/Impreza/framework/config/theme-options.php:3148
+#: themes/Impreza/framework/config/header-settings.php:340
+#: themes/Impreza/framework/config/theme-options.php:3074
+#: themes/Impreza/framework/config/theme-options.php:3158
 msgid "Header Menu"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:351
+#: themes/Impreza/framework/config/header-settings.php:352
 msgid "Line Wrapping"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:353
+#: themes/Impreza/framework/config/header-settings.php:354
 msgid "Wrap text to the next line"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:364
-#: themes/Impreza/framework/config/header-settings.php:374
-#: themes/Impreza/framework/config/header-settings.php:384
-#: themes/Impreza/framework/config/header-settings.php:419
-#: themes/Impreza/framework/config/header-settings.php:428
-#: themes/Impreza/framework/config/header-settings.php:438
-#: themes/Impreza/framework/config/header-settings.php:448
-#: themes/Impreza/framework/config/header-settings.php:453
-#: themes/Impreza/framework/config/header-settings.php:462
-#: themes/Impreza/framework/config/header-settings.php:472
-#: themes/Impreza/framework/config/header-settings.php:482
-#: themes/Impreza/framework/config/header-settings.php:639
-#: themes/Impreza/framework/config/header-settings.php:649
-#: themes/Impreza/framework/config/header-settings.php:659
-#: themes/Impreza/framework/config/header-settings.php:669
-#: themes/Impreza/framework/config/header-settings.php:680
-#: themes/Impreza/framework/config/header-settings.php:691
-#: themes/Impreza/framework/config/header-settings.php:1026
-#: themes/Impreza/framework/config/header-settings.php:1036
-#: themes/Impreza/framework/config/header-settings.php:1046
-#: themes/Impreza/framework/config/header-settings.php:1112
-#: themes/Impreza/framework/config/header-settings.php:1122
-#: themes/Impreza/framework/config/header-settings.php:1132
-#: themes/Impreza/framework/config/header-settings.php:1194
-#: themes/Impreza/framework/config/header-settings.php:1204
-#: themes/Impreza/framework/config/header-settings.php:1214
-#: themes/Impreza/framework/config/header-settings.php:1313
-#: themes/Impreza/framework/config/header-settings.php:1323
-#: themes/Impreza/framework/config/header-settings.php:1333
+#: themes/Impreza/framework/config/header-settings.php:365
+#: themes/Impreza/framework/config/header-settings.php:375
+#: themes/Impreza/framework/config/header-settings.php:385
+#: themes/Impreza/framework/config/header-settings.php:420
+#: themes/Impreza/framework/config/header-settings.php:429
+#: themes/Impreza/framework/config/header-settings.php:439
+#: themes/Impreza/framework/config/header-settings.php:449
+#: themes/Impreza/framework/config/header-settings.php:454
+#: themes/Impreza/framework/config/header-settings.php:463
+#: themes/Impreza/framework/config/header-settings.php:473
+#: themes/Impreza/framework/config/header-settings.php:483
+#: themes/Impreza/framework/config/header-settings.php:712
+#: themes/Impreza/framework/config/header-settings.php:722
+#: themes/Impreza/framework/config/header-settings.php:732
+#: themes/Impreza/framework/config/header-settings.php:742
+#: themes/Impreza/framework/config/header-settings.php:753
+#: themes/Impreza/framework/config/header-settings.php:764
+#: themes/Impreza/framework/config/header-settings.php:1125
+#: themes/Impreza/framework/config/header-settings.php:1135
+#: themes/Impreza/framework/config/header-settings.php:1145
+#: themes/Impreza/framework/config/header-settings.php:1211
+#: themes/Impreza/framework/config/header-settings.php:1221
+#: themes/Impreza/framework/config/header-settings.php:1231
+#: themes/Impreza/framework/config/header-settings.php:1397
+#: themes/Impreza/framework/config/header-settings.php:1407
+#: themes/Impreza/framework/config/header-settings.php:1417
 msgid "Sizes"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:367
-#: themes/Impreza/framework/config/header-settings.php:1029
-#: themes/Impreza/framework/config/header-settings.php:1115
-#: themes/Impreza/framework/config/header-settings.php:1197
+#: themes/Impreza/framework/config/header-settings.php:368
+#: themes/Impreza/framework/config/header-settings.php:1128
+#: themes/Impreza/framework/config/header-settings.php:1214
+#: themes/Impreza/framework/config/header-settings.php:1400
 msgid "Size on Tablets"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:377
-#: themes/Impreza/framework/config/header-settings.php:1039
-#: themes/Impreza/framework/config/header-settings.php:1125
-#: themes/Impreza/framework/config/header-settings.php:1207
+#: themes/Impreza/framework/config/header-settings.php:378
+#: themes/Impreza/framework/config/header-settings.php:1138
+#: themes/Impreza/framework/config/header-settings.php:1224
+#: themes/Impreza/framework/config/header-settings.php:1410
 msgid "Size on Mobiles"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:389
-#: themes/Impreza/framework/config/header-settings.php:487
-#: themes/Impreza/framework/config/header-settings.php:617
-#: themes/Impreza/framework/config/header-settings.php:696
-#: themes/Impreza/framework/config/header-settings.php:749
-#: themes/Impreza/framework/config/header-settings.php:1051
-#: themes/Impreza/framework/config/header-settings.php:1137
-#: themes/Impreza/framework/config/header-settings.php:1247
-#: themes/Impreza/framework/config/header-settings.php:1263
-#: themes/Impreza/framework/config/header-settings.php:1338
-#: themes/Impreza/framework/config/header-settings.php:1359
-#: themes/Impreza/framework/config/header-settings.php:1379
+#: themes/Impreza/framework/config/header-settings.php:390
+#: themes/Impreza/framework/config/header-settings.php:488
+#: themes/Impreza/framework/config/header-settings.php:690
+#: themes/Impreza/framework/config/header-settings.php:769
+#: themes/Impreza/framework/config/header-settings.php:848
+#: themes/Impreza/framework/config/header-settings.php:1150
+#: themes/Impreza/framework/config/header-settings.php:1236
+#: themes/Impreza/framework/config/header-settings.php:1450
+#: themes/Impreza/framework/config/header-settings.php:1466
+#: themes/Impreza/framework/config/header-settings.php:1529
+#: themes/Impreza/framework/config/header-settings.php:1550
+#: themes/Impreza/framework/config/header-settings.php:1570
 #: themes/Impreza/framework/config/meta-boxes.php:354
-#: themes/Impreza/framework/config/theme-options.php:3253
-#: themes/Impreza/framework/config/theme-options.php:3779
+#: themes/Impreza/framework/config/theme-options.php:3263
+#: themes/Impreza/framework/config/theme-options.php:3793
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_gmaps.php:158
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_gmaps.php:177
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_gmaps.php:184
@@ -1352,121 +1349,118 @@ msgstr ""
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_gmaps.php:198
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_gmaps.php:206
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_gmaps.php:214
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:83
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:99
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:108
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:77
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:92
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:101
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:109
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:117
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:126
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:135
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:144
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:153
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:162
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:172
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:180
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:125
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:133
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:141
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:149
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:157
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:166
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:173
 msgid "More Options"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:402
-msgid "Image link"
-msgstr ""
-
-#: themes/Impreza/framework/config/header-settings.php:411
-#: themes/Impreza/framework/config/theme-options.php:1345
+#: themes/Impreza/framework/config/header-settings.php:412
+#: themes/Impreza/framework/config/theme-options.php:1355
 msgid "Different Image for Transparent Header"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:417
+#: themes/Impreza/framework/config/header-settings.php:418
 msgid "Default Sizes"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:431
-#: themes/Impreza/framework/config/header-settings.php:465
-#: themes/Impreza/framework/config/theme-options.php:1325
+#: themes/Impreza/framework/config/header-settings.php:432
+#: themes/Impreza/framework/config/header-settings.php:466
+#: themes/Impreza/framework/config/theme-options.php:1335
 msgid "Height on Tablets"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:441
-#: themes/Impreza/framework/config/header-settings.php:475
-#: themes/Impreza/framework/config/theme-options.php:1335
+#: themes/Impreza/framework/config/header-settings.php:442
+#: themes/Impreza/framework/config/header-settings.php:476
+#: themes/Impreza/framework/config/theme-options.php:1345
 msgid "Height on Mobiles"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:451
+#: themes/Impreza/framework/config/header-settings.php:452
 msgid "Sizes in the Sticky Header"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:496
-#: themes/Impreza/framework/config/header-settings.php:626
-#: themes/Impreza/framework/config/theme-options.php:1369
+#: themes/Impreza/framework/config/header-settings.php:497
+#: themes/Impreza/framework/config/header-settings.php:699
+#: themes/Impreza/framework/config/theme-options.php:1379
 #, php-format
 msgid "You can edit selected menu or create a new one on the %s page"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:503
-#: themes/Impreza/framework/config/header-settings.php:586
-#: themes/Impreza/framework/config/theme-options.php:1375
+#: themes/Impreza/framework/config/header-settings.php:504
+#: themes/Impreza/framework/config/header-settings.php:619
+#: themes/Impreza/framework/config/theme-options.php:1385
 msgid "Main Items Font Size"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:512
-#: themes/Impreza/framework/config/theme-options.php:1383
+#: themes/Impreza/framework/config/header-settings.php:513
+#: themes/Impreza/framework/config/theme-options.php:1393
 msgid "Distance Between Main Items"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:522
-#: themes/Impreza/framework/config/theme-options.php:1392
+#: themes/Impreza/framework/config/header-settings.php:523
+#: themes/Impreza/framework/config/theme-options.php:1402
 msgid "Main Items Height"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:524
-#: themes/Impreza/framework/config/header-settings.php:1280
+#: themes/Impreza/framework/config/header-settings.php:525
+#: themes/Impreza/framework/config/header-settings.php:1509
 msgid "Stretch to the full available height"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:528
+#: themes/Impreza/framework/config/header-settings.php:529
 msgid "Main Items Hover Effect"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:531
-#: themes/Impreza/framework/config/header-settings.php:713
-#: themes/Impreza/framework/config/theme-options.php:918
-#: themes/Impreza/framework/config/theme-options.php:3442
+#: themes/Impreza/framework/config/header-settings.php:532
+#: themes/Impreza/framework/config/header-settings.php:812
+#: themes/Impreza/framework/config/theme-options.php:928
+#: themes/Impreza/framework/config/theme-options.php:3452
 #: themes/Impreza/framework/config/widgets.php:106
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_gallery.php:81
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_iconbox.php:34
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:74
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:68
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_sharing.php:24
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_single_image.php:77
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:86
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:74
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_tta_tabs.php:38
 #: themes/Zephyr/plugins-support/js_composer/map/us_iconbox.php:20
 #: themes/Zephyr/plugins-support/js_composer/map/us_person.php:19
 msgid "Simple"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:537
+#: themes/Impreza/framework/config/header-settings.php:538
 msgid "Dropdown Indication"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:539
+#: themes/Impreza/framework/config/header-settings.php:540
 msgid "Show arrows for main items with dropdown"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:541
-#: themes/Impreza/framework/config/header-settings.php:556
-#: themes/Impreza/framework/config/header-settings.php:566
-#: themes/Impreza/framework/config/header-settings.php:573
+#: themes/Impreza/framework/config/header-settings.php:542
+#: themes/Impreza/framework/config/header-settings.php:557
+#: themes/Impreza/framework/config/header-settings.php:567
+#: themes/Impreza/framework/config/header-settings.php:574
 msgid "Dropdowns"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:544
-#: themes/Impreza/framework/config/header-settings.php:1293
+#: themes/Impreza/framework/config/header-settings.php:545
+#: themes/Impreza/framework/config/header-settings.php:1513
 msgid "Dropdown Effect"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:548
-#: themes/Impreza/framework/config/header-settings.php:1297
-#: themes/Impreza/framework/config/theme-options.php:3193
+#: themes/Impreza/framework/config/header-settings.php:549
+#: themes/Impreza/framework/config/header-settings.php:1517
+#: themes/Impreza/framework/config/theme-options.php:3203
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_image_slider.php:56
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_logos.php:78
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_single_image.php:107
@@ -1475,232 +1469,291 @@ msgstr ""
 msgid "Fade"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:549
-#: themes/Impreza/framework/config/header-settings.php:1298
+#: themes/Impreza/framework/config/header-settings.php:550
+#: themes/Impreza/framework/config/header-settings.php:1518
 msgid "SlideDown"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:550
-#: themes/Impreza/framework/config/header-settings.php:1299
+#: themes/Impreza/framework/config/header-settings.php:551
+#: themes/Impreza/framework/config/header-settings.php:1519
 msgid "Fade + SlideDown"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:551
-#: themes/Impreza/framework/config/header-settings.php:1300
+#: themes/Impreza/framework/config/header-settings.php:552
+#: themes/Impreza/framework/config/header-settings.php:612
+#: themes/Impreza/framework/config/header-settings.php:1520
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_single_image.php:111
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_column.php:39
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_column_inner.php:31
 msgid "Appear From Bottom"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:552
-#: themes/Impreza/framework/config/header-settings.php:1301
+#: themes/Impreza/framework/config/header-settings.php:553
+#: themes/Impreza/framework/config/header-settings.php:1521
 msgid "Horizontal Slide"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:553
-#: themes/Impreza/framework/config/header-settings.php:1302
+#: themes/Impreza/framework/config/header-settings.php:554
+#: themes/Impreza/framework/config/header-settings.php:1522
 msgid "Material Design Effect"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:559
-#: themes/Impreza/framework/config/header-settings.php:596
-#: themes/Impreza/framework/config/theme-options.php:1398
+#: themes/Impreza/framework/config/header-settings.php:560
+#: themes/Impreza/framework/config/header-settings.php:629
+#: themes/Impreza/framework/config/theme-options.php:1408
 msgid "Dropdown Font Size"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:569
+#: themes/Impreza/framework/config/header-settings.php:570
 #: themes/Impreza/framework/config/mega-menu.php:24
 msgid "Dropdown Width"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:571
+#: themes/Impreza/framework/config/header-settings.php:572
 msgid "Limit full-width dropdowns by a menu width"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:576
-#: themes/Impreza/framework/config/theme-options.php:1406
-msgid "Enable mobile layout when screen width is less than"
+#: themes/Impreza/framework/config/header-settings.php:577
+msgid "Show mobile menu when screen width is less than"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:583
-#: themes/Impreza/framework/config/header-settings.php:593
-#: themes/Impreza/framework/config/header-settings.php:603
-#: themes/Impreza/framework/config/header-settings.php:612
+#: themes/Impreza/framework/config/header-settings.php:584
+#: themes/Impreza/framework/config/header-settings.php:595
+#: themes/Impreza/framework/config/header-settings.php:605
+#: themes/Impreza/framework/config/header-settings.php:616
+#: themes/Impreza/framework/config/header-settings.php:626
+#: themes/Impreza/framework/config/header-settings.php:636
+#: themes/Impreza/framework/config/header-settings.php:647
+#: themes/Impreza/framework/config/header-settings.php:656
+#: themes/Impreza/framework/config/header-settings.php:665
+#: themes/Impreza/framework/config/header-settings.php:675
+#: themes/Impreza/framework/config/header-settings.php:685
 msgid "Mobile Menu"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:606
-#: themes/Impreza/framework/config/theme-options.php:1414
+#: themes/Impreza/framework/config/header-settings.php:587
+msgid "Mobile Menu Layout"
+msgstr ""
+
+#: themes/Impreza/framework/config/header-settings.php:591
+msgid "Vertical Panel"
+msgstr ""
+
+#: themes/Impreza/framework/config/header-settings.php:592
+#: themes/Impreza/framework/config/header-settings.php:815
+#: themes/Impreza/framework/config/theme-options.php:430
+#: themes/Impreza/framework/config/theme-options.php:931
+#: themes/Impreza/framework/plugins-support/js_composer/map/vc_row.php:72
+msgid "Full Screen"
+msgstr ""
+
+#: themes/Impreza/framework/config/header-settings.php:600
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_single_image.php:109
+#: themes/Impreza/framework/plugins-support/js_composer/map/vc_column.php:37
+#: themes/Impreza/framework/plugins-support/js_composer/map/vc_column_inner.php:29
+msgid "Appear From Left"
+msgstr ""
+
+#: themes/Impreza/framework/config/header-settings.php:601
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_single_image.php:110
+#: themes/Impreza/framework/plugins-support/js_composer/map/vc_column.php:38
+#: themes/Impreza/framework/plugins-support/js_composer/map/vc_column_inner.php:30
+msgid "Appear From Right"
+msgstr ""
+
+#: themes/Impreza/framework/config/header-settings.php:610
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_single_image.php:112
+#: themes/Impreza/framework/plugins-support/js_composer/map/vc_column.php:40
+#: themes/Impreza/framework/plugins-support/js_composer/map/vc_column_inner.php:32
+msgid "Appear From Top"
+msgstr ""
+
+#: themes/Impreza/framework/config/header-settings.php:611
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_single_image.php:108
+#: themes/Impreza/framework/plugins-support/js_composer/map/vc_column.php:36
+#: themes/Impreza/framework/plugins-support/js_composer/map/vc_column_inner.php:28
+msgid "Appear From Center"
+msgstr ""
+
+#: themes/Impreza/framework/config/header-settings.php:639
+msgid "Menu Items Alignment"
+msgstr ""
+
+#: themes/Impreza/framework/config/header-settings.php:650
+#: themes/Impreza/framework/config/theme-options.php:1424
 msgid "Dropdown Behavior"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:607
-#: themes/Impreza/framework/config/theme-options.php:1415
+#: themes/Impreza/framework/config/header-settings.php:651
+#: themes/Impreza/framework/config/theme-options.php:1425
 msgid ""
 "When this option is OFF, mobile menu dropdown will be shown by click on an "
 "arrow only."
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:609
-#: themes/Impreza/framework/config/theme-options.php:1417
+#: themes/Impreza/framework/config/header-settings.php:653
+#: themes/Impreza/framework/config/theme-options.php:1427
 msgid "Show dropdown by click on menu item title"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:633
-#: themes/Impreza/framework/config/header-settings.php:1307
-#: themes/Impreza/framework/config/theme-options.php:1268
-#: themes/Impreza/framework/config/theme-options.php:2689
-#: themes/Impreza/framework/config/theme-options.php:2749
-#: themes/Impreza/framework/config/theme-options.php:2802
-#: themes/Impreza/framework/config/theme-options.php:2855
-#: themes/Impreza/framework/config/theme-options.php:2908
-#: themes/Impreza/framework/config/theme-options.php:2961
-#: themes/Impreza/framework/config/theme-options.php:3014
+#: themes/Impreza/framework/config/header-settings.php:659
+#: themes/Impreza/framework/config/header-settings.php:778
+#: themes/Impreza/framework/config/header-settings.php:1481
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_iconbox.php:86
+msgid "Icon Size"
+msgstr ""
+
+#: themes/Impreza/framework/config/header-settings.php:668
+#: themes/Impreza/framework/config/header-settings.php:786
+#: themes/Impreza/framework/config/header-settings.php:1489
+msgid "Icon Size on Tablets"
+msgstr ""
+
+#: themes/Impreza/framework/config/header-settings.php:678
+#: themes/Impreza/framework/config/header-settings.php:795
+#: themes/Impreza/framework/config/header-settings.php:1498
+msgid "Icon Size on Mobiles"
+msgstr ""
+
+#: themes/Impreza/framework/config/header-settings.php:706
+#: themes/Impreza/framework/config/theme-options.php:1278
+#: themes/Impreza/framework/config/theme-options.php:2699
+#: themes/Impreza/framework/config/theme-options.php:2759
+#: themes/Impreza/framework/config/theme-options.php:2812
+#: themes/Impreza/framework/config/theme-options.php:2865
+#: themes/Impreza/framework/config/theme-options.php:2918
+#: themes/Impreza/framework/config/theme-options.php:2971
+#: themes/Impreza/framework/config/theme-options.php:3024
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_wp_custommenu.php:50
 msgid "Font Size"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:642
-#: themes/Impreza/framework/config/header-settings.php:1316
-#: themes/Impreza/framework/config/theme-options.php:1277
+#: themes/Impreza/framework/config/header-settings.php:715
+#: themes/Impreza/framework/config/theme-options.php:1287
 msgid "Font Size on Tablets"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:652
-#: themes/Impreza/framework/config/header-settings.php:1326
-#: themes/Impreza/framework/config/theme-options.php:1287
-#: themes/Impreza/framework/config/theme-options.php:2698
-#: themes/Impreza/framework/config/theme-options.php:2758
-#: themes/Impreza/framework/config/theme-options.php:2811
-#: themes/Impreza/framework/config/theme-options.php:2864
-#: themes/Impreza/framework/config/theme-options.php:2917
-#: themes/Impreza/framework/config/theme-options.php:2970
-#: themes/Impreza/framework/config/theme-options.php:3023
+#: themes/Impreza/framework/config/header-settings.php:725
+#: themes/Impreza/framework/config/theme-options.php:1297
+#: themes/Impreza/framework/config/theme-options.php:2708
+#: themes/Impreza/framework/config/theme-options.php:2768
+#: themes/Impreza/framework/config/theme-options.php:2821
+#: themes/Impreza/framework/config/theme-options.php:2874
+#: themes/Impreza/framework/config/theme-options.php:2927
+#: themes/Impreza/framework/config/theme-options.php:2980
+#: themes/Impreza/framework/config/theme-options.php:3033
 msgid "Font Size on Mobiles"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:662
+#: themes/Impreza/framework/config/header-settings.php:735
 msgid "Items Indents"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:672
+#: themes/Impreza/framework/config/header-settings.php:745
 msgid "Items Indents on Tablets"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:683
+#: themes/Impreza/framework/config/header-settings.php:756
 msgid "Items Indents on Mobiles"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:705
+#: themes/Impreza/framework/config/header-settings.php:804
 msgid "Placeholder Text"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:710
-#: themes/Impreza/framework/config/theme-options.php:775
-#: themes/Impreza/framework/config/theme-options.php:915
-#: themes/Impreza/framework/config/theme-options.php:3470
-#: themes/Impreza/framework/config/theme-options.php:3506
-#: themes/Impreza/framework/config/theme-options.php:3543
-#: themes/Impreza/framework/config/theme-options.php:3627
-#: themes/Impreza/framework/config/theme-options.php:3711
-#: themes/Impreza/framework/config/widgets.php:204
+#: themes/Impreza/framework/config/header-settings.php:809
+#: themes/Impreza/framework/config/theme-options.php:785
+#: themes/Impreza/framework/config/theme-options.php:925
+#: themes/Impreza/framework/config/theme-options.php:3480
+#: themes/Impreza/framework/config/theme-options.php:3516
+#: themes/Impreza/framework/config/theme-options.php:3554
+#: themes/Impreza/framework/config/theme-options.php:3639
+#: themes/Impreza/framework/config/theme-options.php:3724
+#: themes/Impreza/framework/config/widgets.php:199
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:101
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:71
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:65
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_wp_custommenu.php:23
 msgid "Layout"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:714
+#: themes/Impreza/framework/config/header-settings.php:813
 #: themes/Impreza/framework/config/meta-boxes.php:56
-#: themes/Impreza/framework/config/theme-options.php:919
-#: themes/Impreza/framework/config/theme-options.php:3387
-#: themes/Impreza/framework/config/theme-options.php:3944
+#: themes/Impreza/framework/config/theme-options.php:929
+#: themes/Impreza/framework/config/theme-options.php:3397
+#: themes/Impreza/framework/config/theme-options.php:3958
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_gallery.php:82
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:78
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:72
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_single_image.php:78
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_tta_tabs.php:39
 msgid "Modern"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:715
+#: themes/Impreza/framework/config/header-settings.php:814
 #: themes/Impreza/framework/config/mega-menu.php:27
-#: themes/Impreza/framework/config/theme-options.php:920
+#: themes/Impreza/framework/config/theme-options.php:930
 msgid "Full Width"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:716
-#: themes/Impreza/framework/config/theme-options.php:420
-#: themes/Impreza/framework/config/theme-options.php:921
-#: themes/Impreza/framework/plugins-support/js_composer/map/vc_row.php:72
-msgid "Full Screen"
-msgstr ""
-
-#: themes/Impreza/framework/config/header-settings.php:721
+#: themes/Impreza/framework/config/header-settings.php:820
 msgid "Field Width"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:731
+#: themes/Impreza/framework/config/header-settings.php:830
 msgid "Field Width on Tablets"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:742
+#: themes/Impreza/framework/config/header-settings.php:841
 msgid "Search in Shop Products only"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:760
-#: themes/Impreza/framework/config/theme-options.php:1026
-msgid "My own links"
-msgstr ""
-
-#: themes/Impreza/framework/config/header-settings.php:778
-#: themes/Impreza/framework/config/theme-options.php:1032
+#: themes/Impreza/framework/config/header-settings.php:877
+#: themes/Impreza/framework/config/theme-options.php:1042
 msgid "Links Title"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:779
-#: themes/Impreza/framework/config/theme-options.php:1033
+#: themes/Impreza/framework/config/header-settings.php:878
+#: themes/Impreza/framework/config/theme-options.php:1043
 msgid "This text will be shown as the first active item of the dropdown menu."
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:786
-#: themes/Impreza/framework/config/theme-options.php:1038
+#: themes/Impreza/framework/config/header-settings.php:885
+#: themes/Impreza/framework/config/theme-options.php:1048
 msgid "Links Quantity"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:803
-#: themes/Impreza/framework/config/header-settings.php:820
-#: themes/Impreza/framework/config/header-settings.php:845
-#: themes/Impreza/framework/config/header-settings.php:870
-#: themes/Impreza/framework/config/header-settings.php:895
-#: themes/Impreza/framework/config/header-settings.php:920
-#: themes/Impreza/framework/config/header-settings.php:945
-#: themes/Impreza/framework/config/header-settings.php:970
-#: themes/Impreza/framework/config/header-settings.php:995
-#: themes/Impreza/framework/config/theme-options.php:1055
-#: themes/Impreza/framework/config/theme-options.php:1069
-#: themes/Impreza/framework/config/theme-options.php:1091
-#: themes/Impreza/framework/config/theme-options.php:1113
-#: themes/Impreza/framework/config/theme-options.php:1135
-#: themes/Impreza/framework/config/theme-options.php:1157
-#: themes/Impreza/framework/config/theme-options.php:1179
-#: themes/Impreza/framework/config/theme-options.php:1201
-#: themes/Impreza/framework/config/theme-options.php:1223
+#: themes/Impreza/framework/config/header-settings.php:902
+#: themes/Impreza/framework/config/header-settings.php:919
+#: themes/Impreza/framework/config/header-settings.php:944
+#: themes/Impreza/framework/config/header-settings.php:969
+#: themes/Impreza/framework/config/header-settings.php:994
+#: themes/Impreza/framework/config/header-settings.php:1019
+#: themes/Impreza/framework/config/header-settings.php:1044
+#: themes/Impreza/framework/config/header-settings.php:1069
+#: themes/Impreza/framework/config/header-settings.php:1094
+#: themes/Impreza/framework/config/theme-options.php:1065
+#: themes/Impreza/framework/config/theme-options.php:1079
+#: themes/Impreza/framework/config/theme-options.php:1101
+#: themes/Impreza/framework/config/theme-options.php:1123
+#: themes/Impreza/framework/config/theme-options.php:1145
+#: themes/Impreza/framework/config/theme-options.php:1167
+#: themes/Impreza/framework/config/theme-options.php:1189
+#: themes/Impreza/framework/config/theme-options.php:1211
+#: themes/Impreza/framework/config/theme-options.php:1233
 msgid "Link Label"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:1060
+#: themes/Impreza/framework/config/header-settings.php:1159
 #: themes/Impreza/framework/config/widgets.php:116
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:100
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:87
 msgid "Icons Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:1063
+#: themes/Impreza/framework/config/header-settings.php:1162
 msgid "Default brand colors"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:1064
-#: themes/Impreza/framework/config/theme-options.php:3805
+#: themes/Impreza/framework/config/header-settings.php:1163
+#: themes/Impreza/framework/config/theme-options.php:3819
 #: themes/Impreza/framework/config/widgets.php:119
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_btn.php:59
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cform.php:134
@@ -1710,47 +1763,46 @@ msgstr ""
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_iconbox.php:50
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_pricing.php:76
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_progbar.php:58
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:104
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:91
 msgid "Text (theme color)"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:1070
-#: themes/Impreza/framework/config/theme-options.php:3189
+#: themes/Impreza/framework/config/header-settings.php:1169
+#: themes/Impreza/framework/config/theme-options.php:3199
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_logos.php:74
 msgid "Hover Style"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:1081
-#: themes/Impreza/framework/config/theme-options.php:993
-#: themes/Impreza/framework/config/widgets.php:142
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:167
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:65
+#: themes/Impreza/framework/config/header-settings.php:1180
+#: themes/Impreza/framework/config/theme-options.php:1003
+#: themes/Impreza/framework/config/widgets.php:137
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:161
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:51
 msgid "Custom Link Icon"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:1088
+#: themes/Impreza/framework/config/header-settings.php:1187
 #: themes/Impreza/framework/config/meta-boxes.php:339
-#: themes/Impreza/framework/config/theme-options.php:988
-#: themes/Impreza/framework/config/widgets.php:132
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:158
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:50
+#: themes/Impreza/framework/config/theme-options.php:998
+#: themes/Impreza/framework/config/widgets.php:127
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:153
 msgid "Custom Link"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:1094
-#: themes/Impreza/framework/config/widgets.php:137
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:57
+#: themes/Impreza/framework/config/header-settings.php:1193
+#: themes/Impreza/framework/config/widgets.php:132
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:44
 msgid "Custom Link Title"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:1101
-#: themes/Impreza/framework/config/theme-options.php:1000
-#: themes/Impreza/framework/config/widgets.php:147
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:75
+#: themes/Impreza/framework/config/header-settings.php:1200
+#: themes/Impreza/framework/config/theme-options.php:1010
+#: themes/Impreza/framework/config/widgets.php:142
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:60
 msgid "Custom Link Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:1146
+#: themes/Impreza/framework/config/header-settings.php:1349
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_btn.php:22
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cform.php:87
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cta.php:115
@@ -1760,16 +1812,7 @@ msgstr ""
 msgid "Button Label"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:1152
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_btn.php:33
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_cta.php:108
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_cta.php:200
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_pricing.php:135
-#: themes/Zephyr/plugins-support/js_composer/map/us_pricing.php:148
-msgid "Button Link"
-msgstr ""
-
-#: themes/Impreza/framework/config/header-settings.php:1162
+#: themes/Impreza/framework/config/header-settings.php:1365
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_btn.php:41
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cform.php:116
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cta.php:123
@@ -1779,9 +1822,9 @@ msgstr ""
 msgid "Button Style"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:1165
-#: themes/Impreza/framework/config/theme-options.php:3443
-#: themes/Impreza/framework/config/theme-options.php:3793
+#: themes/Impreza/framework/config/header-settings.php:1368
+#: themes/Impreza/framework/config/theme-options.php:3453
+#: themes/Impreza/framework/config/theme-options.php:3807
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_btn.php:44
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cform.php:119
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cta.php:126
@@ -1792,9 +1835,9 @@ msgstr ""
 msgid "Solid"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:1166
-#: themes/Impreza/framework/config/theme-options.php:3444
-#: themes/Impreza/framework/config/theme-options.php:3794
+#: themes/Impreza/framework/config/header-settings.php:1369
+#: themes/Impreza/framework/config/theme-options.php:3454
+#: themes/Impreza/framework/config/theme-options.php:3808
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_btn.php:45
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cform.php:120
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cta.php:127
@@ -1805,18 +1848,19 @@ msgstr ""
 msgid "Outlined"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:1178
+#: themes/Impreza/framework/config/header-settings.php:1381
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_btn.php:112
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_iconbox.php:74
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_tta_accordion.php:98
+#: themes/Impreza/framework/plugins-support/js_composer/map/vc_tta_section.php:65
 msgid "Icon Position"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:1218
-#: themes/Impreza/framework/config/theme-options.php:593
-#: themes/Impreza/framework/config/theme-options.php:647
-#: themes/Impreza/framework/config/theme-options.php:701
-#: themes/Impreza/framework/config/theme-options.php:739
+#: themes/Impreza/framework/config/header-settings.php:1421
+#: themes/Impreza/framework/config/theme-options.php:603
+#: themes/Impreza/framework/config/theme-options.php:657
+#: themes/Impreza/framework/config/theme-options.php:711
+#: themes/Impreza/framework/config/theme-options.php:749
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cta.php:81
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_message.php:38
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_row.php:112
@@ -1825,15 +1869,15 @@ msgstr ""
 msgid "Background Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:1225
+#: themes/Impreza/framework/config/header-settings.php:1428
 msgid "Hover Background Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:1232
-#: themes/Impreza/framework/config/theme-options.php:609
-#: themes/Impreza/framework/config/theme-options.php:663
-#: themes/Impreza/framework/config/theme-options.php:713
-#: themes/Impreza/framework/config/theme-options.php:751
+#: themes/Impreza/framework/config/header-settings.php:1435
+#: themes/Impreza/framework/config/theme-options.php:619
+#: themes/Impreza/framework/config/theme-options.php:673
+#: themes/Impreza/framework/config/theme-options.php:723
+#: themes/Impreza/framework/config/theme-options.php:761
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cta.php:89
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_message.php:47
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_column.php:23
@@ -1844,25 +1888,25 @@ msgstr ""
 msgid "Text Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:1239
+#: themes/Impreza/framework/config/header-settings.php:1442
 msgid "Hover Text Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:1252
-#: themes/Impreza/framework/config/theme-options.php:4149
+#: themes/Impreza/framework/config/header-settings.php:1455
+#: themes/Impreza/framework/config/theme-options.php:4175
 msgid "Custom HTML"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:1255
+#: themes/Impreza/framework/config/header-settings.php:1458
 #, php-format
 msgid "Added content will be displayed inside the %s block"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:1344
+#: themes/Impreza/framework/config/header-settings.php:1535
 msgid "Horizontal Wrapper"
 msgstr ""
 
-#: themes/Impreza/framework/config/header-settings.php:1364
+#: themes/Impreza/framework/config/header-settings.php:1555
 msgid "Vertical Wrapper"
 msgstr ""
 
@@ -1897,27 +1941,27 @@ msgid "Custom Text Color"
 msgstr ""
 
 #: themes/Impreza/framework/config/meta-boxes.php:46
-#: themes/Impreza/framework/config/theme-options.php:3383
+#: themes/Impreza/framework/config/theme-options.php:3393
 msgid "Featured Image Layout"
 msgstr ""
 
 #: themes/Impreza/framework/config/meta-boxes.php:55
-#: themes/Impreza/framework/config/theme-options.php:3386
-#: themes/Impreza/framework/config/theme-options.php:3943
-#: themes/Impreza/framework/config/theme-options.php:3980
+#: themes/Impreza/framework/config/theme-options.php:3396
+#: themes/Impreza/framework/config/theme-options.php:3957
+#: themes/Impreza/framework/config/theme-options.php:3994
 msgid "Standard"
 msgstr ""
 
 #: themes/Impreza/framework/config/meta-boxes.php:57
-#: themes/Impreza/framework/config/theme-options.php:3388
-#: themes/Impreza/framework/config/theme-options.php:3945
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:79
+#: themes/Impreza/framework/config/theme-options.php:3398
+#: themes/Impreza/framework/config/theme-options.php:3959
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:73
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_tta_tabs.php:40
 msgid "Trendy"
 msgstr ""
 
 #: themes/Impreza/framework/config/meta-boxes.php:58
-#: themes/Impreza/framework/config/theme-options.php:3389
+#: themes/Impreza/framework/config/theme-options.php:3399
 msgid "No Preview"
 msgstr ""
 
@@ -1966,21 +2010,21 @@ msgid "Appears next to the page title"
 msgstr ""
 
 #: themes/Impreza/framework/config/meta-boxes.php:122
-#: themes/Impreza/framework/config/theme-options.php:1441
-#: themes/Impreza/framework/config/theme-options.php:1572
-#: themes/Impreza/framework/config/theme-options.php:1739
-#: themes/Impreza/framework/config/theme-options.php:1889
-#: themes/Impreza/framework/config/theme-options.php:2042
+#: themes/Impreza/framework/config/theme-options.php:1451
+#: themes/Impreza/framework/config/theme-options.php:1582
+#: themes/Impreza/framework/config/theme-options.php:1749
+#: themes/Impreza/framework/config/theme-options.php:1899
+#: themes/Impreza/framework/config/theme-options.php:2052
 msgid "Title Bar Size"
 msgstr ""
 
 #: themes/Impreza/framework/config/meta-boxes.php:126
-#: themes/Impreza/framework/config/theme-options.php:416
-#: themes/Impreza/framework/config/theme-options.php:1444
-#: themes/Impreza/framework/config/theme-options.php:1575
-#: themes/Impreza/framework/config/theme-options.php:1742
-#: themes/Impreza/framework/config/theme-options.php:1892
-#: themes/Impreza/framework/config/theme-options.php:2045
+#: themes/Impreza/framework/config/theme-options.php:426
+#: themes/Impreza/framework/config/theme-options.php:1454
+#: themes/Impreza/framework/config/theme-options.php:1585
+#: themes/Impreza/framework/config/theme-options.php:1752
+#: themes/Impreza/framework/config/theme-options.php:1902
+#: themes/Impreza/framework/config/theme-options.php:2055
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_counter.php:70
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_separator.php:39
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_row.php:68
@@ -1988,12 +2032,12 @@ msgid "Small"
 msgstr ""
 
 #: themes/Impreza/framework/config/meta-boxes.php:127
-#: themes/Impreza/framework/config/theme-options.php:417
-#: themes/Impreza/framework/config/theme-options.php:1445
-#: themes/Impreza/framework/config/theme-options.php:1576
-#: themes/Impreza/framework/config/theme-options.php:1743
-#: themes/Impreza/framework/config/theme-options.php:1893
-#: themes/Impreza/framework/config/theme-options.php:2046
+#: themes/Impreza/framework/config/theme-options.php:427
+#: themes/Impreza/framework/config/theme-options.php:1455
+#: themes/Impreza/framework/config/theme-options.php:1586
+#: themes/Impreza/framework/config/theme-options.php:1753
+#: themes/Impreza/framework/config/theme-options.php:1903
+#: themes/Impreza/framework/config/theme-options.php:2056
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_counter.php:71
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_separator.php:40
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_row.php:69
@@ -2001,12 +2045,12 @@ msgid "Medium"
 msgstr ""
 
 #: themes/Impreza/framework/config/meta-boxes.php:128
-#: themes/Impreza/framework/config/theme-options.php:418
-#: themes/Impreza/framework/config/theme-options.php:1446
-#: themes/Impreza/framework/config/theme-options.php:1577
-#: themes/Impreza/framework/config/theme-options.php:1744
-#: themes/Impreza/framework/config/theme-options.php:1894
-#: themes/Impreza/framework/config/theme-options.php:2047
+#: themes/Impreza/framework/config/theme-options.php:428
+#: themes/Impreza/framework/config/theme-options.php:1456
+#: themes/Impreza/framework/config/theme-options.php:1587
+#: themes/Impreza/framework/config/theme-options.php:1754
+#: themes/Impreza/framework/config/theme-options.php:1904
+#: themes/Impreza/framework/config/theme-options.php:2057
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_counter.php:72
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_separator.php:41
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_row.php:70
@@ -2014,172 +2058,172 @@ msgid "Large"
 msgstr ""
 
 #: themes/Impreza/framework/config/meta-boxes.php:129
-#: themes/Impreza/framework/config/theme-options.php:419
-#: themes/Impreza/framework/config/theme-options.php:1447
-#: themes/Impreza/framework/config/theme-options.php:1578
-#: themes/Impreza/framework/config/theme-options.php:1745
-#: themes/Impreza/framework/config/theme-options.php:1895
-#: themes/Impreza/framework/config/theme-options.php:2048
+#: themes/Impreza/framework/config/theme-options.php:429
+#: themes/Impreza/framework/config/theme-options.php:1457
+#: themes/Impreza/framework/config/theme-options.php:1588
+#: themes/Impreza/framework/config/theme-options.php:1755
+#: themes/Impreza/framework/config/theme-options.php:1905
+#: themes/Impreza/framework/config/theme-options.php:2058
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_separator.php:42
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_row.php:71
 msgid "Huge"
 msgstr ""
 
 #: themes/Impreza/framework/config/meta-boxes.php:135
-#: themes/Impreza/framework/config/theme-options.php:1453
-#: themes/Impreza/framework/config/theme-options.php:1589
-#: themes/Impreza/framework/config/theme-options.php:1755
-#: themes/Impreza/framework/config/theme-options.php:1905
-#: themes/Impreza/framework/config/theme-options.php:2059
+#: themes/Impreza/framework/config/theme-options.php:1463
+#: themes/Impreza/framework/config/theme-options.php:1599
+#: themes/Impreza/framework/config/theme-options.php:1765
+#: themes/Impreza/framework/config/theme-options.php:1915
+#: themes/Impreza/framework/config/theme-options.php:2069
 msgid "Title Bar Color Style"
 msgstr ""
 
 #: themes/Impreza/framework/config/meta-boxes.php:139
-#: themes/Impreza/framework/config/theme-options.php:587
-#: themes/Impreza/framework/config/theme-options.php:1456
-#: themes/Impreza/framework/config/theme-options.php:1592
-#: themes/Impreza/framework/config/theme-options.php:1758
-#: themes/Impreza/framework/config/theme-options.php:1908
-#: themes/Impreza/framework/config/theme-options.php:2062
+#: themes/Impreza/framework/config/theme-options.php:597
+#: themes/Impreza/framework/config/theme-options.php:1466
+#: themes/Impreza/framework/config/theme-options.php:1602
+#: themes/Impreza/framework/config/theme-options.php:1768
+#: themes/Impreza/framework/config/theme-options.php:1918
+#: themes/Impreza/framework/config/theme-options.php:2072
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_row.php:99
 msgid "Content colors"
 msgstr ""
 
 #: themes/Impreza/framework/config/meta-boxes.php:140
-#: themes/Impreza/framework/config/theme-options.php:641
-#: themes/Impreza/framework/config/theme-options.php:1457
-#: themes/Impreza/framework/config/theme-options.php:1593
-#: themes/Impreza/framework/config/theme-options.php:1759
-#: themes/Impreza/framework/config/theme-options.php:1909
-#: themes/Impreza/framework/config/theme-options.php:2063
+#: themes/Impreza/framework/config/theme-options.php:651
+#: themes/Impreza/framework/config/theme-options.php:1467
+#: themes/Impreza/framework/config/theme-options.php:1603
+#: themes/Impreza/framework/config/theme-options.php:1769
+#: themes/Impreza/framework/config/theme-options.php:1919
+#: themes/Impreza/framework/config/theme-options.php:2073
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_row.php:100
 msgid "Alternate Content colors"
 msgstr ""
 
 #: themes/Impreza/framework/config/meta-boxes.php:141
-#: themes/Impreza/framework/config/theme-options.php:1458
-#: themes/Impreza/framework/config/theme-options.php:1594
-#: themes/Impreza/framework/config/theme-options.php:1760
-#: themes/Impreza/framework/config/theme-options.php:1910
-#: themes/Impreza/framework/config/theme-options.php:2064
+#: themes/Impreza/framework/config/theme-options.php:1468
+#: themes/Impreza/framework/config/theme-options.php:1604
+#: themes/Impreza/framework/config/theme-options.php:1770
+#: themes/Impreza/framework/config/theme-options.php:1920
+#: themes/Impreza/framework/config/theme-options.php:2074
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cta.php:71
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_row.php:101
 msgid "Primary bg & White text"
 msgstr ""
 
 #: themes/Impreza/framework/config/meta-boxes.php:142
-#: themes/Impreza/framework/config/theme-options.php:1459
-#: themes/Impreza/framework/config/theme-options.php:1595
-#: themes/Impreza/framework/config/theme-options.php:1761
-#: themes/Impreza/framework/config/theme-options.php:1911
-#: themes/Impreza/framework/config/theme-options.php:2065
+#: themes/Impreza/framework/config/theme-options.php:1469
+#: themes/Impreza/framework/config/theme-options.php:1605
+#: themes/Impreza/framework/config/theme-options.php:1771
+#: themes/Impreza/framework/config/theme-options.php:1921
+#: themes/Impreza/framework/config/theme-options.php:2075
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cta.php:72
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_row.php:102
 msgid "Secondary bg & White text"
 msgstr ""
 
 #: themes/Impreza/framework/config/meta-boxes.php:143
-#: themes/Impreza/framework/config/theme-options.php:695
-#: themes/Impreza/framework/config/theme-options.php:1460
-#: themes/Impreza/framework/config/theme-options.php:1596
-#: themes/Impreza/framework/config/theme-options.php:1762
-#: themes/Impreza/framework/config/theme-options.php:1912
-#: themes/Impreza/framework/config/theme-options.php:2066
+#: themes/Impreza/framework/config/theme-options.php:705
+#: themes/Impreza/framework/config/theme-options.php:1470
+#: themes/Impreza/framework/config/theme-options.php:1606
+#: themes/Impreza/framework/config/theme-options.php:1772
+#: themes/Impreza/framework/config/theme-options.php:1922
+#: themes/Impreza/framework/config/theme-options.php:2076
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_row.php:103
 msgid "Top Footer colors"
 msgstr ""
 
 #: themes/Impreza/framework/config/meta-boxes.php:144
-#: themes/Impreza/framework/config/theme-options.php:733
-#: themes/Impreza/framework/config/theme-options.php:1461
-#: themes/Impreza/framework/config/theme-options.php:1597
-#: themes/Impreza/framework/config/theme-options.php:1763
-#: themes/Impreza/framework/config/theme-options.php:1913
-#: themes/Impreza/framework/config/theme-options.php:2067
+#: themes/Impreza/framework/config/theme-options.php:743
+#: themes/Impreza/framework/config/theme-options.php:1471
+#: themes/Impreza/framework/config/theme-options.php:1607
+#: themes/Impreza/framework/config/theme-options.php:1773
+#: themes/Impreza/framework/config/theme-options.php:1923
+#: themes/Impreza/framework/config/theme-options.php:2077
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_row.php:104
 msgid "Bottom Footer colors"
 msgstr ""
 
 #: themes/Impreza/framework/config/meta-boxes.php:150
-#: themes/Impreza/framework/config/theme-options.php:1467
-#: themes/Impreza/framework/config/theme-options.php:1608
-#: themes/Impreza/framework/config/theme-options.php:1773
-#: themes/Impreza/framework/config/theme-options.php:1923
-#: themes/Impreza/framework/config/theme-options.php:2078
+#: themes/Impreza/framework/config/theme-options.php:1477
+#: themes/Impreza/framework/config/theme-options.php:1618
+#: themes/Impreza/framework/config/theme-options.php:1783
+#: themes/Impreza/framework/config/theme-options.php:1933
+#: themes/Impreza/framework/config/theme-options.php:2088
 msgid "Breadcrumbs"
 msgstr ""
 
 #: themes/Impreza/framework/config/meta-boxes.php:222
-#: themes/Impreza/framework/config/theme-options.php:1528
-#: themes/Impreza/framework/config/theme-options.php:1685
-#: themes/Impreza/framework/config/theme-options.php:1844
-#: themes/Impreza/framework/config/theme-options.php:1994
-#: themes/Impreza/framework/config/theme-options.php:2155
+#: themes/Impreza/framework/config/theme-options.php:1538
+#: themes/Impreza/framework/config/theme-options.php:1695
+#: themes/Impreza/framework/config/theme-options.php:1854
+#: themes/Impreza/framework/config/theme-options.php:2004
+#: themes/Impreza/framework/config/theme-options.php:2165
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_row.php:187
 msgid "Parallax Effect"
 msgstr ""
 
 #: themes/Impreza/framework/config/meta-boxes.php:227
-#: themes/Impreza/framework/config/theme-options.php:1532
-#: themes/Impreza/framework/config/theme-options.php:1689
-#: themes/Impreza/framework/config/theme-options.php:1848
-#: themes/Impreza/framework/config/theme-options.php:1998
-#: themes/Impreza/framework/config/theme-options.php:2159
+#: themes/Impreza/framework/config/theme-options.php:1542
+#: themes/Impreza/framework/config/theme-options.php:1699
+#: themes/Impreza/framework/config/theme-options.php:1858
+#: themes/Impreza/framework/config/theme-options.php:2008
+#: themes/Impreza/framework/config/theme-options.php:2169
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_row.php:191
 msgid "Vertical Parallax"
 msgstr ""
 
 #: themes/Impreza/framework/config/meta-boxes.php:228
-#: themes/Impreza/framework/config/theme-options.php:1533
-#: themes/Impreza/framework/config/theme-options.php:1690
-#: themes/Impreza/framework/config/theme-options.php:1849
-#: themes/Impreza/framework/config/theme-options.php:1999
-#: themes/Impreza/framework/config/theme-options.php:2160
+#: themes/Impreza/framework/config/theme-options.php:1543
+#: themes/Impreza/framework/config/theme-options.php:1700
+#: themes/Impreza/framework/config/theme-options.php:1859
+#: themes/Impreza/framework/config/theme-options.php:2009
+#: themes/Impreza/framework/config/theme-options.php:2170
 msgid "Vertical Reversed Parallax"
 msgstr ""
 
 #: themes/Impreza/framework/config/meta-boxes.php:229
-#: themes/Impreza/framework/config/theme-options.php:1534
-#: themes/Impreza/framework/config/theme-options.php:1691
-#: themes/Impreza/framework/config/theme-options.php:1850
-#: themes/Impreza/framework/config/theme-options.php:2000
-#: themes/Impreza/framework/config/theme-options.php:2161
+#: themes/Impreza/framework/config/theme-options.php:1544
+#: themes/Impreza/framework/config/theme-options.php:1701
+#: themes/Impreza/framework/config/theme-options.php:1860
+#: themes/Impreza/framework/config/theme-options.php:2010
+#: themes/Impreza/framework/config/theme-options.php:2171
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_row.php:192
 msgid "Horizontal Parallax"
 msgstr ""
 
 #: themes/Impreza/framework/config/meta-boxes.php:230
-#: themes/Impreza/framework/config/theme-options.php:1535
-#: themes/Impreza/framework/config/theme-options.php:1692
-#: themes/Impreza/framework/config/theme-options.php:1851
-#: themes/Impreza/framework/config/theme-options.php:2001
-#: themes/Impreza/framework/config/theme-options.php:2162
+#: themes/Impreza/framework/config/theme-options.php:1545
+#: themes/Impreza/framework/config/theme-options.php:1702
+#: themes/Impreza/framework/config/theme-options.php:1861
+#: themes/Impreza/framework/config/theme-options.php:2011
+#: themes/Impreza/framework/config/theme-options.php:2172
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_sharing.php:27
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_row.php:193
 msgid "Fixed"
 msgstr ""
 
 #: themes/Impreza/framework/config/meta-boxes.php:240
-#: themes/Impreza/framework/config/theme-options.php:1544
-#: themes/Impreza/framework/config/theme-options.php:1703
-#: themes/Impreza/framework/config/theme-options.php:1860
-#: themes/Impreza/framework/config/theme-options.php:2010
-#: themes/Impreza/framework/config/theme-options.php:2173
+#: themes/Impreza/framework/config/theme-options.php:1554
+#: themes/Impreza/framework/config/theme-options.php:1713
+#: themes/Impreza/framework/config/theme-options.php:1870
+#: themes/Impreza/framework/config/theme-options.php:2020
+#: themes/Impreza/framework/config/theme-options.php:2183
 msgid "Overlay Color"
 msgstr ""
 
 #: themes/Impreza/framework/config/meta-boxes.php:251
 #: themes/Impreza/framework/config/theme-options.php:123
-#: themes/Impreza/framework/config/theme-options.php:2204
-#: themes/Impreza/framework/config/theme-options.php:2237
-#: themes/Impreza/framework/config/theme-options.php:2270
-#: themes/Impreza/framework/config/theme-options.php:2301
-#: themes/Impreza/framework/config/theme-options.php:2332
-#: themes/Impreza/framework/config/theme-options.php:2363
-#: themes/Impreza/framework/config/theme-options.php:2396
-#: themes/Impreza/framework/config/theme-options.php:2431
-#: themes/Impreza/framework/config/theme-options.php:2466
-#: themes/Impreza/framework/config/theme-options.php:2501
+#: themes/Impreza/framework/config/theme-options.php:2214
+#: themes/Impreza/framework/config/theme-options.php:2247
+#: themes/Impreza/framework/config/theme-options.php:2280
+#: themes/Impreza/framework/config/theme-options.php:2311
+#: themes/Impreza/framework/config/theme-options.php:2342
+#: themes/Impreza/framework/config/theme-options.php:2373
+#: themes/Impreza/framework/config/theme-options.php:2406
+#: themes/Impreza/framework/config/theme-options.php:2441
+#: themes/Impreza/framework/config/theme-options.php:2476
+#: themes/Impreza/framework/config/theme-options.php:2511
 #: themes/Impreza/framework/functions/post-types.php:97
 msgid "Sidebar"
 msgstr ""
@@ -2194,42 +2238,42 @@ msgstr ""
 
 #: themes/Impreza/framework/config/meta-boxes.php:264
 #: themes/Impreza/framework/config/theme-options.php:124
-#: themes/Impreza/framework/config/theme-options.php:2205
-#: themes/Impreza/framework/config/theme-options.php:2238
-#: themes/Impreza/framework/config/theme-options.php:2271
-#: themes/Impreza/framework/config/theme-options.php:2302
-#: themes/Impreza/framework/config/theme-options.php:2333
-#: themes/Impreza/framework/config/theme-options.php:2364
-#: themes/Impreza/framework/config/theme-options.php:2397
-#: themes/Impreza/framework/config/theme-options.php:2432
-#: themes/Impreza/framework/config/theme-options.php:2467
-#: themes/Impreza/framework/config/theme-options.php:2502
+#: themes/Impreza/framework/config/theme-options.php:2215
+#: themes/Impreza/framework/config/theme-options.php:2248
+#: themes/Impreza/framework/config/theme-options.php:2281
+#: themes/Impreza/framework/config/theme-options.php:2312
+#: themes/Impreza/framework/config/theme-options.php:2343
+#: themes/Impreza/framework/config/theme-options.php:2374
+#: themes/Impreza/framework/config/theme-options.php:2407
+#: themes/Impreza/framework/config/theme-options.php:2442
+#: themes/Impreza/framework/config/theme-options.php:2477
+#: themes/Impreza/framework/config/theme-options.php:2512
 #, php-format
 msgid "You can edit selected sidebar or create a new one on the %s page"
 msgstr ""
 
 #: themes/Impreza/framework/config/meta-boxes.php:271
 #: themes/Impreza/framework/config/theme-options.php:131
-#: themes/Impreza/framework/config/theme-options.php:2212
-#: themes/Impreza/framework/config/theme-options.php:2246
-#: themes/Impreza/framework/config/theme-options.php:2278
-#: themes/Impreza/framework/config/theme-options.php:2309
-#: themes/Impreza/framework/config/theme-options.php:2340
-#: themes/Impreza/framework/config/theme-options.php:2371
-#: themes/Impreza/framework/config/theme-options.php:2405
-#: themes/Impreza/framework/config/theme-options.php:2440
-#: themes/Impreza/framework/config/theme-options.php:2475
-#: themes/Impreza/framework/config/theme-options.php:2510
+#: themes/Impreza/framework/config/theme-options.php:2222
+#: themes/Impreza/framework/config/theme-options.php:2256
+#: themes/Impreza/framework/config/theme-options.php:2288
+#: themes/Impreza/framework/config/theme-options.php:2319
+#: themes/Impreza/framework/config/theme-options.php:2350
+#: themes/Impreza/framework/config/theme-options.php:2381
+#: themes/Impreza/framework/config/theme-options.php:2415
+#: themes/Impreza/framework/config/theme-options.php:2450
+#: themes/Impreza/framework/config/theme-options.php:2485
+#: themes/Impreza/framework/config/theme-options.php:2520
 msgid "Sidebar Position"
 msgstr ""
 
 #: themes/Impreza/framework/config/meta-boxes.php:284
-#: themes/Impreza/framework/config/theme-options.php:2538
-#: themes/Impreza/framework/config/theme-options.php:2561
-#: themes/Impreza/framework/config/theme-options.php:2584
-#: themes/Impreza/framework/config/theme-options.php:2606
-#: themes/Impreza/framework/config/theme-options.php:2630
-#: themes/Impreza/framework/config/theme-options.php:2655
+#: themes/Impreza/framework/config/theme-options.php:2548
+#: themes/Impreza/framework/config/theme-options.php:2571
+#: themes/Impreza/framework/config/theme-options.php:2594
+#: themes/Impreza/framework/config/theme-options.php:2616
+#: themes/Impreza/framework/config/theme-options.php:2640
+#: themes/Impreza/framework/config/theme-options.php:2665
 #: themes/Impreza/framework/functions/post-types.php:114
 #: themes/Impreza/framework/functions/post-types.php:242
 msgid "Footer"
@@ -2244,24 +2288,24 @@ msgid "Remove footer on this page"
 msgstr ""
 
 #: themes/Impreza/framework/config/meta-boxes.php:297
-#: themes/Impreza/framework/config/theme-options.php:2539
-#: themes/Impreza/framework/config/theme-options.php:2562
-#: themes/Impreza/framework/config/theme-options.php:2585
-#: themes/Impreza/framework/config/theme-options.php:2607
-#: themes/Impreza/framework/config/theme-options.php:2631
-#: themes/Impreza/framework/config/theme-options.php:2656
+#: themes/Impreza/framework/config/theme-options.php:2549
+#: themes/Impreza/framework/config/theme-options.php:2572
+#: themes/Impreza/framework/config/theme-options.php:2595
+#: themes/Impreza/framework/config/theme-options.php:2617
+#: themes/Impreza/framework/config/theme-options.php:2641
+#: themes/Impreza/framework/config/theme-options.php:2666
 #, php-format
 msgid "You can edit selected footer or create a new one on the %s page"
 msgstr ""
 
 #: themes/Impreza/framework/config/meta-boxes.php:297
-#: themes/Impreza/framework/config/theme-options.php:2526
-#: themes/Impreza/framework/config/theme-options.php:2539
-#: themes/Impreza/framework/config/theme-options.php:2562
-#: themes/Impreza/framework/config/theme-options.php:2585
-#: themes/Impreza/framework/config/theme-options.php:2607
-#: themes/Impreza/framework/config/theme-options.php:2631
-#: themes/Impreza/framework/config/theme-options.php:2656
+#: themes/Impreza/framework/config/theme-options.php:2536
+#: themes/Impreza/framework/config/theme-options.php:2549
+#: themes/Impreza/framework/config/theme-options.php:2572
+#: themes/Impreza/framework/config/theme-options.php:2595
+#: themes/Impreza/framework/config/theme-options.php:2617
+#: themes/Impreza/framework/config/theme-options.php:2641
+#: themes/Impreza/framework/config/theme-options.php:2666
 #: themes/Impreza/framework/functions/post-types.php:113
 #: themes/Impreza/framework/functions/post-types.php:190
 msgid "Footers"
@@ -2315,94 +2359,124 @@ msgid "Default Sidebar"
 msgstr ""
 
 #: themes/Impreza/framework/config/theme-options.php:118
-#: themes/Impreza/framework/config/theme-options.php:2199
-#: themes/Impreza/framework/config/theme-options.php:2231
-#: themes/Impreza/framework/config/theme-options.php:2265
-#: themes/Impreza/framework/config/theme-options.php:2296
-#: themes/Impreza/framework/config/theme-options.php:2327
-#: themes/Impreza/framework/config/theme-options.php:2358
-#: themes/Impreza/framework/config/theme-options.php:2390
-#: themes/Impreza/framework/config/theme-options.php:2425
-#: themes/Impreza/framework/config/theme-options.php:2460
-#: themes/Impreza/framework/config/theme-options.php:2495
+#: themes/Impreza/framework/config/theme-options.php:2209
+#: themes/Impreza/framework/config/theme-options.php:2241
+#: themes/Impreza/framework/config/theme-options.php:2275
+#: themes/Impreza/framework/config/theme-options.php:2306
+#: themes/Impreza/framework/config/theme-options.php:2337
+#: themes/Impreza/framework/config/theme-options.php:2368
+#: themes/Impreza/framework/config/theme-options.php:2400
+#: themes/Impreza/framework/config/theme-options.php:2435
+#: themes/Impreza/framework/config/theme-options.php:2470
+#: themes/Impreza/framework/config/theme-options.php:2505
 msgid "Show Sidebar"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:150
+#: themes/Impreza/framework/config/theme-options.php:144
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:120
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_gallery.php:96
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_image_slider.php:99
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:97
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:234
+#, php-format
+msgid "To change the default image sizes, go to %s."
+msgstr ""
+
+#: themes/Impreza/framework/config/theme-options.php:146
+#, php-format
+msgid "To change the Product image sizes, go to %s."
+msgstr ""
+
+#: themes/Impreza/framework/config/theme-options.php:148
+#, php-format
+msgid "Read about %simage sizes and how to use them%s."
+msgstr ""
+
+#: themes/Impreza/framework/config/theme-options.php:149
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:120
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_gallery.php:96
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_image_slider.php:99
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:97
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:234
+#, php-format
+msgid "To add custom image sizes, go to %s."
+msgstr ""
+
+#: themes/Impreza/framework/config/theme-options.php:160
 #: themes/Impreza/framework/functions/post.php:244
 msgid "Maintenance Mode"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:151
+#: themes/Impreza/framework/config/theme-options.php:161
 msgid ""
 "When this option is ON, all not logged in users will see only specific page "
 "selected by you. This is useful when your site is under construction."
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:153
+#: themes/Impreza/framework/config/theme-options.php:163
 msgid "Show for site visitors only specific page"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:165
+#: themes/Impreza/framework/config/theme-options.php:175
 msgid ""
 "When this option is ON, your site will send HTTP 503 response to search "
 "engines. Use this option only for short period of time."
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:167
+#: themes/Impreza/framework/config/theme-options.php:177
 msgid "Enable \"503 Service Unavailable\" status"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:179
+#: themes/Impreza/framework/config/theme-options.php:189
 msgid "Preloader Screen"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:182
+#: themes/Impreza/framework/config/theme-options.php:192
 msgid "Disabled"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:183
-#: themes/Impreza/framework/config/theme-options.php:184
-#: themes/Impreza/framework/config/theme-options.php:185
-#: themes/Impreza/framework/config/theme-options.php:186
-#: themes/Impreza/framework/config/theme-options.php:187
+#: themes/Impreza/framework/config/theme-options.php:193
+#: themes/Impreza/framework/config/theme-options.php:194
+#: themes/Impreza/framework/config/theme-options.php:195
+#: themes/Impreza/framework/config/theme-options.php:196
+#: themes/Impreza/framework/config/theme-options.php:197
 #, php-format
 msgid "Shows Preloader %d"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:188
+#: themes/Impreza/framework/config/theme-options.php:198
 msgid "Shows Custom Image"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:200
+#: themes/Impreza/framework/config/theme-options.php:210
 msgid "Rounded Corners"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:202
+#: themes/Impreza/framework/config/theme-options.php:212
 msgid "Enable rounded corners of theme elements"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:206
+#: themes/Impreza/framework/config/theme-options.php:216
 msgid "Links Underline"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:208
+#: themes/Impreza/framework/config/theme-options.php:218
 msgid "Underline text links on hover"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:212
+#: themes/Impreza/framework/config/theme-options.php:222
 msgid "\"Back to top\" Button"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:214
+#: themes/Impreza/framework/config/theme-options.php:224
 msgid "Enable button which allows scroll a page back to the top"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:223
+#: themes/Impreza/framework/config/theme-options.php:233
 msgid "Button Position"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:234
+#: themes/Impreza/framework/config/theme-options.php:244
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_btn.php:53
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cform.php:128
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cta.php:135
@@ -2412,412 +2486,416 @@ msgstr ""
 msgid "Button Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:239
+#: themes/Impreza/framework/config/theme-options.php:249
 msgid "Show Button after page is scrolled to"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:240
+#: themes/Impreza/framework/config/theme-options.php:250
 #, php-format
 msgid "1vh equals 1% of the screen height"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:253
+#: themes/Impreza/framework/config/theme-options.php:263
 msgid "Google Maps API Key"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:254
+#: themes/Impreza/framework/config/theme-options.php:264
 msgid "The API key is required for the domains created after June 22, 2016."
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:254
+#: themes/Impreza/framework/config/theme-options.php:264
 msgid "Get API key"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:259
+#: themes/Impreza/framework/config/theme-options.php:269
 msgid "Support of Custom Post Types"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:260
+#: themes/Impreza/framework/config/theme-options.php:270
 msgid ""
 "Select custom post type to enable customization of its Header, Sidebar, "
 "Title Bar and Footer."
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:269
+#: themes/Impreza/framework/config/theme-options.php:279
 msgid "Site Layout"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:273
+#: themes/Impreza/framework/config/theme-options.php:283
 msgid "Responsive Layout"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:275
+#: themes/Impreza/framework/config/theme-options.php:285
 msgid "Enable responsive layout"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:279
+#: themes/Impreza/framework/config/theme-options.php:289
 msgid "Site Canvas Layout"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:289
+#: themes/Impreza/framework/config/theme-options.php:299
 msgid "Body Background Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:294
+#: themes/Impreza/framework/config/theme-options.php:304
 msgid "Body Background Image"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:357
+#: themes/Impreza/framework/config/theme-options.php:367
 msgid "Site Canvas Width"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:367
 #: themes/Impreza/framework/config/theme-options.php:377
-#: themes/Impreza/framework/config/theme-options.php:386
+#: themes/Impreza/framework/config/theme-options.php:387
+#: themes/Impreza/framework/config/theme-options.php:396
 msgid "Site Content Width"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:376
+#: themes/Impreza/framework/config/theme-options.php:386
 msgid "Sidebar Width"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:377
-#: themes/Impreza/framework/config/theme-options.php:386
+#: themes/Impreza/framework/config/theme-options.php:387
+#: themes/Impreza/framework/config/theme-options.php:396
 #, php-format
 msgid "Relative to the value of \"%s\" option."
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:377
-#: themes/Impreza/framework/config/theme-options.php:386
+#: themes/Impreza/framework/config/theme-options.php:387
+#: themes/Impreza/framework/config/theme-options.php:396
 msgid "Used for pages with sidebar."
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:385
+#: themes/Impreza/framework/config/theme-options.php:395
 msgid "Content Width"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:394
+#: themes/Impreza/framework/config/theme-options.php:404
 msgid "Columns Stacking Width"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:395
+#: themes/Impreza/framework/config/theme-options.php:405
 msgid ""
 "When screen width is less than this value, all columns within a row will "
 "become a single column."
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:403
+#: themes/Impreza/framework/config/theme-options.php:413
 msgid "Effects Disabling Width"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:404
+#: themes/Impreza/framework/config/theme-options.php:414
 msgid ""
 "When screen width is less than this value, vertical parallax and animation "
 "of elements appearance will be disabled."
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:412
+#: themes/Impreza/framework/config/theme-options.php:422
 msgid "Row Height by default"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:415
+#: themes/Impreza/framework/config/theme-options.php:425
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_row.php:67
 msgid "Equals the content height"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:433
+#: themes/Impreza/framework/config/theme-options.php:443
 msgid "Choose Website Color Scheme"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:447
+#: themes/Impreza/framework/config/theme-options.php:457
 msgid "Header colors"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:453
+#: themes/Impreza/framework/config/theme-options.php:463
 msgid "Top Area Background Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:457
+#: themes/Impreza/framework/config/theme-options.php:467
 msgid "Top Area Text Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:461
+#: themes/Impreza/framework/config/theme-options.php:471
 msgid "Top Area Text Hover Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:465
+#: themes/Impreza/framework/config/theme-options.php:475
 msgid "Main Area Background Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:469
+#: themes/Impreza/framework/config/theme-options.php:479
 msgid "Main Area Text Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:473
+#: themes/Impreza/framework/config/theme-options.php:483
 msgid "Main Area Text Hover Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:477
+#: themes/Impreza/framework/config/theme-options.php:487
 msgid "Bottom Area Background Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:481
+#: themes/Impreza/framework/config/theme-options.php:491
 msgid "Bottom Area Text Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:485
+#: themes/Impreza/framework/config/theme-options.php:495
 msgid "Bottom Area Text Hover Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:489
+#: themes/Impreza/framework/config/theme-options.php:499
 msgid "Transparent Header Text Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:493
+#: themes/Impreza/framework/config/theme-options.php:503
 msgid "Transparent Header Hover Text Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:497
+#: themes/Impreza/framework/config/theme-options.php:507
 msgid "Search Field Background Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:501
+#: themes/Impreza/framework/config/theme-options.php:511
 msgid "Search Field Text Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:513
+#: themes/Impreza/framework/config/theme-options.php:523
 msgid "Header Menu colors"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:519
+#: themes/Impreza/framework/config/theme-options.php:529
 msgid "Transparent Menu Active Text Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:523
+#: themes/Impreza/framework/config/theme-options.php:533
 msgid "Menu Active Background Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:527
+#: themes/Impreza/framework/config/theme-options.php:537
 msgid "Menu Active Text Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:531
+#: themes/Impreza/framework/config/theme-options.php:541
 msgid "Menu Hover Background Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:535
+#: themes/Impreza/framework/config/theme-options.php:545
 msgid "Menu Hover Text Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:539
+#: themes/Impreza/framework/config/theme-options.php:549
 msgid "Dropdown Background Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:543
+#: themes/Impreza/framework/config/theme-options.php:553
 msgid "Dropdown Text Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:547
+#: themes/Impreza/framework/config/theme-options.php:557
 msgid "Dropdown Hover Background Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:551
+#: themes/Impreza/framework/config/theme-options.php:561
 msgid "Dropdown Hover Text Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:555
+#: themes/Impreza/framework/config/theme-options.php:565
 msgid "Dropdown Active Background Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:559
+#: themes/Impreza/framework/config/theme-options.php:569
 msgid "Dropdown Active Text Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:563
+#: themes/Impreza/framework/config/theme-options.php:573
 msgid "Menu Button Background Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:567
+#: themes/Impreza/framework/config/theme-options.php:577
 msgid "Menu Button Text Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:571
+#: themes/Impreza/framework/config/theme-options.php:581
 msgid "Menu Button Hover Background Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:575
+#: themes/Impreza/framework/config/theme-options.php:585
 msgid "Menu Button Hover Text Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:597
-#: themes/Impreza/framework/config/theme-options.php:651
-#: themes/Impreza/framework/config/theme-options.php:705
-#: themes/Impreza/framework/config/theme-options.php:743
+#: themes/Impreza/framework/config/theme-options.php:607
+#: themes/Impreza/framework/config/theme-options.php:661
+#: themes/Impreza/framework/config/theme-options.php:715
+#: themes/Impreza/framework/config/theme-options.php:753
 msgid "Alternate Background Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:601
-#: themes/Impreza/framework/config/theme-options.php:655
-#: themes/Impreza/framework/config/theme-options.php:709
-#: themes/Impreza/framework/config/theme-options.php:747
+#: themes/Impreza/framework/config/theme-options.php:611
+#: themes/Impreza/framework/config/theme-options.php:665
+#: themes/Impreza/framework/config/theme-options.php:719
+#: themes/Impreza/framework/config/theme-options.php:757
 msgid "Border Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:605
-#: themes/Impreza/framework/config/theme-options.php:659
+#: themes/Impreza/framework/config/theme-options.php:615
+#: themes/Impreza/framework/config/theme-options.php:669
 msgid "Heading Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:613
-#: themes/Impreza/framework/config/theme-options.php:667
-#: themes/Impreza/framework/config/theme-options.php:717
-#: themes/Impreza/framework/config/theme-options.php:755
+#: themes/Impreza/framework/config/theme-options.php:623
+#: themes/Impreza/framework/config/theme-options.php:677
+#: themes/Impreza/framework/config/theme-options.php:727
+#: themes/Impreza/framework/config/theme-options.php:765
 msgid "Link Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:617
-#: themes/Impreza/framework/config/theme-options.php:671
-#: themes/Impreza/framework/config/theme-options.php:721
-#: themes/Impreza/framework/config/theme-options.php:759
+#: themes/Impreza/framework/config/theme-options.php:627
+#: themes/Impreza/framework/config/theme-options.php:681
+#: themes/Impreza/framework/config/theme-options.php:731
+#: themes/Impreza/framework/config/theme-options.php:769
 msgid "Link Hover Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:621
-#: themes/Impreza/framework/config/theme-options.php:675
+#: themes/Impreza/framework/config/theme-options.php:631
+#: themes/Impreza/framework/config/theme-options.php:685
 msgid "Primary Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:625
-#: themes/Impreza/framework/config/theme-options.php:679
+#: themes/Impreza/framework/config/theme-options.php:635
+#: themes/Impreza/framework/config/theme-options.php:689
 msgid "Secondary Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:629
-#: themes/Impreza/framework/config/theme-options.php:683
+#: themes/Impreza/framework/config/theme-options.php:639
+#: themes/Impreza/framework/config/theme-options.php:693
 msgid "Faded Elements Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:813
+#: themes/Impreza/framework/config/theme-options.php:823
 msgid "Stretch header content to the screen width"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:818
+#: themes/Impreza/framework/config/theme-options.php:828
 msgid "Top Area Height"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:827
+#: themes/Impreza/framework/config/theme-options.php:837
 msgid "Top Sticky Area Height"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:840
+#: themes/Impreza/framework/config/theme-options.php:850
 msgid "Main Area Height"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:849
+#: themes/Impreza/framework/config/theme-options.php:859
 msgid "Main Sticky Area Height"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:862
+#: themes/Impreza/framework/config/theme-options.php:872
 msgid "Bottom Area Height"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:871
+#: themes/Impreza/framework/config/theme-options.php:881
 msgid "Bottom Sticky Area Height"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:893
+#: themes/Impreza/framework/config/theme-options.php:903
 msgid "Inverted Logo Position"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:895
+#: themes/Impreza/framework/config/theme-options.php:905
 msgid "Place Logo to the right side of the Header"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:900
+#: themes/Impreza/framework/config/theme-options.php:910
 msgid "Header Elements"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:962
+#: themes/Impreza/framework/config/theme-options.php:972
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_gmaps.php:31
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_gmaps.php:126
 msgid "Enter your content, HTML tags are allowed."
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:1248
+#: themes/Impreza/framework/config/theme-options.php:1258
 msgid "Logo"
-msgstr ""
-
-#: themes/Impreza/framework/config/theme-options.php:1278
-#: themes/Impreza/framework/config/theme-options.php:1326
-msgid "This option is enabled when screen width is less than 900px"
 msgstr ""
 
 #: themes/Impreza/framework/config/theme-options.php:1288
 #: themes/Impreza/framework/config/theme-options.php:1336
+msgid "This option is enabled when screen width is less than 900px"
+msgstr ""
+
+#: themes/Impreza/framework/config/theme-options.php:1298
+#: themes/Impreza/framework/config/theme-options.php:1346
 msgid "This option is enabled when screen width is less than 600px"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:1312
+#: themes/Impreza/framework/config/theme-options.php:1322
 msgid "Height in the Sticky Header"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:1394
+#: themes/Impreza/framework/config/theme-options.php:1404
 msgid "Stretch menu items to the full height of the header"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:1424
+#: themes/Impreza/framework/config/theme-options.php:1416
+msgid "Enable mobile layout when screen width is less than"
+msgstr ""
+
+#: themes/Impreza/framework/config/theme-options.php:1434
 msgid "Title Bars"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:1436
-#: themes/Impreza/framework/config/theme-options.php:1558
-#: themes/Impreza/framework/config/theme-options.php:1721
-#: themes/Impreza/framework/config/theme-options.php:1877
-#: themes/Impreza/framework/config/theme-options.php:2028
+#: themes/Impreza/framework/config/theme-options.php:1446
+#: themes/Impreza/framework/config/theme-options.php:1568
+#: themes/Impreza/framework/config/theme-options.php:1731
+#: themes/Impreza/framework/config/theme-options.php:1887
+#: themes/Impreza/framework/config/theme-options.php:2038
 msgid "Show Title Bar"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:1469
-#: themes/Impreza/framework/config/theme-options.php:1610
-#: themes/Impreza/framework/config/theme-options.php:1775
-#: themes/Impreza/framework/config/theme-options.php:1925
-#: themes/Impreza/framework/config/theme-options.php:2080
+#: themes/Impreza/framework/config/theme-options.php:1479
+#: themes/Impreza/framework/config/theme-options.php:1620
+#: themes/Impreza/framework/config/theme-options.php:1785
+#: themes/Impreza/framework/config/theme-options.php:1935
+#: themes/Impreza/framework/config/theme-options.php:2090
 msgid "Show Breadcrumbs"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:1733
+#: themes/Impreza/framework/config/theme-options.php:1743
 msgid "Title Bar Title"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:2021
+#: themes/Impreza/framework/config/theme-options.php:2031
 msgid "Shop and Product Pages"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:2186
+#: themes/Impreza/framework/config/theme-options.php:2196
 #: themes/Impreza/framework/functions/post-types.php:96
 msgid "Sidebars"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:2290
-#: themes/Impreza/framework/config/theme-options.php:3529
+#: themes/Impreza/framework/config/theme-options.php:2300
+#: themes/Impreza/framework/config/theme-options.php:3540
 msgid "Blog Home Page"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:2321
-#: themes/Impreza/framework/config/theme-options.php:3613
+#: themes/Impreza/framework/config/theme-options.php:2331
+#: themes/Impreza/framework/config/theme-options.php:3625
 msgid "Archive Pages"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:2352
-#: themes/Impreza/framework/config/theme-options.php:3697
+#: themes/Impreza/framework/config/theme-options.php:2362
+#: themes/Impreza/framework/config/theme-options.php:3710
 msgid "Search Results Page"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:2668
+#: themes/Impreza/framework/config/theme-options.php:2678
 msgid "Typography"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:2679
+#: themes/Impreza/framework/config/theme-options.php:2689
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel "
 "egestas leo. Nunc vel mauris eleifend, scelerisque nibh a, viverra quam. "
@@ -2825,229 +2903,229 @@ msgid ""
 "magna ornare nulla, a egestas mauris urna in neque."
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:2707
+#: themes/Impreza/framework/config/theme-options.php:2717
 msgid "Line height"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:2716
+#: themes/Impreza/framework/config/theme-options.php:2726
 msgid "Line height on Mobiles"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:2736
+#: themes/Impreza/framework/config/theme-options.php:2746
 msgid "Heading Font Preview"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:2767
-#: themes/Impreza/framework/config/theme-options.php:2820
-#: themes/Impreza/framework/config/theme-options.php:2873
-#: themes/Impreza/framework/config/theme-options.php:2926
-#: themes/Impreza/framework/config/theme-options.php:2979
-#: themes/Impreza/framework/config/theme-options.php:3032
-#: themes/Impreza/framework/config/theme-options.php:3126
+#: themes/Impreza/framework/config/theme-options.php:2777
+#: themes/Impreza/framework/config/theme-options.php:2830
+#: themes/Impreza/framework/config/theme-options.php:2883
+#: themes/Impreza/framework/config/theme-options.php:2936
+#: themes/Impreza/framework/config/theme-options.php:2989
+#: themes/Impreza/framework/config/theme-options.php:3042
+#: themes/Impreza/framework/config/theme-options.php:3136
 msgid "Font Weight"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:2776
-#: themes/Impreza/framework/config/theme-options.php:2829
-#: themes/Impreza/framework/config/theme-options.php:2882
-#: themes/Impreza/framework/config/theme-options.php:2935
-#: themes/Impreza/framework/config/theme-options.php:2988
-#: themes/Impreza/framework/config/theme-options.php:3041
-#: themes/Impreza/framework/config/theme-options.php:3134
+#: themes/Impreza/framework/config/theme-options.php:2786
+#: themes/Impreza/framework/config/theme-options.php:2839
+#: themes/Impreza/framework/config/theme-options.php:2892
+#: themes/Impreza/framework/config/theme-options.php:2945
+#: themes/Impreza/framework/config/theme-options.php:2998
+#: themes/Impreza/framework/config/theme-options.php:3051
+#: themes/Impreza/framework/config/theme-options.php:3144
 msgid "Letter Spacing"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:2788
-#: themes/Impreza/framework/config/theme-options.php:2841
-#: themes/Impreza/framework/config/theme-options.php:2894
-#: themes/Impreza/framework/config/theme-options.php:2947
-#: themes/Impreza/framework/config/theme-options.php:3000
-#: themes/Impreza/framework/config/theme-options.php:3053
-#: themes/Impreza/framework/config/theme-options.php:3112
+#: themes/Impreza/framework/config/theme-options.php:2798
+#: themes/Impreza/framework/config/theme-options.php:2851
+#: themes/Impreza/framework/config/theme-options.php:2904
+#: themes/Impreza/framework/config/theme-options.php:2957
+#: themes/Impreza/framework/config/theme-options.php:3010
+#: themes/Impreza/framework/config/theme-options.php:3063
+#: themes/Impreza/framework/config/theme-options.php:3122
 msgid "Uppercase"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:2789
-#: themes/Impreza/framework/config/theme-options.php:2842
-#: themes/Impreza/framework/config/theme-options.php:2895
-#: themes/Impreza/framework/config/theme-options.php:2948
-#: themes/Impreza/framework/config/theme-options.php:3001
-#: themes/Impreza/framework/config/theme-options.php:3054
-#: themes/Impreza/framework/config/theme-options.php:3113
+#: themes/Impreza/framework/config/theme-options.php:2799
+#: themes/Impreza/framework/config/theme-options.php:2852
+#: themes/Impreza/framework/config/theme-options.php:2905
+#: themes/Impreza/framework/config/theme-options.php:2958
+#: themes/Impreza/framework/config/theme-options.php:3011
+#: themes/Impreza/framework/config/theme-options.php:3064
+#: themes/Impreza/framework/config/theme-options.php:3123
 msgid "Italic"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3071
+#: themes/Impreza/framework/config/theme-options.php:3081
 msgid "Home About Services Portfolio Contacts"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3076
+#: themes/Impreza/framework/config/theme-options.php:3086
 msgid "Subset"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3081
+#: themes/Impreza/framework/config/theme-options.php:3091
 #, php-format
 msgid "Check available subsets for needed fonts on %s website"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3109
+#: themes/Impreza/framework/config/theme-options.php:3119
 msgid "Text Styles"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3118
+#: themes/Impreza/framework/config/theme-options.php:3128
 msgid "Default Font Size"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3153
+#: themes/Impreza/framework/config/theme-options.php:3163
 msgid "Relative Height"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3162
+#: themes/Impreza/framework/config/theme-options.php:3172
 msgid "Relative Width"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3171
+#: themes/Impreza/framework/config/theme-options.php:3181
 msgid "Corners Radius"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3180
+#: themes/Impreza/framework/config/theme-options.php:3190
 msgid "Shadow"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3194
+#: themes/Impreza/framework/config/theme-options.php:3204
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_image_slider.php:55
 msgid "Slide"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3195
+#: themes/Impreza/framework/config/theme-options.php:3205
 msgid "Reverse"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3200
+#: themes/Impreza/framework/config/theme-options.php:3210
 msgid "Shadow on Hover"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3221
+#: themes/Impreza/framework/config/theme-options.php:3231
 msgid "Intermediate Breadcrumbs Page"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3229
+#: themes/Impreza/framework/config/theme-options.php:3239
 msgid "Enable comments for Portfolio Pages"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3233
-#: themes/Impreza/framework/config/theme-options.php:3459
+#: themes/Impreza/framework/config/theme-options.php:3243
+#: themes/Impreza/framework/config/theme-options.php:3469
 msgid "Prev/Next Navigation"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3235
+#: themes/Impreza/framework/config/theme-options.php:3245
 msgid "Show previous/next portfolio pages on sides of the screen"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3240
-#: themes/Impreza/framework/config/theme-options.php:3481
+#: themes/Impreza/framework/config/theme-options.php:3250
+#: themes/Impreza/framework/config/theme-options.php:3491
 msgid "Invert position of previous and next"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3247
-#: themes/Impreza/framework/config/theme-options.php:3487
+#: themes/Impreza/framework/config/theme-options.php:3257
+#: themes/Impreza/framework/config/theme-options.php:3497
 msgid "Navigate within a category"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3258
+#: themes/Impreza/framework/config/theme-options.php:3268
 msgid "Portfolio Page Slug"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3263
+#: themes/Impreza/framework/config/theme-options.php:3273
 msgid "Portfolio Category Slug"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3270
+#: themes/Impreza/framework/config/theme-options.php:3280
 msgid "Portfolio Responsive Behavior"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3275
-#: themes/Impreza/framework/config/theme-options.php:3309
-#: themes/Impreza/framework/config/theme-options.php:3343
-#: themes/Impreza/framework/config/theme-options.php:3837
-#: themes/Impreza/framework/config/theme-options.php:3871
-#: themes/Impreza/framework/config/theme-options.php:3905
+#: themes/Impreza/framework/config/theme-options.php:3285
+#: themes/Impreza/framework/config/theme-options.php:3319
+#: themes/Impreza/framework/config/theme-options.php:3353
+#: themes/Impreza/framework/config/theme-options.php:3851
+#: themes/Impreza/framework/config/theme-options.php:3885
+#: themes/Impreza/framework/config/theme-options.php:3919
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_logos.php:156
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_logos.php:190
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_logos.php:224
 msgid "Below screen width"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3276
-#: themes/Impreza/framework/config/theme-options.php:3310
-#: themes/Impreza/framework/config/theme-options.php:3344
-#: themes/Impreza/framework/config/theme-options.php:3838
-#: themes/Impreza/framework/config/theme-options.php:3872
-#: themes/Impreza/framework/config/theme-options.php:3906
+#: themes/Impreza/framework/config/theme-options.php:3286
+#: themes/Impreza/framework/config/theme-options.php:3320
+#: themes/Impreza/framework/config/theme-options.php:3354
+#: themes/Impreza/framework/config/theme-options.php:3852
+#: themes/Impreza/framework/config/theme-options.php:3886
+#: themes/Impreza/framework/config/theme-options.php:3920
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_logos.php:164
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_logos.php:198
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_logos.php:232
 msgid "show"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3394
+#: themes/Impreza/framework/config/theme-options.php:3404
 msgid "Featured Image Size"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3401
+#: themes/Impreza/framework/config/theme-options.php:3411
 msgid "Post Elements"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3415
+#: themes/Impreza/framework/config/theme-options.php:3425
 msgid "Show block with sharing buttons"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3439
+#: themes/Impreza/framework/config/theme-options.php:3449
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_sharing.php:21
 msgid "Buttons Style"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3453
+#: themes/Impreza/framework/config/theme-options.php:3463
 msgid "Author Info"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3455
+#: themes/Impreza/framework/config/theme-options.php:3465
 msgid "Show block with information about post author"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3461
+#: themes/Impreza/framework/config/theme-options.php:3471
 msgid "Show links to previous/next posts"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3473
+#: themes/Impreza/framework/config/theme-options.php:3483
 msgid "Below a post content"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3474
+#: themes/Impreza/framework/config/theme-options.php:3484
 msgid "On sides of the screen"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3495
+#: themes/Impreza/framework/config/theme-options.php:3505
 #: themes/Impreza/framework/templates/blog/single-post-related.php:43
 msgid "Related Posts"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3497
+#: themes/Impreza/framework/config/theme-options.php:3507
 msgid "Show list of posts with the same tags"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3509
+#: themes/Impreza/framework/config/theme-options.php:3519
 msgid "Compact (without preview)"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3510
+#: themes/Impreza/framework/config/theme-options.php:3520
 msgid "Standard (3 columns with preview)"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3516
-#: themes/Impreza/framework/config/theme-options.php:3558
-#: themes/Impreza/framework/config/theme-options.php:3642
-#: themes/Impreza/framework/config/theme-options.php:3726
+#: themes/Impreza/framework/config/theme-options.php:3526
+#: themes/Impreza/framework/config/theme-options.php:3569
+#: themes/Impreza/framework/config/theme-options.php:3654
+#: themes/Impreza/framework/config/theme-options.php:3739
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:119
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_gallery.php:95
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_image_slider.php:98
@@ -3055,16 +3133,16 @@ msgstr ""
 msgid "Images Size"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3534
-#: themes/Impreza/framework/config/theme-options.php:3618
-#: themes/Impreza/framework/config/theme-options.php:3702
+#: themes/Impreza/framework/config/theme-options.php:3545
+#: themes/Impreza/framework/config/theme-options.php:3630
+#: themes/Impreza/framework/config/theme-options.php:3715
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:26
 msgid "Display Posts as"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3537
-#: themes/Impreza/framework/config/theme-options.php:3621
-#: themes/Impreza/framework/config/theme-options.php:3705
+#: themes/Impreza/framework/config/theme-options.php:3548
+#: themes/Impreza/framework/config/theme-options.php:3633
+#: themes/Impreza/framework/config/theme-options.php:3718
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:29
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_gallery.php:31
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_logos.php:45
@@ -3073,9 +3151,9 @@ msgstr ""
 msgid "Grid"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3538
-#: themes/Impreza/framework/config/theme-options.php:3622
-#: themes/Impreza/framework/config/theme-options.php:3706
+#: themes/Impreza/framework/config/theme-options.php:3549
+#: themes/Impreza/framework/config/theme-options.php:3634
+#: themes/Impreza/framework/config/theme-options.php:3719
 #: themes/Impreza/framework/functions/shortcodes.php:237
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:30
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_gallery.php:32
@@ -3084,18 +3162,18 @@ msgstr ""
 msgid "Masonry"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3546
-#: themes/Impreza/framework/config/theme-options.php:3630
-#: themes/Impreza/framework/config/theme-options.php:3714
-#: themes/Impreza/framework/config/widgets.php:206
+#: themes/Impreza/framework/config/theme-options.php:3557
+#: themes/Impreza/framework/config/theme-options.php:3642
+#: themes/Impreza/framework/config/theme-options.php:3727
+#: themes/Impreza/framework/config/widgets.php:201
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:104
 #: themes/Zephyr/plugins-support/js_composer/map/us_blog.php:20
 msgid "Classic"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3547
-#: themes/Impreza/framework/config/theme-options.php:3631
-#: themes/Impreza/framework/config/theme-options.php:3715
+#: themes/Impreza/framework/config/theme-options.php:3558
+#: themes/Impreza/framework/config/theme-options.php:3643
+#: themes/Impreza/framework/config/theme-options.php:3728
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:105
 #: themes/Zephyr/config/header-settings.php:17
 #: themes/Zephyr/plugins-support/js_composer/map/us_btn.php:20
@@ -3106,138 +3184,138 @@ msgstr ""
 msgid "Flat"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3548
-#: themes/Impreza/framework/config/theme-options.php:3632
-#: themes/Impreza/framework/config/theme-options.php:3716
-#: themes/Impreza/framework/config/widgets.php:207
+#: themes/Impreza/framework/config/theme-options.php:3559
+#: themes/Impreza/framework/config/theme-options.php:3644
+#: themes/Impreza/framework/config/theme-options.php:3729
+#: themes/Impreza/framework/config/widgets.php:202
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:106
 #: themes/Zephyr/plugins-support/js_composer/map/us_blog.php:22
 msgid "Tiles"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3549
-#: themes/Impreza/framework/config/theme-options.php:3633
-#: themes/Impreza/framework/config/theme-options.php:3717
+#: themes/Impreza/framework/config/theme-options.php:3560
+#: themes/Impreza/framework/config/theme-options.php:3645
+#: themes/Impreza/framework/config/theme-options.php:3730
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:107
 #: themes/Zephyr/plugins-support/js_composer/map/us_blog.php:21
 msgid "Cards"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3550
-#: themes/Impreza/framework/config/theme-options.php:3634
-#: themes/Impreza/framework/config/theme-options.php:3718
-#: themes/Impreza/framework/config/widgets.php:208
+#: themes/Impreza/framework/config/theme-options.php:3561
+#: themes/Impreza/framework/config/theme-options.php:3646
+#: themes/Impreza/framework/config/theme-options.php:3731
+#: themes/Impreza/framework/config/widgets.php:203
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:108
 #: themes/Zephyr/plugins-support/js_composer/map/us_blog.php:23
 msgid "Small Circle Image"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3551
-#: themes/Impreza/framework/config/theme-options.php:3635
-#: themes/Impreza/framework/config/theme-options.php:3719
-#: themes/Impreza/framework/config/widgets.php:209
+#: themes/Impreza/framework/config/theme-options.php:3562
+#: themes/Impreza/framework/config/theme-options.php:3647
+#: themes/Impreza/framework/config/theme-options.php:3732
+#: themes/Impreza/framework/config/widgets.php:204
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:109
 #: themes/Zephyr/plugins-support/js_composer/map/us_blog.php:24
 msgid "Small Square Image"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3552
-#: themes/Impreza/framework/config/theme-options.php:3636
-#: themes/Impreza/framework/config/theme-options.php:3720
+#: themes/Impreza/framework/config/theme-options.php:3563
+#: themes/Impreza/framework/config/theme-options.php:3648
+#: themes/Impreza/framework/config/theme-options.php:3733
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:110
 #: themes/Zephyr/plugins-support/js_composer/map/us_blog.php:25
 msgid "Latest Posts"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3553
-#: themes/Impreza/framework/config/theme-options.php:3637
-#: themes/Impreza/framework/config/theme-options.php:3721
-#: themes/Impreza/framework/config/theme-options.php:3981
-#: themes/Impreza/framework/config/widgets.php:210
+#: themes/Impreza/framework/config/theme-options.php:3564
+#: themes/Impreza/framework/config/theme-options.php:3649
+#: themes/Impreza/framework/config/theme-options.php:3734
+#: themes/Impreza/framework/config/theme-options.php:3995
+#: themes/Impreza/framework/config/widgets.php:205
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:111
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:76
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:70
 #: themes/Zephyr/plugins-support/js_composer/map/us_blog.php:26
 msgid "Compact"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3565
-#: themes/Impreza/framework/config/theme-options.php:3649
-#: themes/Impreza/framework/config/theme-options.php:3733
+#: themes/Impreza/framework/config/theme-options.php:3577
+#: themes/Impreza/framework/config/theme-options.php:3662
+#: themes/Impreza/framework/config/theme-options.php:3747
 msgid "Posts Columns"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3578
-#: themes/Impreza/framework/config/theme-options.php:3662
-#: themes/Impreza/framework/config/theme-options.php:3746
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:186
+#: themes/Impreza/framework/config/theme-options.php:3590
+#: themes/Impreza/framework/config/theme-options.php:3675
+#: themes/Impreza/framework/config/theme-options.php:3760
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:187
 msgid "Posts Content"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3582
-#: themes/Impreza/framework/config/theme-options.php:3666
-#: themes/Impreza/framework/config/theme-options.php:3750
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:190
+#: themes/Impreza/framework/config/theme-options.php:3594
+#: themes/Impreza/framework/config/theme-options.php:3679
+#: themes/Impreza/framework/config/theme-options.php:3764
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:191
 msgid "Full Content"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3588
-#: themes/Impreza/framework/config/theme-options.php:3672
-#: themes/Impreza/framework/config/theme-options.php:3756
-#: themes/Impreza/framework/config/widgets.php:240
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:136
+#: themes/Impreza/framework/config/theme-options.php:3600
+#: themes/Impreza/framework/config/theme-options.php:3685
+#: themes/Impreza/framework/config/theme-options.php:3770
+#: themes/Impreza/framework/config/widgets.php:235
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:137
 msgid "Posts Elements"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3596
-#: themes/Impreza/framework/config/theme-options.php:3680
-#: themes/Impreza/framework/config/theme-options.php:3764
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:179
+#: themes/Impreza/framework/config/theme-options.php:3608
+#: themes/Impreza/framework/config/theme-options.php:3693
+#: themes/Impreza/framework/config/theme-options.php:3778
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:180
 msgid "Read More button"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3604
-#: themes/Impreza/framework/config/theme-options.php:3688
-#: themes/Impreza/framework/config/theme-options.php:3772
+#: themes/Impreza/framework/config/theme-options.php:3616
+#: themes/Impreza/framework/config/theme-options.php:3701
+#: themes/Impreza/framework/config/theme-options.php:3786
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:79
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:93
 msgid "Regular pagination"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3605
-#: themes/Impreza/framework/config/theme-options.php:3689
-#: themes/Impreza/framework/config/theme-options.php:3773
+#: themes/Impreza/framework/config/theme-options.php:3617
+#: themes/Impreza/framework/config/theme-options.php:3702
+#: themes/Impreza/framework/config/theme-options.php:3787
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:80
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:94
 msgid "Load More Button"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3606
-#: themes/Impreza/framework/config/theme-options.php:3690
-#: themes/Impreza/framework/config/theme-options.php:3774
+#: themes/Impreza/framework/config/theme-options.php:3618
+#: themes/Impreza/framework/config/theme-options.php:3703
+#: themes/Impreza/framework/config/theme-options.php:3788
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:81
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:95
 msgid "Infinite Scroll"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3784
+#: themes/Impreza/framework/config/theme-options.php:3798
 msgid "Excerpt Length"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3785
+#: themes/Impreza/framework/config/theme-options.php:3799
 msgid ""
 "This option sets amount of words in the Excerpt. To show all the words, "
 "leave this field blank."
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3790
+#: themes/Impreza/framework/config/theme-options.php:3804
 msgid "Read More Button Style"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3799
+#: themes/Impreza/framework/config/theme-options.php:3813
 msgid "Read More Button Color"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3802
+#: themes/Impreza/framework/config/theme-options.php:3816
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_btn.php:56
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cform.php:131
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_counter.php:56
@@ -3256,7 +3334,7 @@ msgstr ""
 msgid "Primary (theme color)"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3803
+#: themes/Impreza/framework/config/theme-options.php:3817
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_btn.php:57
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cform.php:132
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_counter.php:57
@@ -3275,7 +3353,7 @@ msgstr ""
 msgid "Secondary (theme color)"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3804
+#: themes/Impreza/framework/config/theme-options.php:3818
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_btn.php:58
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cform.php:133
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cta.php:140
@@ -3286,7 +3364,7 @@ msgstr ""
 msgid "Border (theme color)"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3808
+#: themes/Impreza/framework/config/theme-options.php:3822
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_btn.php:62
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cform.php:137
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cta.php:144
@@ -3295,7 +3373,7 @@ msgstr ""
 msgid "Purple"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3809
+#: themes/Impreza/framework/config/theme-options.php:3823
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_btn.php:63
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cform.php:138
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cta.php:145
@@ -3304,7 +3382,7 @@ msgstr ""
 msgid "Pink"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3810
+#: themes/Impreza/framework/config/theme-options.php:3824
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_btn.php:64
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cform.php:139
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cta.php:146
@@ -3314,7 +3392,7 @@ msgstr ""
 msgid "Red"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3811
+#: themes/Impreza/framework/config/theme-options.php:3825
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_btn.php:65
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cform.php:140
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cta.php:147
@@ -3324,7 +3402,7 @@ msgstr ""
 msgid "Yellow"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3812
+#: themes/Impreza/framework/config/theme-options.php:3826
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_btn.php:66
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cform.php:141
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cta.php:148
@@ -3333,7 +3411,7 @@ msgstr ""
 msgid "Lime"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3813
+#: themes/Impreza/framework/config/theme-options.php:3827
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_btn.php:67
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cform.php:142
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cta.php:149
@@ -3343,7 +3421,7 @@ msgstr ""
 msgid "Green"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3814
+#: themes/Impreza/framework/config/theme-options.php:3828
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_btn.php:68
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cform.php:143
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cta.php:150
@@ -3352,7 +3430,7 @@ msgstr ""
 msgid "Teal"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3815
+#: themes/Impreza/framework/config/theme-options.php:3829
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_btn.php:69
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cform.php:144
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cta.php:151
@@ -3362,7 +3440,7 @@ msgstr ""
 msgid "Blue"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3816
+#: themes/Impreza/framework/config/theme-options.php:3830
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_btn.php:70
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cform.php:145
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cta.php:152
@@ -3371,7 +3449,7 @@ msgstr ""
 msgid "Navy"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3817
+#: themes/Impreza/framework/config/theme-options.php:3831
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_btn.php:71
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cform.php:146
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cta.php:153
@@ -3380,7 +3458,7 @@ msgstr ""
 msgid "Midnight"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3818
+#: themes/Impreza/framework/config/theme-options.php:3832
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_btn.php:72
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cform.php:147
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cta.php:154
@@ -3389,7 +3467,7 @@ msgstr ""
 msgid "Brown"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3819
+#: themes/Impreza/framework/config/theme-options.php:3833
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_btn.php:73
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cform.php:148
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cta.php:155
@@ -3398,11 +3476,12 @@ msgstr ""
 msgid "Cream"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3824
+#: themes/Impreza/framework/config/theme-options.php:3838
 msgid "Read More Button Size"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3825
+#: themes/Impreza/framework/config/theme-options.php:3839
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:130
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cform.php:95
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_counter.php:112
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_cta.php:51
@@ -3412,7 +3491,7 @@ msgstr ""
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:211
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_scroller.php:68
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_separator.php:186
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:115
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:101
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_testimonials.php:121
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_tta_accordion.php:75
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_tta_tabs.php:56
@@ -3421,167 +3500,162 @@ msgstr ""
 msgid "Examples: %s"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3832
+#: themes/Impreza/framework/config/theme-options.php:3846
 msgid "Blog Responsive Behavior"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3939
+#: themes/Impreza/framework/config/theme-options.php:3953
 msgid "Products Grid Style"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3949
+#: themes/Impreza/framework/config/theme-options.php:3963
 msgid "Products Grid Columns"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3962
+#: themes/Impreza/framework/config/theme-options.php:3976
 msgid "Related Products Quantity"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3963
+#: themes/Impreza/framework/config/theme-options.php:3977
 msgid "On Product pages and Cart page"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3976
+#: themes/Impreza/framework/config/theme-options.php:3990
 msgid "Cart Page Style"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3985
+#: themes/Impreza/framework/config/theme-options.php:3999
 msgid "Catalog Mode"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3987
+#: themes/Impreza/framework/config/theme-options.php:4001
 msgid "Disable ability to buy products via removing \"Add to Cart\" buttons"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3993
+#: themes/Impreza/framework/config/theme-options.php:4007
 msgctxt "Advanced Settings"
 msgid "Advanced"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:3997
+#: themes/Impreza/framework/config/theme-options.php:4011
 msgid "Theme Modules"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:4003
-#: themes/Impreza/framework/config/theme-options.php:4009
+#: themes/Impreza/framework/config/theme-options.php:4017
+#: themes/Impreza/framework/config/theme-options.php:4023
 #, php-format
 msgid "%s module"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:4015
+#: themes/Impreza/framework/config/theme-options.php:4029
 msgid "Open Graph meta tags"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:4021
+#: themes/Impreza/framework/config/theme-options.php:4035
 msgid "Schema.org markup"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:4027
+#: themes/Impreza/framework/config/theme-options.php:4041
 msgid "Website Performance"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:4033
+#: themes/Impreza/framework/config/theme-options.php:4047
 msgid "Defer Google Fonts loading"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:4034
+#: themes/Impreza/framework/config/theme-options.php:4048
 msgid ""
 "When this option is ON, Google Fonts files will be loaded after page content."
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:4040
+#: themes/Impreza/framework/config/theme-options.php:4054
 msgid "Move jQuery scripts to the footer"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:4041
+#: themes/Impreza/framework/config/theme-options.php:4055
 msgid ""
 "When this option is ON, jQuery library files will be loaded after page "
 "content."
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:4041
-#: themes/Impreza/framework/config/theme-options.php:4048
 #: themes/Impreza/framework/config/theme-options.php:4055
 #: themes/Impreza/framework/config/theme-options.php:4062
-#: themes/Impreza/framework/config/theme-options.php:4070
+#: themes/Impreza/framework/config/theme-options.php:4069
+#: themes/Impreza/framework/config/theme-options.php:4076
+#: themes/Impreza/framework/config/theme-options.php:4084
 msgid "This will improve pages loading speed."
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:4047
+#: themes/Impreza/framework/config/theme-options.php:4061
 msgid "Disable jQuery migrate script"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:4048
+#: themes/Impreza/framework/config/theme-options.php:4062
 msgid ""
 "When this option is ON, \"jquery-migrate.min.js\" file won't be loaded in "
 "front-end."
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:4054
+#: themes/Impreza/framework/config/theme-options.php:4068
 msgid "Dynamically load theme JS components"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:4055
+#: themes/Impreza/framework/config/theme-options.php:4069
 msgid ""
 "When this option is ON, theme components JS files will be loaded dynamically "
 "without additional external requests."
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:4061
+#: themes/Impreza/framework/config/theme-options.php:4075
 msgid "Disable extra features of WPBakery Page Builder"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:4062
+#: themes/Impreza/framework/config/theme-options.php:4076
 msgid ""
 "When this option is ON, original CSS and JS files of WPBakery Page Builder "
 "won't be loaded in front-end."
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:4069
+#: themes/Impreza/framework/config/theme-options.php:4083
 msgid "Optimize CSS size"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:4070
+#: themes/Impreza/framework/config/theme-options.php:4084
 msgid ""
 "When this option is ON, your site will load only one CSS file. You can "
 "disable unused components to reduce the file size."
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:4075
+#: themes/Impreza/framework/config/theme-options.php:4089
 msgid ""
 "Your uploads folder is not writable. Change your server permissions to use "
 "this option."
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:4094
+#: themes/Impreza/framework/config/theme-options.php:4108
 msgid "Custom Image Sizes"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:4099
-#, php-format
-msgid "Read %s how to use image sizes%s to improve pages loading speed."
-msgstr ""
-
-#: themes/Impreza/framework/config/theme-options.php:4128
+#: themes/Impreza/framework/config/theme-options.php:4142
 msgid "Crop to exact dimensions"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:4139
+#: themes/Impreza/framework/config/theme-options.php:4165
 msgid "Custom Code"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:4143
+#: themes/Impreza/framework/config/theme-options.php:4169
 msgid "Custom CSS"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:4144
+#: themes/Impreza/framework/config/theme-options.php:4170
 #, php-format
 msgid ""
 "CSS code from this field will overwrite theme styles. It will be located "
 "inside the %s tags just before the %s tag of every site page."
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:4150
+#: themes/Impreza/framework/config/theme-options.php:4176
 #, php-format
 msgid ""
 "Use this field for Google Analytics code or other tracking code. If you "
@@ -3589,23 +3663,23 @@ msgid ""
 "field will be located just before the %s tag of every site page."
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:4157
+#: themes/Impreza/framework/config/theme-options.php:4183
 msgid "Manage Options"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:4161
+#: themes/Impreza/framework/config/theme-options.php:4187
 msgid "Reset Theme Options"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:4165
+#: themes/Impreza/framework/config/theme-options.php:4191
 msgid "Backup Theme Options"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:4169
+#: themes/Impreza/framework/config/theme-options.php:4195
 msgid "Transfer Theme Options"
 msgstr ""
 
-#: themes/Impreza/framework/config/theme-options.php:4171
+#: themes/Impreza/framework/config/theme-options.php:4197
 msgid ""
 "You can transfer the saved options data between different installations by "
 "copying the text inside the text box. To import data from another "
@@ -3654,74 +3728,74 @@ msgid "Logout Redirect URL"
 msgstr ""
 
 #: themes/Impreza/framework/config/widgets.php:104
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:83
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:71
 msgid "Icons Style"
 msgstr ""
 
 #: themes/Impreza/framework/config/widgets.php:107
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:87
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:75
 msgid "Inside the Solid square"
 msgstr ""
 
 #: themes/Impreza/framework/config/widgets.php:108
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:88
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:76
 msgid "Inside the Outlined square"
 msgstr ""
 
 #: themes/Impreza/framework/config/widgets.php:109
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_iconbox.php:35
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:89
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:77
 #: themes/Zephyr/plugins-support/js_composer/map/us_iconbox.php:21
 msgid "Inside the Solid circle"
 msgstr ""
 
 #: themes/Impreza/framework/config/widgets.php:110
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_iconbox.php:36
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:90
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:78
 msgid "Inside the Outlined circle"
 msgstr ""
 
 #: themes/Impreza/framework/config/widgets.php:118
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_sharing.php:52
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:103
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:90
 msgid "Default brands colors"
 msgstr ""
 
 #: themes/Impreza/framework/config/widgets.php:120
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:105
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:92
 msgid "Link (theme color)"
 msgstr ""
 
-#: themes/Impreza/framework/config/widgets.php:176
+#: themes/Impreza/framework/config/widgets.php:171
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:80
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_testimonials.php:81
 msgid "Items Quantity"
 msgstr ""
 
-#: themes/Impreza/framework/config/widgets.php:183
-#: themes/Impreza/framework/config/widgets.php:218
+#: themes/Impreza/framework/config/widgets.php:178
+#: themes/Impreza/framework/config/widgets.php:213
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:58
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:69
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_testimonials.php:71
 msgid "By date (newer first)"
 msgstr ""
 
-#: themes/Impreza/framework/config/widgets.php:184
-#: themes/Impreza/framework/config/widgets.php:219
+#: themes/Impreza/framework/config/widgets.php:179
+#: themes/Impreza/framework/config/widgets.php:214
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:59
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:70
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_testimonials.php:72
 msgid "By date (older first)"
 msgstr ""
 
-#: themes/Impreza/framework/config/widgets.php:185
-#: themes/Impreza/framework/config/widgets.php:220
+#: themes/Impreza/framework/config/widgets.php:180
+#: themes/Impreza/framework/config/widgets.php:215
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:60
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:71
 msgid "Alphabetically"
 msgstr ""
 
-#: themes/Impreza/framework/config/widgets.php:234
+#: themes/Impreza/framework/config/widgets.php:229
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:89
 msgid "Ignore sticky posts"
 msgstr ""
@@ -3798,7 +3872,7 @@ msgstr ""
 msgid "Edit Footer"
 msgstr ""
 
-#: themes/Impreza/framework/functions/post-types.php:434
+#: themes/Impreza/framework/functions/post-types.php:437
 #: themes/Impreza/functions/migrations/us_migration_4_0.php:177
 #: themes/Zephyr/functions/migrations/us_migration_4_0.php:168
 msgid "Default Footer"
@@ -3837,17 +3911,17 @@ msgstr ""
 msgid "Do you really want to delete this sidebar?"
 msgstr ""
 
+#: themes/Impreza/framework/plugins-support/js_composer/js_composer.php:229
 #: themes/Impreza/framework/plugins-support/js_composer/js_composer.php:231
-#: themes/Impreza/framework/plugins-support/js_composer/js_composer.php:233
-#: themes/Impreza/framework/plugins-support/js_composer/js_composer.php:250
-#: themes/Impreza/framework/plugins-support/js_composer/js_composer.php:252
+#: themes/Impreza/framework/plugins-support/js_composer/js_composer.php:249
+#: themes/Impreza/framework/plugins-support/js_composer/js_composer.php:251
 #: themes/Impreza/framework/plugins-support/woocommerce/woocommerce.php:224
 #: themes/Impreza/framework/plugins-support/woocommerce/woocommerce.php:226
 msgid "any"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/js_composer.php:235
-#: themes/Impreza/framework/plugins-support/js_composer/js_composer.php:254
+#: themes/Impreza/framework/plugins-support/js_composer/js_composer.php:233
+#: themes/Impreza/framework/plugins-support/js_composer/js_composer.php:253
 #: themes/Impreza/framework/plugins-support/woocommerce/woocommerce.php:228
 msgid "cropped"
 msgstr ""
@@ -3861,41 +3935,35 @@ msgstr ""
 msgid "Display Posts of selected categories"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:128
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:129
 msgid "Posts Titles Size"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:129
-#, php-format
-msgid ""
-"Add custom value to change default font-size of posts titles. Examples: %s"
-msgstr ""
-
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:206
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:207
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_logos.php:109
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:242
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:243
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_testimonials.php:137
 msgid "Show Navigation Arrows"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:209
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:217
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:225
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:233
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:241
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:249
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:210
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:218
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:226
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:234
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:242
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:250
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_logos.php:112
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_logos.php:120
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_logos.php:128
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_logos.php:136
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_logos.php:144
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_logos.php:152
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:245
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:253
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:261
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:269
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:277
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:285
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:246
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:254
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:262
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:270
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:278
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:286
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_testimonials.php:140
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_testimonials.php:148
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_testimonials.php:156
@@ -3905,60 +3973,60 @@ msgstr ""
 msgid "Carousel Settings"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:214
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:215
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_logos.php:117
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:250
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:251
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_scroller.php:36
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_testimonials.php:145
 msgid "Show Navigation Dots"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:222
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:223
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_logos.php:125
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:258
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:259
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_testimonials.php:153
 msgid "Enable first item centering"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:230
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:231
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_logos.php:133
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:266
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:267
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_testimonials.php:161
 msgid "Slide by several items instead of one"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:238
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:239
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_image_slider.php:78
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_logos.php:141
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_logos.php:183
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_logos.php:217
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_logos.php:251
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:274
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:275
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_testimonials.php:169
 msgid "Enable Auto Rotation"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:245
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:246
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_image_slider.php:91
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_logos.php:148
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:281
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:282
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_testimonials.php:176
 msgid "Auto Rotation Interval (in seconds)"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:254
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:290
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:255
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:291
 msgid "Enable filtering by category"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:261
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:297
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:262
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:298
 msgid "Filter Bar Style"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:264
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:265
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:266
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_blog.php:267
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:143
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:144
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:145
@@ -3977,9 +4045,9 @@ msgstr ""
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:158
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:159
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:160
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:300
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:301
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:302
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:303
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_progbar.php:41
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_progbar.php:42
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_progbar.php:43
@@ -4006,6 +4074,14 @@ msgstr ""
 #: themes/Zephyr/plugins-support/js_composer/map/us_portfolio.php:24
 #, php-format
 msgid "Style %d"
+msgstr ""
+
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_btn.php:33
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_cta.php:108
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_cta.php:200
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_pricing.php:135
+#: themes/Zephyr/plugins-support/js_composer/map/us_pricing.php:148
+msgid "Button Link"
 msgstr ""
 
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_btn.php:74
@@ -4328,10 +4404,6 @@ msgstr ""
 msgid "Icon Circle Color"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_iconbox.php:86
-msgid "Icon Size"
-msgstr ""
-
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_iconbox.php:149
 msgid "Set an image, which overrides the font icon"
 msgstr ""
@@ -4368,30 +4440,30 @@ msgstr ""
 msgid "Allow Full Screen view"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_image_slider.php:107
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_image_slider.php:108
 msgid "Images Fit"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_image_slider.php:120
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_image_slider.php:121
 msgid "Images Style"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_image_slider.php:124
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_image_slider.php:125
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_single_image.php:58
 msgid "Phone 6 Black Realistic"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_image_slider.php:125
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_image_slider.php:126
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_single_image.php:59
 msgid "Phone 6 White Realistic"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_image_slider.php:126
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_image_slider.php:127
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_single_image.php:60
 msgid "Phone 6 Black Flat"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_image_slider.php:127
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_image_slider.php:128
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_single_image.php:61
 msgid "Phone 6 White Flat"
 msgstr ""
@@ -4412,44 +4484,49 @@ msgstr ""
 msgid "Photo"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:30
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:29
 msgid "Photo on hover (optional)"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:47
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:44
 msgid "Role"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:64
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:59
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_testimonial.php:67
 msgid "Applies to the Name and to the Photo"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:75
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:69
 #: themes/Zephyr/plugins-support/js_composer/map/us_person.php:20
 msgid "Simple (rounded photo)"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:77
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:71
 msgid "Compact (rounded photo)"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:88
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:81
 msgid "Photo Effect"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:92
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:85
 msgid "Sepia"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:94
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:87
 msgid "Faded"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:95
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:88
 #: themes/Zephyr/config/widgets.php:14
 #: themes/Zephyr/plugins-support/js_composer/map/us_social_links.php:20
 msgid "Colored"
+msgstr ""
+
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_person.php:96
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_single_image.php:29
+msgid "Image Size"
 msgstr ""
 
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:81
@@ -4534,7 +4611,7 @@ msgstr ""
 msgid "Items Text Color"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:316
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_portfolio.php:317
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_testimonials.php:190
 #: themes/Impreza/framework/widgets/us_portfolio.php:96
 msgid "Display Items of selected categories"
@@ -4683,10 +4760,6 @@ msgstr ""
 msgid "If not specified, the opened page URL will be used by default"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_single_image.php:29
-msgid "Image Size"
-msgstr ""
-
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_single_image.php:38
 msgid "Image Alignment"
 msgstr ""
@@ -4725,30 +4798,6 @@ msgstr ""
 msgid ""
 "Select animation type if you want this element to be animated when it enters "
 "into the browsers viewport. Note: Works only in modern browsers."
-msgstr ""
-
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_single_image.php:108
-#: themes/Impreza/framework/plugins-support/js_composer/map/vc_column.php:36
-#: themes/Impreza/framework/plugins-support/js_composer/map/vc_column_inner.php:28
-msgid "Appear From Center"
-msgstr ""
-
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_single_image.php:109
-#: themes/Impreza/framework/plugins-support/js_composer/map/vc_column.php:37
-#: themes/Impreza/framework/plugins-support/js_composer/map/vc_column_inner.php:29
-msgid "Appear From Left"
-msgstr ""
-
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_single_image.php:110
-#: themes/Impreza/framework/plugins-support/js_composer/map/vc_column.php:38
-#: themes/Impreza/framework/plugins-support/js_composer/map/vc_column_inner.php:30
-msgid "Appear From Right"
-msgstr ""
-
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_single_image.php:112
-#: themes/Impreza/framework/plugins-support/js_composer/map/vc_column.php:40
-#: themes/Impreza/framework/plugins-support/js_composer/map/vc_column_inner.php:32
-msgid "Appear From Top"
 msgstr ""
 
 #: themes/Impreza/framework/plugins-support/js_composer/map/us_single_image.php:113
@@ -4799,11 +4848,15 @@ msgstr ""
 msgid "1 second"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:114
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:31
+msgid "Custom Icon"
+msgstr ""
+
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:100
 msgid "Icons Size"
 msgstr ""
 
-#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:125
+#: themes/Impreza/framework/plugins-support/js_composer/map/us_social_links.php:110
 msgid "Icons Alignment"
 msgstr ""
 
@@ -4898,6 +4951,10 @@ msgid ""
 "tabs."
 msgstr ""
 
+#: themes/Impreza/framework/plugins-support/js_composer/map/vc_row.php:282
+msgid "Background Slider"
+msgstr ""
+
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_tta_accordion.php:35
 msgid "Act as Toggles"
 msgstr ""
@@ -4936,10 +4993,6 @@ msgstr ""
 
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_tta_section.php:51
 msgid "Stretch this section content to the full available area"
-msgstr ""
-
-#: themes/Impreza/framework/plugins-support/js_composer/map/vc_tta_section.php:65
-msgid "Icon position"
 msgstr ""
 
 #: themes/Impreza/framework/plugins-support/js_composer/map/vc_tta_section.php:68
@@ -5039,12 +5092,12 @@ msgid "Read More"
 msgstr ""
 
 #: themes/Impreza/framework/templates/blog/listing.php:119
-#: themes/Impreza/framework/templates/portfolio/listing.php:263
+#: themes/Impreza/framework/templates/portfolio/listing.php:281
 msgid "All"
 msgstr ""
 
 #: themes/Impreza/framework/templates/blog/listing.php:262
-#: themes/Impreza/framework/templates/portfolio/listing.php:395
+#: themes/Impreza/framework/templates/portfolio/listing.php:413
 msgid "Load More"
 msgstr ""
 

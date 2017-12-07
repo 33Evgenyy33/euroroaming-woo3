@@ -23,7 +23,6 @@ vc_map(
 				'type' => 'attach_image',
 				'std' => $config['atts']['image'],
 				'edit_field_class' => 'vc_col-sm-6',
-				'weight' => 200,
 			),
 			array(
 				'param_name' => 'image_hover',
@@ -31,7 +30,6 @@ vc_map(
 				'type' => 'attach_image',
 				'std' => $config['atts']['image_hover'],
 				'edit_field_class' => 'vc_col-sm-6',
-				'weight' => 190,
 			),
 			array(
 				'param_name' => 'name',
@@ -40,7 +38,6 @@ vc_map(
 				'std' => $config['atts']['name'],
 				'holder' => 'div',
 				'edit_field_class' => 'vc_col-sm-6 newline',
-				'weight' => 180,
 			),
 			array(
 				'param_name' => 'role',
@@ -48,7 +45,6 @@ vc_map(
 				'type' => 'textfield',
 				'std' => $config['atts']['role'],
 				'edit_field_class' => 'vc_col-sm-6',
-				'weight' => 170,
 			),
 			array(
 				'param_name' => 'content',
@@ -56,15 +52,13 @@ vc_map(
 				'holder' => 'div',
 				'heading' => us_translate( 'Description' ),
 				'std' => $config['content'],
-				'weight' => 160,
 			),
 			array(
 				'param_name' => 'link',
-				'heading' => __( 'Link (optional)', 'us' ),
+				'heading' => us_translate( 'Link' ),
 				'description' => __( 'Applies to the Name and to the Photo', 'us' ),
 				'type' => 'vc_link',
 				'std' => $config['atts']['link'],
-				'weight' => 150,
 			),
 			array(
 				'param_name' => 'layout',
@@ -81,7 +75,6 @@ vc_map(
 				'std' => $config['atts']['layout'],
 				'edit_field_class' => 'vc_col-sm-6',
 				'group' => __( 'More Options', 'us' ),
-				'weight' => 110,
 			),
 			array(
 				'param_name' => 'effect',
@@ -97,7 +90,15 @@ vc_map(
 				'std' => $config['atts']['effect'],
 				'edit_field_class' => 'vc_col-sm-6',
 				'group' => __( 'More Options', 'us' ),
-				'weight' => 100,
+			),
+			array(
+				'param_name' => 'img_size',
+				'heading' => __( 'Image Size', 'us' ),
+				'description' => sprintf( __( 'To change the default image sizes, go to %s.', 'us' ), '<a target="_blank" href="' . admin_url( 'options-media.php' ) . '">' . us_translate( 'Media Settings' ) . '</a>' ) . ' ' . sprintf( __( 'To add custom image sizes, go to %s.', 'us' ), '<a target="_blank" href="' . admin_url( 'admin.php?page=us-theme-options#advanced' ) . '">' . __( 'Theme Options', 'us' ) . '</a>' ),
+				'type' => 'dropdown',
+				'value' => us_image_sizes_select_values(),
+				'std' => $config['atts']['img_size'],
+				'group' => __( 'More Options', 'us' ),
 			),
 			array(
 				'param_name' => 'email',
@@ -106,7 +107,6 @@ vc_map(
 				'std' => $config['atts']['email'],
 				'edit_field_class' => 'vc_col-sm-6',
 				'group' => __( 'More Options', 'us' ),
-				'weight' => 90,
 			),
 			array(
 				'param_name' => 'facebook',
@@ -115,7 +115,6 @@ vc_map(
 				'std' => $config['atts']['facebook'],
 				'edit_field_class' => 'vc_col-sm-6',
 				'group' => __( 'More Options', 'us' ),
-				'weight' => 80,
 			),
 			array(
 				'param_name' => 'twitter',
@@ -124,7 +123,6 @@ vc_map(
 				'std' => $config['atts']['twitter'],
 				'edit_field_class' => 'vc_col-sm-6',
 				'group' => __( 'More Options', 'us' ),
-				'weight' => 70,
 			),
 			array(
 				'param_name' => 'google_plus',
@@ -133,7 +131,6 @@ vc_map(
 				'std' => $config['atts']['google_plus'],
 				'edit_field_class' => 'vc_col-sm-6',
 				'group' => __( 'More Options', 'us' ),
-				'weight' => 60,
 			),
 			array(
 				'param_name' => 'linkedin',
@@ -142,7 +139,6 @@ vc_map(
 				'std' => $config['atts']['linkedin'],
 				'edit_field_class' => 'vc_col-sm-6',
 				'group' => __( 'More Options', 'us' ),
-				'weight' => 50,
 			),
 			array(
 				'param_name' => 'skype',
@@ -151,7 +147,6 @@ vc_map(
 				'std' => $config['atts']['skype'],
 				'edit_field_class' => 'vc_col-sm-6',
 				'group' => __( 'More Options', 'us' ),
-				'weight' => 40,
 			),
 			array(
 				'param_name' => 'custom_link',
@@ -160,7 +155,6 @@ vc_map(
 				'std' => $config['atts']['custom_link'],
 				'edit_field_class' => 'vc_col-sm-6',
 				'group' => __( 'More Options', 'us' ),
-				'weight' => 30,
 			),
 			array(
 				'param_name' => 'custom_icon',
@@ -170,7 +164,6 @@ vc_map(
 				'std' => $config['atts']['custom_icon'],
 				'edit_field_class' => 'vc_col-sm-6',
 				'group' => __( 'More Options', 'us' ),
-				'weight' => 20,
 			),
 			array(
 				'param_name' => 'el_class',
@@ -178,7 +171,6 @@ vc_map(
 				'type' => 'textfield',
 				'std' => $config['atts']['el_class'],
 				'group' => __( 'More Options', 'us' ),
-				'weight' => 10,
 			),
 		),
 	)

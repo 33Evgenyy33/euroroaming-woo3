@@ -26,13 +26,13 @@ $post_format = get_post_format() ? get_post_format() : 'standard';
 
 // Determining default thumbnail size
 $thumbnail_sizes = array(
-	'classic' => 'tnail-1x1',
-	'flat' => 'tnail-1x1',
-	'cards' => 'tnail-1x1',
-	'tiles' => 'tnail-1x1',
-	'related' => 'tnail-1x1-small',
-	'smallcircle' => 'tnail-1x1-small',
-	'smallsquare' => 'tnail-1x1-small',
+	'classic' => 'us_600_600_crop',
+	'flat' => 'us_600_600_crop',
+	'cards' => 'us_600_600_crop',
+	'tiles' => 'us_600_600_crop',
+	'related' => 'us_350_350_crop',
+	'smallcircle' => 'us_350_350_crop',
+	'smallsquare' => 'us_350_350_crop',
 	'compact' => FALSE,
 	'latest' => FALSE,
 );
@@ -41,12 +41,12 @@ $has_preview = ( ! isset( $thumbnail_sizes[$layout] ) OR $thumbnail_sizes[$layou
 $the_content = get_the_content();
 
 global $blog_listing_slider_size;
-$blog_listing_slider_size = 'tnail-1x1';
+$blog_listing_slider_size = 'us_600_600_crop';
 
 $featured_image = '';
 $featured_html = '';
 if ( $has_preview AND ! post_password_required() ) {
-	$thumbnail_size = isset( $thumbnail_sizes[$layout] ) ? $thumbnail_sizes [$layout] : 'tnail-1x1';
+	$thumbnail_size = isset( $thumbnail_sizes[$layout] ) ? $thumbnail_sizes [$layout] : 'us_600_600_crop';
 	if ( $type == 'masonry' AND ! in_array( $layout, array( 'smallcircle', 'smallsquare' ) ) ) {
 		$thumbnail_size = 'medium_large';
 		$blog_listing_slider_size = 'medium_large';

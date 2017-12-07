@@ -7,7 +7,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * @since 1.0
  */
-class ACA_WC_Column_ShopOrder_ProductThumbnails extends AC_Column {
+class ACA_WC_Column_ShopOrder_ProductThumbnails extends AC_Column
+	implements ACP_Export_Column {
 
 	public function __construct() {
 		$this->set_group( 'woocommerce' );
@@ -53,6 +54,10 @@ class ACA_WC_Column_ShopOrder_ProductThumbnails extends AC_Column {
 
 	public function register_settings() {
 		$this->add_setting( new AC_Settings_Column_Image( $this ) );
+	}
+
+	public function export() {
+		return new ACA_WC_Export_ShopOrder_ProductThumbnails( $this );
 	}
 
 }

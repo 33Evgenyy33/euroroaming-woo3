@@ -257,12 +257,35 @@ vc_add_params(
 if ( class_exists( 'Ultimate_VC_Addons' ) ) {
 	vc_add_param(
 		'vc_row', array(
-		'param_name' => 'us_notification',
-		'type' => 'ult_param_heading',
-		'text' => __( 'Background Image, Background Video, Background Overlay settings located below will override the settings located at "Background" and "Effect" tabs.', 'us' ),
-		'edit_field_class' => 'ult-param-important-wrapper ult-dashicon vc_column vc_col-sm-12',
-		'weight' => 110,
-	)
+			'param_name' => 'us_notification',
+			'type' => 'ult_param_heading',
+			'text' => __( 'Background Image, Background Video, Background Overlay settings located below will override the settings located at "Background" and "Effect" tabs.', 'us' ),
+			'edit_field_class' => 'ult-param-important-wrapper ult-dashicon vc_column vc_col-sm-12',
+			'weight' => 110,
+		)
+	);
+}
+
+// Add option to set Rev Slider as row background
+if ( class_exists( 'RevSlider' ) ) {
+	$slider = new RevSlider();
+	$arrSliders = $slider->getArrSliders();
+	$revsliders = array();
+	if ( $arrSliders ) {
+		foreach ( $arrSliders as $slider ) {
+			$revsliders[ $slider->getTitle() ] = $slider->getAlias();
+		}
+	}
+	vc_add_param(
+		'vc_row', array(
+			'param_name' => 'us_bg_slider',
+			'heading' => __( 'Background Slider', 'us' ),
+			'description' => us_translate( 'Select your Revolution Slider.', 'js_composer' ),
+			'type' => 'dropdown',
+			'value' => array_merge( array( '– ' . us_translate( 'None' ) . ' –' => '' ), $revsliders ),
+			'std' => $config['atts']['us_bg_slider'],
+			'weight' => 45,
+		)
 	);
 }
 

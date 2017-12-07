@@ -25,32 +25,39 @@ final class ACA_WC_Helper {
 
 	/**
 	 * @param string $search
-	 * @param string $page
+	 * @param array  $args
 	 *
 	 * @return array
 	 */
-	public function search_products( $search, $page ) {
+	public function search_products( $search, $args ) {
 
-		$product_ids_title = get_posts( array(
-			's'              => $search,
-			'post_type'      => 'product',
+		$defaults = wp_parse_args( $args, array(
 			'posts_per_page' => 60,
-			'paged'          => $page,
-			'fields'         => 'ids',
+			'paged'          => 20,
+			'post_type'      => 'product',
 		) );
 
-		$product_ids_sku = get_posts( array(
-			'paged'          => $page,
-			'posts_per_page' => 60,
-			'fields'         => 'ids',
-			'meta_query'     => array(
+		// Search
+		$args = wp_parse_args( array(
+			's'      => $search,
+			'fields' => 'ids',
+		), $defaults );
+
+		$product_ids_title = get_posts( $args );
+
+		// Search by SKU
+		$args = wp_parse_args( array(
+			'fields'     => 'ids',
+			'meta_query' => array(
 				array(
 					'key'     => '_sku',
 					'value'   => $search,
 					'compare' => 'LIKE',
 				),
 			),
-		) );
+		), $defaults );
+
+		$product_ids_sku = get_posts( $args );
 
 		$post_ids = array_unique( array_merge( $product_ids_title, $product_ids_sku ) );
 		$options = array();

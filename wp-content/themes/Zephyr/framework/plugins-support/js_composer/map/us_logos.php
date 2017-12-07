@@ -29,7 +29,7 @@ vc_map(
 						'admin_label' => TRUE,
 					),
 					array(
-						'heading' => __( 'Link (optional)', 'us' ),
+						'heading' => us_translate( 'Link' ),
 						'param_name' => 'link',
 						'type' => 'vc_link',
 						'std' => $config['items_atts']['link'],

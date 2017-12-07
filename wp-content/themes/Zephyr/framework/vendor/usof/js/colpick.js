@@ -73,7 +73,7 @@
 				submitText: 'OK',
 				height: 156
 			},
-			transparentImage = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAAHnlligAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAHJJREFUeNpi+P///4EDBxiAGMgCCCAGFB5AADGCRBgYDh48CCRZIJS9vT2QBAggFBkmBiSAogxFBiCAoHogAKIKAlBUYTELAiAmEtABEECk20G6BOmuIl0CIMBQ/IEMkO0myiSSraaaBhZcbkUOs0HuBwDplz5uFJ3Z4gAAAABJRU5ErkJggg==",
+			transparentImage = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAMFJREFUeNrsVlsOhCAM7Jg9j97/GHChMTxcC9UPTNatif0AIxhmOlMqSMpIhBiG9k/y43gP+P8Bn/FPkIbiPZQhTRSafXDKoMDL4DNqWn7fNccMlAYF66ZE/8avBvu0qUG1sPvKLQOFlo0GigfvcVGI8cQbNr8plnlxehflPELlMbMhYDzu7zaluj1onM7GL0/sB+ic7pGBxcXu+QkuqhhrJasartXQ9iqPGtQKOO20lKscbtbAIAXk8J/HEYNVgAEAHShEyUuW684AAAAASUVORK5CYII=",
 		//Fill the inputs of the plugin
 			fillRGBAFields = function (hsba, cal) {
 				var rgb = hsbaToRgba(hsba);
@@ -113,7 +113,7 @@
 				colpick.alpha.css('top', parseInt(156 * (1. - hsba.a)));
 				var alphaStyle = 'background: linear-gradient(to bottom, rgb(' + rgba.r + ', ' + rgba.g + ', ' + rgba.b + ') 0%, ';
 				alphaStyle += 'rgba(' + rgba.r + ', ' + rgba.g + ', ' + rgba.b + ', 0) 100%) repeat scroll 0% 0%, transparent url("';
-				alphaStyle += transparentImage + '") repeat scroll 0% 0%;';
+				alphaStyle += transparentImage + '") repeat scroll 0% 0%/16px;';
 				colpick.alphaContainer.attr('style', alphaStyle)
 			},
 		//Set current and new colors

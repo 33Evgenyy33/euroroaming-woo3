@@ -253,6 +253,8 @@ jQuery.fn.usMod = function(mod, value){
 			this.$color = this.$row.find('.usof-color');
 			this.$preview = this.$row.find('.usof-color-preview');
 			this.$clear = this.$row.find('.usof-color-clear');
+			// Set white text color for dark backgrounds
+			this.invertInputColors(this.$input.val());
 			this.$input.colpick({
 				layout: 'hex',
 				color: (this.$input.val() || ''),
@@ -260,6 +262,7 @@ jQuery.fn.usMod = function(mod, value){
 				showEvent: 'focus',
 				onChange: function(hsb, hex, rgb, el, bySetColor){
 					this.$preview.css('background', hex);
+					this.invertInputColors(rgb);
 					this.$input.toggleClass('with_alpha', hex.substr(0, 5) == 'rgba(')
 					if (!bySetColor) this.$input.val(hex);
 				}.bind(this),
@@ -310,6 +313,38 @@ jQuery.fn.usMod = function(mod, value){
 				this.$input.colpickSetColor(value);
 			}
 			this.parentSetValue(value, quiet);
+		},
+
+		invertInputColors: function(rgb){
+			var r = rgb.r ? rgb.r : 0,
+				g = rgb.g ? rgb.g : 0,
+				b = rgb.b ? rgb.b : 0,
+				a = (rgb.a === 0 || rgb.a) ? rgb.a : 1,
+				light;
+			if (rgb.length === 7) {
+				rgb = rgb.slice(1);
+				r = parseInt(rgb.slice(0, 2), 16);
+				g = parseInt(rgb.slice(2, 4), 16);
+				b = parseInt(rgb.slice(4, 6), 16);
+			} else if (rgb.length > 7) {
+				var match = rgb.match(/^rgba\((\d{1,3}),\s*(\d{1,3}),\s*(\d{1,3}),\s*(\d*(?:\.\d+)?)\)$/);
+				if (!match) return;
+				r = parseInt(match[1]);
+				g = parseInt(match[2]);
+				b = parseInt(match[3]);
+				a = parseFloat(match[4]);
+			}
+			// Determine lightness of color
+			light = r * 0.213 + g * 0.715 + b * 0.072;
+			// Increase lightness regarding color opacity
+			if (a < 1) {
+				light = light + (1 - a) * (1 - light/255) * 235;
+			}
+			if (light < 178) {
+				this.$input.addClass('white');
+			} else {
+				this.$input.removeClass('white');
+			}
 		}
 
 	};
@@ -826,7 +861,7 @@ jQuery.fn.usMod = function(mod, value){
 				this.$buttons.css('text-transform', 'none');
 			}
 			// Font size
-			this.$buttons.css('font-size', $usof.instance.getValue('button_fontsize'));
+			this.$buttons.css('font-size', $usof.instance.getValue('button_fontsize')+'px');
 			// Font weight
 			this.$buttons.css('font-weight', $usof.instance.getValue('button_fontweight'));
 			// Height
@@ -1250,57 +1285,71 @@ jQuery.fn.usMod = function(mod, value){
 					var $btnAddGroup = $field.find('.usof-form-group-add'),
 						$btnDelGroup = $field.find('.usof-form-group-delete'),
 						groupName = $field.data('name'),
-						$parentSection = $field.closest('.usof-section'),
-						sectionName = $parentSection.data('id'),
 						groupIndex = $field.data('index'),
-						groupTranslations = ($field.find('.usof-form-group-translations')[0].onclick() || {});
+						isHB = ($field.data('hb') != undefined)?$field.data('hb'):0,
+						groupTranslations = ($field.find('.usof-form-group-translations')[0].onclick() || {}),
+						ajaxData = {
+							group: groupName,
+							index: groupIndex
+						};
+
+					if (isHB) {
+						var $parentElementForm = $field.closest('.usof-form'),
+							elementName = $parentElementForm.usMod('for');
+						ajaxData.action = 'ushb_add_group_params';
+						ajaxData.element = elementName;
+					} else {
+						var $parentSection = $field.closest('.usof-section'),
+							sectionName = $parentSection.data('id');
+						ajaxData.action = 'usof_add_group_params';
+						ajaxData.section = sectionName;
+
+					}
 
 					$btnAddGroup.on('click', function(){
 						$btnAddGroup.addClass('adding');
+						ajaxData.index = groupIndex;
 						$.ajax({
 							type: 'POST',
 							url: $usof.ajaxUrl,
 							dataType: 'json',
-							data: {
-								action: 'usof_add_group_params',
-								group: groupName,
-								section: sectionName,
-								index: groupIndex
-							},
+							data: ajaxData,
 							success: function(result){
 								$btnAddGroup.before(result.data.paramsHtml);
 								this.initFields($field);
 								this.fireFieldEvent($field, 'beforeShow');
 								this.fireFieldEvent($field, 'afterShow');
 								// TODO: rewrite code so this code is reused START
-								for (var fieldId in this.fields) {
-									if (!this.fields.hasOwnProperty(fieldId)) continue;
-									this.fields[fieldId].off('change').on('change', function(field, value){
-										if ($.isEmptyObject(this.valuesChanged)) {
-											clearTimeout(this.saveStateTimer);
-											this.$saveControl.usMod('status', 'notsaved');
-										}
-										this.valuesChanged[field.name] = value;
-									}.bind(this));
-								}
-
 								for (var fieldName in this.showIfDeps) {
 									if (!this.showIfDeps.hasOwnProperty(fieldName) || this.fields[fieldName] === undefined) continue;
 									this.fields[fieldName].on('change', function(field){
 										this.updateVisibility(field.name);
 									}.bind(this));
+									this.updateVisibility(this.fields[fieldName].name);
 								}
-								// TODO: rewrite code so this code is reused END
+								if ( ! isHB){
+									for (var fieldId in this.fields) {
+										if (!this.fields.hasOwnProperty(fieldId)) continue;
+										this.fields[fieldId].off('change').on('change', function(field, value){
+											if ($.isEmptyObject(this.valuesChanged)) {
+												clearTimeout(this.saveStateTimer);
+												this.$saveControl.usMod('status', 'notsaved');
+											}
+											this.valuesChanged[field.name] = value;
+										}.bind(this));
+									}
+									
+									// TODO: rewrite code so this code is reused END
+									var $addedGroup = $field.find('.usof-form-wrapper').last();
+									$.each($addedGroup.find('.usof-form-row, .usof-form-wrapper, .usof-form-group'), function(index, elm){
+										var $field = $(elm),
+											name = $field.data('name');
+										this.valuesChanged[name] = this.fields[name].getValue();
+									}.bind(this));
 
-								var $addedGroup = $field.find('.usof-form-wrapper').last();
-								$.each($addedGroup.find('.usof-form-row, .usof-form-wrapper, .usof-form-group'), function(index, elm){
-									var $field = $(elm),
-										name = $field.data('name');
-									this.valuesChanged[name] = this.fields[name].getValue();
-								}.bind(this));
-
-								clearTimeout(this.saveStateTimer);
-								this.$saveControl.usMod('status', 'notsaved');
+									clearTimeout(this.saveStateTimer);
+									this.$saveControl.usMod('status', 'notsaved');
+								}
 
 								groupIndex++;
 								$btnAddGroup.removeClass('adding');
@@ -1317,15 +1366,19 @@ jQuery.fn.usMod = function(mod, value){
 
 						$group.addClass('deleting');
 
-						if ($.isEmptyObject(this.valuesChanged)) {
-							clearTimeout(this.saveStateTimer);
-							this.$saveControl.usMod('status', 'notsaved');
+						if ( ! isHB) {
+
+							if ($.isEmptyObject(this.valuesChanged)) {
+								clearTimeout(this.saveStateTimer);
+								this.$saveControl.usMod('status', 'notsaved');
+							}
+							$.each($group.find('.usof-form-row, .usof-form-wrapper, .usof-form-group'), function(index, elm){
+								var $field = $(elm),
+									name = $field.data('name');
+								this.valuesChanged[name] = null;
+							}.bind(this));
+
 						}
-						$.each($group.find('.usof-form-row, .usof-form-wrapper, .usof-form-group'), function(index, elm){
-							var $field = $(elm),
-								name = $field.data('name');
-							this.valuesChanged[name] = null;
-						}.bind(this));
 
 
 						$group.remove();
@@ -1595,7 +1648,8 @@ jQuery.fn.usMod = function(mod, value){
 		}.bind(this));
 
 		this.navItems = this.$container.find('.usof-nav-item.level_1, .usof-section-header');
-		this.navItems.each(function(index, item){
+		this.sectionHeaders = this.$container.find('.usof-section-header');
+		this.sectionHeaders.each(function(index, item){
 			var $item = $(item),
 				sectionId = $item.data('id');
 			$item.on('click', function(){
@@ -1642,6 +1696,18 @@ jQuery.fn.usMod = function(mod, value){
 		this.resize();
 		this.$window.on('resize load', this._events.resize);
 		this.$window.on('scroll', this._events.scroll);
+		this.$window.on('hashchange',function(){
+			this.openSection(document.location.hash.substring(1));
+		}.bind(this));
+
+		$(window).bind('keydown', function(event) {
+			if (event.ctrlKey || event.metaKey) {
+				if (String.fromCharCode(event.which).toLowerCase() == 's') {
+					event.preventDefault();
+					$usof.instance.save();
+				}
+			}
+		});
 	};
 	$.extend(USOF.prototype, $usof.mixins.Fieldset, {
 		scroll: function(){

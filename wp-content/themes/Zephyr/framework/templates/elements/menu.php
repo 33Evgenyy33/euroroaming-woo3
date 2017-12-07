@@ -49,9 +49,19 @@ foreach ( array( 'default', 'tablets', 'mobiles' ) as $state ) {
 }
 $list_classes = ' level_1 hide_for_mobiles';
 $list_classes .= ( isset( $hover_effect ) ) ? ' hover_' . $hover_effect : '';
-$classes .= ' type_desktop dropdown_' . $dropdown_effect;
 if ( $vstretch ) {
 	$classes .= ' height_full';
+}
+$classes .= ' type_desktop dropdown_' . $dropdown_effect;
+$classes .= ( isset( $mobile_align ) ) ? ' m_align_' . $mobile_align : '';
+if ( isset( $mobile_layout ) ) {
+	$classes .= ' m_layout_' . $mobile_layout;
+	if ( $mobile_layout == 'panel' ) {
+		$classes .= ( isset( $mobile_effect_p ) ) ? ' m_effect_' . $mobile_effect_p : '';
+	}
+	if ( $mobile_layout == 'fullscreen' ) {
+		$classes .= ( isset( $mobile_effect_f ) ) ? ' m_effect_' . $mobile_effect_f : '';
+	}
 }
 if ( isset( $id ) AND ! empty( $id ) ) {
 	$classes .= ' ush_' . str_replace( ':', '_', $id );
@@ -91,6 +101,7 @@ if ( $location ) {
 	);
 }
 
+echo '<div class="w-nav-close"></div>';
 echo '</ul>';
 echo '<div class="w-nav-options hidden"';
 echo us_pass_data_to_js(

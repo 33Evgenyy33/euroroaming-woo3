@@ -82,7 +82,7 @@ class US_Widget_Blog extends US_Widget {
 		$template_vars = array(
 			'query_args' => $query_args,
 			'layout' => $instance['layout'],
-			'img_size' => ( in_array( $instance['layout'], array( 'classic', 'tiles' ) ) ) ? 'tnail-1x1-small' : 'thumbnail',
+			'img_size' => ( in_array( $instance['layout'], array( 'classic', 'tiles' ) ) ) ? 'medium' : 'thumbnail',
 			'type' => 'grid',
 			'columns' => 1,
 			'content_type' => 'none',

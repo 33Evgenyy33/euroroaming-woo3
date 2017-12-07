@@ -73,7 +73,7 @@ vc_map(
 			array(
 				'param_name' => 'email',
 				'type' => 'checkbox',
-				'value' => array( 'Email' => TRUE ),
+				'value' => array( us_translate( 'Email' ) => TRUE ),
 				( ( $config['atts']['email'] !== FALSE ) ? 'std' : '_std' ) => $config['atts']['email'],
 				'edit_field_class' => 'vc_col-sm-4',
 				'weight' => 90,

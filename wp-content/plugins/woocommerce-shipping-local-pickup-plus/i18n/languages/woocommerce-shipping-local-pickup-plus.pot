@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License v3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: WooCommerce Local Pickup Plus 2.3.2\n"
+"Project-Id-Version: WooCommerce Local Pickup Plus 2.3.3\n"
 "Report-Msgid-Bugs-To: "
 "https://woocommerce.com/my-account/marketplace-ticket-form/\n"
 "POT-Creation-Date: 2017-05-31 08:40:44+00:00\n"
@@ -1068,19 +1068,19 @@ msgstr ""
 msgid "Enter a postcode or address&hellip;"
 msgstr ""
 
-#: includes/frontend/class-wc-local-pickup-plus-pickup-location-cart-item-field.php:227
+#: includes/frontend/class-wc-local-pickup-plus-pickup-location-cart-item-field.php:232
 #. translators: Placeholders: %1$s - opening <a> link tag, %2$s - closing </a>
 #. link tag
 msgid "This item is set for shipping. %1$sClick here to pickup this item%2$s."
 msgstr ""
 
-#: includes/frontend/class-wc-local-pickup-plus-pickup-location-cart-item-field.php:229
+#: includes/frontend/class-wc-local-pickup-plus-pickup-location-cart-item-field.php:234
 #. translators: Placeholders: %1$s - opening <a> link tag, %2$s - closing </a>
 #. link tag
 msgid "This item is set for pickup. %1$sClick here to ship this item%2$s."
 msgstr ""
 
-#: includes/frontend/class-wc-local-pickup-plus-pickup-location-cart-item-field.php:262
+#: includes/frontend/class-wc-local-pickup-plus-pickup-location-cart-item-field.php:267
 msgid "This item can only be shipped"
 msgstr ""
 

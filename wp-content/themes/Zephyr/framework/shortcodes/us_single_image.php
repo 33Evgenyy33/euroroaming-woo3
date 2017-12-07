@@ -34,7 +34,7 @@ $link = array();
 $img_id = intval( $atts['image'] );
 
 if ( $img_id AND ( $image_html = wp_get_attachment_image( $img_id, $atts['size'] ) ) ) {
-	// Check if the image is in SVG format and remove width and height for it in this case
+	// Remove width and height for SVG format
 	$img_src = wp_get_attachment_image_src( $img_id, $atts['size'] );
 	$img_src_full = wp_get_attachment_image_src( $img_id, 'full' );
 	if ( preg_match( '~\.svg$~', $img_src_full[0] ) ) {

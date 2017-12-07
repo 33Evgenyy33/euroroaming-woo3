@@ -27,6 +27,7 @@ class US_Migration {
 	 * @var array List of migration classes instances $version => $instance
 	 */
 	public $translators = array();
+	public $current_translator;
 
 	protected function __construct() {
 
@@ -358,10 +359,14 @@ class US_Migration {
 	 * Should be bound to admin_init action, so all the needed stuff is initalized
 	 */
 	public function perform_migration() {
-		$this->migrate_menus();
-		$this->migrate_theme_options();
-		$this->migrate_widgets();
-		$this->migrate_content_and_meta();
+		foreach ( $this->translators as $version => $translator ) {
+			$this->current_translator = $translator;
+			$this->migrate_menus();
+			$this->migrate_theme_options();
+			$this->migrate_widgets();
+			$this->migrate_content_and_meta();
+		}
+
 		$this->set_db_version();
 	}
 
@@ -369,10 +374,8 @@ class US_Migration {
 		$locations = get_theme_mod( 'nav_menu_locations' );
 
 		$menus_changed = FALSE;
-		foreach ( $this->translators as $version => $translator ) {
-			if ( method_exists( $translator, 'translate_menus' ) ) {
-				$menus_changed = ( $translator->translate_menus( $locations ) OR $menus_changed );
-			}
+		if ( method_exists( $this->current_translator, 'translate_menus' ) ) {
+			$menus_changed = ( $this->current_translator->translate_menus( $locations ) OR $menus_changed );
 		}
 
 		if ( $menus_changed ) {
@@ -388,10 +391,8 @@ class US_Migration {
 		usof_load_options_once();
 
 		$options_changed = FALSE;
-		foreach ( $this->translators as $version => $translator ) {
-			if ( method_exists( $translator, 'translate_theme_options' ) ) {
-				$options_changed = ( $translator->translate_theme_options( $updated_options ) OR $options_changed );
-			}
+		if ( method_exists( $this->current_translator, 'translate_theme_options' ) ) {
+			$options_changed = ( $this->current_translator->translate_theme_options( $updated_options ) OR $options_changed );
 		}
 		if ( $options_changed ) {
 			// Filling the missed options with default values
@@ -424,24 +425,22 @@ class US_Migration {
 					continue;
 				}
 
-				foreach ( $this->translators as $version => $translator ) {
-					if ( ! method_exists( $translator, 'translate_widgets' ) ) {
-						continue;
-					}
+				if ( ! method_exists( $this->current_translator, 'translate_widgets' ) ) {
+					continue;
+				}
 
-					if ( $translator->translate_widgets( $widget_name, $widgets_instances[$widget_name][$instance_id] ) ) {
-						if ( $widget_name != $original_widget_name ) {
-							if ( ! isset( $widgets_instances[$widget_name] ) ) {
-								// Widget name has changed
-								delete_option( 'widget_' . $original_widget_name );
-								$widgets_instances[$widget_name] = isset( $widgets_instances[$original_widget_name] ) ? $widgets_instances[$original_widget_name] : array();
-							} else {
-								$widgets_instances[$widget_name][$instance_id] = $widgets_instances[$original_widget_name][$instance_id];
-							}
+				if ( $this->current_translator->translate_widgets( $widget_name, $widgets_instances[$widget_name][$instance_id] ) ) {
+					if ( $widget_name != $original_widget_name ) {
+						if ( ! isset( $widgets_instances[$widget_name] ) ) {
+							// Widget name has changed
+							delete_option( 'widget_' . $original_widget_name );
+							$widgets_instances[$widget_name] = isset( $widgets_instances[$original_widget_name] ) ? $widgets_instances[$original_widget_name] : array();
+						} else {
+							$widgets_instances[$widget_name][$instance_id] = $widgets_instances[$original_widget_name][$instance_id];
 						}
-						if ( ! in_array( $widget_name, $changed_widgets ) ) {
-							$changed_widgets[] = $widget_name;
-						}
+					}
+					if ( ! in_array( $widget_name, $changed_widgets ) ) {
+						$changed_widgets[] = $widget_name;
 					}
 				}
 
@@ -484,10 +483,8 @@ class US_Migration {
 				$meta_changed = FALSE;
 				$translate_meta_method = 'translate_meta';
 				$original_meta = $meta = get_post_meta( $post->ID );
-				foreach ( $this->translators as $version => $translator ) {
-					if ( method_exists( $translator, $translate_meta_method ) ) {
-						$meta_changed = ( $translator->{$translate_meta_method}( $meta, $post_type ) OR $meta_changed );
-					}
+				if ( method_exists( $this->current_translator, $translate_meta_method ) ) {
+					$meta_changed = ( $this->current_translator->{$translate_meta_method}( $meta, $post_type ) OR $meta_changed );
 				}
 				if ( $meta_changed ) {
 					$deleted_meta = array_diff_key( $original_meta, $meta );
@@ -505,10 +502,8 @@ class US_Migration {
 				// Translating shortcodes
 				$content = $post->post_content;
 				$content_changed = FALSE;
-				foreach ( $this->translators as $version => $translator ) {
-					if ( method_exists( $translator, 'translate_content' ) ) {
-						$content_changed = ( $translator->translate_content( $content, $post->ID ) OR $content_changed );
-					}
+				if ( method_exists( $this->current_translator, 'translate_content' ) ) {
+					$content_changed = ( $this->current_translator->translate_content( $content, $post->ID ) OR $content_changed );
 				}
 				if ( $content_changed ) {
 					wp_update_post(
