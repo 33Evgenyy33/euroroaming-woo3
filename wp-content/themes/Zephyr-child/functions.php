@@ -1121,7 +1121,14 @@ function woocommerce_order_statuses_pos( $order_id ) {
 		//file_put_contents("processing-".$order_id.".txt", print_r($txt, true));
 	}
 
-	file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "\logs\pos_test.txt", print_r( $order_id . ': Данные отправлены' . "\r\n", true ), FILE_APPEND | LOCK_EX );
+	$order = wc_get_order( $order_id );
+
+	$order_data = $order->get_data(); // The Order data
+
+	file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "\logs\pos_test.txt", print_r( get_post_meta($order_id), true ), FILE_APPEND | LOCK_EX );
+	file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "\logs\pos_test.txt", "\r\n".'/***********************************************************************/'."\r\n", FILE_APPEND | LOCK_EX );
+
+	//file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "\logs\pos_test.txt", print_r( $order_id . ': Данные отправлены' . "\r\n", true ), FILE_APPEND | LOCK_EX );
 
 }
 

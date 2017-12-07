@@ -1,10 +1,953 @@
-61106: Данные отправлены
-61107: Данные отправлены
-61108: Данные отправлены
-61108: Данные отправлены
-61183: Данные отправлены
-61183: Данные отправлены
-61196: Данные отправлены
-61197: Данные отправлены
-61198: Данные отправлены
-61199: Данные отправлены
+Array
+(
+    [id] => 61226
+    [parent_id] => 0
+    [status] => on-hold
+    [currency] => RUB
+    [version] => 3.2.5
+    [prices_include_tax] => 
+    [date_created] => WC_DateTime Object
+        (
+            [utc_offset:protected] => 10800
+            [date] => 2017-12-07 21:03:49.000000
+            [timezone_type] => 1
+            [timezone] => +00:00
+        )
+
+    [date_modified] => WC_DateTime Object
+        (
+            [utc_offset:protected] => 10800
+            [date] => 2017-12-07 21:04:23.000000
+            [timezone_type] => 1
+            [timezone] => +00:00
+        )
+
+    [discount_total] => 700
+    [discount_tax] => 0
+    [shipping_total] => 0
+    [shipping_tax] => 0
+    [cart_tax] => 0
+    [total] => 2260.00
+    [total_tax] => 0
+    [customer_id] => 0
+    [order_key] => wc_order_5a29acd7c150e
+    [billing] => Array
+        (
+            [first_name] => Тест
+            [last_name] => Тест
+            [company] => 
+            [address_1] => 
+            [address_2] => 
+            [city] => 
+            [state] => г Москва
+            [postcode] => 
+            [country] => RU
+            [email] => 33evgenyy33@gmail.com
+            [phone] => 77963103183
+        )
+
+    [shipping] => Array
+        (
+            [first_name] => 
+            [last_name] => 
+            [company] => 
+            [address_1] => 
+            [address_2] => 
+            [city] => 
+            [state] => 
+            [postcode] => 
+            [country] => 
+        )
+
+    [payment_method] => paytravel
+    [payment_method_title] => PayTravel
+    [transaction_id] => 
+    [customer_ip_address] => 127.0.0.1
+    [customer_user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+    [created_via] => POS
+    [customer_note] => 
+    [date_completed] => 
+    [date_paid] => 
+    [cart_hash] => 
+    [number] =>  Оформлен в t061226
+    [meta_data] => Array
+        (
+            [0] => WC_Meta_Data Object
+                (
+                    [current_data:protected] => Array
+                        (
+                            [id] => 187737
+                            [key] => us_og_image
+                            [value] => 
+                        )
+
+                    [data:protected] => Array
+                        (
+                            [id] => 187737
+                            [key] => us_og_image
+                            [value] => 
+                        )
+
+                )
+
+            [1] => WC_Meta_Data Object
+                (
+                    [current_data:protected] => Array
+                        (
+                            [id] => 187782
+                            [key] => wc_pos_order_saved
+                            [value] => 
+                        )
+
+                    [data:protected] => Array
+                        (
+                            [id] => 187782
+                            [key] => wc_pos_order_saved
+                            [value] => 
+                        )
+
+                )
+
+            [2] => WC_Meta_Data Object
+                (
+                    [current_data:protected] => Array
+                        (
+                            [id] => 187783
+                            [key] => wc_pos_amount_change
+                            [value] => 
+                        )
+
+                    [data:protected] => Array
+                        (
+                            [id] => 187783
+                            [key] => wc_pos_amount_change
+                            [value] => 
+                        )
+
+                )
+
+            [3] => WC_Meta_Data Object
+                (
+                    [current_data:protected] => Array
+                        (
+                            [id] => 187784
+                            [key] => wc_pos_amount_pay
+                            [value] => 
+                        )
+
+                    [data:protected] => Array
+                        (
+                            [id] => 187784
+                            [key] => wc_pos_amount_pay
+                            [value] => 
+                        )
+
+                )
+
+            [4] => WC_Meta_Data Object
+                (
+                    [current_data:protected] => Array
+                        (
+                            [id] => 187785
+                            [key] => wc_pos_id_register
+                            [value] => 1
+                        )
+
+                    [data:protected] => Array
+                        (
+                            [id] => 187785
+                            [key] => wc_pos_id_register
+                            [value] => 1
+                        )
+
+                )
+
+            [5] => WC_Meta_Data Object
+                (
+                    [current_data:protected] => Array
+                        (
+                            [id] => 187786
+                            [key] => wc_pos_order_tax_number
+                            [value] => 
+                        )
+
+                    [data:protected] => Array
+                        (
+                            [id] => 187786
+                            [key] => wc_pos_order_tax_number
+                            [value] => 
+                        )
+
+                )
+
+            [6] => WC_Meta_Data Object
+                (
+                    [current_data:protected] => Array
+                        (
+                            [id] => 187787
+                            [key] => wc_pos_order_type
+                            [value] => POS
+                        )
+
+                    [data:protected] => Array
+                        (
+                            [id] => 187787
+                            [key] => wc_pos_order_type
+                            [value] => POS
+                        )
+
+                )
+
+            [7] => WC_Meta_Data Object
+                (
+                    [current_data:protected] => Array
+                        (
+                            [id] => 187788
+                            [key] => wc_pos_prefix_suffix_order_number
+                            [value] =>  Оформлен в t061226
+                        )
+
+                    [data:protected] => Array
+                        (
+                            [id] => 187788
+                            [key] => wc_pos_prefix_suffix_order_number
+                            [value] =>  Оформлен в t061226
+                        )
+
+                )
+
+            [8] => WC_Meta_Data Object
+                (
+                    [current_data:protected] => Array
+                        (
+                            [id] => 187789
+                            [key] => wc_pos_ta_id
+                            [value] => 3348
+                        )
+
+                    [data:protected] => Array
+                        (
+                            [id] => 187789
+                            [key] => wc_pos_ta_id
+                            [value] => 3348
+                        )
+
+                )
+
+            [9] => WC_Meta_Data Object
+                (
+                    [current_data:protected] => Array
+                        (
+                            [id] => 187790
+                            [key] => client_phone
+                            [value] => 79003177384
+                        )
+
+                    [data:protected] => Array
+                        (
+                            [id] => 187790
+                            [key] => client_phone
+                            [value] => 79003177384
+                        )
+
+                )
+
+            [10] => WC_Meta_Data Object
+                (
+                    [current_data:protected] => Array
+                        (
+                            [id] => 187791
+                            [key] => number_simcard
+                            [value] => 605171717
+                        )
+
+                    [data:protected] => Array
+                        (
+                            [id] => 187791
+                            [key] => number_simcard
+                            [value] => 605171717
+                        )
+
+                )
+
+            [11] => WC_Meta_Data Object
+                (
+                    [current_data:protected] => Array
+                        (
+                            [id] => 187792
+                            [key] => client_email
+                            [value] => 33evgenyy33@gmail.com
+                        )
+
+                    [data:protected] => Array
+                        (
+                            [id] => 187792
+                            [key] => client_email
+                            [value] => 33evgenyy33@gmail.com
+                        )
+
+                )
+
+            [12] => WC_Meta_Data Object
+                (
+                    [current_data:protected] => Array
+                        (
+                            [id] => 187793
+                            [key] => date_activ
+                            [value] => 31.10.2017
+                        )
+
+                    [data:protected] => Array
+                        (
+                            [id] => 187793
+                            [key] => date_activ
+                            [value] => 31.10.2017
+                        )
+
+                )
+
+            [13] => WC_Meta_Data Object
+                (
+                    [current_data:protected] => Array
+                        (
+                            [id] => 187796
+                            [key] => wc_pos_served_by_name
+                            [value] => 33Evgenyy33
+                        )
+
+                    [data:protected] => Array
+                        (
+                            [id] => 187796
+                            [key] => wc_pos_served_by_name
+                            [value] => 33Evgenyy33
+                        )
+
+                )
+
+        )
+
+    [line_items] => Array
+        (
+            [695] => WC_Order_Item_Product Object
+                (
+                    [extra_data:protected] => Array
+                        (
+                            [product_id] => 0
+                            [variation_id] => 0
+                            [quantity] => 1
+                            [tax_class] => 
+                            [subtotal] => 0
+                            [subtotal_tax] => 0
+                            [total] => 0
+                            [total_tax] => 0
+                            [taxes] => Array
+                                (
+                                    [subtotal] => Array
+                                        (
+                                        )
+
+                                    [total] => Array
+                                        (
+                                        )
+
+                                )
+
+                        )
+
+                    [data:protected] => Array
+                        (
+                            [order_id] => 61226
+                            [name] => Orange с тарифом «Mundo» для Европы
+                            [product_id] => 58961
+                            [variation_id] => 59096
+                            [quantity] => 1
+                            [tax_class] => 
+                            [subtotal] => 2960
+                            [subtotal_tax] => 0
+                            [total] => 2260
+                            [total_tax] => 0
+                            [taxes] => Array
+                                (
+                                    [total] => Array
+                                        (
+                                        )
+
+                                    [subtotal] => Array
+                                        (
+                                        )
+
+                                )
+
+                        )
+
+                    [cache_group:protected] => order-items
+                    [meta_type:protected] => order_item
+                    [object_type:protected] => order_item
+                    [id:protected] => 695
+                    [changes:protected] => Array
+                        (
+                        )
+
+                    [object_read:protected] => 1
+                    [default_data:protected] => Array
+                        (
+                            [order_id] => 0
+                            [name] => 
+                            [product_id] => 0
+                            [variation_id] => 0
+                            [quantity] => 1
+                            [tax_class] => 
+                            [subtotal] => 0
+                            [subtotal_tax] => 0
+                            [total] => 0
+                            [total_tax] => 0
+                            [taxes] => Array
+                                (
+                                    [subtotal] => Array
+                                        (
+                                        )
+
+                                    [total] => Array
+                                        (
+                                        )
+
+                                )
+
+                        )
+
+                    [data_store:protected] => WC_Data_Store Object
+                        (
+                            [instance:WC_Data_Store:private] => WC_Order_Item_Product_Data_Store Object
+                                (
+                                    [internal_meta_keys:protected] => Array
+                                        (
+                                            [0] => _product_id
+                                            [1] => _variation_id
+                                            [2] => _qty
+                                            [3] => _tax_class
+                                            [4] => _line_subtotal
+                                            [5] => _line_subtotal_tax
+                                            [6] => _line_total
+                                            [7] => _line_tax
+                                            [8] => _line_tax_data
+                                        )
+
+                                    [meta_type:protected] => order_item
+                                    [object_id_field_for_meta:protected] => order_item_id
+                                )
+
+                            [stores:WC_Data_Store:private] => Array
+                                (
+                                    [coupon] => WC_Coupon_Data_Store_CPT
+                                    [customer] => WC_Customer_Data_Store
+                                    [customer-download] => WC_Customer_Download_Data_Store
+                                    [customer-session] => WC_Customer_Data_Store_Session
+                                    [order] => WC_Order_Data_Store_CPT
+                                    [order-refund] => WC_Order_Refund_Data_Store_CPT
+                                    [order-item] => WC_Order_Item_Data_Store
+                                    [order-item-coupon] => WC_Order_Item_Coupon_Data_Store
+                                    [order-item-fee] => WC_Order_Item_Fee_Data_Store
+                                    [order-item-product] => WC_Order_Item_Product_Data_Store
+                                    [order-item-shipping] => WC_Order_Item_Shipping_Data_Store
+                                    [order-item-tax] => WC_Order_Item_Tax_Data_Store
+                                    [payment-token] => WC_Payment_Token_Data_Store
+                                    [product] => WC_Product_Data_Store_CPT
+                                    [product-grouped] => WC_Product_Grouped_Data_Store_CPT
+                                    [product-variable] => WC_Product_Variable_Data_Store_CPT
+                                    [product-variation] => WC_Product_Variation_Data_Store_CPT
+                                    [shipping-zone] => WC_Shipping_Zone_Data_Store
+                                )
+
+                            [current_class_name:WC_Data_Store:private] => WC_Order_Item_Product_Data_Store
+                            [object_type:WC_Data_Store:private] => order-item-product
+                        )
+
+                    [meta_data:protected] => Array
+                        (
+                            [0] => WC_Meta_Data Object
+                                (
+                                    [current_data:protected] => Array
+                                        (
+                                            [id] => 5041
+                                            [key] => balans
+                                            [value] => €20
+                                        )
+
+                                    [data:protected] => Array
+                                        (
+                                            [id] => 5041
+                                            [key] => balans
+                                            [value] => €20
+                                        )
+
+                                )
+
+                            [1] => WC_Meta_Data Object
+                                (
+                                    [current_data:protected] => Array
+                                        (
+                                            [id] => 5042
+                                            [key] => razmer-sim-karty
+                                            [value] => Nano-SIM
+                                        )
+
+                                    [data:protected] => Array
+                                        (
+                                            [id] => 5042
+                                            [key] => razmer-sim-karty
+                                            [value] => Nano-SIM
+                                        )
+
+                                )
+
+                            [2] => WC_Meta_Data Object
+                                (
+                                    [current_data:protected] => Array
+                                        (
+                                            [id] => 5043
+                                            [key] => paket-podklyuchennyj-za-schet-balansa
+                                            [value] => 1ГБ (7€)
+                                        )
+
+                                    [data:protected] => Array
+                                        (
+                                            [id] => 5043
+                                            [key] => paket-podklyuchennyj-za-schet-balansa
+                                            [value] => 1ГБ (7€)
+                                        )
+
+                                )
+
+                            [3] => WC_Meta_Data Object
+                                (
+                                    [current_data:protected] => Array
+                                        (
+                                            [id] => 5044
+                                            [key] => _price
+                                            [value] => 2960
+                                        )
+
+                                    [data:protected] => Array
+                                        (
+                                            [id] => 5044
+                                            [key] => _price
+                                            [value] => 2960
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [tax_lines] => Array
+        (
+        )
+
+    [shipping_lines] => Array
+        (
+        )
+
+    [fee_lines] => Array
+        (
+        )
+
+    [coupon_lines] => Array
+        (
+            [696] => WC_Order_Item_Coupon Object
+                (
+                    [extra_data:protected] => Array
+                        (
+                            [code] => 
+                            [discount] => 0
+                            [discount_tax] => 0
+                        )
+
+                    [data:protected] => Array
+                        (
+                            [order_id] => 61226
+                            [name] => 
+                            [code] => tacom
+                            [discount] => 700
+                            [discount_tax] => 0
+                        )
+
+                    [cache_group:protected] => order-items
+                    [meta_type:protected] => order_item
+                    [object_type:protected] => order_item
+                    [id:protected] => 696
+                    [changes:protected] => Array
+                        (
+                        )
+
+                    [object_read:protected] => 1
+                    [default_data:protected] => Array
+                        (
+                            [order_id] => 0
+                            [name] => 
+                            [code] => 
+                            [discount] => 0
+                            [discount_tax] => 0
+                        )
+
+                    [data_store:protected] => WC_Data_Store Object
+                        (
+                            [instance:WC_Data_Store:private] => WC_Order_Item_Coupon_Data_Store Object
+                                (
+                                    [internal_meta_keys:protected] => Array
+                                        (
+                                            [0] => _order_id
+                                            [1] => _name
+                                            [2] => _code
+                                            [3] => _discount
+                                            [4] => _discount_tax
+                                            [5] => discount_amount
+                                            [6] => discount_amount_tax
+                                        )
+
+                                    [meta_type:protected] => order_item
+                                    [object_id_field_for_meta:protected] => order_item_id
+                                )
+
+                            [stores:WC_Data_Store:private] => Array
+                                (
+                                    [coupon] => WC_Coupon_Data_Store_CPT
+                                    [customer] => WC_Customer_Data_Store
+                                    [customer-download] => WC_Customer_Download_Data_Store
+                                    [customer-session] => WC_Customer_Data_Store_Session
+                                    [order] => WC_Order_Data_Store_CPT
+                                    [order-refund] => WC_Order_Refund_Data_Store_CPT
+                                    [order-item] => WC_Order_Item_Data_Store
+                                    [order-item-coupon] => WC_Order_Item_Coupon_Data_Store
+                                    [order-item-fee] => WC_Order_Item_Fee_Data_Store
+                                    [order-item-product] => WC_Order_Item_Product_Data_Store
+                                    [order-item-shipping] => WC_Order_Item_Shipping_Data_Store
+                                    [order-item-tax] => WC_Order_Item_Tax_Data_Store
+                                    [payment-token] => WC_Payment_Token_Data_Store
+                                    [product] => WC_Product_Data_Store_CPT
+                                    [product-grouped] => WC_Product_Grouped_Data_Store_CPT
+                                    [product-variable] => WC_Product_Variable_Data_Store_CPT
+                                    [product-variation] => WC_Product_Variation_Data_Store_CPT
+                                    [shipping-zone] => WC_Shipping_Zone_Data_Store
+                                )
+
+                            [current_class_name:WC_Data_Store:private] => WC_Order_Item_Coupon_Data_Store
+                            [object_type:WC_Data_Store:private] => order-item-coupon
+                        )
+
+                    [meta_data:protected] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+)
+
+/***********************************************************************************************************/Array
+(
+    [us_og_image] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_user] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_key] => Array
+        (
+            [0] => wc_order_5a29ad7e5ed65
+        )
+
+    [_payment_method] => Array
+        (
+            [0] => paytravel
+        )
+
+    [_payment_method_title] => Array
+        (
+            [0] => PayTravel
+        )
+
+    [_transaction_id] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_ip_address] => Array
+        (
+            [0] => 127.0.0.1
+        )
+
+    [_customer_user_agent] => Array
+        (
+            [0] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36
+        )
+
+    [_created_via] => Array
+        (
+            [0] => POS
+        )
+
+    [_date_completed] => Array
+        (
+            [0] => 
+        )
+
+    [_completed_date] => Array
+        (
+            [0] => 
+        )
+
+    [_date_paid] => Array
+        (
+            [0] => 
+        )
+
+    [_paid_date] => Array
+        (
+            [0] => 
+        )
+
+    [_cart_hash] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_first_name] => Array
+        (
+            [0] => Тест
+        )
+
+    [_billing_last_name] => Array
+        (
+            [0] => Тест
+        )
+
+    [_billing_company] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_city] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_billing_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_billing_email] => Array
+        (
+            [0] => 33evgenyy33@gmail.com
+        )
+
+    [_billing_phone] => Array
+        (
+            [0] => 77963103183
+        )
+
+    [_shipping_first_name] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_last_name] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_company] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_city] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_state] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_country] => Array
+        (
+            [0] => 
+        )
+
+    [_order_currency] => Array
+        (
+            [0] => RUB
+        )
+
+    [_cart_discount] => Array
+        (
+            [0] => 700
+        )
+
+    [_cart_discount_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_total] => Array
+        (
+            [0] => 2260.00
+        )
+
+    [_order_version] => Array
+        (
+            [0] => 3.2.5
+        )
+
+    [_prices_include_tax] => Array
+        (
+            [0] => no
+        )
+
+    [_billing_address_index] => Array
+        (
+            [0] => Тест Тест     г Москва  RU 33evgenyy33@gmail.com 77963103183
+        )
+
+    [_shipping_address_index] => Array
+        (
+            [0] =>         
+        )
+
+    [wc_pos_order_saved] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_change] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_pay] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_id_register] => Array
+        (
+            [0] => 1
+        )
+
+    [wc_pos_order_tax_number] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_order_type] => Array
+        (
+            [0] => POS
+        )
+
+    [wc_pos_prefix_suffix_order_number] => Array
+        (
+            [0] =>  Оформлен в t061227
+        )
+
+    [wc_pos_ta_id] => Array
+        (
+            [0] => 3348
+        )
+
+    [client_phone] => Array
+        (
+            [0] => 79003177384
+        )
+
+    [number_simcard] => Array
+        (
+            [0] => 605171717
+        )
+
+    [client_email] => Array
+        (
+            [0] => 33evgenyy33@gmail.com
+        )
+
+    [date_activ] => Array
+        (
+            [0] => 31.10.2017
+        )
+
+    [_recorded_coupon_usage_counts] => Array
+        (
+            [0] => yes
+        )
+
+    [wc_pos_served_by_name] => Array
+        (
+            [0] => 33Evgenyy33
+        )
+
+    [_recorded_sales] => Array
+        (
+            [0] => yes
+        )
+
+)
+/***********************************************************************/
