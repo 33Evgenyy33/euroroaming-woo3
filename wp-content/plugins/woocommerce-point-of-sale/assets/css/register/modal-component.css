@@ -908,7 +908,7 @@ perspective effects (not including the modals and the overlay).
 }
 
 .md-modal.full-width {
-    max-width: 1500px;
+    max-width: 1200px;
     width: 90%;
 }
 

@@ -3312,7 +3312,47 @@ td.coupon_amount span.coupon_code {
 }
 
 #modal-order_payment .media-frame-menu a.payment_methods {
-    line-height: 36px;;
+    line-height: 30px;;
+}
+
+a.payment_methods.payment_method_pos_customer_pay, a.payment_methods.payment_method_terminal, a.payment_methods.payment_method_yandex_money {
+    line-height: 20px!important;
+}
+
+#modal-order_payment a.payment_methods.payment_method_bank:before {
+     content: url(http://euroroaming/wp-content/uploads/2017/12/ac.png);
+ }
+
+#modal-order_payment a.payment_methods.payment_method_yandex_money:before {
+    content: url(http://euroroaming/wp-content/uploads/2017/12/pc.png);
+}
+
+#modal-order_payment a.payment_methods.payment_method_terminal:before {
+    content: url(http://euroroaming/wp-content/uploads/2017/12/gp.png);
+}
+
+#modal-order_payment a.payment_methods.payment_method_yandex_webmoney:before {
+    content: url(http://euroroaming/wp-content/uploads/2017/12/wm.png);
+}
+
+#modal-order_payment a.payment_methods.payment_method_alfabank:before {
+    content: url(http://euroroaming/wp-content/uploads/2017/12/ab.png);
+}
+
+#modal-order_payment a.payment_methods.payment_method_qiwi:before {
+    content: url(http://euroroaming/wp-content/uploads/2017/12/qw.png);
+}
+
+#modal-order_payment a.payment_methods.payment_method_paytravel:before {
+    content: url(http://euroroaming/wp-content/uploads/2017/12/7-min1.png);
+}
+
+#modal-order_payment a.payment_methods.payment_method_masterpass:before {
+    content: url(http://euroroaming/wp-content/uploads/2017/12/ma.png);
+}
+
+#modal-order_payment a.payment_methods.payment_method_pos_customer_pay:before {
+    content: url(http://euroroaming/wp-content/uploads/2017/12/icon_pay-phone1-min.png);
 }
 
 #modal-order_payment .media-frame-menu .payment_method_cod:before {

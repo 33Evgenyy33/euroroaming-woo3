@@ -524,7 +524,7 @@ jQuery(document).ready(function ($) {
         getServerOrders: function (opt) {
             var filter = {limit: 20};
             if (typeof opt.currentpage != 'undefined') {
-                filter.offset = parseInt(( opt.currentpage - 1 ) * 20);
+                filter.offset = parseInt((opt.currentpage - 1) * 20);
             }
             if (opt.reg_id == 'all') {
                 if (!wc_pos_params.load_web_order) {
@@ -890,7 +890,7 @@ jQuery(document).ready(function ($) {
             //var passed_validation = wp.hooks.applyFilters('wc_pos_add_to_cart_validation', true, adding_to_cart, product_id, quantity);
             var passed_validation = true;
             var cart_item_key = '';
-            if (passed_validation && (cart_item_key = CART.addToCart(adding_to_cart, product_id, quantity, variation_id, variation, cart_item_data) )) {
+            if (passed_validation && (cart_item_key = CART.addToCart(adding_to_cart, product_id, quantity, variation_id, variation, cart_item_data))) {
                 return true;
             }
             return false;
@@ -1641,7 +1641,7 @@ jQuery(document).ready(function ($) {
                 var wrapper_h = $('#retrieve-sales-wrapper .box_content').height();
                 var nav_h = $('#retrieve-sales-wrapper .tablenav_wrap_top').height();
 
-                if (table_h > ( wrapper_h - nav_h )) {
+                if (table_h > (wrapper_h - nav_h)) {
                     $('#retrieve-sales-wrapper').addClass('big-size');
                 } else {
                     $('#retrieve-sales-wrapper').removeClass('big-size');
@@ -2007,8 +2007,8 @@ jQuery(document).ready(function ($) {
                         if (val != '') {
                             val = JSON.parse(val);
                             var product_id = val.id;
-                            var variation_id = ( typeof val.vid != 'undefined' ? val.vid : 0 );
-                            var variation = ( typeof val.variation != 'undefined' ? val.variation : {} );
+                            var variation_id = (typeof val.vid != 'undefined' ? val.vid : 0);
+                            var variation = (typeof val.variation != 'undefined' ? val.variation : {});
 
                             var quantity = wc_pos_params.decimal_quantity_value;
                             APP.addToCart(product_id, quantity, variation_id, variation);
@@ -2039,8 +2039,8 @@ jQuery(document).ready(function ($) {
                     if (val != '') {
                         val = JSON.parse(val);
                         var product_id = val.id;
-                        var variation_id = ( typeof val.vid != 'undefined' ? val.vid : 0 );
-                        var variation = ( typeof val.variation != 'undefined' ? val.variation : {} );
+                        var variation_id = (typeof val.vid != 'undefined' ? val.vid : 0);
+                        var variation = (typeof val.variation != 'undefined' ? val.variation : {});
 
                         var quantity = wc_pos_params.decimal_quantity_value;
                         APP.addToCart(product_id, quantity, variation_id, variation);
@@ -2531,7 +2531,7 @@ jQuery(document).ready(function ($) {
                             /*data.each(function (index, el) {
                                 _val.push($(el).text);
                             });*/
-                            data.forEach(function(item, i, arr) {
+                            data.forEach(function (item, i, arr) {
                                 _val.push(item.text);
                             });
                             console.log(_val);
@@ -2771,7 +2771,7 @@ jQuery(document).ready(function ($) {
                     // Loop through variations
                     for (var num in variations) {
 
-                        if (typeof( variations[num] ) !== 'undefined') {
+                        if (typeof(variations[num]) !== 'undefined') {
 
                             var attributes = variations[num].attributes;
 
@@ -3296,7 +3296,7 @@ jQuery(document).ready(function ($) {
                 return false;
             });*/
             $('.wc_pos_register_pay').on('click', function () {
-                 var cart_total = CART.total;
+                var cart_total = CART.total;
                 if (CART.is_empty()) {
                     APP.showNotice(pos_i18n[9], 'error');
                     return false;
@@ -3383,7 +3383,7 @@ jQuery(document).ready(function ($) {
                 var total_amount = parseFloat($("#show_total_amt_inp").val());
                 var amount_pay = parseFloat($('#amount_pay_cod').val());
 
-                if (( $('#amount_pay_cod').val() == '' || amount_pay < total_amount ) && selected_pm == 'cod' && !$('#less-amount-notice').data('approve')) {
+                if (($('#amount_pay_cod').val() == '' || amount_pay < total_amount) && selected_pm == 'cod' && !$('#less-amount-notice').data('approve')) {
                     $('#less-amount-notice').fadeIn();
                     //APP.showNotice(pos_i18n[11], 'error');
                     return false;
@@ -3447,16 +3447,26 @@ jQuery(document).ready(function ($) {
 
             });
 
-            $('.payment_method_clientpay').on('click', function (e) {
-                var $row = $('tr.tr_order_coupon');
-                var coupon_code = $row.data('coupon');
-                console.log('coupon: ' + coupon_code);
-                console.log('payment_method_clientpay is clicked');
-                if (CART.remove_coupon(coupon_code, true)) {
-                    console.log('coupon is remove_coupon');
-                }
+            $('.payment_method_pos_customer_pay').on('click', function (e) {
+                $('tr.tr_order_coupon').each(function () {
+                    //alert($(this).text())
+
+                    var coupon_code = $(this).data('coupon');
+                    console.log('coupon: ' + coupon_code);
+                    console.log('payment_method_pos_customer_pay is clicked');
+                    if (CART.remove_coupon(coupon_code, true)) {
+                        $(this).remove();
+                        console.log('coupon is remove_coupon');
+                    }
+                });
 
             });
+
+            $('#modal-order_payment .media-menu a:not(:last-child)').on('click', function (e) {
+                CART.add_discount('tacom'); //Скидка Рабочая
+                CART.add_discount('tacomthree'); //Скидка
+            });
+
 
             $(document.body).on('change', '#product_type', function () {
                 var type = $(this).val();

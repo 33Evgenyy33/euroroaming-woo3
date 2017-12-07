@@ -16,5 +16,8 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="library" name="pdf" level="application" />
+    <orderEntry type="library" name="pdf_viewer" level="application" />
+    <orderEntry type="library" name="pdf.worker" level="application" />
   </component>
 </module>
