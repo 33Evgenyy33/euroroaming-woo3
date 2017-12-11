@@ -951,3 +951,308 @@ Array
 
 )
 /***********************************************************************/
+Array
+(
+    [us_og_image] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_user] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_key] => Array
+        (
+            [0] => wc_order_5a2e490f5610e
+        )
+
+    [_payment_method] => Array
+        (
+            [0] => paytravel
+        )
+
+    [_payment_method_title] => Array
+        (
+            [0] => PayTravel
+        )
+
+    [_transaction_id] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_ip_address] => Array
+        (
+            [0] => 127.0.0.1
+        )
+
+    [_customer_user_agent] => Array
+        (
+            [0] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36
+        )
+
+    [_created_via] => Array
+        (
+            [0] => POS
+        )
+
+    [_date_completed] => Array
+        (
+            [0] => 
+        )
+
+    [_completed_date] => Array
+        (
+            [0] => 
+        )
+
+    [_date_paid] => Array
+        (
+            [0] => 
+        )
+
+    [_paid_date] => Array
+        (
+            [0] => 
+        )
+
+    [_cart_hash] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_first_name] => Array
+        (
+            [0] => Иван
+        )
+
+    [_billing_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_billing_company] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_city] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_billing_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_billing_email] => Array
+        (
+            [0] => 33evgenyy33@gmail.com
+        )
+
+    [_billing_phone] => Array
+        (
+            [0] => 77963103183
+        )
+
+    [_shipping_first_name] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_last_name] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_company] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_city] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_state] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_country] => Array
+        (
+            [0] => 
+        )
+
+    [_order_currency] => Array
+        (
+            [0] => RUB
+        )
+
+    [_cart_discount] => Array
+        (
+            [0] => 700
+        )
+
+    [_cart_discount_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_total] => Array
+        (
+            [0] => 2260.00
+        )
+
+    [_order_version] => Array
+        (
+            [0] => 3.2.5
+        )
+
+    [_prices_include_tax] => Array
+        (
+            [0] => no
+        )
+
+    [_billing_address_index] => Array
+        (
+            [0] => Иван Егоров     г Москва  RU 33evgenyy33@gmail.com 77963103183
+        )
+
+    [_shipping_address_index] => Array
+        (
+            [0] =>         
+        )
+
+    [wc_pos_order_saved] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_change] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_pay] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_id_register] => Array
+        (
+            [0] => 1
+        )
+
+    [wc_pos_order_tax_number] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_order_type] => Array
+        (
+            [0] => POS
+        )
+
+    [wc_pos_prefix_suffix_order_number] => Array
+        (
+            [0] =>  Оформлен в t061232
+        )
+
+    [wc_pos_ta_id] => Array
+        (
+            [0] => 3348
+        )
+
+    [client_phone] => Array
+        (
+            [0] => 79656314108
+        )
+
+    [number_simcard] => Array
+        (
+            [0] => 605010101
+        )
+
+    [client_email] => Array
+        (
+            [0] => 33evgenyy33@gmail.com
+        )
+
+    [date_activ] => Array
+        (
+            [0] => 31.10.2017
+        )
+
+    [_recorded_coupon_usage_counts] => Array
+        (
+            [0] => yes
+        )
+
+    [wc_pos_served_by_name] => Array
+        (
+            [0] => 33Evgenyy33
+        )
+
+    [_recorded_sales] => Array
+        (
+            [0] => yes
+        )
+
+)
+
+/***********************************************************************/

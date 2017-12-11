@@ -13,6 +13,11 @@ var changeProductQuantity = null;
 var fileList = [];
 var order_is_created = false;
 
+var client_phone_buf = '';
+var client_mail_buf = '';
+var ta_phone_buf = '';
+var ta_mail_buf = '';
+
 
 jQuery(document).ready(function ($) {
     localStorage.setItem('register_status_' + pos_register_data.ID, 'open');
@@ -3296,6 +3301,16 @@ jQuery(document).ready(function ($) {
                 return false;
             });*/
             $('.wc_pos_register_pay').on('click', function () {
+
+                if (CUSTOMER.billing_address['first_name'] == ''){
+                    APP.showNotice(pos_i18n[42], 'error');
+                    return false;
+                }
+                client_mail_buf = CUSTOMER.additional_fields['client_email'];
+                client_phone_buf = CUSTOMER.additional_fields['client_phone'];
+                ta_mail_buf = CUSTOMER.billing_address['email'];
+                ta_phone_buf = CUSTOMER.billing_address['phone'];
+
                 var cart_total = CART.total;
                 if (CART.is_empty()) {
                     APP.showNotice(pos_i18n[9], 'error');
@@ -3460,11 +3475,26 @@ jQuery(document).ready(function ($) {
                     }
                 });
 
+                //CUSTOMER.additional_fields['client_email'] =  ta_mail_buf;
+                //CUSTOMER.additional_fields['client_phone'] =  ta_phone_buf;
+                delete CUSTOMER.additional_fields['client_email'];
+                delete CUSTOMER.additional_fields['client_phone'];
+                CUSTOMER.billing_address['email'] = client_mail_buf;
+                CUSTOMER.billing_address['phone'] = client_phone_buf;
+
+                CUSTOMER.additional_fields['test111'] = '789';
+
+
+
             });
 
-            $('#modal-order_payment .media-menu a:not(:last-child)').on('click', function (e) {
+            $('#modal-order_payment .media-menu a:not(:nth-child(3))').on('click', function (e) {
                 CART.add_discount('tacom'); //Скидка Рабочая
                 CART.add_discount('tacomthree'); //Скидка
+                CUSTOMER.additional_fields['client_email'] =  client_mail_buf;
+                CUSTOMER.additional_fields['client_phone'] =  client_phone_buf;
+                CUSTOMER.billing_address['email'] = ta_mail_buf;
+                CUSTOMER.billing_address['phone'] = ta_phone_buf;
             });
 
 

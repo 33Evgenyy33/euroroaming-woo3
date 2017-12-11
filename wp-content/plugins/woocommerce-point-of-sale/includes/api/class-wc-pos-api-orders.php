@@ -281,8 +281,9 @@ class WC_API_POS_Orders extends WC_API_Orders {
 							$points_redeemed = WC_Points_Rewards_Manager::calculate_points_for_discount( $discount_amount );
 
 							// deduct points
-							WC_Points_Rewards_Manager::decrease_points( $order->user_id, $points_redeemed, 'order-redeem', array( 'discount_code'   => $item['code'],
-							                                                                                                      'discount_amount' => $discount_amount
+							WC_Points_Rewards_Manager::decrease_points( $order->user_id, $points_redeemed, 'order-redeem', array(
+								'discount_code'   => $item['code'],
+								'discount_amount' => $discount_amount
 							), $order->get_id() );
 
 							update_post_meta( $order->get_id(), '_wc_points_redeemed', $points_redeemed );
@@ -437,7 +438,7 @@ class WC_API_POS_Orders extends WC_API_Orders {
 					case 'completed':
 					case 'processing':
 					case 'on-hold':
-						$order->reduce_order_stock();
+					    wc_reduce_stock_levels( $order->get_id() );
 						break;
 				}
 			}
@@ -499,7 +500,7 @@ class WC_API_POS_Orders extends WC_API_Orders {
 
 						#var_dump($recurring_cart);
 
-						$subscription = WC_Subscriptions_Checkout::create_subscription($order, $recurring_cart, $order); // Exceptions are caught by WooCommerce
+						$subscription = WC_Subscriptions_Checkout::create_subscription( $order, $recurring_cart, $order ); // Exceptions are caught by WooCommerce
 						wp_update_post( array( 'ID' => $subscription->id, 'post_status' => 'wc-active' ) );
 						update_post_meta( $subscription->id, '_order_total', $recurring_cart->cart_contents_total );
 
@@ -1276,8 +1277,9 @@ class WC_API_POS_Orders extends WC_API_Orders {
 
 				wc_update_order_item_meta( $item_id, '_line_subtotal_tax', wc_format_decimal( $line_subtotal_tax ) );
 				wc_update_order_item_meta( $item_id, '_line_tax', wc_format_decimal( $line_tax ) );
-				wc_update_order_item_meta( $item_id, '_line_tax_data', array( 'total'    => $line_taxes,
-				                                                              'subtotal' => $line_subtotal_taxes
+				wc_update_order_item_meta( $item_id, '_line_tax_data', array(
+					'total'    => $line_taxes,
+					'subtotal' => $line_subtotal_taxes
 				) );
 
 				// Sum the item taxes
@@ -1554,7 +1556,7 @@ class WC_API_POS_Orders extends WC_API_Orders {
 		wp_set_current_user( $customer_id );
 
 		// load the gateways & process payment
-		$gateway_id      = $data['payment_details']['method_id'];
+		$gateway_id = $data['payment_details']['method_id'];
 		switch ( $gateway_id ) {
 			case 'stripe':
 				$_POST['stripe_token'] = $data['stripe_token'];
@@ -1613,7 +1615,7 @@ class WC_API_POS_Orders extends WC_API_Orders {
 		ob_end_clean();
 
 		//Remove authorize.net redirect
-		if ($gateway_id == 'authorizenet') {
+		if ( $gateway_id == 'authorizenet' ) {
 			$response['redirect'] = '';
 		}
 

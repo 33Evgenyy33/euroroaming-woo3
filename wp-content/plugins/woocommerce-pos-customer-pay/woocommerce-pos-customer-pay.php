@@ -102,7 +102,6 @@ function init_pos_customer_pay_gateway() {
 		public function process_payment( $order_id ) {
 			global $woocommerce;
 			$order = new WC_Order( $order_id );
-
 			// Mark as on-hold (we're awaiting the cheque)
 			$order->update_status('pending', 'Ожидание оплаты от клиента');
 
@@ -110,8 +109,16 @@ function init_pos_customer_pay_gateway() {
 
 			$checkout_url = $order->get_checkout_payment_url();
 
-			echo  $this->send("gate.iqsms.ru", 80, "z1496927079417", "340467",
-				"79656314108", $checkout_url, "Euroroaming");
+			// Getting all WC_emails objects
+			$email_notifications = WC()->mailer()->get_emails();
+
+
+			$email_notifications['WC_Email_Customer_Invoice']->trigger( $order_id );
+
+//			echo  $this->send("gate.iqsms.ru", 80, "z1496927079417", "340467",
+//				"79656314108", $checkout_url, "Euroroaming");
+
+
 
 			// Reduce stock levels
 			wc_reduce_stock_levels($order->get_id());
