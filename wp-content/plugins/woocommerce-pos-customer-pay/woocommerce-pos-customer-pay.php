@@ -131,7 +131,6 @@ function init_pos_customer_pay_gateway() {
 				'result' => 'success',
 				'redirect' => $this->get_return_url( $order )
 			);
-
 		}
 
 		public function send($host, $port, $login, $password, $phone, $text, $sender = false, $wapurl = false )

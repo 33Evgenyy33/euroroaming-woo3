@@ -1599,6 +1599,8 @@ jQuery(document).ready(function ($) {
                         } else {
                             APP.setGuest();
                         }
+
+                        // location.reload();
                     }
                 },
                 error: function (data) {
@@ -2120,7 +2122,6 @@ jQuery(document).ready(function ($) {
                 });
             }
 
-
             if (pos_default_customer) {
                 APP.setCustomer(pos_default_customer);
             }
@@ -2145,8 +2146,26 @@ jQuery(document).ready(function ($) {
                 }
 
                 $('#customer_details').html(html);
+
+                var $testcelect7 = $("#pos_billing_details select#number_simcard").select2({
+                    placeholder: {text: "Выберите номера сим-карт"},
+                    language: "ru"
+                });
+
+                var test777 = CUSTOMER.additional_fields['number_simcard'];
+                $testcelect7.val(test777.split(','));
+                $testcelect7.trigger('change');
+                console.log(test777);
+
+                $("#billing_phone").inputmask({mask: "79999999999"});
+                $("#client_phone").inputmask({mask: "79999999999"});
+                $("#client_email").inputmask({ alias: "email"});
+                $("#billing_email").inputmask({ alias: "email"});
+
+
                 $('#modal-order_customer .nav-tab-wrapper a').first().trigger('click');
                 openModal('modal-order_customer');
+
                 wc_country_select_select2();
                 jQuery(document).trigger('acf/setup_fields', [jQuery('#pos_custom_fields')]);
                 $(document.body).trigger('wc-enhanced-select-init');
@@ -2261,6 +2280,11 @@ jQuery(document).ready(function ($) {
                 runTips();
                 $("#billing_phone").inputmask({mask: "79999999999"});
                 $("#client_phone").inputmask({mask: "79999999999"});
+                $("#client_email").inputmask({ alias: "email"},{
+                    onKeyValidation: function (key, result) {
+                        console.log(key + " - " + result);
+                    }});
+                $("#billing_email").inputmask({ alias: "email"});
             });
             $('body').on('click', '#billing-same-as-shipping', function (event) {
                 var ar = ['first_name', 'last_name', 'company', 'address_1', 'address_2', 'city', 'state', 'postcode'];
@@ -2371,9 +2395,17 @@ jQuery(document).ready(function ($) {
                         }
                     }
                 });
+
+                if (!$("#client_email").inputmask("isComplete")){
+                    APP.showNotice(pos_i18n[43], 'error');
+                    err++;
+                }
+
                 if (err > 0) {
                     return;
                 }
+
+
 
                 $('#customer_details .woocommerce-additional-fields .validate-required input, #customer_details .woocommerce-additional-fields .validate-required select').each(function (index, el) {
                     if (err == 0) {
@@ -3302,7 +3334,7 @@ jQuery(document).ready(function ($) {
             });*/
             $('.wc_pos_register_pay').on('click', function () {
 
-                if (CUSTOMER.billing_address['first_name'] == ''){
+                if (CUSTOMER.billing_address['first_name'] == '') {
                     APP.showNotice(pos_i18n[42], 'error');
                     return false;
                 }
@@ -3485,14 +3517,13 @@ jQuery(document).ready(function ($) {
                 CUSTOMER.additional_fields['test111'] = '789';
 
 
-
             });
 
             $('#modal-order_payment .media-menu a:not(:nth-child(3))').on('click', function (e) {
                 CART.add_discount('tacom'); //Скидка Рабочая
                 CART.add_discount('tacomthree'); //Скидка
-                CUSTOMER.additional_fields['client_email'] =  client_mail_buf;
-                CUSTOMER.additional_fields['client_phone'] =  client_phone_buf;
+                CUSTOMER.additional_fields['client_email'] = client_mail_buf;
+                CUSTOMER.additional_fields['client_phone'] = client_phone_buf;
                 CUSTOMER.billing_address['email'] = ta_mail_buf;
                 CUSTOMER.billing_address['phone'] = ta_phone_buf;
             });

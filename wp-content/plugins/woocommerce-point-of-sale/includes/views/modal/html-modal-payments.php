@@ -63,11 +63,11 @@ $available_gateways = wc_pos_get_available_payment_gateways();
                                 <?php
                                 $i++;
 
-                                if ($gateway->id == 'pos_customer_pay'){
-                                    ?>
-                                    <p>YYYYYYYYYYYY</p>
-                                    <?php
-                                }
+//                                if ($gateway->id == 'pos_customer_pay'){
+//                                    ?>
+<!--                                    <p>YYYYYYYYYYYY</p>-->
+<!--                                    --><?php
+//                                }
                                 if ($gateway->id == 'pos_chip_pin') {
                                     ?>
                                     <p><?php _e('Please process the payment using your chip & PIN device. The reference/order number for this order is below.', 'wc_point_of_sale'); ?></p>

@@ -57,4 +57,5 @@ return array(
 	40   => __( 'Back-order', 'wc_point_of_sale'),
     41   => __( 'Passwords don\'t match', 'wc_point_of_sale'),
     42   => __( 'Пожалуйста, добавьте клиента.', 'wc_point_of_sale'),
+	43   => __( 'Пожалуйста, введите корректную почту клиента.', 'wc_point_of_sale'),
 );

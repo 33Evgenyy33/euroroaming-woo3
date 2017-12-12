@@ -1107,7 +1107,7 @@ function woocommerce_order_statuses_pos( $order_id ) {
 		$int_number = intval( $number );
 		$space      = ' ';
 		//$url = "http://seller.sgsim.ru/euroroaming_order_submit?operation=submit_operation&ta=$order_ta_id&orderid=$order_id&customer=$order_customer_name $order_customer_surname&email=$order_customer_email&phone=$order_customer_phone&onum=$int_number";
-		$url = "http://seller.sgsim.ru/euroroaming_order_submit?operation=submit_operation&ta=$order_ta_id&orderid=$order_id&customer=$order_customer_name%20$order_customer_surname&email=$order_customer_email&phone=$order_customer_phone&onum=$number";
+		$url = "http://seller.sgsim.ru/euroroaming_order_submit?operation=submit_operation&ta=$order_ta_id&orderid=$order_id&customer=$order_customer_name%20$order_customer_surname&email=$order_customer_email&phone=$order_customer_phone&onum=$number&ta_deposit=500";
 
 		$ch = curl_init();
 		curl_setopt( $ch, CURLOPT_HEADER, 0 );
