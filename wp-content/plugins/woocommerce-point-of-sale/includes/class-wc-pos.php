@@ -435,7 +435,8 @@ class WC_POS
                 wp_enqueue_media();
             }
 
-            wp_enqueue_script('wc-pos-script-admin', $this->plugin_url() . '/assets/js/admin.js', $scripts, $wc_pos_version);
+//	        wp_enqueue_script('wc-pos-handlebars-admin', $this->plugin_url() . '/assets/js/register/handlebars/handlebars.min.js', $scripts, $wc_pos_version);
+	        wp_enqueue_script('wc-pos-script-admin', $this->plugin_url() . '/assets/js/admin.js', $scripts, $wc_pos_version);
             pos_localize_script('wc-pos-script-admin');
 
         }

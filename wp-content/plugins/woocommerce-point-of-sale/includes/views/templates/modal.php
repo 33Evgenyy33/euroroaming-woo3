@@ -178,9 +178,9 @@
 </script>
 <?php
 if (get_option('woocommerce_prices_include_tax') === 'no') {
-    $tax_mode = 'excl';
+	$tax_mode = 'excl';
 } else {
-    $tax_mode = 'incl';
+	$tax_mode = 'incl';
 }
 $tax_display_mode = get_option('woocommerce_tax_display_shop');
 ?>
@@ -206,114 +206,109 @@ $tax_display_mode = get_option('woocommerce_tax_display_shop');
     <input type="hidden" id="customer_details_id" value="{{id}}">
     <div id="pos_billing_details" class="pos-customer-details-tab">
         <div class="woocommerce-billing-fields">
-            <?php
-            // Fix for checkout address if the WooCommerce Subscriptions plugin activated
-            remove_all_filters('woocommerce_checkout_get_value');
-            $checkout = WC()->checkout();
-            $wc_reg_generate_username_opt = get_option('woocommerce_registration_generate_username');
-            $wc_reg_generate_pass_opt = get_option('woocommerce_registration_generate_password');
-            //unset($checkout->checkout_fields['order']['order_comments']);
-            if (isset($checkout->checkout_fields['account'])) {
-                foreach ($checkout->checkout_fields['account'] as $key => $field) :
-                    if ($key == 'account_username') {
-                        continue;
-                    }
-                    $value = str_replace('account_', 'billing_address.', $key);
-                    if (strpos($value, 'billing_address.') === false && strpos($value, 'billing_address.') !== 0) {
-                        $value = 'billing_address.' . $key;
-                    }
-                    if ($key == 'account_password') {
-                        continue;
-                    }
-                    woocommerce_form_field('billing_' . $key, $field, '{{' . $value . '}}');
-                    if ($key == 'account_password') {
-                        $args = array(
-                            'type' => 'password',
-                            'label' => __('Password confirm'),
-                            'required' => true,
-                            'placeholder' => 'Password confirm',
-                            'class' => array('form-row-last')
-                        );
-                        woocommerce_form_field('billing_password_confirm', $args, '');
-                    }
-                endforeach;
-            }
+			<?php
+			// Fix for checkout address if the WooCommerce Subscriptions plugin activated
+			remove_all_filters('woocommerce_checkout_get_value');
+			$checkout = WC()->checkout();
+			$wc_reg_generate_username_opt = get_option('woocommerce_registration_generate_username');
+			$wc_reg_generate_pass_opt = get_option('woocommerce_registration_generate_password');
+			//unset($checkout->checkout_fields['order']['order_comments']);
+			if (isset($checkout->checkout_fields['account'])) {
+				foreach ($checkout->checkout_fields['account'] as $key => $field) :
+					if ($key == 'account_username') {
+						continue;
+					}
+					$value = str_replace('account_', 'billing_address.', $key);
+					if (strpos($value, 'billing_address.') === false && strpos($value, 'billing_address.') !== 0) {
+						$value = 'billing_address.' . $key;
+					}
+					if ($key == 'account_password') {
+						continue;
+					}
+					woocommerce_form_field('billing_' . $key, $field, '{{' . $value . '}}');
+					if ($key == 'account_password') {
+						$args = array(
+							'type' => 'password',
+							'label' => __('Password confirm'),
+							'required' => true,
+							'placeholder' => 'Password confirm',
+							'class' => array('form-row-last')
+						);
+						woocommerce_form_field('billing_password_confirm', $args, '');
+					}
+				endforeach;
+			}
 
-            // Отображение полей добавления клиента
-            if (isset($checkout->checkout_fields['billing'])) {
+			// Отображение полей добавления клиента
+			if (isset($checkout->checkout_fields['billing'])) {
 
-                $field_client_first_name = $checkout->checkout_fields['billing']['billing_first_name'];
-                $field_client_first_name['label'] = 'Имя клиента';
+				$field_client_first_name = $checkout->checkout_fields['billing']['billing_first_name'];
+				$field_client_first_name['label'] = 'Имя клиента';
 
-                $field_client_last_name = $checkout->checkout_fields['billing']['billing_last_name'];
-                $field_client_last_name['label'] = 'Фамилия клиента';
+				$field_client_last_name = $checkout->checkout_fields['billing']['billing_last_name'];
+				$field_client_last_name['label'] = 'Фамилия клиента';
 
-                $field_client_client_email = $checkout->checkout_fields['billing']['client_email'];
+				$field_client_client_email = $checkout->checkout_fields['billing']['client_email'];
 
-                $field_client_client_phone = $checkout->checkout_fields['billing']['client_phone'];
+				$field_client_client_phone = $checkout->checkout_fields['billing']['client_phone'];
 
-                $field_client_ta_email = $checkout->checkout_fields['billing']['billing_email'];
-                $field_client_ta_email['label'] = 'Почта ТА';
-                $field_client_ta_email['default'] = '33Evgenyy33@gmail.com';
+				$field_client_ta_email = $checkout->checkout_fields['billing']['billing_email'];
+				$field_client_ta_email['label'] = 'Почта ТА';
+				$field_client_ta_email['default'] = '33Evgenyy33@gmail.com';
 
-                $field_client_ta_phone = $checkout->checkout_fields['billing']['billing_phone'];
-                $field_client_ta_phone['label'] = 'Телефон ТА';
+				$field_client_ta_phone = $checkout->checkout_fields['billing']['billing_phone'];
+				$field_client_ta_phone['label'] = 'Телефон ТА';
+				
+				$data1 = WC_POS()->register()->get_data();
+				$ta_id = 0;
+				foreach ($data1 as $datum) {
+					if (pos_check_user_can_open_register($datum['ID'])) { // Проверка. Привязан ли id кабинета(outlet) к user id
+						$regis = wc_pos_get_register($datum['ID']);
+						$ta_id = json_decode($regis->detail)->ta_id;
+						break;
+					}
+				}
 
-                //$data = WC_POS()->register()->get_data();
-                $data1 = WC_POS()->register()->get_data();
-                $ta_id = 0;
-                foreach ($data1 as $datum) {
-                    if (pos_check_user_can_open_register($datum['ID'])) { // Проверка. Привязан ли id кабинета(outlet) к user id
-                        //print_r($datum['ID']);
-                        $myfile = fopen("processing-regis.txt", "w") or die("Unable to open file!");
-                        file_put_contents("processing-regis.txt", print_r( wc_pos_get_register($datum['ID']), true));
-                        $regis = wc_pos_get_register($datum['ID']);
-                        $ta_id = json_decode($regis->detail)->ta_id;
-                        //print_r(json_decode($regis->detail)->ta_id);
-                        //print_r($ta_id);
-                        break;
-                    }
-                }
 
-                /* Запрос к селлеру */
-                $url = "http://seller.sgsim.ru/euroroaming_order_submit?operation=get_simcards_new&ta=$ta_id";
-                $ch = curl_init();
-                curl_setopt($ch, CURLOPT_HEADER, 0);
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //Устанавливаем параметр, чтобы curl возвращал данные, вместо того, чтобы выводить их в браузер.
-                curl_setopt($ch, CURLOPT_URL, $url);
-                $data = curl_exec($ch);
-                curl_close($ch);
-                //echo "Ответ на Ваш запрос: ".$data;
+				/* Запрос к селлеру */
+				$url = "http://seller.sgsim.ru/euroroaming_order_submit?operation=get_simcards_new&ta=$ta_id";
+				$ch = curl_init();
+				curl_setopt($ch, CURLOPT_HEADER, 0);
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //Устанавливаем параметр, чтобы curl возвращал данные, вместо того, чтобы выводить их в браузер.
+				curl_setopt($ch, CURLOPT_URL, $url);
+				$data = curl_exec($ch);
+				curl_close($ch);
+				//echo "Ответ на Ваш запрос: ".$data;
 
-                $links = json_decode($data, TRUE);
-                unset($links['globalsim']);
-                unset($links['europasim']);
-                $simcard_options = array_reduce($links, 'array_merge', array());
-                //print_r($simcard_options);
-                /*********************/
+				$links = json_decode($data, TRUE);
+				unset($links['globalsim']);
+				unset($links['europasim']);
+				$simcard_options = array_reduce($links, 'array_merge', array());
+				//print_r($simcard_options);
+				/*********************/
 
-                $field_number_simcard = $checkout->checkout_fields['billing']['number_simcard'];
-                $field_number_simcard['options'] = $simcard_options;
+				$field_number_simcard = $checkout->checkout_fields['billing']['number_simcard'];
+				$field_number_simcard['options'] = $simcard_options;
 
-                $field_date_activ = $checkout->checkout_fields['billing']['date_activ'];
-                $field_date_activ['label'] = 'Дата активации (обязательно)';
-                $field_date_activ['required'] = true;
+				$field_date_activ = $checkout->checkout_fields['billing']['date_activ'];
+				$field_date_activ['label'] = 'Дата активации (обязательно)';
+				$field_date_activ['required'] = true;
 
-                woocommerce_form_field('billing_first_name', $field_client_first_name, '{{' . 'billing_address.first_name' . '}}');
-                woocommerce_form_field('billing_last_name', $field_client_last_name, '{{' . 'billing_address.first_name' . '}}');
-                woocommerce_form_field('client_email', $field_client_client_email, '{{' . 'billing_address.first_name' . '}}');
-                woocommerce_form_field('client_phone', $field_client_client_phone, '{{' . 'billing_address.client_phone' . '}}');
-                woocommerce_form_field('billing_email', $field_client_ta_email, '{{' . 'billing_address.email' . '}}');
-                woocommerce_form_field('billing_phone', $field_client_ta_phone, '{{' . 'billing_address.phone' . '}}');
-                woocommerce_form_field('date_activ', $field_date_activ, '{{' . 'billing_address.date_activ' . '}}');
-                woocommerce_form_field('number_simcard', $field_number_simcard, '{{' . 'billing_address.number_simcard' . '}}');
+				woocommerce_form_field('billing_first_name', $field_client_first_name, '{{' . 'billing_address.first_name' . '}}');
+				woocommerce_form_field('billing_last_name', $field_client_last_name, '{{' . 'billing_address.last_name' . '}}');
+				woocommerce_form_field('client_email', $field_client_client_email, '{{' . 'billing_address.email' . '}}');
+				woocommerce_form_field('client_phone', $field_client_client_phone, '{{' . 'billing_address.client_phone' . '}}');
+				woocommerce_form_field('billing_email', $field_client_ta_email, '{{' . 'billing_address.email' . '}}');
+				woocommerce_form_field('billing_phone', $field_client_ta_phone, '{{' . 'billing_address.phone' . '}}');
+				woocommerce_form_field('date_activ', $field_date_activ, '{{' . 'billing_address.date_activ' . '}}');
+				woocommerce_form_field('number_simcard', $field_number_simcard, '{{' . 'billing_address.number_simcard' . '}}');
 
-                $current_user = wp_get_current_user();
+				$current_user = wp_get_current_user();
 //                echo 'email: ' . $current_user->user_email . '<br />';
-                $filling_fields_script = '<script>jQuery(document).ready(function($) {$("#billing_email").val("'.$current_user->user_email.'");});</script>';
-                echo $filling_fields_script;
-            }
-            ?>
+				$filling_fields_script = '<script>jQuery(document).ready(function($) {$("#billing_email").val("'.$current_user->user_email.'");});</script>';
+				echo $filling_fields_script;
+			}
+			?>
         </div>
     </div>
     </div>
@@ -321,123 +316,123 @@ $tax_display_mode = get_option('woocommerce_tax_display_shop');
     <div id="pos_additional_fields" class="pos-customer-details-tab">
         <div class="woocommerce-additional-fields">
 
-            <?php
-            if (isset($checkout->checkout_fields['order'])) {
-                foreach ($checkout->checkout_fields['order'] as $key => $field) : ?>
+			<?php
+			if (isset($checkout->checkout_fields['order'])) {
+				foreach ($checkout->checkout_fields['order'] as $key => $field) : ?>
 
-                    <?php woocommerce_form_field($key, $field, '{{additional_fields.' . $key . '}}'); ?>
+					<?php woocommerce_form_field($key, $field, '{{additional_fields.' . $key . '}}'); ?>
 
-                <?php endforeach;
+				<?php endforeach;
 
-            } ?>
+			} ?>
 
         </div>
     </div>
     <div id="pos_order_fields" class="pos-customer-details-tab">
         <div class="woocommerce-additional-fields">
 
-            <?php
-            if (isset($checkout->checkout_fields['pos_custom_order'])) {
-                foreach ($checkout->checkout_fields['pos_custom_order'] as $key => $field) {
-                    if ($field['type'] == 'checkbox') {
-                        $option_count = 0;
-                        echo '<p class="form-row">';
-                        echo '<label>' . $field['label'] . '</label>';
-                        foreach ($field['options'] as $value => $label) {
-                            $input = sprintf('<input type="%s" name="%s" id="%s-%s" value="%s" />', esc_attr($field['type']), $key . '[]', $field['id'], $option_count, esc_attr($value));
-                            printf('<label for="%1$s-%2$s">%3$s%4$s</label>', $field['id'], $option_count, $input, esc_html($label));
-                            $option_count++;
-                        }
-                        echo '</p>';
+			<?php
+			if (isset($checkout->checkout_fields['pos_custom_order'])) {
+				foreach ($checkout->checkout_fields['pos_custom_order'] as $key => $field) {
+					if ($field['type'] == 'checkbox') {
+						$option_count = 0;
+						echo '<p class="form-row">';
+						echo '<label>' . $field['label'] . '</label>';
+						foreach ($field['options'] as $value => $label) {
+							$input = sprintf('<input type="%s" name="%s" id="%s-%s" value="%s" />', esc_attr($field['type']), $key . '[]', $field['id'], $option_count, esc_attr($value));
+							printf('<label for="%1$s-%2$s">%3$s%4$s</label>', $field['id'], $option_count, $input, esc_html($label));
+							$option_count++;
+						}
+						echo '</p>';
 
-                    } else {
-                        woocommerce_form_field($key, $field, '{{custom_order_fields.' . $field['id'] . '}}');
-                    }
-                }
-            } ?>
+					} else {
+						woocommerce_form_field($key, $field, '{{custom_order_fields.' . $field['id'] . '}}');
+					}
+				}
+			} ?>
 
         </div>
     </div>
     <div id="pos_custom_fields" class="pos-customer-details-tab">
         <div class="woocommerce-custom-fields">
 
-            <?php if (isset($checkout->checkout_fields['pos_acf'])) : ?>
-                <?php foreach ($checkout->checkout_fields['pos_acf'] as $group) : ?>
+			<?php if (isset($checkout->checkout_fields['pos_acf'])) : ?>
+				<?php foreach ($checkout->checkout_fields['pos_acf'] as $group) : ?>
 
                     <h3><?php echo $group['title']; ?></h3>
 
-                    <?php
-                    foreach ($group['fields'] as $key => $field) {
-                        switch ($field['type']) {
-                            case 'checkbox':
-                                $option_count = 0;
-                                echo '<p class="form-row">';
-                                echo '<label>' . $field['label'] . '</label>';
-                                foreach ($field['options'] as $value => $label) {
-                                    $input = sprintf('<input type="%s" name="%s" id="%s-%s" value="%s" />', esc_attr($field['type']), $key . '[]', $field['id'], $option_count, esc_attr($value));
-                                    printf('<label for="%1$s-%2$s">%3$s%4$s</label>', $field['id'], $option_count, $input, esc_html($label));
-                                    $option_count++;
-                                }
-                                echo '</p>';
+					<?php
+					foreach ($group['fields'] as $key => $field) {
+						switch ($field['type']) {
+							case 'checkbox':
+								$option_count = 0;
+								echo '<p class="form-row">';
+								echo '<label>' . $field['label'] . '</label>';
+								foreach ($field['options'] as $value => $label) {
+									$input = sprintf('<input type="%s" name="%s" id="%s-%s" value="%s" />', esc_attr($field['type']), $key . '[]', $field['id'], $option_count, esc_attr($value));
+									printf('<label for="%1$s-%2$s">%3$s%4$s</label>', $field['id'], $option_count, $input, esc_html($label));
+									$option_count++;
+								}
+								echo '</p>';
 
-                                break;
-                            case 'radio':
-                                $option_count = 0;
-                                echo '<p class="form-row">';
-                                echo '<label>' . $field['label'] . '</label>';
-                                foreach ($field['options'] as $value => $label) {
-                                    $input = sprintf('<input type="%s" name="%s" id="%s-%s" value="%s" />', esc_attr($field['type']), $key, $field['id'], $option_count, esc_attr($value));
-                                    printf('<label for="%1$s-%2$s">%3$s%4$s</label>', $field['id'], $option_count, $input, esc_html($label));
-                                    $option_count++;
-                                }
-                                echo '</p>';
+								break;
+							case 'radio':
+								$option_count = 0;
+								echo '<p class="form-row">';
+								echo '<label>' . $field['label'] . '</label>';
+								foreach ($field['options'] as $value => $label) {
+									$input = sprintf('<input type="%s" name="%s" id="%s-%s" value="%s" />', esc_attr($field['type']), $key, $field['id'], $option_count, esc_attr($value));
+									printf('<label for="%1$s-%2$s">%3$s%4$s</label>', $field['id'], $option_count, $input, esc_html($label));
+									$option_count++;
+								}
+								echo '</p>';
 
-                                break;
-                            case 'textarea':
-                            case 'password' :
-                            case 'text' :
-                            case 'email' :
-                            case 'tel' :
-                            case 'number' :
-                                woocommerce_form_field($key, $field, '{{custom_fields.' . $key . '}}');
-                                break;
-                            case 'select' :
-                                if (isset($field['multiple']) && $field['multiple'])
-                                    $key .= '[]';
-                                woocommerce_form_field($key, $field);
-                                break;
-                            case 'wysiwyg':
-                                $field['type'] = 'textarea';
-                                woocommerce_form_field($key, $field, '{{custom_fields.' . $key . '}}');
-                                break;
-                            default:
-                                $field['class'] = isset($field['class']) ? implode(' ', $field['class']) : '';
-                                echo '<div class="form-row acf-form-row">';
-                                do_action('acf/create_fields', array($field), 0);
-                                echo '</div>';
-                                break;
-                        }
+								break;
+							case 'textarea':
+							case 'password' :
+							case 'text' :
+							case 'email' :
+							case 'tel' :
+							case 'number' :
+								woocommerce_form_field($key, $field, '{{custom_fields.' . $key . '}}');
+								break;
+							case 'select' :
+								if (isset($field['multiple']) && $field['multiple'])
+									$key .= '[]';
+								woocommerce_form_field($key, $field);
+								break;
+							case 'wysiwyg':
+								$field['type'] = 'textarea';
+								woocommerce_form_field($key, $field, '{{custom_fields.' . $key . '}}');
+								break;
+							default:
+								$field['class'] = isset($field['class']) ? implode(' ', $field['class']) : '';
+								echo '<div class="form-row acf-form-row">';
+								do_action('acf/create_fields', array($field), 0);
+								echo '</div>';
+								break;
+						}
 
 
-                    } ?>
-                <?php endforeach; ?>
-            <?php endif; ?>
+					} ?>
+				<?php endforeach; ?>
+			<?php endif; ?>
 
         </div>
     </div>
     <div class="clear"></div>
 </script>
 <script type="text/template" id="tmpl-custom-shipping-shippingaddress">
-    <?php
-    $countries = WC()->countries->get_allowed_countries();
-    foreach ($checkout->checkout_fields['shipping'] as $key => $field) :
-	    $value = str_replace('shipping_', 'shipping_address.', $key);
-	    if ($field['type'] == 'state' && 1 === sizeof($countries)) {
-		    get_single_country_states('custom_' . $key, $field, $countries);
-	    } else {
-		    woocommerce_form_field('custom_' . $key, $field, '{{' . $value . '}}');
-	    }
-    endforeach; ?>
+	<?php
+	$countries = WC()->countries->get_allowed_countries();
+	foreach ($checkout->checkout_fields['shipping'] as $key => $field) :
+		$value = str_replace('shipping_', 'shipping_address.', $key);
+		if ($field['type'] == 'state' && 1 === sizeof($countries)) {
+			get_single_country_states('custom_' . $key, $field, $countries);
+		} else {
+			woocommerce_form_field('custom_' . $key, $field, '{{' . $value . '}}');
+		}
+	endforeach; ?>
 </script>
 
 <script type="text/template" id="tmpl-custom-shipping-method-title-price">
@@ -514,7 +509,7 @@ $tax_display_mode = get_option('woocommerce_tax_display_shop');
                 {{else}}
                     <span aria-hidden="true" class="tablenav-pages-navspan">‹</span>
                 {{/if}}
-            
+
                 <span class="paging-input"><label class="screen-reader-text"
                                                   for="current-page-selector">Current Page</label>
                     <input type="text" aria-describedby="table-paging" size="1" value="{{currentpage}}"
@@ -556,10 +551,10 @@ $tax_display_mode = get_option('woocommerce_tax_display_shop');
     {{/if}}
     <div class="wrap-button">
         <button class="button" type="button" id="cancel-button">
-            <?php _e('Cancel', 'wc_point_of_sale'); ?>
+			<?php _e('Cancel', 'wc_point_of_sale'); ?>
         </button>
         <button class="button button-primary" type="button" id="confirm-button">
-            <?php _e('Ok', 'wc_point_of_sale'); ?>
+			<?php _e('Ok', 'wc_point_of_sale'); ?>
         </button>
     </div>
 </script>
