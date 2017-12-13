@@ -762,6 +762,10 @@ jQuery(document).ready(function ($) {
                         CUSTOMER.email = CUSTOMER.billing_address['email'];
                     }
 
+                    CUSTOMER.billing_address['client_email'] = order.billing_address['client_email'];
+
+                    console.log(order);
+
                     var fullname = [CUSTOMER.first_name, CUSTOMER.last_name];
                     fullname = fullname.join(' ').trim();
 

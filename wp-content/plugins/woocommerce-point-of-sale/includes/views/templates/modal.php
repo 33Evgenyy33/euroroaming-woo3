@@ -296,7 +296,7 @@ $tax_display_mode = get_option('woocommerce_tax_display_shop');
 
 				woocommerce_form_field('billing_first_name', $field_client_first_name, '{{' . 'billing_address.first_name' . '}}');
 				woocommerce_form_field('billing_last_name', $field_client_last_name, '{{' . 'billing_address.last_name' . '}}');
-				woocommerce_form_field('client_email', $field_client_client_email, '{{' . 'billing_address.email' . '}}');
+				woocommerce_form_field('client_email', $field_client_client_email, '{{' . 'billing_address.client_email' . '}}');
 				woocommerce_form_field('client_phone', $field_client_client_phone, '{{' . 'billing_address.client_phone' . '}}');
 				woocommerce_form_field('billing_email', $field_client_ta_email, '{{' . 'billing_address.email' . '}}');
 				woocommerce_form_field('billing_phone', $field_client_ta_phone, '{{' . 'billing_address.phone' . '}}');
