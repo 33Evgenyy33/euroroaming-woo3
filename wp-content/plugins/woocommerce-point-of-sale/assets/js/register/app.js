@@ -656,7 +656,7 @@ jQuery(document).ready(function ($) {
 
                     POS_TRANSIENT.order_id = order.id;
 
-                    console.log(order);
+                    //console.log(order);
 
                     if (order.status != 'pending') {
                         $("#wc-pos-register-buttons .tbr").addClass("hide_btn");
@@ -743,7 +743,7 @@ jQuery(document).ready(function ($) {
                         APP.setGuest();
                         CUSTOMER.id = 0;
                     }
-                    var arr = ['country', 'first_name', 'last_name', 'company', 'address_1', 'address_2', 'city', 'state', 'postcode', 'email', 'phone'];
+                    var arr = ['country', 'first_name', 'last_name', 'company', 'address_1', 'address_2', 'city', 'state', 'postcode', 'email', 'phone', 'client_email'];
                     $.each(arr, function (index, key) {
                         if (typeof order.billing_address[key] != 'undefined') {
                             CUSTOMER.billing_address[key] = order.billing_address[key];
@@ -762,7 +762,7 @@ jQuery(document).ready(function ($) {
                         CUSTOMER.email = CUSTOMER.billing_address['email'];
                     }
 
-                    CUSTOMER.billing_address['client_email'] = order.billing_address['client_email'];
+                   // CUSTOMER.billing_address['client_email'] = order.billing_address['client_email'];
 
                     console.log(order);
 

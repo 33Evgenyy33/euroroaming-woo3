@@ -25,7 +25,7 @@ jQuery(document).ready(function ($) {
             "postcode": "",
             "country": ""
         },
-        'additional_fields': {"client_email" : ''},
+        'additional_fields': {},
         'custom_order_fields': {},
         'acf_fields': {},
         'is_vat_exempt': false,

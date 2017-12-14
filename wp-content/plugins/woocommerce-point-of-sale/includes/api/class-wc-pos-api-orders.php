@@ -438,7 +438,7 @@ class WC_API_POS_Orders extends WC_API_Orders {
 					case 'completed':
 					case 'processing':
 					case 'on-hold':
-					    wc_reduce_stock_levels( $order->get_id() );
+						wc_reduce_stock_levels( $order->get_id() );
 						break;
 				}
 			}
