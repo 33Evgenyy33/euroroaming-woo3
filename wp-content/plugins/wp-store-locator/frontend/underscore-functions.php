@@ -47,6 +47,7 @@ function wpsl_create_underscore_templates($template)
             $listing_template .= "\t\t" . '<div class="wpsl-store-location">' . "\r\n";
             $listing_template .= "\t\t\t" . '<p><%= thumb %>' . "\r\n";
             $listing_template .= "\t\t\t\t" . wpsl_store_header_template('listing') . "\r\n"; // Check which header format we use
+            $listing_template .= "\t\t\t" . '</p>' . "\r\n";
             $listing_template .= "\t\t\t\t" . '<span><span style="font-weight: 600">Город: </span>' . wpsl_address_format_placeholders() . '</span>' . "\r\n"; // Use the correct address format
             $listing_template .= "\t\t\t\t" . '<span class="wpsl-street"><span style="font-weight: 600">Адрес: </span><%= address %></span>' . "\r\n";
             $listing_template .= "\t\t\t\t" . '<% if ( address2 ) { %>' . "\r\n";
@@ -54,10 +55,8 @@ function wpsl_create_underscore_templates($template)
             $listing_template .= "\t\t\t\t" . '<% } %>' . "\r\n";
 
             if (!$wpsl_settings['hide_country']) {
-                $listing_template .= "\t\t\t\t" . '<span class="wpsl-country"><%= country %></span>' . "\r\n";
+	            $listing_template .= "\t\t\t\t" . '<span class="wpsl-country"><%= country %></span>' . "\r\n";
             }
-
-            $listing_template .= "\t\t\t" . '</p>' . "\r\n";
 
             // Show the phone, fax or email data if they exist.
             if ($wpsl_settings['show_contact_details']) {
@@ -72,7 +71,7 @@ function wpsl_create_underscore_templates($template)
                 $listing_template .= "\t\t\t" . '<span><strong>' . esc_html($wpsl->i18n->get_translation('email_label', __('Email', 'wpsl'))) . '</strong>: <%= email %></span>' . "\r\n";
                 $listing_template .= "\t\t\t" . '<% } %>' . "\r\n";
                 $listing_template .= "\t\t\t" . '</p>' . "\r\n";
-                $listing_template .= "\t\t\t" . '<h4 style="margin-bottom: 1px;font-weight: 500;">Наличие сим-карт и график работы:</h4>' . "\r\n";
+                //$listing_template .= "\t\t\t" . '<h4 style="margin-bottom: 1px;font-weight: 500;">Наличие сим-карт и график работы:</h4>' . "\r\n";
             }
 
             $listing_template .= "\t\t\t" . wpsl_more_info_template() . "\r\n"; // Check if we need to show the 'More Info' link and info
@@ -168,10 +167,12 @@ function wpsl_more_info_template()
             $more_info_template .= "\t\t\t" . '<% } %>';
 
         } else {
-            $more_info_template = '<div class="w-btn-wrapper align_left"><a class="w-btn style_flat color_custom icon_atright" href="<%= permalink %>" target="_blank" style="background-color: #edf3f9;
-"><span class="w-btn-label">Подробнее</span><span class="ripple-container"></span></a></div>';
+	        $more_info_template  = '<a class="wpsl-store-details" href="' . $more_info_url . '">Перейти к точке на карте</a>';
+	        $more_info_template .= '<div class="w-btn-wrapper align_center">';
+	        $more_info_template .= '<h4>Наличие сим-карт и график работы:</h4>' . "\r\n";
+	        $more_info_template .= '<a class="w-btn style_flat color_custom icon_atright" href="<%= permalink %>" target="_blank"><span class="w-btn-label">Подробнее</span><span class="ripple-container"></span></a>';
+	        $more_info_template .= '</div>';
             //$more_info_template = '<p><a href="<%= permalink %>" rel="nofollow">Подробнее</a></p>';
-            $more_info_template .= '<p><a class="wpsl-store-details" href="' . $more_info_url . '">Перейти к точке на карте</a></p>';
         }
 
         return apply_filters('wpsl_more_info_template', $more_info_template);
