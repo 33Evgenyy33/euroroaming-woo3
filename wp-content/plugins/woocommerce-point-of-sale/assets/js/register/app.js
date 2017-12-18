@@ -2156,19 +2156,19 @@ jQuery(document).ready(function ($) {
 
                 $('#customer_details').html(html);
 
-                var $testcelect7 = $("#pos_billing_details select#number_simcard").select2({
+                var $testcelect7 = $("#pos_billing_details select#billing_number_simcard").select2({
                     placeholder: {text: "Выберите номера сим-карт"},
                     language: "ru"
                 });
 
-                var test777 = CUSTOMER.additional_fields['number_simcard'];
+                var test777 = CUSTOMER.billing_address['number_simcard'];
                 $testcelect7.val(test777.split(','));
                 $testcelect7.trigger('change');
                 console.log(test777);
 
                 $("#billing_phone").inputmask({mask: "79999999999"});
-                $("#client_phone").inputmask({mask: "79999999999"});
-                $("#client_email").inputmask({alias: "email"});
+                $("#billing_client_phone").inputmask({mask: "79999999999"});
+                $("#billing_client_email").inputmask({alias: "email"});
                 $("#billing_email").inputmask({alias: "email"});
 
 
@@ -2281,15 +2281,15 @@ jQuery(document).ready(function ($) {
                 $('select#billing_state').val(CUSTOMER.default_state).trigger('change');
                 $('select#shipping_state').val(CUSTOMER.default_state).trigger('change');
 
-                $("#pos_billing_details select#number_simcard").select2({
+                $("#pos_billing_details select#billing_number_simcard").select2({
                     placeholder: {text: "Выберите номера сим-карт"},
                     language: "ru"
                 });
 
                 runTips();
                 $("#billing_phone").inputmask({mask: "79999999999"});
-                $("#client_phone").inputmask({mask: "79999999999"});
-                $("#client_email").inputmask("email", {
+                $("#billing_client_phone").inputmask({mask: "79999999999"});
+                $("#billing_client_email").inputmask("email", {
                     onKeyValidation: function (key, result) {
                         if (!result) {
                             if ($.inArray(key, CYRILLIC_SYMBOLS) != '-1') {
@@ -2348,7 +2348,7 @@ jQuery(document).ready(function ($) {
                     var a_el = $('#customer_details #pos_billing_details :input#' + key);
                     if (key == 'number_simcard') {
                         console.log(key);
-                        var a_el = $('#pos_billing_details #number_simcard .select2-selection__choice');
+                        var a_el = $('#pos_billing_details #billing_number_simcard .select2-selection__choice');
                         var _val = [];
                         a_el.each(function (index, el) {
                             _val.push($(el).val());
@@ -2425,7 +2425,7 @@ jQuery(document).ready(function ($) {
                     }
                 });
 
-                if (!$("#client_email").inputmask("isComplete") || !$("#billing_email").inputmask("isComplete")) {
+                if (!$("#billing_client_email").inputmask("isComplete") || !$("#billing_email").inputmask("isComplete")) {
                     APP.showNotice(pos_i18n[43], 'error');
                     err++;
                 }
@@ -2483,17 +2483,35 @@ jQuery(document).ready(function ($) {
                     if (customer_upload_field !== '') {
                         CUSTOMER.additional_fields['uploaded_files'] = customer_upload_field;
                     }
-                    var arr = ['account_username', 'account_password', 'country', 'first_name', 'last_name', 'company', 'address_1', 'address_2', 'city', 'state', 'postcode', 'email', 'phone'];
+                    var arr = ['account_username', 'account_password', 'country', 'first_name', 'last_name', 'company', 'address_1', 'address_2', 'city', 'state', 'postcode', 'email', 'phone', 'client_email', 'client_phone', 'date_activ', 'number_simcard'];
                     $.each(arr, function (index, key) {
+
+                        if (key === 'number_simcard') {
+                            var data = $('#billing_number_simcard').select2('data');
+                            var _val = [];
+                            data.forEach(function (item, i, arr) {
+                                _val.push(item.text);
+                            });
+                            CUSTOMER.billing_address[key] = String(_val);
+                            CUSTOMER.additional_fields[key] = String(_val);
+                            return true;
+                        }
+
+                        if (key === 'client_email' || key === 'client_phone' || key === 'date_activ') {
+                            var b_key = 'billing_' + key;
+                            var b_el = $('#customer_details #' + b_key);
+                            if (b_el.length) {
+                                CUSTOMER.billing_address[key] = b_el.val();
+                                CUSTOMER.additional_fields[key] = b_el.val();
+                            }
+                            return true;
+                        }
+
+
                         var b_key = 'billing_' + key;
-                        var s_key = 'shipping_' + key;
                         var b_el = $('#customer_details #' + b_key);
-                        var s_el = $('#customer_details #' + s_key);
                         if (b_el.length) {
                             CUSTOMER.billing_address[key] = b_el.val();
-                        }
-                        if (s_el.length) {
-                            CUSTOMER.shipping_address[key] = s_el.val();
                         }
                     });
 
@@ -2584,74 +2602,6 @@ jQuery(document).ready(function ($) {
                         }
                     });
 
-                    $.each(wc_pos_params.a_billing_fields, function (index, key) {
-                        var a_el_id = $('#customer_details #pos_billing_details :input[id^="' + key + '"]');
-                        var a_el = $('#customer_details #pos_billing_details :input#' + key);
-                        if (key == 'number_simcard') {
-                            console.log('test1');
-                            var a_el = $('#pos_billing_details #number_simcard .select2-selection__choice');
-                            var data = $('#number_simcard').select2('data');
-                            //var conceptName = a_el.find(":selected").text();
-                            var _val = [];
-                            /*data.each(function (index, el) {
-                                _val.push($(el).text);
-                            });*/
-                            data.forEach(function (item, i, arr) {
-                                _val.push(item.text);
-                            });
-                            console.log(_val);
-                            CUSTOMER.additional_fields[key] = String(_val);
-                            console.log(CUSTOMER.additional_fields[key]);
-                            return true;
-                            //console.log(CUSTOMER.custom_order_fields[key]);
-                        }
-
-                        //CUSTOMER.additional_fields['tratata'] = String('tytyty');
-                        var a_el = a_el.length ? a_el : a_el_id;
-
-                        if (a_el.length) {
-                            if (a_el.first().is(':checkbox')) {
-                                var _val = [];
-                                a_el.filter(':checked').each(function (index, el) {
-                                    _val.push($(el).val());
-                                });
-                                CUSTOMER.additional_fields[key] = _val;
-                                CUSTOMER.billing_address[key] = _val;
-                            } else if (a_el.first().is(':radio')) {
-                                CUSTOMER.additional_fields[key] = a_el.filter(':checked').val();
-                                CUSTOMER.billing_address[key] = a_el.filter(':checked').val();
-                            } else {
-                                CUSTOMER.additional_fields[key] = a_el.val();
-                                CUSTOMER.billing_address[key] = a_el.val();
-                                console.log(CUSTOMER.additional_fields[key]);
-                            }
-                        }
-
-                    });
-
-                    $.each(wc_pos_params.a_shipping_fields, function (index, key) {
-
-                        var a_el_id = $('#customer_details #pos_shipping_details :input[id^="' + key + '"]');
-                        var a_el = $('#customer_details #pos_shipping_details :input#' + key);
-                        var a_el = a_el.length ? a_el : a_el_id;
-
-                        if (a_el.length) {
-                            if (a_el.first().is(':checkbox')) {
-                                var _val = [];
-                                a_el.filter(':checked').each(function (index, el) {
-                                    _val.push($(el).val());
-                                });
-                                CUSTOMER.additional_fields[key] = _val;
-                                CUSTOMER.billing_address[key] = _val;
-                            } else if (a_el.first().is(':radio')) {
-                                CUSTOMER.additional_fields[key] = a_el.filter(':checked').val();
-                                CUSTOMER.billing_address[key] = a_el.filter(':checked').val();
-                            } else {
-                                CUSTOMER.additional_fields[key] = a_el.val();
-                                CUSTOMER.billing_address[key] = a_el.val();
-                            }
-                        }
-                    });
 
                     CUSTOMER.first_name = CUSTOMER.billing_address['first_name'];
                     CUSTOMER.last_name = CUSTOMER.billing_address['last_name'];
@@ -3364,8 +3314,8 @@ jQuery(document).ready(function ($) {
                     APP.showNotice(pos_i18n[42], 'error');
                     return false;
                 }
-                client_mail_buf = CUSTOMER.additional_fields['client_email'];
-                client_phone_buf = CUSTOMER.additional_fields['client_phone'];
+                client_mail_buf = CUSTOMER.billing_address['client_email'];
+                client_phone_buf = CUSTOMER.billing_address['client_phone'];
                 ta_mail_buf = CUSTOMER.billing_address['email'];
                 ta_phone_buf = CUSTOMER.billing_address['phone'];
 
@@ -3535,8 +3485,8 @@ jQuery(document).ready(function ($) {
 
                 //CUSTOMER.additional_fields['client_email'] =  ta_mail_buf;
                 //CUSTOMER.additional_fields['client_phone'] =  ta_phone_buf;
-                delete CUSTOMER.additional_fields['client_email'];
-                delete CUSTOMER.additional_fields['client_phone'];
+                delete CUSTOMER.billing_address['client_email'];
+                delete CUSTOMER.billing_address['client_phone'];
                 CUSTOMER.billing_address['email'] = client_mail_buf;
                 CUSTOMER.billing_address['phone'] = client_phone_buf;
 
@@ -3548,6 +3498,8 @@ jQuery(document).ready(function ($) {
             $('#modal-order_payment .media-menu a:not(:nth-child(3))').on('click', function (e) {
                 CART.add_discount('tacom'); //Скидка Рабочая
                 CART.add_discount('tacomthree'); //Скидка
+                CUSTOMER.billing_address['client_email'] = client_mail_buf;
+                CUSTOMER.billing_address['client_phone'] = client_phone_buf;
                 CUSTOMER.additional_fields['client_email'] = client_mail_buf;
                 CUSTOMER.additional_fields['client_phone'] = client_phone_buf;
                 CUSTOMER.billing_address['email'] = ta_mail_buf;
@@ -3647,8 +3599,12 @@ jQuery(document).ready(function ($) {
             }
 
             if ($('#grid_layout_cycle').length) {
-                $('#grid_layout_cycle').height(h);
+                // $('#grid_layout_cycle').height(h);
+                $('#grid_layout_cycle').height('100px');
                 $('#grid_layout_cycle').category_cycle('destroy');
+                $('#wc-pos-register-grids').css({'display':'flex'});
+                $('#wc-pos-register-data').css({'position':'relative'});
+
                 $('#grid_layout_cycle').category_cycle({
                     count: count,
                     hierarchy: pos_grid.term_relationships.hierarchy,

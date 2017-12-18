@@ -84,143 +84,7 @@ if (isset($_SERVER['HTTP_REFERER'])) {
                 <div id="post-body" class="metabox-holder columns-2">
                     <div id="postbox-container-<?php echo ($revert_columns == 'no' || !$revert_columns) ? '2' : '1' ?>"
                          class="postbox-container">
-                        <div id="wc-pos-register-data" class="postbox ">
-                            <div class="tbc">
-                                <div class="tb">
-                                    <div class="hndle tbr" style="display: none;">
-                                        <div class="add_items">
-                                            <input id="add_product_id"
-                                                   class="ajax_chosen_select_products_and_variations"
-                                                   data-placeholder="<?php _e('Search Products', 'wc_point_of_sale'); ?>"/>
 
-                                            <a class="tips" id="add_product_to_register"
-                                               data-modal="modal-add_custom_product"
-                                               data-tip="<?php _e('Add Custom Product', 'wc_point_of_sale'); ?>"><span></span></a>
-                                            <?php if (get_option('woocommerce_calc_shipping') == 'yes') { ?>
-                                                <a class="tips" id="add_shipping_to_register"
-                                                   data-modal="modal-add_custom_shipping"
-                                                   data-tip="<?php _e('Add Shipping', 'wc_point_of_sale'); ?>">
-                                                    <span></span>
-                                                </a>
-                                            <?php } ?>
-                                        </div>
-                                        <span class="clearfix"></span>
-                                    </div>
-                                    <div class="inside tbr">
-                                        <div class="tb" id="bill_screen">
-                                            <div class="woocommerce_order_items_wrapper tbr">
-                                                <div class="tbc" id="woocommerce_order_items-container">
-                                                    <table class="woocommerce_order_items" cellspacing="0"
-                                                           cellpadding="0">
-                                                        <thead>
-                                                        <tr>
-                                                            <th class="quantity"><?php _e('Qty', 'wc_point_of_sale'); ?></th>
-                                                            <th colspan="3"
-                                                                class="item"><?php _e('Product', 'wc_point_of_sale'); ?></th>
-                                                            <th class="line_cost"><?php _e('Cost', 'wc_point_of_sale'); ?></th>
-                                                            <?php do_action('wc_pos_tmpl_cart_product_item_thead'); ?>
-                                                            <th class="line_cost_total"><?php _e('Total', 'wc_point_of_sale'); ?></th>
-                                                            <th class="line_remove">&nbsp;</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody id="order_items_list">
-                                                        <?php
-                                                        $order = new WC_Order($data['order_id']);
-                                                        ?>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                            <div class="wc_pos_register_subtotals tbr">
-                                                <table class="woocommerce_order_items" cellspacing="0" cellpadding="0">
-                                                    <tr id="tr_order_subtotal_label">
-                                                        <th class="subtotal_label"><?php _e('Subtotal', 'wc_point_of_sale'); ?></th>
-                                                        <td class="subtotal_amount">
-                                                            <span id="subtotal_amount"><?php echo wc_price(0); ?></span>
-                                                        </td>
-                                                    </tr>
-                                                    <?php /********************************/ ?>
-                                                    <?php
-                                                    if (isset($detail_data['default_shipping_method']) && $detail_data['default_shipping_method'] != ''){
-                                                    ?>
-                                                <tr class="shipping_methods_register" style="display: table-row;">
-                                                <?php
-                                                }else{
-                                                ?>
-                                                    <tr class="shipping_methods_register">
-                                                        <?php } ?>
-                                                        <th>
-                                                            <?php
-                                                            if (isset($detail_data['default_shipping_method']) && $detail_data['default_shipping_method'] != '') {
-                                                                _e('Shipping and Handling', 'woocommerce');
-                                                            }
-                                                            ?>
-                                                        </th>
-                                                        <td>
-                                                            <?php
-                                                            if (isset($detail_data['default_shipping_method']) && $detail_data['default_shipping_method'] != '') {
-                                                                $chosen_method = $detail_data['default_shipping_method'];
-                                                                $shipping_methods = WC()->shipping->load_shipping_methods();
-                                                                ?>
-                                                                <select name="shipping_method[0]" data-index="0"
-                                                                        id="shipping_method_0" class="shipping_method">
-                                                                    <option value="no_shipping" <?php selected('no_shipping', $chosen_method); ?>
-                                                                            data-cost="0"><?php _e('No Shipping', 'wc_point_of_sale'); ?></option>
-                                                                    <?php
-                                                                    foreach ($shipping_methods as $key => $method) {
-                                                                        ?>
-                                                                        <option value="<?php echo esc_attr($method->id); ?>" <?php selected($method->id, $chosen_method); ?>
-                                                                                data-cost="<?php echo isset($method->cost) ? $method->cost : 0; ?>"><?php echo $method->get_title(); ?><?php echo isset($method->cost) ? wc_price($method->cost) : ''; ?></option>
-                                                                        <?php
-                                                                    }
-                                                                    ?>
-                                                                </select>
-                                                                <?php
-                                                            }
-                                                            ?>
-                                                        </td>
-                                                    </tr>
-                                                    <?php
-                                                    /********************************/
-                                                    if (wc_pos_tax_enabled()) {
-                                                        ?>
-                                                        <tr class="tax_row">
-                                                            <td colspan="2" class="tax_col">
-                                                                <table></table>
-                                                            </td>
-                                                            <!-- <th class="tax_label"><?php _e('Tax', 'wc_point_of_sale'); ?></th>
-                                                    <td class="tax_amount"><strong id="tax_amount"></strong></td> -->
-                                                        </tr>
-                                                        <?php
-                                                    }
-
-                                                    if ($d = $order->get_total_discount()) { ?>
-                                                        <tr id="tr_order_discount">
-                                                            <th class="total_label"><?php _e('Order Discount', 'wc_point_of_sale'); ?>
-                                                                <span id="span_clear_order_discount"></span>
-                                                            </th>
-                                                            <td class="total_amount">
-                                                                <input type="hidden" value="<?php echo $d; ?>"
-                                                                       id="order_discount" name="order_discount">
-                                                                <span id="formatted_order_discount"><?php echo wc_price($d, array('currency' => $order->get_order_currency())); ?></span>
-
-                                                            </td>
-                                                        </tr>
-                                                    <?php } ?>
-                                                    <tr id="tr_order_total_label">
-                                                        <th class="total_label"><?php _e('Total', 'wc_point_of_sale'); ?></th>
-                                                        <td class="total_amount"><span
-                                                                    id="total_amount"><?php echo wc_price(0); ?></span>
-                                                        </td>
-                                                    </tr>
-
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div id="wc-pos-customer-data" class="postbox ">
 
                             <?php
@@ -357,6 +221,143 @@ if (isset($_SERVER['HTTP_REFERER'])) {
                                 endif; ?>
                             </div>
                         </div>
+                        <div id="wc-pos-register-data" class="postbox ">
+                            <div class="tbc">
+                                <div class="tb">
+                                    <div class="hndle tbr" style="display: none;">
+                                        <div class="add_items">
+                                            <input id="add_product_id"
+                                                   class="ajax_chosen_select_products_and_variations"
+                                                   data-placeholder="<?php _e('Search Products', 'wc_point_of_sale'); ?>"/>
+
+                                            <a class="tips" id="add_product_to_register"
+                                               data-modal="modal-add_custom_product"
+                                               data-tip="<?php _e('Add Custom Product', 'wc_point_of_sale'); ?>"><span></span></a>
+						                    <?php if (get_option('woocommerce_calc_shipping') == 'yes') { ?>
+                                                <a class="tips" id="add_shipping_to_register"
+                                                   data-modal="modal-add_custom_shipping"
+                                                   data-tip="<?php _e('Add Shipping', 'wc_point_of_sale'); ?>">
+                                                    <span></span>
+                                                </a>
+						                    <?php } ?>
+                                        </div>
+                                        <span class="clearfix"></span>
+                                    </div>
+                                    <div class="inside tbr">
+                                        <div class="tb" id="bill_screen">
+                                            <div class="woocommerce_order_items_wrapper tbr">
+                                                <div class="tbc" id="woocommerce_order_items-container">
+                                                    <table class="woocommerce_order_items" cellspacing="0"
+                                                           cellpadding="0">
+                                                        <thead>
+                                                        <tr>
+                                                            <th class="quantity"><?php _e('Qty', 'wc_point_of_sale'); ?></th>
+                                                            <th colspan="3"
+                                                                class="item"><?php _e('Сим-карта', 'wc_point_of_sale'); ?></th>
+                                                            <th class="line_cost"><?php _e('Цена для клиента', 'wc_point_of_sale'); ?></th>
+										                    <?php do_action('wc_pos_tmpl_cart_product_item_thead'); ?>
+                                                            <th class="line_cost_total"><?php _e('Total', 'wc_point_of_sale'); ?></th>
+                                                            <th class="line_remove">&nbsp;</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody id="order_items_list">
+									                    <?php
+									                    $order = new WC_Order($data['order_id']);
+									                    ?>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="wc_pos_register_subtotals tbr">
+                                                <table class="woocommerce_order_items" cellspacing="0" cellpadding="0">
+                                                    <tr id="tr_order_subtotal_label">
+                                                        <th class="subtotal_label"><?php _e('Subtotal', 'wc_point_of_sale'); ?></th>
+                                                        <td class="subtotal_amount">
+                                                            <span id="subtotal_amount"><?php echo wc_price(0); ?></span>
+                                                        </td>
+                                                    </tr>
+								                    <?php /********************************/ ?>
+								                    <?php
+								                    if (isset($detail_data['default_shipping_method']) && $detail_data['default_shipping_method'] != ''){
+								                    ?>
+                                                <tr class="shipping_methods_register" style="display: table-row;">
+							                    <?php
+							                    }else{
+							                    ?>
+                                                    <tr class="shipping_methods_register">
+									                    <?php } ?>
+                                                        <th>
+										                    <?php
+										                    if (isset($detail_data['default_shipping_method']) && $detail_data['default_shipping_method'] != '') {
+											                    _e('Shipping and Handling', 'woocommerce');
+										                    }
+										                    ?>
+                                                        </th>
+                                                        <td>
+										                    <?php
+										                    if (isset($detail_data['default_shipping_method']) && $detail_data['default_shipping_method'] != '') {
+											                    $chosen_method = $detail_data['default_shipping_method'];
+											                    $shipping_methods = WC()->shipping->load_shipping_methods();
+											                    ?>
+                                                                <select name="shipping_method[0]" data-index="0"
+                                                                        id="shipping_method_0" class="shipping_method">
+                                                                    <option value="no_shipping" <?php selected('no_shipping', $chosen_method); ?>
+                                                                            data-cost="0"><?php _e('No Shipping', 'wc_point_of_sale'); ?></option>
+												                    <?php
+												                    foreach ($shipping_methods as $key => $method) {
+													                    ?>
+                                                                        <option value="<?php echo esc_attr($method->id); ?>" <?php selected($method->id, $chosen_method); ?>
+                                                                                data-cost="<?php echo isset($method->cost) ? $method->cost : 0; ?>"><?php echo $method->get_title(); ?><?php echo isset($method->cost) ? wc_price($method->cost) : ''; ?></option>
+													                    <?php
+												                    }
+												                    ?>
+                                                                </select>
+											                    <?php
+										                    }
+										                    ?>
+                                                        </td>
+                                                    </tr>
+								                    <?php
+								                    /********************************/
+								                    if (wc_pos_tax_enabled()) {
+									                    ?>
+                                                        <tr class="tax_row">
+                                                            <td colspan="2" class="tax_col">
+                                                                <table></table>
+                                                            </td>
+                                                            <!-- <th class="tax_label"><?php _e('Tax', 'wc_point_of_sale'); ?></th>
+                                                    <td class="tax_amount"><strong id="tax_amount"></strong></td> -->
+                                                        </tr>
+									                    <?php
+								                    }
+
+								                    if ($d = $order->get_total_discount()) { ?>
+                                                        <tr id="tr_order_discount">
+                                                            <th class="total_label"><?php _e('Order Discount', 'wc_point_of_sale'); ?>
+                                                                <span id="span_clear_order_discount"></span>
+                                                            </th>
+                                                            <td class="total_amount">
+                                                                <input type="hidden" value="<?php echo $d; ?>"
+                                                                       id="order_discount" name="order_discount">
+                                                                <span id="formatted_order_discount"><?php echo wc_price($d, array('currency' => $order->get_order_currency())); ?></span>
+
+                                                            </td>
+                                                        </tr>
+								                    <?php } ?>
+                                                    <tr id="tr_order_total_label">
+                                                        <th class="total_label"><?php _e('Total', 'wc_point_of_sale'); ?></th>
+                                                        <td class="total_amount"><span
+                                                                    id="total_amount"><?php echo wc_price(0); ?></span>
+                                                        </td>
+                                                    </tr>
+
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div id="wc-pos-register-buttons" class="postbox ">
                             <div class="tbc">
                                 <div class="tb">
@@ -366,23 +367,20 @@ if (isset($_SERVER['HTTP_REFERER'])) {
                                         </div>
                                         <div class="button tips wc_pos_register_void tbc" type="button"
                                              data-tip="<?php _e('Void Order', 'wc_point_of_sale'); ?>">
+                                            аннулировать
                                         </div>
                                         <div class="button tips wc_pos_register_save" type="submit"
                                              data-tip="<?php _e('Save Order', 'wc_point_of_sale'); ?>">
+                                            отложить
                                         </div>
                                         <div class="button tips wc_pos_register_notes tbc" type="button"
                                              data-tip="<?php _e('Add A Note', 'wc_point_of_sale'); ?>">
+                                            заметка
                                         </div>
-                                        <?php
-                                        //                                    $discount = esc_attr(get_user_meta(get_current_user_id(), 'discount', true));
-                                        //                                    if ($discount != 'disable'): ?>
-                                        <!--                                        <div class="button tips wc_pos_register_discount tbc" type="button"-->
-                                        <!--                                             data-tip="-->
-                                        <?php //_e('Apply Discount', 'wc_point_of_sale'); ?><!--">-->
-                                        <!--                                        </div>-->
-                                        <!--                                    --><?php //endif; ?>
                                         <div class="button tips wc_pos_register_pay tbc" type="button"
-                                             data-tip="<?php _e('Accept Payment', 'wc_point_of_sale'); ?>"></div>
+                                             data-tip="<?php _e('Accept Payment', 'wc_point_of_sale'); ?>">
+                                            оплата
+                                        </div>
                                     </div>
                                 </div>
                             </div>

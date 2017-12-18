@@ -9,3 +9,5 @@ http://euroroaming/checkout/order-pay/61240?pay_for_order=true&key=wc_order_5a2e
 http://euroroaming/checkout/order-pay/61256?pay_for_order=true&key=wc_order_5a30ef1c6a374
 http://euroroaming/checkout/order-pay/61256?pay_for_order=true&key=wc_order_5a30ff72de42a
 http://euroroaming/checkout/order-pay/61257?pay_for_order=true&key=wc_order_5a30ffddeb261
+http://euroroaming/checkout/order-pay/61260?pay_for_order=true&key=wc_order_5a3793d4acee1
+http://euroroaming/checkout/order-pay/61265?pay_for_order=true&key=wc_order_5a37bf980a8a1

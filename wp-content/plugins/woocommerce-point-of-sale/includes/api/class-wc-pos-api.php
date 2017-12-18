@@ -534,6 +534,11 @@ class WC_Pos_API
         $order_data['print_url'] = wp_nonce_url(admin_url('admin.php?print_pos_receipt=true&order_id=' . $the_order->get_id()), 'print_pos_receipt');
         $order_data['stock_reduced'] = get_post_meta($the_order->get_id(), '_order_stock_reduced', true) ? true : false;
 
+	    $order_data['client_phone'] = str_replace(' ', '', get_post_meta( $the_order->get_id(), 'client_phone', true ));
+
+	    file_put_contents("processing-args.txt", print_r($order_data, true), FILE_APPEND | LOCK_EX);
+	    file_put_contents("processing-args.txt", print_r('/********************************/', true)."\r\n", FILE_APPEND | LOCK_EX);
+
         return $order_data;
     }
 
