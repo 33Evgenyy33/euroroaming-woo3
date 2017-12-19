@@ -312,6 +312,9 @@ class WC_API_POS_Orders extends WC_API_Orders {
                 $order = $this->calculate_order_totals($order, $data);
             }
             $order->calculate_totals();*/
+
+
+
 			$order = $this->calculate_order_totals( $order, $data );
 
 
@@ -1165,8 +1168,8 @@ class WC_API_POS_Orders extends WC_API_Orders {
 			$order = $this->calculate_order_taxes( $order, $data );
 		} else {
 			// Save tax totals
-			$order->set_total( 0, 'shipping_tax' );
-			$order->set_total( 0, 'tax' );
+			$order->set_total( '0', 'shipping_tax' );
+			$order->set_total( '0', 'tax' );
 		}
 
 		// line items

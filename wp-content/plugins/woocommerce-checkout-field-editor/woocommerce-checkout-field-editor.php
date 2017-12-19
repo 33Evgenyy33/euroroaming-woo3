@@ -3,7 +3,7 @@
  * Plugin Name: WooCommerce Checkout Field Editor
  * Plugin URI: https://woocommerce.com/products/woocommerce-checkout-field-editor/
  * Description: Add, remove and modifiy fields shown on your WooCommerce checkout page.
- * Version: 1.5.7
+ * Version: 1.5.8
  * Author: WooCommerce
  * Author URI: https://woocommerce.com
  * WC tested up to: 3.2
@@ -33,7 +33,7 @@ if ( ! function_exists( 'woothemes_queue_update' ) ) {
 woothemes_queue_update( plugin_basename( __FILE__ ), '2b8029f0d7cdd1118f4d843eb3ab43ff', '184594' );
 
 if ( is_woocommerce_active() ) {
-	define( 'WC_CHECKOUT_FIELD_EDITOR_VERSION', '1.5.7' );
+	define( 'WC_CHECKOUT_FIELD_EDITOR_VERSION', '1.5.8' );
 
 	/**
 	 * Updates the plugin version to DB.
@@ -573,7 +573,7 @@ if ( is_woocommerce_active() ) {
 		foreach ( WC()->checkout->checkout_fields as $fieldset_key => $fieldset ) {
 
 			// Skip shipping if its not needed
-			if ( 'shipping' === $fieldset_key && ( WC()->cart->ship_to_billing_address_only() || ! empty( $posted['shiptobilling'] ) || ( ! WC()->cart->needs_shipping() && 'no' === get_option( 'woocommerce_require_shipping_address' ) ) ) ) {
+			if ( 'shipping' === $fieldset_key && ( wc_ship_to_billing_address_only() || ! empty( $posted['shiptobilling'] ) || ( ! WC()->cart->needs_shipping() && 'no' === get_option( 'woocommerce_require_shipping_address' ) ) ) ) {
 				continue;
 			}
 

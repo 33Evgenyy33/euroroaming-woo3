@@ -169,9 +169,10 @@ class WC_Checkout_Field_Editor {
 			$supress_field_modification = false;
 
 			$validation_rules = apply_filters( 'woocommerce_custom_checkout_validation', array(
-				'required' 	=> __( 'Required', 'woocommerce-checkout-field-editor' ),
-				'email' 	=> __( 'Email', 'woocommerce-checkout-field-editor' ),
-				'number' 	=> __( 'Number', 'woocommerce-checkout-field-editor' ),
+				'required' => __( 'Required', 'woocommerce-checkout-field-editor' ),
+				'email'    => __( 'Email', 'woocommerce-checkout-field-editor' ),
+				'number'   => __( 'Number', 'woocommerce-checkout-field-editor' ),
+				'phone'    => __( 'Phone', 'woocommerce-checkout-field-editor' ),
 			) );
 
 			$field_types = apply_filters( 'woocommerce_custom_checkout_fields', array(
@@ -413,9 +414,11 @@ class WC_Checkout_Field_Editor {
 							</td>
 							<td style="width:150px;">
 								<?php if ( in_array( $name, array(
+									'billing_address_1',
 									'billing_state',
 									'billing_city',
 									'billing_postcode',
+									'shipping_address_1',
 									'shipping_state',
 									'shipping_city',
 									'shipping_postcode'
@@ -427,10 +430,12 @@ class WC_Checkout_Field_Editor {
 							</td>
 							<td class="field-options" style="width:150px;">
 								<?php if ( in_array( $name, array(
+									'billing_address_1',
 									'billing_state',
 									'billing_city',
 									'billing_country',
 									'billing_postcode',
+									'shipping_address_1',
 									'shipping_state',
 									'shipping_city',
 									'shipping_country',

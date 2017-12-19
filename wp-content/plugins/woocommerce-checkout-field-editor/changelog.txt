@@ -1,5 +1,9 @@
 *** Checkout Field Editor Changelog ***
 
+2017-11-17 - version 1.5.8
+* Fix - Disable overriding of shipping_address_1/billing_address_1 fields label and placeholder.
+* Fix - Add Phone as a valid validation rule so that it doesn't get removed.
+
 2017-10-18 - version 1.5.7
 * Fix - Custom fields not showing on Thank you page since WC 3.2.
 * Fix - Restricted field name causing unexpected errors on checkout.

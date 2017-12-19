@@ -1042,6 +1042,28 @@ jQuery(document).ready(function ($) {
                 }
                 delete POS_TRANSIENT.order_id;
             }
+
+            var arr = ['account_username', 'account_password', 'country', 'first_name', 'last_name', 'company', 'address_1', 'address_2', 'city', 'state', 'postcode', 'email', 'phone', 'client_email', 'client_phone', 'activation_date', 'number_simcard'];
+            $.each(arr, function (index, key) {
+
+                if (key === 'number_simcard') {
+                    $('#billing_number_simcard').val("").trigger("change");
+
+                    return true;
+                }
+
+                if (key === 'client_email' || key === 'client_phone' || key === 'activation_date') {
+                    var b_key = 'billing_' + key;
+                    $('div#pos_billing_details #' + b_key).val('');
+                    return true;
+                }
+
+
+                var b_key = 'billing_' + key;
+                $('div#pos_billing_details #' + b_key).val('');
+
+            });
+
             //CART.add_discount('tacom3'); //Скидка
         },
         setCustomer: function (customer_id, open) {
@@ -1314,6 +1336,8 @@ jQuery(document).ready(function ($) {
                 $('#grid_layout_cycle').unblock();
                 //CART.add_discount('tacom'); //Скидка
                 resizeGrid();
+                // $('#wc-pos-register-grids').css({'display':'flex'});
+                // $('#wc-pos-register-data').css({'position':'relative'});
             } else {
                 $('#grid_layout_cycle').unblock();
                 //CART.add_discount('tacom'); //Скидка
@@ -2281,12 +2305,8 @@ jQuery(document).ready(function ($) {
                 $('select#billing_state').val(CUSTOMER.default_state).trigger('change');
                 $('select#shipping_state').val(CUSTOMER.default_state).trigger('change');
 
-                $("#pos_billing_details select#billing_number_simcard").select2({
-                    placeholder: {text: "Выберите номера сим-карт"},
-                    language: "ru"
-                });
-
                 runTips();
+
                 $("#billing_phone").inputmask({mask: "79999999999"});
                 $("#billing_client_phone").inputmask({mask: "79999999999"});
                 $("#billing_client_email").inputmask("email", {
@@ -2317,6 +2337,12 @@ jQuery(document).ready(function ($) {
                         }
                     }
                 });
+                $("#pos_billing_details select#billing_number_simcard").select2({
+                    placeholder: {text: "Выберите номера сим-карт"},
+                    language: "ru"
+                });
+
+
             });
             $('body').on('click', '#billing-same-as-shipping', function (event) {
                 var ar = ['first_name', 'last_name', 'company', 'address_1', 'address_2', 'city', 'state', 'postcode'];
@@ -2483,7 +2509,7 @@ jQuery(document).ready(function ($) {
                     if (customer_upload_field !== '') {
                         CUSTOMER.additional_fields['uploaded_files'] = customer_upload_field;
                     }
-                    var arr = ['account_username', 'account_password', 'country', 'first_name', 'last_name', 'company', 'address_1', 'address_2', 'city', 'state', 'postcode', 'email', 'phone', 'client_email', 'client_phone', 'date_activ', 'number_simcard'];
+                    var arr = ['account_username', 'account_password', 'country', 'first_name', 'last_name', 'company', 'address_1', 'address_2', 'city', 'state', 'postcode', 'email', 'phone', 'client_email', 'client_phone', 'activation_date', 'number_simcard'];
                     $.each(arr, function (index, key) {
 
                         if (key === 'number_simcard') {
@@ -2497,7 +2523,7 @@ jQuery(document).ready(function ($) {
                             return true;
                         }
 
-                        if (key === 'client_email' || key === 'client_phone' || key === 'date_activ') {
+                        if (key === 'client_email' || key === 'client_phone' || key === 'activation_date') {
                             var b_key = 'billing_' + key;
                             var b_el = $('#customer_details #' + b_key);
                             if (b_el.length) {
@@ -2512,93 +2538,6 @@ jQuery(document).ready(function ($) {
                         var b_el = $('#customer_details #' + b_key);
                         if (b_el.length) {
                             CUSTOMER.billing_address[key] = b_el.val();
-                        }
-                    });
-
-                    var acf_fields = wc_pos_params.acf_fields;
-                    $.each(acf_fields, function (index, key) {
-                        if (key == '') return true;
-
-                        var a_custom_f = $('#acf-' + key + '[data-field_name="' + key + '"]');
-                        if (a_custom_f.length && a_custom_f.hasClass('field_type-relationship')) {
-                            var _val = [];
-                            var a_el = a_custom_f.find('.relationship_right li input');
-                            a_el.each(function (index, el) {
-                                _val.push($(el).val());
-                            });
-                            CUSTOMER.acf_fields[key] = _val;
-                        } else if (a_custom_f.length && a_custom_f.hasClass('field_type-google_map')) {
-                            var _val = {};
-                            _val['address'] = a_custom_f.find('.input-address').val();
-                            _val['lat'] = a_custom_f.find('.input-lat').val();
-                            _val['lng'] = a_custom_f.find('.input-lng').val();
-                            CUSTOMER.acf_fields[key] = _val;
-                        } else if (a_custom_f.length && a_custom_f.hasClass('field_type-date_picker')) {
-                            CUSTOMER.acf_fields[key] = a_custom_f.find('.input-alt').val();
-                        } else {
-                            var a_el_id = $('#customer_details #pos_custom_fields :input[id^="acf-field-' + key + '"]');
-                            var a_el = $('#customer_details #pos_custom_fields :input#acf-field-' + key);
-                            var a_el = a_el.length ? a_el : a_el_id;
-
-
-                            if (a_el.length) {
-                                if (a_el.first().is(':checkbox')) {
-                                    var _val = [];
-                                    a_el.filter(':checked').each(function (index, el) {
-                                        _val.push($(el).val());
-                                    });
-                                    CUSTOMER.acf_fields[key] = _val;
-                                } else if (a_el.first().is(':radio')) {
-                                    CUSTOMER.acf_fields[key] = a_el.filter(':checked').val();
-                                } else {
-                                    CUSTOMER.acf_fields[key] = a_el.val();
-                                }
-                            }
-                        }
-
-                    });
-
-                    var additional_fields = wc_pos_params.additional_fields;
-                    $.each(additional_fields, function (index, key) {
-                        var a_el_id = $('#customer_details #pos_additional_fields :input[id^="' + key + '"]');
-                        var a_el = $('#customer_details #pos_additional_fields :input#' + key);
-                        var a_el = a_el.length ? a_el : a_el_id;
-
-                        if (a_el.length) {
-                            if (a_el.first().is(':checkbox')) {
-                                var _val = [];
-                                a_el.filter(':checked').each(function (index, el) {
-                                    _val.push($(el).val());
-                                });
-                                CUSTOMER.additional_fields[key] = _val;
-                            } else if (a_el.first().is(':radio')) {
-                                CUSTOMER.additional_fields[key] = a_el.filter(':checked').val();
-                            } else {
-                                CUSTOMER.additional_fields[key] = a_el.val();
-                            }
-                        }
-
-                    });
-
-                    var custom_order_fields = wc_pos_params.custom_order_fields;
-                    $.each(custom_order_fields, function (index, key) {
-
-                        var a_el_id = $('#customer_details #pos_order_fields :input[id^="' + key + '"]');
-                        var a_el = $('#customer_details #pos_order_fields :input#' + key);
-                        var a_el = a_el.length ? a_el : a_el_id;
-
-                        if (a_el.length) {
-                            if (a_el.first().is(':checkbox')) {
-                                var _val = [];
-                                a_el.filter(':checked').each(function (index, el) {
-                                    _val.push($(el).val());
-                                });
-                                CUSTOMER.custom_order_fields[key] = _val;
-                            } else if (a_el.first().is(':radio')) {
-                                CUSTOMER.custom_order_fields[key] = a_el.filter(':checked').val();
-                            } else {
-                                CUSTOMER.custom_order_fields[key] = a_el.val();
-                            }
                         }
                     });
 
@@ -2625,14 +2564,9 @@ jQuery(document).ready(function ($) {
                     CUSTOMER.customer = true;
                     CUSTOMER.points_n_rewards = 0;
 
-                    var source = $('#tmpl-cart-customer-item').html();
-                    var template = Handlebars.compile(source);
-                    var html = template(CUSTOMER);
-                    $('tbody#customer_items_list').html(html);
                     CART.calculate_totals();
-                    //console.log(CUSTOMER);
-                    closeModal('modal-order_customer');
                     APP.showNotice(pos_i18n[51], 'success');
+
                 }
             });
 
@@ -2664,37 +2598,6 @@ jQuery(document).ready(function ($) {
                 } else {
                     $('#custom-shipping-details-wrap').hide();
                 }
-            });
-
-            $('#add_shipping_to_register').click(function (event) {
-                var modal = $(this).attr('data-modal');
-                var source = $('#tmpl-custom-shipping-method-title-price').html();
-                var template = Handlebars.compile(source);
-                var html = template(CART.chosen_shipping_methods);
-                $('#custom_shipping_table tbody').html(html);
-                if ($('#custom_shipping_table tbody #custom_shipping_price').length > 0) {
-                    $('#custom_shipping_table tbody #custom_shipping_price').keypad('destroy');
-                    calculateShippingPrice();
-                }
-                if (CUSTOMER.customer) {
-                    $('#custom-add-shipping-details').prop('checked', true).trigger('change');
-                } else {
-                    $('#custom-add-shipping-details').prop('checked', false).trigger('change');
-                }
-
-                var source = $('#tmpl-custom-shipping-shippingaddress').html();
-                var template = Handlebars.compile(source);
-                var html = template(CUSTOMER);
-                $('#custom-shipping-shippingaddress').html(html);
-
-                openModal(modal);
-                wc_country_select_select2();
-                if (sizeof(wc_country_select_params.allowed_countries) > 1) {
-                    $('#custom_shipping_country').val(CUSTOMER.shipping_address.country).trigger('change');
-                    $('select#custom_shipping_state').val(CUSTOMER.shipping_address.state).trigger('change');
-                }
-
-                runTips();
             });
             $('#add_custom_shipping').click(function (event) {
                 var err = 0;
@@ -3286,6 +3189,11 @@ jQuery(document).ready(function ($) {
                 return false;
             });
             $('.wc_pos_register_save').on('click', function () {
+
+                if (checkBillingFields() === 0){
+                    return false;
+                }
+
                 if (CART.is_empty()) {
                     APP.showNotice(pos_i18n[9], 'error');
                     return false;
@@ -3310,10 +3218,16 @@ jQuery(document).ready(function ($) {
             });*/
             $('.wc_pos_register_pay').on('click', function () {
 
-                if (CUSTOMER.billing_address['first_name'] == '') {
-                    APP.showNotice(pos_i18n[42], 'error');
+                // if (CUSTOMER.billing_address['first_name'] == '') {
+                //     APP.showNotice(pos_i18n[42], 'error');
+                //     return false;
+                // }
+
+                if (checkBillingFields() === 0){
                     return false;
                 }
+
+
                 client_mail_buf = CUSTOMER.billing_address['client_email'];
                 client_phone_buf = CUSTOMER.billing_address['client_phone'];
                 ta_mail_buf = CUSTOMER.billing_address['email'];
@@ -3544,6 +3458,174 @@ jQuery(document).ready(function ($) {
 
     };
 
+    function checkBillingFields() {
+
+        var err = 0;
+
+        $('#customer_details .woocommerce-billing-fields .validate-required input, #customer_details .woocommerce-billing-fields .validate-required select').each(function (index, el) {
+            if (err == 0) {
+                if ($(this).hasClass('select2-offscreen')) {
+                    return 0;
+                }
+                ;
+                if ($(this).closest('.form-row').css('display') != 'none' && !$(this).closest('.select2-container').length) {
+
+                    var val = $(this).val();
+                    if (val == '') {
+                        APP.showNotice(pos_i18n[17], 'error');
+                        err++;
+                    }
+                }
+            }
+        });
+
+        if (!$('.select2-selection__choice').length) {
+            APP.showNotice(pos_i18n[17], 'error');
+            err++;
+        }
+
+        if (err > 0) {
+            return 0;
+        }
+        $('#customer_details .woocommerce-shipping-fields .validate-required input, #customer_details .woocommerce-shipping-fields .validate-required select').each(function (index, el) {
+            if (err == 0) {
+                if ($(this).hasClass('select2-offscreen')) {
+                    return 0;
+                }
+                ;
+                if ($(this).closest('.form-row').css('display') != 'none' && !$(this).closest('.select2-container').length) {
+                    var val = $(this).val();
+                    if (val == '') {
+                        APP.showNotice(pos_i18n[16], 'error');
+                        err++;
+                    }
+                }
+            }
+        });
+
+        if (!$("#billing_client_email").inputmask("isComplete") || !$("#billing_email").inputmask("isComplete")) {
+            APP.showNotice(pos_i18n[43], 'error');
+            err++;
+        }
+
+        if (err > 0) {
+            return 0;
+        }
+
+
+        $('#customer_details .woocommerce-additional-fields .validate-required input, #customer_details .woocommerce-additional-fields .validate-required select').each(function (index, el) {
+            if (err == 0) {
+                if ($(this).hasClass('select2-offscreen')) {
+                    return 0;
+                }
+                ;
+                var val = $(this).val();
+                if (val == '' && !$(this).closest('.select2-container').length) {
+                    APP.showNotice(pos_i18n[17], 'error');
+                    err++;
+                }
+            }
+        });
+        if (err > 0) {
+            return 0;
+        }
+
+        $('#customer_details .woocommerce-custom-fields .validate-required input, #customer_details .woocommerce-custom-fields .validate-required select').each(function (index, el) {
+            if (err == 0) {
+                if ($(this).hasClass('select2-offscreen')) {
+                    return 0;
+                }
+                ;
+                var val = $(this).val();
+                if (val == '' && !$(this).closest('.select2-container').length) {
+                    APP.showNotice(pos_i18n[35], 'error');
+                    err++;
+                }
+            }
+        });
+
+        if (err > 0) {
+            return 0;
+        }
+
+        if (err == 0) {
+            var new_customer = $('#customer_details_id').val() == '' ? true : false;
+            var customer_upload_field = '';
+            if (typeof CUSTOMER.additional_fields['uploaded_files'] !== 'undefined') {
+                customer_upload_field = CUSTOMER.additional_fields['uploaded_files'];
+                //console.log(CUSTOMER.additional_fields['uploaded_files']);
+            }
+            if (new_customer) {
+                CUSTOMER.reset();
+            }
+            if (customer_upload_field !== '') {
+                CUSTOMER.additional_fields['uploaded_files'] = customer_upload_field;
+            }
+            var arr = ['account_username', 'account_password', 'country', 'first_name', 'last_name', 'company', 'address_1', 'address_2', 'city', 'state', 'postcode', 'email', 'phone', 'client_email', 'client_phone', 'activation_date', 'number_simcard'];
+            $.each(arr, function (index, key) {
+
+                if (key === 'number_simcard') {
+                    var data = $('#billing_number_simcard').select2('data');
+                    var _val = [];
+                    data.forEach(function (item, i, arr) {
+                        _val.push(item.text);
+                    });
+                    CUSTOMER.billing_address[key] = String(_val);
+                    CUSTOMER.additional_fields[key] = String(_val);
+                    return true;
+                }
+
+                if (key === 'client_email' || key === 'client_phone' || key === 'activation_date') {
+                    var b_key = 'billing_' + key;
+                    var b_el = $('div#pos_billing_details #' + b_key);
+                    if (b_el.length) {
+                        CUSTOMER.billing_address[key] = b_el.val();
+                        CUSTOMER.additional_fields[key] = b_el.val();
+                    }
+                    return true;
+                }
+
+
+                var b_key = 'billing_' + key;
+                var b_el = $('div#pos_billing_details #' + b_key);
+                if (b_el.length) {
+                    CUSTOMER.billing_address[key] = b_el.val();
+                }
+            });
+
+
+            CUSTOMER.first_name = CUSTOMER.billing_address['first_name'];
+            CUSTOMER.last_name = CUSTOMER.billing_address['last_name'];
+            CUSTOMER.email = CUSTOMER.billing_address['email'];
+
+            CUSTOMER.shipping_address['first_name'] = CUSTOMER.billing_address['first_name'];
+            CUSTOMER.shipping_address['last_name'] = CUSTOMER.billing_address['last_name'];
+
+            var fullname = [CUSTOMER.first_name, CUSTOMER.last_name];
+            fullname = fullname.join(' ');
+
+            if (fullname == '') {
+                fullname = clone(CUSTOMER.username);
+            }
+            CUSTOMER.fullname = fullname;
+
+            if ($('#createaccount').is(':checked')) {
+                CUSTOMER.create_account = true;
+            }
+
+            CUSTOMER.customer = true;
+            CUSTOMER.points_n_rewards = 0;
+
+            CART.calculate_totals();
+            // APP.showNotice(pos_i18n[51], 'success');
+
+            return 1;
+
+        }
+
+
+    }
+
 
     function lockScreen() {
         var lock_screen = APP.getCookie('pos_lockScreen');
@@ -3583,9 +3665,12 @@ jQuery(document).ready(function ($) {
     }
 
     function resizeGrid() {
+        var h = $('#wc-pos-register-data').height();
+        var sub_h = $('.wc_pos_register_subtotals').height();
+        var th = $('#order_items_th').height();
         if (pos_grid.second_column_layout == 'product_grids') {
             $("#grid_layout_cycle").hide();
-            var h = parseFloat($('#wc-pos-register-grids').height()) - 87;
+            var h = parseFloat($('#wc-pos-register-grids').height()) - 39;
             var hh = 100;
             if (pos_grid.tile_layout == 'image_title_price') {
                 hh = 123;
@@ -3601,10 +3686,9 @@ jQuery(document).ready(function ($) {
             if ($('#grid_layout_cycle').length) {
                 // $('#grid_layout_cycle').height(h);
                 $('#grid_layout_cycle').height('100px');
+                // $('#wc-pos-register-grids').css({'display':'flex'});
+                // $('#wc-pos-register-data').css({'position':'relative'});
                 $('#grid_layout_cycle').category_cycle('destroy');
-                $('#wc-pos-register-grids').css({'display':'flex'});
-                $('#wc-pos-register-data').css({'position':'relative'});
-
                 $('#grid_layout_cycle').category_cycle({
                     count: count,
                     hierarchy: pos_grid.term_relationships.hierarchy,
@@ -3643,6 +3727,9 @@ jQuery(document).ready(function ($) {
                 opacity: 0.6
             }
         });
+
+        console.log('regid: '+reg_id);
+
         openModal('modal-retrieve_sales');
         $.when(APP.getServerOrdersCount(reg_id, search)).then(function (result) {
             if (parseInt(result.count) > 0) {
@@ -3802,6 +3889,42 @@ jQuery(document).ready(function ($) {
     $('#less-amount-notice .approve-less-amount').on('click', function () {
         $('#less-amount-notice').data('approve', '1').fadeOut();
     });
+
+    $("#billing_phone").inputmask({mask: "79999999999"});
+    $("#billing_client_phone").inputmask({mask: "79999999999"});
+    $("#billing_client_email").inputmask("email", {
+        onKeyValidation: function (key, result) {
+            if (!result) {
+                if ($.inArray(key, CYRILLIC_SYMBOLS) != '-1') {
+                    console.log(key + " - " + result);
+                    APP.showNotice(pos_i18n[44], 'error');
+                } else {
+                    APP.showNotice(pos_i18n[50], 'error');
+                }
+                //APP.showNotice(pos_i18n[16], 'error');
+                //console.log(key + " - " + result);
+            }
+        }
+    });
+    $("#billing_email").inputmask("email", {
+        onKeyValidation: function (key, result) {
+            if (!result) {
+                if ($.inArray(key, CYRILLIC_SYMBOLS) != '-1') {
+                    console.log(key + " - " + result);
+                    APP.showNotice(pos_i18n[44], 'error');
+                } else {
+                    APP.showNotice(pos_i18n[50], 'error');
+                }
+                //APP.showNotice(pos_i18n[16], 'error');
+                //console.log(key + " - " + result);
+            }
+        }
+    });
+    $("#pos_billing_details select#billing_number_simcard").select2({
+        placeholder: {text: "Выберите номера сим-карт"},
+        language: "ru"
+    });
+
 });
 
 function windowUpdated() {
