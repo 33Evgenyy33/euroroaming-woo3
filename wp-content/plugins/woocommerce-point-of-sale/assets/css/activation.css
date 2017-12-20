@@ -18,6 +18,7 @@
     background: #ac2b2f !important;
     border-color: #a1262a !important;
 }
+
 .wc-badge::before {
     color: #fff;
     font-family: dashicons;
