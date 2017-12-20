@@ -35348,3 +35348,873 @@ Array
     [client_phone] => 77897890789
 )
 /********************************/
+Array
+(
+    [id] => 61291
+    [order_number] =>  Оформлен в t061291
+    [order_key] => wc_order_5a3a136215852
+    [created_at] => 2017-12-20T07:38:10Z
+    [updated_at] => 2017-12-20T07:38:10Z
+    [completed_at] => 1970-01-01T00:00:00Z
+    [status] => pending
+    [currency] => RUB
+    [total] => 2160.00
+    [subtotal] => 2960.00
+    [total_line_items_quantity] => 1
+    [total_tax] => 0.00
+    [total_shipping] => 0.00
+    [cart_tax] => 0.00
+    [shipping_tax] => 0.00
+    [total_discount] => 800.00
+    [shipping_methods] => 
+    [payment_details] => Array
+        (
+            [method_id] => 
+            [method_title] => 
+            [paid] => 
+        )
+
+    [billing_address] => Array
+        (
+            [first_name] => gfh
+            [last_name] => ghj
+            [company] => 
+            [address_1] => 
+            [address_2] => 
+            [city] => 
+            [state] => г Москва
+            [postcode] => 
+            [country] => RU
+            [email] => 33evgenyy33@gmail.com
+            [phone] => 71111111111
+        )
+
+    [shipping_address] => Array
+        (
+            [first_name] => gfh
+            [last_name] => ghj
+            [company] => 
+            [address_1] => 
+            [address_2] => 
+            [city] => 
+            [state] => г Москва
+            [postcode] => 
+            [country] => RU
+        )
+
+    [note] => 
+    [customer_ip] => 127.0.0.1
+    [customer_user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36
+    [customer_id] => 0
+    [view_order_url] => http://euroroaming/my-account/view-order/61291
+    [line_items] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 804
+                    [subtotal] => 2960.00
+                    [subtotal_tax] => 0.00
+                    [total] => 2160.00
+                    [total_tax] => 0.00
+                    [price] => 2960
+                    [quantity] => 1
+                    [tax_class] => 
+                    [name] => Orange с тарифом «Mundo» для Европы
+                    [product_id] => 58961
+                    [sku] => sim--orange--go-europe
+                    [meta] => Array
+                        (
+                            [0] => stdClass Object
+                                (
+                                    [key] => balans
+                                    [value] => €20
+                                    [label] => Баланс
+                                )
+
+                            [1] => stdClass Object
+                                (
+                                    [key] => razmer-sim-karty
+                                    [value] => Nano-SIM
+                                    [label] => Размер сим-карты
+                                )
+
+                            [2] => stdClass Object
+                                (
+                                    [key] => paket-podklyuchennyj-za-schet-balansa
+                                    [value] => 1ГБ (7€)
+                                    [label] => Пакет, подключенный за счет баланса
+                                )
+
+                        )
+
+                    [variation_id] => 59096
+                )
+
+        )
+
+    [shipping_lines] => Array
+        (
+        )
+
+    [tax_lines] => Array
+        (
+        )
+
+    [fee_lines] => Array
+        (
+        )
+
+    [coupon_lines] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 805
+                    [code] => tacom
+                    [amount] => 800.00
+                )
+
+        )
+
+    [customer] => Array
+        (
+            [id] => 0
+            [email] => 33evgenyy33@gmail.com
+            [first_name] => gfh
+            [last_name] => ghj
+            [billing_address] => Array
+                (
+                    [first_name] => gfh
+                    [last_name] => ghj
+                    [company] => 
+                    [address_1] => 
+                    [address_2] => 
+                    [city] => 
+                    [state] => г Москва
+                    [postcode] => 
+                    [country] => RU
+                    [email] => 33evgenyy33@gmail.com
+                    [phone] => 71111111111
+                )
+
+            [shipping_address] => Array
+                (
+                    [first_name] => gfh
+                    [last_name] => ghj
+                    [company] => 
+                    [address_1] => 
+                    [address_2] => 
+                    [city] => 
+                    [state] => г Москва
+                    [postcode] => 
+                    [country] => RU
+                )
+
+        )
+
+    [order_status] => <mark class="pending tips" data-tip="В ожидании оплаты">В ожидании оплаты</mark>
+    [formatted_shipping_address] => <span>&ndash;</span>
+    [order_date] => <abbr title="2017/03/22 3:54:31 ПП">2017/03/22</abbr>
+    [customer_message] => <span class="na">&ndash;</span>
+    [order_notes] => <span class="na">&ndash;</span>
+    [order_total] => <span class="woocommerce-Price-amount amount">2,160.00<span class="woocommerce-Price-currencySymbol">&#8381;</span></span>
+    [print_url] => http://euroroaming/wp-admin/admin.php?print_pos_receipt=true&amp;order_id=61291&amp;_wpnonce=afece09a15
+    [stock_reduced] => 
+    [client_phone] => 71111111111
+)
+/********************************/
+Array
+(
+    [id] => 61292
+    [order_number] =>  Оформлен в t061292
+    [order_key] => wc_order_5a3a139c1ae13
+    [created_at] => 2017-12-20T07:39:08Z
+    [updated_at] => 2017-12-20T07:39:08Z
+    [completed_at] => 1970-01-01T00:00:00Z
+    [status] => pending
+    [currency] => RUB
+    [total] => 2160.00
+    [subtotal] => 2960.00
+    [total_line_items_quantity] => 1
+    [total_tax] => 0.00
+    [total_shipping] => 0.00
+    [cart_tax] => 0.00
+    [shipping_tax] => 0.00
+    [total_discount] => 800.00
+    [shipping_methods] => 
+    [payment_details] => Array
+        (
+            [method_id] => 
+            [method_title] => 
+            [paid] => 
+        )
+
+    [billing_address] => Array
+        (
+            [first_name] => gfh
+            [last_name] => ghj
+            [company] => 
+            [address_1] => 
+            [address_2] => 
+            [city] => 
+            [state] => г Москва
+            [postcode] => 
+            [country] => RU
+            [email] => 33evgenyy33@gmail.com
+            [phone] => 71111111111
+        )
+
+    [shipping_address] => Array
+        (
+            [first_name] => gfh
+            [last_name] => ghj
+            [company] => 
+            [address_1] => 
+            [address_2] => 
+            [city] => 
+            [state] => г Москва
+            [postcode] => 
+            [country] => RU
+        )
+
+    [note] => 
+    [customer_ip] => 127.0.0.1
+    [customer_user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36
+    [customer_id] => 0
+    [view_order_url] => http://euroroaming/my-account/view-order/61292
+    [line_items] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 806
+                    [subtotal] => 2960.00
+                    [subtotal_tax] => 0.00
+                    [total] => 2160.00
+                    [total_tax] => 0.00
+                    [price] => 2960
+                    [quantity] => 1
+                    [tax_class] => 
+                    [name] => Orange с тарифом «Mundo» для Европы
+                    [product_id] => 58961
+                    [sku] => sim--orange--go-europe
+                    [meta] => Array
+                        (
+                            [0] => stdClass Object
+                                (
+                                    [key] => balans
+                                    [value] => €20
+                                    [label] => Баланс
+                                )
+
+                            [1] => stdClass Object
+                                (
+                                    [key] => razmer-sim-karty
+                                    [value] => Nano-SIM
+                                    [label] => Размер сим-карты
+                                )
+
+                            [2] => stdClass Object
+                                (
+                                    [key] => paket-podklyuchennyj-za-schet-balansa
+                                    [value] => 1ГБ (7€)
+                                    [label] => Пакет, подключенный за счет баланса
+                                )
+
+                        )
+
+                    [variation_id] => 59096
+                )
+
+        )
+
+    [shipping_lines] => Array
+        (
+        )
+
+    [tax_lines] => Array
+        (
+        )
+
+    [fee_lines] => Array
+        (
+        )
+
+    [coupon_lines] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 807
+                    [code] => tacom
+                    [amount] => 800.00
+                )
+
+        )
+
+    [customer] => Array
+        (
+            [id] => 0
+            [email] => 33evgenyy33@gmail.com
+            [first_name] => gfh
+            [last_name] => ghj
+            [billing_address] => Array
+                (
+                    [first_name] => gfh
+                    [last_name] => ghj
+                    [company] => 
+                    [address_1] => 
+                    [address_2] => 
+                    [city] => 
+                    [state] => г Москва
+                    [postcode] => 
+                    [country] => RU
+                    [email] => 33evgenyy33@gmail.com
+                    [phone] => 71111111111
+                )
+
+            [shipping_address] => Array
+                (
+                    [first_name] => gfh
+                    [last_name] => ghj
+                    [company] => 
+                    [address_1] => 
+                    [address_2] => 
+                    [city] => 
+                    [state] => г Москва
+                    [postcode] => 
+                    [country] => RU
+                )
+
+        )
+
+    [order_status] => <mark class="pending tips" data-tip="В ожидании оплаты">В ожидании оплаты</mark>
+    [formatted_shipping_address] => <span>&ndash;</span>
+    [order_date] => <abbr title="2017/03/22 3:54:31 ПП">2017/03/22</abbr>
+    [customer_message] => <span class="na">&ndash;</span>
+    [order_notes] => <span class="na">&ndash;</span>
+    [order_total] => <span class="woocommerce-Price-amount amount">2,160.00<span class="woocommerce-Price-currencySymbol">&#8381;</span></span>
+    [print_url] => http://euroroaming/wp-admin/admin.php?print_pos_receipt=true&amp;order_id=61292&amp;_wpnonce=afece09a15
+    [stock_reduced] => 
+    [client_phone] => 71111111111
+)
+/********************************/
+Array
+(
+    [id] => 61293
+    [order_number] =>  Оформлен в t061293
+    [order_key] => wc_order_5a3a1514c0125
+    [created_at] => 2017-12-20T07:45:24Z
+    [updated_at] => 2017-12-20T07:45:24Z
+    [completed_at] => 1970-01-01T00:00:00Z
+    [status] => pending
+    [currency] => RUB
+    [total] => 2160.00
+    [subtotal] => 2960.00
+    [total_line_items_quantity] => 1
+    [total_tax] => 0.00
+    [total_shipping] => 0.00
+    [cart_tax] => 0.00
+    [shipping_tax] => 0.00
+    [total_discount] => 800.00
+    [shipping_methods] => 
+    [payment_details] => Array
+        (
+            [method_id] => 
+            [method_title] => 
+            [paid] => 
+        )
+
+    [billing_address] => Array
+        (
+            [first_name] => Иван
+            [last_name] => fg
+            [company] => 
+            [address_1] => 
+            [address_2] => 
+            [city] => 
+            [state] => г Москва
+            [postcode] => 
+            [country] => RU
+            [email] => 33evgenyy33@gmail.com
+            [phone] => 71111111111
+        )
+
+    [shipping_address] => Array
+        (
+            [first_name] => Иван
+            [last_name] => fg
+            [company] => 
+            [address_1] => 
+            [address_2] => 
+            [city] => 
+            [state] => г Москва
+            [postcode] => 
+            [country] => RU
+        )
+
+    [note] => 
+    [customer_ip] => 127.0.0.1
+    [customer_user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36
+    [customer_id] => 0
+    [view_order_url] => http://euroroaming/my-account/view-order/61293
+    [line_items] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 808
+                    [subtotal] => 2960.00
+                    [subtotal_tax] => 0.00
+                    [total] => 2160.00
+                    [total_tax] => 0.00
+                    [price] => 2960
+                    [quantity] => 1
+                    [tax_class] => 
+                    [name] => Orange с тарифом «Mundo» для Европы
+                    [product_id] => 58961
+                    [sku] => sim--orange--go-europe
+                    [meta] => Array
+                        (
+                            [0] => stdClass Object
+                                (
+                                    [key] => balans
+                                    [value] => €20
+                                    [label] => Баланс
+                                )
+
+                            [1] => stdClass Object
+                                (
+                                    [key] => razmer-sim-karty
+                                    [value] => Nano-SIM
+                                    [label] => Размер сим-карты
+                                )
+
+                            [2] => stdClass Object
+                                (
+                                    [key] => paket-podklyuchennyj-za-schet-balansa
+                                    [value] => 1ГБ (7€)
+                                    [label] => Пакет, подключенный за счет баланса
+                                )
+
+                        )
+
+                    [variation_id] => 59096
+                )
+
+        )
+
+    [shipping_lines] => Array
+        (
+        )
+
+    [tax_lines] => Array
+        (
+        )
+
+    [fee_lines] => Array
+        (
+        )
+
+    [coupon_lines] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 809
+                    [code] => tacom
+                    [amount] => 800.00
+                )
+
+        )
+
+    [customer] => Array
+        (
+            [id] => 0
+            [email] => 33evgenyy33@gmail.com
+            [first_name] => Иван
+            [last_name] => fg
+            [billing_address] => Array
+                (
+                    [first_name] => Иван
+                    [last_name] => fg
+                    [company] => 
+                    [address_1] => 
+                    [address_2] => 
+                    [city] => 
+                    [state] => г Москва
+                    [postcode] => 
+                    [country] => RU
+                    [email] => 33evgenyy33@gmail.com
+                    [phone] => 71111111111
+                )
+
+            [shipping_address] => Array
+                (
+                    [first_name] => Иван
+                    [last_name] => fg
+                    [company] => 
+                    [address_1] => 
+                    [address_2] => 
+                    [city] => 
+                    [state] => г Москва
+                    [postcode] => 
+                    [country] => RU
+                )
+
+        )
+
+    [order_status] => <mark class="pending tips" data-tip="В ожидании оплаты">В ожидании оплаты</mark>
+    [formatted_shipping_address] => <span>&ndash;</span>
+    [order_date] => <abbr title="2017/03/22 3:54:31 ПП">2017/03/22</abbr>
+    [customer_message] => <span class="na">&ndash;</span>
+    [order_notes] => <span class="na">&ndash;</span>
+    [order_total] => <span class="woocommerce-Price-amount amount">2,160.00<span class="woocommerce-Price-currencySymbol">&#8381;</span></span>
+    [print_url] => http://euroroaming/wp-admin/admin.php?print_pos_receipt=true&amp;order_id=61293&amp;_wpnonce=afece09a15
+    [stock_reduced] => 
+    [client_phone] => 70000000000
+)
+/********************************/
+Array
+(
+    [id] => 61294
+    [order_number] =>  Оформлен в t061294
+    [order_key] => wc_order_5a3a161ab8ac9
+    [created_at] => 2017-12-20T07:49:46Z
+    [updated_at] => 2017-12-20T07:49:46Z
+    [completed_at] => 1970-01-01T00:00:00Z
+    [status] => pending
+    [currency] => RUB
+    [total] => 2160.00
+    [subtotal] => 2960.00
+    [total_line_items_quantity] => 1
+    [total_tax] => 0.00
+    [total_shipping] => 0.00
+    [cart_tax] => 0.00
+    [shipping_tax] => 0.00
+    [total_discount] => 800.00
+    [shipping_methods] => 
+    [payment_details] => Array
+        (
+            [method_id] => 
+            [method_title] => 
+            [paid] => 
+        )
+
+    [billing_address] => Array
+        (
+            [first_name] => ghjgh
+            [last_name] => j
+            [company] => 
+            [address_1] => 
+            [address_2] => 
+            [city] => 
+            [state] => г Москва
+            [postcode] => 
+            [country] => RU
+            [email] => 33evgenyy33@gmail.com
+            [phone] => 70001111111
+        )
+
+    [shipping_address] => Array
+        (
+            [first_name] => ghjgh
+            [last_name] => j
+            [company] => 
+            [address_1] => 
+            [address_2] => 
+            [city] => 
+            [state] => г Москва
+            [postcode] => 
+            [country] => RU
+        )
+
+    [note] => 
+    [customer_ip] => 127.0.0.1
+    [customer_user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36
+    [customer_id] => 0
+    [view_order_url] => http://euroroaming/my-account/view-order/61294
+    [line_items] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 810
+                    [subtotal] => 2960.00
+                    [subtotal_tax] => 0.00
+                    [total] => 2160.00
+                    [total_tax] => 0.00
+                    [price] => 2960
+                    [quantity] => 1
+                    [tax_class] => 
+                    [name] => Orange с тарифом «Mundo» для Европы
+                    [product_id] => 58961
+                    [sku] => sim--orange--go-europe
+                    [meta] => Array
+                        (
+                            [0] => stdClass Object
+                                (
+                                    [key] => balans
+                                    [value] => €20
+                                    [label] => Баланс
+                                )
+
+                            [1] => stdClass Object
+                                (
+                                    [key] => razmer-sim-karty
+                                    [value] => Nano-SIM
+                                    [label] => Размер сим-карты
+                                )
+
+                            [2] => stdClass Object
+                                (
+                                    [key] => paket-podklyuchennyj-za-schet-balansa
+                                    [value] => 1ГБ (7€)
+                                    [label] => Пакет, подключенный за счет баланса
+                                )
+
+                        )
+
+                    [variation_id] => 59096
+                )
+
+        )
+
+    [shipping_lines] => Array
+        (
+        )
+
+    [tax_lines] => Array
+        (
+        )
+
+    [fee_lines] => Array
+        (
+        )
+
+    [coupon_lines] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 811
+                    [code] => tacom
+                    [amount] => 800.00
+                )
+
+        )
+
+    [customer] => Array
+        (
+            [id] => 0
+            [email] => 33evgenyy33@gmail.com
+            [first_name] => ghjgh
+            [last_name] => j
+            [billing_address] => Array
+                (
+                    [first_name] => ghjgh
+                    [last_name] => j
+                    [company] => 
+                    [address_1] => 
+                    [address_2] => 
+                    [city] => 
+                    [state] => г Москва
+                    [postcode] => 
+                    [country] => RU
+                    [email] => 33evgenyy33@gmail.com
+                    [phone] => 70001111111
+                )
+
+            [shipping_address] => Array
+                (
+                    [first_name] => ghjgh
+                    [last_name] => j
+                    [company] => 
+                    [address_1] => 
+                    [address_2] => 
+                    [city] => 
+                    [state] => г Москва
+                    [postcode] => 
+                    [country] => RU
+                )
+
+        )
+
+    [order_status] => <mark class="pending tips" data-tip="В ожидании оплаты">В ожидании оплаты</mark>
+    [formatted_shipping_address] => <span>&ndash;</span>
+    [order_date] => <abbr title="2017/03/22 3:54:31 ПП">2017/03/22</abbr>
+    [customer_message] => <span class="na">&ndash;</span>
+    [order_notes] => <span class="na">&ndash;</span>
+    [order_total] => <span class="woocommerce-Price-amount amount">2,160.00<span class="woocommerce-Price-currencySymbol">&#8381;</span></span>
+    [print_url] => http://euroroaming/wp-admin/admin.php?print_pos_receipt=true&amp;order_id=61294&amp;_wpnonce=afece09a15
+    [stock_reduced] => 
+    [client_phone] => 70000000000
+)
+/********************************/
+Array
+(
+    [id] => 61295
+    [order_number] =>  Оформлен в t061295
+    [order_key] => wc_order_5a3a165e8d251
+    [created_at] => 2017-12-20T07:50:54Z
+    [updated_at] => 2017-12-20T07:50:54Z
+    [completed_at] => 1970-01-01T00:00:00Z
+    [status] => pending
+    [currency] => RUB
+    [total] => 2160.00
+    [subtotal] => 2960.00
+    [total_line_items_quantity] => 1
+    [total_tax] => 0.00
+    [total_shipping] => 0.00
+    [cart_tax] => 0.00
+    [shipping_tax] => 0.00
+    [total_discount] => 800.00
+    [shipping_methods] => 
+    [payment_details] => Array
+        (
+            [method_id] => 
+            [method_title] => 
+            [paid] => 
+        )
+
+    [billing_address] => Array
+        (
+            [first_name] => fghf
+            [last_name] => Gufgh
+            [company] => 
+            [address_1] => 
+            [address_2] => 
+            [city] => 
+            [state] => г Москва
+            [postcode] => 
+            [country] => RU
+            [email] => 33evgenyy33@gmail.com
+            [phone] => 71001111111
+        )
+
+    [shipping_address] => Array
+        (
+            [first_name] => fghf
+            [last_name] => Gufgh
+            [company] => 
+            [address_1] => 
+            [address_2] => 
+            [city] => 
+            [state] => г Москва
+            [postcode] => 
+            [country] => RU
+        )
+
+    [note] => 
+    [customer_ip] => 127.0.0.1
+    [customer_user_agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36
+    [customer_id] => 0
+    [view_order_url] => http://euroroaming/my-account/view-order/61295
+    [line_items] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 812
+                    [subtotal] => 2960.00
+                    [subtotal_tax] => 0.00
+                    [total] => 2160.00
+                    [total_tax] => 0.00
+                    [price] => 2960
+                    [quantity] => 1
+                    [tax_class] => 
+                    [name] => Orange с тарифом «Mundo» для Европы
+                    [product_id] => 58961
+                    [sku] => sim--orange--go-europe
+                    [meta] => Array
+                        (
+                            [0] => stdClass Object
+                                (
+                                    [key] => balans
+                                    [value] => €20
+                                    [label] => Баланс
+                                )
+
+                            [1] => stdClass Object
+                                (
+                                    [key] => razmer-sim-karty
+                                    [value] => Nano-SIM
+                                    [label] => Размер сим-карты
+                                )
+
+                            [2] => stdClass Object
+                                (
+                                    [key] => paket-podklyuchennyj-za-schet-balansa
+                                    [value] => 1ГБ (7€)
+                                    [label] => Пакет, подключенный за счет баланса
+                                )
+
+                        )
+
+                    [variation_id] => 59096
+                )
+
+        )
+
+    [shipping_lines] => Array
+        (
+        )
+
+    [tax_lines] => Array
+        (
+        )
+
+    [fee_lines] => Array
+        (
+        )
+
+    [coupon_lines] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 813
+                    [code] => tacom
+                    [amount] => 800.00
+                )
+
+        )
+
+    [customer] => Array
+        (
+            [id] => 0
+            [email] => 33evgenyy33@gmail.com
+            [first_name] => fghf
+            [last_name] => Gufgh
+            [billing_address] => Array
+                (
+                    [first_name] => fghf
+                    [last_name] => Gufgh
+                    [company] => 
+                    [address_1] => 
+                    [address_2] => 
+                    [city] => 
+                    [state] => г Москва
+                    [postcode] => 
+                    [country] => RU
+                    [email] => 33evgenyy33@gmail.com
+                    [phone] => 71001111111
+                )
+
+            [shipping_address] => Array
+                (
+                    [first_name] => fghf
+                    [last_name] => Gufgh
+                    [company] => 
+                    [address_1] => 
+                    [address_2] => 
+                    [city] => 
+                    [state] => г Москва
+                    [postcode] => 
+                    [country] => RU
+                )
+
+        )
+
+    [order_status] => <mark class="pending tips" data-tip="В ожидании оплаты">В ожидании оплаты</mark>
+    [formatted_shipping_address] => <span>&ndash;</span>
+    [order_date] => <abbr title="2017/03/22 3:54:31 ПП">2017/03/22</abbr>
+    [customer_message] => <span class="na">&ndash;</span>
+    [order_notes] => <span class="na">&ndash;</span>
+    [order_total] => <span class="woocommerce-Price-amount amount">2,160.00<span class="woocommerce-Price-currencySymbol">&#8381;</span></span>
+    [print_url] => http://euroroaming/wp-admin/admin.php?print_pos_receipt=true&amp;order_id=61295&amp;_wpnonce=afece09a15
+    [stock_reduced] => 
+    [client_phone] => 70000000000
+)
+/********************************/

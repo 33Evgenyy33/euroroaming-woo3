@@ -635,6 +635,7 @@ class WC_Pos_Sell
             'wc-pos-print' => WC_POS()->plugin_url() . '/assets/css/print.css',
 	        //'dropzonecss' => WC_POS()->plugin_url() . '/assets/css/register/dropzone.min.css',
             'dropzonecss' => 'https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/min/dropzone.min.css',
+	        'datepickercss' => WC_POS()->plugin_url() . '/assets/css/register/datepicker.min.css',
             'sweetalert2css' => 'https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.5.5/sweetalert2.min.css',
             'intro1css' => 'https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.5.0/introjs.min.css',
             'materialicons' => 'https://fonts.googleapis.com/icon?family=Material+Icons',
@@ -759,7 +760,9 @@ class WC_Pos_Sell
 	    //$scripts['dropzonejs'] = WC_POS()->plugin_url() . '/assets/js/register/dropzone.min.js';
         $scripts['dropzonejs'] = 'https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/min/dropzone.min.js';
         $scripts['customdropzonejs'] = WC_POS()->plugin_url() . '/assets/js/register/customize_dropzonejs.js';
-        $scripts['sweetalert2js'] = 'https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.5.5/sweetalert2.min.js';
+	    $scripts['datepickerjs'] = WC_POS()->plugin_url() . '/assets/js/register/datepicker.min.js';
+	    $scripts['datepickerjsru'] = WC_POS()->plugin_url() . '/assets/js/register/datepicker.ru-RU.js';
+	    $scripts['sweetalert2js'] = 'https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.5.5/sweetalert2.min.js';
         $scripts['jquery-inputmask-bundle'] = WC_POS()->plugin_url() . '/assets/js/jquery.inputmask.bundle.min.js';
         //'https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js'
 

@@ -3666,31 +3666,17 @@ jQuery(document).ready(function ($) {
 
     function resizeGrid() {
         var h = $('#wc-pos-register-data').height();
-        var sub_h = $('.wc_pos_register_subtotals').height();
-        var th = $('#order_items_th').height();
         if (pos_grid.second_column_layout == 'product_grids') {
             $("#grid_layout_cycle").hide();
-            var h = parseFloat($('#wc-pos-register-grids').height()) - 39;
-            var hh = 100;
-            if (pos_grid.tile_layout == 'image_title_price') {
-                hh = 123;
-            }
-            var _int = parseInt(h / hh);
-            var _round = Math.round(h / hh);
-            var count = _int * 5;
-
-            if (h / hh >= (_int + 0.7)) {
-                var count = _round * 5;
-            }
 
             if ($('#grid_layout_cycle').length) {
                 // $('#grid_layout_cycle').height(h);
                 $('#grid_layout_cycle').height('100px');
-                // $('#wc-pos-register-grids').css({'display':'flex'});
-                // $('#wc-pos-register-data').css({'position':'relative'});
+                $('#wc-pos-register-grids').css({'display':'flex'});
+                $('#wc-pos-register-data').css({'position':'relative'});
                 $('#grid_layout_cycle').category_cycle('destroy');
                 $('#grid_layout_cycle').category_cycle({
-                    count: count,
+                    count: 4,
                     hierarchy: pos_grid.term_relationships.hierarchy,
                     relationships: pos_grid.term_relationships.relationships,
                     parents: pos_grid.term_relationships.parents,
@@ -3700,6 +3686,8 @@ jQuery(document).ready(function ($) {
                 });
             }
             $("#grid_layout_cycle").show();
+
+            console.log('all good)');
 
         }
     }
@@ -3892,6 +3880,10 @@ jQuery(document).ready(function ($) {
 
     $("#billing_phone").inputmask({mask: "79999999999"});
     $("#billing_client_phone").inputmask({mask: "79999999999"});
+    $("#billing_activation_date").datepicker({
+        language: 'ru-RU'
+    });
+
     $("#billing_client_email").inputmask("email", {
         onKeyValidation: function (key, result) {
             if (!result) {

@@ -421,9 +421,11 @@ class WC_Pos_API
     public function filter_order_response($order_data, $the_order, $fields, $api)
     {
         global $wpdb;
-        //$post = $the_order->post;
+
+
+        $post = $the_order->post;
 	    //$post = get_post_meta($order_data['ID']);
-	    $post = $the_order->get_data();
+	    //$post = $the_order->get_data();
 
 	    $order_data['order_status'] = sprintf('<mark class="%s tips" data-tip="%s">%s</mark>', sanitize_title($the_order->get_status()), wc_get_order_status_name($the_order->get_status()), wc_get_order_status_name($the_order->get_status()));
 

@@ -1,5 +1,5 @@
 body {
-    background: #E0E0E0;
+    background: #f2f6f8 !important;
 }
 
 body.wc_poin_of_sale_body #edit_wc_pos_registers {
@@ -8,6 +8,14 @@ body.wc_poin_of_sale_body #edit_wc_pos_registers {
 
 .woocommerce-billing-fields b {
     display: none;
+}
+body.wc_poin_of_sale_body #wc-pos-registers-edit > h2 {
+    box-shadow: 0 0 10px #ccc;
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    background: #ffffff;
+    color: black;
 }
 
 #adminmenuback,
@@ -197,7 +205,8 @@ div.tablenav_wrap_top table.retrieve_sales_nav {
 
 div#postbox-container-2,
 div#postbox-container-1 {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+    /*box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);*/
+    box-shadow: 1px 1px 38px -8px #8e8c8e;
 }
 
 #grid_layout_cycle > div {
@@ -206,6 +215,61 @@ div#postbox-container-1 {
 
 #wc-pos-customer-data {
     height: 125px;
+}
+
+p#billing_number_simcard_field label:after {
+    content: '(можно выбрать любое кол-во номеров из списка)';
+    position: relative;
+    display: block;
+    line-height: 13px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 300;
+    color: #737373;
+}
+
+body.wc_poin_of_sale_body #wc-pos-register-grids h3{
+    cursor: inherit;
+}
+
+div#pos_billing_details .woocommerce-billing-fields p {
+    box-shadow: 0px 3px 20px 0px rgba(113, 106, 202, 0.11);
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,0.07);
+    border-radius: 2px;
+    padding: 7px 12px 4px;
+    overflow: hidden;
+    max-width: 310px;
+    width: 100%;
+    -webkit-transition: background-color 0.2s ease;
+    transition: all 0.2s ease;
+    margin: 7px;
+    float: none;
+    position: relative;
+}
+
+div#pos_billing_details .woocommerce-billing-fields label {
+    width: 100%;
+    line-height: 30px;
+    margin: 0;
+    display: block;
+    opacity: 1;
+    -webkit-transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease;
+    color: #000000;
+    font-weight: 300;
+}
+
+div#pos_billing_details .woocommerce-billing-fields input.input-text {
+    border: none;
+    height: 25px;
+    min-height: 25px;
+    padding: 0;
+    margin-top: -4px;
+    background: none;
+    box-shadow: none;
+    font-weight: 500;
+    font-size: 16px;
 }
 
 #wc-pos-customer-data .hndle {
@@ -293,7 +357,7 @@ div#wc-pos-register-buttons .button:before {
 }
 
 #pos_billing_details{
-    background: #f0f0f0;
+    background: #fafafa;
 }
 
 div#pos_billing_details h3 {
@@ -312,7 +376,10 @@ div#pos_billing_details h3 {
 }
 
 div#pos_billing_details .woocommerce-billing-fields {
-    padding: 17px;
+    padding: 17px 3px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 #wc-pos-register-buttons .wc_pos_register_void {
@@ -350,7 +417,7 @@ div#pos_billing_details .woocommerce-billing-fields {
     background-color: #ffffff;
     vertical-align: bottom;
     background-repeat: no-repeat;
-    background-position: top center;
+    background-position: center 7px;
     overflow: hidden;
 }
 
@@ -1054,7 +1121,6 @@ button.button.keypad-special.keypad-clear {
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
     background: #f8f8f8;
     border: 1px solid #e9e8e8;
     border-right-width: 0;
@@ -1063,7 +1129,6 @@ button.button.keypad-special.keypad-clear {
 
 form#dropzone-wordpress-form {
     background: white;
-    border-radius: 5px;
     border: 2px dashed rgb(0, 135, 247);
     border-image: none;
     max-height: 147px;

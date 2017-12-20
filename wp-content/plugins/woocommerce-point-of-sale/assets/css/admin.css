@@ -570,9 +570,7 @@ body.point-of-sale_page_wc_pos_outlets ._outlet_state_field.form-field #s2id__ou
     height: 57vh;
 }
 
-.md-modal .wrap-button {
-    box-shadow: 0 -3px 6px -2px rgba(0, 0, 0, 0.47);
-}
+
 h2.nav-tab-wrapper.woo-nav-tab-wrapper {
     box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.47);
 }
@@ -3181,15 +3179,6 @@ body.wc_poin_of_sale_body #poststuff {
 
 body.wc_poin_of_sale_body .postbox-container {
     /*border: 1px solid #e5e5e5;*/
-}
-
-body.wc_poin_of_sale_body #wc-pos-registers-edit > h2 {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
-    z-index: 1;
-    position: fixed;
-    width: 100%;
-    background: #1976d2;
-    color: white;
 }
 
 input.button-primary.go_payment {
