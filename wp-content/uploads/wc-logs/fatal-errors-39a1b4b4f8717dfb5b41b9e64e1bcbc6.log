@@ -34,3 +34,132 @@
 
 2017-12-07T23:28:31+00:00 CRITICAL Class 'AC_Column_Post_AttachmentCount' not found
 
+2017-12-21T01:03:35+00:00 CRITICAL Uncaught Error: Access to undeclared static property: Kama_Cron::$opt in D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-pos-customer-pay\woocommerce-pos-customer-pay.php:283
+Stack trace:
+#0 D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-pos-customer-pay\woocommerce-pos-customer-pay.php(34): Kama_Cron->__construct(Array)
+#1 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(286): init_pos_customer_pay_gateway('')
+#2 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#3 D:\OpenServer\domains\euroroaming\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#4 D:\OpenServer\domains\euroroaming\wp-settings.php(327): do_action('plugins_loaded')
+#5 D:\OpenServer\domains\euroroaming\wp-config.php(93): require_once('D:\\OpenServer\\d...')
+#6 D:\OpenServer\domains\euroroaming\wp-load.php(37): require_once('D:\\OpenServer\\d...')
+#7 D:\OpenServer\domains\euroroaming\wp-admin\admin.php(31): require_once('D:\\OpenServ
+
+2017-12-21T01:03:37+00:00 CRITICAL Uncaught Error: Access to undeclared static property: Kama_Cron::$opt in D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-pos-customer-pay\woocommerce-pos-customer-pay.php:283
+Stack trace:
+#0 D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-pos-customer-pay\woocommerce-pos-customer-pay.php(34): Kama_Cron->__construct(Array)
+#1 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(286): init_pos_customer_pay_gateway('')
+#2 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#3 D:\OpenServer\domains\euroroaming\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#4 D:\OpenServer\domains\euroroaming\wp-settings.php(327): do_action('plugins_loaded')
+#5 D:\OpenServer\domains\euroroaming\wp-config.php(93): require_once('D:\\OpenServer\\d...')
+#6 D:\OpenServer\domains\euroroaming\wp-load.php(37): require_once('D:\\OpenServer\\d...')
+#7 D:\OpenServer\domains\euroroaming\wp-admin\admin.php(31): require_once('D:\\OpenServ
+
+2017-12-21T01:03:40+00:00 CRITICAL Uncaught Error: Access to undeclared static property: Kama_Cron::$opt in D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-pos-customer-pay\woocommerce-pos-customer-pay.php:283
+Stack trace:
+#0 D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-pos-customer-pay\woocommerce-pos-customer-pay.php(34): Kama_Cron->__construct(Array)
+#1 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(286): init_pos_customer_pay_gateway('')
+#2 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#3 D:\OpenServer\domains\euroroaming\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#4 D:\OpenServer\domains\euroroaming\wp-settings.php(327): do_action('plugins_loaded')
+#5 D:\OpenServer\domains\euroroaming\wp-config.php(93): require_once('D:\\OpenServer\\d...')
+#6 D:\OpenServer\domains\euroroaming\wp-load.php(37): require_once('D:\\OpenServer\\d...')
+#7 D:\OpenServer\domains\euroroaming\wp-admin\admin-ajax.php(22): require_once('D:\\Ope
+
+2017-12-21T01:04:32+00:00 CRITICAL Uncaught Error: Class 'Kama_Cron' not found in D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-pos-customer-pay\woocommerce-pos-customer-pay.php:33
+Stack trace:
+#0 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(286): init_pos_customer_pay_gateway('')
+#1 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 D:\OpenServer\domains\euroroaming\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 D:\OpenServer\domains\euroroaming\wp-settings.php(327): do_action('plugins_loaded')
+#4 D:\OpenServer\domains\euroroaming\wp-config.php(93): require_once('D:\\OpenServer\\d...')
+#5 D:\OpenServer\domains\euroroaming\wp-load.php(37): require_once('D:\\OpenServer\\d...')
+#6 D:\OpenServer\domains\euroroaming\wp-admin\admin.php(31): require_once('D:\\OpenServer\\d...')
+#7 D:\OpenServer\domains\euroroaming\wp-admin\plugins.php(10): require_once('D:\\OpenServer\\d...')
+#8 {main}
+  thrown
+
+2017-12-21T01:04:34+00:00 CRITICAL Uncaught Error: Class 'Kama_Cron' not found in D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-pos-customer-pay\woocommerce-pos-customer-pay.php:33
+Stack trace:
+#0 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(286): init_pos_customer_pay_gateway('')
+#1 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 D:\OpenServer\domains\euroroaming\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 D:\OpenServer\domains\euroroaming\wp-settings.php(327): do_action('plugins_loaded')
+#4 D:\OpenServer\domains\euroroaming\wp-config.php(93): require_once('D:\\OpenServer\\d...')
+#5 D:\OpenServer\domains\euroroaming\wp-load.php(37): require_once('D:\\OpenServer\\d...')
+#6 D:\OpenServer\domains\euroroaming\wp-admin\admin.php(31): require_once('D:\\OpenServer\\d...')
+#7 D:\OpenServer\domains\euroroaming\wp-admin\plugins.php(10): require_once('D:\\OpenServer\\d...')
+#8 {main}
+  thrown
+
+2017-12-21T01:05:21+00:00 CRITICAL Uncaught Error: Class 'Kama_Cron' not found in D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-pos-customer-pay\woocommerce-pos-customer-pay.php:33
+Stack trace:
+#0 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(286): init_pos_customer_pay_gateway('')
+#1 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 D:\OpenServer\domains\euroroaming\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 D:\OpenServer\domains\euroroaming\wp-settings.php(327): do_action('plugins_loaded')
+#4 D:\OpenServer\domains\euroroaming\wp-config.php(93): require_once('D:\\OpenServer\\d...')
+#5 D:\OpenServer\domains\euroroaming\wp-load.php(37): require_once('D:\\OpenServer\\d...')
+#6 D:\OpenServer\domains\euroroaming\wp-admin\admin.php(31): require_once('D:\\OpenServer\\d...')
+#7 D:\OpenServer\domains\euroroaming\wp-admin\plugins.php(10): require_once('D:\\OpenServer\\d...')
+#8 {main}
+  thrown
+
+2017-12-21T01:05:23+00:00 CRITICAL Uncaught Error: Class 'Kama_Cron' not found in D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-pos-customer-pay\woocommerce-pos-customer-pay.php:33
+Stack trace:
+#0 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(286): init_pos_customer_pay_gateway('')
+#1 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 D:\OpenServer\domains\euroroaming\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 D:\OpenServer\domains\euroroaming\wp-settings.php(327): do_action('plugins_loaded')
+#4 D:\OpenServer\domains\euroroaming\wp-config.php(93): require_once('D:\\OpenServer\\d...')
+#5 D:\OpenServer\domains\euroroaming\wp-load.php(37): require_once('D:\\OpenServer\\d...')
+#6 D:\OpenServer\domains\euroroaming\wp-admin\admin.php(31): require_once('D:\\OpenServer\\d...')
+#7 D:\OpenServer\domains\euroroaming\wp-admin\plugins.php(10): require_once('D:\\OpenServer\\d...')
+#8 {main}
+  thrown
+
+2017-12-21T01:17:12+00:00 CRITICAL Uncaught Error: Access to undeclared static property: Kama_Cron::$opt in D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-pos-customer-pay\woocommerce-pos-customer-pay.php:70
+Stack trace:
+#0 D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-pos-customer-pay\woocommerce-pos-customer-pay.php(145): Kama_Cron->__construct(Array)
+#1 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(286): init_pos_customer_pay_gateway('')
+#2 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#3 D:\OpenServer\domains\euroroaming\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#4 D:\OpenServer\domains\euroroaming\wp-settings.php(327): do_action('plugins_loaded')
+#5 D:\OpenServer\domains\euroroaming\wp-config.php(93): require_once('D:\\OpenServer\\d...')
+#6 D:\OpenServer\domains\euroroaming\wp-load.php(37): require_once('D:\\OpenServer\\d...')
+#7 D:\OpenServer\domains\euroroaming\wp-admin\admin.php(31): require_once('D:\\OpenServ
+
+2017-12-21T01:17:14+00:00 CRITICAL Uncaught Error: Access to undeclared static property: Kama_Cron::$opt in D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-pos-customer-pay\woocommerce-pos-customer-pay.php:70
+Stack trace:
+#0 D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-pos-customer-pay\woocommerce-pos-customer-pay.php(145): Kama_Cron->__construct(Array)
+#1 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(286): init_pos_customer_pay_gateway('')
+#2 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#3 D:\OpenServer\domains\euroroaming\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#4 D:\OpenServer\domains\euroroaming\wp-settings.php(327): do_action('plugins_loaded')
+#5 D:\OpenServer\domains\euroroaming\wp-config.php(93): require_once('D:\\OpenServer\\d...')
+#6 D:\OpenServer\domains\euroroaming\wp-load.php(37): require_once('D:\\OpenServer\\d...')
+#7 D:\OpenServer\domains\euroroaming\wp-admin\admin.php(31): require_once('D:\\OpenServ
+
+2017-12-21T01:17:35+00:00 CRITICAL Uncaught Error: Access to undeclared static property: Kama_Cron::$opt in D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-pos-customer-pay\woocommerce-pos-customer-pay.php:64
+Stack trace:
+#0 D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-pos-customer-pay\woocommerce-pos-customer-pay.php(143): Kama_Cron->__construct(Array)
+#1 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(286): init_pos_customer_pay_gateway('')
+#2 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#3 D:\OpenServer\domains\euroroaming\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#4 D:\OpenServer\domains\euroroaming\wp-settings.php(327): do_action('plugins_loaded')
+#5 D:\OpenServer\domains\euroroaming\wp-config.php(93): require_once('D:\\OpenServer\\d...')
+#6 D:\OpenServer\domains\euroroaming\wp-load.php(37): require_once('D:\\OpenServer\\d...')
+#7 D:\OpenServer\domains\euroroaming\wp-admin\admin.php(31): require_once('D:\\OpenServ
+
+2017-12-21T01:17:37+00:00 CRITICAL Uncaught Error: Access to undeclared static property: Kama_Cron::$opt in D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-pos-customer-pay\woocommerce-pos-customer-pay.php:64
+Stack trace:
+#0 D:\OpenServer\domains\euroroaming\wp-content\plugins\woocommerce-pos-customer-pay\woocommerce-pos-customer-pay.php(143): Kama_Cron->__construct(Array)
+#1 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(286): init_pos_customer_pay_gateway('')
+#2 D:\OpenServer\domains\euroroaming\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#3 D:\OpenServer\domains\euroroaming\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#4 D:\OpenServer\domains\euroroaming\wp-settings.php(327): do_action('plugins_loaded')
+#5 D:\OpenServer\domains\euroroaming\wp-config.php(93): require_once('D:\\OpenServer\\d...')
+#6 D:\OpenServer\domains\euroroaming\wp-load.php(37): require_once('D:\\OpenServer\\d...')
+#7 D:\OpenServer\domains\euroroaming\wp-admin\admin.php(31): require_once('D:\\OpenServ
+
