@@ -104,6 +104,7 @@ function init_paytravel_gateway() {
 
 
 
+
 		public function process_payment( $order_id ) {
 			global $woocommerce;
 			$order = new WC_Order( $order_id );
