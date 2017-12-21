@@ -81,6 +81,7 @@ define( 'WP_DEBUG', true );
 define( 'WP_DEBUG_DISPLAY', false );
 define( 'WP_DEBUG_LOG', true );
 define ('WPLANG', 'ru_RU');
+define('DISABLE_WP_CRON', true);
 
 
 /* Это всё, дальше не редактируем. Успехов! */
