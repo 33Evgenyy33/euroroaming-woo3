@@ -230,8 +230,6 @@ table.product-fields-table td select {
         color: #0074a2;
     }
 
-
-
     .remove_custom_product_meta:hover,
     .remove_order_item:hover,
     .remove_customer_row:hover {
@@ -386,7 +384,7 @@ body.point-of-sale_page_wc_pos_outlets #s2id__outlet_country {
 }
 
 div.form-field._register_suffix_field,
-div.form-field._register_prefix_field{
+div.form-field._register_prefix_field {
     width: 50%;
 }
 
@@ -403,7 +401,7 @@ div.form-field._register_prefix_field{
 .form-field._register_gift_receipt_field,
 .form-field._register_note_request_field,
 .form-field._outlet_twitter_field,
-.form-field._outlet_facebook_field{
+.form-field._outlet_facebook_field {
     display: none;
 }
 
@@ -569,7 +567,6 @@ body.point-of-sale_page_wc_pos_outlets ._outlet_state_field.form-field #s2id__ou
 #modal-order_customer #customer_details {
     height: 57vh;
 }
-
 
 h2.nav-tab-wrapper.woo-nav-tab-wrapper {
     box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.47);
@@ -1695,13 +1692,12 @@ a#retrieve_sales {
 }
 
 .md-modal {
-    box-shadow: 0 19px 38px rgba(0,0,0,.3), 0 15px 12px rgba(0,0,0,.22);
+    box-shadow: 0 19px 38px rgba(0, 0, 0, .3), 0 15px 12px rgba(0, 0, 0, .22);
 }
 
 div#modal-1.pos_logo {
     box-shadow: none;
 }
-
 
 #modal-order_payment .topaytop {
     font-size: 200%;
@@ -1716,7 +1712,7 @@ div#modal-1.pos_logo {
     font-size: 14px;
 }
 
-#wc-pos-register-buttons .tbr.hide_btn{
+#wc-pos-register-buttons .tbr.hide_btn {
     pointer-events: none;
     opacity: 0.4;
 }
@@ -1730,8 +1726,6 @@ div#modal-1.pos_logo {
     font-size: 17px;
     border-bottom: 1px solid #eee;
 }
-
-
 
 #modal-order_payment .media-frame-wrap .midbtnrowpop {
     text-align: center;
@@ -3310,17 +3304,27 @@ td.coupon_amount span.coupon_code {
 #modal-order_payment .media-frame-menu a.payment_methods {
     line-height: 30px;;
 }
+a.payment_methods.payment_method_pos_customer_pay, a.payment_methods.payment_method_pos_customer_pay_paytravel {
+    background: #fff;
+}
 
-a.payment_methods.payment_method_pos_customer_pay, a.payment_methods.payment_method_terminal, a.payment_methods.payment_method_yandex_money {
-    line-height: 20px!important;
+a.payment_methods.payment_method_pos_customer_pay,
+a.payment_methods.payment_method_terminal,
+a.payment_methods.payment_method_yandex_money,
+a.payment_methods.payment_method_pos_customer_pay_paytravel {
+    line-height: 20px !important;
 }
 
 #modal-order_payment a.payment_methods.payment_method_bank:before {
-     content: url(http://euroroaming/wp-content/uploads/2017/12/ac.png);
- }
+    content: url(http://euroroaming/wp-content/uploads/2017/12/ac.png);
+}
 
 #modal-order_payment a.payment_methods.payment_method_yandex_money:before {
     content: url(http://euroroaming/wp-content/uploads/2017/12/pc.png);
+}
+
+#modal-order_payment a.payment_methods.payment_method_pos_customer_pay_paytravel:before {
+    content: url(http://euroroaming/wp-content/uploads/2017/12/7-min-1.png);
 }
 
 #modal-order_payment a.payment_methods.payment_method_terminal:before {
@@ -3734,6 +3738,7 @@ body.point-of-sale_page_wc_pos_settings table.api_settings mark.yes {
     font-family: aepos;
     content: "\e909";
 }
+
 #wc-pos-customer-data #add_customer_to_register {
     background: #1E88E5;
     color: white;
@@ -3742,10 +3747,11 @@ body.point-of-sale_page_wc_pos_settings table.api_settings mark.yes {
     position: relative;
 }
 
-.access.column-access{
+.access.column-access {
     padding: 19px 0px;
 }
-.access.column-access .button{
+
+.access.column-access .button {
     border: none;
     border-radius: 2px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
@@ -3770,25 +3776,27 @@ body.point-of-sale_page_wc_pos_settings table.api_settings mark.yes {
 }
 
 .md-card.md-card-hover {
-    -webkit-transition: all 280ms cubic-bezier(.4,0,.2,1);
-    transition: all 280ms cubic-bezier(.4,0,.2,1);
+    -webkit-transition: all 280ms cubic-bezier(.4, 0, .2, 1);
+    transition: all 280ms cubic-bezier(.4, 0, .2, 1);
     will-change: box-shadow;
     background: #fff;
     position: relative;
-    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
     border: none;
     width: 400px;
     margin: 0 auto;
 }
+
 .md-card-head {
     text-align: center;
     padding-bottom: 12px;
     position: relative;
-    border-bottom: 1px solid rgba(0,0,0,.12);
+    border-bottom: 1px solid rgba(0, 0, 0, .12);
 }
+
 h3.md-card-head-text.uk-text-center {
     padding: 16px 16px 9px;
-    font: 500 16px/22px Roboto,sans-serif;
+    font: 500 16px/22px Roboto, sans-serif;
     color: #212121;
     margin: 0;
 }

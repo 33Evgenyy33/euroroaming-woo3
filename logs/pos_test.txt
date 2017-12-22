@@ -6241,3 +6241,5563 @@ Array
 )
 
 /***********************************************************************/
+Array
+(
+    [us_og_image] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_user] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_key] => Array
+        (
+            [0] => wc_order_5a3c23633d976
+        )
+
+    [_payment_method] => Array
+        (
+            [0] => pos_customer_pay
+        )
+
+    [_payment_method_title] => Array
+        (
+            [0] => Оплачивает клиент (с чеком)
+        )
+
+    [_transaction_id] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_ip_address] => Array
+        (
+            [0] => 127.0.0.1
+        )
+
+    [_customer_user_agent] => Array
+        (
+            [0] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36
+        )
+
+    [_created_via] => Array
+        (
+            [0] => POS
+        )
+
+    [_date_completed] => Array
+        (
+            [0] => 
+        )
+
+    [_completed_date] => Array
+        (
+            [0] => 
+        )
+
+    [_date_paid] => Array
+        (
+            [0] => 1513893537
+        )
+
+    [_paid_date] => Array
+        (
+            [0] => 2017-12-22 00:58:57
+        )
+
+    [_cart_hash] => Array
+        (
+            [0] => 
+        )
+
+    [_order_currency] => Array
+        (
+            [0] => RUB
+        )
+
+    [_cart_discount] => Array
+        (
+            [0] => 0
+        )
+
+    [_cart_discount_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_total] => Array
+        (
+            [0] => 2960.00
+        )
+
+    [_order_version] => Array
+        (
+            [0] => 3.2.6
+        )
+
+    [_prices_include_tax] => Array
+        (
+            [0] => no
+        )
+
+    [_billing_address_index] => Array
+        (
+            [0] => Евгений Егоров     г Москва  RU cli@cli.ru 70000000000
+        )
+
+    [_shipping_address_index] => Array
+        (
+            [0] => Евгений Егоров     г Москва  RU
+        )
+
+    [wc_pos_order_saved] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_change] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_pay] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_id_register] => Array
+        (
+            [0] => 1
+        )
+
+    [wc_pos_order_tax_number] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_order_type] => Array
+        (
+            [0] => POS
+        )
+
+    [wc_pos_prefix_suffix_order_number] => Array
+        (
+            [0] =>  Оформлен в t061300
+        )
+
+    [wc_pos_ta_id] => Array
+        (
+            [0] => 3348
+        )
+
+    [wc_pos_orange_discount] => Array
+        (
+            [0] => 800
+        )
+
+    [wc_pos_three_discount] => Array
+        (
+            [0] => 300
+        )
+
+    [client_email] => Array
+        (
+            [0] => cli@cli.ru
+        )
+
+    [client_phone] => Array
+        (
+            [0] => 70000000000
+        )
+
+    [activation_date] => Array
+        (
+            [0] => 04.02.2018
+        )
+
+    [number_simcard] => Array
+        (
+            [0] => 605010101,605030303
+        )
+
+    [_recorded_coupon_usage_counts] => Array
+        (
+            [0] => yes
+        )
+
+    [wc_pos_served_by_name] => Array
+        (
+            [0] => 33Evgenyy33
+        )
+
+    [_edit_lock] => Array
+        (
+            [0] => 1513893532:1
+        )
+
+    [test111] => Array
+        (
+            [0] => 789
+        )
+
+    [_pos_payment_redirect] => Array
+        (
+            [0] => http://euroroaming/checkout/order-pay/61300?key=wc_order_5a3c23633d976
+        )
+
+    [_billing_first_name] => Array
+        (
+            [0] => Евгений
+        )
+
+    [_billing_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_billing_company] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_city] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_billing_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_billing_email] => Array
+        (
+            [0] => cli@cli.ru
+        )
+
+    [_billing_phone] => Array
+        (
+            [0] => 70000000000
+        )
+
+    [_shipping_first_name] => Array
+        (
+            [0] => Евгений
+        )
+
+    [_shipping_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_shipping_company] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_city] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_shipping_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_order_stock_reduced] => Array
+        (
+            [0] => 1
+        )
+
+    [_edit_last] => Array
+        (
+            [0] => 1
+        )
+
+    [_download_permissions_granted] => Array
+        (
+            [0] => yes
+        )
+
+    [_recorded_sales] => Array
+        (
+            [0] => yes
+        )
+
+)
+
+/***********************************************************************/
+Array
+(
+    [us_og_image] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_user] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_key] => Array
+        (
+            [0] => wc_order_5a3c23633d976
+        )
+
+    [_payment_method] => Array
+        (
+            [0] => pos_customer_pay
+        )
+
+    [_payment_method_title] => Array
+        (
+            [0] => Оплачивает клиент (с чеком)
+        )
+
+    [_transaction_id] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_ip_address] => Array
+        (
+            [0] => 127.0.0.1
+        )
+
+    [_customer_user_agent] => Array
+        (
+            [0] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36
+        )
+
+    [_created_via] => Array
+        (
+            [0] => POS
+        )
+
+    [_date_completed] => Array
+        (
+            [0] => 
+        )
+
+    [_completed_date] => Array
+        (
+            [0] => 
+        )
+
+    [_date_paid] => Array
+        (
+            [0] => 1513893537
+        )
+
+    [_paid_date] => Array
+        (
+            [0] => 2017-12-22 00:58:57
+        )
+
+    [_cart_hash] => Array
+        (
+            [0] => 
+        )
+
+    [_order_currency] => Array
+        (
+            [0] => RUB
+        )
+
+    [_cart_discount] => Array
+        (
+            [0] => 0
+        )
+
+    [_cart_discount_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_total] => Array
+        (
+            [0] => 2960.00
+        )
+
+    [_order_version] => Array
+        (
+            [0] => 3.2.6
+        )
+
+    [_prices_include_tax] => Array
+        (
+            [0] => no
+        )
+
+    [_billing_address_index] => Array
+        (
+            [0] => Евгений Егоров     г Москва  RU cli@cli.ru 70000000000
+        )
+
+    [_shipping_address_index] => Array
+        (
+            [0] => Евгений Егоров     г Москва  RU
+        )
+
+    [wc_pos_order_saved] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_change] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_pay] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_id_register] => Array
+        (
+            [0] => 1
+        )
+
+    [wc_pos_order_tax_number] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_order_type] => Array
+        (
+            [0] => POS
+        )
+
+    [wc_pos_prefix_suffix_order_number] => Array
+        (
+            [0] =>  Оформлен в t061300
+        )
+
+    [wc_pos_ta_id] => Array
+        (
+            [0] => 3348
+        )
+
+    [wc_pos_orange_discount] => Array
+        (
+            [0] => 800
+        )
+
+    [wc_pos_three_discount] => Array
+        (
+            [0] => 300
+        )
+
+    [client_email] => Array
+        (
+            [0] => cli@cli.ru
+        )
+
+    [client_phone] => Array
+        (
+            [0] => 70000000000
+        )
+
+    [activation_date] => Array
+        (
+            [0] => 04.02.2018
+        )
+
+    [number_simcard] => Array
+        (
+            [0] => 605010101,605030303
+        )
+
+    [_recorded_coupon_usage_counts] => Array
+        (
+            [0] => yes
+        )
+
+    [wc_pos_served_by_name] => Array
+        (
+            [0] => 33Evgenyy33
+        )
+
+    [_edit_lock] => Array
+        (
+            [0] => 1513893678:1
+        )
+
+    [test111] => Array
+        (
+            [0] => 789
+        )
+
+    [_pos_payment_redirect] => Array
+        (
+            [0] => http://euroroaming/checkout/order-pay/61300?key=wc_order_5a3c23633d976
+        )
+
+    [_billing_first_name] => Array
+        (
+            [0] => Евгений
+        )
+
+    [_billing_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_billing_company] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_city] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_billing_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_billing_email] => Array
+        (
+            [0] => cli@cli.ru
+        )
+
+    [_billing_phone] => Array
+        (
+            [0] => 70000000000
+        )
+
+    [_shipping_first_name] => Array
+        (
+            [0] => Евгений
+        )
+
+    [_shipping_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_shipping_company] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_city] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_shipping_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_order_stock_reduced] => Array
+        (
+            [0] => 1
+        )
+
+    [_edit_last] => Array
+        (
+            [0] => 1
+        )
+
+    [_recorded_sales] => Array
+        (
+            [0] => yes
+        )
+
+    [_download_permissions_granted] => Array
+        (
+            [0] => yes
+        )
+
+    [_vc_post_settings] => Array
+        (
+            [0] => a:1:{s:10:"vc_grid_id";a:0:{}}
+        )
+
+)
+
+/***********************************************************************/
+Array
+(
+    [us_og_image] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_user] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_key] => Array
+        (
+            [0] => wc_order_5a3c23633d976
+        )
+
+    [_payment_method] => Array
+        (
+            [0] => pos_customer_pay
+        )
+
+    [_payment_method_title] => Array
+        (
+            [0] => Оплачивает клиент (с чеком)
+        )
+
+    [_transaction_id] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_ip_address] => Array
+        (
+            [0] => 127.0.0.1
+        )
+
+    [_customer_user_agent] => Array
+        (
+            [0] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36
+        )
+
+    [_created_via] => Array
+        (
+            [0] => POS
+        )
+
+    [_date_completed] => Array
+        (
+            [0] => 
+        )
+
+    [_completed_date] => Array
+        (
+            [0] => 
+        )
+
+    [_date_paid] => Array
+        (
+            [0] => 1513893537
+        )
+
+    [_paid_date] => Array
+        (
+            [0] => 2017-12-22 00:58:57
+        )
+
+    [_cart_hash] => Array
+        (
+            [0] => 
+        )
+
+    [_order_currency] => Array
+        (
+            [0] => RUB
+        )
+
+    [_cart_discount] => Array
+        (
+            [0] => 0
+        )
+
+    [_cart_discount_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_total] => Array
+        (
+            [0] => 2960.00
+        )
+
+    [_order_version] => Array
+        (
+            [0] => 3.2.6
+        )
+
+    [_prices_include_tax] => Array
+        (
+            [0] => no
+        )
+
+    [_billing_address_index] => Array
+        (
+            [0] => Евгений Егоров     г Москва  RU cli@cli.ru 70000000000
+        )
+
+    [_shipping_address_index] => Array
+        (
+            [0] => Евгений Егоров     г Москва  RU
+        )
+
+    [wc_pos_order_saved] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_change] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_pay] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_id_register] => Array
+        (
+            [0] => 1
+        )
+
+    [wc_pos_order_tax_number] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_order_type] => Array
+        (
+            [0] => POS
+        )
+
+    [wc_pos_prefix_suffix_order_number] => Array
+        (
+            [0] =>  Оформлен в t061300
+        )
+
+    [wc_pos_ta_id] => Array
+        (
+            [0] => 3348
+        )
+
+    [wc_pos_orange_discount] => Array
+        (
+            [0] => 800
+        )
+
+    [wc_pos_three_discount] => Array
+        (
+            [0] => 300
+        )
+
+    [client_email] => Array
+        (
+            [0] => cli@cli.ru
+        )
+
+    [client_phone] => Array
+        (
+            [0] => 70000000000
+        )
+
+    [activation_date] => Array
+        (
+            [0] => 04.02.2018
+        )
+
+    [number_simcard] => Array
+        (
+            [0] => 605010101,605030303
+        )
+
+    [_recorded_coupon_usage_counts] => Array
+        (
+            [0] => yes
+        )
+
+    [wc_pos_served_by_name] => Array
+        (
+            [0] => 33Evgenyy33
+        )
+
+    [_edit_lock] => Array
+        (
+            [0] => 1513893847:1
+        )
+
+    [test111] => Array
+        (
+            [0] => 789
+        )
+
+    [_pos_payment_redirect] => Array
+        (
+            [0] => http://euroroaming/checkout/order-pay/61300?key=wc_order_5a3c23633d976
+        )
+
+    [_billing_first_name] => Array
+        (
+            [0] => Евгений
+        )
+
+    [_billing_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_billing_company] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_city] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_billing_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_billing_email] => Array
+        (
+            [0] => cli@cli.ru
+        )
+
+    [_billing_phone] => Array
+        (
+            [0] => 70000000000
+        )
+
+    [_shipping_first_name] => Array
+        (
+            [0] => Евгений
+        )
+
+    [_shipping_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_shipping_company] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_city] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_shipping_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_order_stock_reduced] => Array
+        (
+            [0] => 1
+        )
+
+    [_edit_last] => Array
+        (
+            [0] => 1
+        )
+
+    [_recorded_sales] => Array
+        (
+            [0] => yes
+        )
+
+    [_vc_post_settings] => Array
+        (
+            [0] => a:1:{s:10:"vc_grid_id";a:0:{}}
+        )
+
+    [_download_permissions_granted] => Array
+        (
+            [0] => yes
+        )
+
+)
+
+/***********************************************************************/
+Array
+(
+    [us_og_image] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_user] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_key] => Array
+        (
+            [0] => wc_order_5a3c23633d976
+        )
+
+    [_payment_method] => Array
+        (
+            [0] => pos_customer_pay
+        )
+
+    [_payment_method_title] => Array
+        (
+            [0] => Оплачивает клиент (с чеком)
+        )
+
+    [_transaction_id] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_ip_address] => Array
+        (
+            [0] => 127.0.0.1
+        )
+
+    [_customer_user_agent] => Array
+        (
+            [0] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36
+        )
+
+    [_created_via] => Array
+        (
+            [0] => POS
+        )
+
+    [_date_completed] => Array
+        (
+            [0] => 
+        )
+
+    [_completed_date] => Array
+        (
+            [0] => 
+        )
+
+    [_date_paid] => Array
+        (
+            [0] => 1513893537
+        )
+
+    [_paid_date] => Array
+        (
+            [0] => 2017-12-22 00:58:57
+        )
+
+    [_cart_hash] => Array
+        (
+            [0] => 
+        )
+
+    [_order_currency] => Array
+        (
+            [0] => RUB
+        )
+
+    [_cart_discount] => Array
+        (
+            [0] => 0
+        )
+
+    [_cart_discount_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_total] => Array
+        (
+            [0] => 2960.00
+        )
+
+    [_order_version] => Array
+        (
+            [0] => 3.2.6
+        )
+
+    [_prices_include_tax] => Array
+        (
+            [0] => no
+        )
+
+    [_billing_address_index] => Array
+        (
+            [0] => Евгений Егоров     г Москва  RU cli@cli.ru 70000000000
+        )
+
+    [_shipping_address_index] => Array
+        (
+            [0] => Евгений Егоров     г Москва  RU
+        )
+
+    [wc_pos_order_saved] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_change] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_pay] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_id_register] => Array
+        (
+            [0] => 1
+        )
+
+    [wc_pos_order_tax_number] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_order_type] => Array
+        (
+            [0] => POS
+        )
+
+    [wc_pos_prefix_suffix_order_number] => Array
+        (
+            [0] =>  Оформлен в t061300
+        )
+
+    [wc_pos_ta_id] => Array
+        (
+            [0] => 3348
+        )
+
+    [wc_pos_orange_discount] => Array
+        (
+            [0] => 800
+        )
+
+    [wc_pos_three_discount] => Array
+        (
+            [0] => 300
+        )
+
+    [client_email] => Array
+        (
+            [0] => cli@cli.ru
+        )
+
+    [client_phone] => Array
+        (
+            [0] => 70000000000
+        )
+
+    [activation_date] => Array
+        (
+            [0] => 04.02.2018
+        )
+
+    [number_simcard] => Array
+        (
+            [0] => 605010101,605030303
+        )
+
+    [_recorded_coupon_usage_counts] => Array
+        (
+            [0] => yes
+        )
+
+    [wc_pos_served_by_name] => Array
+        (
+            [0] => 33Evgenyy33
+        )
+
+    [_edit_lock] => Array
+        (
+            [0] => 1513893907:1
+        )
+
+    [test111] => Array
+        (
+            [0] => 789
+        )
+
+    [_pos_payment_redirect] => Array
+        (
+            [0] => http://euroroaming/checkout/order-pay/61300?key=wc_order_5a3c23633d976
+        )
+
+    [_billing_first_name] => Array
+        (
+            [0] => Евгений
+        )
+
+    [_billing_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_billing_company] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_city] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_billing_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_billing_email] => Array
+        (
+            [0] => cli@cli.ru
+        )
+
+    [_billing_phone] => Array
+        (
+            [0] => 70000000000
+        )
+
+    [_shipping_first_name] => Array
+        (
+            [0] => Евгений
+        )
+
+    [_shipping_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_shipping_company] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_city] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_shipping_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_order_stock_reduced] => Array
+        (
+            [0] => 1
+        )
+
+    [_edit_last] => Array
+        (
+            [0] => 1
+        )
+
+    [_recorded_sales] => Array
+        (
+            [0] => yes
+        )
+
+    [_vc_post_settings] => Array
+        (
+            [0] => a:1:{s:10:"vc_grid_id";a:0:{}}
+        )
+
+    [_download_permissions_granted] => Array
+        (
+            [0] => yes
+        )
+
+)
+
+/***********************************************************************/
+Array
+(
+    [us_og_image] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_user] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_key] => Array
+        (
+            [0] => wc_order_5a3c23633d976
+        )
+
+    [_payment_method] => Array
+        (
+            [0] => pos_customer_pay
+        )
+
+    [_payment_method_title] => Array
+        (
+            [0] => Оплачивает клиент (с чеком)
+        )
+
+    [_transaction_id] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_ip_address] => Array
+        (
+            [0] => 127.0.0.1
+        )
+
+    [_customer_user_agent] => Array
+        (
+            [0] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36
+        )
+
+    [_created_via] => Array
+        (
+            [0] => POS
+        )
+
+    [_date_completed] => Array
+        (
+            [0] => 
+        )
+
+    [_completed_date] => Array
+        (
+            [0] => 
+        )
+
+    [_date_paid] => Array
+        (
+            [0] => 1513893537
+        )
+
+    [_paid_date] => Array
+        (
+            [0] => 2017-12-22 00:58:57
+        )
+
+    [_cart_hash] => Array
+        (
+            [0] => 
+        )
+
+    [_order_currency] => Array
+        (
+            [0] => RUB
+        )
+
+    [_cart_discount] => Array
+        (
+            [0] => 0
+        )
+
+    [_cart_discount_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_total] => Array
+        (
+            [0] => 2960.00
+        )
+
+    [_order_version] => Array
+        (
+            [0] => 3.2.6
+        )
+
+    [_prices_include_tax] => Array
+        (
+            [0] => no
+        )
+
+    [_billing_address_index] => Array
+        (
+            [0] => Евгений Егоров     г Москва  RU cli@cli.ru 70000000000
+        )
+
+    [_shipping_address_index] => Array
+        (
+            [0] => Евгений Егоров     г Москва  RU
+        )
+
+    [wc_pos_order_saved] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_change] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_pay] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_id_register] => Array
+        (
+            [0] => 1
+        )
+
+    [wc_pos_order_tax_number] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_order_type] => Array
+        (
+            [0] => POS
+        )
+
+    [wc_pos_prefix_suffix_order_number] => Array
+        (
+            [0] =>  Оформлен в t061300
+        )
+
+    [wc_pos_ta_id] => Array
+        (
+            [0] => 3348
+        )
+
+    [wc_pos_orange_discount] => Array
+        (
+            [0] => 800
+        )
+
+    [wc_pos_three_discount] => Array
+        (
+            [0] => 300
+        )
+
+    [client_email] => Array
+        (
+            [0] => cli@cli.ru
+        )
+
+    [client_phone] => Array
+        (
+            [0] => 70000000000
+        )
+
+    [activation_date] => Array
+        (
+            [0] => 04.02.2018
+        )
+
+    [number_simcard] => Array
+        (
+            [0] => 605010101,605030303
+        )
+
+    [_recorded_coupon_usage_counts] => Array
+        (
+            [0] => yes
+        )
+
+    [wc_pos_served_by_name] => Array
+        (
+            [0] => 33Evgenyy33
+        )
+
+    [_edit_lock] => Array
+        (
+            [0] => 1513893984:1
+        )
+
+    [test111] => Array
+        (
+            [0] => 789
+        )
+
+    [_pos_payment_redirect] => Array
+        (
+            [0] => http://euroroaming/checkout/order-pay/61300?key=wc_order_5a3c23633d976
+        )
+
+    [_billing_first_name] => Array
+        (
+            [0] => Евгений
+        )
+
+    [_billing_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_billing_company] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_city] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_billing_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_billing_email] => Array
+        (
+            [0] => cli@cli.ru
+        )
+
+    [_billing_phone] => Array
+        (
+            [0] => 70000000000
+        )
+
+    [_shipping_first_name] => Array
+        (
+            [0] => Евгений
+        )
+
+    [_shipping_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_shipping_company] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_city] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_shipping_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_order_stock_reduced] => Array
+        (
+            [0] => 1
+        )
+
+    [_edit_last] => Array
+        (
+            [0] => 1
+        )
+
+    [_recorded_sales] => Array
+        (
+            [0] => yes
+        )
+
+    [_vc_post_settings] => Array
+        (
+            [0] => a:1:{s:10:"vc_grid_id";a:0:{}}
+        )
+
+    [_download_permissions_granted] => Array
+        (
+            [0] => yes
+        )
+
+)
+
+/***********************************************************************/
+Array
+(
+    [us_og_image] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_user] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_key] => Array
+        (
+            [0] => wc_order_5a3c23633d976
+        )
+
+    [_payment_method] => Array
+        (
+            [0] => pos_customer_pay
+        )
+
+    [_payment_method_title] => Array
+        (
+            [0] => Оплачивает клиент (с чеком)
+        )
+
+    [_transaction_id] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_ip_address] => Array
+        (
+            [0] => 127.0.0.1
+        )
+
+    [_customer_user_agent] => Array
+        (
+            [0] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36
+        )
+
+    [_created_via] => Array
+        (
+            [0] => POS
+        )
+
+    [_date_completed] => Array
+        (
+            [0] => 
+        )
+
+    [_completed_date] => Array
+        (
+            [0] => 
+        )
+
+    [_date_paid] => Array
+        (
+            [0] => 1513893537
+        )
+
+    [_paid_date] => Array
+        (
+            [0] => 2017-12-22 00:58:57
+        )
+
+    [_cart_hash] => Array
+        (
+            [0] => 
+        )
+
+    [_order_currency] => Array
+        (
+            [0] => RUB
+        )
+
+    [_cart_discount] => Array
+        (
+            [0] => 0
+        )
+
+    [_cart_discount_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_total] => Array
+        (
+            [0] => 2960.00
+        )
+
+    [_order_version] => Array
+        (
+            [0] => 3.2.6
+        )
+
+    [_prices_include_tax] => Array
+        (
+            [0] => no
+        )
+
+    [_billing_address_index] => Array
+        (
+            [0] => Евгений Егоров     г Москва  RU cli@cli.ru 70000000000
+        )
+
+    [_shipping_address_index] => Array
+        (
+            [0] => Евгений Егоров     г Москва  RU
+        )
+
+    [wc_pos_order_saved] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_change] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_pay] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_id_register] => Array
+        (
+            [0] => 1
+        )
+
+    [wc_pos_order_tax_number] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_order_type] => Array
+        (
+            [0] => POS
+        )
+
+    [wc_pos_prefix_suffix_order_number] => Array
+        (
+            [0] =>  Оформлен в t061300
+        )
+
+    [wc_pos_ta_id] => Array
+        (
+            [0] => 3348
+        )
+
+    [wc_pos_orange_discount] => Array
+        (
+            [0] => 800
+        )
+
+    [wc_pos_three_discount] => Array
+        (
+            [0] => 300
+        )
+
+    [client_email] => Array
+        (
+            [0] => cli@cli.ru
+        )
+
+    [client_phone] => Array
+        (
+            [0] => 70000000000
+        )
+
+    [activation_date] => Array
+        (
+            [0] => 04.02.2018
+        )
+
+    [number_simcard] => Array
+        (
+            [0] => 605010101,605030303
+        )
+
+    [_recorded_coupon_usage_counts] => Array
+        (
+            [0] => yes
+        )
+
+    [wc_pos_served_by_name] => Array
+        (
+            [0] => 33Evgenyy33
+        )
+
+    [_edit_lock] => Array
+        (
+            [0] => 1513894139:1
+        )
+
+    [test111] => Array
+        (
+            [0] => 789
+        )
+
+    [_pos_payment_redirect] => Array
+        (
+            [0] => http://euroroaming/checkout/order-pay/61300?key=wc_order_5a3c23633d976
+        )
+
+    [_billing_first_name] => Array
+        (
+            [0] => Евгений
+        )
+
+    [_billing_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_billing_company] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_city] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_billing_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_billing_email] => Array
+        (
+            [0] => cli@cli.ru
+        )
+
+    [_billing_phone] => Array
+        (
+            [0] => 70000000000
+        )
+
+    [_shipping_first_name] => Array
+        (
+            [0] => Евгений
+        )
+
+    [_shipping_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_shipping_company] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_city] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_shipping_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_order_stock_reduced] => Array
+        (
+            [0] => 1
+        )
+
+    [_edit_last] => Array
+        (
+            [0] => 1
+        )
+
+    [_recorded_sales] => Array
+        (
+            [0] => yes
+        )
+
+    [_vc_post_settings] => Array
+        (
+            [0] => a:1:{s:10:"vc_grid_id";a:0:{}}
+        )
+
+    [_download_permissions_granted] => Array
+        (
+            [0] => yes
+        )
+
+)
+
+/***********************************************************************/
+Array
+(
+    [us_og_image] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_user] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_key] => Array
+        (
+            [0] => wc_order_5a3c23633d976
+        )
+
+    [_payment_method] => Array
+        (
+            [0] => pos_customer_pay
+        )
+
+    [_payment_method_title] => Array
+        (
+            [0] => Оплачивает клиент (с чеком)
+        )
+
+    [_transaction_id] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_ip_address] => Array
+        (
+            [0] => 127.0.0.1
+        )
+
+    [_customer_user_agent] => Array
+        (
+            [0] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36
+        )
+
+    [_created_via] => Array
+        (
+            [0] => POS
+        )
+
+    [_date_completed] => Array
+        (
+            [0] => 
+        )
+
+    [_completed_date] => Array
+        (
+            [0] => 
+        )
+
+    [_date_paid] => Array
+        (
+            [0] => 1513893537
+        )
+
+    [_paid_date] => Array
+        (
+            [0] => 2017-12-22 00:58:57
+        )
+
+    [_cart_hash] => Array
+        (
+            [0] => 
+        )
+
+    [_order_currency] => Array
+        (
+            [0] => RUB
+        )
+
+    [_cart_discount] => Array
+        (
+            [0] => 0
+        )
+
+    [_cart_discount_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_total] => Array
+        (
+            [0] => 2960.00
+        )
+
+    [_order_version] => Array
+        (
+            [0] => 3.2.6
+        )
+
+    [_prices_include_tax] => Array
+        (
+            [0] => no
+        )
+
+    [_billing_address_index] => Array
+        (
+            [0] => Евгений Егоров     г Москва  RU cli@cli.ru 70000000000
+        )
+
+    [_shipping_address_index] => Array
+        (
+            [0] => Евгений Егоров     г Москва  RU
+        )
+
+    [wc_pos_order_saved] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_change] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_pay] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_id_register] => Array
+        (
+            [0] => 1
+        )
+
+    [wc_pos_order_tax_number] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_order_type] => Array
+        (
+            [0] => POS
+        )
+
+    [wc_pos_prefix_suffix_order_number] => Array
+        (
+            [0] =>  Оформлен в t061300
+        )
+
+    [wc_pos_ta_id] => Array
+        (
+            [0] => 3348
+        )
+
+    [wc_pos_orange_discount] => Array
+        (
+            [0] => 800
+        )
+
+    [wc_pos_three_discount] => Array
+        (
+            [0] => 300
+        )
+
+    [client_email] => Array
+        (
+            [0] => cli@cli.ru
+        )
+
+    [client_phone] => Array
+        (
+            [0] => 70000000000
+        )
+
+    [activation_date] => Array
+        (
+            [0] => 04.02.2018
+        )
+
+    [number_simcard] => Array
+        (
+            [0] => 605010101,605030303
+        )
+
+    [_recorded_coupon_usage_counts] => Array
+        (
+            [0] => yes
+        )
+
+    [wc_pos_served_by_name] => Array
+        (
+            [0] => 33Evgenyy33
+        )
+
+    [_edit_lock] => Array
+        (
+            [0] => 1513894378:1
+        )
+
+    [test111] => Array
+        (
+            [0] => 789
+        )
+
+    [_pos_payment_redirect] => Array
+        (
+            [0] => http://euroroaming/checkout/order-pay/61300?key=wc_order_5a3c23633d976
+        )
+
+    [_billing_first_name] => Array
+        (
+            [0] => Евгений
+        )
+
+    [_billing_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_billing_company] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_city] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_billing_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_billing_email] => Array
+        (
+            [0] => cli@cli.ru
+        )
+
+    [_billing_phone] => Array
+        (
+            [0] => 70000000000
+        )
+
+    [_shipping_first_name] => Array
+        (
+            [0] => Евгений
+        )
+
+    [_shipping_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_shipping_company] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_city] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_shipping_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_order_stock_reduced] => Array
+        (
+            [0] => 1
+        )
+
+    [_edit_last] => Array
+        (
+            [0] => 1
+        )
+
+    [_recorded_sales] => Array
+        (
+            [0] => yes
+        )
+
+    [_vc_post_settings] => Array
+        (
+            [0] => a:1:{s:10:"vc_grid_id";a:0:{}}
+        )
+
+    [_download_permissions_granted] => Array
+        (
+            [0] => yes
+        )
+
+)
+
+/***********************************************************************/
+Array
+(
+    [us_og_image] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_user] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_key] => Array
+        (
+            [0] => wc_order_5a3c23633d976
+        )
+
+    [_payment_method] => Array
+        (
+            [0] => pos_customer_pay
+        )
+
+    [_payment_method_title] => Array
+        (
+            [0] => Оплачивает клиент (с чеком)
+        )
+
+    [_transaction_id] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_ip_address] => Array
+        (
+            [0] => 127.0.0.1
+        )
+
+    [_customer_user_agent] => Array
+        (
+            [0] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36
+        )
+
+    [_created_via] => Array
+        (
+            [0] => POS
+        )
+
+    [_date_completed] => Array
+        (
+            [0] => 
+        )
+
+    [_completed_date] => Array
+        (
+            [0] => 
+        )
+
+    [_date_paid] => Array
+        (
+            [0] => 1513893537
+        )
+
+    [_paid_date] => Array
+        (
+            [0] => 2017-12-22 00:58:57
+        )
+
+    [_cart_hash] => Array
+        (
+            [0] => 
+        )
+
+    [_order_currency] => Array
+        (
+            [0] => RUB
+        )
+
+    [_cart_discount] => Array
+        (
+            [0] => 0
+        )
+
+    [_cart_discount_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_total] => Array
+        (
+            [0] => 2960.00
+        )
+
+    [_order_version] => Array
+        (
+            [0] => 3.2.6
+        )
+
+    [_prices_include_tax] => Array
+        (
+            [0] => no
+        )
+
+    [_billing_address_index] => Array
+        (
+            [0] => Евгений Егоров     г Москва  RU cli@cli.ru 70000000000
+        )
+
+    [_shipping_address_index] => Array
+        (
+            [0] => Евгений Егоров     г Москва  RU
+        )
+
+    [wc_pos_order_saved] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_change] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_pay] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_id_register] => Array
+        (
+            [0] => 1
+        )
+
+    [wc_pos_order_tax_number] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_order_type] => Array
+        (
+            [0] => POS
+        )
+
+    [wc_pos_prefix_suffix_order_number] => Array
+        (
+            [0] =>  Оформлен в t061300
+        )
+
+    [wc_pos_ta_id] => Array
+        (
+            [0] => 3348
+        )
+
+    [wc_pos_orange_discount] => Array
+        (
+            [0] => 800
+        )
+
+    [wc_pos_three_discount] => Array
+        (
+            [0] => 300
+        )
+
+    [client_email] => Array
+        (
+            [0] => cli@cli.ru
+        )
+
+    [client_phone] => Array
+        (
+            [0] => 70000000000
+        )
+
+    [activation_date] => Array
+        (
+            [0] => 04.02.2018
+        )
+
+    [number_simcard] => Array
+        (
+            [0] => 605010101,605030303
+        )
+
+    [_recorded_coupon_usage_counts] => Array
+        (
+            [0] => yes
+        )
+
+    [wc_pos_served_by_name] => Array
+        (
+            [0] => 33Evgenyy33
+        )
+
+    [_edit_lock] => Array
+        (
+            [0] => 1513894529:1
+        )
+
+    [test111] => Array
+        (
+            [0] => 789
+        )
+
+    [_pos_payment_redirect] => Array
+        (
+            [0] => http://euroroaming/checkout/order-pay/61300?key=wc_order_5a3c23633d976
+        )
+
+    [_billing_first_name] => Array
+        (
+            [0] => Евгений
+        )
+
+    [_billing_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_billing_company] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_city] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_billing_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_billing_email] => Array
+        (
+            [0] => cli@cli.ru
+        )
+
+    [_billing_phone] => Array
+        (
+            [0] => 70000000000
+        )
+
+    [_shipping_first_name] => Array
+        (
+            [0] => Евгений
+        )
+
+    [_shipping_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_shipping_company] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_city] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_shipping_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_order_stock_reduced] => Array
+        (
+            [0] => 1
+        )
+
+    [_edit_last] => Array
+        (
+            [0] => 1
+        )
+
+    [_recorded_sales] => Array
+        (
+            [0] => yes
+        )
+
+    [_vc_post_settings] => Array
+        (
+            [0] => a:1:{s:10:"vc_grid_id";a:0:{}}
+        )
+
+    [_download_permissions_granted] => Array
+        (
+            [0] => yes
+        )
+
+)
+
+/***********************************************************************/
+Array
+(
+    [us_og_image] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_user] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_key] => Array
+        (
+            [0] => wc_order_5a3c23633d976
+        )
+
+    [_payment_method] => Array
+        (
+            [0] => pos_customer_pay
+        )
+
+    [_payment_method_title] => Array
+        (
+            [0] => Оплачивает клиент (с чеком)
+        )
+
+    [_transaction_id] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_ip_address] => Array
+        (
+            [0] => 127.0.0.1
+        )
+
+    [_customer_user_agent] => Array
+        (
+            [0] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36
+        )
+
+    [_created_via] => Array
+        (
+            [0] => POS
+        )
+
+    [_date_completed] => Array
+        (
+            [0] => 
+        )
+
+    [_completed_date] => Array
+        (
+            [0] => 
+        )
+
+    [_date_paid] => Array
+        (
+            [0] => 1513893537
+        )
+
+    [_paid_date] => Array
+        (
+            [0] => 2017-12-22 00:58:57
+        )
+
+    [_cart_hash] => Array
+        (
+            [0] => 
+        )
+
+    [_order_currency] => Array
+        (
+            [0] => RUB
+        )
+
+    [_cart_discount] => Array
+        (
+            [0] => 0
+        )
+
+    [_cart_discount_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_total] => Array
+        (
+            [0] => 2960.00
+        )
+
+    [_order_version] => Array
+        (
+            [0] => 3.2.6
+        )
+
+    [_prices_include_tax] => Array
+        (
+            [0] => no
+        )
+
+    [_billing_address_index] => Array
+        (
+            [0] => Евгений Егоров     г Москва  RU cli@cli.ru 70000000000
+        )
+
+    [_shipping_address_index] => Array
+        (
+            [0] => Евгений Егоров     г Москва  RU
+        )
+
+    [wc_pos_order_saved] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_change] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_pay] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_id_register] => Array
+        (
+            [0] => 1
+        )
+
+    [wc_pos_order_tax_number] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_order_type] => Array
+        (
+            [0] => POS
+        )
+
+    [wc_pos_prefix_suffix_order_number] => Array
+        (
+            [0] =>  Оформлен в t061300
+        )
+
+    [wc_pos_ta_id] => Array
+        (
+            [0] => 3348
+        )
+
+    [wc_pos_orange_discount] => Array
+        (
+            [0] => 800
+        )
+
+    [wc_pos_three_discount] => Array
+        (
+            [0] => 300
+        )
+
+    [client_email] => Array
+        (
+            [0] => cli@cli.ru
+        )
+
+    [client_phone] => Array
+        (
+            [0] => 70000000000
+        )
+
+    [activation_date] => Array
+        (
+            [0] => 04.02.2018
+        )
+
+    [number_simcard] => Array
+        (
+            [0] => 605010101,605030303
+        )
+
+    [_recorded_coupon_usage_counts] => Array
+        (
+            [0] => yes
+        )
+
+    [wc_pos_served_by_name] => Array
+        (
+            [0] => 33Evgenyy33
+        )
+
+    [_edit_lock] => Array
+        (
+            [0] => 1513894589:1
+        )
+
+    [test111] => Array
+        (
+            [0] => 789
+        )
+
+    [_pos_payment_redirect] => Array
+        (
+            [0] => http://euroroaming/checkout/order-pay/61300?key=wc_order_5a3c23633d976
+        )
+
+    [_billing_first_name] => Array
+        (
+            [0] => Евгений
+        )
+
+    [_billing_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_billing_company] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_city] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_billing_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_billing_email] => Array
+        (
+            [0] => cli@cli.ru
+        )
+
+    [_billing_phone] => Array
+        (
+            [0] => 70000000000
+        )
+
+    [_shipping_first_name] => Array
+        (
+            [0] => Евгений
+        )
+
+    [_shipping_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_shipping_company] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_city] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_shipping_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_order_stock_reduced] => Array
+        (
+            [0] => 1
+        )
+
+    [_edit_last] => Array
+        (
+            [0] => 1
+        )
+
+    [_recorded_sales] => Array
+        (
+            [0] => yes
+        )
+
+    [_vc_post_settings] => Array
+        (
+            [0] => a:1:{s:10:"vc_grid_id";a:0:{}}
+        )
+
+    [_download_permissions_granted] => Array
+        (
+            [0] => yes
+        )
+
+)
+
+/***********************************************************************/
+Array
+(
+    [us_og_image] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_user] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_key] => Array
+        (
+            [0] => wc_order_5a3c23633d976
+        )
+
+    [_payment_method] => Array
+        (
+            [0] => pos_customer_pay
+        )
+
+    [_payment_method_title] => Array
+        (
+            [0] => Оплачивает клиент (с чеком)
+        )
+
+    [_transaction_id] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_ip_address] => Array
+        (
+            [0] => 127.0.0.1
+        )
+
+    [_customer_user_agent] => Array
+        (
+            [0] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36
+        )
+
+    [_created_via] => Array
+        (
+            [0] => POS
+        )
+
+    [_date_completed] => Array
+        (
+            [0] => 
+        )
+
+    [_completed_date] => Array
+        (
+            [0] => 
+        )
+
+    [_date_paid] => Array
+        (
+            [0] => 1513893537
+        )
+
+    [_paid_date] => Array
+        (
+            [0] => 2017-12-22 00:58:57
+        )
+
+    [_cart_hash] => Array
+        (
+            [0] => 
+        )
+
+    [_order_currency] => Array
+        (
+            [0] => RUB
+        )
+
+    [_cart_discount] => Array
+        (
+            [0] => 0
+        )
+
+    [_cart_discount_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_total] => Array
+        (
+            [0] => 2960.00
+        )
+
+    [_order_version] => Array
+        (
+            [0] => 3.2.6
+        )
+
+    [_prices_include_tax] => Array
+        (
+            [0] => no
+        )
+
+    [_billing_address_index] => Array
+        (
+            [0] => Евгений Егоров     г Москва  RU cli@cli.ru 70000000000
+        )
+
+    [_shipping_address_index] => Array
+        (
+            [0] => Евгений Егоров     г Москва  RU
+        )
+
+    [wc_pos_order_saved] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_change] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_pay] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_id_register] => Array
+        (
+            [0] => 1
+        )
+
+    [wc_pos_order_tax_number] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_order_type] => Array
+        (
+            [0] => POS
+        )
+
+    [wc_pos_prefix_suffix_order_number] => Array
+        (
+            [0] =>  Оформлен в t061300
+        )
+
+    [wc_pos_ta_id] => Array
+        (
+            [0] => 3348
+        )
+
+    [wc_pos_orange_discount] => Array
+        (
+            [0] => 800
+        )
+
+    [wc_pos_three_discount] => Array
+        (
+            [0] => 300
+        )
+
+    [client_email] => Array
+        (
+            [0] => cli@cli.ru
+        )
+
+    [client_phone] => Array
+        (
+            [0] => 70000000000
+        )
+
+    [activation_date] => Array
+        (
+            [0] => 04.02.2018
+        )
+
+    [number_simcard] => Array
+        (
+            [0] => 605010101,605030303
+        )
+
+    [_recorded_coupon_usage_counts] => Array
+        (
+            [0] => yes
+        )
+
+    [wc_pos_served_by_name] => Array
+        (
+            [0] => 33Evgenyy33
+        )
+
+    [_edit_lock] => Array
+        (
+            [0] => 1513894656:1
+        )
+
+    [test111] => Array
+        (
+            [0] => 789
+        )
+
+    [_pos_payment_redirect] => Array
+        (
+            [0] => http://euroroaming/checkout/order-pay/61300?key=wc_order_5a3c23633d976
+        )
+
+    [_billing_first_name] => Array
+        (
+            [0] => Евгений
+        )
+
+    [_billing_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_billing_company] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_city] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_billing_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_billing_email] => Array
+        (
+            [0] => cli@cli.ru
+        )
+
+    [_billing_phone] => Array
+        (
+            [0] => 70000000000
+        )
+
+    [_shipping_first_name] => Array
+        (
+            [0] => Евгений
+        )
+
+    [_shipping_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_shipping_company] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_city] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_shipping_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_order_stock_reduced] => Array
+        (
+            [0] => 1
+        )
+
+    [_edit_last] => Array
+        (
+            [0] => 1
+        )
+
+    [_recorded_sales] => Array
+        (
+            [0] => yes
+        )
+
+    [_vc_post_settings] => Array
+        (
+            [0] => a:1:{s:10:"vc_grid_id";a:0:{}}
+        )
+
+    [_download_permissions_granted] => Array
+        (
+            [0] => yes
+        )
+
+)
+
+/***********************************************************************/
+Array
+(
+    [us_og_image] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_user] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_key] => Array
+        (
+            [0] => wc_order_5a3c23633d976
+        )
+
+    [_payment_method] => Array
+        (
+            [0] => pos_customer_pay
+        )
+
+    [_payment_method_title] => Array
+        (
+            [0] => Оплачивает клиент (с чеком)
+        )
+
+    [_transaction_id] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_ip_address] => Array
+        (
+            [0] => 127.0.0.1
+        )
+
+    [_customer_user_agent] => Array
+        (
+            [0] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36
+        )
+
+    [_created_via] => Array
+        (
+            [0] => POS
+        )
+
+    [_date_completed] => Array
+        (
+            [0] => 
+        )
+
+    [_completed_date] => Array
+        (
+            [0] => 
+        )
+
+    [_date_paid] => Array
+        (
+            [0] => 1513893537
+        )
+
+    [_paid_date] => Array
+        (
+            [0] => 2017-12-22 00:58:57
+        )
+
+    [_cart_hash] => Array
+        (
+            [0] => 
+        )
+
+    [_order_currency] => Array
+        (
+            [0] => RUB
+        )
+
+    [_cart_discount] => Array
+        (
+            [0] => 0
+        )
+
+    [_cart_discount_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_total] => Array
+        (
+            [0] => 2960.00
+        )
+
+    [_order_version] => Array
+        (
+            [0] => 3.2.6
+        )
+
+    [_prices_include_tax] => Array
+        (
+            [0] => no
+        )
+
+    [_billing_address_index] => Array
+        (
+            [0] => Евгений Егоров     г Москва  RU cli@cli.ru 70000000000
+        )
+
+    [_shipping_address_index] => Array
+        (
+            [0] => Евгений Егоров     г Москва  RU
+        )
+
+    [wc_pos_order_saved] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_change] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_pay] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_id_register] => Array
+        (
+            [0] => 1
+        )
+
+    [wc_pos_order_tax_number] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_order_type] => Array
+        (
+            [0] => POS
+        )
+
+    [wc_pos_prefix_suffix_order_number] => Array
+        (
+            [0] =>  Оформлен в t061300
+        )
+
+    [wc_pos_ta_id] => Array
+        (
+            [0] => 3348
+        )
+
+    [wc_pos_orange_discount] => Array
+        (
+            [0] => 800
+        )
+
+    [wc_pos_three_discount] => Array
+        (
+            [0] => 300
+        )
+
+    [client_email] => Array
+        (
+            [0] => cli@cli.ru
+        )
+
+    [client_phone] => Array
+        (
+            [0] => 70000000000
+        )
+
+    [activation_date] => Array
+        (
+            [0] => 04.02.2018
+        )
+
+    [number_simcard] => Array
+        (
+            [0] => 605010101,605030303
+        )
+
+    [_recorded_coupon_usage_counts] => Array
+        (
+            [0] => yes
+        )
+
+    [wc_pos_served_by_name] => Array
+        (
+            [0] => 33Evgenyy33
+        )
+
+    [_edit_lock] => Array
+        (
+            [0] => 1513894721:1
+        )
+
+    [test111] => Array
+        (
+            [0] => 789
+        )
+
+    [_pos_payment_redirect] => Array
+        (
+            [0] => http://euroroaming/checkout/order-pay/61300?key=wc_order_5a3c23633d976
+        )
+
+    [_billing_first_name] => Array
+        (
+            [0] => Евгений
+        )
+
+    [_billing_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_billing_company] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_city] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_billing_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_billing_email] => Array
+        (
+            [0] => cli@cli.ru
+        )
+
+    [_billing_phone] => Array
+        (
+            [0] => 70000000000
+        )
+
+    [_shipping_first_name] => Array
+        (
+            [0] => Евгений
+        )
+
+    [_shipping_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_shipping_company] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_city] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_shipping_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_order_stock_reduced] => Array
+        (
+            [0] => 1
+        )
+
+    [_edit_last] => Array
+        (
+            [0] => 1
+        )
+
+    [_recorded_sales] => Array
+        (
+            [0] => yes
+        )
+
+    [_vc_post_settings] => Array
+        (
+            [0] => a:1:{s:10:"vc_grid_id";a:0:{}}
+        )
+
+    [_download_permissions_granted] => Array
+        (
+            [0] => yes
+        )
+
+)
+
+/***********************************************************************/
+Array
+(
+    [us_og_image] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_user] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_key] => Array
+        (
+            [0] => wc_order_5a3c23633d976
+        )
+
+    [_payment_method] => Array
+        (
+            [0] => pos_customer_pay
+        )
+
+    [_payment_method_title] => Array
+        (
+            [0] => Оплачивает клиент (с чеком)
+        )
+
+    [_transaction_id] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_ip_address] => Array
+        (
+            [0] => 127.0.0.1
+        )
+
+    [_customer_user_agent] => Array
+        (
+            [0] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36
+        )
+
+    [_created_via] => Array
+        (
+            [0] => POS
+        )
+
+    [_date_completed] => Array
+        (
+            [0] => 
+        )
+
+    [_completed_date] => Array
+        (
+            [0] => 
+        )
+
+    [_date_paid] => Array
+        (
+            [0] => 1513893537
+        )
+
+    [_paid_date] => Array
+        (
+            [0] => 2017-12-22 00:58:57
+        )
+
+    [_cart_hash] => Array
+        (
+            [0] => 
+        )
+
+    [_order_currency] => Array
+        (
+            [0] => RUB
+        )
+
+    [_cart_discount] => Array
+        (
+            [0] => 0
+        )
+
+    [_cart_discount_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_total] => Array
+        (
+            [0] => 2960.00
+        )
+
+    [_order_version] => Array
+        (
+            [0] => 3.2.6
+        )
+
+    [_prices_include_tax] => Array
+        (
+            [0] => no
+        )
+
+    [_billing_address_index] => Array
+        (
+            [0] => Евгений Егоров     г Москва  RU cli@cli.ru 70000000000
+        )
+
+    [_shipping_address_index] => Array
+        (
+            [0] => Евгений Егоров     г Москва  RU
+        )
+
+    [wc_pos_order_saved] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_change] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_pay] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_id_register] => Array
+        (
+            [0] => 1
+        )
+
+    [wc_pos_order_tax_number] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_order_type] => Array
+        (
+            [0] => POS
+        )
+
+    [wc_pos_prefix_suffix_order_number] => Array
+        (
+            [0] =>  Оформлен в t061300
+        )
+
+    [wc_pos_ta_id] => Array
+        (
+            [0] => 3348
+        )
+
+    [wc_pos_orange_discount] => Array
+        (
+            [0] => 800
+        )
+
+    [wc_pos_three_discount] => Array
+        (
+            [0] => 300
+        )
+
+    [client_email] => Array
+        (
+            [0] => cli@cli.ru
+        )
+
+    [client_phone] => Array
+        (
+            [0] => 70000000000
+        )
+
+    [activation_date] => Array
+        (
+            [0] => 04.02.2018
+        )
+
+    [number_simcard] => Array
+        (
+            [0] => 605010101,605030303
+        )
+
+    [_recorded_coupon_usage_counts] => Array
+        (
+            [0] => yes
+        )
+
+    [wc_pos_served_by_name] => Array
+        (
+            [0] => 33Evgenyy33
+        )
+
+    [_edit_lock] => Array
+        (
+            [0] => 1513894773:1
+        )
+
+    [test111] => Array
+        (
+            [0] => 789
+        )
+
+    [_pos_payment_redirect] => Array
+        (
+            [0] => http://euroroaming/checkout/order-pay/61300?key=wc_order_5a3c23633d976
+        )
+
+    [_billing_first_name] => Array
+        (
+            [0] => Евгений
+        )
+
+    [_billing_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_billing_company] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_city] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_billing_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_billing_email] => Array
+        (
+            [0] => cli@cli.ru
+        )
+
+    [_billing_phone] => Array
+        (
+            [0] => 70000000000
+        )
+
+    [_shipping_first_name] => Array
+        (
+            [0] => Евгений
+        )
+
+    [_shipping_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_shipping_company] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_city] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_shipping_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_order_stock_reduced] => Array
+        (
+            [0] => 1
+        )
+
+    [_edit_last] => Array
+        (
+            [0] => 1
+        )
+
+    [_recorded_sales] => Array
+        (
+            [0] => yes
+        )
+
+    [_vc_post_settings] => Array
+        (
+            [0] => a:1:{s:10:"vc_grid_id";a:0:{}}
+        )
+
+    [_download_permissions_granted] => Array
+        (
+            [0] => yes
+        )
+
+)
+
+/***********************************************************************/
+Array
+(
+    [us_og_image] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_user] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_key] => Array
+        (
+            [0] => wc_order_5a3c3644e657f
+        )
+
+    [_payment_method] => Array
+        (
+            [0] => pos_customer_pay
+        )
+
+    [_payment_method_title] => Array
+        (
+            [0] => Оплачивает клиент (с чеком)
+        )
+
+    [_transaction_id] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_ip_address] => Array
+        (
+            [0] => 127.0.0.1
+        )
+
+    [_customer_user_agent] => Array
+        (
+            [0] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36
+        )
+
+    [_created_via] => Array
+        (
+            [0] => POS
+        )
+
+    [_date_completed] => Array
+        (
+            [0] => 
+        )
+
+    [_completed_date] => Array
+        (
+            [0] => 
+        )
+
+    [_date_paid] => Array
+        (
+            [0] => 1513895542
+        )
+
+    [_paid_date] => Array
+        (
+            [0] => 2017-12-22 01:32:22
+        )
+
+    [_cart_hash] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_first_name] => Array
+        (
+            [0] => Тест
+        )
+
+    [_billing_last_name] => Array
+        (
+            [0] => Тест
+        )
+
+    [_billing_company] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_city] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_billing_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_billing_email] => Array
+        (
+            [0] => cli@cli.cli
+        )
+
+    [_billing_phone] => Array
+        (
+            [0] => 70000000000
+        )
+
+    [_shipping_first_name] => Array
+        (
+            [0] => Тест
+        )
+
+    [_shipping_last_name] => Array
+        (
+            [0] => Тест
+        )
+
+    [_shipping_company] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_city] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_shipping_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_order_currency] => Array
+        (
+            [0] => RUB
+        )
+
+    [_cart_discount] => Array
+        (
+            [0] => 0
+        )
+
+    [_cart_discount_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_total] => Array
+        (
+            [0] => 4685.00
+        )
+
+    [_order_version] => Array
+        (
+            [0] => 3.2.6
+        )
+
+    [_prices_include_tax] => Array
+        (
+            [0] => no
+        )
+
+    [_billing_address_index] => Array
+        (
+            [0] => Тест Тест     г Москва  RU cli@cli.cli 70000000000
+        )
+
+    [_shipping_address_index] => Array
+        (
+            [0] => Тест Тест     г Москва  RU
+        )
+
+    [wc_pos_order_saved] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_change] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_pay] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_id_register] => Array
+        (
+            [0] => 1
+        )
+
+    [wc_pos_order_tax_number] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_order_type] => Array
+        (
+            [0] => POS
+        )
+
+    [wc_pos_prefix_suffix_order_number] => Array
+        (
+            [0] =>  Оформлен в t061301
+        )
+
+    [wc_pos_ta_id] => Array
+        (
+            [0] => 3348
+        )
+
+    [wc_pos_orange_discount] => Array
+        (
+            [0] => 800
+        )
+
+    [wc_pos_three_discount] => Array
+        (
+            [0] => 300
+        )
+
+    [client_email] => Array
+        (
+            [0] => cli@cli.cli
+        )
+
+    [client_phone] => Array
+        (
+            [0] => 70000000000
+        )
+
+    [activation_date] => Array
+        (
+            [0] => 07.01.2018
+        )
+
+    [number_simcard] => Array
+        (
+            [0] => 4915758500456,605171717
+        )
+
+    [test111] => Array
+        (
+            [0] => 789
+        )
+
+    [_recorded_coupon_usage_counts] => Array
+        (
+            [0] => yes
+        )
+
+    [wc_pos_served_by_name] => Array
+        (
+            [0] => 33Evgenyy33
+        )
+
+    [_order_stock_reduced] => Array
+        (
+            [0] => 1
+        )
+
+    [_edit_lock] => Array
+        (
+            [0] => 1513895533:1
+        )
+
+    [_edit_last] => Array
+        (
+            [0] => 1
+        )
+
+    [_download_permissions_granted] => Array
+        (
+            [0] => yes
+        )
+
+    [_recorded_sales] => Array
+        (
+            [0] => yes
+        )
+
+)
+
+/***********************************************************************/
+Array
+(
+    [us_og_image] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_user] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_key] => Array
+        (
+            [0] => wc_order_5a3c38a1b23f5
+        )
+
+    [_payment_method] => Array
+        (
+            [0] => pos_customer_pay
+        )
+
+    [_payment_method_title] => Array
+        (
+            [0] => Оплачивает клиент (с чеком)
+        )
+
+    [_transaction_id] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_ip_address] => Array
+        (
+            [0] => 127.0.0.1
+        )
+
+    [_customer_user_agent] => Array
+        (
+            [0] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36
+        )
+
+    [_created_via] => Array
+        (
+            [0] => POS
+        )
+
+    [_date_completed] => Array
+        (
+            [0] => 
+        )
+
+    [_completed_date] => Array
+        (
+            [0] => 
+        )
+
+    [_date_paid] => Array
+        (
+            [0] => 1513896135
+        )
+
+    [_paid_date] => Array
+        (
+            [0] => 2017-12-22 01:42:15
+        )
+
+    [_cart_hash] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_first_name] => Array
+        (
+            [0] => Тест
+        )
+
+    [_billing_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_billing_company] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_city] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_billing_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_billing_email] => Array
+        (
+            [0] => cli@cli.cli
+        )
+
+    [_billing_phone] => Array
+        (
+            [0] => 70000000000
+        )
+
+    [_shipping_first_name] => Array
+        (
+            [0] => Тест
+        )
+
+    [_shipping_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_shipping_company] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_city] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_shipping_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_order_currency] => Array
+        (
+            [0] => RUB
+        )
+
+    [_cart_discount] => Array
+        (
+            [0] => 0
+        )
+
+    [_cart_discount_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_total] => Array
+        (
+            [0] => 2960.00
+        )
+
+    [_order_version] => Array
+        (
+            [0] => 3.2.6
+        )
+
+    [_prices_include_tax] => Array
+        (
+            [0] => no
+        )
+
+    [_billing_address_index] => Array
+        (
+            [0] => Тест Егоров     г Москва  RU cli@cli.cli 70000000000
+        )
+
+    [_shipping_address_index] => Array
+        (
+            [0] => Тест Егоров     г Москва  RU
+        )
+
+    [wc_pos_order_saved] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_change] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_pay] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_id_register] => Array
+        (
+            [0] => 1
+        )
+
+    [wc_pos_order_tax_number] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_order_type] => Array
+        (
+            [0] => POS
+        )
+
+    [wc_pos_prefix_suffix_order_number] => Array
+        (
+            [0] =>  Оформлен в t061303
+        )
+
+    [wc_pos_ta_id] => Array
+        (
+            [0] => 3348
+        )
+
+    [wc_pos_orange_discount] => Array
+        (
+            [0] => 800
+        )
+
+    [wc_pos_three_discount] => Array
+        (
+            [0] => 300
+        )
+
+    [client_email] => Array
+        (
+            [0] => cli@cli.cli
+        )
+
+    [client_phone] => Array
+        (
+            [0] => 70000000000
+        )
+
+    [activation_date] => Array
+        (
+            [0] => 31.12.2017
+        )
+
+    [number_simcard] => Array
+        (
+            [0] => 605272727
+        )
+
+    [test111] => Array
+        (
+            [0] => 789
+        )
+
+    [_recorded_coupon_usage_counts] => Array
+        (
+            [0] => yes
+        )
+
+    [wc_pos_served_by_name] => Array
+        (
+            [0] => 33Evgenyy33
+        )
+
+    [_order_stock_reduced] => Array
+        (
+            [0] => 1
+        )
+
+    [_edit_lock] => Array
+        (
+            [0] => 1513896128:1
+        )
+
+    [_edit_last] => Array
+        (
+            [0] => 1
+        )
+
+    [_download_permissions_granted] => Array
+        (
+            [0] => yes
+        )
+
+    [_recorded_sales] => Array
+        (
+            [0] => yes
+        )
+
+)
+
+/***********************************************************************/
+Array
+(
+    [us_og_image] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_user] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_key] => Array
+        (
+            [0] => wc_order_5a3c4e4b99cf4
+        )
+
+    [_payment_method] => Array
+        (
+            [0] => pos_customer_pay
+        )
+
+    [_payment_method_title] => Array
+        (
+            [0] => Оплачивает клиент (с чеком)
+        )
+
+    [_transaction_id] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_ip_address] => Array
+        (
+            [0] => 127.0.0.1
+        )
+
+    [_customer_user_agent] => Array
+        (
+            [0] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36
+        )
+
+    [_created_via] => Array
+        (
+            [0] => POS
+        )
+
+    [_date_completed] => Array
+        (
+            [0] => 
+        )
+
+    [_completed_date] => Array
+        (
+            [0] => 
+        )
+
+    [_date_paid] => Array
+        (
+            [0] => 1513902523
+        )
+
+    [_paid_date] => Array
+        (
+            [0] => 2017-12-22 03:28:43
+        )
+
+    [_cart_hash] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_first_name] => Array
+        (
+            [0] => Евгений
+        )
+
+    [_billing_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_billing_company] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_city] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_billing_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_billing_email] => Array
+        (
+            [0] => 33evgenyy33@gmail.com
+        )
+
+    [_billing_phone] => Array
+        (
+            [0] => 79656314108
+        )
+
+    [_shipping_first_name] => Array
+        (
+            [0] => Евгений
+        )
+
+    [_shipping_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_shipping_company] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_city] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_shipping_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_order_currency] => Array
+        (
+            [0] => RUB
+        )
+
+    [_cart_discount] => Array
+        (
+            [0] => 0
+        )
+
+    [_cart_discount_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_total] => Array
+        (
+            [0] => 3100.00
+        )
+
+    [_order_version] => Array
+        (
+            [0] => 3.2.6
+        )
+
+    [_prices_include_tax] => Array
+        (
+            [0] => no
+        )
+
+    [_billing_address_index] => Array
+        (
+            [0] => Евгений Егоров     г Москва  RU 33evgenyy33@gmail.com 79656314108
+        )
+
+    [_shipping_address_index] => Array
+        (
+            [0] => Евгений Егоров     г Москва  RU
+        )
+
+    [wc_pos_order_saved] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_change] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_pay] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_id_register] => Array
+        (
+            [0] => 1
+        )
+
+    [wc_pos_order_tax_number] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_order_type] => Array
+        (
+            [0] => POS
+        )
+
+    [wc_pos_prefix_suffix_order_number] => Array
+        (
+            [0] =>  Оформлен в t061306
+        )
+
+    [wc_pos_ta_id] => Array
+        (
+            [0] => 3348
+        )
+
+    [wc_pos_orange_discount] => Array
+        (
+            [0] => 800
+        )
+
+    [wc_pos_three_discount] => Array
+        (
+            [0] => 300
+        )
+
+    [client_email] => Array
+        (
+            [0] => 33evgenyy33@gmail.com
+        )
+
+    [client_phone] => Array
+        (
+            [0] => 79656314108
+        )
+
+    [activation_date] => Array
+        (
+            [0] => 31.12.2017
+        )
+
+    [number_simcard] => Array
+        (
+            [0] => 605373737
+        )
+
+    [test111] => Array
+        (
+            [0] => 789
+        )
+
+    [_recorded_coupon_usage_counts] => Array
+        (
+            [0] => yes
+        )
+
+    [wc_pos_served_by_name] => Array
+        (
+            [0] => 33Evgenyy33
+        )
+
+    [_order_stock_reduced] => Array
+        (
+            [0] => 1
+        )
+
+    [_edit_lock] => Array
+        (
+            [0] => 1513902520:1
+        )
+
+    [_edit_last] => Array
+        (
+            [0] => 1
+        )
+
+    [_download_permissions_granted] => Array
+        (
+            [0] => yes
+        )
+
+    [_recorded_sales] => Array
+        (
+            [0] => yes
+        )
+
+)
+
+/***********************************************************************/
+Array
+(
+    [us_og_image] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_user] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_key] => Array
+        (
+            [0] => wc_order_5a3c4e4b99cf4
+        )
+
+    [_payment_method] => Array
+        (
+            [0] => pos_customer_pay
+        )
+
+    [_payment_method_title] => Array
+        (
+            [0] => Оплачивает клиент (с чеком)
+        )
+
+    [_transaction_id] => Array
+        (
+            [0] => 
+        )
+
+    [_customer_ip_address] => Array
+        (
+            [0] => 127.0.0.1
+        )
+
+    [_customer_user_agent] => Array
+        (
+            [0] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36
+        )
+
+    [_created_via] => Array
+        (
+            [0] => POS
+        )
+
+    [_date_completed] => Array
+        (
+            [0] => 
+        )
+
+    [_completed_date] => Array
+        (
+            [0] => 
+        )
+
+    [_date_paid] => Array
+        (
+            [0] => 1513902523
+        )
+
+    [_paid_date] => Array
+        (
+            [0] => 2017-12-22 03:28:43
+        )
+
+    [_cart_hash] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_first_name] => Array
+        (
+            [0] => Евгений
+        )
+
+    [_billing_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_billing_company] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_city] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_billing_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_billing_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_billing_email] => Array
+        (
+            [0] => 33evgenyy33@gmail.com
+        )
+
+    [_billing_phone] => Array
+        (
+            [0] => 79656314108
+        )
+
+    [_shipping_first_name] => Array
+        (
+            [0] => Евгений
+        )
+
+    [_shipping_last_name] => Array
+        (
+            [0] => Егоров
+        )
+
+    [_shipping_company] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_1] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_address_2] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_city] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_state] => Array
+        (
+            [0] => г Москва
+        )
+
+    [_shipping_postcode] => Array
+        (
+            [0] => 
+        )
+
+    [_shipping_country] => Array
+        (
+            [0] => RU
+        )
+
+    [_order_currency] => Array
+        (
+            [0] => RUB
+        )
+
+    [_cart_discount] => Array
+        (
+            [0] => 0
+        )
+
+    [_cart_discount_tax] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_shipping] => Array
+        (
+            [0] => 0
+        )
+
+    [_order_total] => Array
+        (
+            [0] => 3100.00
+        )
+
+    [_order_version] => Array
+        (
+            [0] => 3.2.6
+        )
+
+    [_prices_include_tax] => Array
+        (
+            [0] => no
+        )
+
+    [_billing_address_index] => Array
+        (
+            [0] => Евгений Егоров     г Москва  RU 33evgenyy33@gmail.com 79656314108
+        )
+
+    [_shipping_address_index] => Array
+        (
+            [0] => Евгений Егоров     г Москва  RU
+        )
+
+    [wc_pos_order_saved] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_change] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_amount_pay] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_id_register] => Array
+        (
+            [0] => 1
+        )
+
+    [wc_pos_order_tax_number] => Array
+        (
+            [0] => 
+        )
+
+    [wc_pos_order_type] => Array
+        (
+            [0] => POS
+        )
+
+    [wc_pos_prefix_suffix_order_number] => Array
+        (
+            [0] =>  Оформлен в t061306
+        )
+
+    [wc_pos_ta_id] => Array
+        (
+            [0] => 3348
+        )
+
+    [wc_pos_orange_discount] => Array
+        (
+            [0] => 800
+        )
+
+    [wc_pos_three_discount] => Array
+        (
+            [0] => 300
+        )
+
+    [client_email] => Array
+        (
+            [0] => 33evgenyy33@gmail.com
+        )
+
+    [client_phone] => Array
+        (
+            [0] => 79656314108
+        )
+
+    [activation_date] => Array
+        (
+            [0] => 31.12.2017
+        )
+
+    [number_simcard] => Array
+        (
+            [0] => 605373737
+        )
+
+    [test111] => Array
+        (
+            [0] => 789
+        )
+
+    [_recorded_coupon_usage_counts] => Array
+        (
+            [0] => yes
+        )
+
+    [wc_pos_served_by_name] => Array
+        (
+            [0] => 33Evgenyy33
+        )
+
+    [_order_stock_reduced] => Array
+        (
+            [0] => 1
+        )
+
+    [_edit_lock] => Array
+        (
+            [0] => 1513902963:1
+        )
+
+    [_edit_last] => Array
+        (
+            [0] => 1
+        )
+
+    [_recorded_sales] => Array
+        (
+            [0] => yes
+        )
+
+    [_download_permissions_granted] => Array
+        (
+            [0] => yes
+        )
+
+    [_vc_post_settings] => Array
+        (
+            [0] => a:1:{s:10:"vc_grid_id";a:0:{}}
+        )
+
+)
+
+/***********************************************************************/

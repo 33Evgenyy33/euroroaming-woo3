@@ -28,7 +28,7 @@ return array(
 	14   => __( 'Order successfully saved.', 'wc_point_of_sale'),
 	15   => __( 'Please fill Billing Details.', 'wc_point_of_sale'),
 	16   => __( 'Please fill Shipping Details.', 'wc_point_of_sale'),
-	17   => __( 'Пожалуйста, заполните обязательнфе поля клиента.', 'wc_point_of_sale'),
+	17   => __( 'Пожалуйста, заполните Имя Клиента.', 'wc_point_of_sale'),
 	18   => __( 'Shipping title is required.', 'wc_point_of_sale'),
 	19   => __( 'Shipping price is required.', 'wc_point_of_sale'),
 	20   => __( 'Product title is required.', 'wc_point_of_sale'),
@@ -57,8 +57,16 @@ return array(
 	40   => __( 'Back-order', 'wc_point_of_sale'),
     41   => __( 'Passwords don\'t match', 'wc_point_of_sale'),
     42   => __( 'Пожалуйста, заполните данные клиента.', 'wc_point_of_sale'),
-	43   => __( 'Пожалуйста, введите корректную почту клиента.', 'wc_point_of_sale'),
+	43   => __( 'Пожалуйста, введите корректную Почту клиента.', 'wc_point_of_sale'),
 	44   => __( 'Пожалуйста, переключитесь на английскую раскладку', 'wc_point_of_sale'),
 	50   => __( 'Ввод спецсимволов запрещен', 'wc_point_of_sale'),
 	51   => __( 'Данные клиента успешно добавлены', 'wc_point_of_sale'),
+	53   => __( 'Пожалуйста, введите Номер Телефона ТА полностью', 'wc_point_of_sale'),
+	54   => __( 'Пожалуйста, заполните Фамилию Клиента.', 'wc_point_of_sale'),
+	55   => __( 'Пожалуйста, введите корректную Почту ТА.', 'wc_point_of_sale'),
+	56   => __( 'Пожалуйста, введите Номер Телефона Клиента полностью', 'wc_point_of_sale'),
+	57   => __( 'Пожалуйста, введите Дату Активации', 'wc_point_of_sale'),
+	70   => __( 'Пожалуйста, добавьте Номер Сим-карты', 'wc_point_of_sale'),
+
+
 );

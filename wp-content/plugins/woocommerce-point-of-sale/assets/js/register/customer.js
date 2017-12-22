@@ -13,8 +13,7 @@ jQuery(document).ready(function ($) {
             "postcode": "",
             "country": "",
             "email": "",
-            "phone": "",
-            "client_phone": ""
+            "phone": ""
         },
         "shipping_address": {
             "first_name": '',
@@ -26,7 +25,7 @@ jQuery(document).ready(function ($) {
             "postcode": "",
             "country": ""
         },
-        'additional_fields': {"client_phone": ""},
+        'additional_fields': {},
         'custom_order_fields': {},
         'acf_fields': {},
         'is_vat_exempt': false,
@@ -95,8 +94,7 @@ jQuery(document).ready(function ($) {
                     "postcode": "",
                     "country": CUSTOMER.default_country,
                     "email": "",
-                    "phone": "",
-                    "client_phone": ""
+                    "phone": ""
                 },
                 "shipping_address": {
                     "first_name": '',
@@ -108,7 +106,7 @@ jQuery(document).ready(function ($) {
                     "postcode": "",
                     "country": CUSTOMER.default_country
                 },
-                'additional_fields': {"client_phone": ""},
+                'additional_fields': {},
                 'custom_order_fields': {},
                 'acf_fields': {},
                 'email': '',

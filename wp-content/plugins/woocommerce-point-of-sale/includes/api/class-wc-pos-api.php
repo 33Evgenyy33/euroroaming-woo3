@@ -539,6 +539,10 @@ class WC_Pos_API
         $order_data['stock_reduced'] = get_post_meta($the_order->get_id(), '_order_stock_reduced', true) ? true : false;
 
 	    $order_data['client_phone'] = str_replace(' ', '', get_post_meta( $the_order->get_id(), 'client_phone', true ));
+	    $order_data['client_email'] = str_replace(' ', '', get_post_meta( $the_order->get_id(), 'client_email', true ));
+	    $order_data['activation_date'] = str_replace(' ', '', get_post_meta( $the_order->get_id(), 'activation_date', true ));
+	    $order_data['number_simcard'] = str_replace(' ', '', get_post_meta( $the_order->get_id(), 'number_simcard', true ));
+
 
 	    file_put_contents("processing-args.txt", print_r($order_data, true), FILE_APPEND | LOCK_EX);
 	    file_put_contents("processing-args.txt", print_r('/********************************/', true)."\r\n", FILE_APPEND | LOCK_EX);

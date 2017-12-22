@@ -1,0 +1,20 @@
+pos_customer_pay
+1
+pos_customer_pay
+1
+pos_customer_pay
+pos_customer_pay
+string
+pos_customer_pay
+string
+pos_customer_pay
+pos_customer_pay
+orange: 800
+pos_customer_pay
+orange: 800
+pos_customer_pay
+pos_customer_pay
+orange: 800
+pos_customer_pay
+orange: 800
+pos_customer_pay
