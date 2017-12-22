@@ -9,40 +9,6 @@ Text Domain: woo-pos-customer-pay
 Author URI: https://euroroaming.ru/
 */
 
-//register_activation_hook( __FILE__, array( 'MyPlugin', 'install' ) );
-//
-//class MyPlugin {
-//	static function install() {
-//		file_put_contents("hook-test.txt", print_r('test', true), FILE_APPEND | LOCK_EX);
-//	}
-//}
-
-
-// Cron
-// Регистрируем расписание при активации плагина
-register_activation_hook(__FILE__, 'activation_geting_course_dollar');
-function activation_geting_course_dollar() {
-	wp_clear_scheduled_hook( 'geting_course_dollar' );
-	wp_schedule_event( time(), 'one_minute', 'geting_course_dollar');
-}
-
-// Удаляем расписание при деактивации плагина
-register_deactivation_hook( __FILE__, 'deactivation_geting_course_dollar');
-function deactivation_geting_course_dollar() {
-	wp_clear_scheduled_hook('geting_course_dollar');
-}
-
-// Проверка существования расписания во время работы плагина на всякий пожарный случай
-if( ! wp_next_scheduled( 'geting_course_dollar' ) ) {
-	wp_schedule_event( time(), 'one_minute', 'geting_course_dollar');
-}
-
-// Хук и функция, которая будет выполняться по Крону
-add_action( 'geting_course_dollar', 'get_real_course_dollar' );
-function get_real_course_dollar(){
-	file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "\logs\cron-test.txt", print_r( time(), true )."\r\n", FILE_APPEND | LOCK_EX );
-}
-
 
 defined( 'ABSPATH' ) or exit;
 // Make sure WooCommerce is active
@@ -160,7 +126,7 @@ function pos_customer_pay_init() {
 			// Mark as on-hold (we're awaiting the cheque)
 			$order->update_status( 'pending', 'Ожидание оплаты от клиента' );
 
-			file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "\logs\yandex-order_by111.txt", print_r( $order->get_checkout_payment_url(), true ) . "\r\n", FILE_APPEND | LOCK_EX );
+			//file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "\logs\yandex-order_by111.txt", print_r( $order->get_checkout_payment_url(), true ) . "\r\n", FILE_APPEND | LOCK_EX );
 
 			$checkout_url = $order->get_checkout_payment_url();
 
@@ -170,8 +136,13 @@ function pos_customer_pay_init() {
 
 			$email_notifications['WC_Email_Customer_Invoice']->trigger( $order_id );
 
-//			echo  $this->send("gate.iqsms.ru", 80, "z1496927079417", "340467",
-//				"79656314108", $checkout_url, "Euroroaming");
+			$key_customer_name   = '_billing_first_name';
+			$order_customer_name = str_replace( ' ', '', get_post_meta( $order_id, $key_customer_name, true ) );
+			$order_customer_phone = str_replace( ' ', '', get_post_meta( $order_id, 'client_phone', true ) );
+			$order_message = 'Уважаемый '.$order_customer_name."\r\n".', для оплаты заказа #'.$order_id.' пройдите по ссылке: '."\r\n".$checkout_url;
+
+			echo  $this->send("gate.iqsms.ru", 80, "z1496927079417", "340467",
+				$order_customer_phone, $order_message, "Euroroaming");
 
 
 			// Reduce stock levels

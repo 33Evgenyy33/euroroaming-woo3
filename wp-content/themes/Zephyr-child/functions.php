@@ -832,6 +832,7 @@ function custom_templates( $templates ) {
 
 	return $templates;
 }
+
 //=======================================================================================================
 // Store Locator убираем отступы в заголовке, если нет миниатюры
 //=======================================================================================================
@@ -1072,7 +1073,7 @@ function my_us_before_sharing_in_post() {
 // Отправка данных на seller при продаже сим-карты ТА
 //=======================================================================================================
 add_action( 'woocommerce_order_status_processing', 'woocommerce_order_statuses_pos' ); // Отправка данных на seller если заказ оплачен
-add_action( 'woocommerce_order_status_on-hold', 'woocommerce_order_statuses_pos' ); // Отправка данных на seller если статус заказа "Новый заказ" (Pay.Travel)
+//add_action( 'woocommerce_order_status_on-hold', 'woocommerce_order_statuses_pos' ); // Отправка данных на seller если статус заказа "Новый заказ" (Pay.Travel)
 function woocommerce_order_statuses_pos( $order_id ) {
 	$order_by = get_post_meta( $order_id, '_created_via', true );
 
@@ -1101,13 +1102,31 @@ function woocommerce_order_statuses_pos( $order_id ) {
 	$key_customer_phone   = 'client_phone';
 	$order_customer_phone = str_replace( ' ', '', get_post_meta( $order_id, $key_customer_phone, true ) );
 
+	$payment_method = get_post_meta( $order_id, '_payment_method', true );
+
+	$orange_deposit = str_replace( ' ', '', get_post_meta( $order_id, 'wc_pos_orange_discount', true ) );
+
+	$three_deposit = str_replace( ' ', '', get_post_meta( $order_id, 'wc_pos_three_discount', true ) );
+
 
 	//$order_meta1 = get_post_meta($order_id);
 	foreach ( $sim_numbers as $number ) {
-		$int_number = intval( $number );
+		$buf_number = $number;
+		$int_number = intval( $buf_number );
 		$space      = ' ';
-		//$url = "http://seller.sgsim.ru/euroroaming_order_submit?operation=submit_operation&ta=$order_ta_id&orderid=$order_id&customer=$order_customer_name $order_customer_surname&email=$order_customer_email&phone=$order_customer_phone&onum=$int_number";
-		$url = "http://seller.sgsim.ru/euroroaming_order_submit?operation=submit_operation&ta=$order_ta_id&orderid=$order_id&customer=$order_customer_name%20$order_customer_surname&email=$order_customer_email&phone=$order_customer_phone&onum=$number&ta_deposit=500";
+		$ta_deposit = 0;
+		$url        = '';
+
+		if ( $payment_method == "pos_customer_pay" || $payment_method == "pos_customer_pay_paytravel" ) {
+			if ( strlen( $number ) == 9 || strlen( $number ) == 13 ) {
+				$ta_deposit = intval( $orange_deposit );
+			} else if ( strlen( $number ) == 11 ) {
+				$ta_deposit = intval( $three_deposit );
+			}
+			$url = "http://seller.sgsim.ru/euroroaming_order_submit?operation=submit_operation&ta=$order_ta_id&orderid=$order_id&customer=$order_customer_name%20$order_customer_surname&email=$order_customer_email&phone=$order_customer_phone&onum=$number&ta_deposit=$ta_deposit";
+		} else {
+			$url = "http://seller.sgsim.ru/euroroaming_order_submit?operation=submit_operation&ta=$order_ta_id&orderid=$order_id&customer=$order_customer_name%20$order_customer_surname&email=$order_customer_email&phone=$order_customer_phone&onum=$number&ta_deposit=0";
+		}
 
 		$ch = curl_init();
 		curl_setopt( $ch, CURLOPT_HEADER, 0 );
@@ -1115,22 +1134,60 @@ function woocommerce_order_statuses_pos( $order_id ) {
 		curl_setopt( $ch, CURLOPT_URL, $url );
 		$data1 = curl_exec( $ch );
 		curl_close( $ch );
-
-		//$myfile = fopen("processing-".$order_id.".txt", "w") or die("Unable to open file!");
-		//$txt = "Ответ на Ваш запрос: ".$data1."\n";
-		//file_put_contents("processing-".$order_id.".txt", print_r($txt, true));
 	}
 
-	$order = wc_get_order( $order_id );
 
-	$order_data = $order->get_data(); // The Order data
+	// Подтверждение оплаты заказа для ТА
+	if ( $payment_method == "pos_customer_pay" ){
+		$order_ta_phone = get_post_meta( $order_id, 'wc_pos_ta_phone', true );
+		$order_message = 'Заказ #'.$order_id.' был оплачен';
+		//Отправляем смс
+	    do_action('send_sms_hook', array("gate.iqsms.ru", 80, "z1496927079417", "340467", $order_ta_phone, $order_message, "Euroroaming"));
 
-	file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "\logs\pos_test.txt", print_r( get_post_meta($order_id), true ), FILE_APPEND | LOCK_EX );
-	file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "\logs\pos_test.txt", "\r\n".'/***********************************************************************/'."\r\n", FILE_APPEND | LOCK_EX );
+		$order_ta_email = get_post_meta( $order_id, 'wc_pos_ta_email', true );
+		$headers = 'From: Евророуминг <info@euroroaming.ru>' . "\r\n";
+		//Отправляем сообщение на почту
+		wp_mail($order_ta_email, 'Заказ #'.$order_id.' был оплачен', 'Заказ #'.$order_id.' был оплачен', $headers);
+    }
 
+    $nene = new WPSEO_Redirect_Manager();
+	$tests = new WPSEO_Redirect('61306-pp', 'checkout/order-pay/61306?pay_for_order=true&key=wc_order_5a3c4e4b99cf4');
+	$nene->create_redirect($tests);
+
+
+	//$order = wc_get_order( $order_id );
+	//$order_data = $order->get_data(); // The Order data
+	//file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "\logs\pos_test.txt", print_r( get_post_meta( $order_id ), true ), FILE_APPEND | LOCK_EX );
+	//file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "\logs\pos_test.txt", "\r\n" . '/***********************************************************************/' . "\r\n", FILE_APPEND | LOCK_EX );
 	//file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "\logs\pos_test.txt", print_r( $order_id . ': Данные отправлены' . "\r\n", true ), FILE_APPEND | LOCK_EX );
-
 }
+
+function send_sms_message( $data) {
+	$wapurl = false;
+	$fp = fsockopen( $data[0], $data[1], $errno, $errstr );
+	if ( ! $fp ) {
+		return "errno: $errno \nerrstr: $errstr\n";
+	}
+	fwrite( $fp, "GET /send/" .
+	             "?phone=" . rawurlencode( $data[4] ) .
+	             "&text=" . rawurlencode( $data[5] ) .
+	             ( $data[6] ? "&sender=" . rawurlencode( $data[6] ) : "" ) .
+	             ( $wapurl ? "&wapurl=" . rawurlencode( $wapurl ) : "" ) .
+	             "  HTTP/1.0\n" );
+	fwrite( $fp, "Host: " . $data[0] . "\r\n" );
+	if ( $data[2] != "" ) {
+		fwrite( $fp, "Authorization: Basic " .
+		             base64_encode( $data[2] . ":" . $data[3] ) . "\n" );
+	}
+	fwrite( $fp, "\n" );
+	$response = "";
+	while ( ! feof( $fp ) ) {
+		$response .= fread( $fp, 1 );
+	}
+	fclose( $fp );
+	list( $other, $responseBody ) = explode( "\r\n\r\n", $response, 2 );
+}
+add_action( 'send_sms_hook', 'send_sms_message' );
 
 function is_category_sim_karty_pos( $order_id ) {
 	//Получение заказа
