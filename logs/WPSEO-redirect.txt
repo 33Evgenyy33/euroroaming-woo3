@@ -1,0 +1,113 @@
+WPSEO_Redirect Object
+(
+    [origin:protected] => ghj
+    [target:protected] => ghjhjk
+    [type:protected] => 301
+    [format:protected] => plain
+    [validation_error:protected] => 
+)
+WPSEO_Redirect Object
+(
+    [origin:protected] => 61306-pp1
+    [target:protected] => checkout/order-pay/61306?pay_for_order=true&key=wc_order_5a3c4e4b99cf4
+    [type:protected] => 301
+    [format:protected] => plain
+    [validation_error:protected] => 
+)
+WPSEO_Redirect Object
+(
+    [origin:protected] => 1111111
+    [target:protected] => 7777777777
+    [type:protected] => 301
+    [format:protected] => plain
+    [validation_error:protected] => 
+)
+WPSEO_Redirect Object
+(
+    [origin:protected] => 61306-pp1
+    [target:protected] => checkout/order-pay/61306?pay_for_order=true&key=wc_order_5a3c4e4b99cf4
+    [type:protected] => 301
+    [format:protected] => plain
+    [validation_error:protected] => 
+)
+WPSEO_Redirect_Manager Object
+(
+    [redirect_option:protected] => WPSEO_Redirect_Option Object
+        (
+            [redirects:WPSEO_Redirect_Option:private] => Array
+                (
+                )
+
+        )
+
+    [redirect_format:protected] => plain
+    [exporters:protected] => Array
+        (
+            [0] => WPSEO_Redirect_Option_Exporter Object
+                (
+                )
+
+        )
+
+)
+WPSEO_Redirect_Manager Object
+(
+    [redirect_option:protected] => WPSEO_Redirect_Option Object
+        (
+            [redirects:WPSEO_Redirect_Option:private] => Array
+                (
+                    [0] => WPSEO_Redirect Object
+                        (
+                            [origin:protected] => 61306-pp1
+                            [target:protected] => checkout/order-pay/61306?pay_for_order=true&key=wc_order_5a3c4e4b99cf4
+                            [type:protected] => 301
+                            [format:protected] => plain
+                            [validation_error:protected] => 
+                        )
+
+                )
+
+        )
+
+    [redirect_format:protected] => plain
+    [exporters:protected] => Array
+        (
+            [0] => WPSEO_Redirect_Option_Exporter Object
+                (
+                )
+
+        )
+
+)
+WPSEO_Redirect Object
+(
+    [origin:protected] => 61306-pp1
+    [target:protected] => checkout/order-pay/61306?pay_for_order=true&key=wc_order_5a3c4e4b99cf4
+    [type:protected] => 301
+    [format:protected] => plain
+    [validation_error:protected] => 
+)
+WPSEO_Redirect Object
+(
+    [origin:protected] => 61306-pp1
+    [target:protected] => checkout/order-pay/61306?pay_for_order=true&key=wc_order_5a3c4e4b99cf4
+    [type:protected] => 301
+    [format:protected] => plain
+    [validation_error:protected] => 
+)
+WPSEO_Redirect Object
+(
+    [origin:protected] => 61306-pp1
+    [target:protected] => checkout/order-pay/61306?pay_for_order=true&key=wc_order_5a3c4e4b99cf4
+    [type:protected] => 301
+    [format:protected] => plain
+    [validation_error:protected] => 
+)
+WPSEO_Redirect Object
+(
+    [origin:protected] => 61306-pp1
+    [target:protected] => checkout/order-pay/61306?pay_for_order=true&key=wc_order_5a3c4e4b99cf4
+    [type:protected] => 301
+    [format:protected] => plain
+    [validation_error:protected] => 
+)
