@@ -1140,19 +1140,30 @@ function woocommerce_order_statuses_pos( $order_id ) {
 	// Подтверждение оплаты заказа для ТА
 	if ( $payment_method == "pos_customer_pay" ){
 		$order_ta_phone = get_post_meta( $order_id, 'wc_pos_ta_phone', true );
-		$order_message = 'Заказ #'.$order_id.' был оплачен';
+		$order_sms_message = 'Заказ #'.$order_id.' был оплачен';
+
 		//Отправляем смс
-	    do_action('send_sms_hook', array("gate.iqsms.ru", 80, "z1496927079417", "340467", $order_ta_phone, $order_message, "Euroroaming"));
+		//$order_ta_phone = '79513570227';
+	    do_action('send_sms_hook', array("gate.iqsms.ru", 80, "z1496927079417", "340467", $order_ta_phone, $order_sms_message, "Euroroaming"));
 
 		$order_ta_email = get_post_meta( $order_id, 'wc_pos_ta_email', true );
 		$headers = 'From: Евророуминг <info@euroroaming.ru>' . "\r\n";
+		$order_email_message = 'Заказ #'.$order_id.' был оплачен';
 		//Отправляем сообщение на почту
-		wp_mail($order_ta_email, 'Заказ #'.$order_id.' был оплачен', 'Заказ #'.$order_id.' был оплачен', $headers);
+		wp_mail($order_ta_email, $order_email_message, $order_email_message, $headers);
+
+		// Объект для работы с редиректом
+		$redirect_manager = new WPSEO_Redirect_Manager();
+		$order_id_for_url = str_replace( ' ', '', get_post_meta( $order_id, 'wc_pos_redirect_short_url', true ) );
+		// Получаем редирект для удаления
+		$getredi = $redirect_manager->get_redirect($order_id_for_url);
+
+		if ( ! empty( $getredi ) ) {
+			// Удаляем редирект
+			$redirect_manager->delete_redirects(array($getredi));
+		}
     }
 
-    $nene = new WPSEO_Redirect_Manager();
-	$tests = new WPSEO_Redirect('61306-pp', 'checkout/order-pay/61306?pay_for_order=true&key=wc_order_5a3c4e4b99cf4');
-	$nene->create_redirect($tests);
 
 
 	//$order = wc_get_order( $order_id );

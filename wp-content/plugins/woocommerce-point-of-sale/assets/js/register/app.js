@@ -1496,6 +1496,7 @@ jQuery(document).ready(function ($) {
                         "wc_pos_three_discount": pos_register_data.three_discount,
                         "wc_pos_ta_email": ta_mail_buf,
                         "wc_pos_ta_phone": ta_phone_buf,
+                        "wc_pos_redirect_short_url": 'n-' + String(pos_register_data.order_id),
                     },
                 }
             };

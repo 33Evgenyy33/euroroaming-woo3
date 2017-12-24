@@ -20,16 +20,19 @@ body {
     position: fixed;
     border-bottom: 1px solid #ddd;
 }
+
 .cart-items .prod-title {
     font-size: 16px;
     font-weight: 600;
 }
+
+
+
 .cart-items .product-total {
     float: right;
     font-size: 16px;
     font-weight: 600;
 }
-
 
 
 .cart-items {
