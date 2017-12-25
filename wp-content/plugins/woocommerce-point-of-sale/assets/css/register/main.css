@@ -27,6 +27,14 @@ body.wc_poin_of_sale_body #wc-pos-registers-edit > h2 {
     margin-left: 0px;
 }
 
+.previous-next-toggles {
+    display: none!important;
+}
+
+input#billing_activation_date {
+    border-bottom: 1px solid #d0d0d0!important;
+}
+
 #wpbody-content {
     padding: 0px;
 }

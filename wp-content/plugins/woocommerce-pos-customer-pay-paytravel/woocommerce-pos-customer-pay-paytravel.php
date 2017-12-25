@@ -9,30 +9,60 @@ Text Domain: woo-pos-customer-pay-paytravel
 Author URI: https://euroroaming.ru/
 */
 
+require_once __DIR__ . '\vendor\autoload.php';
+
 
 // Cron
 // Регистрируем расписание при активации плагина
-register_activation_hook(__FILE__, 'activation_geting_course_dollar');
+register_activation_hook( __FILE__, 'activation_geting_course_dollar' );
 function activation_geting_course_dollar() {
 	wp_clear_scheduled_hook( 'geting_course_dollar' );
-	wp_schedule_event( time(), 'one_minute', 'geting_course_dollar');
+	wp_schedule_event( time(), 'one_minute', 'geting_course_dollar' );
 }
 
 // Удаляем расписание при деактивации плагина
-register_deactivation_hook( __FILE__, 'deactivation_geting_course_dollar');
+register_deactivation_hook( __FILE__, 'deactivation_geting_course_dollar' );
 function deactivation_geting_course_dollar() {
-	wp_clear_scheduled_hook('geting_course_dollar');
+	wp_clear_scheduled_hook( 'geting_course_dollar' );
 }
 
 // Проверка существования расписания во время работы плагина на всякий пожарный случай
-if( ! wp_next_scheduled( 'geting_course_dollar' ) ) {
-	wp_schedule_event( time(), 'one_minute', 'geting_course_dollar');
+if ( ! wp_next_scheduled( 'geting_course_dollar' ) ) {
+	wp_schedule_event( time(), 'one_minute', 'geting_course_dollar' );
 }
 
 // Хук и функция, которая будет выполняться по Крону
 add_action( 'geting_course_dollar', 'get_real_course_dollar' );
-function get_real_course_dollar(){
-	//file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "\logs\cron-test.txt", print_r( time(), true )."\r\n", FILE_APPEND | LOCK_EX );
+function get_real_course_dollar() {
+	$mailbox = new PhpImap\Mailbox( '{mail.sgsim.ru:993/imap/ssl/novalidate-cert}INBOX', 'paytravel@euroroaming.ru', 'p44T94^3!', null );
+
+	$date = date( "j F Y", strtotime( "-5 day" ) );
+	// Read all messaged into an array:
+	$mailsIds = $mailbox->searchMailbox( 'UNSEEN SINCE ' . '"' . $date . '"' );
+	if ( ! $mailsIds ) {
+		return;
+	}
+
+	foreach ($mailsIds as $mailid){
+		// Get the first message and save its attachment(s) to disk:
+		$mail = $mailbox->getMail( $mailid );
+
+		$mail_subject = $mail->subject;
+
+		if (strpos($mail_subject, 'registry') !== false) continue;
+
+		$mail_text = $mail->textPlain;
+
+		$mail_array = explode( ';', $mail_text );
+		$order_id   = $mail_array[10];
+
+		$order = wc_get_order($order_id);
+
+		if ($order->get_status() == 'pending'){
+			$order->update_status('processing', 'оплата через PayTravel поддтверждена');
+		}
+	}
+
 }
 
 
@@ -45,7 +75,9 @@ if ( ! in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins',
  * Add the gateway to WC Available Gateways
  *
  * @since 1.0.0
+ *
  * @param array $gateways all available WC gateways
+ *
  * @return array $gateways all WC gateways + offline gateway
  */
 add_filter( 'woocommerce_payment_gateways', 'pos_customer_pay_paytravel_gateway' );
@@ -59,7 +91,9 @@ function pos_customer_pay_paytravel_gateway( $methods ) {
  * Adds plugin page links
  *
  * @since 1.0.0
+ *
  * @param array $links all plugin links
+ *
  * @return array $links all plugin links + our custom links (i.e., "Settings")
  */
 add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'pos_customer_pay_paytravel_links' );
@@ -152,13 +186,18 @@ function pos_customer_pay_paytravel_init() {
 			// Mark as on-hold (we're awaiting the cheque)
 			$order->update_status( 'pending', 'Ожидание оплаты от клиента' );
 
-			$key_customer_name   = '_billing_first_name';
-			$order_customer_name = str_replace( ' ', '', get_post_meta( $order_id, $key_customer_name, true ) );
+			$key_customer_name    = '_billing_first_name';
+			$order_customer_name  = str_replace( ' ', '', get_post_meta( $order_id, $key_customer_name, true ) );
 			$order_customer_phone = str_replace( ' ', '', get_post_meta( $order_id, 'client_phone', true ) );
-			$order_message = 'Уважаемый '.$order_customer_name."\r\n".', номер Вашего заказа #'.$order_id.'. Для оплаты воспользуйтесь терминалом PayTravel';
+			$order_message        = 'Для оплаты заказа #' . $order_id . '. воспользуйтесь терминалом PayTravel';
 
-			echo  $this->send("gate.iqsms.ru", 80, "z1496927079417", "340467",
-				$order_customer_phone, $order_message, "Euroroaming");
+			echo $this->send( "gate.iqsms.ru", 80, "z1496927079417", "340467",
+				$order_customer_phone, $order_message, "Euroroaming" );
+
+			$order_client_email = get_post_meta( $order_id, 'client_email', true );
+			$headers = 'MIME-Version: 1.0' . "\r\n";
+			//Отправляем сообщение на почту
+			wp_mail($order_client_email, $order_message, $order_message, $headers);
 
 
 			// Reduce stock levels

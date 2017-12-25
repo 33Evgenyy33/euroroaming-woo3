@@ -544,8 +544,8 @@ class WC_Pos_API
 	    $order_data['number_simcard'] = str_replace(' ', '', get_post_meta( $the_order->get_id(), 'number_simcard', true ));
 
 
-	    file_put_contents("processing-args.txt", print_r($order_data, true), FILE_APPEND | LOCK_EX);
-	    file_put_contents("processing-args.txt", print_r('/********************************/', true)."\r\n", FILE_APPEND | LOCK_EX);
+//	    file_put_contents("processing-args.txt", print_r($order_data, true), FILE_APPEND | LOCK_EX);
+//	    file_put_contents("processing-args.txt", print_r('/********************************/', true)."\r\n", FILE_APPEND | LOCK_EX);
 
         return $order_data;
     }

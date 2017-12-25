@@ -1,0 +1,197 @@
+[
+    {
+        "name": "php-mime-mail-parser/php-mime-mail-parser",
+        "version": "2.9.4",
+        "version_normalized": "2.9.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-mime-mail-parser/php-mime-mail-parser.git",
+            "reference": "1ecdbd4a2efd606cd3e4affa2c3a2b3fdd80466a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-mime-mail-parser/php-mime-mail-parser/zipball/1ecdbd4a2efd606cd3e4affa2c3a2b3fdd80466a",
+            "reference": "1ecdbd4a2efd606cd3e4affa2c3a2b3fdd80466a",
+            "shasum": ""
+        },
+        "require": {
+            "ext-mailparse": "*",
+            "php": "^5.4.0 || ^7.0"
+        },
+        "replace": {
+            "exorus/php-mime-mail-parser": "*",
+            "messaged/php-mime-mail-parser": "*"
+        },
+        "require-dev": {
+            "phpunit/php-token-stream": "^1.3.0",
+            "phpunit/phpunit": "^4.0 || ^5.0",
+            "satooshi/php-coveralls": "0.*",
+            "squizlabs/php_codesniffer": "2.*"
+        },
+        "time": "2017-11-24T06:00:15+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "PhpMimeMailParser\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "bucabay",
+                "email": "gabe@fijiwebdesign.com",
+                "homepage": "http://www.fijiwebdesign.com",
+                "role": "Developer"
+            },
+            {
+                "name": "eXorus",
+                "email": "exorus.spam@gmail.com",
+                "homepage": "https://github.com/eXorus/",
+                "role": "Developer"
+            },
+            {
+                "name": "M.Valinskis",
+                "email": "M.Valins@gmail.com",
+                "homepage": "https://code.google.com/p/php-mime-mail-parser",
+                "role": "Developer"
+            },
+            {
+                "name": "eugene.emmett.wood",
+                "email": "gene_w@cementhorizon.com",
+                "homepage": "https://code.google.com/p/php-mime-mail-parser",
+                "role": "Developer"
+            },
+            {
+                "name": "alknetso",
+                "email": "alkne@gmail.com",
+                "homepage": "https://code.google.com/p/php-mime-mail-parser",
+                "role": "Developer"
+            }
+        ],
+        "description": "Fully Tested Mailparse Extension Wrapper for PHP 5.4+",
+        "homepage": "https://github.com/php-mime-mail-parser/php-mime-mail-parser",
+        "keywords": [
+            "MimeMailParser",
+            "mail",
+            "mailparse",
+            "mime"
+        ]
+    },
+    {
+        "name": "php-imap/php-imap",
+        "version": "3.0.5",
+        "version_normalized": "3.0.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/barbushin/php-imap.git",
+            "reference": "656ec7bc4fea6ea9825e68742f1b0f96b7928325"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/barbushin/php-imap/zipball/656ec7bc4fea6ea9825e68742f1b0f96b7928325",
+            "reference": "656ec7bc4fea6ea9825e68742f1b0f96b7928325",
+            "shasum": ""
+        },
+        "require": {
+            "ext-imap": "*",
+            "php": ">=5.5"
+        },
+        "time": "2017-11-30T05:07:20+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "PhpImap\\": "src/PhpImap"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Sergey Barbushin",
+                "email": "barbushin@gmail.com",
+                "homepage": "http://linkedin.com/in/barbushin"
+            }
+        ],
+        "description": "Manage mailboxes, filter/get/delete emails in PHP (supports IMAP/POP3/NNTP)",
+        "homepage": "https://github.com/barbushin/php-imap",
+        "keywords": [
+            "imap",
+            "mail",
+            "mailbox",
+            "php",
+            "pop3",
+            "receive emails"
+        ]
+    },
+    {
+        "name": "ddeboer/imap",
+        "version": "1.1.2",
+        "version_normalized": "1.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ddeboer/imap.git",
+            "reference": "b9bbf40dc6751e21bea893870a29b0753c1ced02"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/ddeboer/imap/zipball/b9bbf40dc6751e21bea893870a29b0753c1ced02",
+            "reference": "b9bbf40dc6751e21bea893870a29b0753c1ced02",
+            "shasum": ""
+        },
+        "require": {
+            "ext-iconv": "*",
+            "ext-imap": "*",
+            "ext-mbstring": "*",
+            "php": "^7.0"
+        },
+        "require-dev": {
+            "friendsofphp/php-cs-fixer": "^2.9",
+            "phpunit/phpunit": "^6.2",
+            "zendframework/zend-mail": "^2.8"
+        },
+        "time": "2017-12-12T08:27:55+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Ddeboer\\Imap\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "David de Boer",
+                "email": "david@ddeboer.nl"
+            },
+            {
+                "name": "Community contributors",
+                "homepage": "https://github.com/ddeboer/imap/graphs/contributors"
+            },
+            {
+                "name": "Filippo Tessarotto",
+                "email": "zoeslam@gmail.com"
+            }
+        ],
+        "description": "Object-oriented IMAP for PHP",
+        "keywords": [
+            "email",
+            "imap",
+            "mail"
+        ]
+    }
+]

@@ -86,6 +86,8 @@ class Woo_Checkout_For_Digital_Goods_Public {
 	    }
 	    /*********************************-*************************************************/
 
+	    if( current_user_can('administrator')) return $fields;
+
 	    foreach ($items as $cart_item_key => $values) {
 		    $product_id = apply_filters('woocommerce_cart_item_product_id', $values['product_id'], $values, $cart_item_key);
 		    if ($product_id == 59102) {

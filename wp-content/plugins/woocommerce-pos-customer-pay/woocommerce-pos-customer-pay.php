@@ -123,8 +123,8 @@ function pos_customer_pay_init() {
 		public function process_payment( $order_id ) {
 			global $woocommerce;
 			$order = new WC_Order( $order_id );
-			// Mark as on-hold (we're awaiting the cheque)
-			$order->update_status( 'pending', 'Ожидание оплаты от клиента' );
+
+			$order->update_status('pending', 'Заказ создан. Ожидаем оплату от клиента');
 
 			//file_put_contents( $_SERVER['DOCUMENT_ROOT'] . "\logs\yandex-order_by111.txt", print_r( $order->get_checkout_payment_url(), true ) . "\r\n", FILE_APPEND | LOCK_EX );
 
@@ -151,10 +151,16 @@ function pos_customer_pay_init() {
 			$key_customer_name   = '_billing_first_name';
 			$order_customer_name = str_replace( ' ', '', get_post_meta( $order_id, $key_customer_name, true ) );
 			$order_customer_phone = str_replace( ' ', '', get_post_meta( $order_id, 'client_phone', true ) );
-			$order_message = 'Уважаемый '.$order_customer_name.', для оплаты заказа #'.$order_id.' пройдите по ссылке: '.$short_checkout_url;
+			$order_message = 'Для оплаты заказа #'.$order_id.' пройдите по ссылке: '.$short_checkout_url;
 
 			echo  $this->send("gate.iqsms.ru", 80, "z1496927079417", "340467",
 				$order_customer_phone, $order_message, "Euroroaming");
+
+			$order_ta_email = get_post_meta( $order_id, 'wc_pos_ta_email', true );
+			$order_email_message = 'Заказ #'.$order_id.' был создан';
+			$headers = 'MIME-Version: 1.0' . "\r\n";
+			//Отправляем сообщение на почту
+			wp_mail($order_ta_email, $order_email_message, $order_email_message, $headers);
 
 
 			// Reduce stock levels

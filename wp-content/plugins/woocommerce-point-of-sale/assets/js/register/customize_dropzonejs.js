@@ -55,13 +55,18 @@ Dropzone.options.dropzoneWordpressForm = {
                     cancelButtonText: 'Отмена'
                 }).then(function () {
 
+
+                    var fullUrl = window.location.protocol+'//'+window.location.hostname+'/';
+
+                    console.log('url: '+fullUrl);
+
                     var data = '';
                     $.each(fileList, function (index, element) {
                         if (element.fileName === file.name) {
 
                             fileList.splice(index, 1);
 
-                            var jsonString = element.serverFileName.replace('http://euroroaming/wp-content/uploads/passports-from-tourist/', '');
+                            var jsonString = element.serverFileName.replace(fullUrl+'wp-content/uploads/passports-from-tourist/', '');
 
                             data = {
                                 action: 'remove_dropzonejs_file',
