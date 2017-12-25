@@ -1549,8 +1549,8 @@ jQuery(document).ready(function ($) {
                 cart.order.order_meta.wc_pos_prefix_suffix_order_number = pos_register_data.prefix + String(POS_TRANSIENT.order_id) + pos_register_data.suffix;
             }
             if (paid) {
-                var selected_pm = $('.select_payment_method:checked:not(:disabled)').val();
-                var selected_pm_t = $('a.payment_method_' + selected_pm).text()
+                var selected_pm = $('a.payment_methods.active input').val();
+                var selected_pm_t = $('a.payment_method_' + selected_pm).text();
                 cart.order.payment_details = {
                     "method_id": selected_pm,
                     "method_title": selected_pm_t.trim(),
@@ -1608,7 +1608,7 @@ jQuery(document).ready(function ($) {
                 }
             });
 
-            var selected_pm = $('.select_payment_method:checked:not(:disabled)').val();
+            var selected_pm = $('a.payment_methods.active input').val();
             if (paid) {
                 $.when(wp.hooks.applyFilters('wc_pos_process_payment', cart, selected_pm)).then(function (cart) {
                     if (cart) {
