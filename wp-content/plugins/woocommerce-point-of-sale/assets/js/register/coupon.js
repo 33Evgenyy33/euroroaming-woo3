@@ -546,10 +546,17 @@ var WC_POS_DISCOUNT_UPDATED = 203;
             //console.log('ID товара: ' + cart_item['product_id']);
             console.log('ID товара: ' + pos_register_data.orange_discount);
 
-            //Dev
-            if (cart_item['product_id'] === 58961 && ((typeof pos_register_data.orange_discount !== 'undefined') && (pos_register_data.orange_discount !== ''))) {
+            if (cart_item['product_id'] === 18402 && ((typeof pos_register_data.orange_discount !== 'undefined') && (pos_register_data.orange_discount !== ''))) { //Orange Production
                 discount = round(pos_register_data.orange_discount, pos_wc.precision);
-            } else if (cart_item['product_id'] === 55050 && ((typeof pos_register_data.three_discount !== 'undefined') && (pos_register_data.three_discount !== ''))) {
+            } else if (cart_item['product_id'] === 58961 && ((typeof pos_register_data.orange_discount !== 'undefined') && (pos_register_data.orange_discount !== ''))) { //Orange Dev
+                discount = round(pos_register_data.orange_discount, pos_wc.precision);
+            } else if (cart_item['product_id'] === 18446 && ((typeof pos_register_data.orange_discount !== 'undefined') && (pos_register_data.orange_discount !== ''))) { //Ortel Production
+                discount = round(pos_register_data.orange_discount, pos_wc.precision);
+            } else if (cart_item['product_id'] === 58995 && ((typeof pos_register_data.orange_discount !== 'undefined') && (pos_register_data.orange_discount !== ''))) { //Ortel Dev
+                discount = round(pos_register_data.orange_discount, pos_wc.precision);
+            } else if (cart_item['product_id'] === 55050 && ((typeof pos_register_data.three_discount !== 'undefined') && (pos_register_data.three_discount !== ''))) { //Three Production
+                discount = round(pos_register_data.three_discount, pos_wc.precision);
+            } else if (cart_item['product_id'] === 59140 && ((typeof pos_register_data.three_discount !== 'undefined') && (pos_register_data.three_discount !== ''))) { //Three Dev
                 discount = round(pos_register_data.three_discount, pos_wc.precision);
             } else {
                 discount = round(discount, pos_wc.precision);

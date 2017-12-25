@@ -22,7 +22,7 @@ class WC_Pos_Sell
     protected static $_instance = null;
 
     public $data = null;
-    public $script_ver = '0.3.10';
+    public $script_ver = '0.7.7';
     public $id = null;
     public $active_plugins = array();
 
@@ -635,6 +635,8 @@ class WC_Pos_Sell
             'wc-pos-print' => WC_POS()->plugin_url() . '/assets/css/print.css',
 	        //'dropzonecss' => WC_POS()->plugin_url() . '/assets/css/register/dropzone.min.css',
             'dropzonecss' => 'https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/min/dropzone.min.css',
+            'notycss' => 'https://cdnjs.cloudflare.com/ajax/libs/noty/3.2.0-beta/noty.min.css',
+            'notycssmetroui' => WC_POS()->plugin_url() . '/assets/css/register/metroui.css',
 	        'datepickercss' => WC_POS()->plugin_url() . '/assets/css/register/datepicker.min.css',
             'sweetalert2css' => 'https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.5.5/sweetalert2.min.css',
             'intro1css' => 'https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.5.0/introjs.min.css',
@@ -760,6 +762,7 @@ class WC_Pos_Sell
 	    //$scripts['dropzonejs'] = WC_POS()->plugin_url() . '/assets/js/register/dropzone.min.js';
         $scripts['dropzonejs'] = 'https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/min/dropzone.min.js';
         $scripts['customdropzonejs'] = WC_POS()->plugin_url() . '/assets/js/register/customize_dropzonejs.js';
+	    $scripts['notyjs'] = 'https://cdnjs.cloudflare.com/ajax/libs/noty/3.2.0-beta/noty.min.js';
 	    $scripts['datepickerjs'] = WC_POS()->plugin_url() . '/assets/js/register/datepicker.min.js';
 	    $scripts['datepickerjsru'] = WC_POS()->plugin_url() . '/assets/js/register/datepicker.ru-RU.js';
 	    $scripts['sweetalert2js'] = 'https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.5.5/sweetalert2.min.js';

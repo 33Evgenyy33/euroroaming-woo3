@@ -185,7 +185,7 @@ if ( isset( $_SERVER['HTTP_REFERER'] ) ) {
                                       id="dropzone-wordpress-form">
 				                    <?php echo $nonce_files ?>
                                     <div class="dz-message needsclick">
-                                        Перетащите сюда скан загранпаспорта<br> или нажмите чтобы загрузить.
+                                        Перетащите сюда скан <strong>загранпаспорта</strong><br> или нажмите чтобы загрузить.
                                     </div>
                                     <input type='hidden' name='action' value='submit_dropzonejs'>
                                 </form>

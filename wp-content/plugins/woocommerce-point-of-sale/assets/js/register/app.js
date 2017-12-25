@@ -754,17 +754,17 @@ jQuery(document).ready(function ($) {
 
                     CUSTOMER.billing_address['client_phone'] = order.client_phone;
                     CUSTOMER.additional_fields['client_phone'] = order.client_phone;
-                    console.log( CUSTOMER.billing_address['client_phone']);
+                    console.log(CUSTOMER.billing_address['client_phone']);
                     console.log(CUSTOMER.additional_fields['client_phone']);
 
                     CUSTOMER.billing_address['activation_date'] = order.activation_date;
                     CUSTOMER.additional_fields['activation_date'] = order.activation_date;
-                    console.log( CUSTOMER.billing_address['activation_date']);
+                    console.log(CUSTOMER.billing_address['activation_date']);
                     console.log(CUSTOMER.additional_fields['activation_date']);
 
                     CUSTOMER.billing_address['number_simcard'] = order.number_simcard;
                     CUSTOMER.additional_fields['number_simcard'] = order.number_simcard;
-                    console.log( CUSTOMER.billing_address['number_simcard']);
+                    console.log(CUSTOMER.billing_address['number_simcard']);
                     console.log(CUSTOMER.additional_fields['number_simcard']);
 
 
@@ -778,7 +778,7 @@ jQuery(document).ready(function ($) {
                                 language: "ru"
                             });
                             var simcard_numbers = order.number_simcard;
-                            if (count(simcard_numbers) > 1){
+                            if (count(simcard_numbers) > 1) {
                                 simcard_numbers_select.val(simcard_numbers.split(','));
                             } else {
                                 simcard_numbers_select.val(simcard_numbers);
@@ -795,9 +795,6 @@ jQuery(document).ready(function ($) {
                     $('#billing_client_email').val(order.client_email);
                     $('#billing_client_phone').val(order.client_phone);
                     $('#billing_activation_date').val(order.activation_date);
-
-
-
 
 
                     /*************************************************************************/
@@ -835,7 +832,7 @@ jQuery(document).ready(function ($) {
                         CUSTOMER.email = CUSTOMER.billing_address['email'];
                     }
 
-                   // CUSTOMER.billing_address['client_email'] = order.billing_address['client_email'];
+                    // CUSTOMER.billing_address['client_email'] = order.billing_address['client_email'];
 
                     console.log(order);
 
@@ -1338,19 +1335,40 @@ jQuery(document).ready(function ($) {
             if (typeof msg != 'undefined') {
                 switch (type) {
                     case 'error':
-                        toastr.error(msg);
+                        //toastr.error(msg);
+                        new Noty({
+                            theme: 'metroui',
+                            layout: 'topCenter',
+                            text: msg,
+                            type: type,
+                            timeout:3000
+                        }).show();
                         if (!wc_pos_params.disable_sound_notifications) {
                             ion.sound.play("error");
                         }
                         break;
                     case 'success':
-                        toastr.success(msg);
+                        //toastr.success(msg);
+                        new Noty({
+                            theme: 'metroui',
+                            layout: 'topCenter',
+                            text: msg,
+                            type: type,
+                            timeout:3000
+                        }).show();
                         if (!wc_pos_params.disable_sound_notifications) {
                             ion.sound.play("succesful_order");
                         }
                         break;
                     case 'info':
-                        toastr.info(msg);
+                        //toastr.info(msg);
+                        new Noty({
+                            theme: 'metroui',
+                            layout: 'topCenter',
+                            text: msg,
+                            type: type,
+                            timeout:3000
+                        }).show();
                         if (!wc_pos_params.disable_sound_notifications) {
                             ion.sound.play("succesful_order");
                         }
@@ -1359,13 +1377,27 @@ jQuery(document).ready(function ($) {
                         if (msg == '') {
                             msg = pos_i18n[6];
                         }
-                        toastr.info(msg);
+                        //toastr.info(msg);
+                        new Noty({
+                            theme: 'metroui',
+                            layout: 'topCenter',
+                            text: msg,
+                            type: 'success',
+                            timeout:3000
+                        }).show();
                         if (!wc_pos_params.disable_sound_notifications) {
                             ion.sound.play("basket_addition");
                         }
                         break;
                     case 'succesful_order':
-                        toastr.success(msg);
+                        //toastr.success(msg);
+                        new Noty({
+                            theme: 'metroui',
+                            layout: 'topCenter',
+                            text: msg,
+                            type: 'success',
+                            timeout:3000
+                        }).show();
                         if (!wc_pos_params.disable_sound_notifications) {
                             ion.sound.play("succesful_order");
                         }
@@ -3247,7 +3279,7 @@ jQuery(document).ready(function ($) {
             });
             $('.wc_pos_register_save').on('click', function () {
 
-                if (checkBillingFields() === 0){
+                if (checkBillingFields() === 0) {
                     return false;
                 }
 
@@ -3281,7 +3313,7 @@ jQuery(document).ready(function ($) {
                 //     return false;
                 // }
 
-                if (checkBillingFields() === 0){
+                if (checkBillingFields() === 0) {
                     return false;
                 }
 
@@ -3300,7 +3332,7 @@ jQuery(document).ready(function ($) {
                     return false;
                 } else {
                     $('#modal-order_payment input.select_payment_method').removeAttr('disabled');
-                    $('#modal-order_payment .media-menu a').first().click();
+                    $('#modal-order_payment .media-menu a:first-child').click();
 
                     if (!$('#payment_switch_wrap .bootstrap-switch-container').length)
                         $('.payment_switch').bootstrapSwitch();
@@ -3369,7 +3401,7 @@ jQuery(document).ready(function ($) {
 
             });
             $('#modal-order_payment').on('click', 'input.go_payment', function () {
-                var selected_pm = $('.select_payment_method:checked').val();
+                var selected_pm = $('a.payment_methods.active input').val();
 
                 if (selected_pm == '' || selected_pm == undefined) {
                     APP.showNotice(pos_i18n[10], 'error');
@@ -3390,34 +3422,16 @@ jQuery(document).ready(function ($) {
                     }
                 }
 
-                if ($('#payment_email_receipt').bootstrapSwitch('state') && CUSTOMER.billing_address.email == '') {
-                    args = {
-                        content: $('#tmpl-prompt-email-receipt').html(),
-                        cancel: function (answer) {
-                            APP.createOrder(true);
-                        },
-                        confirm: function (answer) {
-                            if (answer != '') {
-                                CUSTOMER.additional_fields['pos_payment_email_receipt'] = answer;
-                            }
-                            APP.createOrder(true);
-                        }
-                    };
-                    openPromt(args);
-                    drop_files.options.reset();
-                } else {
-                    if ($('#payment_email_receipt').bootstrapSwitch('state') && CUSTOMER.billing_address.email != '') {
-                        CUSTOMER.additional_fields['pos_payment_email_receipt'] = CUSTOMER.billing_address.email;
-                    }
-                    APP.createOrder(true);
-                    //drop_files.removeFile(true);
-                    order_is_created = true;
-                    Dropzone.forElement("#dropzone-wordpress-form").removeAllFiles(true);
-                    order_is_created = false;
-                    fileList.length = 0;
-                    console.log(fileList);
-                    clearAllFields();
-                }
+                APP.createOrder(true);
+                //drop_files.removeFile(true);
+                //drop_files.options.reset();
+                order_is_created = true;
+                Dropzone.forElement("#dropzone-wordpress-form").removeAllFiles(true);
+                order_is_created = false;
+                fileList.length = 0;
+                console.log(fileList);
+                clearAllFields();
+
             });
             $('#lock_register').click(function (event) {
                 $('#unlock_password').val('');
@@ -3550,12 +3564,12 @@ jQuery(document).ready(function ($) {
 
         var err = 0;
 
-        if (!$("#billing_first_name").val()){
+        if (!$("#billing_first_name").val()) {
             APP.showNotice(pos_i18n[17], 'error');
             err++;
         }
 
-        if (!$("#billing_last_name").val()){
+        if (!$("#billing_last_name").val()) {
             APP.showNotice(pos_i18n[54], 'error');
             err++;
         }
@@ -3582,7 +3596,7 @@ jQuery(document).ready(function ($) {
         }
 
 
-        if (!$("#billing_activation_date").val()){
+        if (!$("#billing_activation_date").val()) {
             APP.showNotice(pos_i18n[57], 'error');
             err++;
         }
@@ -3675,7 +3689,7 @@ jQuery(document).ready(function ($) {
 
 
     }
-    
+
     function clearAllFields() {
 
         var arr = ['account_username', 'account_password', 'country', 'first_name', 'last_name', 'company', 'address_1', 'address_2', 'city', 'state', 'postcode', 'phone', 'client_email', 'client_phone', 'activation_date', 'number_simcard'];
@@ -3747,11 +3761,11 @@ jQuery(document).ready(function ($) {
             if ($('#grid_layout_cycle').length) {
                 // $('#grid_layout_cycle').height(h);
                 $('#grid_layout_cycle').height('100px');
-                $('#wc-pos-register-grids').css({'display':'flex'});
-                $('#wc-pos-register-data').css({'position':'relative'});
+                $('#wc-pos-register-grids').css({'display': 'flex'});
+                $('#wc-pos-register-data').css({'position': 'relative'});
                 $('#grid_layout_cycle').category_cycle('destroy');
                 $('#grid_layout_cycle').category_cycle({
-                    count: 4,
+                    count: 10,
                     hierarchy: pos_grid.term_relationships.hierarchy,
                     relationships: pos_grid.term_relationships.relationships,
                     parents: pos_grid.term_relationships.parents,
@@ -3791,7 +3805,7 @@ jQuery(document).ready(function ($) {
             }
         });
 
-        console.log('regid: '+reg_id);
+        console.log('regid: ' + reg_id);
 
         openModal('modal-retrieve_sales');
         $.when(APP.getServerOrdersCount(reg_id, search)).then(function (result) {
